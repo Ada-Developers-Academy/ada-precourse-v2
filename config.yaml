@@ -1,0 +1,12 @@
+---
+Standards:
+  - Title: Getting Ready
+    Description: Preparing for Ada
+    UID: 0218ee5b-5f7a-4d29-b786-55637e416911
+    SuccessCriteria:
+      - success criteria
+    ContentFiles:
+      -
+        Type: Lesson
+        UID: d225025a-5ba3-464b-a669-3bb165924e32
+        Path: /00-preparing-for-ada/pre-ada-checklist.md 
