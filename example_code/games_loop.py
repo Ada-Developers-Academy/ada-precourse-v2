@@ -64,7 +64,7 @@ def snowman():
         else:
             print(f"The letter {user_input} is not in the word")
             wrong_guesses += 1
-        print_SNOWman_graphic(wrong_guesses)
+        print_snowman_graphic(wrong_guesses)
 
 
 def get_letter_from_user():
@@ -81,7 +81,7 @@ def get_letter_from_user():
 
     return user_input_string
 
-def print_SNOWman_graphic(wrong_guesses_count):
+def print_snowman_graphic(wrong_guesses_count):
     
 
     for i in range(SNOWMAN_WRONG_GUESSES - wrong_guesses_count, SNOWMAN_WRONG_GUESSES):
