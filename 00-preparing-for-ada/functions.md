@@ -11,7 +11,7 @@ In the last lesson you a series of conditionals to validate and test user input 
 <details>
 <summary>Python Function Declaration and Calling Syntax</summary>
 
-```Python
+```python
 
 def my_new_function:
     # code block here
@@ -28,7 +28,7 @@ my_new_function()
 
 <details>
 <summary> Our version at this point </summary>
-```Python
+```python
 import random
 
 RANGE_LOW = 0
@@ -68,7 +68,7 @@ The function `guess_the_number` can be broken up into two conceptual pieces, get
 
 <details>
 <summary> Our version at this point </summary>
-```Python
+```python
 import random
 
 RANGE_LOW = 0
@@ -118,7 +118,7 @@ Notice that in our version, if the user does not give a valid input, the return 
 
 It's time to add a new game!  The new game is a word guessing game called Snowman.  In Snowman, the user guesses letters for a word, but for every wrong guess we are going to add a new element to our snowman.  When the snowman is finished, the user is out of guesses and they lose the game.  We are going to start by building just a small piece of this game.  To start, for debugging purposes, we're always going to use the same word.  Add it as a constant at the top of your file.  Here's our version:
 
-```Python
+```python
 
 SNOWMAN_WORD = "broccoli"
 
