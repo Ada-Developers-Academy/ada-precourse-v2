@@ -9,7 +9,7 @@ In this section we will be building on the code that you wrote in the previous l
 In the last lesson you a series of conditionals to validate and test user input for the "Guess the Number" game.  You may be looking at the code and think, this looks good, it works, why add functions?  Lets say we want to play a different game after we finish playing Guess the Number.  We could just add the code for the new game after the code that's in the file right now, but then what if we want to change the order of the games?  We're now looking at moving around big code blocks.  Then if we change our minds and want to move it back, or add another game (and so on) things quickly get messy.  Functions encapsulate code blocks into re-usable chunks that we can then call in whatever order we want.  Start by taking all of the code (excluding the import statement at the top of the file and the constant declarations) and place it in a function called 'guess_the_number'.  Then call the function at the bottom of the file
 
 <details>
-<summary>Python Function Declaration and Calling Syntax<summary>
+<summary>Python Function Declaration and Calling Syntax</summary>
 
 ```Python
 
