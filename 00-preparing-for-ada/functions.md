@@ -76,8 +76,6 @@ import random
 RANGE_LOW = 0
 RANGE_HIGH = 100
 
-SNOWMAN_WORD = "broccoli"
-
 def guess_the_number():
 
     random.seed()
