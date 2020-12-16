@@ -5,15 +5,15 @@ from wonderwords import RandomWord
 RANGE_LOW = 0
 RANGE_HIGH = 100
 
-HANGMAN_1 = '________'
-HANGMAN_2 = '|       |'
-HANGMAN_3 = '|       O'
-HANGMAN_4 = '|       |'
-HANGMAN_5 = '|      /|\ '
-HANGMAN_6 = '|       |'
-HANGMAN_7 = '|      / \ '
+SNOWMAN_1 = '*   *   *  '
+SNOWMAN_2 = ' *   _ *   '
+SNOWMAN_3 = '   _[_]_ * '
+SNOWMAN_4 = '  * (")    '
+SNOWMAN_5 = '  \( : )/ *'
+SNOWMAN_6 = '* (_ : _)  '
+SNOWMAN_7 = '-----------'
 
-HANGMAN_WRONG_GUESSES = 7
+SNOWMAN_WRONG_GUESSES = 7
 
 def guess_the_number():
 
@@ -50,21 +50,21 @@ def get_number_from_user():
     return user_input
 
 # 
-def hangman():
+def snowman():
     r = RandomWord()
-    hangman_word = r.word(word_min_length=5, word_max_length=8)
-    print(f"debug info: {hangman_word}")
+    snowman_word = r.word(word_min_length=5, word_max_length=8)
+    print(f"debug info: {snowman_word}")
     correct_guesses = 0
     wrong_guesses = 0
-    while wrong_guesses < HANGMAN_WRONG_GUESSES:
+    while wrong_guesses < SNOWMAN_WRONG_GUESSES:
         user_input = get_letter_from_user()
-        if user_input in hangman_word:
+        if user_input in snowman_word:
             print("You guessed a letter that's in the word!")
             correct_guesses += 1
         else:
             print(f"The letter {user_input} is not in the word")
             wrong_guesses += 1
-        print_hangman_graphic(wrong_guesses)
+        print_SNOWman_graphic(wrong_guesses)
 
 
 def get_letter_from_user():
@@ -81,24 +81,25 @@ def get_letter_from_user():
 
     return user_input_string
 
-def print_hangman_graphic(wrong_guesses_count):
-    for i in range(wrong_guesses_count):
-        if(i == 0):
-            print(HANGMAN_1)
-        if(i == 1):
-            print(HANGMAN_2)
-        if(i == 2):
-            print(HANGMAN_3)
-        if(i == 3):
-            print(HANGMAN_4)
-        if(i == 4):
-            print(HANGMAN_5)
-        if(i == 5):
-            print(HANGMAN_6)
-        if(i == 6):
-            print(HANGMAN_7)
+def print_SNOWman_graphic(wrong_guesses_count):
+    
 
+    for i in range(SNOWMAN_WRONG_GUESSES - wrong_guesses_count, SNOWMAN_WRONG_GUESSES):
+        if(i == 0):
+            print(SNOWMAN_1)
+        if(i == 1):
+            print(SNOWMAN_2)
+        if(i == 2):
+            print(SNOWMAN_3)
+        if(i == 3):
+            print(SNOWMAN_4)
+        if(i == 4):
+            print(SNOWMAN_5)
+        if(i == 5):
+            print(SNOWMAN_6)
+        if(i == 6):
+            print(SNOWMAN_7)
 
 
 guess_the_number()
-hangman()
+snowman()

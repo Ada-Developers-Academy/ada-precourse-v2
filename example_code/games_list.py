@@ -5,9 +5,9 @@ from wonderwords import RandomWord
 RANGE_LOW = 0
 RANGE_HIGH = 100
 
-HANGMAN_GRAPHIC = ['________', '|       |', '|       O', '|       |', '|      /|\ ', '|       |', '|      / \ ']
+SNOWMAN_GRAPHIC = ['*   *   *  ', ' *   _ *   ', '   _[_]_ * ', '  * (")    ', '  \( : )/ *', '* (_ : _)  ', '-----------']
 
-HANGMAN_WRONG_GUESSES = len(HANGMAN_GRAPHIC)
+SNOWMAN_WRONG_GUESSES = len(SNOWMAN_GRAPHIC)
 
 def guess_the_number():
 
@@ -44,21 +44,21 @@ def get_number_from_user():
     return user_input
 
 # 
-def hangman():
+def snowman():
     r = RandomWord()
-    hangman_word = r.word(word_min_length=5, word_max_length=8)
-    print(f"debug info: {hangman_word}")
+    snowman_word = r.word(word_min_length=5, word_max_length=8)
+    print(f"debug info: {snowman_word}")
     correct_guesses_list = []
     wrong_guesses_list = []
-    while len(wrong_guesses_list) < HANGMAN_WRONG_GUESSES:
+    while len(wrong_guesses_list) < SNOWMAN_WRONG_GUESSES:
         user_input = get_letter_from_user(correct_guesses_list, wrong_guesses_list)
-        if user_input in hangman_word:
+        if user_input in snowman_word:
             print("You guessed a letter that's in the word!")
             correct_guesses_list.append(user_input)
         else:
             print(f"The letter {user_input} is not in the word")
             wrong_guesses_list.append(user_input)
-        print_hangman_graphic(len(wrong_guesses_list))
+        print_snowman_graphic(len(wrong_guesses_list))
         print(f"Wrong guesses: {wrong_guesses_list}")
 
 
@@ -78,11 +78,11 @@ def get_letter_from_user(list1, list2):
 
     return user_input_string
 
-def print_hangman_graphic(wrong_guesses_count):
-    for i in range(wrong_guesses_count):
-            print(HANGMAN_GRAPHIC[i])
+def print_snowman_graphic(wrong_guesses_count):
+    for i in range(SNOWMAN_WRONG_GUESSES - wrong_guesses_count, SNOWMAN_WRONG_GUESSES):
+            print(SNOWMAN_GRAPHIC[i])
 
 
 
 #guess_the_number()
-hangman()
+snowman()

@@ -3,7 +3,7 @@ import random
 RANGE_LOW = 0
 RANGE_HIGH = 100
 
-HANGMAN_WORD = "broccoli"
+SNOWMAN_WORD = "broccoli"
 
 def guess_the_number():
 
@@ -34,9 +34,9 @@ def get_number_from_user():
     return user_input
 
 # 
-def hangman():
+def snowman():
     user_input = get_letter_from_user()
-    if user_input in HANGMAN_WORD:
+    if user_input in SNOWMAN_WORD:
         print("You guessed a letter that's in the word!")
     else:
         print(f"The letter {user_input} is not in the word")
@@ -51,5 +51,5 @@ def get_letter_from_user():
     return user_input_string
 
 guess_the_number()
-hangman()
+snowman()
 
