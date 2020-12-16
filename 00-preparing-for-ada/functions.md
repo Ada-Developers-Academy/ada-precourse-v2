@@ -29,6 +29,7 @@ my_new_function()
 <details>
 <summary> Our version at this point </summary>
 ```python
+
 import random
 
 RANGE_LOW = 0
@@ -69,6 +70,7 @@ The function `guess_the_number` can be broken up into two conceptual pieces, get
 <details>
 <summary> Our version at this point </summary>
 ```python
+
 import random
 
 RANGE_LOW = 0
