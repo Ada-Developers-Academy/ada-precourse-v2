@@ -30,11 +30,13 @@ xcode-select --install
 
 This will install Xcode's command line tools.  You will get a pop-up to install the from software update, accept and get ready to wait a bit.  Go get a coffee, this will take a while.
 
-When it finishes you can install homebrew with:
+When it finishes you can install homebrew, Git, and python3 with:
 
 ```
 /bin/bash -c "$(curl -fsSL https://gist.githubusercontent.com/CheezItMan/2c883fc0c43ab44a5554d663995fe92e/raw/5dd84615eedc11849b5fb4eb9ef1e166c63c23c3/install_python_apple_m1.bash)"
 ```
+
+You will be prompted for your password.
 
 This will run a script created by Ada to install Homebrew and use it to install Python 3 and git.  **It will stop and prompt you for your name and email to configure git, please enter them**.  
 
