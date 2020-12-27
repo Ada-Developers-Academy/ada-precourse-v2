@@ -88,6 +88,16 @@ VS Code also comes with a number of extensions which you can install to provide 
 
 You are welcome to experiment with a variety of plugins for VS Code.
 
+### Selecting Python Version for VS Code
+
+Once you have the Python extension installed start up VS Code.
+
+Then open the command-palette with `Shift-Command-P` and enter `Python: select interpreter`
+
+![VS Code Select Python Interpreter](../images/select-interpreter.png)
+
+![Python 3.9 interpreter](../images/python-3.9-interpreter.png)
+
 ## It's All About Communication! Slack
 
 Lastly we you should already have Ada's primary mode of communication installed... [**Slack!**](https://slack.com/downloads/osx). While it is **possible** to get by using the Slack website.  We recommend **strongly** to use the Desktop client.  You can install Slack by downloading it from the [Install Slack website](https://slack.com/downloads/mac).
