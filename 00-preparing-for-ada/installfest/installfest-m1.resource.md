@@ -18,6 +18,14 @@ Here’s the workaround until native support arrives:
 
 After you have your Rosetta Terminal set up, you can then start the [Intel installfest](installfest-intel.resource.md) substituting the Rosetta Terminal for the regular'ole terminal.
 
+## Exceptions - Chrome & Slack
+
+You can just use the intel installfest to install Chrome & Slack, or manually install them (not using homebrew).
+
+- [Install Chrome](https://www.google.com/chrome/)
+- [Install Slack](https://slack.com/downloads/mac)
+
+## Resources
 
 - [This guide is taken from OSX Daily](https://osxdaily.com/2020/11/18/how-run-homebrew-x86-terminal-apple-silicon-mac/)
 - [Homebrew's Current status on Apple Silicon](https://github.com/Homebrew/brew/issues/10152)
