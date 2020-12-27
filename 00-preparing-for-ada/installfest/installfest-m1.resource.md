@@ -1,6 +1,6 @@
 # Getting an M1 Macbook Ready for Ada
 
-Currently many of the packages we use at Ada through the package manager Homebrew are not fully supported to run on M1 Macs, also known as Apple Silicon.  We're going to install homebrew natively, use it to install python 3 and then manually install some Silicon-supported apps.
+Currently many of the packages we use at Ada through the package manager Homebrew are not fully supported to run on M1 Macs, also known as Apple Silicon.  We're going to install homebrew natively, i.e. compile the source code to run directly on the M1 chip, use it to install python 3, and then manually install some Silicon-supported apps.
 
 <!-- available callout types: info, success, warning, danger, secondary  -->
 ### !callout-info
