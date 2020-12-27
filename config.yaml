@@ -24,10 +24,6 @@ Standards:
         Path: /00-preparing-for-ada/installfest/installfest-m1.resource.md
       -
         Type: Lesson
-        UID: 1b8c210d-244c-4f7d-a530-068bbde69bfd
-        Path: /00-preparing-for-ada/01-installfest.md
-      -
-        Type: Lesson
         UID: a3a851b4-a725-4e6b-acd1-96d948a90d21
         Path: /00-preparing-for-ada/02-workflow.md
       -
