@@ -93,7 +93,7 @@ brew cask install visual-studio-code
 
 #### VS Code Extensions
 
-VS Code also come with a number of extensions which you can install to provide new or different functionality.  Some of the recommended exentsions include:
+VS Code also comes with a number of extensions which you can install to provide new or different functionality.  Some of the recommended exentsions include:
 
 *  [Live Share](https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare) - A way to collaborate on source code like Google Docs.
 *  [Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one) - An extension to help writing markdown files
@@ -139,8 +139,8 @@ git config --global core.editor "code --wait"
 
 ### Trust but Verify
 
-- `$ git config --get user.name` Should show your name
-- `$ git config --get user.email` Should show the email address associated with your GitHub account
+- `git config --get user.name` Should show your name
+- `git config --get user.email` Should show the email address associated with your GitHub account
 
 
 ## Browsers
