@@ -103,6 +103,7 @@ def hello_world():
 ```py
 import unittest
 import main as p
+from io import StringIO
 from unittest.mock import patch 
 
 class TestPython1(unittest.TestCase):
