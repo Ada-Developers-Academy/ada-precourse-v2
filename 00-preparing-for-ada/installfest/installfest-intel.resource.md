@@ -1,5 +1,7 @@
 # Installfest for Intel Macs
 
+<iframe src="https://adaacademy.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=74b0dc57-aec2-497a-a14b-ac9f0020d987&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&start=0&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+
 ## Overview
 
 This time is dedicated to ensuring everyone has all of the tools, the right tools, and the right versions of tools to begin programming with the Ada curriculum.
@@ -44,7 +46,7 @@ It will also give you some options to automatically install:
 Copy the line below in it's entirety, paste it into the terminal and hit enter.  You will be prompted for your password.  Don't be alarmed if you don't see your password, it's still getting entered.
 
 ```bash
-/bin/bash -c "$(curl -fsSL https://gist.githubusercontent.com/CheezItMan/e31aebdb0f686c1a194e980b24f3cea4/raw/7cc12beffee2db4ff8f7ec15d1440cbeaacfc09c/ada_c14_installfest.bash)"
+/bin/bash -c "$(curl -fsSL https://gist.githubusercontent.com/CheezItMan/e31aebdb0f686c1a194e980b24f3cea4/raw/bdbca760a7f19e2e067982af3b402a7ca019b7c5/ada_c14_installfest.bash)"
 ```
 
 When the install finishes quit and restart your terminal.
@@ -77,13 +79,16 @@ You should also verify that `pip` is working with `pip --version` and it should 
 
 ### VS Code
 
-# TODO Record video on VS Code
-
 * [VS Code](https://code.visualstudio.com/) is a very extensible open-source editor which supports a variety of languages including Python, and JavaScript.  
 * In VS Code, type <kbd>shift</kbd> + <kbd>cmd</kbd> + <kbd>p</kbd> and type **shell command to install the terminal shell command**.
   * This only needs to be done once to allow you to launch VS code from the terminal
 * Now, to launch VS Code from terminal, type `code` followed by the file name or directory name
   * For example `code .` will open the present directory as a project folder.
+* Then open the command-palette with <kbd>shift</kbd> + <kbd>cmd</kbd> + <kbd>p</kbd>  and enter `Python: select interpreter`
+
+![VS Code Select Python Interpreter](../images/select-interpreter.png)
+
+![Python 3.9 interpreter](../images/python-3.9-interpreter.png)
 
 #### VS Code Extensions
 
@@ -103,14 +108,12 @@ You are welcome to experiment with a variety of plugins for VS Code.
 
 Git is an open source distributed version control system. We will talk about git in significant detail later. The short version is that we will use Git to version and share our code with others. We will spend a lot of time using Git in the Terminal, so it will become important that we configure the Terminal to have all of our Git preferences it and personalize it with our personal information.
 
-
 #### Trust but Verify
 
 You can make sure git is installed properly by entering the following at the terminal.
 
 - `git config --get user.name` Should show your name
 - `git config --get user.email` Should show the email address associated with your GitHub account
-
 
 ## Browsers
 

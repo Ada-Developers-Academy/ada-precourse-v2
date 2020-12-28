@@ -2,8 +2,6 @@
 
 In this, your first full lesson we'll get some software installed for you to use at Ada.
 
-# TODO - Record Videos for installfest
-
 <!-- available callout types: info, success, warning, danger, secondary  -->
 ### !callout-danger
 
