@@ -62,7 +62,7 @@ Macs have a number of special keys which are a little different from Windows.  Y
 
 ### The Python Repl
 
-You can enter `python3` in the terminal to enter a Read-Eval-Print-Loop environment.  This lets you enter individual lines of Python 3 code and see it immediately evaluated.
+You can enter `python` in the terminal to enter a Read-Eval-Print-Loop environment.  This lets you enter individual lines of Python 3 code and see it immediately evaluated.
 
 # TODO re-record this video
 
