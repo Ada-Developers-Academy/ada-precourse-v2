@@ -1,5 +1,7 @@
 # Getting an M1 Macbook Ready for Ada
 
+<iframe src="https://adaacademy.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=3766a0f2-c498-4b51-a7d0-ac9e01835af7&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&start=0&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+
 Currently many of the packages we use at Ada through the package manager Homebrew are not fully supported to run on M1 Macs, also known as Apple Silicon.  We're going to install homebrew natively, i.e. compile the source code to run directly on the M1 chip, use it to install python 3, and then manually install some Silicon-supported apps.
 
 <!-- available callout types: info, success, warning, danger, secondary  -->
