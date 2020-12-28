@@ -24,21 +24,37 @@ You will then be prompted to allow it to install.
 
 At this point, get some coffee... it may take a while... maybe homebrewed coffee!
 
-## Homebrew
+## Install Homebrew, Python 3, Node & Optionals
+
+The following script will install some tools we will use including:
+
+- Homebrew
+- Python 3
+- Pip 3
+- Git
+- Node
+
+It will also give you some options to automatically install:
+
+- Firefox
+- Google Chome
+- VS Code
+- Slack for Mac
+
+Copy the line below in it's entirety, paste it into the terminal and hit enter.  You will be prompted for your password.  Don't be alarmed if you don't see your password, it's still getting entered.
+
+```bash
+/bin/bash -c "$(curl -fsSL https://gist.githubusercontent.com/CheezItMan/e31aebdb0f686c1a194e980b24f3cea4/raw/7cc12beffee2db4ff8f7ec15d1440cbeaacfc09c/ada_c14_installfest.bash)"
+```
+
+When the install finishes quit and restart your terminal.
+
+### About Homebrew
 
 [Homebrew](https://brew.sh/) is a package manager for Mac.  Basically that means that Homebrew helps you install programs, update them and prevent conflicts between applications or tools.
+#### Verification
 
-Homebrew will require the xcode command line tools to be installed.
-
-You can install homebrew by going to the terminal and entering:
-
-```
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-```
-
-### Verification
-
-You can verify that it worked by entering
+You can verify that it homebrew is working properly by entering in the terminal
 
 ```
 brew doctor
@@ -46,28 +62,14 @@ brew doctor
 
 You should see, after a bit of processing, `Your system is ready to brew.`
 
-## Python 3
+### About Python 3
 
-Macs come with an older version of Python, usually 2.7.x.  However we will be using a version of Python 3 and we need to set up the Mac to use it.  Thus we can use homebrew to install it.
+Macs come with an older version of Python, usually 2.7.x.  However we will be using a version of Python 3 and we need to set up the Mac to use it.  Thus we used homebrew to install it.
+#### PIP - Python's Package Installer Programm
 
-```
-brew install python
-```
+We also use a program called **pip** to install additional python packages we can then use in our programs.  Pip was installed with Python 3
 
-We also need to tell Mac where to find python from now on (and not use that old 2.7 version).  The commands below tell the Bash and Zsh shells where to find Python
-
-```
-echo 'export PATH="/usr/local/opt/python/libexec/bin:$PATH"' >> ~/.zshrc
-echo 'export PATH="/usr/local/opt/python/libexec/bin:$PATH"' >> ~/.profile
-```
-
-Then **Quit Terminal with Command-Q and restart the terminal**.
-
-### PIP - Python's Package Installer Programm
-
-We also use a program called **pip** to install additional python packages we can then use in our programs
-
-### Verification
+#### Verification
 
 You can verify that it worked with the command `python --version` and see that it prints something like `Python 3.9.1`.
 
@@ -75,15 +77,7 @@ You should also verify that `pip` is working with `pip --version` and it should 
 
 ### VS Code
 
-# TODO Re-record this video
-
-<iframe src="https://adaacademy.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=9e5ed912-4961-49ed-b03a-abd60034e1b7&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&start=0&interactivity=all" width=720 height=405 style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
-
-We can install our code editor VS Code with the command:
-
-```
-brew cask install visual-studio-code
-```
+# TODO Record video on VS Code
 
 * [VS Code](https://code.visualstudio.com/) is a very extensible open-source editor which supports a variety of languages including Python, and JavaScript.  
 * In VS Code, type <kbd>shift</kbd> + <kbd>cmd</kbd> + <kbd>p</kbd> and type **shell command to install the terminal shell command**.
@@ -105,39 +99,14 @@ VS Code also comes with a number of extensions which you can install to provide 
 
 You are welcome to experiment with a variety of plugins for VS Code.
 
-## Git
+### About Git
 
 Git is an open source distributed version control system. We will talk about git in significant detail later. The short version is that we will use Git to version and share our code with others. We will spend a lot of time using Git in the Terminal, so it will become important that we configure the Terminal to have all of our Git preferences it and personalize it with our personal information.
 
-### Install with Homebrew
 
-Run the following command to install git onto your machine:
+#### Trust but Verify
 
-`$ brew install git`
-
-
-### Configuring Git
-
-We need to do some configuration so Git knows who we are, and so that it gives us colorful feedback. After Brew finishes the install, _read through these directions, **and then** input the commands listed below_:
-
-Directions:
-1. Figure out what your name is. We're going to ask you to input a command, and the example command says `"Your Actual Name"`. Instead of the literal text `"Your Actual Name"`, you need to input text that is... your actual name. You should keep the quotation marks.
-1. Next, figure out what the email address associated with your GitHub account is. (Yes, you're going to need to remember how to log into your GitHub account). Similar to above, instead of the literal text `"The Email Associated with Your Github Account"`, please put in **the email address associated with your GitHub account.** You should keep the quotation marks.
-1. Finally, input the following commands filling in your actual name and github email:
-
-```bash
-git config --global user.name "Your Actual Name"
-git config --global user.email "The Email Associated with Your Github Account"
-git config --global core.ignorecase false
-git config --global color.diff auto
-git config --global color.status auto
-git config --global color.branch auto
-git config --global push.default current
-git config --global pull.rebase false
-git config --global core.editor "code --wait"
-```
-
-### Trust but Verify
+You can make sure git is installed properly by entering the following at the terminal.
 
 - `git config --get user.name` Should show your name
 - `git config --get user.email` Should show the email address associated with your GitHub account
@@ -145,25 +114,33 @@ git config --global core.editor "code --wait"
 
 ## Browsers
 
-We will be using [Firefox](https://www.mozilla.org/en-US/firefox/) as our primary browser at Ada.  You can install it with:
+We will be using [Firefox](https://www.mozilla.org/en-US/firefox/) as our primary browser at Ada.  If you did not elect to install it automatically above you can install it with:
 
 ```bash
-$ brew cask install firefox
+brew cask install firefox
 ```
+
+Or you can go to the website and install it manually.
 
 You may also want to use Google Chrome, which is also a fine browser.  You can install Google Chrome with Homebrew by typing:
 
 ```bash
-$ brew cask install google-chrome
+brew cask install google-chrome
 ```
+
+Or again, you can go to Google's website and install it manually.
 
 ## It's All About Communication! Slack
 
-Lastly we you should already have Ada's primary mode of communication installed... [**Slack!**](https://slack.com/downloads/osx). While it is **possible** to get by using the Slack website.  We recommend **strongly** to use the Desktop client.  You can install Slack with homebrew and the command:
+Lastly we you should already have Ada's primary mode of communication installed... [**Slack!**](https://slack.com/downloads/osx). While it is **possible** to get by using the Slack website.  We recommend **strongly** to use the Desktop client.  If you did not use our script to install it, you can install Slack with homebrew and the command:
 
 ```bash
-$ brew cask install slack
+brew cask install slack
 ```
+
+Or you can go to [slack.com](https://slack.com) and install it manually.
+
+### Why Slack?
 
 When Ada has announcements or students want to share general information, we will generally use Slack.  If we have updates to projects or homework, we will use Slack.  We only use e-mail for personal communication and things we need to keep a record of (like absences).
 
