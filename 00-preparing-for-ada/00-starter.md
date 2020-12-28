@@ -110,7 +110,7 @@ class TestPython1(unittest.TestCase):
     def test_prints_hello_world(self):
         with patch('sys.stdout', new = StringIO()) as fake_out: 
             p.hello_world()
-            self.assertEqual("Hello World!", fake_out.getvalue())
+            self.assertEqual("Hello World!", fake_out.getvalue().strip())
 
         # self.assertEqual(1,p.doSomething())
 ```
