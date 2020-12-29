@@ -81,7 +81,7 @@ Now that you have a way to get valid input from the user, it's time to take a lo
 
 ```python
 
-random.seed()
+    random.seed()
     random_number = random.randrange(RANGE_LOW, RANGE_HIGH)
 
     user_input = get_number_from_user()
@@ -235,4 +235,3 @@ Imagine you were playing a game of Snowman with a group of children.  You would 
 When you get [FEEDBACK OF SOME KIND THAT INDICATES IT WORKS], move on to the next section.
 
 ### Drawing Pictures [TODO]
-
