@@ -41,13 +41,12 @@ These units are designed with units to match the 6-day in-person Pre-Ada session
 In this course we want you to learn to do the following:
 
 *  Consistently follow [Python coding practices](https://www.python.org/dev/peps/pep-0008/)
-*  Understand the of order of operations reflected in use of relational and logical operators
-*  Understand and use complex conditional statements
-*  Understand and use iterators and loops
+*  Understand and use conditional statements
+*  Understand and use functions
+*  Understand and use loops
 *  Understand and use lists along with loops
-*  Understand and use dictionaries along with loops
+*  Understand and use dictionaries
 *  Understand and use lists and dictionaries together - nested data structures with loops
-*  Learn HTML & CSS
 
 We also want you to learn a bit of workflow and learn to use [VS Code](https://code.visualstudio.com/) to write your programs.
 
