@@ -6,13 +6,15 @@ In this section we will be building on the code that you wrote in the previous l
 
 ## Why Functions?
 
-In the last lesson you a series of conditionals to validate and test user input for the "Guess the Number" game.  You may be looking at the code and think, this looks good, it works, why add functions?  Lets say we want to play a different game after we finish playing Guess the Number.  We could just add the code for the new game after the code that's in the file right now, but then what if we want to change the order of the games?  We're now looking at moving around big code blocks.  Then if we change our minds and want to move it back, or add another game (and so on) things quickly get messy.  Functions encapsulate code blocks into re-usable chunks that we can then call in whatever order we want.  Start by taking all of the code (excluding the import statement at the top of the file and the constant declarations) and place it in a function called 'guess_the_number'.  Then call the function at the bottom of the file
+In the last lesson you a series of conditionals to validate and test user input for the "Guess the Number" game.  You may be looking at the code and think, this looks good, it works, why add functions?  Lets say we want to play a different game after we finish playing Guess the Number.  We could just add the code for the new game after the code that's in the file right now, but then what if we want to change the order of the games?  We're now looking at moving around big code blocks.  Then if we change our minds and want to move it back, or add another game (and so on) things quickly get messy.  Functions encapsulate code blocks into re-usable chunks that we can then call in whatever order we want.  
 
-<details>
-<summary>Python Function Declaration and Calling Syntax</summary>
+## Vocabulary
+
+* function: a named chunk of code that is callable and performs a task.  Functions can take in values called arguments and can have a return value.  
 
 ```python
 
+# This line defines the new function and assigns it a name
 def my_new_function:
     # code block here
     # note that each line is indented compared to the definition
@@ -20,11 +22,24 @@ def my_new_function:
     y = 2
     z = x + y
 
+# This line calls the function
 my_new_function()
+
+
+# Example function with arguments
+def my_func_with_args(arg1, arg2):
+    x = arg1
+    y = arg2
+
+# Calling the function with arguments
+my_func_with_args(1, 2)
 
 ```
 
-</details>
+## Guess the Number
+
+Start by taking all of the code (excluding the import statement at the top of the file and the constant declarations) and place it in a function called `guess_the_number`.  Then call the function at the bottom of the file
+
 
 <details>
 <summary> Our version at this point </summary>

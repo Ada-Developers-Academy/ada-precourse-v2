@@ -8,6 +8,48 @@ In this section we will be building on the code that you wrote in the previous l
 
 Loops are one of the primary control structures in programming and they show up in almost every programming language.  In the world of Computer Science Theory, loops, along with sequences (executing one section of code and then another) and selection (aka conditionals, choosing between blocks of code based on a boolean test) are all that are needed to compute any computable function [https://en.wikipedia.org/wiki/Structured_program_theorem].  Understanding loops and using them effectively in your code is a vital first step in your journey as a programmer.  In this lesson we will explore while loops and for loops and use them make Guess the Number a fully functional game and add core functionality to Snowman.  In this lesson we will use both for and while loops to 
 
+## Vocabulary
+
+* `while` loop:  a while loop repeats as long as a boolean conditional statement is true.  The statement is tested before executing the code block inside loop.
+```python
+
+test = 0
+while test < 10:
+    test = test + 2
+    print(f"The value of test is {test}")
+
+# When run, this code chunk will output:
+# The value of test is 2
+# The value of test is 4
+# The value of test is 6
+# The value of test is 8
+
+```
+
+* `for` loop: a for loop that _iterates_ or repeats over a sequence.  In python it is often used to iterate over a `list` data structure.  It is also commonly paired with the `range` function[link to range function], which returns a list of numbers.  The `for` loop repeats n times, where n is the length of the sequence being looped over.
+
+```python
+
+for num in range(3):
+    print(f"The value of num is {num}")
+
+# When run, this code chunk will output:
+# The value of num is 0
+# The value of num is 1
+# the value of num is 2
+
+for num in range(2, 5):
+    print(f"The value of num is {num}")
+
+# When run, this code chunk will output:
+# The value of num is 2
+# The value of num is 3
+# the value of num is 4
+
+```
+
+* flag: a variable that is used as a signal that a condition has been met.  Usually a flag is a boolean variable and the value is changed to indicate that the goal or target (whatever the condition is) has been achieved.
+
 ## Guess The Number
 
 ### Validating User input
