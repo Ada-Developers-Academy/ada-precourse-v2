@@ -1,6 +1,4 @@
 import random
-from wonderwords import RandomWord
-#https://pypi.org/project/wonderwords/
 
 RANGE_LOW = 0
 RANGE_HIGH = 100
@@ -14,6 +12,8 @@ SNOWMAN_6 = '* (_ : _)  '
 SNOWMAN_7 = '-----------'
 
 SNOWMAN_WRONG_GUESSES = 7
+
+SNOWMAN_WORD = "broccoli"
 
 def guess_the_number():
 
@@ -51,14 +51,11 @@ def get_number_from_user():
 
 # 
 def snowman():
-    r = RandomWord()
-    snowman_word = r.word(word_min_length=5, word_max_length=8)
-    print(f"debug info: {snowman_word}")
     correct_guesses = 0
     wrong_guesses = 0
     while wrong_guesses < SNOWMAN_WRONG_GUESSES:
         user_input = get_letter_from_user()
-        if user_input in snowman_word:
+        if user_input in SNOWMAN_WORD:
             print("You guessed a letter that's in the word!")
             correct_guesses += 1
         else:
@@ -83,21 +80,20 @@ def get_letter_from_user():
 
 def print_snowman_graphic(wrong_guesses_count):
     
-
-    for i in range(SNOWMAN_WRONG_GUESSES - wrong_guesses_count, SNOWMAN_WRONG_GUESSES):
-        if(i == 0):
-            print(SNOWMAN_1)
+    for i in range(SNOWMAN_WRONG_GUESSES + 1 - wrong_guesses_count, SNOWMAN_WRONG_GUESSES + 1)
         if(i == 1):
-            print(SNOWMAN_2)
+            print(SNOWMAN_1)
         if(i == 2):
-            print(SNOWMAN_3)
+            print(SNOWMAN_2)
         if(i == 3):
-            print(SNOWMAN_4)
+            print(SNOWMAN_3)
         if(i == 4):
-            print(SNOWMAN_5)
+            print(SNOWMAN_4)
         if(i == 5):
-            print(SNOWMAN_6)
+            print(SNOWMAN_5)
         if(i == 6):
+            print(SNOWMAN_6)
+        if(i == 7):
             print(SNOWMAN_7)
 
 
