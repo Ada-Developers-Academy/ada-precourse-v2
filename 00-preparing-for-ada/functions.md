@@ -188,6 +188,7 @@ def get_letter_from_user():
 
 ```py
 import unittest
+from io import StringIO 
 from unittest.mock import patch
 import main as p
 import numpy as np
