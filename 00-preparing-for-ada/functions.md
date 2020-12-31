@@ -3,6 +3,7 @@
 ## Learning Goals
 
 At the end of this lesson students will be able to:
+
 - Understand and use functions
 
 ## Introduction
