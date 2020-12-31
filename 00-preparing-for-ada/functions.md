@@ -1,10 +1,17 @@
 # Functions
 
-## Textbook for this section: [link to ada build functions]
+## Learning Goals
+
+At the end of this lesson students will be able to:
+- Understand and use functions
+
+## Introduction
+
+### Textbook for this section: [link to ada build functions]
 
 In this section we will be building on the code that you wrote in the previous lesson [Conditionals].  If you would like to look at our example code version for that lesson, you can find it [here]
 
-## Why Functions?
+### Why Functions?
 
 In the last lesson you a series of conditionals to validate and test user input for the "Guess the Number" game.  You may be looking at the code and think, this looks good, it works, why add functions?  Lets say we want to play a different game after we finish playing Guess the Number.  We could just add the code for the new game after the code that's in the file right now, but then what if we want to change the order of the games?  We're now looking at moving around big code blocks.  Then if we change our minds and want to move it back, or add another game (and so on) things quickly get messy.  Functions encapsulate code blocks into re-usable chunks that we can then call in whatever order we want.  
 
@@ -162,3 +169,6 @@ This function is structurally similar to `guess_the_number`, but will be shorter
 
 [TODO: input all code from your file here]
 
+## Summary
+
+Let's go back to the questions proposed in the introduction to this lesson.  What do functions add to our code?  Now that you have broken the various sections into functions, you can easily swap the order of the games, play a game multiple times, or add new games in new functions and insert them in any order you want.  Functions add flexibility and structure to our code, and make code easier to maintain and read.  In the next lesson we will work on adding more functionality to our functions with loops. 
