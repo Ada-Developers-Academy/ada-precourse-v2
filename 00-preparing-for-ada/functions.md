@@ -176,7 +176,6 @@ We will expand this to a full solution in the next lesson.
 
 ##### !placeholder
 
-[the code below is the starting code in the web editor]
 ```py
 def get_letter_from_user():
   
