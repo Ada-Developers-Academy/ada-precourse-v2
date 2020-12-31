@@ -143,6 +143,20 @@ Next, we're going to follow the same pattern as `guess_the_number`.  We will sta
 
 ###  get_letter_from_user
 
+<!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
+<!-- Replace everything in square brackets [] and remove brackets  -->
+
+### !challenge
+
+* type: code-snippet
+* language: python3.6
+* id: c751d441-f566-4ab7-acc1-390b8710213e
+* title: get_letter_from_user
+* points: 1
+* topics: python, python-functions
+
+##### !question
+
 This function is very similar to `get_number_from_user`.  
 
 1.  First, we will need to get input from the user and store it in a variable.  
@@ -150,7 +164,60 @@ This function is very similar to `get_number_from_user`.
     - [string variable name].isalpha() will return true if the string contains only alphabetical characters
     - len([string variable name]) will tell us the length of the string
 1. Lastly, we need to return the input string
-    - Note, again, if the user gives bad input, we're not going to do anything here other than notify the user and then return the input.  We will expand this to a full solution in the next lesson.
+    - If the user gives bad input: 
+      - We print "Invalid letter please enter a single character." 
+      - Then return the input.  
+    - If the user gives valid input just return the input.
+
+We will expand this to a full solution in the next lesson.
+
+
+##### !end-question
+
+##### !placeholder
+
+[the code below is the starting code in the web editor]
+```py
+def get_letter_from_user():
+  
+#   return 1
+```
+
+##### !end-placeholder
+
+##### !tests
+
+[the unit tests below will run against the student submission]
+```py
+import unittest
+from unittest.mock import patch
+import main as p
+import numpy as np
+
+class TestPython1(unittest.TestCase):
+    def setUp(self):
+        # raw_input is untouched before test
+        assert p.raw_input is __builtins__.raw_input
+
+    def test_letter_a(self):
+        with patch('sys.stdout', new = StringIO()) as fake_out:
+            with patch.object(p, "raw_input", create=True, return_value="a"):
+                actual = p.get_letter_from_user()
+        
+            self.assertEqual(actual, "a")
+```
+
+##### !end-tests
+
+<!-- other optional sections -->
+<!-- !hint - !end-hint (markdown, hidden, students click to view) -->
+<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
+<!-- !explanation - !end-explanation (markdown, students can see after answering correctly) -->
+
+### !end-challenge
+
+<!-- ======================= END CHALLENGE ======================= -->
+
 
 ### snowman
 
