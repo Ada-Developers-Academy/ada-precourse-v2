@@ -200,7 +200,7 @@ class TestPython1(unittest.TestCase):
 
     def test_letter_a(self):
         with patch('sys.stdout', new = StringIO()) as fake_out:
-            with patch.object(p, "raw_input", create=True, return_value="a"):
+            with patch.object(p, "raw_input", create=True, return_value="a\n"):
                 actual = p.get_letter_from_user()
         
             self.assertEqual(actual, "a")
