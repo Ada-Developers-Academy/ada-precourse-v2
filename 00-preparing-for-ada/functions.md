@@ -187,7 +187,6 @@ def get_letter_from_user():
 
 ##### !tests
 
-[the unit tests below will run against the student submission]
 ```py
 import unittest
 from unittest.mock import patch
