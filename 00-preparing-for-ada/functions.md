@@ -193,9 +193,9 @@ import main as p
 import numpy as np
 
 class TestPython1(unittest.TestCase):
-    def setUp(self):
-        # raw_input is untouched before test
-        assert p.raw_input is __builtins__.raw_input
+    # def setUp(self):
+    #     # raw_input is untouched before test
+    #     assert p.raw_input is __builtins__.raw_input
 
     def test_letter_a(self):
         with patch('sys.stdout', new = StringIO()) as fake_out:
