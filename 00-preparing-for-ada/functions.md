@@ -187,23 +187,33 @@ def get_letter_from_user():
 ##### !tests
 
 ```py
-import unittest
-from io import StringIO 
+from __future__ import print_function
+import sys
+from nose.tools import *
+from unittest import mock
 from unittest.mock import patch
+import io
+import unittest
+import re
 import main as p
-import numpy as np
+
+
+# def eprint(*args, **kwargs):
+#     print(*args, file=sys.stderr, **kwargs)
 
 class TestPython1(unittest.TestCase):
     # def setUp(self):
     #     # raw_input is untouched before test
     #     assert p.raw_input is __builtins__.raw_input
 
-    def test_letter_a(self):
-        with patch('sys.stdout', new = StringIO()) as fake_out:
-            with patch.object(p, "raw_input", create=True, return_value="a\n"):
-                actual = p.get_letter_from_user()
-        
-            self.assertEqual(actual, "a")
+    # Solution one: testing print with @patch
+    @patch('sys.stdout', new_callable=io.StringIO)
+    def test_p_one(self, mock_stdout):
+        original_input = mock.builtins.input
+        mock.builtins.input = lambda _: "yes"
+        yes_or_no()
+        assert re.match('Quitter\!', mock_stdout.getvalue())
+        mock.builtins.input = original_input
 ```
 
 ##### !end-tests
