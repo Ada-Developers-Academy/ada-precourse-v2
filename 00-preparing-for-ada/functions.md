@@ -393,6 +393,3 @@ class TestPython2(unittest.TestCase):
 
 <!-- ======================= END CHALLENGE ======================= -->
 
-
-[TODO: input all code from your file here]
-
