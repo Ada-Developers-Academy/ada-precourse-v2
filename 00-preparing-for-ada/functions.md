@@ -14,7 +14,7 @@ In this section we will be building on the code that you wrote in the previous l
 
 ### Why Functions?
 
-In the last lesson you a series of conditionals to validate and test user input for the "Guess the Number" game.  You may be looking at the code and think, this looks good, it works, why add functions?  Lets say we want to play a different game after we finish playing Guess the Number.  We could just add the code for the new game after the code that's in the file right now, but then what if we want to change the order of the games?  We're now looking at moving around big code blocks.  Then if we change our minds and want to move it back, or add another game (and so on) things quickly get messy.  Functions encapsulate code blocks into re-usable chunks that we can then call in whatever order we want.  
+In the last lesson we wrote a series of conditionals to validate and test user input for the "Guess the Number" game.  At this point, we may be looking at the code and thinking, this looks good, it works, why add functions?  Lets say we want to play a different game after we finish playing Guess the Number.  We could just add the code for the new game after the code that's in the file right now, but then what if we want to change the order of the games?  We're now looking at moving around big code blocks.  Then if we change our minds and want to move it back, or add another game (and so on) things quickly get messy.  Functions encapsulate code blocks into re-usable chunks that we can then call in whatever order we want.  
 
 ## Vocabulary
 
@@ -86,7 +86,7 @@ guess_the_number()
 
 ## Helper Functions
 
-A helper function is a function that does part of the work for another function.  They make your code easier to read by breaking long functions up into smaller pieces.  We recommend giving your helper functions descriptive names, to help with readability.
+A helper function is a function that does part of the work for another function.  They make our code easier to read by breaking long functions up into smaller pieces.  We recommend giving helper functions descriptive names, to help with readability.
 
 The function `guess_the_number` can be broken up into two conceptual pieces, getting user input, and then processing the user input.  Start by writing a function called `get_number_from_user` and then pull all of the pieces of code in `guess_the_number` that have to do with getting user input into `get_number_from_user`.  Include any conditional statement that validate user input as a number.  This function should ask the user for a number and then give an error message if the user inputs anything other than a number.  Last, it should return the valid user input, or None if there was no valid input.  In `guess_the_number`, call this function and store the result in user_input.
 
@@ -133,13 +133,13 @@ def get_number_from_user():
 
 ## None and potential Errors
 
-Notice that in our version, if the user does not give a valid input, the return value will be None.  This will cause an error in the conditionals in `guess_the_number`, because None can not be compared to a number.  That's ok, we're building to a full solution.  Many times when writing code, it is useful to write and test a small portion, and then when you're confident that it works, moving on to build the next portion.
+Notice that in our version, if the user does not give a valid input, the return value will be None.  This will cause an error in the conditionals in `guess_the_number`, because None can not be compared to a number.  That's ok, we're building to a full solution.  Many times when writing code, it is useful to write and test a small portion, and then when we're confident that it works, moving on to build the next portion.
 
 ### !end-callout
 
 ## Snowman!
 
-It's time to add a new game!  The new game is a word guessing game called Snowman.  In Snowman, the user guesses letters for a word, but for every wrong guess we are going to add a new element to our snowman.  When the snowman is finished, the user is out of guesses and they lose the game.  We are going to start by building just a small piece of this game.  To start, for debugging purposes, we're always going to use the same word.  Add it as a constant at the top of your file.  Here's our version:
+It's time to add a new game!  The new game is a word guessing game called Snowman.  In Snowman, the user guesses letters for a word, but for every wrong guess we are going to add a new element to our snowman.  When the snowman is finished, the user is out of guesses and they lose the game.  We are going to start by building just a small piece of this game.  To start, for debugging purposes, we're always going to use the same word.  Add it as a constant at the top of the file.  Here's our version:
 
 ```python
 
@@ -172,4 +172,4 @@ This function is structurally similar to `guess_the_number`, but will be shorter
 
 ## Summary
 
-Let's go back to the questions proposed in the introduction to this lesson.  What do functions add to our code?  Now that you have broken the various sections into functions, you can easily swap the order of the games, play a game multiple times, or add new games in new functions and insert them in any order you want.  Functions add flexibility and structure to our code, and make code easier to maintain and read.  In the next lesson we will work on adding more functionality to our functions with loops. 
+Let's go back to the questions proposed in the introduction to this lesson.  What do functions add to our code?  Now that we have broken the various sections into functions, we can easily swap the order of the games, play a game multiple times, or add new games in new functions and insert them in any order we want.  Functions add flexibility and structure to our code, and make code easier to maintain and read.  In the next lesson we will work on adding more functionality to our functions with loops. 
