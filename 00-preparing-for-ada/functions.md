@@ -149,7 +149,7 @@ Next, we're going to follow the same pattern as `guess_the_number`.  We will sta
 ### !challenge
 
 * type: code-snippet
-* language: python3.6
+* language: python3.9
 * id: c751d441-f566-4ab7-acc1-390b8710213e
 * title: get_letter_from_user
 * points: 1
@@ -167,7 +167,8 @@ This function is very similar to `get_number_from_user`.
     - If the user gives bad input: 
       - We print "Invalid letter please enter a single character." 
       - Then return the input.  
-    - If the user gives valid input just return the input.
+    - If the user gives valid input:
+      - Then we just return the input.
 
 We will expand this to a full solution in the next lesson.
 
@@ -187,9 +188,7 @@ def get_letter_from_user():
 ##### !tests
 
 ```py
-from __future__ import print_function
 import sys
-from nose.tools import *
 from unittest import mock
 from unittest.mock import patch
 import io
@@ -198,22 +197,63 @@ import re
 import main as p
 
 
-# def eprint(*args, **kwargs):
-#     print(*args, file=sys.stderr, **kwargs)
+def eprint(*args, **kwargs):
+    print(*args, file=sys.stderr, **kwargs)
 
 class TestPython1(unittest.TestCase):
-    # def setUp(self):
-    #     # raw_input is untouched before test
-    #     assert p.raw_input is __builtins__.raw_input
 
-    # Solution one: testing print with @patch
     @patch('sys.stdout', new_callable=io.StringIO)
     def test_p_one(self, mock_stdout):
+        # Arrange
+        input_letter = "a"
         original_input = mock.builtins.input
-        mock.builtins.input = lambda _: "yes"
-        yes_or_no()
-        assert re.match('Quitter\!', mock_stdout.getvalue())
+        mock.builtins.input = lambda _: input_letter
+
+        # Act
+        answer = p.get_letter_from_user()
+
+        # Assert
+        assert re.match('', mock_stdout.getvalue())
+        assert answer == input_letter
         mock.builtins.input = original_input
+
+
+    @patch('sys.stdout', new_callable=io.StringIO)
+    def test_p_two(self, mock_stdout):
+        # Arrange
+        input_letter = "!"
+        original_input = mock.builtins.input
+        mock.builtins.input = lambda _: input_letter
+        answer = p.get_letter_from_user()
+
+        assert re.match('Invalid letter please enter a single character.', mock_stdout.getvalue())
+        assert answer == input_letter
+        mock.builtins.input = original_input
+
+    @patch('sys.stdout', new_callable=io.StringIO)
+    def test_p_three(self, mock_stdout):
+        # Arrange
+        input_letter = "223"
+        original_input = mock.builtins.input
+        mock.builtins.input = lambda _: input_letter
+        answer = p.get_letter_from_user()
+
+        assert re.match('Invalid letter please enter a single character.', mock_stdout.getvalue())
+        assert answer == input_letter
+        mock.builtins.input = original_input
+
+    @patch('sys.stdout', new_callable=io.StringIO)
+    def test_p_four(self, mock_stdout):
+        # Arrange
+        input_letter = "z"
+        original_input = mock.builtins.input
+        mock.builtins.input = lambda _: input_letter
+        answer = p.get_letter_from_user()
+
+        assert re.match('', mock_stdout.getvalue())
+        assert answer == input_letter
+        mock.builtins.input = original_input
+
 ```
 
 ##### !end-tests
