@@ -270,10 +270,128 @@ class TestPython1(unittest.TestCase):
 
 ### snowman
 
+<!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
+<!-- Replace everything in square brackets [] and remove brackets  -->
+
+### !challenge
+
+* type: code-snippet
+* language: python3.9
+* id: 2604b524-92e8-43fb-adc3-de4b29f0b451
+* title: [text, a short question title]
+<!-- * points: [1] (optional, the number of points for scoring as a checkpoint) -->
+<!-- * topics: [python, pandas] (optional the topics for analyzing points) -->
+
+##### !question
+
 This function is structurally similar to `guess_the_number`, but will be shorter for now.  The only check we have to do on the letter is check if it's in the word or not.  To do that, we're going to use the python keyword `in`.  The syntax for `in` is `thing1 in thing2`.  This expression evaluates to `True` if thing2 contains thing1, and false otherwise.  We can use it in a conditional expression as `if thing1 in thing2:`.
 
 1.  First, use `get_letter_from_user` to get a letter
-2.  Check if the letter is in `SNOWMAN_WORD` and print an appropriate message based on that information.
+2.  Check if the letter is in `SNOWMAN_WORD` 
+    - print "Letter found" if the letter is in `SNOWMAN_WORD`.
+    - print "Letter not found" if it's not in `SNOWMAN_WORD`.
+3.  If the letter is in `SNOWMAN_WORD` return `True` and `False` if it's not in `SNOWMAN_WORD`.
+
+##### !end-question
+
+##### !placeholder
+
+```py
+
+SNOWMAN_WORD = "pasta"
+
+def get_letter_from_user():
+    letter = input("Please enter a letter > ")
+    if (len(letter) > 1 or not letter.isalpha()):
+        print("Invalid letter please enter a single character.")
+    
+    return letter
+
+
+def letter_in_snowman_word():
+    # Your code is here
+
+```
+
+##### !end-placeholder
+
+##### !tests
+
+```py
+import sys
+from unittest import mock
+from unittest.mock import patch
+import io
+import unittest
+import re
+import main as p
+
+class TestPython2(unittest.TestCase):
+
+    @patch('sys.stdout', new_callable=io.StringIO)
+    def test_p_one(self, mock_stdout):
+        # Arrange
+        input_letter = "a"
+        original_input = mock.builtins.input
+        mock.builtins.input = lambda _: input_letter
+
+        # Act
+        answer = p.letter_in_snowman_word()
+
+        # Assert
+        assert re.match('Letter found', mock_stdout.getvalue())
+        assert answer # True if it's in the snowman word
+        mock.builtins.input = original_input
+
+
+    @patch('sys.stdout', new_callable=io.StringIO)
+    def test_p_two(self, mock_stdout):
+        # Arrange
+        input_letter = "z"
+        original_input = mock.builtins.input
+        mock.builtins.input = lambda _: input_letter
+        answer = p.letter_in_snowman_word()
+
+        assert re.match('Letter not found', mock_stdout.getvalue())
+        assert answer == False
+        mock.builtins.input = original_input
+
+    @patch('sys.stdout', new_callable=io.StringIO)
+    def test_p_three(self, mock_stdout):
+        # Arrange
+        input_letter = "p"
+        original_input = mock.builtins.input
+        mock.builtins.input = lambda _: input_letter
+        answer = p.letter_in_snowman_word()
+
+        assert re.match('Letter found', mock_stdout.getvalue())
+        assert answer # True if it's in the snowman word
+        mock.builtins.input = original_input
+
+    @patch('sys.stdout', new_callable=io.StringIO)
+    def test_p_four(self, mock_stdout):
+        # Arrange
+        input_letter = "e"
+        original_input = mock.builtins.input
+        mock.builtins.input = lambda _: input_letter
+        answer = p.letter_in_snowman_word()
+
+        assert re.match('Letter not found', mock_stdout.getvalue())
+        assert answer == False
+        mock.builtins.input = original_input
+
+```
+
+##### !end-tests
+
+<!-- other optional sections -->
+<!-- !hint - !end-hint (markdown, hidden, students click to view) -->
+<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
+<!-- !explanation - !end-explanation (markdown, students can see after answering correctly) -->
+
+### !end-challenge
+
+<!-- ======================= END CHALLENGE ======================= -->
 
 
 [TODO: input all code from your file here]
