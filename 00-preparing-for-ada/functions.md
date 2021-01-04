@@ -149,7 +149,7 @@ Next, we're going to follow the same pattern as `guess_the_number`.  We will sta
 ### !challenge
 
 * type: code-snippet
-* language: python3.9
+* language: python3.6
 * id: c751d441-f566-4ab7-acc1-390b8710213e
 * title: get_letter_from_user
 * points: 1
@@ -276,7 +276,7 @@ class TestPython1(unittest.TestCase):
 ### !challenge
 
 * type: code-snippet
-* language: python3.9
+* language: python3.6
 * id: 2604b524-92e8-43fb-adc3-de4b29f0b451
 * title: [text, a short question title]
 <!-- * points: [1] (optional, the number of points for scoring as a checkpoint) -->
