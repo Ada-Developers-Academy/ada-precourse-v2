@@ -96,11 +96,11 @@ VS Code also comes with a number of extensions which you can install to provide 
 
 *  [Live Share](https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare) - A way to collaborate on source code like Google Docs.
 *  [Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one) - An extension to help writing markdown files
-*  [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) - The standard Python extension to provide syntax highlighting and intellisense.
-*  [Indent Rainbow](https://marketplace.visualstudio.com/items?itemName=oderwat.indent-rainbow) - A nice extension to help you line up your indentations
+*  [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) - The standard Python extension to provide syntax highlighting and code suggestions.
+*  [Indent Rainbow](https://marketplace.visualstudio.com/items?itemName=oderwat.indent-rainbow) - A nice extension to help you line up your indentations.
 *  [Bracket Pair Colorizer](https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer) - This extension colors matching brackets {} to match and make them easier to identify.
-*  [Python Test Explorer](https://marketplace.visualstudio.com/items?itemName=LittleFoxTeam.vscode-python-test-adapter) - This extension lets you run tests individually in VS code via the Test Explorer UI
-*  [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) - A JavaScript extension for syntax highlighting
+*  [Python Test Explorer](https://marketplace.visualstudio.com/items?itemName=LittleFoxTeam.vscode-python-test-adapter) - This extension lets you run tests individually in VS code via the Test Explorer UI.
+*  [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) - A style checker for JavaScript code.
 
 You are welcome to experiment with a variety of plugins for VS Code.
 
@@ -120,7 +120,7 @@ You can make sure git is installed properly by entering the following at the ter
 We will be using [Firefox](https://www.mozilla.org/en-US/firefox/) as our primary browser at Ada.  If you did not elect to install it automatically above you can install it with:
 
 ```bash
-brew cask install firefox
+brew install --cask firefox
 ```
 
 Or you can go to the website and install it manually.
@@ -128,7 +128,7 @@ Or you can go to the website and install it manually.
 You may also want to use Google Chrome, which is also a fine browser.  You can install Google Chrome with Homebrew by typing:
 
 ```bash
-brew cask install google-chrome
+brew install --cask google-chrome
 ```
 
 Or again, you can go to Google's website and install it manually.
@@ -138,7 +138,7 @@ Or again, you can go to Google's website and install it manually.
 Lastly we you should already have Ada's primary mode of communication installed... [**Slack!**](https://slack.com/downloads/osx). While it is **possible** to get by using the Slack website.  We recommend **strongly** to use the Desktop client.  If you did not use our script to install it, you can install Slack with homebrew and the command:
 
 ```bash
-brew cask install slack
+brew install --cask slack
 ```
 
 Or you can go to [slack.com](https://slack.com) and install it manually.
