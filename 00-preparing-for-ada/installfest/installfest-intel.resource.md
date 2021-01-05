@@ -151,7 +151,7 @@ That being said, please get familiar and comfortable with Slack, and make it you
 
 It's also critically important to use emojis (not really, but it's fun!).  So once you have Slack running follow the directions [**here**](https://get.slack.help/hc/en-us/articles/206870177-Create-custom-emoji) to install a Slack Emoji of your choice.
 
-You can find a great site for Slack Emoji's [**here**](https://slackmojis.com/).
+You can find a great site for Slack Emoji [**here**](https://slackmojis.com/).
 
 
 ## Customizing Your Shell - Optional
