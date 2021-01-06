@@ -309,7 +309,7 @@ def get_letter_from_user():
     return letter
 
 
-def letter_in_snowman_word():
+def snowman():
     # Your code is here
 
 ```
