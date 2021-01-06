@@ -360,7 +360,7 @@ class TestPython2(unittest.TestCase):
         input_letter = "p"
         with unittest.mock.patch('builtins.input', return_value=input_letter):
             # Act
-            answer = p.letter_in_snowman_word()
+            answer = p.snowman()
 
         # Assert
         assert re.match('Letter found', mock_stdout.getvalue(), flags=re.IGNORECASE)
