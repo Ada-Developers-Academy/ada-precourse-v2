@@ -279,7 +279,7 @@ class TestPython1(unittest.TestCase):
 * type: code-snippet
 * language: python3.6
 * id: 2604b524-92e8-43fb-adc3-de4b29f0b451
-* title: letter_in_snowman_word
+* title: snowman
 * points: 1
 * topics: python
 
