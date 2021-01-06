@@ -285,7 +285,7 @@ class TestPython1(unittest.TestCase):
 
 ##### !question
 
-This function is structurally similar to `guess_the_number`, but will be shorter for now.  The only check we have to do on the letter is check if it's in the word or not.  To do that, we're going to use the python keyword `in`.  The syntax for `in` is `thing1 in thing2`.  This expression evaluates to `True` if thing2 contains thing1, and false otherwise.  We can use it in a conditional expression as `if thing1 in thing2:`.
+We are now going to work on the main `snowman` function (the function we will call when we want to play the game Snowman).  This function is structurally similar to `guess_the_number`, but will be shorter for now.  The only check we have to do on the letter is check if it's in the word or not.  To do that, we're going to use the python keyword `in`.  The syntax for `in` is `thing1 in thing2`.  This expression evaluates to `True` if thing2 contains thing1, and false otherwise.  We can use it in a conditional expression as `if thing1 in thing2:`.
 
 1.  First, use `get_letter_from_user` to get a letter
 2.  Check if the letter is in `SNOWMAN_WORD` 
