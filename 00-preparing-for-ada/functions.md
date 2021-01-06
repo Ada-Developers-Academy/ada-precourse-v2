@@ -279,9 +279,9 @@ class TestPython1(unittest.TestCase):
 * type: code-snippet
 * language: python3.6
 * id: 2604b524-92e8-43fb-adc3-de4b29f0b451
-* title: [text, a short question title]
-<!-- * points: [1] (optional, the number of points for scoring as a checkpoint) -->
-<!-- * topics: [python, pandas] (optional the topics for analyzing points) -->
+* title: letter_in_snowman_word
+* points: 1
+* topics: python
 
 ##### !question
 
