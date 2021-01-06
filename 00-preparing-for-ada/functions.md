@@ -226,7 +226,7 @@ class TestPython1(unittest.TestCase):
         mock.builtins.input = lambda _: input_letter
         answer = p.get_letter_from_user()
 
-        assert re.match('Invalid letter please enter a single character.', mock_stdout.getvalue())
+        assert re.match('invalid letter please enter a single character', mock_stdout.getvalue(), flags=re.IGNORECASE)
         assert answer == input_letter
         mock.builtins.input = original_input
 
@@ -392,4 +392,3 @@ class TestPython2(unittest.TestCase):
 ### !end-challenge
 
 <!-- ======================= END CHALLENGE ======================= -->
-
