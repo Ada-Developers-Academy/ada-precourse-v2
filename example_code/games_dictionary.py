@@ -31,7 +31,6 @@ def guess_the_number():
             print(f"Your guess is out of bounds.  The maximum is {RANGE_LOW} and the minimum is {RANGE_HIGH}")
         
 
-# Hooray, it works now!
 def get_number_from_user():
     valid_input = False
     user_input = None
@@ -46,7 +45,7 @@ def get_number_from_user():
 
     return user_input
 
-# 
+
 def snowman():
     r = RandomWord()
     snowman_word = r.word(word_min_length=SNOWMAN_MIN_WORD_LENGTH, word_max_length=SNOWMAN_MAX_WORD_LENGTH)
@@ -70,6 +69,8 @@ def snowman():
 
     if all_guessed:
         print("Congratulations, you win!")
+    else:
+        print(f"Sorry, you lose!  The word was {snowman_word}")
 
 
 def build_word_list(word):
