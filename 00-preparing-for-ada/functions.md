@@ -353,7 +353,7 @@ class TestPython2(unittest.TestCase):
         answer = p.letter_in_snowman_word()
 
         assert re.match('Letter not found', mock_stdout.getvalue())
-        assert answer == False
+        assert not answer
         mock.builtins.input = original_input
 
     @patch('sys.stdout', new_callable=io.StringIO)
