@@ -290,7 +290,7 @@ This function is structurally similar to `guess_the_number`, but will be shorter
 2.  Check if the letter is in `SNOWMAN_WORD` 
     - print "Letter found" if the letter is in `SNOWMAN_WORD`.
     - print "Letter not found" if it's not in `SNOWMAN_WORD`.
-3.  If the letter is in `SNOWMAN_WORD` return `True` and `False` if it's not in `SNOWMAN_WORD`.
+3.  If the letter is in `SNOWMAN_WORD` return `True` otherwise return `False` if it's not in `SNOWMAN_WORD`.
 
 ##### !end-question
 
