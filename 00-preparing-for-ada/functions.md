@@ -196,63 +196,56 @@ import unittest
 import re
 import main as p
 
-
-def eprint(*args, **kwargs):
-    print(*args, file=sys.stderr, **kwargs)
-
 class TestPython1(unittest.TestCase):
 
     @patch('sys.stdout', new_callable=io.StringIO)
     def test_p_one(self, mock_stdout):
         # Arrange
         input_letter = "a"
-        original_input = mock.builtins.input
-        mock.builtins.input = lambda _: input_letter
-
-        # Act
-        answer = p.get_letter_from_user()
+        with unittest.mock.patch('builtins.input', return_value=input_letter):
+            # Act
+            answer = p.get_letter_from_user()
 
         # Assert
         assert re.match('', mock_stdout.getvalue())
         assert answer == input_letter
-        mock.builtins.input = original_input
 
 
     @patch('sys.stdout', new_callable=io.StringIO)
     def test_p_two(self, mock_stdout):
         # Arrange
         input_letter = "!"
-        original_input = mock.builtins.input
-        mock.builtins.input = lambda _: input_letter
-        answer = p.get_letter_from_user()
+        with unittest.mock.patch('builtins.input', return_value=input_letter):
+            # Act
+            answer = p.get_letter_from_user()
 
+        # Assert
         assert re.match('invalid letter please enter a single character', mock_stdout.getvalue(), flags=re.IGNORECASE)
         assert answer == input_letter
-        mock.builtins.input = original_input
 
     @patch('sys.stdout', new_callable=io.StringIO)
     def test_p_three(self, mock_stdout):
         # Arrange
         input_letter = "223"
-        original_input = mock.builtins.input
-        mock.builtins.input = lambda _: input_letter
-        answer = p.get_letter_from_user()
+        with unittest.mock.patch('builtins.input', return_value=input_letter):
+            # Act
+            answer = p.get_letter_from_user()
 
-        assert re.match('Invalid letter please enter a single character.', mock_stdout.getvalue())
+        # Assert
+        assert re.match('Invalid letter please enter a single character.', mock_stdout.getvalue(), flags=re.IGNORECASE)
         assert answer == input_letter
-        mock.builtins.input = original_input
 
     @patch('sys.stdout', new_callable=io.StringIO)
     def test_p_four(self, mock_stdout):
         # Arrange
         input_letter = "z"
-        original_input = mock.builtins.input
-        mock.builtins.input = lambda _: input_letter
-        answer = p.get_letter_from_user()
+        with unittest.mock.patch('builtins.input', return_value=input_letter):
+            # Act
+            answer = p.get_letter_from_user()
 
-        assert re.match('', mock_stdout.getvalue())
+        # Assert
+        assert re.match('', mock_stdout.getvalue(), flags=re.IGNORECASE)
         assert answer == input_letter
-        mock.builtins.input = original_input
 
 ```
 
@@ -332,53 +325,50 @@ class TestPython2(unittest.TestCase):
     def test_p_one(self, mock_stdout):
         # Arrange
         input_letter = "a"
-        original_input = mock.builtins.input
-        mock.builtins.input = lambda _: input_letter
-
-        # Act
-        answer = p.letter_in_snowman_word()
+        with unittest.mock.patch('builtins.input', return_value=input_letter):
+            # Act
+            answer = p.letter_in_snowman_word()
 
         # Assert
-        assert re.match('Letter found', mock_stdout.getvalue())
+        assert re.match('Letter found', mock_stdout.getvalue(), flags=re.IGNORECASE)
         assert answer # True if it's in the snowman word
-        mock.builtins.input = original_input
 
 
     @patch('sys.stdout', new_callable=io.StringIO)
     def test_p_two(self, mock_stdout):
         # Arrange
         input_letter = "z"
-        original_input = mock.builtins.input
-        mock.builtins.input = lambda _: input_letter
-        answer = p.letter_in_snowman_word()
+        with unittest.mock.patch('builtins.input', return_value=input_letter):
+            # Act
+            answer = p.letter_in_snowman_word()
 
-        assert re.match('Letter not found', mock_stdout.getvalue())
-        assert not answer
-        mock.builtins.input = original_input
-
+        # Assert
+        assert re.match('Letter not found', mock_stdout.getvalue(), flags=re.IGNORECASE)
+        assert answer == False
+    
     @patch('sys.stdout', new_callable=io.StringIO)
     def test_p_three(self, mock_stdout):
         # Arrange
         input_letter = "p"
-        original_input = mock.builtins.input
-        mock.builtins.input = lambda _: input_letter
-        answer = p.letter_in_snowman_word()
+        with unittest.mock.patch('builtins.input', return_value=input_letter):
+            # Act
+            answer = p.letter_in_snowman_word()
 
-        assert re.match('Letter found', mock_stdout.getvalue())
+        # Assert
+        assert re.match('Letter found', mock_stdout.getvalue(), flags=re.IGNORECASE)
         assert answer # True if it's in the snowman word
-        mock.builtins.input = original_input
 
     @patch('sys.stdout', new_callable=io.StringIO)
     def test_p_four(self, mock_stdout):
         # Arrange
         input_letter = "e"
-        original_input = mock.builtins.input
-        mock.builtins.input = lambda _: input_letter
-        answer = p.letter_in_snowman_word()
+        with unittest.mock.patch('builtins.input', return_value=input_letter):
+            # Act
+            answer = p.letter_in_snowman_word()
 
-        assert re.match('Letter not found', mock_stdout.getvalue())
+        # Assert
+        assert re.match('Letter not found', mock_stdout.getvalue(), flags=re.IGNORECASE)
         assert answer == False
-        mock.builtins.input = original_input
 
 ```
 
