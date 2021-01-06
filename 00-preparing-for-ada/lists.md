@@ -2,6 +2,15 @@
 
 ## Learning Goals
 
+At the end of this lesson students will be able to:
+
+* Use and understand lists
+    * Create new lists
+    * Add elements to lists
+    * Access elements of lists
+    * Search lists for elements
+* Combine lists and loops
+
 ## Introduction
 
 ### Textbook for this section: [link to ada built lists]
