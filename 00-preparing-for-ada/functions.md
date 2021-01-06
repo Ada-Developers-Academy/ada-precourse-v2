@@ -159,7 +159,7 @@ Next, we're going to follow the same pattern as `guess_the_number`.  We will sta
 
 This function is very similar to `get_number_from_user`.  
 
-1.  First, we will need to get input from the user and store it in a variable.  
+1.  First, we will need to use `input` to get a string from the user and store it in a variable.  
 1.  Second, we need to check to see if the input is valid.  In `get_number_from_user`, we used isnumeric() to ensure that the input was a number.  In this function, we need to check to see if the input is a letter, and if the input contains only one letter.  Use the functions below to write these conditionals:
     - [string variable name].isalpha() will return true if the string contains only alphabetical characters
     - len([string variable name]) will tell us the length of the string
