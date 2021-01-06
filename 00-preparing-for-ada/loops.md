@@ -1,12 +1,21 @@
 # Loops
 
-## Textbook for this section: [link to ada build Loops]
+## Learning Goals
+
+At the end of this lesson students will be able to:
+
+- Understand and use `while` loops
+- Understand and use `for` loops
+
+## Introduction
+
+### Textbook for this section: [link to ada build Loops]
 
 In this section we will be building on the code that you wrote in the previous lesson [Functions].  If you would like to look at our example code version for that lesson, you can find it [here]
 
-## Why Loops?
+### Why Loops?
 
-Loops are one of the primary control structures in programming and they show up in almost every programming language.  In the world of Computer Science Theory, loops, along with sequences (executing one section of code and then another) and selection (aka conditionals, choosing between blocks of code based on a boolean test) are all that are needed to compute any computable function [https://en.wikipedia.org/wiki/Structured_program_theorem].  Understanding loops and using them effectively in your code is a vital first step in your journey as a programmer.  In this lesson we will explore while loops and for loops and use them make Guess the Number a fully functional game and add core functionality to Snowman.  In this lesson we will use both for and while loops to 
+Loops are one of the primary control structures in programming and they show up in almost every programming language.  In the world of Computer Science Theory, loops, along with sequences (executing one section of code and then another) and selection (aka conditionals, choosing between blocks of code based on a boolean test) are all that are needed to compute any computable function [https://en.wikipedia.org/wiki/Structured_program_theorem].  Understanding loops and using them effectively in your code is a vital first step in your journey as a programmer.  In this lesson we will explore while loops and for loops and use them make Guess the Number a fully functional game and add core functionality to Snowman.  In this lesson we will use both for and while loops. 
 
 ## Vocabulary
 
@@ -270,10 +279,114 @@ When you get [FEEDBACK OF SOME KIND THAT INDICATES IT WORKS], move on to the nex
 
 ### Tracking User Input 
 
-Imagine you were playing a game of Snowman with a group of children.  You would probably keep track of the letters that they guessed, and with correct letters you would add to the word and with incorrect you would add to the snowman drawing.  As with all code projects, this project is going to build on itself, so the next step toward that final fully functional version is to keep track of the number of correct and incorrect guesses from the user.  In this version we are not going to compare their guesses to their previous guesses, so if they guess the same incorrect letter multiple times we'll count it as a new wrong guess every time.  Start by adding a loop to the main `snowman()` function similar to the loop inside of `guess_the_word`.  Set up two counters, for example `correct_guesses` and `wrong_guesses`, outside of the while loop, and allow the user to continue to guess until they reach a maximum number of incorrect guesses.  Remember, we're only solving part of the problem here!  Keep track of the number of incorrect and correct guesses in the loop.  Submit your code here:
+Imagine you were playing a game of Snowman with a group of children.  You would probably keep track of the letters that they guessed, and with correct letters you would add to the word and with incorrect you would add to the snowman drawing.  As with all code projects, this project is going to build on itself, so the next step toward that final fully functional version is to keep track of the number of correct and incorrect guesses from the user.  In this version we are not going to compare their guesses to their previous guesses, so if they guess the same incorrect letter multiple times we'll count it as a new wrong guess every time.  Start by adding a loop to the main `snowman()` function similar to the loop inside of `guess_the_word`.  Set up two counters, for example `correct_guesses` and `wrong_guesses`, outside of the while loop, and allow the user to continue to guess until they reach a maximum number of incorrect guesses.  Add a constant to the top of the file `SNOWMAN_WRONG_GUESSES = 7`.  Remember, we're only solving part of the problem here!  Keep track of the number of incorrect and correct guesses in the loop.  Submit your code here:
 
 [python test input]
 
 When you get [FEEDBACK OF SOME KIND THAT INDICATES IT WORKS], move on to the next section.
 
 ### Drawing Pictures [TODO]
+
+Add these ASCII snowman drawing constants to the top of your file.  Notice that the number of elements in the drawing is the same as SNOWMAN_WRONG_GUESSES.  For each wrong guess, we will want to add a new element to the drawing:
+
+```python
+
+SNOWMAN_1 = '*   *   *  '
+SNOWMAN_2 = ' *   _ *   '
+SNOWMAN_3 = '   _[_]_ * '
+SNOWMAN_4 = '  * (")    '
+SNOWMAN_5 = '  \( : )/ *'
+SNOWMAN_6 = '* (_ : _)  '
+SNOWMAN_7 = '-----------'
+
+```
+
+Our end goal is to have a function that we can pass the current `wrong_count` value to and it will draw the appropriate amount of the snowman.  Let's start by writing a function which will draw a specific element of the snowman based on a passed value.  For example, if we pass the function 7, we want the function to draw SNOWMAN_7.  This will seem slightly contrived, but it is just a starting place.  
+
+<details>
+<summary>Once you've written the function, compare what you have to our version.</summary>
+
+```python
+
+def print_snowman_graphic(id): 
+    if(id == 1):
+        print(SNOWMAN_1)
+    if(id == 2):
+        print(SNOWMAN_2)
+    if(id == 3):
+        print(SNOWMAN_3)
+    if(id == 4):
+        print(SNOWMAN_4)
+    if(id == 5):
+        print(SNOWMAN_5)
+    if(id == 6):
+        print(SNOWMAN_6)
+    if(id == 7):
+        print(SNOWMAN_7)
+
+```
+
+Now we're going to add a loop inside this function to make it draw not just one element of the snowman, but all of the elements.  Unlike all of our other loops so far, we're not going to use a `while` loop, this time we're going to use a `for` loop.  A `for` loop is a great tool when we know exactly how many times we're going to be executing our loop.  Start by adding a `for` loop that prints the entire snowman.  Use the `range()` function with your `for` loop.  When you write your `range()` function, remember that the number of items in the drawing is the same as the constant SNOWMAN_WRONG_GUESSES.  *Warning* the range function is _exclusive_, which means it goes up to but does not include the last element of the given range.  This means that `range(2, 7) = [2, 3, 4, 5, 6]`
+
+<details>
+<summary>When you have added the `for` loop to the function, compare what you have to our version.</summary>
+
+```python
+
+def print_snowman_graphic():
+    
+    for i in range(1, SNOWMAN_WRONG_GUESSES + 1)
+        if(i == 1):
+            print(SNOWMAN_1)
+        if(i == 2):
+            print(SNOWMAN_2)
+        if(i == 3):
+            print(SNOWMAN_3)
+        if(i == 4):
+            print(SNOWMAN_4)
+        if(i == 5):
+            print(SNOWMAN_5)
+        if(i == 6):
+            print(SNOWMAN_6)
+        if(i == 7):
+            print(SNOWMAN_7)
+
+```
+
+</details>
+
+
+The last step is to modify the range of our for loop to only print the elements that we want.  For Snowman, we want to draw our snowman from the ground up, so if we have only 1 incorrect guess, we want to print the last element, 2 incorrect guesses means the last two elements, and so on.  Our function should take in the number of incorrect guesses and use that value in the range to draw the elements of the snowman in the order that we want.  
+
+<details>
+<summary> When you have updated the your function, compare what you have to our version.</summary>
+
+```python
+
+def print_snowman_graphic(wrong_guesses_count):
+    
+    for i in range(SNOWMAN_WRONG_GUESSES + 1 - wrong_guesses_count, SNOWMAN_WRONG_GUESSES + 1)
+        if(i == 1):
+            print(SNOWMAN_1)
+        if(i == 2):
+            print(SNOWMAN_2)
+        if(i == 3):
+            print(SNOWMAN_3)
+        if(i == 4):
+            print(SNOWMAN_4)
+        if(i == 5):
+            print(SNOWMAN_5)
+        if(i == 6):
+            print(SNOWMAN_6)
+        if(i == 7):
+            print(SNOWMAN_7)
+
+```
+
+</details>
+
+Last, inside of the `snowman` function, add the `print_snowman_graphic` function call to the game loop to print out the current state of the snowman to the user after each guess.
+
+## Summary
+
+Loops are incredibly powerful.  By adding a few loops we have transformed our Guess the Number code into a fully functional game!  We have also added core functionality to Snowman.  In the next lesson we will use the `list` data structure to add functinality to our Snowman game. 
