@@ -54,6 +54,7 @@ def snowman():
     correct_guesses_list = []
     wrong_guesses_list = []
     all_guessed = False
+    print_word_list(snowman_list)
     while len(wrong_guesses_list) < SNOWMAN_WRONG_GUESSES and not all_guessed:
         user_input = get_letter_from_user(correct_guesses_list, wrong_guesses_list)
         if user_input in snowman_word:
@@ -64,7 +65,7 @@ def snowman():
             print(f"The letter {user_input} is not in the word")
             wrong_guesses_list.append(user_input)
         print_snowman_graphic(len(wrong_guesses_list))
-        print_word_feedback(snowman_list)
+        print_word_list(snowman_list)
         print("Wrong guesses: " + " ".join(wrong_guesses_list))
 
     if all_guessed:
@@ -89,7 +90,7 @@ def update_and_check_word_list(word_list, letter):
             word_finished = False
     return word_finished
     
-def print_word_feedback(word_list):
+def print_word_list(word_list):
     output_string = ""
     for elem in word_list:
         if elem["guessed"]:
