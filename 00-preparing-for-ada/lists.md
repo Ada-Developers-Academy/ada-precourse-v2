@@ -168,7 +168,183 @@ def snowman():
 
 ### Using `correct_guesses_list` in `get_letter_from_user`
 
-__TODO: [PYTHON TEST HERE] - have student write a new version of `get_letter_from_user` that takes an additional argument (correct_guesses) and uses that along with `wrong_guesses` to provide the "You have already guessed that letter" feedback.__
+<!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
+<!-- Replace everything in square brackets [] and remove brackets  -->
+
+### !challenge
+
+* type: code-snippet
+* language: python3.6
+* id: ca1d65d6-960e-4f58-af35-8b8663f8bcf7
+* title: get_letter_from_user detecting duplicate entries
+* points: 1
+* topics: python python-lists
+
+##### !question
+
+Write a new version of `get_letter_from_user` that takes an additional argument (correct_guesses) and uses that along with `wrong_guesses` to print the "You have already guessed that letter" as feedback to the user.
+
+##### !end-question
+
+##### !placeholder
+
+```py
+def get_letter_from_user(wrong_list, correct_guesses):
+    valid_input = False
+    user_input_string = None
+    while not valid_input:
+        user_input_string = input("Guess a letter: ")
+        if not user_input_string.isalpha():
+            print("You must input a letter!")
+        elif len(user_input_string) > 1:
+            print("You can only input one letter at a time!")
+        # NEW SECTION
+        elif user_input_string in wrong_list:
+            print("You have already guessed that letter!")
+        # END NEW SECTION
+        else:
+            valid_input = True
+
+    return user_input_string
+
+
+```
+
+##### !end-placeholder
+
+##### !tests
+
+
+```py
+import sys
+from unittest import mock
+from unittest.mock import patch
+import io
+import unittest
+import re
+
+import main as p
+
+class SimplisticTest(unittest.TestCase):
+
+    @patch('sys.stdout', new_callable=io.StringIO)
+    def test_prints_already_used_if_in_correct_guesses_list(self, mock_stdout):
+        # Arrange
+        input_letters = [
+            'a',
+            'z'
+        ]
+        correct_guesses_list = ['a', 'b', 'c']
+        wrong_list = ['d', 'e', 'f']
+        with unittest.mock.patch('builtins.input', side_effect=input_letters):
+
+            # Act
+            answer = p.get_letter_from_user(wrong_list, correct_guesses_list)
+        # Assert
+        assert re.match('You have already guessed that letter', mock_stdout.getvalue(), flags=re.IGNORECASE)
+
+    @patch('sys.stdout', new_callable=io.StringIO)
+    def test_prints_already_used_if_in_wrong_guesses_list(self, mock_stdout):
+        # Arrange
+        input_letters = [
+            'e',
+            'z'
+        ]
+        correct_guesses_list = ['a', 'b', 'c']
+        wrong_list = ['d', 'e', 'f']
+        with unittest.mock.patch('builtins.input', side_effect=input_letters):
+
+            # Act
+            p.get_letter_from_user(wrong_list, correct_guesses_list)
+        # Assert
+        assert re.match('You have already guessed that letter', mock_stdout.getvalue(), flags=re.IGNORECASE)
+
+    @patch('sys.stdout', new_callable=io.StringIO)
+    def test_returns_valid_letter_after_invalid_guess(self, mock_stdout):
+        # Arrange
+        input_letters = [
+            'e',
+            'z'
+        ]
+        correct_guesses_list = ['a', 'b', 'c']
+        wrong_list = ['d', 'e', 'f']
+        with unittest.mock.patch('builtins.input', side_effect=input_letters):
+
+            # Act
+            answer = p.get_letter_from_user(wrong_list, correct_guesses_list)
+        # Assert
+        assert answer == input_letters[-1]
+
+    @patch('sys.stdout', new_callable=io.StringIO)
+    def test_prints_only_one_letter_at_a_time_for_input_with_multiple_characters(self, mock_stdout):
+        # Arrange
+        input_letters = [
+            'zzzzz',
+            'z'
+        ]
+        correct_guesses_list = ['a', 'b', 'c']
+        wrong_list = ['d', 'e', 'f']
+        with unittest.mock.patch('builtins.input', side_effect=input_letters):
+
+            # Act
+            p.get_letter_from_user(wrong_list, correct_guesses_list)
+        # Assert
+        assert re.match('You can only input one letter at a time!', mock_stdout.getvalue(), flags=re.IGNORECASE)
+
+    @patch('sys.stdout', new_callable=io.StringIO)
+    def test_prints_you_must_input_a_letter_for_non_alpha_input(self, mock_stdout):
+        # Arrange
+        input_letters = [
+            '3',
+            'z'
+        ]
+        correct_guesses_list = ['a', 'b', 'c']
+        wrong_list = ['d', 'e', 'f']
+        with unittest.mock.patch('builtins.input', side_effect=input_letters):
+
+            # Act
+            p.get_letter_from_user(wrong_list, correct_guesses_list)
+        # Assert
+        assert re.match('You must input a letter!', mock_stdout.getvalue(), flags=re.IGNORECASE)
+
+    @patch('sys.stdout', new_callable=io.StringIO)
+    def test_with_valid_input_the_1st_time_it_just_returns_the_input(self, mock_stdout):
+        # Arrange
+        input_letters = ['a']
+        correct_guesses_list = ['b', 'c']
+        wrong_list = ['d', 'e', 'f']
+        with unittest.mock.patch('builtins.input', side_effect=input_letters):
+
+            # Act
+            answer = p.get_letter_from_user(wrong_list, correct_guesses_list)
+        # Assert
+        assert answer == input_letters[0]
+
+    @patch('sys.stdout', new_callable=io.StringIO)
+    def test_works_with_empty_lists(self, mock_stdout):
+        # Arrange
+        input_letters = ['a']
+        correct_guesses_list = []
+        wrong_list = []
+        with unittest.mock.patch('builtins.input', side_effect=input_letters):
+
+            # Act
+            answer = p.get_letter_from_user(wrong_list, correct_guesses_list)
+        # Assert
+        assert answer == input_letters[0]
+
+```
+
+##### !end-tests
+
+<!-- other optional sections -->
+<!-- !hint - !end-hint (markdown, hidden, students click to view) -->
+<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
+<!-- !explanation - !end-explanation (markdown, students can see after answering correctly) -->
+
+### !end-challenge
+
+<!-- ======================= END CHALLENGE ======================= -->
 
 ## Using Lists to Improve Readability and Simplify Code
 
