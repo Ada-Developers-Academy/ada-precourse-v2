@@ -9,6 +9,9 @@ SNOWMAN_GRAPHIC = ['*   *   *  ', ' *   _ *   ', '   _[_]_ * ', '  * (")    ', '
 
 SNOWMAN_WRONG_GUESSES = len(SNOWMAN_GRAPHIC)
 
+SNOWMAN_MAX_WORD_LENGTH = 8
+SNOWMAN_MIN_WORD_LENGTH = 5
+
 def guess_the_number():
 
     random.seed()
@@ -46,7 +49,7 @@ def get_number_from_user():
 # 
 def snowman():
     r = RandomWord()
-    snowman_word = r.word(word_min_length=5, word_max_length=8)
+    snowman_word = r.word(word_min_length=SNOWMAN_MIN_WORD_LENGTH, word_max_length=SNOWMAN_MAX_WORD_LENGTH)
     print(f"debug info: {snowman_word}")
     correct_guesses_list = []
     wrong_guesses_list = []
