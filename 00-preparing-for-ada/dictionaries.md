@@ -166,14 +166,204 @@ def snowman():
 
 ### Updating the List of Dictionaries
 
+<!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
+<!-- Replace everything in square brackets [] and remove brackets  -->
+
+### !challenge
+
+* type: code-snippet
+* language: python3.6
+* id: 82650cb3-48e5-4747-8ace-97f7b976b82a
+* title: update_and_check_word_list
+* points: 1
+* topics: python, python-dictionaries
+
+##### !question
+
 Right now our `print_word_list` will always just print out underscores because we're not yet updating the list of dictionaries when our user guesses a correct letter.  The next step is to write a function that takes a letter and the list of dictionaries and updates the guessed boolean for each dictionary that contains that letter.  We are going to make this function do a little extra work.  We are also going to ask this function to return `True` or `False` to tell us if all of the letters have been guessed or not.  We already have to loop through the list to compare our letter to the letter value of each dictionary, so we can use the same loop to also check to see if all of the guessed values are `True`.  We will call the function `update_and_check_word_list`.
 
 This function will:
+
 * Accept a list of dictionaries and a letter as parameters
 * Set the 'guessed' value to `True` for each dictionary who's 'letter' value matches the letter parameter
-* Return `True` if all of the letters have been guessed and `False` if they have not
+* Return `True` if all of the letters have been guessed and `False` if they have not.
+  
+##### !end-question
 
-__[TODO - PYTHON CODE CHALLENGE HERE!]__
+##### !placeholder
+
+```python
+def update_and_check_word_list(list_of_letters, guessed_letter):
+    # Your code goes here
+
+```
+##### !end-placeholder
+
+##### !tests
+
+```py
+import unittest
+import main as p
+
+class TestPython1(unittest.TestCase):
+
+    def test_returns_false_if_not_all_letters_guessed(self):
+        # Arrange
+        input_letter = "n"
+        input_list = [
+            {
+                "letter": "p",
+                "guessed": True,
+            },
+            {
+                "letter": "y",
+                "guessed": True,
+            },
+            {
+                "letter": "t",
+                "guessed": False,
+            },
+            {
+                "letter": "h",
+                "guessed": False,
+            },
+            {
+                "letter": "o",
+                "guessed": False,
+            },      
+            {
+                "letter": "n",
+                "guessed": False,
+            },            
+        ]
+
+        # Act
+        answer = p.update_and_check_word_list(input_list, input_letter)
+
+        # Assert
+        assert not answer
+
+    def test_true_if_all_letters_guessed(self):
+        # Arrange
+        input_letter = "y"
+        input_list = [
+            {
+                "letter": "p",
+                "guessed": True,
+            },
+            {
+                "letter": "y",
+                "guessed": False,
+            },
+            {
+                "letter": "t",
+                "guessed": True,
+            },
+            {
+                "letter": "h",
+                "guessed": True,
+            },
+            {
+                "letter": "o",
+                "guessed": True,
+            },      
+            {
+                "letter": "n",
+                "guessed": True,
+            },                   
+        ]
+
+        # Act
+        answer = p.update_and_check_word_list(input_list, input_letter)
+
+        # Assert
+        assert answer
+
+
+    def test_changes_guessed_to_true_if_the_letter_matches(self):
+        # Arrange
+        input_letter = "t"
+        input_list = [
+            {
+                "letter": "p",
+                "guessed": True,
+            },
+            {
+                "letter": "y",
+                "guessed": False,
+            },
+            {
+                "letter": "t",
+                "guessed": False,
+            },
+            {
+                "letter": "h",
+                "guessed": True,
+            },
+            {
+                "letter": "o",
+                "guessed": True,
+            },      
+            {
+                "letter": "n",
+                "guessed": True,
+            },                   
+        ]
+
+        # Act
+        p.update_and_check_word_list(input_list, input_letter)
+
+        # Assert
+        assert input_list[2]["guessed"]
+
+    def test_changes_guessed_to_true_if_the_letter_matches_for_first_letter(self):
+        # Arrange
+        input_letter = "p"
+        input_list = [
+            {
+                "letter": "p",
+                "guessed": False,
+            },
+            {
+                "letter": "y",
+                "guessed": False,
+            },
+            {
+                "letter": "t",
+                "guessed": True,
+            },
+            {
+                "letter": "h",
+                "guessed": True,
+            },
+            {
+                "letter": "o",
+                "guessed": True,
+            },      
+            {
+                "letter": "n",
+                "guessed": True,
+            },                   
+        ]
+
+        # Act
+        p.update_and_check_word_list(input_list, input_letter)
+
+        # Assert
+        assert input_list[0]["guessed"]
+
+```
+
+##### !end-tests
+
+<!-- other optional sections -->
+<!-- !hint - !end-hint (markdown, hidden, students click to view) -->
+<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
+<!-- !explanation - !end-explanation (markdown, students can see after answering correctly) -->
+
+### !end-challenge
+
+<!-- ======================= END CHALLENGE ======================= -->
 
 ### Ending the Game
 
