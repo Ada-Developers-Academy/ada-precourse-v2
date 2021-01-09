@@ -133,7 +133,7 @@ def get_number_from_user():
 
 ## None and potential Errors
 
-Notice that in our version, if the user does not give a valid input, the return value will be None.  This will cause an error in the conditionals in `guess_the_number`, because None can not be compared to a number.  That's ok, we're building to a full solution.  Many times when writing code, it is useful to write and test a small portion, and then when we're confident that it works, moving on to build the next portion.
+Notice that in our version, if the user does not give a valid input, the return value will be `None`.  This will cause an error in the conditionals in `guess_the_number`, because `None` can not be compared to a number.  That's ok, we're building to a full solution.  Many times when writing code, it is useful to write and test a small portion, and then when we're confident that it works, moving on to build the next portion.
 
 ### !end-callout
 
