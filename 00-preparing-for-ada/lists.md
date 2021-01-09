@@ -340,7 +340,32 @@ class SimplisticTest(unittest.TestCase):
 <!-- other optional sections -->
 <!-- !hint - !end-hint (markdown, hidden, students click to view) -->
 <!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
-<!-- !explanation - !end-explanation (markdown, students can see after answering correctly) -->
+##### !explanation
+
+
+A sample solution could be:
+
+```python
+def get_letter_from_user(wrong_list, correct_guesses_list):
+    valid_input = False
+    user_input_string = None
+    while not valid_input:
+        user_input_string = input("Guess a letter: ")
+        if not user_input_string.isalpha():
+            print("You must input a letter!")
+        elif len(user_input_string) > 1:
+            print("You can only input one letter at a time!")
+        # NEW SECTION
+        elif user_input_string in wrong_list or user_input_string in correct_guesses_list:
+            print("You have already guessed that letter!")
+        # END NEW SECTION
+        else:
+            valid_input = True
+
+    return user_input_string
+```
+
+##### !end-explanation
 
 ### !end-challenge
 
