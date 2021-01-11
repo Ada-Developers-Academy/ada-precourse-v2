@@ -51,6 +51,7 @@ Start by taking all of the code (excluding the import statement at the top of th
 
 <details>
 <summary> Our version at this point </summary>
+
 ```python
 
 import random
@@ -59,9 +60,7 @@ RANGE_LOW = 0
 RANGE_HIGH = 100
 
 def guess_the_number:
-
-    random.seed()
-    random_number = random.randrange(RANGE_LOW, RANGE_HIGH)
+    random_number = random.randint(RANGE_LOW, RANGE_HIGH)
 
     user_input_string = input("Guess the number: ")
     user_input = None
@@ -70,18 +69,20 @@ def guess_the_number:
         user_input = int(user_input_string)
         if user_input == random_number:
             print("You guessed the number!  Good job!")
-        if user_input > random_number:
+        elif user_input > random_number:
             print("Your guess is too high")
-        if user_input < random_number:
+        elif user_input < random_number:
             print("Your guess is too low")
-        if user_input < RANGE_LOW or user_input > RANGE_HIGH:
-            print(f"Your guess is out of bounds.  The maximum is {RANGE_LOW} and the minimum is {RANGE_HIGH}")
+        elif user_input < RANGE_LOW or user_input > RANGE_HIGH:
+            print(f"Your guess is out of bounds.")
+            print(f"It must be between {RANGE_LOW} and {RANGE_HIGH}")
     else:
         print("You must input a number!")
 
 guess_the_number()
 
 ```
+
 </details>
 
 ## Helper Functions
@@ -92,6 +93,7 @@ The function `guess_the_number` can be broken up into two conceptual pieces, get
 
 <details>
 <summary> Our version at this point </summary>
+
 ```python
 
 import random
@@ -100,21 +102,20 @@ RANGE_LOW = 0
 RANGE_HIGH = 100
 
 def guess_the_number():
-
-    random.seed()
-    random_number = random.randrange(RANGE_LOW, RANGE_HIGH)
+    random_number = random.randint(RANGE_LOW, RANGE_HIGH)
 
     user_input = get_number_from_user()
         
     if user_input == random_number:
         print("You guessed the number!  Good job!")
-    if user_input > random_number:
+    elif user_input > random_number:
         print("Your guess is too high")
-    if user_input < random_number:
+    elif user_input < random_number:
         print("Your guess is too low")
-    if user_input < RANGE_LOW or user_input > RANGE_HIGH:
-        print(f"Your guess is out of bounds.  The maximum is {RANGE_LOW} and the minimum is {RANGE_HIGH}")
-        
+    elif user_input < RANGE_LOW or user_input > RANGE_HIGH:
+        print(f"Your guess is out of bounds.")
+        print(f"It must be between {RANGE_LOW} and {RANGE_HIGH}")
+
 
 def get_number_from_user():
     user_input_string = input("Guess the number: ")
@@ -127,6 +128,7 @@ def get_number_from_user():
     return user_input
 
 ```
+
 </details>
 
 ### !callout-info
@@ -303,7 +305,7 @@ SNOWMAN_WORD = "pasta"
 
 def get_letter_from_user():
     letter = input("Please enter a letter > ")
-    if (len(letter) > 1 or not letter.isalpha()):
+    if len(letter) > 1 or not letter.isalpha():
         print("Invalid letter please enter a single character.")
     
     return letter
