@@ -17,7 +17,7 @@ In this section we will be building on the code that you learned in the previous
 
 We're going to begin building a game called "Guess the Number".  The rules are simple.  The program will pick a number between 0 and 100 and you will need to guess it!
 
-Right now our goal is to accept a single guess and tell the user if it was too high, too low or just right.  In future lessons we'll extend it to make it a more intersting game.
+Right now our goal is to accept a single guess and tell the user if it was too high, too low or just right.  In future lessons we'll extend it to make it a more interesting game.
 
 ### Generating Random Numbers
 
@@ -198,7 +198,6 @@ We also learned how to clean up the user's input into a more useful form for our
 ...
 5 is just right!
 ```
-
 
 
 
