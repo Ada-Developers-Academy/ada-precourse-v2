@@ -13,6 +13,25 @@ At the end of this lesson students will be able to:
 
 In this section we will be building on the code that you learned in the previous lesson [Variables and IO].  
 
+## Vocabulary
+
+* `random.randint`: A function that will generate a random integer in a range.
+* `if`/`else`: A statement to do one of two things.
+* `if`/`elif`/`else`: A statement to do three or more things.
+```python
+>>> import random
+>>> random.randint(1, 10) # pick a number from 1 to 10
+7
+>>>
+>>> n = random.randint(1, 10) # pick another number from 1 to 10
+>>> if n < 5:
+...     print(f"{n} is too small!")
+... elif n == 5:
+        print("{n} is just right!")
+... else:
+...     print("{n} is too large!")
+...
+5 is just right!
 ## Guess the Number
 
 We're going to begin building a game called "Guess the Number".  The rules are simple.  The program will pick a number between 0 and 100 and you will need to guess it!
@@ -198,6 +217,5 @@ We also learned how to clean up the user's input into a more useful form for our
 ...
 5 is just right!
 ```
-
 
 
