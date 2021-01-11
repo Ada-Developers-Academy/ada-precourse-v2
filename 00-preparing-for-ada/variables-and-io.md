@@ -13,6 +13,33 @@ At the end of this lesson students will be able to:
 
 In this lesson we will have a quick refresher on variables and go into an explanation of IO.
 
+## Vocabulary and Syntax
+
+### Definitions
+
+- **Variable**: Name for a piece of data we have stored.
+- **IO**: Input and Output
+- **Input**: A way to get information _in_ to a program.
+- **Output**: A way to get _out_ of a program.
+
+### Syntax
+
+```python
+>>> # Create a new variable named "ami", and store the string "Sailor Mercury":
+>>> ami = "Sailor Mercury"
+>>>
+>>> # Create a new variable named "cats" and store the number 2:
+>>> cats = 2
+>>>
+>>> # "print" using some variables and a format string.
+>>> print(f"{ami} has {cats} cats!")
+Sailor Mercury has 2 cats!
+>>>
+>>> # Ask the user what the cats are named.
+>>> first_cat = input("Name of the first cat? ")
+Name of the first cat? Luna
+>>> second_cat = input("Name of the second cat? ")
+Name of the second cat? Artemis
 ## Variables
 
 As you've already seen variables are how we store data in Python programs.  They are the basic building blocks for almost all programs in almost all programming languages.
@@ -148,5 +175,4 @@ Hello, Ada Pre Course!
 ## Summary
 
 Variables and IO are useful for a wide variety of things and are the basic building blocks of almost all programs.  We've shown you a few different ways to use them that will help you going forward.  We use variables to store things and input and output to interact with the world outside of our programs.
-
 
