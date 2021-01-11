@@ -107,7 +107,7 @@ Then, we could write another function `temp_converter` that takes the temperatur
 def temp_converter(temp, unit)
     if unit == "fahrenheit":
            return convert_to_celsius(temp)
-   elsif unit == "celsius"
+   elif unit == "celsius"
            return convert_to_fahrenheit(temp)
 
 ```
