@@ -196,26 +196,4 @@ We've learned how to choose random numbers and how to handle them using `if`, `e
 
 We also learned how to clean up the user's input into a more useful form for our programs.
 
-## Vocabulary and Syntax
-
-* `random.randint`: A function that will generate a random integer in a range.
-* `if`/`else`: A statement to do one of two things.
-* `if`/`elif`/`else`: A statement to do three or more things.
-
-```python
->>> import random
->>> random.randint(1, 10) # pick a number from 1 to 10
-7
->>>
->>> n = random.randint(1, 10) # pick another number from 1 to 10
->>> if n < 5:
-...     print(f"{n} is too small!")
-... elif n == 5:
-        print("{n} is just right!")
-... else:
-...     print("{n} is too large!")
-...
-5 is just right!
-```
-
 
