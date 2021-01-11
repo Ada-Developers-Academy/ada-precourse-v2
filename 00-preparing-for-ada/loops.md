@@ -135,15 +135,16 @@ Now that we have a way to get valid input from the user, it's time to take a loo
 
     user_input = get_number_from_user()
         
-    if user_input == random_number:
+    if user_input < RANGE_LOW or user_input > RANGE_HIGH:
+        print(f"Your guess is out of bounds.")
+        print(f"It must be between {RANGE_LOW} and {RANGE_HIGH}")    
+    elif user_input == random_number:
         print("You guessed the number!  Good job!")
     elif user_input > random_number:
         print("Your guess is too high")
     elif user_input < random_number:
         print("Your guess is too low")
-    elif user_input < RANGE_LOW or user_input > RANGE_HIGH:
-        print(f"Your guess is out of bounds.")
-        print(f"It must be between {RANGE_LOW} and {RANGE_HIGH}")
+
 
 ```
 
@@ -160,17 +161,18 @@ def guess_the_number():
     waiting_for_correct_guess = True
     while waiting_for_correct_guess:
         user_input = get_number_from_user()
-            
-        if user_input == random_number:
+        
+        if user_input < RANGE_LOW or user_input > RANGE_HIGH:
+            print(f"Your guess is out of bounds.")
+            print(f"It must be between {RANGE_LOW} and {RANGE_HIGH}")    
+        elif user_input == random_number:
             print("You guessed the number!  Good job!")
             waiting_for_correct_guess = False
         elif user_input > random_number:
             print("Your guess is too high")
         elif user_input < random_number:
             print("Your guess is too low")
-        elif user_input < RANGE_LOW or user_input > RANGE_HIGH:
-            print(f"Your guess is out of bounds.")
-            print(f"It must be between {RANGE_LOW} and {RANGE_HIGH}")
+        
 ```
 
 </details>

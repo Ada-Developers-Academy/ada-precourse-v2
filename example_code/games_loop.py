@@ -22,16 +22,16 @@ def guess_the_number():
     while not correct_guess:
         user_input = get_number_from_user()
 
-        if user_input == random_number:
+        if user_input < RANGE_LOW or user_input > RANGE_HIGH:
+            print(f"Your guess is out of bounds.")
+            print(f"It must be between {RANGE_LOW} and {RANGE_HIGH}")
+        elif user_input == random_number:
             print("You guessed the number!  Good job!")
             correct_guess = True
         elif user_input > random_number:
             print("Your guess is too high")
         elif user_input < random_number:
             print("Your guess is too low")
-        elif user_input < RANGE_LOW or user_input > RANGE_HIGH:
-            print(f"Your guess is out of bounds.")
-            print(f"It must be between {RANGE_LOW} and {RANGE_HIGH}")
 
 
 # Hooray, it works now!
