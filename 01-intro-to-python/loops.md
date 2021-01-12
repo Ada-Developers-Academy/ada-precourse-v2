@@ -20,6 +20,7 @@ Loops are one of the primary control structures in programming and they show up 
 ## Vocabulary
 
 * `while` loop:  a while loop repeats as long as a boolean conditional statement is true.  The statement is tested before executing the code block inside loop.
+
 ```python
 
 test = 0
@@ -279,11 +280,164 @@ When you get [FEEDBACK OF SOME KIND THAT INDICATES IT WORKS], move on to the nex
 
 ### Tracking User Input 
 
-Imagine we are playing a game of Snowman with a group of children.  We would probably keep track of the letters that they guessed, and with correct letters we would add to the word and with incorrect we would add to the snowman drawing.  As with all code projects, this project is going to build on itself, so the next step toward that final fully functional version is to keep track of the number of correct and incorrect guesses from the user.  In this version we are not going to compare their guesses to their previous guesses, so if they guess the same incorrect letter multiple times we'll count it as a new wrong guess every time.  Start by adding a loop to the main `snowman()` function similar to the loop inside of `guess_the_word`.  Set up two counters, for example `correct_guesses` and `wrong_guesses`, outside of the while loop, and allow the user to continue to guess until they reach a maximum number of incorrect guesses.  Add a constant to the top of the file `SNOWMAN_WRONG_GUESSES = 7`.  Remember, we're only solving part of the problem here!  Keep track of the number of incorrect and correct guesses in the loop.  
+Imagine we are playing a game of Snowman with a group of children.  We would probably keep track of the letters that they guessed, and with correct letters we would add to the word and with incorrect we would add to the snowman drawing.  As with all code projects, this project is going to build on itself, so the next step toward that final fully functional version is to keep track of the number of correct and incorrect guesses from the user.  In this version we are not going to compare their guesses to their previous guesses, so if they guess the same incorrect letter multiple times we'll count it as a new wrong guess every time.  
+
+Start by adding a loop to the main `snowman()` function similar to the loop inside of `guess_the_word`.  Set up two counters, for example `correct_guesses` and `wrong_guesses`, outside of the while loop, and allow the user to continue to guess until they reach a maximum number of incorrect guesses.  Add a constant to the top of the file `SNOWMAN_WRONG_GUESSES = 7`.  Remember, we're only solving part of the problem here!  Keep track of the number of incorrect and correct guesses in the loop.  
+
+When finished print out, "You made X correct and Y incorrect guesses" where X and Y are the number of correct and incorrect guesses.
 
 Submit your code here:
 
-[python test input]
+<!-- Loop Challenge -->
+<!-- prettier-ignore-start -->
+### !challenge
+* type: code-snippet
+* language: python3.6
+* id: b10f595e-5a13-4f56-9f41-43ce92e08242
+* title: Loops Exercise
+### !question
+### !end-question
+### !placeholder
+```python
+SNOWMAN_WORD = "snowman"
+
+# Add a constant SNOWMAN_WRONG_GUESSES here
+
+def get_letter_from_user():
+    user_input_string = input("Guess a letter: ")
+    if not user_input_string.isalpha():
+        print("You must input a letter!")
+    elif len(user_input_string) > 1:
+        print("You can only input one letter at a time!")
+
+    return user_input_string
+
+def snowman():
+    # Add code to repeat guesses until the total wrong guesses 
+    # equals SNOWMAN_WRONG_GUESSES or number of correct guesses
+    # equals the length of SNOWMAN_WORD.
+    
+    
+```
+### !end-placeholder
+### !tests
+```python
+import sys
+import unittest
+import user_input
+import io
+from unittest.mock import patch
+import re
+
+from main import *
+
+class TestChallenge(unittest.TestCase):
+
+    @patch('sys.stdout', new_callable=io.StringIO)
+    def test_will_print_out_out_of_guesses_if_number_of_guesses_is_exhasted(self, mock_stdout):
+        # Arrange
+        input_letters = [
+            'a',
+            'z',
+            'b',
+            'c',
+            'd',
+            'e',
+            'f',
+            'g'
+            'h',
+            'i',
+            'j',
+            'k'
+        ]
+        with unittest.mock.patch('builtins.input', side_effect=input_letters):
+            # Act
+            snowman()
+
+        # Assert
+        assert re.match(f"You made 1 correct and {SNOWMAN_WRONG_GUESSES} incorrect guesses",
+                        mock_stdout.getvalue(), flags=re.IGNORECASE)
+
+    @patch('sys.stdout', new_callable=io.StringIO)
+    def test_will_repeat_until_guesses_exhasted_even_if_word_guessed(self, mock_stdout):
+        # Arrange
+        input_letters = [
+            's',
+            'n',
+            'o',
+            'w',
+            'm',
+            'a',
+            'n',
+            'b'
+            'c',
+            'd',
+            'e',
+            'f',
+            'g',
+            'h',
+            'i',
+            'j',
+            'k',
+        ]
+        with unittest.mock.patch('builtins.input', side_effect=input_letters):
+            # Act
+            snowman()
+
+        # Assert
+        assert re.match(f"You made 7 correct and {SNOWMAN_WRONG_GUESSES} incorrect guesses",
+                        mock_stdout.getvalue(), flags=re.IGNORECASE)
+
+    @patch('sys.stdout', new_callable=io.StringIO)
+    def test_will_will_output_0_correct_for_all_invalid_guesses(self, mock_stdout):
+        # Arrange
+        input_letters = [
+            'b'
+            'c',
+            'd',
+            'e',
+            'f',
+            'g',
+            'h',
+            'i',
+            'j',
+            'k',
+            'l',
+        ]
+        with unittest.mock.patch('builtins.input', side_effect=input_letters):
+            # Act
+            snowman()
+
+        # Assert
+        assert re.match(f"You made 0 correct and {SNOWMAN_WRONG_GUESSES} incorrect guesses",
+                        mock_stdout.getvalue(), flags=re.IGNORECASE)
+
+```
+### !end-tests
+### !explanation
+An example of a working implementation:
+```python
+SNOWMAN_WORD = "snowman"
+
+# Add a constant SNOWMAN_WRONG_GUESSES here
+SNOWMAN_WRONG_GUESSES = 7
+
+def snowman():
+    correct_guesses = 0
+    wrong_guesses = 0
+    while (wrong_guesses < SNOWMAN_WRONG_GUESSES):
+        guessed_letter = input('Please enter a letter')
+        if (guessed_letter in SNOWMAN_WORD):
+            correct_guesses += 1
+        else:
+            wrong_guesses += 1
+    
+    print(f"You made {correct_guesses} correct and {wrong_guesses} incorrect guesses")
+
+```
+### !end-explanation
+### !end-challenge
+<!-- prettier-ignore-end -->
 
 When you get [FEEDBACK OF SOME KIND THAT INDICATES IT WORKS], move on to the next section.
 
