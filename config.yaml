@@ -42,5 +42,13 @@ Standards:
     ContentFiles:
       -
         Type: Lesson
+        UID: 59a6f09f-0e2d-4815-b1f3-4e040f0fe7e4
+        Path: /01-intro-to-python/loops.md         
+      -
+        Type: Lesson
         UID: 78485f2f-da36-4cea-95ca-9019b7a32e13
-        Path: /00-preparing-for-ada/functions.md        
+        Path: /01-intro-to-python/functions.md        
+      -
+        Type: Lesson
+        UID: 43559fbe-0fea-4805-b21c-0a02b272d269
+        Path: /01-intro-to-python/lists.md
