@@ -131,20 +131,20 @@ def get_number_from_user():
 Now that we have a way to get valid input from the user, it's time to take a look at the guess_the_number function.  There are two ways to play this type of guessing game, the first is with unlimited guesses and the second is with a max number of guesses.  Let's start with the first version with unlimited guesses.  The current version of the function is:
 
 ```python
-
-    random.seed()
-    random_number = random.randrange(RANGE_LOW, RANGE_HIGH)
+    random_number = random.randint(RANGE_LOW, RANGE_HIGH)
 
     user_input = get_number_from_user()
         
-    if user_input == random_number:
-        print("You guessed the number!  Good job!")
-    if user_input > random_number:
-        print("Your guess is too high")
-    if user_input < random_number:
-        print("Your guess is too low")
     if user_input < RANGE_LOW or user_input > RANGE_HIGH:
-        print(f"Your guess is out of bounds.  The maximum is {RANGE_LOW} and the minimum is {RANGE_HIGH}")
+        print(f"Your guess is out of bounds.")
+        print(f"It must be between {RANGE_LOW} and {RANGE_HIGH}")    
+    elif user_input == random_number:
+        print("You guessed the number!  Good job!")
+    elif user_input > random_number:
+        print("Your guess is too high")
+    elif user_input < random_number:
+        print("Your guess is too low")
+
 
 ```
 
@@ -156,23 +156,23 @@ Add a while loop with a flag that tests to see if the user has guessed the corre
 ```python
 
 def guess_the_number():
+    random_number = random.randint(RANGE_LOW, RANGE_HIGH)
 
-    random.seed()
-    random_number = random.randrange(RANGE_LOW, RANGE_HIGH)
     waiting_for_correct_guess = True
     while waiting_for_correct_guess:
         user_input = get_number_from_user()
-            
-        if user_input == random_number:
+        
+        if user_input < RANGE_LOW or user_input > RANGE_HIGH:
+            print(f"Your guess is out of bounds.")
+            print(f"It must be between {RANGE_LOW} and {RANGE_HIGH}")    
+        elif user_input == random_number:
             print("You guessed the number!  Good job!")
             waiting_for_correct_guess = False
-        if user_input > random_number:
+        elif user_input > random_number:
             print("Your guess is too high")
-        if user_input < random_number:
+        elif user_input < random_number:
             print("Your guess is too low")
-        if user_input < RANGE_LOW or user_input > RANGE_HIGH:
-            print(f"Your guess is out of bounds.  The maximum is {RANGE_LOW} and the minimum is {RANGE_HIGH}")
-
+        
 ```
 
 </details>
@@ -215,9 +215,8 @@ Last, let's add some feedback to the user to let them know what's going on!
 MAX_GUESSES = 20
 
 def guess_the_number():
+    random_number = random.randint(RANGE_LOW, RANGE_HIGH)
 
-    random.seed()
-    random_number = random.randrange(RANGE_LOW, RANGE_HIGH)
     waiting_for_correct_guess = True
     num_guesses = 0
     while waiting_for_correct_guess or num_guesses >= MAX_GUESSES:
@@ -227,12 +226,13 @@ def guess_the_number():
         if user_input == random_number:
             print("You guessed the number!  Good job!")
             waiting_for_correct_guess = False
-        if user_input > random_number:
+        elif user_input > random_number:
             print("Your guess is too high")
-        if user_input < random_number:
+        elif user_input < random_number:
             print("Your guess is too low")
-        if user_input < RANGE_LOW or user_input > RANGE_HIGH:
-            print(f"Your guess is out of bounds.  The maximum is {RANGE_LOW} and the minimum is {RANGE_HIGH}")
+        elif user_input < RANGE_LOW or user_input > RANGE_HIGH:
+            print(f"Your guess is out of bounds.")
+            print(f"It must be between {RANGE_LOW} and {RANGE_HIGH}")
     
     # At this point, there are two options.  1, the user ran out of guesses or 2. they got the correct answer.  
     # We need to let them know if they ran out of guesses, but if we check if num_guesses is >= MAX_GUESSES we could
@@ -311,19 +311,19 @@ Our end goal is to have a function that we can pass the current `wrong_count` va
 ```python
 
 def print_snowman_graphic(id): 
-    if(id == 1):
+    if id == 1:
         print(SNOWMAN_1)
-    if(id == 2):
+    elif id == 2:
         print(SNOWMAN_2)
-    if(id == 3):
+    elif id == 3:
         print(SNOWMAN_3)
-    if(id == 4):
+    elif id == 4:
         print(SNOWMAN_4)
-    if(id == 5):
+    elif id == 5:
         print(SNOWMAN_5)
-    if(id == 6):
+    elif id == 6:
         print(SNOWMAN_6)
-    if(id == 7):
+    elif id == 7:
         print(SNOWMAN_7)
 
 ```
@@ -344,19 +344,19 @@ Now we're going to add a loop inside this function to make it draw not just one 
 def print_snowman_graphic():
     
     for i in range(1, SNOWMAN_WRONG_GUESSES + 1)
-        if(i == 1):
+        if i == 1:
             print(SNOWMAN_1)
-        if(i == 2):
+        elif i == 2:
             print(SNOWMAN_2)
-        if(i == 3):
+        elif i == 3:
             print(SNOWMAN_3)
-        if(i == 4):
+        elif i == 4:
             print(SNOWMAN_4)
-        if(i == 5):
+        elif i == 5:
             print(SNOWMAN_5)
-        if(i == 6):
+        elif i == 6:
             print(SNOWMAN_6)
-        if(i == 7):
+        elif i == 7:
             print(SNOWMAN_7)
 
 ```
@@ -374,19 +374,19 @@ The last step is to modify the range of our for loop to only print the elements 
 def print_snowman_graphic(wrong_guesses_count):
     
     for i in range(SNOWMAN_WRONG_GUESSES + 1 - wrong_guesses_count, SNOWMAN_WRONG_GUESSES + 1)
-        if(i == 1):
+        if i == 1:
             print(SNOWMAN_1)
-        if(i == 2):
+        elif i == 2:
             print(SNOWMAN_2)
-        if(i == 3):
+        elif i == 3:
             print(SNOWMAN_3)
-        if(i == 4):
+        elif i == 4:
             print(SNOWMAN_4)
-        if(i == 5):
+        elif i == 5:
             print(SNOWMAN_5)
-        if(i == 6):
+        elif i == 6:
             print(SNOWMAN_6)
-        if(i == 7):
+        elif i == 7:
             print(SNOWMAN_7)
 
 ```

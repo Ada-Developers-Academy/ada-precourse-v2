@@ -55,7 +55,8 @@ So far all we have done with our user input is check to see if it is in our word
 
 def snowman():
     r = RandomWord()
-    snowman_word = r.word(word_min_length=SNOWMAN_MIN_WORD_LENGTH, word_max_length=SNOWMAN_MAX_WORD_LENGTH)
+    snowman_word = r.word(word_min_length=SNOWMAN_MIN_WORD_LENGTH,
+                          word_max_length=SNOWMAN_MAX_WORD_LENGTH)
     wrong_guesses_list = []
     
     # ...
@@ -379,7 +380,15 @@ The first step is to store all of the drawing constants in a list:
 
 ```python
 
-SNOWMAN_GRAPHIC = ['*   *   *  ', ' *   _ *   ', '   _[_]_ * ', '  * (")    ', '  \( : )/ *', '* (_ : _)  ', '-----------']
+SNOWMAN_GRAPHIC = [
+    '*   *   *  ',
+    ' *   _ *   ',
+    '   _[_]_ * ',
+    '  * (")    ',
+    '  \( : )/ *',
+    '* (_ : _)  ',
+    '-----------'
+]
 
 ```
 
@@ -388,9 +397,9 @@ The next step is to update our drawing function to use the list.  Here's the pre
 ```python
 
 def print_snowman_graphic(wrong_guesses_count):
-    
-    for i in range(SNOWMAN_WRONG_GUESSES + 1 - wrong_guesses_count, SNOWMAN_WRONG_GUESSES + 1)
-        if(i == 1):
+    for i in range(SNOWMAN_WRONG_GUESSES + 1 - wrong_guesses_count,
+                   SNOWMAN_WRONG_GUESSES + 1)
+        if i == 1:
             print(SNOWMAN_1)
         if(i == 2):
             print(SNOWMAN_2)
@@ -412,8 +421,8 @@ Now, instead of using SNOWMAN_1, we can use SNOWMAN_GRAPHIC[0], for SNOWMAN_2 we
 ```python
 
 def print_snowman_graphic(wrong_guesses_count):
-    
-    for i in range(SNOWMAN_WRONG_GUESSES + 1 - wrong_guesses_count, SNOWMAN_WRONG_GUESSES + 1)
+    for i in range(SNOWMAN_WRONG_GUESSES + 1 - wrong_guesses_count,
+                   SNOWMAN_WRONG_GUESSES + 1)
         print(SNOWMAN_GRAPHIC[i - 1])
 
 ```
@@ -423,8 +432,8 @@ Notice in the above code that we have `+ 1` and `- 1`.  This is because in the f
 ```python
 
 def print_snowman_graphic(wrong_guesses_count):
-    
-    for i in range(SNOWMAN_WRONG_GUESSES - wrong_guesses_count, SNOWMAN_WRONG_GUESSES)
+    for i in range(SNOWMAN_WRONG_GUESSES - wrong_guesses_count,
+                   SNOWMAN_WRONG_GUESSES)
         print(SNOWMAN_GRAPHIC[i])
 
 ```
