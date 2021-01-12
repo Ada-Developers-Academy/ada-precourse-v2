@@ -42,5 +42,9 @@ Standards:
     ContentFiles:
       -
         Type: Lesson
+        UID: b4385d80-5e21-4934-a031-1c66e8605c01
+        Path: /00-preparing-for-ada/dictionaries.md
+      -
+        Type: Lesson
         UID: 78485f2f-da36-4cea-95ca-9019b7a32e13
         Path: /00-preparing-for-ada/functions.md        
