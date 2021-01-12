@@ -16,7 +16,15 @@ At the end of this lesson students will be able to:
 
 ### Why Dictionaries?
 
-In the lists lesson we used our first complex data structure.  Lists are powerful and useful tools, but they do have some limitations.  Say we want to use our list to store all of the pieces of an address.  We could of course use several variables to store the city, state, zip code, street address, but as we saw in the list lesson, being able to store all of the information in one variable can make it simpler to access the data and pass the data to functions.  If we use a list, we can store each of these pieces of information, but to access them we need to remember the index where we stored them.  We could set up constants like STATE_INDEX to help make this code easier to read, but it's not ideal.  Enter dictionaries!  Dictionaries associate each piece of data with a unique key, and then we can use the key to access the data in the dictionary.  In the case of our address data structure, we can just make the keys meaningful words like "city" and "state", and then in our code whenever we want to access these pieces of the address, we can use the appropriate key to grab the data we want from the dictionary.  
+In the lists lesson we used our first complex data structure.  Lists are powerful and useful tools, but they do have some limitations.  Say we want to use our list to store all of the pieces of an address.  We could of course use several variables to store the city, state, zip code, street address, but as we saw in the list lesson, being able to store all of the information in one variable can make it simpler to access the data and pass the data to functions.  If we use a list, we can store each of these pieces of information, but to access them we need to remember the index where we stored them.  
+
+We could set up constants like:
+
+```python
+STATE_INDEX = 0
+CITY_INDEX = 1
+
+print( f"We live in {address[CITY_INDEX]}, {address[STATE_INDEX]}.")
 
 ## Vocabulary and Synonyms
 
