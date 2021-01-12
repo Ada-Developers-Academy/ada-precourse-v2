@@ -280,14 +280,6 @@ When you get [FEEDBACK OF SOME KIND THAT INDICATES IT WORKS], move on to the nex
 
 ### Tracking User Input 
 
-Imagine we are playing a game of Snowman with a group of children.  We would probably keep track of the letters that they guessed, and with correct letters we would add to the word and with incorrect we would add to the snowman drawing.  As with all code projects, this project is going to build on itself, so the next step toward that final fully functional version is to keep track of the number of correct and incorrect guesses from the user.  In this version we are not going to compare their guesses to their previous guesses, so if they guess the same incorrect letter multiple times we'll count it as a new wrong guess every time.  
-
-Start by adding a loop to the main `snowman()` function similar to the loop inside of `guess_the_word`.  Set up two counters, for example `correct_guesses` and `wrong_guesses`, outside of the while loop, and allow the user to continue to guess until they reach a maximum number of incorrect guesses.  Add a constant to the top of the file `SNOWMAN_WRONG_GUESSES = 7`.  Remember, we're only solving part of the problem here!  Keep track of the number of incorrect and correct guesses in the loop.  
-
-When finished print out, "You made X correct and Y incorrect guesses" where X and Y are the number of correct and incorrect guesses.
-
-Submit your code here:
-
 <!-- Loop Challenge -->
 <!-- prettier-ignore-start -->
 ### !challenge
@@ -296,6 +288,15 @@ Submit your code here:
 * id: b10f595e-5a13-4f56-9f41-43ce92e08242
 * title: Loops Exercise
 ### !question
+
+Imagine we are playing a game of Snowman with a group of children.  We would probably keep track of the letters that they guessed, and with correct letters we would add to the word and with incorrect we would add to the snowman drawing.  As with all code projects, this project is going to build on itself, so the next step toward that final fully functional version is to keep track of the number of correct and incorrect guesses from the user.  In this version we are not going to compare their guesses to their previous guesses, so if they guess the same incorrect letter multiple times we'll count it as a new wrong guess every time.  
+
+Start by adding a loop to the main `snowman()` function similar to the loop inside of `guess_the_word`.  Set up two counters, for example `correct_guesses` and `wrong_guesses`, outside of the while loop, and allow the user to continue to guess until they reach a maximum number of incorrect guesses.  Add a constant to the top of the file `SNOWMAN_WRONG_GUESSES = 7`.  Remember, we're only solving part of the problem here!  Keep track of the number of incorrect and correct guesses in the loop.  
+
+When finished print out, "You made X correct and Y incorrect guesses" where X and Y are the number of correct and incorrect guesses.
+
+Submit your code here:
+
 ### !end-question
 ### !placeholder
 ```python
