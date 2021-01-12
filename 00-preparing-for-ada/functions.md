@@ -133,7 +133,7 @@ def get_number_from_user():
 
 ## None and potential Errors
 
-Notice that in our version, if the user does not give a valid input, the return value will be None.  This will cause an error in the conditionals in `guess_the_number`, because None can not be compared to a number.  That's ok, we're building to a full solution.  Many times when writing code, it is useful to write and test a small portion, and then when we're confident that it works, moving on to build the next portion.
+Notice that in our version, if the user does not give a valid input, the return value will be `None`.  This will cause an error in the conditionals in `guess_the_number`, because `None` can not be compared to a number.  That's ok, we're building to a full solution.  Many times when writing code, it is useful to write and test a small portion, and then when we're confident that it works, moving on to build the next portion.
 
 ### !end-callout
 
@@ -151,25 +151,245 @@ Next, we're going to follow the same pattern as `guess_the_number`.  We will sta
 
 ###  get_letter_from_user
 
+<!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
+<!-- Replace everything in square brackets [] and remove brackets  -->
+
+### !challenge
+
+* type: code-snippet
+* language: python3.6
+* id: c751d441-f566-4ab7-acc1-390b8710213e
+* title: get_letter_from_user
+* points: 1
+* topics: python, python-functions
+
+##### !question
+
 This function is very similar to `get_number_from_user`.  
 
-1.  First, we will need to get input from the user and store it in a variable.  
+1.  First, we will need to use `input` to get a string from the user and store it in a variable.  
 1.  Second, we need to check to see if the input is valid.  In `get_number_from_user`, we used isnumeric() to ensure that the input was a number.  In this function, we need to check to see if the input is a letter, and if the input contains only one letter.  Use the functions below to write these conditionals:
     - [string variable name].isalpha() will return true if the string contains only alphabetical characters
     - len([string variable name]) will tell us the length of the string
 1. Lastly, we need to return the input string
-    - Note, again, if the user gives bad input, we're not going to do anything here other than notify the user and then return the input.  We will expand this to a full solution in the next lesson.
+    - If the user gives bad input: 
+      - We print "Invalid letter please enter a single character." 
+      - Then return the input.  
+    - If the user gives valid input:
+      - Then we just return the input.
+
+We will expand this to a full solution in the next lesson.
+
+
+##### !end-question
+
+##### !placeholder
+
+```py
+def get_letter_from_user():
+  
+#   return 1
+```
+
+##### !end-placeholder
+
+##### !tests
+
+```py
+import sys
+from unittest import mock
+from unittest.mock import patch
+import io
+import unittest
+import re
+import main as p
+
+class TestPython1(unittest.TestCase):
+
+    @patch('sys.stdout', new_callable=io.StringIO)
+    def test_p_one(self, mock_stdout):
+        # Arrange
+        input_letter = "a"
+        with unittest.mock.patch('builtins.input', return_value=input_letter):
+            # Act
+            answer = p.get_letter_from_user()
+
+        # Assert
+        assert re.match('', mock_stdout.getvalue())
+        assert answer == input_letter
+
+
+    @patch('sys.stdout', new_callable=io.StringIO)
+    def test_p_two(self, mock_stdout):
+        # Arrange
+        input_letter = "!"
+        with unittest.mock.patch('builtins.input', return_value=input_letter):
+            # Act
+            answer = p.get_letter_from_user()
+
+        # Assert
+        assert re.match('invalid letter please enter a single character', mock_stdout.getvalue(), flags=re.IGNORECASE)
+        assert answer == input_letter
+
+    @patch('sys.stdout', new_callable=io.StringIO)
+    def test_p_three(self, mock_stdout):
+        # Arrange
+        input_letter = "223"
+        with unittest.mock.patch('builtins.input', return_value=input_letter):
+            # Act
+            answer = p.get_letter_from_user()
+
+        # Assert
+        assert re.match('Invalid letter please enter a single character.', mock_stdout.getvalue(), flags=re.IGNORECASE)
+        assert answer == input_letter
+
+    @patch('sys.stdout', new_callable=io.StringIO)
+    def test_p_four(self, mock_stdout):
+        # Arrange
+        input_letter = "z"
+        with unittest.mock.patch('builtins.input', return_value=input_letter):
+            # Act
+            answer = p.get_letter_from_user()
+
+        # Assert
+        assert re.match('', mock_stdout.getvalue(), flags=re.IGNORECASE)
+        assert answer == input_letter
+
+```
+
+##### !end-tests
+
+<!-- other optional sections -->
+<!-- !hint - !end-hint (markdown, hidden, students click to view) -->
+<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
+<!-- !explanation - !end-explanation (markdown, students can see after answering correctly) -->
+
+### !end-challenge
+
+<!-- ======================= END CHALLENGE ======================= -->
+
 
 ### snowman
 
-This function is structurally similar to `guess_the_number`, but will be shorter for now.  The only check we have to do on the letter is check if it's in the word or not.  To do that, we're going to use the python keyword `in`.  The syntax for `in` is `thing1 in thing2`.  This expression evaluates to `True` if thing2 contains thing1, and false otherwise.  We can use it in a conditional expression as `if thing1 in thing2:`.
+<!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
+<!-- Replace everything in square brackets [] and remove brackets  -->
+
+### !challenge
+
+* type: code-snippet
+* language: python3.6
+* id: 2604b524-92e8-43fb-adc3-de4b29f0b451
+* title: snowman
+* points: 1
+* topics: python
+
+##### !question
+
+We are now going to work on the main `snowman` function (the function we will call when we want to play the game Snowman).  This function is structurally similar to `guess_the_number`, but will be shorter for now.  The only check we have to do on the letter is check if it's in the word or not.  To do that, we're going to use the python keyword `in`.  The syntax for `in` is `thing1 in thing2`.  This expression evaluates to `True` if thing2 contains thing1, and false otherwise.  We can use it in a conditional expression as `if thing1 in thing2:`.
 
 1.  First, use `get_letter_from_user` to get a letter
-2.  Check if the letter is in `SNOWMAN_WORD` and print an appropriate message based on that information.
+2.  Check if the letter is in `SNOWMAN_WORD` 
+    - print "Letter found" if the letter is in `SNOWMAN_WORD`.
+    - print "Letter not found" if it's not in `SNOWMAN_WORD`.
+3.  If the letter is in `SNOWMAN_WORD` return `True` otherwise return `False` if it's not in `SNOWMAN_WORD`.
+
+##### !end-question
+
+##### !placeholder
+
+```py
+
+SNOWMAN_WORD = "pasta"
+
+def get_letter_from_user():
+    letter = input("Please enter a letter > ")
+    if (len(letter) > 1 or not letter.isalpha()):
+        print("Invalid letter please enter a single character.")
+    
+    return letter
 
 
-[TODO: input all code from your file here]
+def snowman():
+    # Your code is here
 
+```
+
+##### !end-placeholder
+
+##### !tests
+
+```py
+import sys
+from unittest import mock
+from unittest.mock import patch
+import io
+import unittest
+import re
+import main as p
+
+class TestPython2(unittest.TestCase):
+
+    @patch('sys.stdout', new_callable=io.StringIO)
+    def test_p_one(self, mock_stdout):
+        # Arrange
+        input_letter = "a"
+        with unittest.mock.patch('builtins.input', return_value=input_letter):
+            # Act
+            answer = p.snowman()
+
+        # Assert
+        assert re.match('Letter found', mock_stdout.getvalue(), flags=re.IGNORECASE)
+        assert answer # True if it's in the snowman word
+
+
+    @patch('sys.stdout', new_callable=io.StringIO)
+    def test_p_two(self, mock_stdout):
+        # Arrange
+        input_letter = "z"
+        with unittest.mock.patch('builtins.input', return_value=input_letter):
+            # Act
+            answer = p.snowman()
+
+        # Assert
+        assert re.match('Letter not found', mock_stdout.getvalue(), flags=re.IGNORECASE)
+        assert answer == False
+    
+    @patch('sys.stdout', new_callable=io.StringIO)
+    def test_p_three(self, mock_stdout):
+        # Arrange
+        input_letter = "p"
+        with unittest.mock.patch('builtins.input', return_value=input_letter):
+            # Act
+            answer = p.snowman()
+
+        # Assert
+        assert re.match('Letter found', mock_stdout.getvalue(), flags=re.IGNORECASE)
+        assert answer # True if it's in the snowman word
+
+    @patch('sys.stdout', new_callable=io.StringIO)
+    def test_p_four(self, mock_stdout):
+        # Arrange
+        input_letter = "e"
+        with unittest.mock.patch('builtins.input', return_value=input_letter):
+            # Act
+            answer = p.snowman()
+
+        # Assert
+        assert re.match('Letter not found', mock_stdout.getvalue(), flags=re.IGNORECASE)
+        assert answer == False
+
+```
+
+##### !end-tests
+
+<!-- other optional sections -->
+<!-- !hint - !end-hint (markdown, hidden, students click to view) -->
+<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
+<!-- !explanation - !end-explanation (markdown, students can see after answering correctly) -->
+
+### !end-challenge
+
+<!-- ======================= END CHALLENGE ======================= -->
 ## Summary
 
 Let's go back to the questions proposed in the introduction to this lesson.  What do functions add to our code?  Now that we have broken the various sections into functions, we can easily swap the order of the games, play a game multiple times, or add new games in new functions and insert them in any order we want.  Functions add flexibility and structure to our code, and make code easier to maintain and read.  In the next lesson we will work on adding more functionality to our functions with loops. 
