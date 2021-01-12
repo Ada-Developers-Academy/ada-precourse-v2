@@ -88,6 +88,30 @@ guess_the_number()
 
 A helper function is a function that does part of the work for another function.  They make our code easier to read by breaking long functions up into smaller pieces.  We recommend giving helper functions descriptive names, to help with readability.
 
+Imagine we want to build a tool that will convert a temperature in fahrenheit to celsius, and a temperature in celsius to fahrenheit. There are two different rules that the temperature converter must know about. It would be reasonable to place these conversion formulas into two separate helper functions `convert_to_celsius` and `convert_to_fahrenheit`.
+
+```python
+
+def convert_to_fahrenheit(temp):
+    return 9/5*temp + 32
+
+def convert_to_celsius(temp):
+    return 5/9*(temp-32)
+
+```
+
+Then, we could write another function `temp_converter` that takes the temperature and the unit of measurement as parameters, and calls `convert_to_celsius` or `convert_to_fahrenheit` depending on the unit.
+
+```python
+
+def temp_converter(temp, unit)
+    if unit == "fahrenheit":
+           return convert_to_celsius(temp)
+   elif unit == "celsius"
+           return convert_to_fahrenheit(temp)
+
+```
+
 The function `guess_the_number` can be broken up into two conceptual pieces, getting user input, and then processing the user input.  Start by writing a function called `get_number_from_user` and then pull all of the pieces of code in `guess_the_number` that have to do with getting user input into `get_number_from_user`.  Include any conditional statement that validate user input as a number.  This function should ask the user for a number and then give an error message if the user inputs anything other than a number.  Last, it should return the valid user input, or None if there was no valid input.  In `guess_the_number`, call this function and store the result in user_input.
 
 <details>
