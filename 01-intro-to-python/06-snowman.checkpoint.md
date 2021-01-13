@@ -42,7 +42,6 @@ When you finish place a link to your repl here.
 
 ##### !answer
 
-/https\:\/\/repl\.it/
 
 ##### !end-answer
 
