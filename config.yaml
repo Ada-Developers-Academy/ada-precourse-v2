@@ -34,7 +34,7 @@ Standards:
         Type: Checkpoint
         UID: d5884ace-2cf9-46e5-b279-29ef1a501cbb
         Path: /00-preparing-for-ada/preparing-for-ada.checkpoint.md
-  - Title: Coding Snowman
+  - Title: Coding Guess the Number and Snowman
     Description: Practice with Python
     UID: 93a229d0-2bf8-48ca-a0f7-9a72a0a323b3
     SuccessCriteria:
@@ -42,13 +42,25 @@ Standards:
     ContentFiles:
       -
         Type: Lesson
-        UID: b4385d80-5e21-4934-a031-1c66e8605c01
-        Path: /00-preparing-for-ada/dictionaries.md
+        UID: a63942ea-ef3e-43bd-aa69-cecba91a3845
+        Path: /01-python-practice/00-variables-and-io.md
+      -
+        Type: Lesson
+        UID: 36f31874-6a19-4257-a94e-0e1319032a11
+        Path: /01-python-practice/01-conditionals.md
       -
         Type: Lesson
         UID: 78485f2f-da36-4cea-95ca-9019b7a32e13
-        Path: /01-intro-to-python/functions.md        
+        Path: /01-python-practice/02-functions.md        
       -
         Type: Lesson
-        UID: 43559fbe-0fea-4805-b21c-0a02b272d269
-        Path: /01-intro-to-python/lists.md
+        UID: e6128aa7-9956-4588-8492-40a3d01772b0
+        Path: /01-python-practice/03-loops.md
+      -
+        Type: Lesson
+        UID: 0089a87e-1c65-4b67-9c0a-55e4213610d5
+        Path: /01-python-practice/04-lists.md
+      -
+        Type: Lesson
+        UID: b4385d80-5e21-4934-a031-1c66e8605c01
+        Path: /01-python-practice/05-dictionaries.md
