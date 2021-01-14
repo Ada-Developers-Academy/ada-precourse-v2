@@ -15,22 +15,58 @@ At the end of this lesson students will be able to:
 
 ### Textbook for this section: [link to ada built lists]
 
+In this section we will be building on the code you wrote in the previous lesson [Loops].  If you would like to look at our example code for that lesson, you can find it [here].
+
 ### Why Lists?
 
-[todo: talk about why the need to add data strutures]
+Variables are awesome!  We can store data, retrieve it, update it and use it in any way we like.  So far, though, are variables have been limited because they have only been able to hold one piece of data.  Imagine we want to write a program to ask for and then display the user's top five favorite flavors of ice cream.  We can store each flavor in it's own variable and then use those variables in our display.  What happens when we want to modify our program to store our user's top 10 favorite flavors?  We would have to add more variables and update the program to use those new variables.  _Lists_ change all of this!  Lists are a _data structure_ that can hold multiple pieces of data and we can access the data numerically starting with 0.  Lets go back to our ice cream example.  If we use a list to store our ice cream flavors, we can use one variable and then as our user inputs their favorite flavors, we can add the new flavor to the list!  By using a list, we can store as many ice cream flavors as we want.  Also, python provides us with ways to easily loop through all of the elements in a list so we can use a loop to display all of the flavors, which will simplify our code even further!  
 
 ## Vocabulary
 
-__TODO__
-* list
-* index
-* package
+* **data structure**: A collection of data that follows a set of rules for modifying and accessing the data.  Python provides four built in data structures, _lists_, _dictionaries_, _tuples_ and _sets_.  This curriculum will cover lists and dictionaries.
+
+* **list**: An ordered collection of data where each element in the list can be accessed using it's index.  List indexes begin at 0.
+
+```python
+
+# list syntax
+# creating a new list:
+new_list = []
+new_list_2 = ["lemon", "vanilla", "chocolate"]
+
+# adding an element to a list:
+new_list_2.append("caramel")
+# new_list_2 = ["lemon", "vanilla", "chocolate", "caramel"]
+
+# accessing an element of a list
+new_list_2[0]
+# "lemon"
+new_list_2[3]
+# "caramel"
+
+# looping through a list
+for i in new_list_2:
+    print(i)
+
+# output:
+# lemon
+# vanilla
+# chocolate
+# caramel
+
+```
+
+* **index**: The position of an element in a _sequence type_, that is, a type that stores data in order.  In Python, strings and lists are examples of sequence types.  In Python indexes start at 0.
+
+* **package**: A collection of _modules_ contained in a directory
+
+* **module**: A file containing python code.
 
 ## Snowman
 
 ### Adding A Random Word
 
-So far our Snowman game has used a constant as the secret word (`SNOWMAN_WORD = 'broccoli'), but a game that always uses the same word is not a great game.  The code to generate a random English word is outside of the scope of these lessons, although it is an interesting problem and worth spending some time thinking about.  We are going to use a _package_ to come up with a random word.  We are going to use the wonderword package.  
+So far our Snowman game has used a constant as the secret word (`SNOWMAN_WORD = 'broccoli'), but a game that always uses the same word is not a great game.  The code to generate a random English word is outside of the scope of these lessons, although it is an interesting problem and worth spending some time thinking about.  We are going to use a _package_ to come up with a random word.  We are going to use the _wonderwords_ package.  
 
 * Before we can use it in our code, we will need to install the package using the command line `pip3 install wonderwords`.
 * Once that's done, add the line `from wonderwords import RandomWord` to the top of our file.
