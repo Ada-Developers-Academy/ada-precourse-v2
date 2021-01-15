@@ -64,3 +64,7 @@ Standards:
         Type: Lesson
         UID: b4385d80-5e21-4934-a031-1c66e8605c01
         Path: /01-intro-to-python/05-dictionaries.md
+      - 
+        Type: Resource
+        UID: 4ba8f29d-fa11-4a26-8b9b-be5be478c5d1
+        Path: /01-intro-to-python/resources/game-loop.md
