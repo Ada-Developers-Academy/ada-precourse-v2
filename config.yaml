@@ -69,3 +69,7 @@ Standards:
         UID: f732de97-d800-482f-8f2c-8fb88e9e34b6
         Path: /01-intro-to-python/06-snowman.checkpoint.md
   
+      - 
+        Type: Resource
+        UID: 4ba8f29d-fa11-4a26-8b9b-be5be478c5d1
+        Path: /01-intro-to-python/resources/game-loop.md
