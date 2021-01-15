@@ -15,6 +15,12 @@
 
 Go to the [Snowman Game Repl](https://repl.it/@ChrisMcAnally/snowmanproject#game.py) and fork the project.  
 
+![forking](images/forking.png)
+
+You can also give the repl a new name here.
+
+![new name](images/new-name.png)
+
 You will need to complete the `snowman(snowman_word)` function using the other functions that we built in previous exercises.  
 
 When you run the program it will give you the opportunity to run it against some automated tests, which check to see if, after several guesses you print out, "Congratuations, you win!" for success and "Sorry, you lose!  The word was {snowman_word}" for failure.
