@@ -32,6 +32,8 @@ In this section we will be building on the code that you learned in the previous
 ...     print("{n} is too large!")
 ...
 5 is just right!
+```
+
 ## Guess the Number
 
 We're going to begin building a game called "Guess the Number".  The rules are simple.  The program will pick a number between 0 and 100 and you will need to guess it!

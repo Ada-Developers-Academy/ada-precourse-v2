@@ -40,6 +40,8 @@ Sailor Mercury has 2 cats!
 Name of the first cat? Luna
 >>> second_cat = input("Name of the second cat? ")
 Name of the second cat? Artemis
+```
+
 ## Variables
 
 As you've already seen variables are how we store data in Python programs.  They are the basic building blocks for almost all programs in almost all programming languages.
