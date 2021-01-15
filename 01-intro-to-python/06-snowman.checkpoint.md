@@ -68,25 +68,25 @@ def snowman(snowman_word):
     """Complete the snowman function
     replace "pass" below with your own code
     """
-    snowman_list = build_word_list(snowman_word)
-    correct_guesses_list = []
-    wrong_guesses_list = []
+    snowman_letters = build_word_list(snowman_word)
+    correct_guesses = []
+    wrong_guesses = []
     all_guessed = False
-    print_word_list(snowman_list)
+    print_letters(snowman_letters)
 
-    while (len(wrong_guesses_list) < MAX_WRONG_GUESSES and not all_guessed):
-        user_input = get_letter_from_user(correct_guesses_list, wrong_guesses_list)
+    while (len(wrong_guesses) < SNOWMAN_MAX_WRONG_GUESSES and not all_guessed):
+        user_input = get_letter_from_user(correct_guesses, wrong_guesses)
         if user_input in snowman_word:
             print("You guessed a letter that' in the word!")
-            correct_guesses_list.append(user_input)
-            all_guessed = update_and_check_word_list(snowman_list, user_input)
+            correct_guesses.append(user_input)
+            all_guessed = update_and_check_word_list(snowman_letters, user_input)
         else:
             print(f"The letter {user_input} is not in the word")
-            wrong_guesses_list.append(user_input)
+            wrong_guesses.append(user_input)
         
-        print_snowman_graphic(len(wrong_guesses_list))
-        print_word_list(snowman_list)
-        print("Wrong guesses: " + " ".join(wrong_guesses_list))
+        print_snowman_graphic(len(wrong_guesses))
+        print_letters(snowman_letters)
+        print("Wrong guesses: " + " ".join(wrong_guesses))
     
     if all_guessed:
         print("Congratuations, you win!")
