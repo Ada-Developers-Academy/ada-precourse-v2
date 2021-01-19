@@ -1,4 +1,4 @@
-# Preparing for Ada Checklist
+# Preparing for Ada Checklists
 
 <!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
 <!-- Replace everything in square brackets [] and remove brackets  -->
@@ -64,6 +64,54 @@ It will say correct, when all are checked.
 ##### !end-hint
 <!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
 <!-- !explanation - !end-explanation (markdown, students can see after answering correctly) -->
+
+### !end-challenge
+
+<!-- ======================= END CHALLENGE ======================= -->
+
+<!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
+<!-- Replace everything in square brackets [] and remove brackets  -->
+
+### !challenge
+
+* type: multiple-choice
+* id: 3fa4317c-2edf-471c-940a-da25cf94a9a8
+* title: HTML/CSS Course
+<!-- * points: [1] (optional, the number of points for scoring as a checkpoint) -->
+<!-- * topics: [python, pandas] (optional the topics for analyzing points) -->
+
+##### !question
+
+Have you completed the [HTML/CSS Udacity Course](https://www.udacity.com/course/intro-to-html-and-css--ud001)?
+
+##### !end-question
+
+##### !options
+
+* Yes, it's done!
+* Not yet
+* Ummm....
+
+##### !end-options
+
+##### !answer
+
+* Yes, it's done!
+
+##### !end-answer
+
+<!-- other optional sections -->
+##### !hint
+
+This course is required prior to start at Ada.
+
+##### !end-hint
+<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
+##### !explanation
+
+If you haven't finished the course, or can't finish it for some reason please contact us on Slack!
+
+##### !end-explanation
 
 ### !end-challenge
 
