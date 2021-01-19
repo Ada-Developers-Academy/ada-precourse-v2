@@ -2,7 +2,7 @@
 
 Welcome to this the Ada Course.  This course, through the "Learn" Learning Management System is a major tool we will use in your education at Ada.  The first units are Pre-Ada units you will need to complete **prior to starting at Ada**.
 
-The purpose of the Pre-Ada unit is to keep you coding (and talking about code) between admissions and the first day of class. You should understand the topics covered in the JumpStart and JumpStart Live curriculum and practice this understanding with the assignments provided. Take this opportunity to meet and study with peers in your cohort.  You will have been invited to the Cohort Slack, and we will set up a channel to discuss the course and coding challenges.  **Take advantage of it.**
+The purpose of the Pre-Ada unit is to keep you coding (and talking about code) between admissions and the first day of class. You should understand the topics covered in the precourse and Build curriculum and practice this understanding with the assignments provided. Take this opportunity to meet and study with peers in your cohort.  You will have been invited to the Cohort Slack, and we will set up a channel to discuss the course and coding challenges.  **Take advantage of it.**
 
 All admitted students are expected to be well-versed with the concepts covered Ada Build curriculum on the first day of their cohort. This includes conditional flows, loops, functions, lists, dictionaries and Python basics. As such, you are expected to complete all exercises in the Precourse.  
 
@@ -28,7 +28,7 @@ In this course you can always resubmit work.  If you want a 2nd-round of instruc
 
 ## Due Dates
 
-# TODO - Add Due Dates
+# The Precourse should be completed by March 5th 5pm PST
 
 ### !end-callout
 
