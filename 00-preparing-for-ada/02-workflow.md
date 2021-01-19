@@ -64,10 +64,10 @@ Macs have a number of special keys which are a little different from Windows.  Y
 
 You can enter `python` in the terminal to enter a Read-Eval-Print-Loop environment.  This lets you enter individual lines of Python 3 code and see it immediately evaluated.
 
-# TODO re-record this video
+<!-- # TODO re-record this video
 
 <iframe src="https://adaacademy.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=8fdf1e1d-c8e1-40d7-a639-abd60032162e&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&start=0&interactivity=all" width=720 height=405 style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
-
+--> 
 There are a few shortcut commands that are helpful to know.
 
 #### irb commands
