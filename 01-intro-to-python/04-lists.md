@@ -13,7 +13,7 @@ At the end of this lesson students will be able to:
 
 ## Introduction
 
-### Textbook for this section: [link to ada built lists]
+### [Textbook for this section](https://colab.research.google.com/drive/1TK9Enhh0mITZ1649l-r4_gzeg2B3eRRu?usp=sharing)
 
 In this section we will be building on the code you wrote in the previous lesson [Loops](03-loops.md).  If you would like to look at our example code for that lesson, you can find it [here](resources/game-loop.md).
 
