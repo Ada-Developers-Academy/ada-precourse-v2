@@ -66,11 +66,6 @@ for i in new_list_2:
 
 ```
 
-* **index**: The position of an element in a _sequence type_, that is, a type that stores data in order.  In Python, strings and lists are examples of sequence types.  In Python indexes start at 0.
-
-* **package**: A collection of _modules_ contained in a directory
-
-* **module**: A file containing python code.
 
 ## Snowman
 
