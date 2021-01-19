@@ -77,8 +77,8 @@ It will say correct, when all are checked.
 * type: multiple-choice
 * id: 3fa4317c-2edf-471c-940a-da25cf94a9a8
 * title: HTML/CSS Course
-<!-- * points: [1] (optional, the number of points for scoring as a checkpoint) -->
-<!-- * topics: [python, pandas] (optional the topics for analyzing points) -->
+* points: 1
+* topics: HTML, CSS
 
 ##### !question
 
