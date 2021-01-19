@@ -27,9 +27,15 @@ By using a list, we can store as many ice cream flavors as we want.  Also, pytho
 
 ## Vocabulary
 
-* **data structure**: A collection of data that follows a set of rules for modifying and accessing the data.  Python provides four built in data structures, _lists_, _dictionaries_, _tuples_ and _sets_.  This curriculum will cover lists and dictionaries.
+## Vocabulary and Synonyms
 
-* **list**: An ordered collection of data where each element in the list can be accessed using it's index.  List indexes begin at 0.
+| Vocab          | Definition                                                    | Synonyms  | How to Use in a Sentence                                                      |
+| -------------- | ------------------------------------------------------------- | --------- | ----------------------------------------------------------------------------- |
+| data structure| A collection of data that follows a set of rules for modifying and accessing the data.  Python provides four built in data structures, _lists_, _dictionaries_, _tuples_ and _sets_.  This curriculum will cover lists and dictionaries.     | Collection      | "We organize our collection of students into a list data structure" |
+| list      | a data structure consisting of a collection of elements (values or variables), each identified by at least one array index or key | Array | "We loop through the list and print out each value"    |
+| index      |The position of an element in a _sequence type_, that is, a type that stores data in order.  In Python, strings and lists are examples of sequence types.  In Python indexes start at 0. | Key | "We get the 1st element at index 0."    |
+| package      | A collection of modules distributed together  | Egg | "The wonderwords package can give us random words."    |
+|  module      | A file containing python code.  | Library | "This module has functions for calculating taxes."    |
 
 ```python
 
