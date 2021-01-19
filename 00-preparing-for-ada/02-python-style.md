@@ -1,5 +1,7 @@
 # Python Coding Style
 
+<iframe src="https://adaacademy.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=90f1f6c3-d359-4dc4-960a-acb5001eb0ef&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&start=0&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+
 The style in your code is just as important as the code itself. Programmers use code standards along with company style guides to ensure that all programmers are using the same style. Code with good style is easy to read, understand, and modify.
 
 At Ada, we will be using the [PEP8](https://www.python.org/dev/peps/pep-0008/)  coding style guide. 
