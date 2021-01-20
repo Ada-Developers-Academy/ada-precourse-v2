@@ -1,3 +1,6 @@
+# Loop Lesson Sample Code
+
+```python
 import random
 
 RANGE_LOW = 0
@@ -50,7 +53,7 @@ def get_number_from_user():
     return user_input
 
 
-#
+# Main Snowman function
 def snowman():
     correct_guesses = 0
     wrong_guesses = 0
@@ -101,3 +104,4 @@ def print_snowman_graphic(wrong_guesses_count):
 
 guess_the_number()
 snowman()
+```
