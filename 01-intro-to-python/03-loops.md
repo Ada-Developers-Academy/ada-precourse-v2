@@ -11,18 +11,20 @@ At the end of this lesson students will be able to:
 
 ### Textbook for this section: [link to ada build Loops]
 
-In this section we will be building on the code that you wrote in the previous lesson [Functions].  If you would like to look at our example code version for that lesson, you can find it [here]
+In this section we will be building on the code that you wrote in the previous lesson [Functions](02-functions.md).  If you would like to look at our example code version for that lesson, you can find it [here](resources/src/02-functions/games_function.py).  
 
-### Why Loops?
+## Vocabulary and Syntax
 
-Loops are one of the primary control structures in programming and they show up in almost every programming language.  In the world of Computer Science Theory, loops, along with sequences (executing one section of code and then another) and selection (aka conditionals, choosing between blocks of code based on a boolean test) are all that are needed to compute any computable function [https://en.wikipedia.org/wiki/Structured_program_theorem].  Understanding loops and using them effectively is a vital first step in our journey as programmers.  In this lesson we will explore while loops and for loops and use them make Guess the Number a fully functional game and add core functionality to Snowman.  In this lesson we will use both for and while loops. 
+| Vocab          | Definition                                                    | Synonyms  | How to Use in a Sentence                                                      |
+| -------------- | ------------------------------------------------------------- | --------- | ----------------------------------------------------------------------------- |
+| while loop|  A loop that repeats a code block inside it as long as a boolean conditional statement is true.  The statement is tested before executing the code block inside loop. | pre-test loop | "The code in the while loop will run until the test is false." |
+| for loop| A loop that _iterates_ or repeats over a sequence.  In python it is often used to iterate over a `list` data structure.  It is also commonly paired with the `range` function[link to range function], which returns a list of numbers.  The `for` loop repeats n times, where n is the length of the sequence being looped over. | iterate | "To repeat the code five times we will use a for loop." |
+| flag | A variable that is used to indicate that a condition has been met.  Usually a flag is a boolean variable and the value is changed to indicate that the goal or target (whatever the condition is) has been achieved. | signal | "The while loop will stop when the flag is changed." |
 
-## Vocabulary
-
-* `while` loop:  a while loop repeats as long as a boolean conditional statement is true.  The statement is tested before executing the code block inside loop.
 
 ```python
 
+# while loop
 test = 0
 while test < 10:
     test = test + 2
@@ -34,12 +36,7 @@ while test < 10:
 # The value of test is 6
 # The value of test is 8
 
-```
-
-* `for` loop: a for loop that _iterates_ or repeats over a sequence.  In python it is often used to iterate over a `list` data structure.  It is also commonly paired with the `range` function[link to range function], which returns a list of numbers.  The `for` loop repeats n times, where n is the length of the sequence being looped over.
-
-```python
-
+# for loop
 for num in range(3):
     print(f"The value of num is {num}")
 
@@ -56,9 +53,22 @@ for num in range(2, 5):
 # The value of num is 3
 # the value of num is 4
 
-```
+# flag example
+flag_var = True
+counter = 0
+while flag_var:
+    counter = counter + 3
+    if(counter > 10):
+        flag_var = False
+    print(f"The value of counter is {counter}")
 
-* flag: a variable that is used as a signal that a condition has been met.  Usually a flag is a boolean variable and the value is changed to indicate that the goal or target (whatever the condition is) has been achieved.
+# When run, this code chunk will output:
+# The value of num is 3
+# The value of num is 6
+# the value of num is 9
+# the value of num is 12
+
+```
 
 ## Guess The Number
 
@@ -80,7 +90,9 @@ def get_number_from_user():
 
 ```
 
-What we really want to do in this function is to compel the user to give us valid input, and only return our input when it is valid.  We can't really force the user to give us valid input, but what we can do is repeat the process of asking for input until we get something that is valid (or just keep asking forever).  In cases like this, where we need to repeat a process but there is uncertainty about how many times we will do so, a while loop is the ideal tool to use.  To solve this problem we are going to use a flag controlled while loop.  A "flag" is a term for a boolean variable that is set before we enter the loop, and then at some point will be flipped inside the loop to signal that the loop should end (and that the whatever action the loop was trying to accomplish has been completed).  
+What we really want to do in this function is to compel the user to give us valid input, and only return our input when it is valid.  We can't really force the user to give us valid input, but what we can do is repeat the process of asking for input until we get something that is valid (or just keep asking forever).  In cases like this, where we need to repeat a process but there is uncertainty about how many times we will do so, a while loop is the ideal tool to use.  
+
+To solve this problem we are going to use a flag controlled while loop.  A "flag" is a term for a boolean variable that is set before we enter the loop, and then at some point will be flipped inside the loop to signal that the loop should end (and that the whatever action the loop was trying to accomplish has been completed).  
 
 <details>
 <summary>Add a while loop with a flag to the get_number_from_user function to continue to loop until the user gives valid input.  Once you have finished, click here to compare your solution to ours</summary>
@@ -178,7 +190,11 @@ def guess_the_number():
 
 </details>
 
-Now let's work on the version with a maximum number of guesses.  At first glance this seems like a good candidate for a for loop because we have a max number of times we're going to run the loop, but let's dig into the actual sequence.  We want to run the loop at most the max guesses number of times, but if the user guesses the number correctly we want to end the loop early.  It is possible to end a loop early using the `break` statement but as a general rule for readability it is better to write meaningful loops that will only execute the number of times we want them to.  In this case, a more complex while loop conditional statement along with a counter variable will result in a loop that does exactly what we want and also is easy to read and understand.  Start by adding a counter variable `num_guesses` and increment inside of the while loop:
+Now let's work on the version with a maximum number of guesses.  At first glance this seems like a good candidate for a for loop because we have a max number of times we're going to run the loop, but let's dig into the actual sequence.  
+
+We want to run the loop at most the max guesses number of times, but if the user guesses the number correctly we want to end the loop early.  In this case, a more complex while loop conditional statement along with a counter variable will result in a loop that does exactly what we want and also is easy to read and understand.  
+
+1.  Start by adding a counter variable `num_guesses` and increment inside of the while loop:
 
 ```python
 
@@ -191,7 +207,7 @@ def guess_the_number():
 
 ```
 
-Next, add a max guesses constant to the other constants at the top of the file and set it to any integer value (in our example we will use 20.)  Then add a comparision in the while loop to check to see if the current number of guesses is greater than or equal to the max guesses (on our first time through the loop the number of guesses starts at 0, so by the time we get to the max number of guesses we've already guessed that many times):
+1.  Next, add a max guesses constant to the other constants at the top of the file and set it to any integer value (in our example we will use 20.)  Then add a comparision in the while loop to check to see if the current number of guesses is greater than or equal to the max guesses (on our first time through the loop the number of guesses starts at 0, so by the time we get to the max number of guesses we've already guessed that many times):
 
 
 ```python
@@ -209,7 +225,7 @@ def guess_the_number():
 
 ```
 
-Last, let's add some feedback to the user to let them know what's going on!
+1.  Last, let's add some feedback to the user to let them know what's going on!
 
 ```python
 
@@ -255,7 +271,7 @@ You have built a fully functional command line game!  If this is the first time 
 
 ### Same Problem, New Context
 
-In programming many problems that look different are at the core the same problem, just with different details.  We can use this to our advantage in our work, because programmers love to ask and answer questions.  Sites like stackoverflow.com are a great resource for new programmers, because chances are if we're stuck on a problem, someone else has been stuck on a similar problem and their solution can help us get to our solution.
+In programming many problems that look different are at the core the same problem, just with different details.  We can use this to our advantage in our work!  If we identify that a problem is similar to one we have already solved, we can take the solution we've already written and modify it for the new problem.
 
 We're going to switch now to working on Snowman.  First, let's take a look at the current version of our user input function `get_letter_from_user`:
 
@@ -272,11 +288,29 @@ def get_letter_from_user():
 
 ```
 
-The problem here is the same as `get_number_from_user`, except instead of a number we want to continue to ask the user for a letter until they give us a single letter.  Add a while loop to this function and submit it here:
+The problem here is the same as `get_number_from_user`, except instead of a number we want to continue to ask the user for a letter until they give us a single letter.  
 
-[python test input]
+<details>
+<summary>Add a while loop to this function.  When you are finished compare your version with ours</summary>
 
-When you get [FEEDBACK OF SOME KIND THAT INDICATES IT WORKS], move on to the next section.
+```python
+
+def get_letter_from_user():
+    valid_input = False
+    user_input_string = None
+    while not valid_input:
+        user_input_string = input("Guess a letter: ")
+        if not user_input_string.isalpha():
+            print("You must input a letter!")
+        elif len(user_input_string) > 1:
+            print("You can only input one letter at a time!")
+        else:
+            valid_input = True
+
+    return user_input_string
+
+```
+</details>
 
 ### Tracking User Input 
 
@@ -289,9 +323,9 @@ When you get [FEEDBACK OF SOME KIND THAT INDICATES IT WORKS], move on to the nex
 * title: Loops Exercise
 ### !question
 
-Imagine we are playing a game of Snowman with a group of children.  We would probably keep track of the letters that they guessed, and with correct letters we would add to the word and with incorrect we would add to the snowman drawing.  As with all code projects, this project is going to build on itself, so the next step toward that final fully functional version is to keep track of the number of correct and incorrect guesses from the user.  In this version we are not going to compare their guesses to their previous guesses, so if they guess the same incorrect letter multiple times we'll count it as a new wrong guess every time.  
+Imagine we are playing a game of Snowman with a group of children.  We would probably keep track of the letters that they guessed, and with correct letters we would add to the word and with incorrect we would add to the snowman drawing.  In this version we are going to keep track of the number of correct and incorrect guesses from the user.  If the user guesses the same incorrect letter multiple times we'll count it as a new wrong guess every time.  
 
-Start by adding a loop to the main `snowman()` function similar to the loop inside of `guess_the_word`.  Set up two counters, for example `correct_guesses` and `wrong_guesses`, outside of the while loop, and allow the user to continue to guess until they reach a maximum number of incorrect guesses.  Add a constant to the top of the file `SNOWMAN_WRONG_GUESSES = 7`.  Remember, we're only solving part of the problem here!  Keep track of the number of incorrect and correct guesses in the loop.  
+Start by adding a loop to the main `snowman()` function similar to the loop inside of `guess_the_word`.  Set up two counters, for example `correct_guesses` and `wrong_guesses`, outside of the while loop, and allow the user to continue to guess until they reach a maximum number of incorrect guesses.  Add a constant to the top of the file `SNOWMAN_WRONG_GUESSES = 7`.  Keep track of the number of incorrect and correct guesses in the loop.  
 
 When finished print out, "You made X correct and Y incorrect guesses" where X and Y are the number of correct and incorrect guesses.
 
@@ -305,11 +339,16 @@ SNOWMAN_WORD = "snowman"
 # Add a constant SNOWMAN_WRONG_GUESSES here
 
 def get_letter_from_user():
-    user_input_string = input("Guess a letter: ")
-    if not user_input_string.isalpha():
-        print("You must input a letter!")
-    elif len(user_input_string) > 1:
-        print("You can only input one letter at a time!")
+    valid_input = False
+    user_input_string = None
+    while not valid_input:
+        user_input_string = input("Guess a letter: ")
+        if not user_input_string.isalpha():
+            print("You must input a letter!")
+        elif len(user_input_string) > 1:
+            print("You can only input one letter at a time!")
+        else:
+            valid_input = True
 
     return user_input_string
 
@@ -439,8 +478,6 @@ def snowman():
 ### !end-explanation
 ### !end-challenge
 <!-- prettier-ignore-end -->
-
-When you get [FEEDBACK OF SOME KIND THAT INDICATES IT WORKS], move on to the next section.
 
 ### Drawing Pictures [TODO]
 

@@ -73,3 +73,7 @@ Standards:
         Type: Resource
         UID: 4ba8f29d-fa11-4a26-8b9b-be5be478c5d1
         Path: /01-intro-to-python/resources/game-loop.md
+      - 
+        Type: Resource
+        UID: 11ee4a28-c0fe-4467-ad10-577e2087cd0f
+        Path: /01-intro-to-python/resources/src/02-functions/games_function.py
