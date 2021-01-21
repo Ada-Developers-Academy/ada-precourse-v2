@@ -72,23 +72,19 @@ for i in new_list_2:
 So far our Snowman game has used a constant as the secret word (`SNOWMAN_WORD = 'broccoli'`), but a game that always uses the same word is not a great game.  The code to generate a random English word is outside of the scope of these lessons, although it is an interesting problem and worth spending some time thinking about.  We are going to use a _package_ to come up with a random word.  We are going to use the _wonderwords_ package.  
 
 1. Before we can use it in our code, we will need to install the package using the command line.  To install, copypasta this into your terminal:
-
-```console
-$ pip3 install wonderwords
-```
-
+    ```console
+    $ pip3 install wonderwords
+    ```
 1. Once that's done, add the line `from wonderwords import RandomWord` to the top of our file.
     * This will import the class `RandomWord` for us to use in our code.
+    ```python
+    import random
+    from wonderwords import RandomWord
+    #https://pypi.org/project/wonderwords/
 
-```python
-import random
-from wonderwords import RandomWord
-#https://pypi.org/project/wonderwords/
+    # ... rest of file
 
-# ... rest of file
-
-```
-
+    ```
 1. Next, add the constants `SNOWMAN_MAX_WORD_LENGTH = 8` and `SNOWMAN_MIN_WORD_LENGTH = 5` with the other constants at the top of the file.    
 1. Last, add the following lines of code to the top of the `snowman` function:
 
