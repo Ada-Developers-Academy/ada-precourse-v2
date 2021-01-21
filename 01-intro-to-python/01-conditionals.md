@@ -15,12 +15,23 @@ In this section we will be building on the code that you learned in the previous
 
 ## Vocabulary
 
+<style>
+.table-bordered {
+    max-width: 1000px;
+}
+
+.table-bordered th {
+    min-width: 300px;
+}
+</style>
+
 
 | Vocab          | Definition                                                   | How to Use in a Sentence                                                      |
 | ------------------------------ | ------------------------------- | ------------------------------------------------ |
 | `random.randint` | A function that will generate a random integer in a range. | We used `random.randint(5, 15)` to get a random integer between 5 and 15. |
 | `if....else`  | A statement to do one of two things based on a condition. | We wrote an `if...else` statement to determine if the person was old enough to consume alcohol. |
 |  `if...elif...else` | A statement to conditionally do one of three or more things. | We wrote an `if...elif...else` statement to print out if the person was too young, too old or just the right age | 
+
 
 ```python
 >>> import random
