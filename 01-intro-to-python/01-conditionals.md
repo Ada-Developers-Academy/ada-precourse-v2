@@ -129,13 +129,13 @@ else:
     print("You must input a number!")
 ```
 
-## The `if`/`elif`/`else` Statement
+## The `if...elif...else` Statement
 
 Now that we have our input as an integer we can compare it to the random number we've picked.  However we want to have three outcomes, not just two!  We want to tell the user if the number is higher, lower or exactly the same.
 
 In fact, we even want to add a fourth option which is to tell the user that the number they picked was outside of the range of allowed numbers!
 
-We can do this by nesting `if`/`else` statements inside of eachother:
+We can do this by nesting `if...else` statements inside of eachother:
 
 ```python
 import random
