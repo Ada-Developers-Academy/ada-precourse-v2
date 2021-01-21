@@ -253,13 +253,20 @@ We want to run the loop at most the max guesses number of times, but if the user
                 print(f"Your guess is out of bounds.")
                 print(f"It must be between {RANGE_LOW} and {RANGE_HIGH}")
         
-        # At this point, there are two options.  1, the user ran out of guesses or 2. they got the correct answer.  
-        # We need to let them know if they ran out of guesses, but if we check if num_guesses is >= MAX_GUESSES we could
-        # be wrong, because they might have gotten the correct answer on the last try!  If we check waiting_for_currect_guess
-        # we will get the answer we want - did they ever guess the correct answer before they were booted out of the loop.  Also, if they
-        # got the correct answer, they were given feedback about that inside the loop, so there's no need to do anything here in that case.
+        # At this point, there are two options.  
+        #    1, the user ran out of guesses or 
+        #    2. they got the correct answer.  
+        # We need to let them know if they ran out of guesses, 
+        # but if we check if num_guesses is >= MAX_GUESSES we could
+        # be wrong, because they might have gotten the correct answer 
+        # on the last try!  If we check waiting_for_correct_guess
+        # we will get the answer we want - did they ever guess the 
+        # correct answer before they were booted out of the loop.  Also, if they
+        # got the correct answer, they were given feedback about that 
+        # inside the loop, so there's no need to do anything here in that case.
         if waiting_for_correct_guess:
-            print(f"You ran out of guesses!  The correct answer was {random_number}.")
+            print(f"You ran out of guesses!  The correct answer \
+was {random_number}.")
 
     ```
 
