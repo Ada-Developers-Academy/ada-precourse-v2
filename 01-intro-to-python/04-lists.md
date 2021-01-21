@@ -262,7 +262,7 @@ def snowman():
 
 ##### !question
 
-Write a new version of `get_letter_from_user` that takes an additional argument (correct_guesses) and uses that along with `wrong_guesses` to print the "You have already guessed that letter" as feedback to the user.
+Update the function `get_letter_from_user` so that it takes an additional argument (correct_guesses) and uses that along with `wrong_guesses` to print the "You have already guessed that letter" as feedback to the user if the user has already guessed the letter.
 
 ##### !end-question
 
@@ -278,10 +278,10 @@ def get_letter_from_user(wrong_list, correct_guesses):
             print("You must input a letter!")
         elif len(user_input_string) > 1:
             print("You can only input one letter at a time!")
-        # NEW SECTION
+        # UPDATE THIS AREA
         elif user_input_string in wrong_list:
             print("You have already guessed that letter!")
-        # END NEW SECTION
+        # END UPDATE AREA
         else:
             valid_input = True
 
