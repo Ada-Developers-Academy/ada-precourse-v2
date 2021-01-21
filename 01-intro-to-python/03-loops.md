@@ -238,8 +238,9 @@ We want to run the loop at most the max guesses number of times, but if the user
 
         waiting_for_correct_guess = True
         num_guesses = 0
-        while waiting_for_correct_guess or num_guesses >= MAX_GUESSES:
-            print(f"You have {MAX_GUESSES - num_guesses} left!")
+            while (waiting_for_correct_guess or
+                    num_guesses >= MAX_GUESSES):
+                num_guesses += 1 
             num_guesses += 1
             user_input = get_number_from_user()
             if user_input == random_number:
