@@ -348,7 +348,7 @@ Submit your code here:
 ```python
 SNOWMAN_WORD = "snowman"
 
-# Add a constant SNOWMAN_WRONG_GUESSES here
+SNOWMAN_WRONG_GUESSES = 7
 
 def get_letter_from_user():
     valid_input = False
