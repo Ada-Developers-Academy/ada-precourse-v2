@@ -16,9 +16,9 @@ In this section we will be building on the code that you wrote in the previous l
 
 In the last lesson we wrote a series of conditionals to validate and test user input for the "Guess the Number" game.  At this point, we may be looking at the code and thinking, this looks good, it works, why add functions?  Lets say we want to play a different game after we finish playing Guess the Number.  We could just add the code for the new game after the code that's in the file right now, but then what if we want to change the order of the games?  We're now looking at moving around big code blocks.  Then if we change our minds and want to move it back, or add another game (and so on) things quickly get messy.  Functions encapsulate code blocks into re-usable chunks that we can then call in whatever order we want.  
 
-## Vocabulary
+## What is a Function?
 
-* function: a named chunk of code that is callable and performs a task.  Functions can take in values called arguments and can have a return value.  
+* **function**: a named chunk of code that is callable and performs a task.  Functions can take in values called arguments and can have a return value.  
 
 ```python
 
