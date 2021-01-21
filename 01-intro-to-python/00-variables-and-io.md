@@ -40,6 +40,8 @@ Sailor Mercury has 2 cats!
 Name of the first cat? Luna
 >>> second_cat = input("Name of the second cat? ")
 Name of the second cat? Artemis
+```
+
 ## Variables
 
 As you've already seen variables are how we store data in Python programs.  They are the basic building blocks for almost all programs in almost all programming languages.
@@ -158,16 +160,21 @@ If you don't know what directory your file is saved in you can right-click or <k
 
 If you saved this file inside of your `Developer` folder you would see something like `/Users/your-name/Developer/hello.py`.
 
-if you remove the `hello,py` from the end you can use the `cd` command to get to the correct folder:
+Once you remove the `hello.py` from the end you can use the `cd` command to get to the correct folder:
 
 ```sh
-cd /Users/your-name/Developer/hello.py
+cd /Users/your-name/Developer/
 ```
 
-Once you do this you should see a prompt like the following:
+Once you do this you should be able to run the command:
 
-```
+```sh
 python3 /Users/your-name/Developer/hello.py
+```
+
+And see the following:
+
+```
 What is your name? Ada Pre Course
 Hello, Ada Pre Course!
 ```

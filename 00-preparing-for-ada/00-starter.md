@@ -1,18 +1,16 @@
 # Getting Started & The Pre-Ada Units
 
-Welcome to this the Ada Course.  This course, through the Learn Learning Management System is how we will teach you at Ada.  The first units are Pre-Ada units you will need to complete prior to starting at Ada.  
+Welcome to this the Ada Course.  This course, through the "Learn" Learning Management System is a major tool we will use in your education at Ada.  The first units are Pre-Ada units you will need to complete **prior to starting at Ada**.
 
-The purpose of the Pre-Ada unit is to keep you coding (and talking about code) between admissions and the first day of class. You should understand the topics covered in the JumpStart and JumpStart Live curriculum and practice this understanding with the assignments provided. Take this opportunity to meet and study with peers in your cohort.  You will have been invited to the Cohort Slack, and we will set up a channel to discuss the course and coding challenges.  **Take advantage of it.**
+The purpose of the Pre-Ada unit is to keep you coding (and talking about code) between admissions and the first day of class. You should understand the topics covered in the precourse and Build curriculum and practice this understanding with the assignments provided. Take this opportunity to meet and study with peers in your cohort.  You will have been invited to the Cohort Slack, and we will set up a channel to discuss the course and coding challenges.  **Take advantage of it.**
 
-All admitted students are expected to be well-versed with the concepts covered in the Jump Start curriculum on the first day of their cohort. This includes conditional flows, loops, lists, dictionaries and Python basics. As such, you are expected to complete all exercises in the JumpStart curriculum.  
+All admitted students are expected to be well-versed with the concepts covered Ada Build curriculum on the first day of their cohort. This includes conditional flows, loops, functions, lists, dictionaries and Python basics. As such, you are expected to complete all exercises in the Precourse.  
 
 As you complete each assignment you will recieve feedback, some of which is automated and others are not.  This is only our second time using the Learn platform from [Galvanize](https://www.galvanize.com/), and as such there will be bumps in the process.  **Please be patient with bugs and let us know on Slack, so we can fix them.**
 
 Some exercises here are multiple choice, some ask you to write code into a coding window, while others ask you to submit a link to your solution.  Many of the exercises here have tests to automatically tell you if you solved it or not.  Others require an instructor to review your code.  Be patient and we will try to deliver feedback as promptly as possible.  
 
-# TODO - Re-record this video
-
-<iframe src="https://adaacademy.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=d10f79f1-9a90-4a99-bd97-abf301681569&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&start=0&interactivity=all" style="width: 720px; height: 405px; border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+<iframe src="https://adaacademy.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=eb492361-e1ed-47f3-845e-acb5001ae8e6&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&start=0&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 
 <!-- available callout types: info, success, warning, danger, secondary  -->
 ### !callout-info
@@ -28,7 +26,7 @@ In this course you can always resubmit work.  If you want a 2nd-round of instruc
 
 ## Due Dates
 
-# TODO - Add Due Dates
+# The Precourse should be completed by March 5th 5pm PST
 
 ### !end-callout
 
@@ -44,6 +42,7 @@ In this course we want you to learn to do the following:
 *  Understand and use conditional statements
 *  Understand and use functions
 *  Understand and use loops
+*  Understand and write functions with parameters
 *  Understand and use lists along with loops
 *  Understand and use dictionaries
 *  Understand and use lists and dictionaries together - nested data structures with loops
@@ -52,6 +51,7 @@ We also want you to learn a bit of workflow and learn to use [VS Code](https://c
 
 ## Your Pre-Ada Responsibilities
 
+* Complete the installfest and make sure you have everything installed
 * Complete Units 1-6 of the Pre-Ada Material
 * Complete an [HTML/CSS Udacity Course](https://www.udacity.com/course/intro-to-html-and-css--ud001), it's free
 
@@ -133,7 +133,7 @@ It is intended to give you additional practice writing Python code and getting u
 
 ### Links to Code
 
-Other programming exercises called Project Challenges will ask you to submit a link to code either in [repl.it](https://repl.it), [Gist](https://gist.github.com) or a [github repository](https://github.com/).
+Other programming exercises called Project Challenges will ask you to submit a link to code in [repl.it](https://repl.it).  Later, after you start at Ada we will have you submit work in Learn from [Github](https://github.com).
 
 <!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
 <!-- Replace everything in square brackets [] and remove brackets  -->
@@ -148,7 +148,7 @@ Other programming exercises called Project Challenges will ask you to submit a l
 
 ##### !question
 
-Create a Hello World Application on [Repl.it](https://repl.it), [Gist](https://gist.github.com) or a [github repository](https://github.com/) and submit a link to your submission.
+Create a Hello World Application on [Repl.it](https://repl.it), and submit a link to your submission.
 
 ##### !end-question
 
