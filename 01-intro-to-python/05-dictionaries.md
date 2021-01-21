@@ -28,7 +28,8 @@ CITY_INDEX = 1
 
 address=["Washington", "Seattle"]
 
-print( f"We live in {address[CITY_INDEX]}, {address[STATE_INDEX]}.")
+print( f"We live in {address[CITY_INDEX]}, \
+    {address[STATE_INDEX]}.")
 ```
 
 Using constants to remember the indices would make the code easier to read, but it's still not ideal. Enter dictionaries!
@@ -211,7 +212,13 @@ def snowman():
 
 ##### !question
 
-Right now our `print_word_list` will always just print out underscores because we're not yet updating the list of dictionaries when our user guesses a correct letter.  The next step is to write a function that takes a letter and the list of dictionaries and updates the guessed boolean for each dictionary that contains that letter.  We are going to make this function do a little extra work.  We are also going to ask this function to return `True` or `False` to tell us if all of the letters have been guessed or not.  We already have to loop through the list to compare our letter to the letter value of each dictionary, so we can use the same loop to also check to see if all of the guessed values are `True`.  We will call the function `update_and_check_word_list`.
+Right now our `print_word_list` will always just print out underscores because we're not yet updating the list of dictionaries when our user guesses a correct letter.  
+
+The next step is to write a function that takes a letter and the list of dictionaries and updates the guessed boolean for each dictionary that contains that letter.  
+
+We are going to make this function do a little extra work.  We are also going to ask this function to return `True` or `False` to tell us if all of the letters have been guessed or not.  
+
+We already have to loop through the list to compare our letter to the letter value of each dictionary, so we can use the same loop to also check to see if all of the guessed values are `True`.  We will call the function `update_and_check_word_list`.
 
 This function will:
 
@@ -388,7 +395,22 @@ class TestPython1(unittest.TestCase):
 ##### !end-tests
 
 <!-- other optional sections -->
-<!-- !hint - !end-hint (markdown, hidden, students click to view) -->
+##### !hint
+
+
+You might want to start with:
+
+```python
+def update_and_check_word_list(list_of_letters, guessed_letter):
+    all_guessed = True
+    for elem in list_of_letters:
+        # Compare elem['letter'] to
+        #  guessed_letter
+
+
+```
+
+##### !end-hint
 <!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
 <!-- !explanation - !end-explanation (markdown, students can see after answering correctly) -->
 
