@@ -12,10 +12,6 @@ At the end of this lesson we will be able to:
 
 In this section we will be building on the code that you wrote in the previous lesson [Conditionals](./01-conditionals.md).  If you would like to look at our example code version for that lesson, you can find it [here](resources/src/01-conditionals/games_conditional.md)
 
-### Why Functions?
-
-In the last lesson we wrote a series of conditionals to validate and test user input for the "Guess the Number" game.  At this point, we may be looking at the code and thinking, this looks good, it works, why add functions?  Lets say we want to play a different game after we finish playing Guess the Number.  We could just add the code for the new game after the code that's in the file right now, but then what if we want to change the order of the games?  We're now looking at moving around big code blocks.  Then if we change our minds and want to move it back, or add another game (and so on) things quickly get messy.  Functions encapsulate code blocks into re-usable chunks that we can then call in whatever order we want.  
-
 ## What is a Function?
 
 * **function**: a named chunk of code that is callable and performs a task.  Functions can take in values called arguments and can have a return value.  
@@ -44,9 +40,24 @@ my_func_with_args(1, 2)
 
 ```
 
+### Why Functions?
+
+In the last lesson we wrote a series of conditionals to validate and test user input for the "Guess the Number" game.  At this point, we may be looking at the code and thinking, this looks good, it works, why add functions?  
+
+Lets say we want to play a different game after we finish playing Guess the Number.  We could just add the code for the new game after the code that's in the file right now, but then what if we want to change the order of the games?  
+
+We're now looking at moving around big code blocks.  Then if we change our minds and want to move it back, or add another game (and so on) things quickly get messy.  Functions encapsulate code blocks into re-usable chunks that we can then call in whatever order we want.  They also help us reuse these blocks of code in other programs.
+
 ## Guess the Number
 
-Start by taking all of the code (excluding the import statement at the top of the file and the constant declarations) and place it in a function called `guess_the_number`.  Then call the function at the bottom of the file
+
+
+Lets build a "Guess the number" function.  This function will:
+
+1.  Read in a number from the user
+1.  Inform the user if their number is lower or higher than the random number at the top of the code above:
+
+Lets write this code and place it in a function called `guess_the_number`.  Then call the function at the bottom of the file.
 
 
 <details>
@@ -58,10 +69,11 @@ import random
 
 RANGE_LOW = 0
 RANGE_HIGH = 100
+# pick a random number
+random_number = random.randint(RANGE_LOW, RANGE_HIGH)
 
-def guess_the_number:
-    random_number = random.randint(RANGE_LOW, RANGE_HIGH)
 
+def guess_the_number():
     user_input_string = input("Guess the number: ")
     user_input = None
 
