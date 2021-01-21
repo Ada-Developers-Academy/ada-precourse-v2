@@ -14,7 +14,7 @@ At the end of this lesson students will be able to:
 
 ### [Textbook for this section](https://colab.research.google.com/drive/1AmKeKvSJnNacUUIU9OLSInVohWJrPLkF?usp=sharing)
 
-In this section we will be building on the code you wrote in the previous lesson [Lists](04-lists.md).  If you would like to look at our example code for that lesson, you can find it [here](/resources/src/04-lists/game-list.py).
+In this section we will be building on the code you wrote in the previous lesson [Lists](04-lists.md).  If you would like to look at our example code for that lesson, you can find it [here](/resources/src/04-lists/game-list.md).
 
 ### Dictionaries, A New Kind of Data Structure
 
@@ -41,21 +41,22 @@ Dictionaries associate each piece of data with a unique key, and then we can use
 | -------------- | ------------------------------------------------------------- | --------- | ----------------------------------------------------------------------------- |
 | dictionary | A collection that associates unique keys with values | hashtable | "This dictionary uses planet names as the key and the value is the distance from the sun." |
 | key | A string.  All of the keys in a dictionary must be unique. | address | "The keys for the dictionary are all the planets, 'mercury', 'venus', 'mars', and so on." |
-| value | A piece of data of any possible type. | content | "The value for the key 'mercury' is 
+| value | A piece of data of any possible type. | content | "The value for the key 'mercury' is '36 million miles'."|
 
 ```python
 
 # Syntax for creating an empty dictionary
-new_dict = {}
+first_dict = {}
 
 # Syntax for creating a dictionary with content
-new_dict = {"key1":"value1", "key2":"value2"}
+planet_dict = {"mercury":"36 million miles", "venus":"67 million miles"}
 
 # Adding a new key-value pair to an existing dictionary
-new_dict["key3"] = "value3"
+planet_dict["mars"] = "142 million miles"
 
 # Accessing a key-value pair
-value = new_dict["key1"]
+distance = planet_dict["venus"]
+# distance = "67 million miles"
 
 ```
 
@@ -63,12 +64,12 @@ value = new_dict["key1"]
 
 The last piece of our snowman game is displaying to the user the letters they have guessed correctly.  We have:
 
- -  The word 
- -  The list of correctly guessed letters  
+ *  The word 
+ *  The list of correctly guessed letters  
  
 Our end goal is to display each letter of the word with an '_' character if the letter has not yet been guessed and the correct letter if it has been guessed.  
 
-Every time a new correct letter is guessed, we want to update this display with the new information that we have.  We could use loops and lists to solve this problem by looping over each letter in the word and checking to see if it's in the list of guessed letters and based on a conditional test displaying either the letter or the underscore character.  There is an algorithmic cost to solving the problem this way.  
+Every time a new correct letter is guessed, we want to update this display with the new information that we have.  We could use loops and lists to solve this problem by looping over each letter in the word and checking to see if it's in the list of guessed letters and based on a conditional test displaying either the letter or the underscore character.
 
 Every time we search through our list it takes time, and we're repeating the same search each time we want to display our word.  A way to limit the number of times we do these searches is to save the result of the search.  We are going to use dictionaries to do that!  
 
@@ -76,61 +77,61 @@ We are going to build a dictionary for each letter that contains the letter and 
 
 ### Creating the List of Dictionaries
 
-* The first step is to construct our list of dictionaries data structure.  We are going to write a helper function to do that called `build_word_list` which will take the secret word as a parameter return a list of dictionaries.  We will call this helper function at the top of snowman:
+1. The first step is to construct our list of dictionaries data structure.  We are going to write a helper function to do that called `build_word_list` which will take the secret word as a parameter return a list of dictionaries.  We will call this helper function at the top of snowman:
 
-```python
+    ```python
 
-def snowman():
-    r = RandomWord()
-    snowman_word = r.word(word_min_length=SNOWMAN_MIN_WORD_LENGTH, word_max_length=SNOWMAN_MAX_WORD_LENGTH)
-    #print(f"debug info: {snowman_word}")
-    snowman_list = build_word_list(snowman_word)
-    # ...
+    def snowman():
+        r = RandomWord()
+        snowman_word = r.word(word_min_length=SNOWMAN_MIN_WORD_LENGTH, 
+                              word_max_length=SNOWMAN_MAX_WORD_LENGTH)
+        #print(f"debug info: {snowman_word}")
+        snowman_list = build_word_list(snowman_word)
+        # ...
 
-def build_word_list(word):
-    word_list = []
+    def build_word_list(word):
+        word_list = []
 
-    return word_list
+        return word_list
 
-```
+    ```
 
-* Our word_list value is currently an empty list.  Our goal is to populate it with dictionaries that correspond to each letter.  To do this we will first need to loop over each letter in the word.  Luckily for us, python provides a useful `for/in` operator for strings that will loop over all of the characters in the string and store the characters in a variable that we can use inside the loop (syntax `for letter in word`):
+1. Our word_list value is currently an empty list.  Our goal is to populate it with dictionaries that correspond to each letter.  To do this we will first need to loop over each letter in the word.  Luckily for us, python provides a useful `for/in` operator for strings that will loop over all of the characters in the string and store the characters in a variable that we can use inside the loop (syntax `for letter in word`):
 
+    ```python
 
-```python
+    def build_word_list(word):
+        word_list = []
+        for letter in word:
+            pass # pass is a python keyword that means do nothing.  We are using it here as a placeholder.
+        return word_list
 
-def build_word_list(word):
-    word_list = []
-    for letter in word:
-        pass # pass is a python keyword that means do nothing.  We are using it here as a placeholder.
-    return word_list
+    ```
 
-```
+1. Next we need to construct the dictionary that contains our letter and the guessed value
 
-* Next we need to construct the dictionary that contains our letter and the guessed value
+    ```python
 
-```python
+    def build_word_list(word):
+        word_list = []
+        for letter in word:
+            letter_dict = {"letter": letter, "guessed": False}
+        return word_list
 
-def build_word_list(word):
-    word_list = []
-    for letter in word:
-        letter_dict = {"letter": letter, "guessed": False}
-    return word_list
+    ```
 
-```
+1. Last, we need to add the dictionary to `word_list`
 
-* Last, we need to add the dictionary to `word_list`
+    ```python
 
-```python
+    def build_word_list(word):
+        word_list = []
+        for letter in word:
+            letter_dict = {"letter": letter, "guessed": False}
+            word_list.append(letter_dict)
+        return word_list
 
-def build_word_list(word):
-    word_list = []
-    for letter in word:
-        letter_dict = {"letter": letter, "guessed": False}
-        word_list.append(letter_dict)
-    return word_list
-
-```
+    ```
 
 ### Displaying the List of Dictionaries
 
@@ -143,7 +144,7 @@ Now that we have this list, we need a way to display it to our user.  To do this
     * If the value of "guessed" is false add '_' to the string
 * Add 1 space between each letter/underscore
 
-<display>
+<details>
 <summary>Write the function and when you are finished, compare your code with ours</summary>
 
 ```python
@@ -160,18 +161,19 @@ def print_word_list(word_list):
 
 ```
 
-</display>
+</details>
 
 The next step is to update the `snowman` function to print the word as part of the game play.  If we were playing in real life we would write out the number of underscores to show our players how many letters are part of the word, so we will want to that as part of our game.  We also want to print after we display the current state of the snowman after each guess.
 
-<display>
+<details>
 <summary>Update your `snowman` function and when you are finished, compare your code with ours</summary>
 
 ```python
 
 def snowman():
     r = RandomWord()
-    snowman_word = r.word(word_min_length=SNOWMAN_MIN_WORD_LENGTH, word_max_length=SNOWMAN_MAX_WORD_LENGTH)
+    snowman_word = r.word(word_min_length=SNOWMAN_MIN_WORD_LENGTH, 
+                          word_max_length=SNOWMAN_MAX_WORD_LENGTH)
     #print(f"debug info: {snowman_word}")
     snowman_list = build_word_list(snowman_word)
     correct_guesses_list = []
@@ -191,7 +193,7 @@ def snowman():
 
 ```
 
-</display>
+</details>
 
 ### Updating the List of Dictionaries
 
@@ -394,17 +396,12 @@ class TestPython1(unittest.TestCase):
 
 <!-- ======================= END CHALLENGE ======================= -->
 
-### Ending the Game
 
-Our game currently ends when our user maxes out their wrong guesses, but we also want to end the game if our user guesses all of the letters in the word.  We also want to display messages to our user if they lose or win.
+### Snowman Project
 
-Our `snowman` function needs to be updated in the following ways:
-* Add a function call to `update_and_check_word_list` when the user guesses a correct letter
-* Store the return variable from the above function call and use it to end the game loop if the user has guessed all of the letters
-* After the game loop, print "Congratulations, you win!" if our user won or "Sorry, you lose!  The word was ..." with the secret word replacing ... if the user lost.
+It's time to bring all the pieces together into a fully functional Snowman game!
 
-__[TODO - PYTHON CODE CHALLENGE HERE!]__
-
+[Click here to begin the Snowman Project checkpoint and write the final version!](06-snowman.checkpoint.md)
 
 ## Summary
 

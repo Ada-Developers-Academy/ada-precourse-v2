@@ -76,5 +76,9 @@ Standards:
       - 
         Type: Resource
         UID: 8b5cb812-02ae-488f-9fa7-9c4ca82a3e45
-        Path: /01-intro-to-python/resources/src/04-lists/game-list.py
+        Path: /01-intro-to-python/resources/src/04-lists/game-list.md
+      -
+        Type: Resource
+        UID: 17f73dd9-889e-4310-8ea1-d5cb4aeade70
+        Path: /01-intro-to-python/resources/src/05-dictionaries/game-dictionary.md
 
