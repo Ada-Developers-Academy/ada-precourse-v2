@@ -34,8 +34,8 @@ Standards:
         Type: Checkpoint
         UID: d5884ace-2cf9-46e5-b279-29ef1a501cbb
         Path: /00-preparing-for-ada/preparing-for-ada.checkpoint.md
-  - Title: Coding Guess the Number and Snowman
-    Description: Practice with Python
+  - Title: Practice with Python
+    Description: Coding Guess the Number and Snowman
     UID: 93a229d0-2bf8-48ca-a0f7-9a72a0a323b3
     SuccessCriteria:
       - success criteria
