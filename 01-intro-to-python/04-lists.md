@@ -72,6 +72,7 @@ for i in new_list_2:
 So far our Snowman game has used a constant as the secret word (`SNOWMAN_WORD = 'broccoli'`), but a game that always uses the same word is not a great game.  The code to generate a random English word is outside of the scope of these lessons, although it is an interesting problem and worth spending some time thinking about.  We are going to use a _package_ to come up with a random word.  We are going to use the _wonderwords_ package.  
 
 1. Before we can use it in our code, we will need to install the package using the command line.  To install, copypasta this into your terminal:
+
     ```console
     $ pip3 install wonderwords
     ```
@@ -87,39 +88,38 @@ So far our Snowman game has used a constant as the secret word (`SNOWMAN_WORD = 
     ```
 1. Next, add the constants `SNOWMAN_MAX_WORD_LENGTH = 8` and `SNOWMAN_MIN_WORD_LENGTH = 5` with the other constants at the top of the file.    
 1. Last, add the following lines of code to the top of the `snowman` function:
+    ```python
 
-```python
+        r = RandomWord()
+        snowman_word = r.word(word_min_length=SNOWMAN_MIN_WORD_LENGTH, word_max_length=SNOWMAN_MAX_WORD_LENGTH)
 
-    r = RandomWord()
-    snowman_word = r.word(word_min_length=SNOWMAN_MIN_WORD_LENGTH, word_max_length=SNOWMAN_MAX_WORD_LENGTH)
-
-```
-<details>
-<summary>Curious about these lines of code?  Click here for more!</summary>
-The first line `r = RandomWord()` gives us a RandomWord object to work with.  We will not cover classes and objects in the pre-course material, but they will be a topic we will cover at Ada.  The next line, `snowman_word = r.word(word_min_length=SNOWMAN_MIN_WORD_LENGTH, word_max_length=SNOWMAN_MAX_WORD_LENGTH)` will call the function `word` on the the RandomWord object `r` and give us a random word.  We are passing two arguments (word_min_length and word_max_length) using keyword arguments.  Again, we will not be covering these topics further in the pre-course, but they will come up later in the Ada curriculum.  The arguments that we are passing to the function `word` will instruct `word` to give us an English word where the length is between the SNOWMAN_MIN_WORD_LENGTH and SNOWMAN_MAX_WORD_LENGTH.  Feel free to experiment with setting different values for the constants.
-</details>
+    ```
+    <details>
+    <summary>Curious about these lines of code?  Click here for more!</summary>
+    The first line `r = RandomWord()` gives us a RandomWord object to work with.  We will not cover classes and objects in the pre-course material, but they will be a topic we will cover at Ada.  The next line, `snowman_word = r.word(word_min_length=SNOWMAN_MIN_WORD_LENGTH, word_max_length=SNOWMAN_MAX_WORD_LENGTH)` will call the function `word` on the the RandomWord object `r` and give us a random word.  We are passing two arguments (word_min_length and word_max_length) using keyword arguments.  Again, we will not be covering these topics further in the pre-course, but they will come up later in the Ada curriculum.  The arguments that we are passing to the function `word` will instruct `word` to give us an English word where the length is between the SNOWMAN_MIN_WORD_LENGTH and SNOWMAN_MAX_WORD_LENGTH.  Feel free to experiment with setting different values for the constants.
+    </details>
 
 1. The last piece of adding our new random word is replacing the constant `SNOWMAN_WORD` in the conditional test inside of the `snowman` function with the new `snowman_word` variable.
 
-```python
+    ```python
 
-def snowman():
-    r = RandomWord()
-    snowman_word = r.word(word_min_length=SNOWMAN_MIN_WORD_LENGTH, word_max_length=SNOWMAN_MAX_WORD_LENGTH)
-    correct_guesses = 0
-    wrong_guesses = 0
-    while wrong_guesses < SNOWMAN_WRONG_GUESSES:
-        user_input = get_letter_from_user()
-        # Using the new variable instead of the constant SNOWMAN_WORD here:
-        if user_input in snowman_word:
-            print("You guessed a letter that's in the word!")
-            correct_guesses += 1
-        else:
-            print(f"The letter {user_input} is not in the word")
-            wrong_guesses += 1
-        print_snowman_graphic(wrong_guesses)
+    def snowman():
+        r = RandomWord()
+        snowman_word = r.word(word_min_length=SNOWMAN_MIN_WORD_LENGTH, word_max_length=SNOWMAN_MAX_WORD_LENGTH)
+        correct_guesses = 0
+        wrong_guesses = 0
+        while wrong_guesses < SNOWMAN_WRONG_GUESSES:
+            user_input = get_letter_from_user()
+            # Using the new variable instead of the constant SNOWMAN_WORD here:
+            if user_input in snowman_word:
+                print("You guessed a letter that's in the word!")
+                correct_guesses += 1
+            else:
+                print(f"The letter {user_input} is not in the word")
+                wrong_guesses += 1
+            print_snowman_graphic(wrong_guesses)
 
-```
+    ```
 
 ### Tracking User Input
 
@@ -129,88 +129,89 @@ Let's start with tracking incorrect guesses.  We know we are going to have a max
 
 1. Start by addding an incorrect guesses list variable to the top of the `snowman` function:
 
-```python
+    ```python
 
-def snowman():
-    r = RandomWord()
-    snowman_word = r.word(word_min_length=SNOWMAN_MIN_WORD_LENGTH,
-                          word_max_length=SNOWMAN_MAX_WORD_LENGTH)
-    wrong_guesses_list = []
-    
-    # ...
+    def snowman():
+        r = RandomWord()
+        snowman_word = r.word(word_min_length=SNOWMAN_MIN_WORD_LENGTH,
+                            word_max_length=SNOWMAN_MAX_WORD_LENGTH)
+        wrong_guesses_list = []
+        
+        # ...
 
-```
+    ```
 
 1. Next we need to add each incorrect guess to the list.  We are going to do this with the list function `append` which adds elements to the end of the list:
 
-```python
+    ```python
 
-# ...
-        if user_input in snowman_word:
-            print("You guessed a letter that's in the word!")
-        else:
-            print(f"The letter {user_input} is not in the word")
-            wrong_guesses_list.append(user_input)
-# ...
+    # ...
+            if user_input in snowman_word:
+                print("You guessed a letter that's in the word!")
+            else:
+                print(f"The letter {user_input} is not in the word")
+                wrong_guesses_list.append(user_input)
+    # ...
 
-```
+    ```
 
-3. In the previous version, we were incrementing a variable `wrong_guesses` each time the user guessed a letter that was not in the word, and then using that variable in the test for our while loop.  We can continue to use this variable, but we can use our list instead and simplify our code.  The number of elements in `wrong_guesses_list` is the number of incorrect guesses, so we can use the length of the list instead of the counter variable.  We get the length of the list by using the len() function.  We can also use the length of the list when we call the print_snowman_graphic function.  Here's the updated version of the function:
+1. In the previous version, we were incrementing a variable `wrong_guesses` each time the user guessed a letter that was not in the word, and then using that variable in the test for our while loop.  We can continue to use this variable, but we can use our list instead and simplify our code.  The number of elements in `wrong_guesses_list` is the number of incorrect guesses, so we can use the length of the list instead of the counter variable.  We get the length of the list by using the len() function.  We can also use the length of the list when we call the print_snowman_graphic function.  Here's the updated version of the function:
 
-```python
+    ```python
 
-def snowman():
-    r = RandomWord()
-    snowman_word = r.word(word_min_length=SNOWMAN_MIN_WORD_LENGTH, word_max_length=SNOWMAN_MAX_WORD_LENGTH)
-    wrong_guesses_list = []
-    while len(wrong_guesses_list) < SNOWMAN_WRONG_GUESSES:
-        user_input = get_letter_from_user()
-        if user_input in snowman_word:
-            print("You guessed a letter that's in the word!")
-        else:
-            print(f"The letter {user_input} is not in the word")
-            wrong_guesses_list.append(user_input)
-        print_snowman_graphic(len(wrong_guesses_list))
+    def snowman():
+        r = RandomWord()
+        snowman_word = r.word(word_min_length=SNOWMAN_MIN_WORD_LENGTH, word_max_length=SNOWMAN_MAX_WORD_LENGTH)
+        wrong_guesses_list = []
+        while len(wrong_guesses_list) < SNOWMAN_WRONG_GUESSES:
+            user_input = get_letter_from_user()
+            if user_input in snowman_word:
+                print("You guessed a letter that's in the word!")
+            else:
+                print(f"The letter {user_input} is not in the word")
+                wrong_guesses_list.append(user_input)
+            print_snowman_graphic(len(wrong_guesses_list))
 
-```
+    ```
 
 ###  Using `wrong_guesses_list` in `get_letter_from_user`
 
 Now that we have a list incorrect guesses, we can use them in `get_letter_from_user` to prevent our user from inputting the same incorrect letter multiple times.  
+
 1. The first step is to pass the variable `wrong_guesses_list` to `get_letter_from_user` as an argument.  
 1. Next, We will need to update our function definition of `get_letter_from_user` with a new parameter.  
 1. Last, we need to use the new information inside of `get_letter_from_user`.  
     * Python lists provide us with a handy `in` operator (syntax `item in list`) that returns `True` if the item is in the list and `False` if it is not.
 
-```python
+    ```python
 
-# ...
-def snowman():
     # ...
-    wrong_guesses_list = []
-    while len(wrong_guesses_list) < SNOWMAN_WRONG_GUESSES:
-        user_input = get_letter_from_user(wrong_guesses_list)
-    # ...
+    def snowman():
+        # ...
+        wrong_guesses_list = []
+        while len(wrong_guesses_list) < SNOWMAN_WRONG_GUESSES:
+            user_input = get_letter_from_user(wrong_guesses_list)
+        # ...
 
-def get_letter_from_user(wrong_list):
-    valid_input = False
-    user_input_string = None
-    while not valid_input:
-        user_input_string = input("Guess a letter: ")
-        if not user_input_string.isalpha():
-            print("You must input a letter!")
-        elif len(user_input_string) > 1:
-            print("You can only input one letter at a time!")
-        # NEW SECTION
-        elif user_input_string in wrong_list:
-            print("You have already guessed that letter!")
-        # END NEW SECTION
-        else:
-            valid_input = True
+    def get_letter_from_user(wrong_list):
+        valid_input = False
+        user_input_string = None
+        while not valid_input:
+            user_input_string = input("Guess a letter: ")
+            if not user_input_string.isalpha():
+                print("You must input a letter!")
+            elif len(user_input_string) > 1:
+                print("You can only input one letter at a time!")
+            # NEW SECTION
+            elif user_input_string in wrong_list:
+                print("You have already guessed that letter!")
+            # END NEW SECTION
+            else:
+                valid_input = True
 
-    return user_input_string
+        return user_input_string
 
-```
+    ```
 
 ### Tracking Correct letters
 
@@ -456,65 +457,65 @@ In the last lesson we wrote the function `print_snowman_graphic` that drew our s
 
 1. The first step is to store all of the drawing constants in a list:
 
-```python
+    ```python
 
-SNOWMAN_GRAPHIC = [
-    '*   *   *  ',
-    ' *   _ *   ',
-    '   _[_]_ * ',
-    '  * (")    ',
-    '  \( : )/ *',
-    '* (_ : _)  ',
-    '-----------'
-]
+    SNOWMAN_GRAPHIC = [
+        '*   *   *  ',
+        ' *   _ *   ',
+        '   _[_]_ * ',
+        '  * (")    ',
+        '  \( : )/ *',
+        '* (_ : _)  ',
+        '-----------'
+    ]
 
-```
+    ```
 
 1. The next step is to update our drawing function to use the list.  Here's the previous version:
 
-```python
+    ```python
 
-def print_snowman_graphic(wrong_guesses_count):
-    for i in range(SNOWMAN_WRONG_GUESSES + 1 - wrong_guesses_count,
-                   SNOWMAN_WRONG_GUESSES + 1)
-        if i == 1:
-            print(SNOWMAN_1)
-        if(i == 2):
-            print(SNOWMAN_2)
-        if(i == 3):
-            print(SNOWMAN_3)
-        if(i == 4):
-            print(SNOWMAN_4)
-        if(i == 5):
-            print(SNOWMAN_5)
-        if(i == 6):
-            print(SNOWMAN_6)
-        if(i == 7):
-            print(SNOWMAN_7)
+    def print_snowman_graphic(wrong_guesses_count):
+        for i in range(SNOWMAN_WRONG_GUESSES + 1 - wrong_guesses_count,
+                    SNOWMAN_WRONG_GUESSES + 1)
+            if i == 1:
+                print(SNOWMAN_1)
+            if(i == 2):
+                print(SNOWMAN_2)
+            if(i == 3):
+                print(SNOWMAN_3)
+            if(i == 4):
+                print(SNOWMAN_4)
+            if(i == 5):
+                print(SNOWMAN_5)
+            if(i == 6):
+                print(SNOWMAN_6)
+            if(i == 7):
+                print(SNOWMAN_7)
 
-```
+    ```
 
 1. Now, instead of using SNOWMAN_1, we can use SNOWMAN_GRAPHIC[0], for SNOWMAN_2 we use SNOWMAN_GRAPHIC[1], and so on.  Reminder - the first index of a list is 0, not 1.  That means that for element number `x` in the list, the index will be `x - 1`.  Let's update our code to use this new way of accessing each element of the graphic:
 
-```python
+    ```python
 
-def print_snowman_graphic(wrong_guesses_count):
-    for i in range(SNOWMAN_WRONG_GUESSES + 1 - wrong_guesses_count,
-                   SNOWMAN_WRONG_GUESSES + 1)
-        print(SNOWMAN_GRAPHIC[i - 1])
+    def print_snowman_graphic(wrong_guesses_count):
+        for i in range(SNOWMAN_WRONG_GUESSES + 1 - wrong_guesses_count,
+                    SNOWMAN_WRONG_GUESSES + 1)
+            print(SNOWMAN_GRAPHIC[i - 1])
 
-```
+    ```
 
-Notice in the above code that we have `+ 1` and `- 1`.  This is because in the first version if we wanted to draw the whole snowman we needed the math to produce the sequence 1 to 7 becuase we were using the numbers 1-7 in our constants and this made the code easier to read.  Now, we're using a list, so to draw the whole snowman we need the sequence to be 0 to 6.  We can now simplify some of our math with that in mind.
+    Notice in the above code that we have `+ 1` and `- 1`.  This is because in the first version if we wanted to draw the whole snowman we needed the math to produce the sequence 1 to 7 becuase we were using the numbers 1-7 in our constants and this made the code easier to read.  Now, we're using a list, so to draw the whole snowman we need the sequence to be 0 to 6.  We can now simplify some of our math with that in mind.
 
-```python
+    ```python
 
-def print_snowman_graphic(wrong_guesses_count):
-    for i in range(SNOWMAN_WRONG_GUESSES - wrong_guesses_count,
-                   SNOWMAN_WRONG_GUESSES)
-        print(SNOWMAN_GRAPHIC[i])
+    def print_snowman_graphic(wrong_guesses_count):
+        for i in range(SNOWMAN_WRONG_GUESSES - wrong_guesses_count,
+                    SNOWMAN_WRONG_GUESSES)
+            print(SNOWMAN_GRAPHIC[i])
 
-```
+    ```
 
 ## Summary
 
