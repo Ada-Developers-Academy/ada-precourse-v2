@@ -2,7 +2,7 @@
 
 ## Learning Goals
 
-At the end of this lesson students will be able to:
+At the end of this lesson we will be able to...
 
 - Identify variable definition statements.
 - Capture user input in a variable.
@@ -25,10 +25,12 @@ In this lesson we will have a quick refresher on variables and go into an explan
 ### Syntax
 
 ```python
->>> # Create a new variable named "ami", and store the string "Sailor Mercury":
+>>> # Create a new variable named "ami", and store 
+>>> #   the string "Sailor Mercury":
 >>> ami = "Sailor Mercury"
 >>>
->>> # Create a new variable named "cats" and store the number 2:
+>>> # Create a new variable named "cats" and store the 
+>>> #   number 2:
 >>> cats = 2
 >>>
 >>> # "print" using some variables and a format string.
