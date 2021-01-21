@@ -315,7 +315,7 @@ class TestPython1(unittest.TestCase):
         answer = p.update_and_check_word_list(input_list, input_letter)
 
         # Assert
-        assert answer
+        assert answer == True
 
 
     def test_changes_guessed_to_true_if_the_letter_matches(self):
