@@ -103,6 +103,35 @@ Which of the following are variables in the example above?
 
 <!-- ======================= END CHALLENGE ======================= -->
 
+## Constants
+
+Sometimes we want to have a readable name for a value like a variable, but we want to make sure it never changes.  In Python, a _constant_ is a type of variable whose value **cannot** be changed.  Constants are named containers for values that cannot be reassigned.
+
+We create constants by creating variables with all uppercase letters.  We can break up words with underscores.
+
+**Examples**
+
+```python
+# Gravity accellerates at 9.8 m/s^2
+GRAVITY = 9.8
+
+print(f"Gravity is {GRAVITY} m/s^2 at sea level on earth")
+
+# Another constant example
+MAX_LENGTH = 79
+```
+
+So why use constants?
+
+1. Using constants makes code more **readable**.  Named values helps communicate their meaning.
+1. It helps avoid typos because it would be easy to accidentally type 9.7 at some point in your program and never catch the bug.
+1. If the constant value needs to be changed later it's nice to have 1 line which assigns the value in the entire program.
+
+As we build our Snowman program, we will use the following constants:
+
+1.  **SNOWMAN_MIN_WORD_LENGTH** - The shortest length of word we will allow.
+1.  **SNOWMAN_MAX_WORD_LENGTH** - The longest length of word we will allow.
+
 ## Input/Output (IO)
 
 Input and output (collectively called "I/O" or "IO" for short) are how we get data _in_ to and _out_ of our programs.  You've already used one IO function in your coding challenge: `print`.  The `print` function _outputs_ what we give it to the terminal so the user can see it.
