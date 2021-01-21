@@ -74,6 +74,10 @@ Standards:
         Path: /01-intro-to-python/resources/src/03-loops/game-loop.md
       - 
         Type: Resource
+        UID: 11ee4a28-c0fe-4467-ad10-577e2087cd0f
+        Path: /01-intro-to-python/resources/src/02-functions/games_function.md
+      - 
+        Type: Resource
         UID: 8b5cb812-02ae-488f-9fa7-9c4ca82a3e45
         Path: /01-intro-to-python/resources/src/04-lists/games_list.md
       -
@@ -84,7 +88,6 @@ Standards:
         Type: Resource
         UID: 8dcfa218-e7a1-499c-b30e-dab52ba8474b
         Path: /01-intro-to-python/resources/src/01-conditionals/games_conditional.md
-
   - Title: Social Justice
     Description: Prework for the Social Justice Training
     UID: daffd069-1de3-43dd-9f15-37e66ddbf673

@@ -1,3 +1,7 @@
+# Function Lesson Sample Code
+
+```python
+
 import random
 
 RANGE_LOW = 0
@@ -52,3 +56,5 @@ def get_letter_from_user():
 
 guess_the_number()
 snowman()
+
+```
