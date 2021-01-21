@@ -196,72 +196,72 @@ We want to run the loop at most the max guesses number of times, but if the user
 
 1.  Start by adding a counter variable `num_guesses` and increment inside of the while loop:
 
-```python
+    ```python
 
-def guess_the_number():
-    # ...
-    num_guesses = 0
-    while waiting_for_correct_guess:
-        num_guesses += 1 # if the += operator is unfamiliar, it is the same as num_guesses = num_guesses + 1
+    def guess_the_number():
         # ...
+        num_guesses = 0
+        while waiting_for_correct_guess:
+            num_guesses += 1 # if the += operator is unfamiliar, it is the same as num_guesses = num_guesses + 1
+            # ...
 
-```
+    ```
 
 1.  Next, add a max guesses constant to the other constants at the top of the file and set it to any integer value (in our example we will use 20.)  Then add a comparision in the while loop to check to see if the current number of guesses is greater than or equal to the max guesses (on our first time through the loop the number of guesses starts at 0, so by the time we get to the max number of guesses we've already guessed that many times):
 
 
-```python
+    ```python
 
-# ...
-MAX_GUESSES = 20
-# ...
-def guess_the_number():
     # ...
-    
-    num_guesses = 0
-    while waiting_for_correct_guess or num_guesses >= MAX_GUESSES:
-        num_guesses += 1 
+    MAX_GUESSES = 20
+    # ...
+    def guess_the_number():
         # ...
+        
+        num_guesses = 0
+        while waiting_for_correct_guess or num_guesses >= MAX_GUESSES:
+            num_guesses += 1 
+            # ...
 
-```
+    ```
 
 1.  Last, let's add some feedback to the user to let them know what's going on!
 
-```python
+    ```python
 
-MAX_GUESSES = 20
+    MAX_GUESSES = 20
 
-def guess_the_number():
-    random_number = random.randint(RANGE_LOW, RANGE_HIGH)
+    def guess_the_number():
+        random_number = random.randint(RANGE_LOW, RANGE_HIGH)
 
-    waiting_for_correct_guess = True
-    num_guesses = 0
-    while waiting_for_correct_guess or num_guesses >= MAX_GUESSES:
-        print(f"You have {MAX_GUESSES - num_guesses} left!")
-        num_guesses += 1
-        user_input = get_number_from_user()
-        if user_input == random_number:
-            print("You guessed the number!  Good job!")
-            waiting_for_correct_guess = False
-        elif user_input > random_number:
-            print("Your guess is too high")
-        elif user_input < random_number:
-            print("Your guess is too low")
-        elif user_input < RANGE_LOW or user_input > RANGE_HIGH:
-            print(f"Your guess is out of bounds.")
-            print(f"It must be between {RANGE_LOW} and {RANGE_HIGH}")
-    
-    # At this point, there are two options.  1, the user ran out of guesses or 2. they got the correct answer.  
-    # We need to let them know if they ran out of guesses, but if we check if num_guesses is >= MAX_GUESSES we could
-    # be wrong, because they might have gotten the correct answer on the last try!  If we check waiting_for_currect_guess
-    # we will get the answer we want - did they ever guess the correct answer before they were booted out of the loop.  Also, if they
-    # got the correct answer, they were given feedback about that inside the loop, so there's no need to do anything here in that case.
-    if waiting_for_correct_guess:
-        print(f"You ran out of guesses!  The correct answer was {random_number}.")
+        waiting_for_correct_guess = True
+        num_guesses = 0
+        while waiting_for_correct_guess or num_guesses >= MAX_GUESSES:
+            print(f"You have {MAX_GUESSES - num_guesses} left!")
+            num_guesses += 1
+            user_input = get_number_from_user()
+            if user_input == random_number:
+                print("You guessed the number!  Good job!")
+                waiting_for_correct_guess = False
+            elif user_input > random_number:
+                print("Your guess is too high")
+            elif user_input < random_number:
+                print("Your guess is too low")
+            elif user_input < RANGE_LOW or user_input > RANGE_HIGH:
+                print(f"Your guess is out of bounds.")
+                print(f"It must be between {RANGE_LOW} and {RANGE_HIGH}")
+        
+        # At this point, there are two options.  1, the user ran out of guesses or 2. they got the correct answer.  
+        # We need to let them know if they ran out of guesses, but if we check if num_guesses is >= MAX_GUESSES we could
+        # be wrong, because they might have gotten the correct answer on the last try!  If we check waiting_for_currect_guess
+        # we will get the answer we want - did they ever guess the correct answer before they were booted out of the loop.  Also, if they
+        # got the correct answer, they were given feedback about that inside the loop, so there's no need to do anything here in that case.
+        if waiting_for_correct_guess:
+            print(f"You ran out of guesses!  The correct answer was {random_number}.")
 
-```
+    ```
 
-Check the last assumption that we made that we only need to check `waiting_for_correct_guess` to give the user the "You ran out of guesses" feedback.  It seems like we're checking the wrong variable!  In cases like this it can be useful to "be the computer" and run through the code manually.  Write down the state of the variables at each pass through the loop and make sure that the loop is doing what we think it is doing.  Does the waiting_for_correct_guess variable give us the information that we think it does in every situation?  Walk through the code with various possibilities (we call these test cases, a possible list is first, the user guesses correctly, second, the user doesn't guess and runs out of guesses, and last, the user guesses correctly on the last try) and confirm that the code works.
+    Check the last assumption that we made that we only need to check `waiting_for_correct_guess` to give the user the "You ran out of guesses" feedback.  It seems like we're checking the wrong variable!  In cases like this it can be useful to "be the computer" and run through the code manually.  Write down the state of the variables at each pass through the loop and make sure that the loop is doing what we think it is doing.  Does the waiting_for_correct_guess variable give us the information that we think it does in every situation?  Walk through the code with various possibilities (we call these test cases, a possible list is first, the user guesses correctly, second, the user doesn't guess and runs out of guesses, and last, the user guesses correctly on the last try) and confirm that the code works.
 
 ### Guess the Number is Done..?
 
@@ -479,7 +479,7 @@ def snowman():
 ### !end-challenge
 <!-- prettier-ignore-end -->
 
-### Drawing Pictures [TODO]
+### Drawing Pictures
 
 Add these ASCII snowman drawing constants to the top of the file.  Notice that the number of elements in the drawing is the same as SNOWMAN_WRONG_GUESSES.  For each wrong guess, we will want to add a new element to the drawing:
 
@@ -519,73 +519,89 @@ def print_snowman_graphic(id):
         print(SNOWMAN_7)
 
 ```
+</details>
 
 Now we're going to add a loop inside this function to make it draw not just one element of the snowman, but all of the elements.  Unlike all of our other loops so far, we're not going to use a `while` loop, this time we're going to use a `for` loop.  A `for` loop is a great tool when we know exactly how many times we're going to be executing our loop.  
 
-- Start by adding a `for` loop that prints the entire snowman.  
-- Use the `range()` function with the `for` loop.  
-    - With the `range()` function, remember that the number of items in the drawing is the same as the constant SNOWMAN_WRONG_GUESSES.  
+1. Start by adding a `for` loop that prints the entire snowman.  
+    * Use the `range()` function with the `for` loop.  
+    * With the `range()` function, remember that the number of items in the drawing is the same as the constant SNOWMAN_WRONG_GUESSES.  
 
-*Warning* the range function is _exclusive_, which means it goes up to but does not include the last element of the given range.  This means that `range(2, 7) = [2, 3, 4, 5, 6]`
+    *Warning* the range function is _exclusive_, which means it goes up to but does not include the last element of the given range.  This means that `range(2, 7) = [2, 3, 4, 5, 6]`
 
-<details>
-<summary>When you have added the `for` loop to the function, compare what you have to our version.</summary>
+    <details>
+    <summary>When you have added the `for` loop to the function, compare what you have to our version.</summary>
 
-```python
+    ```python
 
-def print_snowman_graphic():
-    
-    for i in range(1, SNOWMAN_WRONG_GUESSES + 1)
-        if i == 1:
-            print(SNOWMAN_1)
-        elif i == 2:
-            print(SNOWMAN_2)
-        elif i == 3:
-            print(SNOWMAN_3)
-        elif i == 4:
-            print(SNOWMAN_4)
-        elif i == 5:
-            print(SNOWMAN_5)
-        elif i == 6:
-            print(SNOWMAN_6)
-        elif i == 7:
-            print(SNOWMAN_7)
+    def print_snowman_graphic():
+        
+        for i in range(1, SNOWMAN_WRONG_GUESSES + 1)
+            if i == 1:
+                print(SNOWMAN_1)
+            elif i == 2:
+                print(SNOWMAN_2)
+            elif i == 3:
+                print(SNOWMAN_3)
+            elif i == 4:
+                print(SNOWMAN_4)
+            elif i == 5:
+                print(SNOWMAN_5)
+            elif i == 6:
+                print(SNOWMAN_6)
+            elif i == 7:
+                print(SNOWMAN_7)
 
-```
+    ```
 
-</details>
+    </details>
 
+1. The next step is to modify the range of our for loop to only print the elements that we want.  For Snowman, we want to draw our snowman from the ground up, so if we have only 1 incorrect guess, we want to print the last element, 2 incorrect guesses means the last two elements, and so on.  Our function should take in the number of incorrect guesses and use that value in the range to draw the elements of the snowman in the order that we want.  
 
-The last step is to modify the range of our for loop to only print the elements that we want.  For Snowman, we want to draw our snowman from the ground up, so if we have only 1 incorrect guess, we want to print the last element, 2 incorrect guesses means the last two elements, and so on.  Our function should take in the number of incorrect guesses and use that value in the range to draw the elements of the snowman in the order that we want.  
+    <details>
+    <summary> When you have updated the your function, compare what you have to our version.</summary>
 
-<details>
-<summary> When you have updated the your function, compare what you have to our version.</summary>
+    ```python
 
-```python
+    def print_snowman_graphic(wrong_guesses_count):
+        
+        for i in range(SNOWMAN_WRONG_GUESSES + 1 - wrong_guesses_count, SNOWMAN_WRONG_GUESSES + 1)
+            if i == 1:
+                print(SNOWMAN_1)
+            elif i == 2:
+                print(SNOWMAN_2)
+            elif i == 3:
+                print(SNOWMAN_3)
+            elif i == 4:
+                print(SNOWMAN_4)
+            elif i == 5:
+                print(SNOWMAN_5)
+            elif i == 6:
+                print(SNOWMAN_6)
+            elif i == 7:
+                print(SNOWMAN_7)
 
-def print_snowman_graphic(wrong_guesses_count):
-    
-    for i in range(SNOWMAN_WRONG_GUESSES + 1 - wrong_guesses_count, SNOWMAN_WRONG_GUESSES + 1)
-        if i == 1:
-            print(SNOWMAN_1)
-        elif i == 2:
-            print(SNOWMAN_2)
-        elif i == 3:
-            print(SNOWMAN_3)
-        elif i == 4:
-            print(SNOWMAN_4)
-        elif i == 5:
-            print(SNOWMAN_5)
-        elif i == 6:
-            print(SNOWMAN_6)
-        elif i == 7:
-            print(SNOWMAN_7)
+    ```
 
-```
+    </details>
 
-</details>
+1. Finally, inside of the `snowman` function, add the `print_snowman_graphic` function call to the game loop to print out the current state of the snowman to the user after each guess.
 
-Last, inside of the `snowman` function, add the `print_snowman_graphic` function call to the game loop to print out the current state of the snowman to the user after each guess.
+    ```python
+
+    def snowman():
+        correct_guesses = 0
+        wrong_guesses = 0
+        while wrong_guesses < SNOWMAN_WRONG_GUESSES:
+            user_input = get_letter_from_user()
+            if user_input in SNOWMAN_WORD:
+                print("You guessed a letter that's in the word!")
+                correct_guesses += 1
+            else:
+                print(f"The letter {user_input} is not in the word")
+                wrong_guesses += 1
+            print_snowman_graphic(wrong_guesses)
+    ```
 
 ## Summary
 
