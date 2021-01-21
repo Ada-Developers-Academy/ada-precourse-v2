@@ -34,8 +34,8 @@ Standards:
         Type: Checkpoint
         UID: d5884ace-2cf9-46e5-b279-29ef1a501cbb
         Path: /00-preparing-for-ada/preparing-for-ada.checkpoint.md
-  - Title: Coding Guess the Number and Snowman
-    Description: Practice with Python
+  - Title: Practice with Python
+    Description: Coding Guess the Number and Snowman
     UID: 93a229d0-2bf8-48ca-a0f7-9a72a0a323b3
     SuccessCriteria:
       - success criteria
@@ -68,7 +68,6 @@ Standards:
         Type: Checkpoint
         UID: f732de97-d800-482f-8f2c-8fb88e9e34b6
         Path: /01-intro-to-python/06-snowman.checkpoint.md
-  
       - 
         Type: Resource
         UID: 4ba8f29d-fa11-4a26-8b9b-be5be478c5d1
@@ -81,4 +80,13 @@ Standards:
         Type: Resource
         UID: 17f73dd9-889e-4310-8ea1-d5cb4aeade70
         Path: /01-intro-to-python/resources/src/05-dictionaries/game-dictionary.md
-
+  - Title: Social Justice
+    Description: Prework for the Social Justice Training
+    UID: daffd069-1de3-43dd-9f15-37e66ddbf673
+    SuccessCriteria:
+      - success criteria
+    ContentFiles:
+      -
+        Type: Lesson
+        UID: be54361c-2647-45bc-87a4-2b3673e496ea
+        Path: /02-ada-equity-work/ada-social-justice-work.md
