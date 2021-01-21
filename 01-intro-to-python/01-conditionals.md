@@ -1,29 +1,39 @@
 # Conditionals
 
+<iframe src="https://adaacademy.hosted.panopto.com/Panopto/Pages/Embed.aspx?pid=ec78271e-6978-4ffe-8aa8-acb7007cbaea&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&start=0&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+
 ## Learning Goals
 
-At the end of this lesson students will be able to:
+At the end of this lesson we will be able to:
 
-- Be able to write `if`/`else` statements.
-- Be able to extend these with `elif` statements.
+- Write `if...else` statements.
+- Extend these with `elif` statements.
 
 ## Introduction
 
-**Textbook for this section: [link to ada build conditionals]**
+**[Textbook for this section:](https://colab.research.google.com/drive/1huE7PyavZSJIou4mh5G2e7yfG08Vb7da?usp=sharing)**
 
-In this section we will be building on the code that you learned in the previous lesson [Variables and IO].  
+In this section we will be building on the code that you learned in the previous lesson [Variables and IO](./00-variables-and-io.md).  
 
 ## Vocabulary
 
-* `random.randint`: A function that will generate a random integer in a range.
-* `if`/`else`: A statement to do one of two things.
-* `if`/`elif`/`else`: A statement to do three or more things.
+| Vocab                        | Definition                                                   | How to Use in a Sentence |
+| ------------------------------------------------------------ | ------------------------------- | ------------------------------------------------ |
+| random.randint | A function that will generate a random integer in a range. | We used `random.randint(5, 15)` to get a random integer between 5 and 15. |
+| if....else  | A statement to do one of two things based on a condition. | We wrote an `if...else` statement to determine if the person was old enough to consume alcohol. |
+|  if...elif...else | A statement to conditionally do one of three or more things. | We wrote an `if...elif...else` statement to print out if the person was too young, too old or just the right age | 
+
+
+
+
+</div>
+
 ```python
 >>> import random
 >>> random.randint(1, 10) # pick a number from 1 to 10
 7
->>>
->>> n = random.randint(1, 10) # pick another number from 1 to 10
+>>> # pick another number from 1 to 10
+>>> n = random.randint(1, 10) 
 >>> if n < 5:
 ...     print(f"{n} is too small!")
 ... elif n == 5:
@@ -121,13 +131,13 @@ else:
     print("You must input a number!")
 ```
 
-## The `if`/`elif`/`else` Statement
+## The `if...elif...else` Statement
 
 Now that we have our input as an integer we can compare it to the random number we've picked.  However we want to have three outcomes, not just two!  We want to tell the user if the number is higher, lower or exactly the same.
 
 In fact, we even want to add a fourth option which is to tell the user that the number they picked was outside of the range of allowed numbers!
 
-We can do this by nesting `if`/`else` statements inside of eachother:
+We can do this by nesting `if...else` statements inside of eachother:
 
 ```python
 import random
@@ -144,7 +154,8 @@ if user_input_string.isnumeric():
 
     if user_input < RANGE_LOW or user_input > RANGE_HIGH:
         print(f"Your guess is out of bounds.")
-        print(f"It must be between {RANGE_LOW} and {RANGE_HIGH}")
+        print(f"It must be between {RANGE_LOW} \
+and {RANGE_HIGH}")
     else:
         if user_input == random_number:
             print("You guessed the number!  Good job!")
@@ -178,7 +189,8 @@ if user_input_string.isnumeric():
 
     if user_input < RANGE_LOW or user_input > RANGE_HIGH:
         print(f"Your guess is out of bounds.")
-        print(f"It must be between {RANGE_LOW} and {RANGE_HIGH}")
+        print(f"It must be between {RANGE_LOW} \
+and {RANGE_HIGH}")
     elif user_input == random_number:
         print("You guessed the number!  Good job!")
     elif user_input > random_number:
@@ -197,5 +209,3 @@ As with `if` the `else` portion of the statement is optional.  (That last branch
 We've learned how to choose random numbers and how to handle them using `if`, `elif` and `else` to make conditional statements to do what we want.
 
 We also learned how to clean up the user's input into a more useful form for our programs.
-
-
