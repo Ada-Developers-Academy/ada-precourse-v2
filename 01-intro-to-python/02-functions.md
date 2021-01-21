@@ -8,9 +8,9 @@ At the end of this lesson we will be able to:
 
 ## Introduction
 
-### Textbook for this section: [link to ada build functions]
+### [Textbook for this section](https://colab.research.google.com/drive/1e8CaljqZrKJyFm7Ry5qHynp7GdoVHFLk?usp=sharing)
 
-In this section we will be building on the code that you wrote in the previous lesson [Conditionals].  If you would like to look at our example code version for that lesson, you can find it [here]
+In this section we will be building on the code that you wrote in the previous lesson [Conditionals](./01-conditionals.md).  If you would like to look at our example code version for that lesson, you can find it [here](resources/src/01-conditionals/games_conditional.md)
 
 ### Why Functions?
 
