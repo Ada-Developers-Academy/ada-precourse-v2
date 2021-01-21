@@ -16,8 +16,8 @@ In this section we will be building on the code that you learned in the previous
 ## Vocabulary
 
 * `random.randint`: A function that will generate a random integer in a range.
-* `if`/`else`: A statement to do one of two things.
-* `if`/`elif`/`else`: A statement to do three or more things.
+* `if....else`: A statement to do one of two things.
+* `if...elif...else`: A statement to do three or more things.
 ```python
 >>> import random
 >>> random.randint(1, 10) # pick a number from 1 to 10
@@ -179,7 +179,8 @@ if user_input_string.isnumeric():
 
     if user_input < RANGE_LOW or user_input > RANGE_HIGH:
         print(f"Your guess is out of bounds.")
-        print(f"It must be between {RANGE_LOW} and {RANGE_HIGH}")
+        print(f"It must be between {RANGE_LOW} \
+and {RANGE_HIGH}")
     elif user_input == random_number:
         print("You guessed the number!  Good job!")
     elif user_input > random_number:
@@ -198,5 +199,3 @@ As with `if` the `else` portion of the statement is optional.  (That last branch
 We've learned how to choose random numbers and how to handle them using `if`, `elif` and `else` to make conditional statements to do what we want.
 
 We also learned how to clean up the user's input into a more useful form for our programs.
-
-
