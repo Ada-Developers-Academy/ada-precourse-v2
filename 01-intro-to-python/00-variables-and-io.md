@@ -17,12 +17,16 @@ In this lesson we will have a quick refresher on variables and go into an explan
 
 ### Definitions
 
-- **Variable**: Name for a piece of data we have stored.
-- **IO**: Input and Output
-- **Input**: A way to get information _in_ to a program.
-- **Output**: A way to get _out_ of a program.
+| Vocab          | Definition                                                    | Synonyms  | How to Use in a Sentence                                                      |
+| -------------- | ------------------------------------------------------------- | --------- | ----------------------------------------------------------------------------- |
+| Variable |  Name for a piece of data we have stored. | Reference | We assigned 21 to the variable |
+| IO | Input and Output | Recieved and sent data | Our IO was done through the entering data into and printing things to the terminal screen. |
+| Input | A way to get information _in_ to a program. | Recieved data | Our input comes from a spreadsheet | 
+| Output | A way to get _out_ of a program. | Sent data | We directed output to Google's website. |
 
 ### Syntax
+
+We can start by running the Python repl by entering "Python" in the terminal and doing the following:
 
 ```python
 >>> # Create a new variable named "ami", and store 
