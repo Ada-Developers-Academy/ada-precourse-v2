@@ -1,3 +1,7 @@
+# List Lesson Sample Code
+
+```python
+
 import random
 from wonderwords import RandomWord
 #https://pypi.org/project/wonderwords/
@@ -38,8 +42,6 @@ def guess_the_number():
         elif user_input < random_number:
             print("Your guess is too low")
 
-
-# Hooray, it works now!
 def get_number_from_user():
     valid_input = False
     user_input = None
@@ -55,7 +57,7 @@ def get_number_from_user():
     return user_input
 
 
-#
+# Snowman Section
 def snowman():
     r = RandomWord()
     snowman_word = r.word(word_min_length=SNOWMAN_MIN_WORD_LENGTH, word_max_length=SNOWMAN_MAX_WORD_LENGTH)
@@ -100,3 +102,5 @@ def print_snowman_graphic(wrong_guesses_count):
 
 #guess_the_number()
 snowman()
+
+```

@@ -12,9 +12,11 @@ At the end of this lesson students will be able to:
 
 ## Introduction
 
-### Textbook for this section: [link to ada built dictionary section]
+### [Textbook for this section](https://colab.research.google.com/drive/1AmKeKvSJnNacUUIU9OLSInVohWJrPLkF?usp=sharing)
 
-### Why Dictionaries?
+In this section we will be building on the code you wrote in the previous lesson [Lists](04-lists.md).  If you would like to look at our example code for that lesson, you can find it [here](/resources/src/04-lists/game-list.py).
+
+### Dictionaries, A New Kind of Data Structure
 
 In the lists lesson we used our first complex data structure.  Lists are powerful and useful tools, but they do have some limitations.  Say we want to use our list to store all of the pieces of an address.  We could of course use several variables to store the city, state, zip code, street address, but as we saw in the list lesson, being able to store all of the information in one variable can make it simpler to access the data and pass the data to functions.  If we use a list, we can store each of these pieces of information, but to access them we need to remember the index where we stored them.  
 
@@ -24,11 +26,22 @@ We could set up constants like:
 STATE_INDEX = 0
 CITY_INDEX = 1
 
+address=["Washington", "Seattle"]
+
 print( f"We live in {address[CITY_INDEX]}, {address[STATE_INDEX]}.")
+```
 
-## Vocabulary and Synonyms
+Using constants to remember the indices would make the code easier to read, but it's still not ideal. Enter dictionaries!
 
-* dictionary: A collection of key-value pairs where keys must be unique.
+Dictionaries associate each piece of data with a unique key, and then we can use the key to access the data in the dictionary. In the case of our address data structure, we can just make the keys meaningful words like "city" and "state", and then in our code whenever we want to access these pieces of the address, we can use the appropriate key to grab the data we want from the dictionary.
+
+## Vocabulary and Syntax
+
+| Vocab          | Definition                                                    | Synonyms  | How to Use in a Sentence                                                      |
+| -------------- | ------------------------------------------------------------- | --------- | ----------------------------------------------------------------------------- |
+| dictionary | A collection that associates unique keys with values | hashtable | "This dictionary uses planet names as the key and the value is the distance from the sun." |
+| key | A string.  All of the keys in a dictionary must be unique. | address | "The keys for the dictionary are all the planets, 'mercury', 'venus', 'mars', and so on." |
+| value | A piece of data of any possible type. | content | "The value for the key 'mercury' is 
 
 ```python
 
@@ -45,9 +58,6 @@ new_dict["key3"] = "value3"
 value = new_dict["key1"]
 
 ```
-
-* key: A string.  All of the keys in a dictionary must be unique.
-* value: A piece of data of any possible type.
 
 ## Snowman
 
