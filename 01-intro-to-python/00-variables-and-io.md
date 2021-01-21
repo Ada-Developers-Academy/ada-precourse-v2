@@ -193,6 +193,14 @@ mkdir precourse
 cd precourse
 ```
 
+If you ever want to find out what folder you are in you can type:
+
+```sh
+pwd
+```
+
+`pwd` is short for "Present Working Directory".  It's a handy command to tell you which folder you are in.
+
 Next we can create a blank text file to hold some Python code with the `touch` command.
 
 ```sh
