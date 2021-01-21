@@ -155,9 +155,11 @@ Let's start with tracking incorrect guesses.  We know we are going to have a max
 
     # ...
             if user_input in snowman_word:
-                print("You guessed a letter that's in the word!")
+                print("You guessed a letter that's \
+in the word!")
             else:
-                print(f"The letter {user_input} is not in the word")
+                print(f"The letter {user_input} is not in \
+the word")
                 wrong_guesses_list.append(user_input)
     # ...
 
