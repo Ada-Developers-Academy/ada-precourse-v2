@@ -21,7 +21,7 @@ In this section we will be building on the code that you learned in the previous
     max-width: 1000px;
 }
 
-.table-bordered th {
+#content-file-html .body-container .mdown-container table th {
     min-width: 300px;
 }
 </style>
