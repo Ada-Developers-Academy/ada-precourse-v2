@@ -172,6 +172,43 @@ Python is my favorite too!
 
 ### Exercise: Make a Program in a File
 
+Lets create a file to run our python code in!
+
+Open up terminal and create a folder called `ada` with:
+
+```sh
+mkdir ada
+```
+
+Then we can move into that folder with:
+
+```sh
+cd ada
+```
+
+Then lets create a subfolder for the precourse.  This is where we can keep our pre-ada materials.  Then we can move into (or change directory `cd`) into that subfolder.
+
+```sh
+mkdir precourse
+cd precourse
+```
+
+Next we can create a blank text file to hold some Python code with the `touch` command.
+
+```sh
+touch hello.py
+```
+
+We can open that folder (if VS code is properly setup) with the `code` command.
+
+```sh
+code .
+```
+
+Notice the "." after `code`.  The "." stands for the current folder.  So we told VS Code to open the current folder as a project.  This will be quite handy once we start at Ada.
+
+Next fill in the empty file "hello.py" with the following (copy and paste or type it in).
+
 ```python
 # hello.py
 name = input("What is your name? ")
@@ -183,31 +220,6 @@ You can then run this using from the folder you saved the file in using:
 
 ```sh
 python3 hello.py
-```
-
-You can do this by opening up a terminal and using the `cd` command to get to the directory you have the file saved in.
-
-If you don't know what directory your file is saved in you can right-click or <kbd>control</kbd> + click on the tab in VS Code and choose "Copy Path".
-
-If you saved this file inside of your `Developer` folder you would see something like `/Users/your-name/Developer/hello.py`.
-
-Once you remove the `hello.py` from the end you can use the `cd` command to get to the correct folder:
-
-```sh
-cd /Users/your-name/Developer/
-```
-
-Once you do this you should be able to run the command:
-
-```sh
-python3 /Users/your-name/Developer/hello.py
-```
-
-And see the following:
-
-```
-What is your name? Ada Pre Course
-Hello, Ada Pre Course!
 ```
 
 ## Summary
