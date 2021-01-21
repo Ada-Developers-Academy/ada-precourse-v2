@@ -191,9 +191,19 @@ def get_number_from_user():
 
     return user_input
 
+# Run the guess_the_number function to test it
+guess_the_number()
 ```
-
 </details>
+
+<!-- available callout types: info, success, warning, danger, secondary  -->
+### !callout-secondary
+
+## Each Function Does **One** Thing!
+
+Notice in our code that now each function is doing exactly **one** thing.  `get_number_from_user` does just that, it reads in a number from the user.  Similarly `guess_the_number` now just processes the user's guess.  This makes each step *much* easier to read and test.
+
+### !end-callout
 
 ### !callout-info
 
