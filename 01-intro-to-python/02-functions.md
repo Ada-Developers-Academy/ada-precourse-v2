@@ -56,10 +56,13 @@ We're now looking at moving around big code blocks.  Then if we change our minds
 Lets build a "Guess the number" function.  This function will:
 
 1.  Read in a number from the user
-1.  Inform the user if their number is lower or higher than the random number at the top of the code above:
+1.  If the user entered a number:
+    1.  Inform the user if their number is lower or higher than the random number at the top of the code above:
+1.  Otherwise if the user entered a non-number, tell them it wasn't a number
 
 Lets write this code and place it in a function called `guess_the_number`.  Then call the function at the bottom of the file.
 
+Try writing this in VS code and then compare your answer to ours below.
 
 <details>
 <summary> Our version at this point </summary>
