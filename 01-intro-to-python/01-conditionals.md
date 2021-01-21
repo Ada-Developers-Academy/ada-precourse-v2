@@ -16,7 +16,8 @@ In this section we will be building on the code that you learned in the previous
 ## Vocabulary
 
 <style>
-.table-bordered {
+
+#content-file-html .body-container .mdown-container table {
     max-width: 1000px;
 }
 
