@@ -163,12 +163,23 @@ This still works, it just looks a little awkward.
 This isn't so useful on its own but we can store the result of calling `input` in a variable for later use:
 
 ```python
->>> language = input("What is your favorite programming language? ")
+>>> language = input("What is your favorite \
+>>> programming language? ")
 What is your favorite programming language? Python!
 >>>
 >>> print(f"{language} is my favorite too!")
 Python is my favorite too!
 ```
+
+<!-- available callout types: info, success, warning, danger, secondary  -->
+### !callout-info
+
+## The backslash above
+
+Notice we put "\" at the end of `input("What is your favorite programming language? ")`, because the line is too long.  Otherwise the line is too long to fit in learn.  Inside a string, if you put a \ at the end of a line the string will continue on the next line.  It's a way to make things fit.
+
+### !end-callout
+
 
 ### Exercise: Make a Program in a File
 
