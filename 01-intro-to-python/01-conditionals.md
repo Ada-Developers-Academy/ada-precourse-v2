@@ -27,7 +27,7 @@ In this section we will be building on the code that you learned in the previous
 </style>
 
 
-| Vocab          | Definition                                                   | How to Use in a Sentence |
+| Vocab                        | Definition                                                   | How to Use in a Sentence |
 | ------------------------------ | ------------------------------- | ------------------------------------------------ |
 | `random.randint` | A function that will generate a random integer in a range. | We used `random.randint(5, 15)` to get a random integer between 5 and 15. |
 | `if....else`  | A statement to do one of two things based on a condition. | We wrote an `if...else` statement to determine if the person was old enough to consume alcohol. |
