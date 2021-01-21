@@ -91,7 +91,9 @@ So far our Snowman game has used a constant as the secret word (`SNOWMAN_WORD = 
     ```python
 
         r = RandomWord()
-        snowman_word = r.word(word_min_length=SNOWMAN_MIN_WORD_LENGTH, word_max_length=SNOWMAN_MAX_WORD_LENGTH)
+        snowman_word = r.word(
+          word_min_length=SNOWMAN_MIN_WORD_LENGTH, 
+          word_max_length=SNOWMAN_MAX_WORD_LENGTH)
 
     ```
     <details>
