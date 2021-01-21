@@ -2,10 +2,10 @@
 
 ## Learning Goals
 
-At the end of this lesson students will be able to:
+At the end of this lesson we will be able to:
 
-- Be able to write `if`/`else` statements.
-- Be able to extend these with `elif` statements.
+- Write `if...else` statements.
+- Extend these with `elif` statements.
 
 ## Introduction
 
