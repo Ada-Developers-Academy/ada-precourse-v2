@@ -19,7 +19,7 @@ In this section we will be building on the code that you wrote in the previous l
 ```python
 
 # This line defines the new function and assigns it a name
-def my_new_function:
+def my_new_function():
     # code block here
     # note that each line is indented 
     # compared to the definition
