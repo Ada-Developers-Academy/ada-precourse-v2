@@ -9,15 +9,19 @@ At the end of this lesson we will be able to:
 
 ## Introduction
 
-**Textbook for this section: [link to ada build conditionals]**
+**[Textbook for this section:](https://colab.research.google.com/drive/1huE7PyavZSJIou4mh5G2e7yfG08Vb7da?usp=sharing)**
 
-In this section we will be building on the code that you learned in the previous lesson [Variables and IO].  
+In this section we will be building on the code that you learned in the previous lesson [Variables and IO](./00-variables-and-io.md).  
 
 ## Vocabulary
 
-* `random.randint`: A function that will generate a random integer in a range.
-* `if....else`: A statement to do one of two things.
-* `if...elif...else`: A statement to do three or more things.
+
+| Vocab          | Definition                                                   | How to Use in a Sentence                                                      |
+| -------------- | ------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `random.randint` | A function that will generate a random integer in a range. | We used `random.randint(5, 15)` to get a random integer between 5 and 15. |
+| `if....else`  | A statement to do one of two things based on a condition. | We wrote an `if...else` statement to determine if the person was old enough to consume alcohol. |
+|  `if...elif...else` | A statement to conditionally do one of three or more things. | We wrote an `if...elif...else` statement to print out if the person was too young, too old or just the right age | 
+
 ```python
 >>> import random
 >>> random.randint(1, 10) # pick a number from 1 to 10
