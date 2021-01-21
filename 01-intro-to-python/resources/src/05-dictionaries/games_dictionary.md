@@ -1,3 +1,6 @@
+# Dictionary Lesson Sample Code
+
+```python
 import random
 from wonderwords import RandomWord
 #https://pypi.org/project/wonderwords/
@@ -5,7 +8,15 @@ from wonderwords import RandomWord
 RANGE_LOW = 0
 RANGE_HIGH = 100
 
-SNOWMAN_GRAPHIC = ['*   *   *  ', ' *   _ *   ', '   _[_]_ * ', '  * (")    ', '  \( : )/ *', '* (_ : _)  ', '-----------']
+SNOWMAN_GRAPHIC = [
+    '*   *   *  ',
+    ' *   _ *   ',
+    '   _[_]_ * ',
+    '  * (")    ',
+    '  \( : )/ *',
+    '* (_ : _)  ',
+    '-----------'
+]
 
 SNOWMAN_WRONG_GUESSES = len(SNOWMAN_GRAPHIC)
 
@@ -48,7 +59,8 @@ def get_number_from_user():
 
 def snowman():
     r = RandomWord()
-    snowman_word = r.word(word_min_length=SNOWMAN_MIN_WORD_LENGTH, word_max_length=SNOWMAN_MAX_WORD_LENGTH)
+    snowman_word = r.word(word_min_length=SNOWMAN_MIN_WORD_LENGTH,
+                          word_max_length=SNOWMAN_MAX_WORD_LENGTH)
     #print(f"debug info: {snowman_word}")
     snowman_list = build_word_list(snowman_word)
     correct_guesses_list = []
@@ -120,9 +132,11 @@ def get_letter_from_user(list1, list2):
 
 def print_snowman_graphic(wrong_guesses_count):
     for i in range(SNOWMAN_WRONG_GUESSES - wrong_guesses_count, SNOWMAN_WRONG_GUESSES):
-            print(SNOWMAN_GRAPHIC[i])
+        print(SNOWMAN_GRAPHIC[i])
 
 
 
 #guess_the_number()
 snowman()
+
+```
