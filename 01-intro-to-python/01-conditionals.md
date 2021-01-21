@@ -15,18 +15,6 @@ In this section we will be building on the code that you learned in the previous
 
 ## Vocabulary
 
-<style>
-
-#content-file-html .body-container .mdown-container table {
-    max-width: 1000px;
-}
-
-#content-file-html .body-container .mdown-container table th {
-    min-width: 300px;
-}
-</style>
-
-
 | Vocab                        | Definition                                                   | How to Use in a Sentence |
 | ------------------------------------------------------------ | ------------------------------- | ------------------------------------------------ |
 | random.randint | A function that will generate a random integer in a range. | We used `random.randint(5, 15)` to get a random integer between 5 and 15. |
