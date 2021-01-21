@@ -69,11 +69,11 @@ The last piece of our snowman game is displaying to the user the letters they ha
  
 Our end goal is to display each letter of the word with an '_' character if the letter has not yet been guessed and the correct letter if it has been guessed.  
 
-Every time a new correct letter is guessed, we want to update this display with the new information that we have.  We could use loops and lists to solve this problem by looping over each letter in the word and checking to see if it's in the list of guessed letters and based on a conditional test displaying either the letter or the underscore character.
+Every time a new correct letter is guessed, we want to update this display with the new information that we have.  One strategy is to use loops and lists to solve this problem by looping over each letter in the word and checking to see if it's in the list of guessed letters.  We could then use a conditional test to displaying either the letter or the underscore character.
 
-Every time we search through our list it takes time, and we're repeating the same search each time we want to display our word.  A way to limit the number of times we do these searches is to save the result of the search.  We are going to use dictionaries to do that!  
+Each time we search through our list it takes time, and using the above strategy we're repeating the same search every time we want to display our word.  A way to limit the number of times we do these searches is to save the result of the search.  We are going to use dictionaries to do that!  
 
-We are going to build a dictionary for each letter that contains the letter and a "guessed" value that we can set to indicate that the user has guessed the letter.  We will store all of the dictionaries in a list and use the resulting list to construct our word display for our user.
+We are going to build a dictionary for each letter that contains the letter and a "guessed" value that we can set to `True` or `False` to let us know if the user has guessed the letter.  We will store all of the dictionaries in a list and use the resulting list to construct our word display for our user.
 
 ### Creating the List of Dictionaries
 
