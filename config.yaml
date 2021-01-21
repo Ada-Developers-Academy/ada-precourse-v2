@@ -76,4 +76,4 @@ Standards:
       - 
         Type: Resource
         UID: 11ee4a28-c0fe-4467-ad10-577e2087cd0f
-        Path: /01-intro-to-python/resources/src/02-functions/games_function.py
+        Path: /01-intro-to-python/resources/src/02-functions/games_function.md
