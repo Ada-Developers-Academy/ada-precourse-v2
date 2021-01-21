@@ -1,3 +1,7 @@
+# Conditionals Example code
+
+
+```python
 import random
 
 RANGE_LOW = 0
@@ -23,3 +27,4 @@ if user_input_string.isnumeric():
 
 else:
     print("You must input a number!")
+```
