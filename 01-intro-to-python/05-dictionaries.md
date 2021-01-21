@@ -50,7 +50,8 @@ Dictionaries associate each piece of data with a unique key, and then we can use
 first_dict = {}
 
 # Syntax for creating a dictionary with content
-planet_dict = {"mercury":"36 million miles", "venus":"67 million miles"}
+planet_dict = {"mercury":"36 million miles", 
+"venus":"67 million miles"}
 
 # Adding a new key-value pair to an existing dictionary
 planet_dict["mars"] = "142 million miles"
