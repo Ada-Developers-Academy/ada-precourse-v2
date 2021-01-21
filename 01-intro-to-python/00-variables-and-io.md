@@ -230,6 +230,14 @@ You can then run this using from the folder you saved the file in using:
 python3 hello.py
 ```
 
+## Followup Exercise
+
+Modify the "hello.py" program above to read in both your name and age and print out:  "Hello <NAME> you are <AGE> years old!".
+
+For example if we entered "Han" for the name and "14" for the age it would print out:
+
+"Hello, Han you are 14 years old!"
+
 ## Summary
 
 Variables and IO are useful for a wide variety of things and are the basic building blocks of almost all programs.  We've shown you a few different ways to use them that will help you going forward.  We use variables to store things and input and output to interact with the world outside of our programs.
