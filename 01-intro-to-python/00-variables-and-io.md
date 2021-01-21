@@ -1,15 +1,17 @@
 # Variables and IO
 
+<iframe src="https://adaacademy.hosted.panopto.com/Panopto/Pages/Embed.aspx?pid=411bb142-cb4e-4355-bf00-acb7006740a7&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&start=0&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+
 ## Learning Goals
 
-At the end of this lesson students will be able to:
+At the end of this lesson we will be able to...
 
 - Identify variable definition statements.
 - Capture user input in a variable.
 
 ## Introduction
 
-**Textbook for this section: [link to ada build variables]**
+**[Textbook for this section:](https://colab.research.google.com/drive/1kfE-bujlwiJoDxTWIXa8u1GPGDJAnjvS?usp=sharing) **
 
 In this lesson we will have a quick refresher on variables and go into an explanation of IO.
 
@@ -17,18 +19,24 @@ In this lesson we will have a quick refresher on variables and go into an explan
 
 ### Definitions
 
-- **Variable**: Name for a piece of data we have stored.
-- **IO**: Input and Output
-- **Input**: A way to get information _in_ to a program.
-- **Output**: A way to get _out_ of a program.
+| Vocab          | Definition                                                    | Synonyms  | How to Use in a Sentence                                                      |
+| -------------- | ------------------------------------------------------------- | --------- | ----------------------------------------------------------------------------- |
+| Variable |  Name for a piece of data we have stored. | Reference | We assigned 21 to the variable |
+| IO | Input and Output | Recieved and sent data | Our IO was done through the entering data into and printing things to the terminal screen. |
+| Input | A way to get information _in_ to a program. | Recieved data | Our input comes from a spreadsheet | 
+| Output | A way to get _out_ of a program. | Sent data | We directed output to Google's website. |
 
 ### Syntax
 
+We can start by running the Python repl by entering "Python" in the terminal and doing the following:
+
 ```python
->>> # Create a new variable named "ami", and store the string "Sailor Mercury":
+>>> # Create a new variable named "ami", and store 
+>>> #   the string "Sailor Mercury":
 >>> ami = "Sailor Mercury"
 >>>
->>> # Create a new variable named "cats" and store the number 2:
+>>> # Create a new variable named "cats" and store the 
+>>> #   number 2:
 >>> cats = 2
 >>>
 >>> # "print" using some variables and a format string.
@@ -101,6 +109,35 @@ Which of the following are variables in the example above?
 
 <!-- ======================= END CHALLENGE ======================= -->
 
+## Constants
+
+Sometimes we want to have a readable name for a value like a variable, but we want to make sure it never changes.  In Python, a _constant_ is a type of variable whose value **cannot** be changed.  Constants are named containers for values that cannot be reassigned.
+
+We create constants by creating variables with all uppercase letters.  We can break up words with underscores.
+
+**Examples**
+
+```python
+# Gravity accellerates at 9.8 m/s^2
+GRAVITY = 9.8
+
+print(f"Gravity is {GRAVITY} m/s^2 at sea level on earth")
+
+# Another constant example
+MAX_LENGTH = 79
+```
+
+So why use constants?
+
+1. Using constants makes code more **readable**.  Named values helps communicate their meaning.
+1. It helps avoid typos because it would be easy to accidentally type 9.7 at some point in your program and never catch the bug.
+1. If the constant value needs to be changed later it's nice to have 1 line which assigns the value in the entire program.
+
+As we build our Snowman program, we will use the following constants:
+
+1.  **SNOWMAN_MIN_WORD_LENGTH** - The shortest length of word we will allow.
+1.  **SNOWMAN_MAX_WORD_LENGTH** - The longest length of word we will allow.
+
 ## Input/Output (IO)
 
 Input and output (collectively called "I/O" or "IO" for short) are how we get data _in_ to and _out_ of our programs.  You've already used one IO function in your coding challenge: `print`.  The `print` function _outputs_ what we give it to the terminal so the user can see it.
@@ -132,14 +169,70 @@ This still works, it just looks a little awkward.
 This isn't so useful on its own but we can store the result of calling `input` in a variable for later use:
 
 ```python
->>> language = input("What is your favorite programming language? ")
+>>> language = input("What is your favorite \
+>>> programming language? ")
 What is your favorite programming language? Python!
 >>>
 >>> print(f"{language} is my favorite too!")
 Python is my favorite too!
 ```
 
+<!-- available callout types: info, success, warning, danger, secondary  -->
+### !callout-info
+
+## The backslash above
+
+Notice we put "\" at the end of `input("What is your favorite programming language? ")`, because the line is too long.  Otherwise the line is too long to fit in learn.  Inside a string, if you put a \ at the end of a line the string will continue on the next line.  It's a way to make things fit.
+
+### !end-callout
+
+
 ### Exercise: Make a Program in a File
+
+Lets create a file to run our python code in!
+
+Open up terminal and create a folder called `ada` with:
+
+```sh
+mkdir ada
+```
+
+Then we can move into that folder with:
+
+```sh
+cd ada
+```
+
+Then lets create a subfolder for the precourse.  This is where we can keep our pre-ada materials.  Then we can move into (or change directory `cd`) into that subfolder.
+
+```sh
+mkdir precourse
+cd precourse
+```
+
+If you ever want to find out what folder you are in you can type:
+
+```sh
+pwd
+```
+
+`pwd` is short for "Present Working Directory".  It's a handy command to tell you which folder you are in.
+
+Next we can create a blank text file to hold some Python code with the `touch` command.
+
+```sh
+touch hello.py
+```
+
+We can open that folder (if VS code is properly setup) with the `code` command.
+
+```sh
+code .
+```
+
+Notice the "." after `code`.  The "." stands for the current folder.  So we told VS Code to open the current folder as a project.  This will be quite handy once we start at Ada.
+
+Next fill in the empty file "hello.py" with the following (copy and paste or type it in).
 
 ```python
 # hello.py
@@ -154,30 +247,13 @@ You can then run this using from the folder you saved the file in using:
 python3 hello.py
 ```
 
-You can do this by opening up a terminal and using the `cd` command to get to the directory you have the file saved in.
+## Followup Exercise
 
-If you don't know what directory your file is saved in you can right-click or <kbd>control</kbd> + click on the tab in VS Code and choose "Copy Path".
+Modify the "hello.py" program above to read in both your name and age and print out:  "Hello <NAME> you are <AGE> years old!".
 
-If you saved this file inside of your `Developer` folder you would see something like `/Users/your-name/Developer/hello.py`.
+For example if we entered "Han" for the name and "14" for the age it would print out:
 
-Once you remove the `hello.py` from the end you can use the `cd` command to get to the correct folder:
-
-```sh
-cd /Users/your-name/Developer/
-```
-
-Once you do this you should be able to run the command:
-
-```sh
-python3 /Users/your-name/Developer/hello.py
-```
-
-And see the following:
-
-```
-What is your name? Ada Pre Course
-Hello, Ada Pre Course!
-```
+"Hello, Han you are 14 years old!"
 
 ## Summary
 

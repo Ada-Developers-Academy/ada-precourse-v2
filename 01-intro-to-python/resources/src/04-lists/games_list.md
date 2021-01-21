@@ -1,19 +1,28 @@
+# List Lesson Sample Code
+
+```python
+
 import random
+from wonderwords import RandomWord
+#https://pypi.org/project/wonderwords/
 
 RANGE_LOW = 0
 RANGE_HIGH = 100
 
-SNOWMAN_1 = '*   *   *  '
-SNOWMAN_2 = ' *   _ *   '
-SNOWMAN_3 = '   _[_]_ * '
-SNOWMAN_4 = '  * (")    '
-SNOWMAN_5 = '  \( : )/ *'
-SNOWMAN_6 = '* (_ : _)  '
-SNOWMAN_7 = '-----------'
+SNOWMAN_GRAPHIC = [
+    '*   *   *  ',
+    ' *   _ *   ',
+    '   _[_]_ * ',
+    '  * (")    ',
+    '  \( : )/ *',
+    '* (_ : _)  ',
+    '-----------'
+]
 
-SNOWMAN_WRONG_GUESSES = 7
+SNOWMAN_WRONG_GUESSES = len(SNOWMAN_GRAPHIC)
 
-SNOWMAN_WORD = "broccoli"
+SNOWMAN_MAX_WORD_LENGTH = 8
+SNOWMAN_MIN_WORD_LENGTH = 5
 
 def guess_the_number():
     random_number = random.randint(RANGE_LOW, RANGE_HIGH)
@@ -33,8 +42,6 @@ def guess_the_number():
         elif user_input < random_number:
             print("Your guess is too low")
 
-
-# Hooray, it works now!
 def get_number_from_user():
     valid_input = False
     user_input = None
@@ -50,22 +57,27 @@ def get_number_from_user():
     return user_input
 
 
-#
+# Snowman Section
 def snowman():
-    correct_guesses = 0
-    wrong_guesses = 0
-    while wrong_guesses < SNOWMAN_WRONG_GUESSES:
-        user_input = get_letter_from_user()
-        if user_input in SNOWMAN_WORD:
+    r = RandomWord()
+    snowman_word = r.word(word_min_length=SNOWMAN_MIN_WORD_LENGTH, 
+                          word_max_length=SNOWMAN_MAX_WORD_LENGTH)
+    print(f"debug info: {snowman_word}")
+    correct_guesses_list = []
+    wrong_guesses_list = []
+    while len(wrong_guesses_list) < SNOWMAN_WRONG_GUESSES:
+        user_input = get_letter_from_user(correct_guesses_list, wrong_guesses_list)
+        if user_input in snowman_word:
             print("You guessed a letter that's in the word!")
-            correct_guesses += 1
+            correct_guesses_list.append(user_input)
         else:
             print(f"The letter {user_input} is not in the word")
-            wrong_guesses += 1
-        print_snowman_graphic(wrong_guesses)
+            wrong_guesses_list.append(user_input)
+        print_snowman_graphic(len(wrong_guesses_list))
+        print(f"Wrong guesses: {wrong_guesses_list}")
 
 
-def get_letter_from_user():
+def get_letter_from_user(list1, list2):
     valid_input = False
     user_input_string = None
     while not valid_input:
@@ -74,6 +86,8 @@ def get_letter_from_user():
             print("You must input a letter!")
         elif len(user_input_string) > 1:
             print("You can only input one letter at a time!")
+        elif user_input_string in list1 or user_input_string in list2:
+            print("You already guessed that letter")
         else:
             valid_input = True
 
@@ -81,23 +95,13 @@ def get_letter_from_user():
 
 
 def print_snowman_graphic(wrong_guesses_count):
-    for i in range(SNOWMAN_WRONG_GUESSES + 1 - wrong_guesses_count,
-                   SNOWMAN_WRONG_GUESSES + 1)
-        if i == 1:
-            print(SNOWMAN_1)
-        elif i == 2:
-            print(SNOWMAN_2)
-        elif i == 3:
-            print(SNOWMAN_3)
-        elif i == 4:
-            print(SNOWMAN_4)
-        elif i == 5:
-            print(SNOWMAN_5)
-        elif i == 6:
-            print(SNOWMAN_6)
-        elif i == 7:
-            print(SNOWMAN_7)
+    for i in range(SNOWMAN_WRONG_GUESSES - wrong_guesses_count,
+                   SNOWMAN_WRONG_GUESSES):
+            print(SNOWMAN_GRAPHIC[i])
 
 
-guess_the_number()
+
+#guess_the_number()
 snowman()
+
+```
