@@ -127,8 +127,32 @@ def temp_converter(temp, unit)
 
 ```
 
-The function `guess_the_number` can be broken up into two conceptual pieces, getting user input, and then processing the user input.  Start by writing a function called `get_number_from_user` and then pull all of the pieces of code in `guess_the_number` that have to do with getting user input into `get_number_from_user`.  Include any conditional statement that validate user input as a number.  This function should ask the user for a number and then give an error message if the user inputs anything other than a number.  Last, it should return the valid user input, or None if there was no valid input.  In `guess_the_number`, call this function and store the result in user_input.
+### The `return` Keyword
 
+Notice the `return` keyword in the functions above.  This means that these functions calculate a value and return it to the calling function.
+
+So:
+
+```py
+fahrenheit_temp = convert_to_fahrenheit(100)
+print(f"The temp is 212.0 degrees fahrenheit")
+```
+
+Will print "The temp is  degrees fahrenheit".  This way you can call a function and get a value or an answer sent back after the function completes.  We can use this to simplify `guess_the_number`.
+
+
+## Exercise:  Breaking Up `guess_the_number`
+
+The function `guess_the_number` can be broken up into two conceptual pieces, getting user input, and then processing the user input.  
+
+1.  Start by writing a function called `get_number_from_user`
+    * Then pull all of the pieces of code in `guess_the_number` that have to do with getting user input into `get_number_from_user`.  
+    * Include any conditional statement that validate user input as a number.  
+    * This function should ask the user for a number and then give an error message if the user inputs anything other than a number.  
+    * Last, it should return the valid user input, or None if there was no valid input.  
+    * In `guess_the_number`, call this function and store the result in user_input.
+1.  Then the `guess_the_number` function can use the previous `if...else` statements to tell the user if their guess was too high or too low.
+ 
 <details>
 <summary> Our version at this point </summary>
 
@@ -138,9 +162,11 @@ import random
 
 RANGE_LOW = 0
 RANGE_HIGH = 100
+# pick a random number
+random_number = random.randint(RANGE_LOW, RANGE_HIGH)
+
 
 def guess_the_number():
-    random_number = random.randint(RANGE_LOW, RANGE_HIGH)
 
     user_input = get_number_from_user()
 
