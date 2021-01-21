@@ -22,6 +22,10 @@ In this section we will be building on the code that you learned in the previous
 |  if...elif...else | A statement to conditionally do one of three or more things. | We wrote an `if...elif...else` statement to print out if the person was too young, too old or just the right age | 
 
 
+
+
+</div>
+
 ```python
 >>> import random
 >>> random.randint(1, 10) # pick a number from 1 to 10
