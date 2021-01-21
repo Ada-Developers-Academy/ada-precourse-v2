@@ -215,7 +215,17 @@ Notice that in our version, if the user does not give a valid input, the return 
 
 ## Snowman!
 
-It's time to add a new game!  The new game is a word guessing game called Snowman.  In Snowman, the user guesses letters for a word, but for every wrong guess we are going to add a new element to our snowman.  When the snowman is finished, the user is out of guesses and they lose the game.  We are going to start by building just a small piece of this game.  To start, for debugging purposes, we're always going to use the same word.  Add it as a constant at the top of the file.  Here's our version:
+It's time to add a new game!  The new game is a word guessing game called Snowman.  
+
+In Snowman:
+
+1.  The user is presented with a list of underscores "_".  Each Underscore represents one letter in a word.
+1.  The user guesses letters for the hidden word
+    * For each correct guess, a letter will be replace the corresponding underscore.
+    * For every wrong guess we are going to remember the number of wrong guesses and print out more and more of a snowman drawing.  
+1.  When the snowman is finished and the user is out of guesses, they lose the game.  
+
+We are going to start by building just a small piece of this game.  To start, for debugging purposes, we're always going to use the same word.  Add it as a constant at the top of the file.  Here's our version:
 
 ```python
 
@@ -223,9 +233,9 @@ SNOWMAN_WORD = "broccoli"
 
 ```
 
-Next, we're going to follow the same pattern as `guess_the_number`.  We will start with a function named `snowman` and a helper function `get_letter_from_user`.  
+### Step 1:  Guess a letter
 
-###  get_letter_from_user
+We will start our game by reading in a letter from the user, similar to how we read in numbers with `guess_the_number`.  We will call this function `get_letter_from_user`.
 
 <!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
 <!-- Replace everything in square brackets [] and remove brackets  -->
@@ -244,10 +254,11 @@ Next, we're going to follow the same pattern as `guess_the_number`.  We will sta
 This function is very similar to `get_number_from_user`.  
 
 1.  First, we will need to use `input` to get a string from the user and store it in a variable.  
-1.  Second, we need to check to see if the input is valid.  In `get_number_from_user`, we used isnumeric() to ensure that the input was a number.  In this function, we need to check to see if the input is a letter, and if the input contains only one letter.  Use the functions below to write these conditionals:
-    - [string variable name].isalpha() will return true if the string contains only alphabetical characters
-    - len([string variable name]) will tell us the length of the string
-1. Lastly, we need to return the input string
+1.  Second, we need to check to see if the input is valid.  
+    * In `get_number_from_user`, we used `isnumeric()` to ensure that the input was a number.  In this function, we need to check to see if the input is a letter, and if the input contains only one letter.
+      - `letter_from_user.isalpha()` will return `True` if the string variable `letter_from_user` contains only alphabetical characters
+      - `len(letter_from_user)` will tell us the length of the string
+2. Lastly, we need to return the input string
     - If the user gives bad input: 
       - We print "Invalid letter please enter a single character." 
       - Then return the input.  
@@ -263,8 +274,7 @@ We will expand this to a full solution in the next lesson.
 
 ```py
 def get_letter_from_user():
-  
-#   return 1
+    # Your code goes here
 ```
 
 ##### !end-placeholder
@@ -361,20 +371,21 @@ class TestPython1(unittest.TestCase):
 
 ##### !question
 
-We are now going to work on the main `snowman` function (the function we will call when we want to play the game Snowman).  This function is structurally similar to `guess_the_number`, but will be shorter for now.  The only check we have to do on the letter is check if it's in the word or not.  To do that, we're going to use the python keyword `in`.  The syntax for `in` is `thing1 in thing2`.  This expression evaluates to `True` if thing2 contains thing1, and false otherwise.  We can use it in a conditional expression as `if thing1 in thing2:`.
+We are now going to work on the main `snowman` function (the function we will call when we want to play the game Snowman).  This function is structurally similar to `guess_the_number`, but will be shorter for now.  
+
+The only check we have to do on the letter is check if it's in the word or not.  To do that, we're going to use the python keyword `in`.  The syntax for `in` is `thing1 in thing2`.  This expression evaluates to `True` if `thing2` contains `thing1`, and false otherwise.  We can use it in a conditional expression as `if thing1 in thing2:`.
 
 1.  First, use `get_letter_from_user` to get a letter
-2.  Check if the letter is in `SNOWMAN_WORD` 
+1.  Check if the letter is in `SNOWMAN_WORD` 
     - print "Letter found" if the letter is in `SNOWMAN_WORD`.
     - print "Letter not found" if it's not in `SNOWMAN_WORD`.
-3.  If the letter is in `SNOWMAN_WORD` return `True` otherwise return `False` if it's not in `SNOWMAN_WORD`.
+1.  If the letter is in `SNOWMAN_WORD` return `True` otherwise return `False` if it's not in `SNOWMAN_WORD`.
 
 ##### !end-question
 
 ##### !placeholder
 
 ```py
-
 SNOWMAN_WORD = "pasta"
 
 def get_letter_from_user():
