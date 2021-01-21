@@ -22,8 +22,8 @@ In this section we will be building on the code that you learned in the previous
 >>> import random
 >>> random.randint(1, 10) # pick a number from 1 to 10
 7
->>>
->>> n = random.randint(1, 10) # pick another number from 1 to 10
+>>> # pick another number from 1 to 10
+>>> n = random.randint(1, 10) 
 >>> if n < 5:
 ...     print(f"{n} is too small!")
 ... elif n == 5:
@@ -144,7 +144,8 @@ if user_input_string.isnumeric():
 
     if user_input < RANGE_LOW or user_input > RANGE_HIGH:
         print(f"Your guess is out of bounds.")
-        print(f"It must be between {RANGE_LOW} and {RANGE_HIGH}")
+        print(f"It must be between {RANGE_LOW} \
+and {RANGE_HIGH}")
     else:
         if user_input == random_number:
             print("You guessed the number!  Good job!")
