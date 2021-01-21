@@ -218,7 +218,9 @@ The next step is to write a function that takes a letter and the list of diction
 
 We are going to make this function do a little extra work.  We are also going to ask this function to return `True` or `False` to tell us if all of the letters have been guessed or not.  
 
-We already have to loop through the list to compare our letter to the letter value of each dictionary, so we can use the same loop to also check to see if all of the guessed values are `True`.  We will call the function `update_and_check_word_list`.
+We already have to loop through the list to compare our letter to the letter value of each dictionary, so we can use the same loop to also check to see if all of the guessed values are `True`.  
+
+We will call the function `update_and_check_word_list`.
 
 This function will:
 
