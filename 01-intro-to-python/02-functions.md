@@ -479,4 +479,8 @@ class TestPython2(unittest.TestCase):
 <!-- ======================= END CHALLENGE ======================= -->
 ## Summary
 
-Let's go back to the questions proposed in the introduction to this lesson.  What do functions add to our code?  Now that we have broken the various sections into functions, we can easily swap the order of the games, play a game multiple times, or add new games in new functions and insert them in any order we want.  Functions add flexibility and structure to our code, and make code easier to maintain and read.  In the next lesson we will work on adding more functionality to our functions with loops. 
+Let's go back to the questions proposed in the introduction to this lesson.  What do functions add to our code?  
+
+Now that we have broken the various sections into functions, we can easily swap the order of the games, play a game multiple times, or add new games in new functions and insert them in any order we want.  
+
+Functions add flexibility and structure to our code, and make code easier to maintain and read.  In the next lesson we will work on adding more functionality to our functions with loops. 
