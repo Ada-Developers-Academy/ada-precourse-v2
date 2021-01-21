@@ -105,7 +105,9 @@ So far our Snowman game has used a constant as the secret word (`SNOWMAN_WORD = 
 
     def snowman():
         r = RandomWord()
-        snowman_word = r.word(word_min_length=SNOWMAN_MIN_WORD_LENGTH, word_max_length=SNOWMAN_MAX_WORD_LENGTH)
+        snowman_word = r.word(
+          word_min_length=SNOWMAN_MIN_WORD_LENGTH, 
+          word_max_length=SNOWMAN_MAX_WORD_LENGTH)
         correct_guesses = 0
         wrong_guesses = 0
         while wrong_guesses < SNOWMAN_WRONG_GUESSES:
