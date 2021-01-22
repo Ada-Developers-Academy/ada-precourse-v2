@@ -1,5 +1,7 @@
 # Loops
 
+<iframe src="https://adaacademy.hosted.panopto.com/Panopto/Pages/Embed.aspx?pid=6dbde348-1f6b-46fe-9ea8-acb80025d2b6&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&start=0&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+
 ## Learning Goals
 
 At the end of this lesson students will be able to:
@@ -518,7 +520,7 @@ Our end goal is to have a function that we can pass the current `wrong_count` va
 
 ```python
 
-def print_snowman_graphic(id): 
+def print_snowman(id): 
     if id == 1:
         print(SNOWMAN_1)
     elif id == 2:
@@ -550,7 +552,7 @@ Now we're going to add a loop inside this function to make it draw not just one 
 
     ```python
 
-    def print_snowman_graphic():
+    def print_snowman():
         
         for i in range(1, SNOWMAN_WRONG_GUESSES + 1)
             if i == 1:
@@ -579,7 +581,7 @@ Now we're going to add a loop inside this function to make it draw not just one 
 
     ```python
 
-    def print_snowman_graphic(wrong_guesses_count):
+    def print_snowman(wrong_guesses_count):
         
         for i in range(SNOWMAN_WRONG_GUESSES + 1 - wrong_guesses_count, SNOWMAN_WRONG_GUESSES + 1)
             if i == 1:
@@ -601,7 +603,7 @@ Now we're going to add a loop inside this function to make it draw not just one 
 
     </details>
 
-1. Finally, inside of the `snowman` function, add the `print_snowman_graphic` function call to the game loop to print out the current state of the snowman to the user after each guess.
+1. Finally, inside of the `snowman` function, add the `print_snowman` function call to the game loop to print out the current state of the snowman to the user after each guess.
 
     ```python
 
@@ -616,7 +618,7 @@ Now we're going to add a loop inside this function to make it draw not just one 
             else:
                 print(f"The letter {user_input} is not in the word")
                 wrong_guesses += 1
-            print_snowman_graphic(wrong_guesses)
+            print_snowman(wrong_guesses)
     ```
 
 ## Summary

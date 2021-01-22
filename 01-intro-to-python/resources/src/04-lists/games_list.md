@@ -73,7 +73,7 @@ def snowman():
         else:
             print(f"The letter {user_input} is not in the word")
             wrong_guesses_list.append(user_input)
-        print_snowman_graphic(len(wrong_guesses_list))
+        print_snowman(len(wrong_guesses_list))
         print(f"Wrong guesses: {wrong_guesses_list}")
 
 
@@ -94,7 +94,7 @@ def get_letter_from_user(list1, list2):
     return user_input_string
 
 
-def print_snowman_graphic(wrong_guesses_count):
+def print_snowman(wrong_guesses_count):
     for i in range(SNOWMAN_WRONG_GUESSES - wrong_guesses_count,
                    SNOWMAN_WRONG_GUESSES):
             print(SNOWMAN_GRAPHIC[i])

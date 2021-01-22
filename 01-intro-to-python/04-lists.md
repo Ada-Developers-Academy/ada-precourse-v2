@@ -125,7 +125,7 @@ So far our Snowman game has used a constant as the secret word (`SNOWMAN_WORD = 
             else:
                 print(f"The letter {user_input} is not in the word")
                 wrong_guesses += 1
-            print_snowman_graphic(wrong_guesses)
+            print_snowman(wrong_guesses)
 
     ```
 
@@ -165,7 +165,7 @@ the word")
 
     ```
 
-1. In the previous version, we were incrementing a variable `wrong_guesses` each time the user guessed a letter that was not in the word, and then using that variable in the test for our while loop.  We can continue to use this variable, but we can use our list instead and simplify our code.  The number of elements in `wrong_guesses_list` is the number of incorrect guesses, so we can use the length of the list instead of the counter variable.  We get the length of the list by using the len() function.  We can also use the length of the list when we call the print_snowman_graphic function.  Here's the updated version of the function:
+1. In the previous version, we were incrementing a variable `wrong_guesses` each time the user guessed a letter that was not in the word, and then using that variable in the test for our while loop.  We can continue to use this variable, but we can use our list instead and simplify our code.  The number of elements in `wrong_guesses_list` is the number of incorrect guesses, so we can use the length of the list instead of the counter variable.  We get the length of the list by using the len() function.  We can also use the length of the list when we call the print_snowman function.  Here's the updated version of the function:
 
     ```python
 
@@ -180,7 +180,7 @@ the word")
             else:
                 print(f"The letter {user_input} is not in the word")
                 wrong_guesses_list.append(user_input)
-            print_snowman_graphic(len(wrong_guesses_list))
+            print_snowman(len(wrong_guesses_list))
 
     ```
 
@@ -249,7 +249,7 @@ def snowman():
         else:
             print(f"The letter {user_input} is not in the word")
             wrong_guesses_list.append(user_input)
-        print_snowman_graphic(len(wrong_guesses_list))
+        print_snowman(len(wrong_guesses_list))
         print(f"Wrong guesses: {wrong_guesses_list}")
 
 ```
@@ -463,7 +463,7 @@ def get_letter_from_user(wrong_list, correct_guesses_list):
 
 ## Using Lists to Improve Readability and Simplify Code
 
-In the last lesson we wrote the function `print_snowman_graphic` that drew our snowman up to the height that corresponded to the number of incorrect guesses.  The code for that function was fairly long because our graphic was broken up into seven constants.  We will use a list to simplify and streamline this code.
+In the last lesson we wrote the function `print_snowman` that drew our snowman up to the height that corresponded to the number of incorrect guesses.  The code for that function was fairly long because our graphic was broken up into seven constants.  We will use a list to simplify and streamline this code.
 
 1. The first step is to store all of the drawing constants in a list:
 
@@ -485,7 +485,7 @@ In the last lesson we wrote the function `print_snowman_graphic` that drew our s
 
     ```python
 
-    def print_snowman_graphic(wrong_guesses_count):
+    def print_snowman(wrong_guesses_count):
         for i in range(SNOWMAN_WRONG_GUESSES + 1 - wrong_guesses_count,
                     SNOWMAN_WRONG_GUESSES + 1)
             if i == 1:
@@ -509,7 +509,7 @@ In the last lesson we wrote the function `print_snowman_graphic` that drew our s
 
     ```python
 
-    def print_snowman_graphic(wrong_guesses_count):
+    def print_snowman(wrong_guesses_count):
         for i in range(SNOWMAN_WRONG_GUESSES + 1 - wrong_guesses_count,
                     SNOWMAN_WRONG_GUESSES + 1)
             print(SNOWMAN_GRAPHIC[i - 1])
@@ -520,7 +520,7 @@ In the last lesson we wrote the function `print_snowman_graphic` that drew our s
 
     ```python
 
-    def print_snowman_graphic(wrong_guesses_count):
+    def print_snowman(wrong_guesses_count):
         for i in range(SNOWMAN_WRONG_GUESSES - wrong_guesses_count,
                     SNOWMAN_WRONG_GUESSES)
             print(SNOWMAN_GRAPHIC[i])
