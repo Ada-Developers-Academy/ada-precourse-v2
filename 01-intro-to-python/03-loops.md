@@ -35,6 +35,8 @@ while test < 10:
 # The value of test is 4
 # The value of test is 6
 # The value of test is 8
+# The value of test is 10
+
 
 # for loop
 for num in range(3):
