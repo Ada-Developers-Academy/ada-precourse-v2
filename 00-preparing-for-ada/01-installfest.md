@@ -38,3 +38,5 @@ If you are uncertain which kind of Mac you have you can go to **About This Mac**
 Then look for the word Intel or M1 in the description.
 
 ![About this mac screen](images/about-this-mac-intel.png)
+
+![About this mac M1 screen](images/m1-screenshot.png)
