@@ -27,7 +27,7 @@ If you have an Intel-based Mac you can follow the [intel-based installfest](inst
 
 ## Apple Silicon Macs
 
-If you have an M1-based Mac you need to first follow the [M1 installfest-setup](installfest/installfest-m1.resource.md) first before proceeding to the Intel-based installfest.
+If you have an M1-based Mac you need to first follow the [M1 installfest-setup](installfest/installfest-m1.resource.md) instead of the Intel-based installfest.
 
 ## Unclear?
 
