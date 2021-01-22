@@ -64,12 +64,12 @@ You can enter `python` in the terminal to enter a Read-Eval-Print-Loop environme
 
 There are a few shortcut commands that are helpful to know.
 
-#### irb commands
+#### Python Repl commands
 
 | Command                                  | Description                    |
 | :--------------------------------------- | :----------------------------- |
-| `irb`                                    | start interactive ruby session |
-| `exit` or <kbd>ctrl</kbd> + <kbd>d</kbd> | exit an `irb` session          |
+| `python`   or `python3`                  | start interactive Python session |
+| `exit()` or <kbd>ctrl</kbd> + <kbd>d</kbd> | exit an `irb` session          |
 | <kbd>ctrl</kbd> + <kbd>c</kbd>           | interrupt/stop a command       |
 
 ### Running Python Files
