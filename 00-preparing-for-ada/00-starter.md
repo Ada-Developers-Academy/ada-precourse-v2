@@ -52,7 +52,7 @@ We also want you to learn a bit of workflow and learn to use [VS Code](https://c
 ## Your Pre-Ada Responsibilities
 
 * Complete the installfest and make sure you have everything installed
-* Complete Units 1-6 of the Pre-Ada Material
+* Complete Each unit of the pre-ada material
 * Complete an [HTML/CSS Udacity Course](https://www.udacity.com/course/intro-to-html-and-css--ud001), it's free
 
 ## Coding Exercises
