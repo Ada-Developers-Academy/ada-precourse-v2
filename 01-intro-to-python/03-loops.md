@@ -381,11 +381,17 @@ def snowman():
 ### !tests
 ```python
 import sys
-import unittest
-import user_input
-import io
+from unittest import mock
 from unittest.mock import patch
+import io
+import unittest
 import re
+# import sys
+# import unittest
+# import user_input
+# import io
+# from unittest.mock import patch
+# import re
 
 from main import *
 
