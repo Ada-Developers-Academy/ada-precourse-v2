@@ -400,6 +400,7 @@ class TestChallenge(unittest.TestCase):
     @patch('sys.stdout', new_callable=io.StringIO)
     def test_will_print_out_out_of_guesses_if_number_of_guesses_is_exhasted(self, mock_stdout):
         # Arrange
+        SNOWMAN_WRONG_GUESSES = 7
         input_letters = [
             'a',
             'z',
@@ -408,7 +409,7 @@ class TestChallenge(unittest.TestCase):
             'd',
             'e',
             'f',
-            'g'
+            'g',
             'h',
             'i',
             'j',
@@ -419,11 +420,12 @@ class TestChallenge(unittest.TestCase):
             snowman()
 
         # Assert
+
         assert re.match(f"You made 1 correct and {SNOWMAN_WRONG_GUESSES} incorrect guesses",
                         mock_stdout.getvalue(), flags=re.IGNORECASE)
 
     @patch('sys.stdout', new_callable=io.StringIO)
-    def test_will_repeat_until_word_is_guessed_with_all_correct_guesses(self, mock_stdout):
+    def test_will_repeat_until_guesses_exhasted_even_if_word_guessed(self, mock_stdout):
         # Arrange
         input_letters = [
             's',
@@ -433,7 +435,7 @@ class TestChallenge(unittest.TestCase):
             'm',
             'a',
             'n',
-            'b'
+            'b',
             'c',
             'd',
             'e',
@@ -456,7 +458,7 @@ class TestChallenge(unittest.TestCase):
     def test_will_will_output_0_correct_for_all_invalid_guesses(self, mock_stdout):
         # Arrange
         input_letters = [
-            'b'
+            'b',
             'c',
             'd',
             'e',
@@ -473,8 +475,9 @@ class TestChallenge(unittest.TestCase):
             snowman()
 
         # Assert
-        assert re.match(f"You made 7 correct and {0} incorrect guesses",
+        assert re.match("You made 0 correct and 7 incorrect guesses",
                         mock_stdout.getvalue(), flags=re.IGNORECASE)
+
 
 ```
 ### !end-tests
