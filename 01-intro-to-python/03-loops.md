@@ -423,7 +423,7 @@ class TestChallenge(unittest.TestCase):
                         mock_stdout.getvalue(), flags=re.IGNORECASE)
 
     @patch('sys.stdout', new_callable=io.StringIO)
-    def test_will_repeat_until_guesses_exhasted_even_if_word_guessed(self, mock_stdout):
+    def test_will_repeat_until_word_is_guessed_with_all_correct_guesses(self, mock_stdout):
         # Arrange
         input_letters = [
             's',
@@ -449,7 +449,7 @@ class TestChallenge(unittest.TestCase):
             snowman()
 
         # Assert
-        assert re.match(f"You made 7 correct and {SNOWMAN_WRONG_GUESSES} incorrect guesses",
+        assert re.match(f"You made 7 correct and {0} incorrect guesses",
                         mock_stdout.getvalue(), flags=re.IGNORECASE)
 
     @patch('sys.stdout', new_callable=io.StringIO)
@@ -473,7 +473,7 @@ class TestChallenge(unittest.TestCase):
             snowman()
 
         # Assert
-        assert re.match(f"You made 0 correct and {SNOWMAN_WRONG_GUESSES} incorrect guesses",
+        assert re.match(f"You made 7 correct and {0} incorrect guesses",
                         mock_stdout.getvalue(), flags=re.IGNORECASE)
 
 ```
