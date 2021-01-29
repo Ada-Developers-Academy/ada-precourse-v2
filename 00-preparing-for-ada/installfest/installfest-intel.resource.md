@@ -49,7 +49,7 @@ Copy the line below in it's entirety, paste it into the terminal and hit enter. 
 /bin/bash -c "$(curl -fsSL https://gist.githubusercontent.com/CheezItMan/e31aebdb0f686c1a194e980b24f3cea4/raw/bdbca760a7f19e2e067982af3b402a7ca019b7c5/ada_c14_installfest.bash)"
 ```
 
-When the install finishes quit and restart your terminal.
+**When the install finishes quit and restart your terminal.** Without doing this, the installation above may not take affect.
 
 ### About Homebrew
 
@@ -67,6 +67,9 @@ You should see, after a bit of processing, `Your system is ready to brew.`
 ### About Python 3
 
 Macs come with an older version of Python, usually 2.7.x.  However we will be using a version of Python 3 and we need to set up the Mac to use it.  Thus we used homebrew to install it.
+
+Verify your terminal is using the correct version with `python --version`. If it is not using the correct version, perhaps you missed the step above about restarting your terminal. Try quitting your terminal and reopening it to see if that fixes it...If not, reach out to a classmate or instructor!
+
 #### PIP - Python's Package Installer Programm
 
 We also use a program called **pip** to install additional python packages we can then use in our programs.  Pip was installed with Python 3
