@@ -68,15 +68,13 @@ You should see, after a bit of processing, `Your system is ready to brew.`
 
 Macs come with an older version of Python, usually 2.7.x.  However we will be using a version of Python 3 and we need to set up the Mac to use it.  Thus we used homebrew to install it.
 
-Verify your terminal is using the correct version with `python --version`. If it is not using the correct version, perhaps you missed the step above about restarting your terminal. Try quitting your terminal and reopening it to see if that fixes it...If not, reach out to a classmate or instructor!
-
 #### PIP - Python's Package Installer Programm
 
 We also use a program called **pip** to install additional python packages we can then use in our programs.  Pip was installed with Python 3
 
 #### Verification
 
-You can verify that it worked with the command `python --version` and see that it prints something like `Python 3.9.1`.
+You can verify that it worked with the command `python --version` and see that it prints something like `Python 3.9.1`. If it is not using the correct version, perhaps you missed the step above about restarting your terminal. Try quitting your terminal and reopening it to see if that fixes it...If not, reach out to a classmate or instructor!
 
 You should also verify that `pip` is working with `pip --version` and it should be in a python3 folder and say something like `pip 20.3.1 from /usr/local/lib/python3.9/site-packages/pip (python 3.9)`
 
