@@ -78,7 +78,13 @@ We will be using the [Visual Studio Code Editor](https://code.visualstudio.com/)
 * Now, to launch VS Code from terminal, type `code` followed by the file name or directory name
   * For example `code .` will open the present directory as a project folder.
 
-VS Code also comes with a number of extensions which you can install to provide new or different functionality.  Some of the recommended exentsions include:
+VS Code also comes with a number of extensions which you can install to provide new or different functionality. 
+
+Extensions can be searched for and installed from the "Extensions" menu on the sidebar of VS Code. 
+
+![Extensions Sidebar Button](../images/vscode-extensions.png)
+
+Some of the recommended extensions include:
 
 *  [Live Share](https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare) - A way to collaborate on source code like Google Docs.
 *  [Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one) - An extension to help writing markdown files
