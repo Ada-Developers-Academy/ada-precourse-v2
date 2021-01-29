@@ -35,7 +35,7 @@ This will install Xcode's command line tools.  You will get a pop-up to install 
 When it finishes you can install homebrew, Git, and python3 with:
 
 ```
-/bin/bash -c "$(curl -fsSL https://gist.githubusercontent.com/CheezItMan/2c883fc0c43ab44a5554d663995fe92e/raw/5dd84615eedc11849b5fb4eb9ef1e166c63c23c3/install_python_apple_m1.bash)"
+/bin/bash -c "$(curl -fsSL https://gist.githubusercontent.com/CheezItMan/2c883fc0c43ab44a5554d663995fe92e/raw/12cafa8e8d26c34d3d272c9da9c4402897dd4cca/install_python_apple_m1.bash)"
 ```
 
 You will be prompted for your password.

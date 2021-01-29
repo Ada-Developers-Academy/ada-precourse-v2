@@ -46,7 +46,7 @@ It will also give you some options to automatically install:
 Copy the line below in it's entirety, paste it into the terminal and hit enter.  You will be prompted for your password.  Don't be alarmed if you don't see your password, it's still getting entered.
 
 ```bash
-/bin/bash -c "$(curl -fsSL https://gist.githubusercontent.com/CheezItMan/e31aebdb0f686c1a194e980b24f3cea4/raw/bdbca760a7f19e2e067982af3b402a7ca019b7c5/ada_c14_installfest.bash)"
+/bin/bash -c "$(curl -fsSL https://gist.githubusercontent.com/CheezItMan/e31aebdb0f686c1a194e980b24f3cea4/raw/5710e04d17a7840df3df0ea95502da275a9943cb/ada_c14_installfest.bash)"
 ```
 
 When the install finishes quit and restart your terminal.
