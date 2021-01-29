@@ -39,7 +39,7 @@ The following script will install some tools we will use including:
 It will also give you some options to automatically install:
 
 - Firefox
-- Google Chome
+- Google Chrome
 - VS Code
 - Slack for Mac
 
@@ -93,7 +93,13 @@ You should also verify that `pip` is working with `pip --version` and it should 
 
 #### VS Code Extensions
 
-VS Code also comes with a number of extensions which you can install to provide new or different functionality.  Some of the recommended exentsions include:
+VS Code also comes with a number of extensions which you can install to provide new or different functionality. 
+
+Extensions can be searched for and installed from the "Extensions" menu on the sidebar of VS Code. 
+
+![Extensions Sidebar Button](../images/vscode-extensions.png)
+
+Some of the recommended extensions include:
 
 *  [Live Share](https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare) - A way to collaborate on source code like Google Docs.
 *  [Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one) - An extension to help writing markdown files
