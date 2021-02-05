@@ -243,21 +243,21 @@ We want to run the loop at most the max guesses number of times, but if the user
 
         waiting_for_correct_guess = True
         num_guesses = 0
-            while (waiting_for_correct_guess and
-                    num_guesses <= MAX_GUESSES):
-    
-                num_guesses += 1
-                user_input = get_number_from_user()
-                if user_input == random_number:
-                    print("You guessed the number!  Good job!")
-                    waiting_for_correct_guess = False
-                elif user_input > random_number:
-                    print("Your guess is too high")
-                elif user_input < random_number:
-                    print("Your guess is too low")
-                elif user_input < RANGE_LOW or user_input > RANGE_HIGH:
-                    print(f"Your guess is out of bounds.")
-                    print(f"It must be between {RANGE_LOW} and {RANGE_HIGH}")
+        while (waiting_for_correct_guess and
+                num_guesses <= MAX_GUESSES):
+
+            num_guesses += 1
+            user_input = get_number_from_user()
+            if user_input == random_number:
+                print("You guessed the number!  Good job!")
+                waiting_for_correct_guess = False
+            elif user_input < RANGE_LOW or user_input > RANGE_HIGH:
+                print(f"Your guess is out of bounds.")
+                print(f"It must be between {RANGE_LOW} and {RANGE_HIGH}")
+            elif user_input > random_number:
+                print("Your guess is too high")
+            elif user_input < random_number:
+                print("Your guess is too low")
         
         # At this point, there are two options.  
         #    1, the user ran out of guesses or 
