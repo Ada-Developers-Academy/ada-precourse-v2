@@ -225,7 +225,7 @@ We want to run the loop at most the max guesses number of times, but if the user
         # ...
         
         num_guesses = 0
-        while (waiting_for_correct_guess or 
+        while (waiting_for_correct_guess and 
                    num_guesses <= MAX_GUESSES):
             num_guesses += 1 
             # ...
@@ -243,7 +243,7 @@ We want to run the loop at most the max guesses number of times, but if the user
 
         waiting_for_correct_guess = True
         num_guesses = 0
-            while (waiting_for_correct_guess or
+            while (waiting_for_correct_guess and
                     num_guesses <= MAX_GUESSES):
     
                 num_guesses += 1
