@@ -420,9 +420,10 @@ class TestChallenge(unittest.TestCase):
             snowman()
 
         # Assert
+        correct_answer = f"You made 1 correct and {SNOWMAN_WRONG_GUESSES} incorrect guesses"
 
-        assert re.match(f"You made 1 correct and {SNOWMAN_WRONG_GUESSES} incorrect guesses",
-                        mock_stdout.getvalue(), flags=re.IGNORECASE)
+        assertTrue(re.match(correct_answer,
+                        mock_stdout.getvalue(), flags=re.IGNORECASE), f"expected {correct_answer} but recieved {mock_stdout.getvalue()}")
 
     @patch('sys.stdout', new_callable=io.StringIO)
     def test_will_repeat_until_guesses_exhasted_even_if_word_guessed(self, mock_stdout):
@@ -451,8 +452,9 @@ class TestChallenge(unittest.TestCase):
             snowman()
 
         # Assert
-        assert re.match(f"You made 7 correct and {0} incorrect guesses",
-                        mock_stdout.getvalue(), flags=re.IGNORECASE)
+        correct_answer = f"You made 7 correct and {0} incorrect guesses"
+        assert re.match(correct_answer,
+                        mock_stdout.getvalue(), flags=re.IGNORECASE, msg = f"expected {correct_answer}, but recieved {mock_stdout.getvalue()}") 
 
     @patch('sys.stdout', new_callable=io.StringIO)
     def test_will_will_output_0_correct_for_all_invalid_guesses(self, mock_stdout):
@@ -475,8 +477,9 @@ class TestChallenge(unittest.TestCase):
             snowman()
 
         # Assert
+        correct_answer = "You made 0 correct and 7 incorrect guesses"
         assert re.match("You made 0 correct and 7 incorrect guesses",
-                        mock_stdout.getvalue(), flags=re.IGNORECASE)
+                        mock_stdout.getvalue(), flags=re.IGNORECASE, msg=f"expected {correct_answer} but recieved {mock_stdout.getvalue()}")
 
 
 ```
