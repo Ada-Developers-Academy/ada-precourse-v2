@@ -333,7 +333,7 @@ class SimplisticTest(unittest.TestCase):
             # Act
             answer = p.get_letter_from_user(wrong_list, correct_guesses_list)
         # Assert
-        assert re.match('You have already guessed that letter', mock_stdout.getvalue(), flags=re.IGNORECASE)
+        self.assertTrue(re.match('You have already guessed that letter', mock_stdout.getvalue(), flags=re.IGNORECASE), msg=f"Expected: {'You have already guessed that letter'} but recieved: {mock_stdout.getvalue()}")
 
     @patch('sys.stdout', new_callable=io.StringIO)
     def test_prints_already_used_if_in_wrong_guesses_list(self, mock_stdout):
@@ -349,7 +349,7 @@ class SimplisticTest(unittest.TestCase):
             # Act
             p.get_letter_from_user(wrong_list, correct_guesses_list)
         # Assert
-        assert re.match('You have already guessed that letter', mock_stdout.getvalue(), flags=re.IGNORECASE)
+        self.assertTrue(re.match('You have already guessed that letter', mock_stdout.getvalue(), flags=re.IGNORECASE), msg=f"Expected {'You have already guessed that letter'} but recieved: {mock_stdout.getvalue()}")
 
     @patch('sys.stdout', new_callable=io.StringIO)
     def test_returns_valid_letter_after_invalid_guess(self, mock_stdout):
@@ -365,7 +365,7 @@ class SimplisticTest(unittest.TestCase):
             # Act
             answer = p.get_letter_from_user(wrong_list, correct_guesses_list)
         # Assert
-        assert answer == input_letters[-1]
+        self.assertTrue(answer == input_letters[-1], msg=f"Expected after guessing a previously guessed letter to reprompt the user and read in and return a valid letter.  Guessing {input_letters} with correct guesses list {correct_guesses_list} and incorrect guesses list {wrong_list}.  The function returned {answer}")
 
     @patch('sys.stdout', new_callable=io.StringIO)
     def test_prints_only_one_letter_at_a_time_for_input_with_multiple_characters(self, mock_stdout):
@@ -381,7 +381,7 @@ class SimplisticTest(unittest.TestCase):
             # Act
             p.get_letter_from_user(wrong_list, correct_guesses_list)
         # Assert
-        assert re.match('You can only input one letter at a time!', mock_stdout.getvalue(), flags=re.IGNORECASE)
+        self.assertTrue(re.match('You can only input one letter at a time!', mock_stdout.getvalue(), flags=re.IGNORECASE), msg=f"Expected to print {'You can only input one letter at a time!'} when 'zzzzz' is entered.")
 
     @patch('sys.stdout', new_callable=io.StringIO)
     def test_prints_you_must_input_a_letter_for_non_alpha_input(self, mock_stdout):
@@ -397,7 +397,7 @@ class SimplisticTest(unittest.TestCase):
             # Act
             p.get_letter_from_user(wrong_list, correct_guesses_list)
         # Assert
-        assert re.match('You must input a letter!', mock_stdout.getvalue(), flags=re.IGNORECASE)
+        self.assertTrue(re.match('You must input a letter!', mock_stdout.getvalue(), flags=re.IGNORECASE), msg=f"Expected to print {'You must input a letter!'} when a number is input.")
 
     @patch('sys.stdout', new_callable=io.StringIO)
     def test_with_valid_input_the_1st_time_it_just_returns_the_input(self, mock_stdout):
@@ -410,7 +410,7 @@ class SimplisticTest(unittest.TestCase):
             # Act
             answer = p.get_letter_from_user(wrong_list, correct_guesses_list)
         # Assert
-        assert answer == input_letters[0]
+        self.assertTrue(answer == input_letters[0], msg=f"When the user guesses a letter that has not been previously guessed, that letter should be returned.")
 
     @patch('sys.stdout', new_callable=io.StringIO)
     def test_works_with_empty_lists(self, mock_stdout):
@@ -423,7 +423,7 @@ class SimplisticTest(unittest.TestCase):
             # Act
             answer = p.get_letter_from_user(wrong_list, correct_guesses_list)
         # Assert
-        assert answer == input_letters[0]
+        self.assertTrue(answer == input_letters[0], msg="When the no letter has been guessed any valid letter is accepted and returned.")
 
 ```
 
