@@ -26,7 +26,7 @@ In this course you can always resubmit work.  If you want a 2nd-round of instruc
 
 ## Due Dates
 
-# The Precourse should be completed by 3/1/2021 5pm PST
+# The Precourse should be completed by 3/5/2021 5pm PST
 
 ### !end-callout
 
