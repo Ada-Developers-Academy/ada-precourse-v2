@@ -118,6 +118,20 @@ It's also critically important to use emojis (not really, but it's fun!).  So on
 
 You can find a great site for Slack Emoji [**here**](https://slackmojis.com/).
 
+### Optional - Oh My Zsh
+
+Zsh is very customizable environent in zsh and there's a great community-driven framework for managing zsh configurations providing thousands of helper functions, plugins and themes.  Basically it lets you customize the look and feel of the terminal and add custom commands and shortcuts.  The most amazing thing is that **it comes with git integration!**
+
+Using **Oh My Zsh** is completely optional at Ada, but it can be handy for it's support of git and extensibility.  You are welcome to install it if you are interested.
+
+You can install it with:
+
+```zsh
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+```
+
+You can read more about it on the [oh my zsh homepage](https://ohmyz.sh/).
+
 ## Resources
 
 - [This guide is taken from OSX Daily](https://osxdaily.com/2020/11/18/how-run-homebrew-x86-terminal-apple-silicon-mac/)
