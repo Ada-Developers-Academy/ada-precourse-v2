@@ -487,17 +487,12 @@ class TestChallenge(unittest.TestCase):
 ### !explanation
 An example of a working implementation:
 ```python
-SNOWMAN_WORD = "snowman"
-
-# Add a constant SNOWMAN_WRONG_GUESSES here
-SNOWMAN_WRONG_GUESSES = 7
-
 def snowman():
     correct_guesses = 0
     wrong_guesses = 0
-    while (wrong_guesses < SNOWMAN_WRONG_GUESSES):
+    while wrong_guesses < SNOWMAN_WRONG_GUESSES and correct_guesses < len(SNOWMAN_WORD):
         guessed_letter = input('Please enter a letter')
-        if (guessed_letter in SNOWMAN_WORD):
+        if guessed_letter in SNOWMAN_WORD:
             correct_guesses += 1
         else:
             wrong_guesses += 1
