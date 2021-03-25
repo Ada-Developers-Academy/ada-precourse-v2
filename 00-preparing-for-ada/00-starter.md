@@ -26,13 +26,9 @@ In this course you can always resubmit work.  If you want a 2nd-round of instruc
 
 ## Due Dates
 
-# The Precourse should be completed by 3/5/2021 5pm PST
+# The Precourse should be completed by 5/2/2021 5pm PST
 
 ### !end-callout
-
-## Pre-Ada Units
-
-These units are designed with units to match the 6-day in-person Pre-Ada sessions for students determined to need a bit of additional support called Precourse Live.  If you want to attend Live sessions, you can request to do so, but space is limited and admission is based on need.
 
 ## Learning Goals prior to starting at Ada
 
@@ -53,7 +49,6 @@ We also want you to learn a bit of workflow and learn to use [VS Code](https://c
 
 * Complete the installfest and make sure you have everything installed
 * Complete Each unit of the pre-ada material
-* Complete an [HTML/CSS Udacity Course](https://www.udacity.com/course/intro-to-html-and-css--ud001), it's free
 
 ## Coding Exercises
 
@@ -116,9 +111,6 @@ class TestPython1(unittest.TestCase):
 
 ##### !end-tests
 
-<!-- other optional sections -->
-<!-- !hint - !end-hint (markdown, hidden, students click to view) -->
-<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
 ##### !explanation
 
 In this exercise you learned how to run a coding snippet.  This allows you to enter code and have it checked for correctness via some automated tests.  This will become standard practice accross the Ada Precourse.  
@@ -158,24 +150,15 @@ Place your link here
 
 ##### !end-placeholder
 
-<!-- other optional sections -->
 ##### !hint 
 
 You can learn [how to create a gist](https://docs.github.com/en/github/writing-on-github/creating-gists), or just create a program on [repl.it](https://repl.it).
 
 ##### !end-hint
 
-<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
-<!-- !explanation - !end-explanation (markdown, students can see after answering correctly) -->
-
 ### !end-challenge
 
 <!-- ======================= END CHALLENGE ======================= -->
-
-
-## Learning HTML & CSS 
-
-Beyond this course, we also want you to take the free [Udacity HTML & CSS](https://www.udacity.com/course/intro-to-html-and-css--ud001)  course in preparation for our HTML/CSS unit.
 
 ## This Lesson
 
