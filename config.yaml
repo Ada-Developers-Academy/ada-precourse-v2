@@ -89,7 +89,7 @@ Standards:
         UID: 8dcfa218-e7a1-499c-b30e-dab52ba8474b
         Path: /01-intro-to-python/resources/src/01-conditionals/games_conditional.md
   - Title: Social Justice
-    Description: Prework for the Social Justice Training
+    Description: Independent Social Justice Prework
     UID: daffd069-1de3-43dd-9f15-37e66ddbf673
     SuccessCriteria:
       - success criteria
