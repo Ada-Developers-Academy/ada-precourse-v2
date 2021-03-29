@@ -2,7 +2,6 @@
 
 <iframe src="https://adaacademy.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=ef2226d4-a198-4d39-9ab3-acb10166743d&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&start=0&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 
-<!-- available callout types: info, success, warning, danger, secondary  -->
 ### !callout-warning
 
 ## Note About Spacing
@@ -10,6 +9,7 @@
 Note that in the losing message to the user there are two space between the sentences in, "Sorry, you lose!  The word was {snowman_word}"
 
 ### !end-callout
+
 
 <!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
 <!-- Replace everything in square brackets [] and remove brackets  -->
@@ -40,7 +40,21 @@ When you run the program it will give you the opportunity to run it against some
 
 Alternatively you can select to play the game (by entering "p") and see how it works.
 
-You should make use of the following functions from the previous lessons:
+## Please Note
+
+The `repl` you've cloned has several files:
+
+1. `main.py` that will run the game. No need to modify this file.
+1. `game.py` that holds the important `snowman(snowman_words)` function we *will* modify
+1. `game_test.py` that holds a few written test that will allow us to test your code. No need to modify this file, but feel free to take a look at what these tests might expect.
+
+Several functions have already been made for you to *use* as shown below. You do not need to create them again.
+
+When adding your code, you only need to modify the `snowman(snowman_word)` function.
+
+---
+
+You should make use of the following functions from the previous lessons (already created for you):
 
 - `print_snowman_graphic(num_wrong_guesses)` - This function prints out the appropriate snowman image depending on the number of wrong guesses the player has made.
 - `build_word_list(word)` - This function builds a list of dictionaries with each dictionary holding a letter from the word and if that letter has been guessed yet or not.
@@ -65,9 +79,6 @@ When you finish place a link to your repl here.
 
 ##### !end-answer
 
-<!-- other optional sections -->
-<!-- !hint - !end-hint (markdown, hidden, students click to view) -->
-<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
 ##### !explanation
 
 Our solution was the following:
