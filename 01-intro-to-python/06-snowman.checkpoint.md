@@ -6,7 +6,7 @@
 
 ## Note About Spacing
 
-Note that in the losing message to the user there are two space between the sentences in, "Sorry, you lose!  The word was {snowman_word}"
+Note that in the losing message to the user there are two spaces between the sentences in, "Sorry, you lose!  The word was {snowman_word}"
 
 ### !end-callout
 
@@ -36,7 +36,7 @@ You can also give the repl a new name here.
 
 You will need to complete the `snowman(snowman_word)` function using the other functions that we built in previous exercises.  
 
-When you run the program it will give you the opportunity to run it against some automated tests, which check to see if, after several guesses you print out, "Congratuations, you win!" for success and "Sorry, you lose!  The word was {snowman_word}" for failure.
+When you run the program it will give you the opportunity to run it against some automated tests, which check to see if, after several guesses you print out, "Congratulations, you win!" for success and "Sorry, you lose!  The word was {snowman_word}" for failure.
 
 Alternatively you can select to play the game (by entering "p") and see how it works.
 
@@ -75,7 +75,7 @@ When you finish place a link to your repl here.
 
 ##### !answer
 
-/^https\:\/\/repl\.it/
+/^https\:\/\/(?:(repl\.it)|(replit\.com))/
 
 ##### !end-answer
 
@@ -109,7 +109,7 @@ def snowman(snowman_word):
         print("Wrong guesses: " + " ".join(wrong_guesses))
     
     if all_guessed:
-        print("Congratuations, you win!")
+        print("Congratulations, you win!")
     else:
         print(f"Sorry, you lose!  The word was {snowman_word}")
 ```
