@@ -16,9 +16,9 @@ There are a number of tools available to help you split your screen including:
 
 <iframe src="https://adaacademy.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=2cdaf784-ea88-4e27-872f-abd6002f4863&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&start=0&interactivity=all" width=720 height=405 style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 
-As web developers we regularly use the terminal to run, edit, test and debug our applications.  As such it's important to get familiar with using the MacOS terminal. 
+As web developers, we regularly use the terminal to run, edit, test, and debug our applications, so it's important to get familiar with using the MacOS terminal. 
 
-To launch terminal hit <kbd>cmd</kbd> + <kbd>spacebar</kbd> and then type terminal.  
+To launch the terminal, hit <kbd>cmd</kbd> + <kbd>spacebar,</kbd> and then type `terminal`.  
 
 ![launch terminal](images/launch-terminal.png)
 
@@ -26,13 +26,13 @@ You can also add the terminal application to your dock, by right-clicking on the
 
 ![add terminal to dock](images/add-to-dock.png)
 
-There are a variety of keyboard combinations and commands you can use when using the terminal.
+There are a variety of keyboard combinations and commands you can execute when using the terminal.
 
 You can even write programs to automate the terminal and thus the operating system, which is called **shell programming**.  
 
 ### The Mac Keyboard
 
-Macs have a number of special keys which are a little different from Windows.  You can read more about it on [keyshorts.com](https://keyshorts.com/blogs/blog/41999105-the-ultimate-guide-to-macbook-keyboard).  The control, alt/option and command keys are used for a variety of shortcuts in the terminal.
+Macs have a number of special keys which are a little different from Windows.  You can read more about it on [keyshorts.com](https://keyshorts.com/blogs/blog/41999105-the-ultimate-guide-to-macbook-keyboard).  The control, alt/option, and command keys are used for a variety of shortcuts in the terminal.
 
 ![Mac Keyboard Diagram](images/keyboard.png)
 
@@ -74,9 +74,9 @@ There are a few shortcut commands that are helpful to know.
 
 ### Running Python Files
 
-You can run python files from the terminal by typing `python3` followed by the name of the file.  
+You can run python files from the terminal by typing `python3`, followed by the name of the file.  
 
-For example if you have a file named, `example_file.py`, you could run the file from the terminal with the following.
+For example if you have a file named, `example_file.py`, you can run the file from the terminal with the following:
 
 ```bash
 $ python3 example_file.py
