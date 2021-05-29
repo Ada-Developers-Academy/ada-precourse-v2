@@ -72,7 +72,7 @@ As you proceed through this course you will be asked to complete a variety of co
 
 Use the `print` function to print `Hello World!` here.
 
-Literally just put `print("Hello World!")` inside the function below.
+Type `print("Hello World!")` inside the function below under `# Put your code here`.
 
 ##### !end-question
 
@@ -80,14 +80,8 @@ Literally just put `print("Hello World!")` inside the function below.
 
 ```py
 def hello_world():
-    '''
-    INPUT: 2 dimensional numpy array
-    OUTPUT: boolean
-    Return true
-    '''
     # Put your code here
 
-#   return 1
 ```
 
 ##### !end-placeholder
@@ -140,7 +134,7 @@ Other programming exercises called Project Challenges will ask you to submit a l
 
 ##### !question
 
-Create a Hello World Application on [Repl.it](https://repl.it), and submit a link to your submission.
+Create a Hello World application on [Repl.it](https://repl.it), and submit a link to your submission.
 
 ##### !end-question
 
@@ -162,6 +156,6 @@ You can learn [how to create a gist](https://docs.github.com/en/github/writing-o
 
 ## This Lesson
 
-This lesson is about workflow, Python style and basic types and operations.  This should feel like review and give you a smooth start.  Try to work through things a bit at a time and feel free to walk away for a bit when you are stuck, or shout out for support on Slack.  
+This lesson is about workflow, Python style, and basic types and operations.  This should feel like review and give you a smooth start.  Try to work through things a little at a time. Also, feel free to walk away for a bit when you are stuck, or shout out for support on Slack.  
 
 We'll let you get started...
