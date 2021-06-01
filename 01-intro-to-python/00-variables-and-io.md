@@ -249,11 +249,11 @@ python3 hello.py
 
 ## Followup Exercise
 
-Modify the `hello.py` program above to input your name and age in variables, and then print out:  "Hello <NAME> you are <AGE> years old!".
+Modify the `hello.py` program above to input your name and age in variables, and then print out:  "Hello, <NAME>, you are <AGE> years old!".
 
 For example, if we entered "Han" for the name and "14" for the age it would print out:
 
-"Hello, Han you are 14 years old!"
+"Hello, Han, you are 14 years old!"
 
 ## Summary
 
