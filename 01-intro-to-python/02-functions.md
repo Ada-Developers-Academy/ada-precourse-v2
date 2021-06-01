@@ -12,11 +12,11 @@ At the end of this lesson we will be able to:
 
 ### [Textbook for this section](https://colab.research.google.com/drive/1e8CaljqZrKJyFm7Ry5qHynp7GdoVHFLk?usp=sharing)
 
-In this section we will be building on the code that you wrote in the previous lesson [Conditionals](./01-conditionals.md).  If you would like to look at our example code version for that lesson, you can find it [here](resources/src/01-conditionals/games_conditional.md)
+In this section we will be building on the code that you wrote in the previous lesson [Conditionals](./01-conditionals.md).  If you would like to look at our example code version for that lesson, you can find it [here](resources/src/01-conditionals/games_conditional.md).
 
 ## What is a Function?
 
-* **function**: a named chunk of code that is callable and performs a task.  Functions can take in values called arguments and can have a return value.  
+* **function**: a named chunk of code that is callable and performs a task.  Functions can define parameters, can read in values called arguments, and can have a return value.  
 
 ```python
 
@@ -28,43 +28,45 @@ def my_new_function():
     x = 1
     y = 2
     z = x + y
+    print(z)
 
 # This line calls the function
 my_new_function()
 
 
-# Example function with arguments
-def my_func_with_args(arg1, arg2):
-    x = arg1
-    y = arg2
+# Example function with "placeholder" values called parameters
+def my_func_with_params(param1, param2):
+    x = param1
+    y = param2
+    z = x + y
+    print(z)
 
-# Calling the function with arguments
-my_func_with_args(1, 2)
+# Calling the function with real values
+# These values are now called arguments
+my_func_with_params(1, 2)
 
 ```
 
 ### Why Functions?
 
-In the last lesson we wrote a series of conditionals to validate and test user input for the "Guess the Number" game.  At this point, we may be looking at the code and thinking, this looks good, it works, why add functions?  
+In the last lesson we wrote a series of conditionals to validate and test user input for the "Guess the Number" game.  At this point, we may be looking at the code and thinking, "this looks good. It works, so why add functions?"  
 
-Lets say we want to play a different game after we finish playing Guess the Number.  We could just add the code for the new game after the code that's in the file right now, but then what if we want to change the order of the games?  
+Let's say we want to play a different game after we finish playing "Guess the Number."  We could just add the code for the new game after the code that's in the file right now, but then what if we want to change the order of the games?  
 
-We're now looking at moving around big code blocks.  Then if we change our minds and want to move it back, or add another game (and so on) things quickly get messy.  Functions encapsulate code blocks into re-usable chunks that we can then call in whatever order we want.  They also help us reuse these blocks of code in other programs.
+We're now looking at moving around big code blocks.  Then if we change our minds and want to move it back, or add another game (and so on), things quickly get messy.  Functions encapsulate code blocks into re-usable chunks that we can then call in whatever order we want.  They also help us reuse these blocks of code in other programs.
 
 ## Guess the Number
 
+Lets build a "Guess the Number" function.  This function will:
 
+1.  Take in a number from the user
+1.  If the user enters a number:
+    1.  Inform the user if their number is lower or higher than the random number at the top of the code above;
+1.  Otherwise, if the user entered a non-number as their input, tell them it wasn't a number
 
-Lets build a "Guess the number" function.  This function will:
+Let's write this code and place it in a function called `guess_the_number`.  Then call the function at the bottom of the file.
 
-1.  Read in a number from the user
-1.  If the user entered a number:
-    1.  Inform the user if their number is lower or higher than the random number at the top of the code above:
-1.  Otherwise if the user entered a non-number, tell them it wasn't a number
-
-Lets write this code and place it in a function called `guess_the_number`.  Then call the function at the bottom of the file.
-
-Try writing this in VS code and then compare your answer to ours below.
+Try writing this in VS Code, and then compare your answer to ours below.
 
 <details>
 <summary> Our version at this point </summary>
@@ -121,7 +123,7 @@ def convert_to_celsius(temp):
 
 ```
 
-Then, we could write another function `temp_converter` that takes the temperature and the unit of measurement as parameters, and calls `convert_to_celsius` or `convert_to_fahrenheit` depending on the unit.
+Then, we could write another function `temp_converter` that takes the `temperature` and the `unit` of measurement as parameters, then calls `convert_to_celsius` or `convert_to_fahrenheit`, depending on the `unit`.
 
 ```python
 
@@ -141,22 +143,24 @@ So:
 
 ```py
 fahrenheit_temp = convert_to_fahrenheit(100)
-print(f"The temp is 212.0 degrees fahrenheit")
+print(f"The temp is {fahrenheit_temp} degrees fahrenheit")
 ```
 
-Will print "The temp is  degrees fahrenheit".  This way you can call a function and get a value or an answer sent back after the function completes.  We can use this to simplify `guess_the_number`.
+Will print `"The temp is <returned temperature value> degrees fahrenheit"`.  This way you can call a function and get a value or an answer sent back after the function completes.  We can use this to simplify `guess_the_number`.
 
 
 ## Exercise:  Breaking Up `guess_the_number`
 
-The function `guess_the_number` can be broken up into two conceptual pieces, getting user input, and then processing the user input.  
+The function `guess_the_number` can be broken up into two conceptual pieces: 
+- getting user input 
+- then processing the user input
 
 1.  Start by writing a function called `get_number_from_user`
     * Then pull all of the pieces of code in `guess_the_number` that have to do with getting user input into `get_number_from_user`.  
     * Include any conditional statement that validate user input as a number.  
-    * This function should ask the user for a number and then give an error message if the user inputs anything other than a number.  
-    * Last, it should return the valid user input, or None if there was no valid input.  
-    * In `guess_the_number`, call this function and store the result in user_input.
+    * This function should ask the user for a number, and then give an error message if the user inputs anything other than a number.  
+    * Lastly, it should return the valid user input or `None` if there was no valid input.  
+    * In `guess_the_number`, call this function and store the result in `user_input`.
 1.  Then the `guess_the_number` function can use the previous `if...else` statements to tell the user if their guess was too high or too low.
  
 <details>
@@ -173,7 +177,6 @@ random_number = random.randint(RANGE_LOW, RANGE_HIGH)
 
 
 def guess_the_number():
-
     user_input = get_number_from_user()
 
     if user_input < RANGE_LOW or user_input > RANGE_HIGH:
@@ -207,7 +210,7 @@ guess_the_number()
 
 ## Each Function Does **One** Thing!
 
-Notice in our code that now each function is doing exactly **one** thing.  `get_number_from_user` does just that, it reads in a number from the user.  Similarly `guess_the_number` now just processes the user's guess.  This makes each step *much* easier to read and test.
+Notice in our code that now each function is doing exactly **one** thing.  `get_number_from_user` does just that, it takes in a number from the user.  Similarly, now `guess_the_number` just processes the user's guess.  This makes each step *much* easier to read and test.
 
 ### !end-callout
 
@@ -215,7 +218,7 @@ Notice in our code that now each function is doing exactly **one** thing.  `get_
 
 ## None and potential Errors
 
-Notice that in our version, if the user does not give a valid input, the return value will be `None`.  This will cause an error in the conditionals in `guess_the_number`, because `None` can not be compared to a number.  That's ok, we're building to a full solution.  Many times when writing code, it is useful to write and test a small portion, and then when we're confident that it works, moving on to build the next portion.
+Notice that in our version, if the user does not give a valid input, the return value will be `None`.  This will cause an error in the conditionals in `guess_the_number` because `None` cannot be compared to a number.  And that's okay! We're building to a full solution.  Many times when writing code, it is useful to write and test a small portion, and then when we're confident that it works, moving on to build the next portion.  
 
 ### !end-callout
 
@@ -227,11 +230,11 @@ In Snowman:
 
 1.  The user is presented with a list of underscores "_".  Each Underscore represents one letter in a word.
 1.  The user guesses letters for the hidden word
-    * For each correct guess, a letter will be replace the corresponding underscore.
-    * For every wrong guess we are going to remember the number of wrong guesses and print out more and more of a snowman drawing.  
+    * For each correct guess, a letter will replace the corresponding underscore.
+    * For every wrong guess, we are going to remember the number of wrong guesses, and print out more and more of a snowman drawing.  
 1.  When the snowman is finished and the user is out of guesses, they lose the game.  
 
-We are going to start by building just a small piece of this game.  To start, for debugging purposes, we're always going to use the same word.  Add it as a constant at the top of the file.  Here's our version:
+We are going to start by building just a small piece of this game.  To start for debugging purposes, we're always going to use the same word.  Add it as a constant at the top of the file.  Here's our version:
 
 ```python
 
