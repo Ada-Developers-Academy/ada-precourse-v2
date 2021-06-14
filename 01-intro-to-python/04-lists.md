@@ -27,6 +27,27 @@ What happens when we want to modify our program to store our user's top 10 favor
 
 By using a list, we can store as many ice cream flavors as we want.  Also, python provides us with ways to easily loop through all of the elements in a list so we can use a loop to display all of the flavors, which will simplify our code even further!  
 
+```python
+
+def favorite_flavors():
+    icecream_flavors = []
+    flavor = ""
+    while not flavor == "done": # this loop will run until the 
+                                # user types in the word "done"
+        flavor = input("What is an icecream flavor that you like? ")
+        icecream_flavors.append(flavor) # when we append something to a list,
+                                        # we add it to the end of the list
+    
+    for flavor in icecream_flavors: # this loop will iterate over each element 
+                                    # in the list, and store them one at a time 
+                                    # in the variable flavor
+        print(f"{flavor} is a great ice cream flavor!")
+
+    return icecream_flavors
+
+```
+
+
 ## Vocabulary and Syntax
 
 | Vocab          | Definition                                                    | Synonyms  | How to Use in a Sentence                                                      |
@@ -66,8 +87,372 @@ for i in new_list_2:
 
 ```
 
+## Practice Problems
+<!--BEGIN CHALLENGE-->
 
-## Snowman
+### !challenge
+
+* type: code-snippet
+* language: python3.6
+* id: 610f0431-b999-420f-8088-a40f5ddf9167
+* title: Find Index of Item in List
+* points: 1
+* topics: python, lists
+
+##### !question
+
+Write a function `find_index_of_item` that takes two variables, an item and a list called list_of_items.  The function has the following behavior:
+* If the list contains the item, the function returns the index of the item in the list.  
+* If the list contains the item multiple times, the function returns the index of the first time the item appears in the list.  
+* If the list does not contain the item, the function returns -1.
+
+Example inputs and outputs:
+
+input: ```find_index_of_item(3, [1, 4, 5, 6, 2, 3, 9])```  
+output: ```5```
+
+input: ```find_index_of_item("cat", ["dog", "cow", "goat", "pig"])```  
+output: ```-1```
+
+input: ```find_index_of_item("chocolate", [])```  
+output: ```-1```
+
+input: ```find_index_of_item(-93, [1, 30, -93, 99, -3, -93, 25, 16])```  
+output: ```2```
+
+##### !end-question
+
+##### !placeholder
+
+```python
+
+def find_index_of_item(item, list_of_items):
+    return None
+
+```
+
+##### !end-placeholder
+
+##### !tests
+```python
+
+import unittest
+from main import *
+
+class TestFindIndexOfItemChallenge(unittest.TestCase):
+    def test_find_success(self):
+        self.assertEqual(find_index_of_item(3, [1, 4, 5, 6, 2, 3, 9]), 5)
+    
+    def test_find_first(self):
+        self.assertEqual(find_index_of_item(-93, [1, 30, -93, 99, -3, -93, 25, 16]), 2)
+    
+    def test_find_failure(self):
+        self.assertEqual(find_index_of_item("cat", ["dog", "cow", "goat", "pig"]), -1)
+    
+    def test_find_failure_empty_list(self):
+        self.assertEqual(find_index_of_item("chocolate", []),-1)
+
+```
+##### !end-tests
+
+<!--optional-->
+##### !hint
+
+A solution for this problem can be broken into the following steps:
+
+1. Loop over list_of_items
+1. Compare each element in list_of_items to item
+1. If an element in list_of_items matches item, return the index of that element
+1. If no matching element is found, return -1
+
+##### !end-hint
+
+<!--optional-->
+##### !explanation
+Three examples of working implementations:
+
+```python
+def find_index_of_item(item, list_of_items):
+    default = -1
+    for count, current_item in enumerate(list_of_items):
+        if current_item == item:
+            return count
+    return default
+
+def find_index_of_item(item, list_of_items):
+    default = -1
+    count = 0
+    for current_item in list_of_items:
+        if current_item == item:
+            return count
+        count += 1
+    return default
+
+def find_index_of_item(item, list_of_items):
+    default = -1
+    count = 0
+    while count < len(list_of_items):
+        if list_of_items[count] == item:
+            return count
+        count += 1
+    return default
+```
+
+##### !end-explanation
+
+### !end-challenge
+
+<!--END CHALLENGE-->
+
+<!--BEGIN CHALLENGE-->
+
+### !challenge
+
+* type: code-snippet
+* language: python3.6
+* id: 57d4bc1e-eb50-40bd-b6cb-680e4529f146
+* title: Count Occurrences of Item in List
+* points: 1
+* topics: python, lists
+
+##### !question
+
+
+Write a function `count_item_in_list` that takes two variables, an item and a list called list_of_items.  The function has the following behavior:
+* The function returns the number of times the item appears in the list 
+* If the list does not contain the item, the function returns 0 .
+
+Example inputs and outputs:
+
+input: ```count_item_in_list(3, [1, 3, 3, 6, 2, 3, 9])```  
+output: ```3```
+
+
+input: ```count_item_in_list("cat", ["dog", "cow", "goat", "pig"])```  
+output: ```0```
+
+
+input: ```count_item_in_list(38, [])```  
+output: ```0```
+
+
+input: ```count_item_in_list("dog", ["dog", "cat", "cow", "goat", "pig"])```  
+output: ```1```
+
+<!--This can be regular **Markdown**-->
+
+##### !end-question
+
+##### !placeholder
+
+
+```python
+
+def count_item_in_list(item, list_of_items):
+    return None
+
+```
+
+##### !end-placeholder
+
+##### !tests
+```python
+
+import unittest
+from main import *
+
+class TestCountItemInListChallenge(unittest.TestCase):
+    def test_find_multiple(self):
+        self.assertEqual(count_item_in_list(3, [1, 3, 3, 6, 2, 3, 9]), 3)
+    
+    def test_find_none(self):
+        self.assertEqual(count_item_in_list("cat", ["dog", "cow", "goat", "pig"]), 0)
+    
+    def test_find_empty_list(self):
+        self.assertEqual(count_item_in_list(38, []), -0)
+    
+    def test_find_one(self):
+        self.assertEqual(count_item_in_list("dog", ["dog", "cat", "cow", "goat", "pig"]), 1)
+
+```
+##### !end-tests
+
+<!--optional-->
+##### !hint
+
+A solution for this problem can be broken into the following steps:
+
+1. Loop over list_of_items
+1. Compare each element in list_of_items to item
+1. If an element in list_of_items matches item, increment a counter
+1. Return the counter
+1. If no matching elements are found, return 0
+
+##### !end-hint
+
+<!--optional-->
+##### !explanation
+
+Three examples of working implementations:
+
+```python
+
+def count_item_in_list(item, list_of_items):
+    count = 0
+    for current_item in list_of_items:
+        if current_item == item:
+            count += 1
+    return count
+
+def count_item_in_list(item, list_of_items):
+    count = 0
+    for index in range(len(list_of_items)):
+        if list_of_items[index] == item:
+            count += 1
+    return count
+
+def find_index_of_item(item, list_of_items):
+    count = -1
+    index = 0
+    while index < len(list_of_items):
+        if list_of_items[count] == item:
+            count += count
+        index += 1
+    return count
+
+```
+
+##### !end-explanation
+
+### !end-challenge
+
+<!--END CHALLENGE-->
+
+<!--BEGIN CHALLENGE-->
+
+### !challenge
+
+* type: code-snippet
+* language: python3.6
+* id: 555531b1-7ebc-4129-8f2b-8f7732180b14
+* title: Ice Cream Sunday
+* points: 1
+* topics: python, lists
+
+##### !question
+
+Write a function `icecream_sunday` that takes two lists, one list of ice cream flavors and one list of toppings, and returns a new list that contains all of the possible ice cream sunday combinations that can be made by combining each flavor with each toppings.  If the flavors are "vanilla" and "chocolate" and the toppings are "chocolate sauce" and "berry sauce", the output list should contain "vanilla with chocolate sauce", "vanilla with berry sauce", "chocolate with chocolate sauce", "chocolate with berry sauce".  
+
+Note the addition of the word "with" in the combined version.  You can assume that both of the input lists only contain strings.
+
+Example inputs and outputs:
+inputs: ```icecream_sunday(["vanilla", "chocolate", "strawberry"], ["whipped cream", "nuts", "a cherry"])```   
+output: ```["vanilla with whipped cream", "vanilla with nuts", "vanilla with a cherry", "chocolate with whipped cream", "chocolate with nuts", "chocolate with a cherry", "strawberry with whipped cream", "strawberry with nuts", "strawberry with a cherry"]```
+
+inputs: ```icecream_sunday(["a", "b"], ["c", "d", "e"])```  
+outputs: ```["a with c", "a with d", "a with e", "b with c", "b with d", "b with e"]```
+
+inputs: ```icecream_sunday(["vanilla", "strawberry"], [])```  
+outputs: ```[]```
+
+inputs: ```icecream_sunday([], ["chocolate sauce", "caramel sauce"])```  
+outputs: ```[]```
+
+##### !end-question
+
+##### !placeholder
+
+```python
+
+def icecream_sunday(flavors, toppings):
+    return None
+
+```
+
+##### !end-placeholder
+
+##### !tests
+```python
+
+import unittest
+from main import *
+
+class TestIcecreamSunday(unittest.TestCase):
+    def test_with_content(self):
+        self.assertEqual(icecream_sunday(["vanilla", "chocolate", "strawberry"], ["whipped cream", "nuts", "a cherry"]), ["vanilla with whipped cream", "vanilla with nuts", "vanilla with a cherry", "chocolate with whipped cream", "chocolate with nuts", "chocolate with a cherry", "strawberry with whipped cream", "strawberry with nuts", "strawberry with a cherry"])
+
+    def test_with_letters(self):
+        self.assertEqual(icecream_sunday(["a", "b"], ["c", "d", "e"]), ["a with c", "a with d", "a with e", "b with c", "b with d", "b with e"])
+
+    def test_with_empty_toppings(self):
+        self.assertEqual(icecream_sunday(["vanilla", "strawberry"], []), [])
+
+    def test_with_empty_flavors(self):
+        self.assertEqual(icecream_sunday([], ["chocolate sauce", "caramel sauce"]), [])
+
+```
+##### !end-tests
+
+<!--optional-->
+##### !hint
+
+A solution for this problem can be broken into the following steps:
+
+1. Loop over flavors
+1. For each flavor, loop over toppings
+1. Create a pairing between each flavor and each topping
+1. Add each pairing to the result list
+1. Return the result list
+
+##### !end-hint
+
+<!--optional-->
+##### !explanation
+
+Three examples of working implementations:
+
+```python
+
+def icecream_sunday(flavors, toppings):
+    result = []
+    for flavor in flavors:
+        for topping in toppings:
+            pair = flavor + " with " + topping
+            result.append(pair)
+    return result
+
+def icecream_sunday(flavors, toppings):
+    result = []
+    for flavor_index in range(len(flavors)):
+        for topping_index in range(len(toppings)):
+            pair = flavors[flavor_index] + " with " + toppings[topping_index]
+            result.append(pair)
+    return result
+
+def icecream_sunday(flavors, toppings):
+    result = []
+    flavor_index = 0
+    topping_index = 0
+    while flavor_index < len(flavors):
+        topping_index = 0
+        while topping_index < len(toppings):
+            pair = flavors[flavor_index] + " with " + toppings[topping_index]
+            result.append(pair)
+            topping_index += 1
+        flavor_index += 1
+    return result
+
+```
+
+##### !end-explanation
+
+### !end-challenge
+
+<!--END CHALLENGE-->
+
+## Snowman Project
+
+It's time to jump back into our Snowman Project, open up your snowman.py and lets get started!
 
 ### Adding A Random Word
 
@@ -131,6 +516,23 @@ So far our Snowman game has used a constant as the secret word (`SNOWMAN_WORD = 
 
     ```
 
+### !callout-info
+
+## Debugging
+
+How do you know what your code is doing when it's generating a random word?  Use print() to print out the word during development.  Adding a print statement here will print the word to the terminal and make it easier to debug your code:
+```python
+snowman_word = r.word(
+    word_min_length=SNOWMAN_MIN_WORD_LENGTH, 
+    word_max_length=SNOWMAN_MAX_WORD_LENGTH)
+print(snowman_word)
+```
+
+Printing the value of variables in your code is an easy way to see what's going on inside your code.  Nobody writes perfect code!  There are always bugs, and learning how to debug is a core part of learning to be a programmer.  One strategy for debugging is to start by figuring out what your code is doing, and then work on making it do what you want.  Think of yourself as a detective, and instead of focusing on what you think your code should be doing, focus on figuring out exactly what it is doing.  Using all kinds of print statements is a simple way to start to look inside your code as it's running and see what's happening.
+
+### !end-callout
+
+
 ### Tracking User Input
 
 So far all we have done with our user input is check to see if it is in our word, but if we go back to the hypothetical game of snowman with a group, we would want to keep track of the letters that had been guessed.  We would also not accept guesses of the same letter that had been guessed before.  
@@ -155,15 +557,13 @@ Let's start with tracking incorrect guesses.  We know we are going to have a max
 
     ```python
 
-    # ...
+        # ...
             if user_input in snowman_word:
-                print("You guessed a letter that's \
-in the word!")
+                print("You guessed a letter that's in the word!")
             else:
-                print(f"The letter {user_input} is not in \
-the word")
+                print(f"The letter {user_input} is not in the word")
                 wrong_guesses_list.append(user_input)
-    # ...
+        # ...
 
     ```
 
@@ -173,7 +573,8 @@ the word")
 
     def snowman():
         r = RandomWord()
-        snowman_word = r.word(word_min_length=SNOWMAN_MIN_WORD_LENGTH, word_max_length=SNOWMAN_MAX_WORD_LENGTH)
+        snowman_word = r.word(word_min_length=SNOWMAN_MIN_WORD_LENGTH, 
+                              word_max_length=SNOWMAN_MAX_WORD_LENGTH)
         wrong_guesses_list = []
         while len(wrong_guesses_list) < SNOWMAN_WRONG_GUESSES:
             user_input = get_letter_from_user()
