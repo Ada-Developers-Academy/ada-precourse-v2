@@ -68,9 +68,6 @@ chance_of_rain = "90%"
 print(chance_of_rain)
 ```
 
-<!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
-<!-- Replace everything in square brackets [] and remove brackets  -->
-
 ### !challenge
 
 * type: checkbox
@@ -107,7 +104,16 @@ Which of the following are variables in the example above?
 
 ### !end-challenge
 
-<!-- ======================= END CHALLENGE ======================= -->
+
+## Manipulating Variable Data
+
+In the textbook above, we learned about the `type` function that can be used on variables to return the data type (more specifically, the data type class) of its value. 
+
+```python
+>>> mystery = "32"
+>>> type(mystery)
+<class 'str'>
+```
 
 ## Constants
 
@@ -187,73 +193,104 @@ Notice we put "\" at the end of `input("What is your favorite programming langua
 ### !end-callout
 
 
-### Exercise: Make a Program in a File
-
-Let's create a file to run our python code in!
-
-Open up the terminal and create a folder called `ada` with:
-
-```sh
-mkdir ada
-```
-
-Then we can move into that folder with:
-
-```sh
-cd ada
-```
-
-Then let's create a subfolder for the precourse.  This is where we can keep our pre-ada materials.  Then we can move into (or change directory, ie. `cd`) that subfolder.
-
-```sh
-mkdir precourse
-cd precourse
-```
-
-If you ever want to find out what folder you are in currently, you can type:
-
-```sh
-pwd
-```
-
-`pwd` is short for "Present Working Directory".  It's a handy command to tell you which folder you are in.
-
-Next we can create a blank text file to hold some Python code with the `touch` command.
-
-```sh
-touch hello.py
-```
-
-We can open that folder (if VS code is properly setup) with the `code` command.
-
-```sh
-code .
-```
-
-Notice the "." after `code`.  The "." stands for the current folder.  So we told VS Code to open the current folder as a project.  This will be quite handy once we start at Ada.
-
-Next, fill in the empty file `hello.py` with the following (copy and paste, or type it in).
-
-```python
-# hello.py
-name = input("What is your name? ")
-
-print(f"Hello, {name}!")
-```
-
-You can then run the file from the folder you saved it in, using:
-
-```sh
-python3 hello.py
-```
-
 ## Followup Exercise
 
-Modify the `hello.py` program above to input your name and age in variables, and then print out:  "Hello, <NAME>, you are <AGE> years old!".
+Remember the `hello.py` file we created? Let's modify it so that it will input your name and age in variables, and then print out:  "Hello, `<NAME>`, you are `<AGE>` years old!".
 
-For example, if we entered "Han" for the name and "14" for the age it would print out:
+For example, if we entered `"Han"` for the name and `"14"` for the age, it would print out:
+`"Hello, Han, you are 14 years old!"`
 
-"Hello, Han, you are 14 years old!"
+<details>
+<summary>Check out our solution!</summary>
+
+```python
+name = input("What is your name? ")
+age = input("What is your age? ")
+
+print(f"Hello, {name}, you are {age} years old!")
+```
+</details>
+
+
+## Check for Understanding
+
+### !challenge
+
+* type: multiple-choice
+* id: 97bac648-e693-4099-b77c-53087b4ed2bd
+* title: Select Best Option
+
+##### !question
+
+`print("Hello world!")` represents a(n):
+
+##### !end-question
+
+##### !options
+
+* Input
+* Output
+* Variable
+* Constant
+
+##### !end-options
+
+##### !answer
+
+Output
+
+##### !end-answer
+
+##### !explanation
+
+The `print` function _outputs_ the string `"Hello world!"` to the terminal.
+
+##### !end-explanation
+
+### !end-challenge
+
+
+
+### !challenge
+
+* type: short-answer
+* id: f045ec9d-1ae4-4aae-85f9-cdee3d2cdaee
+* title: Explain the Following Code
+
+##### !question
+
+Why is this not good code?
+
+```python
+MAX_QUANTITY = 20
+
+new_quantity = input("How many cookies do you want? ")
+MAX_QUANTITY = new_quantity
+```
+
+##### !end-question
+
+##### !answer
+
+/.+/
+
+##### !end-answer
+
+##### !placeholder
+
+Add your explanation here...
+
+##### !end-placeholder
+
+<!--optional-->
+##### !explanation
+
+A variable name in all uppercase characters is a _constant_, which is *not* supposed to be reassignable.
+
+##### !end-explanation
+
+### !end-challenge
+
 
 ## Summary
 
