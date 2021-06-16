@@ -1,5 +1,6 @@
 # Dictionary Lesson Sample Code
 
+```python
 import random
 from wonderwords import RandomWord
 #https://pypi.org/project/wonderwords/
@@ -128,4 +129,4 @@ def print_snowman(wrong_guesses_count):
 
 #guess_the_number()
 snowman()
-
+```
