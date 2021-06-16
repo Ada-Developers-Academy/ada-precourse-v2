@@ -50,17 +50,17 @@ The `repl` you've cloned has several files:
 
 Several functions have already been made for you to *use* as shown below. You do not need to create them again.
 
-When adding your code, you only need to modify the `snowman(snowman_word)` function.
+When adding your code, you only need to modify the `snowman(snowman_word)` function.  Note that this function takes a parameter `snowman_word`.  For testing purposes, we will be passing in the random word rather than using RandomWord.
 
 ---
 
 You should make use of the following functions from the previous lessons (already created for you):
 
 - `print_snowman_graphic(num_wrong_guesses)` - This function prints out the appropriate snowman image depending on the number of wrong guesses the player has made.
-- `build_word_list(word)` - This function builds a list of dictionaries with each dictionary holding a letter from the word and if that letter has been guessed yet or not.
-- `print_word_list(word_list)` - This function prints out either letters from the word or underscores depending on if those letters have been guessed or not.
+- `build_word_dict(word)` - This function builds a dictionary with a key-value pair for each letter in word where the key is the letter and the value is `False`.
+- `print_word_list(word, word_dict)` - This function prints out either letters from the word or underscores depending on if those letters have been guessed or not.
 - `get_letter_from_user(wrong_list, correct_guesses_list)` - This function gets a letter guess from the user and doesn't accept a previously guessed letter or a non alphabetic character.
-- `update_and_check_word_list(list_of_letters, guessed_letter)` - This function updates the list of guessed letters and returns `True` if all the letters in the word are guessed.
+- `get_word_progress(word, word_dict)` - This function prints the word with hidden letters and returns `True` if all the letters in the word are guessed.
 
 
 When you finish place a link to your repl here.
@@ -75,7 +75,7 @@ When you finish place a link to your repl here.
 
 ##### !answer
 
-/^https\:\/\/repl\.it/
+/^https\:\/\/replit\.com/
 
 ##### !end-answer
 
@@ -84,32 +84,30 @@ When you finish place a link to your repl here.
 Our solution was the following:
 
 ```python
+
 def snowman(snowman_word):
     """Complete the snowman function
     replace "pass" below with your own code
     """
-    snowman_letters = build_word_list(snowman_word)
-    correct_guesses = []
+    snowman_dict = build_word_dict(snowman_word)
     wrong_guesses = []
     all_guessed = False
-    print_letters(snowman_letters)
+    get_word_progress(snowman_word, snowman_dict)
 
-    while (len(wrong_guesses) < SNOWMAN_MAX_WRONG_GUESSES and not all_guessed):
-        user_input = get_letter_from_user(correct_guesses, wrong_guesses)
+    while len(wrong_guesses_list) < SNOWMAN_WRONG_GUESSES and not all_guessed:
+        user_input = get_letter_from_user(snowman_dict, wrong_guesses_list)
         if user_input in snowman_word:
-            print("You guessed a letter that' in the word!")
-            correct_guesses.append(user_input)
-            all_guessed = update_and_check_word_list(snowman_letters, user_input)
+            print("You guessed a letter that's in the word!")
+            snowman_dict[user_input] = True
         else:
             print(f"The letter {user_input} is not in the word")
-            wrong_guesses.append(user_input)
-        
-        print_snowman_graphic(len(wrong_guesses))
-        print_letters(snowman_letters)
-        print("Wrong guesses: " + " ".join(wrong_guesses))
-    
+            wrong_guesses_list.append(user_input)
+        all_guessed = get_word_progress(snowman_word, snowman_dict)
+        print_snowman(len(wrong_guesses_list))
+        print("Wrong guesses: " + " ".join(wrong_guesses_list))
+
     if all_guessed:
-        print("Congratuations, you win!")
+        print("Congratulations, you win!")
     else:
         print(f"Sorry, you lose!  The word was {snowman_word}")
 ```

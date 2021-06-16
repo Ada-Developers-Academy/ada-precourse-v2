@@ -1,6 +1,5 @@
 # Dictionary Lesson Sample Code
 
-```python
 import random
 from wonderwords import RandomWord
 #https://pypi.org/project/wonderwords/
@@ -62,22 +61,20 @@ def snowman():
     snowman_word = r.word(word_min_length=SNOWMAN_MIN_WORD_LENGTH,
                           word_max_length=SNOWMAN_MAX_WORD_LENGTH)
     #print(f"debug info: {snowman_word}")
-    snowman_list = build_word_list(snowman_word)
-    correct_guesses_list = []
+    snowman_dict = build_word_dict(snowman_word)
     wrong_guesses_list = []
     all_guessed = False
-    print_word_list(snowman_list)
+    get_word_progress(snowman_word, snowman_dict)
     while len(wrong_guesses_list) < SNOWMAN_WRONG_GUESSES and not all_guessed:
-        user_input = get_letter_from_user(correct_guesses_list, wrong_guesses_list)
+        user_input = get_letter_from_user(snowman_dict, wrong_guesses_list)
         if user_input in snowman_word:
             print("You guessed a letter that's in the word!")
-            correct_guesses_list.append(user_input)
-            all_guessed = update_and_check_word_list(snowman_list, user_input)
+            snowman_dict[user_input] = True
         else:
             print(f"The letter {user_input} is not in the word")
             wrong_guesses_list.append(user_input)
         print_snowman(len(wrong_guesses_list))
-        print_word_list(snowman_list)
+        all_guessed = get_word_progress(snowman_word, snowman_dict)
         print("Wrong guesses: " + " ".join(wrong_guesses_list))
 
     if all_guessed:
@@ -86,35 +83,26 @@ def snowman():
         print(f"Sorry, you lose!  The word was {snowman_word}")
 
 
-def build_word_list(word):
-    word_list = []
+def build_word_dict(word):
+    word_dict = {}
     for letter in word:
-        letter_dict = {"letter": letter, "guessed": False}
-        word_list.append(letter_dict)
-    return word_list
-
-def update_and_check_word_list(word_list, letter):
-    word_finished = True
-    for elem in word_list:
-        if elem["letter"] == letter:
-            elem["guessed"] = True
-        if not elem["guessed"]:
-            word_finished = False
-    return word_finished
+        word_dict[letter] = False
+    return word_dict
     
-def print_word_list(word_list):
+def get_word_progress(word, word_dict):
     output_string = ""
-    for elem in word_list:
-        if elem["guessed"]:
-            output_string += elem["letter"]
+    result = True
+    for elem in word:
+        if word_dict[elem]:
+            output_string += elem
         else:
+            result = False
             output_string += "_"
         output_string += " "
     print(output_string)
+    return result
 
-
-
-def get_letter_from_user(list1, list2):
+def get_letter_from_user(word_dict, list2):
     valid_input = False
     user_input_string = None
     while not valid_input:
@@ -123,8 +111,10 @@ def get_letter_from_user(list1, list2):
             print("You must input a letter!")
         elif len(user_input_string) > 1:
             print("You can only input one letter at a time!")
-        elif user_input_string in list1 or user_input_string in list2:
-            print("You already guessed that letter")
+        elif user_input_string in word_dict and word_dict[user_input_string]:
+            print("You already guessed that letter and it's in the word!")
+        elif user_input_string in list2:
+            print("You already guessed that letter and it's not in the word!")
         else:
             valid_input = True
 
@@ -139,4 +129,3 @@ def print_snowman(wrong_guesses_count):
 #guess_the_number()
 snowman()
 
-```
