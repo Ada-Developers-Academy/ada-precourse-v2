@@ -24,9 +24,9 @@ Let's take a look at the following code and consider what's going on:
 >>> n = random.randint(1, 10) 
 >>> if n < 5:
 ...     print(f"{n} is too small!")
-... elif n == 5:
+...  elif n == 5:
         print("{n} is just right!")
-... else:
+...  else:
 ...     print("{n} is too large!")
 ...
 5 is just right!
@@ -36,9 +36,9 @@ Let's take a look at the following code and consider what's going on:
 
 | Vocab                        | Definition                                                   | How to Use in a Sentence |
 | ------------------------------------------------------------ | ------------------------------- | ------------------------------------------------ |
-| `random.randint` | A function that will generate a random integer in a range. | We used `random.randint(5, 15)` to get a random integer between 5 and 15. |
-| `if...else`  | A statement to do one of two things based on a condition. | We wrote an `if...else` statement to determine if the person was old enough to consume alcohol. |
-|  `if...elif...else` | A statement to conditionally do one of three or more things. | We wrote an `if...elif...else` statement to print out if the person was too young, too old or just the right age | 
+| `random.randint` | A function that will generate a random integer in a range.  | We used `random.randint(5, 15)` to get a random integer between 5 and 15.  |
+| `if...else`  | A statement to do one of two things based on a condition.  | We wrote an `if...else` statement to determine if the person was old enough to consume alcohol.  |
+|  `if...elif...else` | A statement to conditionally do one of three or more things.  | We wrote an `if...elif...else` statement to print out if the person was too young, too old or just the right age | 
 
 
 ## Guess the Number
@@ -109,7 +109,7 @@ Note: `isnumeric` _should_ be named `is_numeric`, but Python doesn't always foll
 ### The `if`/`else` Statement
 
 Now we're at the point where we need to have our program do one of two things:
-- If the user has given us a numeric input, we can convert it to an integer safely. 
+- If the user has given us a numeric input, we can convert it to an integer safely.  
 - But if they haven't, then we can't.
 
 This is a perfect time to use the `if`/`else` statement!
@@ -200,12 +200,13 @@ else:
 ```
 
 ### !callout-info
-As with `if`, the `else` portion of the statement is optional.  That last branch could have simply been an `else` but we decided to explicitly state what was going on.
+## Take Note:
 
-Let's take a look at an example when using only an `if` _without_ an explicit `else` might make sense:
+As with `if`, the `else` portion of the statement is optional.  That last branch could have simply been an `else` but we decided to explicitly state what was going on.  
+<br/>
+Let's take a look at an example when using only an `if` _without_ an explicit `else` might make sense:  
 
 ``` python
-
 todays_date = "05/22"
 users_bday = input("Enter your birthdate (mm/dd): ")
 
@@ -215,10 +216,9 @@ if todays_date == users_bday:
 users_bday_year = input("What year were you born? ")
 ...
 # other code goes on from here
-
 ```
-
-In this instance, the program only prints out a comment to the user _if_ their birthday is the same as today's date. There's no need for an `else`. The code simply moves on from there. 
+<br/>
+In this instance, the program only prints out a comment to the user _if_ their birthday is the same as today's date.  There's no need for an `else` because we have nothing _else_ we want to do with our information.  The code simply moves on from there.  
 
 ### !end-callout
 
@@ -233,7 +233,7 @@ In this instance, the program only prints out a comment to the user _if_ their b
 
 ##### !question
 
-Consider the following code. How many of the conditional statements will be _checked_?
+Consider the following code.  How many of the conditional statements will be _checked_?
 
 ``` python
 pocket_change = 112
@@ -290,7 +290,7 @@ Each `if` statement is checked.
 
 ##### !question
 
-Consider the following code. How many of the conditional statements will be _checked_?
+Consider the following code.  How many of the conditional statements will be _checked_?
 
 ``` python
 pocket_change = 112
@@ -332,7 +332,7 @@ Remember, in an `if...elif...else` block, only one of the conditional statements
 
 ##### !explanation
 
-In an `if...elif...else` block, once one conditional statement is true, then it stops looking at any other conditionals. Doesn't matter how many _could_ be true. The program executes the first true conditional it finds and then finishes the block.
+In an `if...elif...else` block, once one conditional statement is true, then it stops looking at any other conditionals.  Doesn't matter how many _could_ be true.  The program executes the first true conditional it finds and then finishes the block.
 
 ##### !end-explanation
 
