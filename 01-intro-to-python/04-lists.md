@@ -413,7 +413,7 @@ Three examples of working implementations:
 
 ```python
 
-def icecream_sunday(flavors, toppings):
+def icecream_sundae(flavors, toppings):
     result = []
     for flavor in flavors:
         for topping in toppings:
