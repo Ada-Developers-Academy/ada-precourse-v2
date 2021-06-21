@@ -404,7 +404,7 @@ So far we have:
  *  The word 
  *  The list of correctly guessed letters  
  
-Our end goal is to display each letter of the word with an '_' character if the letter has not yet been guessed and the correct letter if it has been guessed.
+Our end goal is to display each letter of the word with an underscore, or '_' character, if the letter has not yet been guessed and the correct letter if it has been guessed.
 
 ### Building a Word Dictionary
 
