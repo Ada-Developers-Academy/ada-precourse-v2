@@ -78,7 +78,7 @@ distance = planet_dict["venus"]
 
 ##### !question
 
-Write a function `get_value_from_dictionary` that takes two variables, a dictionary and a key that may or may not be in the dictionary.  The function has the following behavior:
+Write a function `get_value_from_dictionary` that takes two arguments, a dictionary and a key that may or may not be in the dictionary.  The function has the following behavior:
 * If the dictionary contains the key, the function returns the value that matches the key.
 * If the dictionary does not contain the key, the function returns None.
 
