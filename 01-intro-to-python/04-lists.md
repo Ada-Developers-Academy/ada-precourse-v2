@@ -535,7 +535,7 @@ Printing the value of variables in your code is an easy way to see what's going 
 
 ### Tracking User Input
 
-So far all we have done with our user input is check to see if it is in our word, but if we go back to the hypothetical game of snowman with a group, we would want to keep track of the letters that had been guessed.  We would also not accept guesses of the same letter that had been guessed before.  
+So far, all we have done with our user input is check to see if it is in our word. But if we go back to the hypothetical game of snowman with a group, we would want to keep track of the letters that have been guessed.  We would also not accept guesses of the same letter that have already been guessed.  
 
 Let's start with tracking incorrect guesses.  We know we are going to have a max of SNOWMAN_WRONG_GUESSES, so we could make that many variables and store our incorrect guesses in those variables.  This solution could be made to work, but every time we change the value of the constant we would have to rewrite our code.  Using a `list` gives us a way to store as many or as little wrong guesses as we want and will allow us to make the code flexible and easy to modify.
 
