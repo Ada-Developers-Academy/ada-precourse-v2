@@ -13,7 +13,7 @@ At the end of this lesson we will be able to...
 
 **[Textbook for this section:](https://colab.research.google.com/drive/1kfE-bujlwiJoDxTWIXa8u1GPGDJAnjvS?usp=sharing) **
 
-In this lesson we will have a quick refresher on variables and go into an explanation of IO.
+In this lesson we will have a quick refresher on variables, and then go into an explanation of IO.
 
 ## Vocabulary and Syntax
 
@@ -22,13 +22,13 @@ In this lesson we will have a quick refresher on variables and go into an explan
 | Vocab          | Definition                                                    | Synonyms  | How to Use in a Sentence                                                      |
 | -------------- | ------------------------------------------------------------- | --------- | ----------------------------------------------------------------------------- |
 | Variable |  Name for a piece of data we have stored. | Reference | We assigned 21 to the variable |
-| IO | Input and Output | Recieved and sent data | Our IO was done through the entering data into and printing things to the terminal screen. |
+| IO | Input and Output | Recieved and sent data | Our IO was done by entering data into and printing things out on the terminal screen. |
 | Input | A way to get information _in_ to a program. | Recieved data | Our input comes from a spreadsheet | 
 | Output | A way to get _out_ of a program. | Sent data | We directed output to Google's website. |
 
 ### Syntax
 
-We can start by running the Python repl by entering "Python" in the terminal and doing the following:
+We can start by running the Python repl by entering `python3` in the terminal and doing the following:
 
 ```python
 >>> # Create a new variable named "ami", and store 
@@ -52,7 +52,7 @@ Name of the second cat? Artemis
 
 ## Variables
 
-As you've already seen variables are how we store data in Python programs.  They are the basic building blocks for almost all programs in almost all programming languages.
+As you've already seen, variables are how we store data in Python programs.  They are the basic building blocks for almost all programs in almost all programming languages.
 
 
 ## Variable Practice
@@ -67,9 +67,6 @@ chance_of_rain = "90%"
 
 print(chance_of_rain)
 ```
-
-<!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
-<!-- Replace everything in square brackets [] and remove brackets  -->
 
 ### !challenge
 
@@ -107,7 +104,16 @@ Which of the following are variables in the example above?
 
 ### !end-challenge
 
-<!-- ======================= END CHALLENGE ======================= -->
+
+## Manipulating Variable Data
+
+In the textbook above, we learned about the `type` function that can be used on variables to return the data type (more specifically, the data type class) of its value. 
+
+```python
+>>> mystery = "32"
+>>> type(mystery)
+<class 'str'>
+```
 
 ## Constants
 
@@ -140,15 +146,15 @@ As we build our Snowman program, we will use the following constants:
 
 ## Input/Output (IO)
 
-Input and output (collectively called "I/O" or "IO" for short) are how we get data _in_ to and _out_ of our programs.  You've already used one IO function in your coding challenge: `print`.  The `print` function _outputs_ what we give it to the terminal so the user can see it.
+Input and output (collectively called "I/O" or "IO" for short) are how we get data _in_ to and _out_ of our programs.  You've already used one IO function in your coding challenge: `print`.  The `print` function _outputs_ what we give it to the terminal, so the user can see it.
 
 While there are other types of output (eg. writing to files and sending things over the internet) print will do just fine for our purposes right now.
 
-As far as _input_ we're going to introduce a new function to get input from the user on the terminal.  It was given the helpfully obvious name `input`.  When we call the `input` it prints a prompt to the user to ask for their input.
+As for getting data _in_, we're going to introduce a new function that will get input from the user on the terminal.  It was given the helpfully obvious name `input`.  When we call the `input`, it prints a prompt to the user to ask for their input.
 
 ### The `input` Function
 
-The `input` function takes a string that prompts the user with and then takes what they type for the rest of the _line_ and returns that value.
+The `input` function takes a string that prints to the terminal, and then waits for the user to type on the rest of the _line_. Once the user hits the return key, the function receives that value.
 
 ```python
 >>> input("What is your favorite programming language? ")
@@ -156,7 +162,7 @@ What is your favorite programming language? Python!
 'Python!'
 ```
 
-Notice the space after the question mark.  If forget that there isn't any space before the user starts typing:
+Notice the space after the question mark.  If you forget it, there will be no space before the user starts typing:
 
 ```python
 >>> input("What is your favorite programming language?")
@@ -164,9 +170,9 @@ What is your favorite programming language?Python!
 'Python!'
 ```
 
-This still works, it just looks a little awkward.
+This still works; it just looks a little awkward.
 
-This isn't so useful on its own but we can store the result of calling `input` in a variable for later use:
+This isn't so useful on its own, but we can now store the result of calling `input` in a variable for later use:
 
 ```python
 >>> language = input("What is your favorite \
@@ -187,73 +193,104 @@ Notice we put "\" at the end of `input("What is your favorite programming langua
 ### !end-callout
 
 
-### Exercise: Make a Program in a File
-
-Lets create a file to run our python code in!
-
-Open up terminal and create a folder called `ada` with:
-
-```sh
-mkdir ada
-```
-
-Then we can move into that folder with:
-
-```sh
-cd ada
-```
-
-Then lets create a subfolder for the precourse.  This is where we can keep our pre-ada materials.  Then we can move into (or change directory `cd`) into that subfolder.
-
-```sh
-mkdir precourse
-cd precourse
-```
-
-If you ever want to find out what folder you are in you can type:
-
-```sh
-pwd
-```
-
-`pwd` is short for "Present Working Directory".  It's a handy command to tell you which folder you are in.
-
-Next we can create a blank text file to hold some Python code with the `touch` command.
-
-```sh
-touch hello.py
-```
-
-We can open that folder (if VS code is properly setup) with the `code` command.
-
-```sh
-code .
-```
-
-Notice the "." after `code`.  The "." stands for the current folder.  So we told VS Code to open the current folder as a project.  This will be quite handy once we start at Ada.
-
-Next fill in the empty file "hello.py" with the following (copy and paste or type it in).
-
-```python
-# hello.py
-name = input("What is your name? ")
-
-print(f"Hello, {name}!")
-```
-
-You can then run this using from the folder you saved the file in using:
-
-```sh
-python3 hello.py
-```
-
 ## Followup Exercise
 
-Modify the "hello.py" program above to read in both your name and age and print out:  "Hello <NAME> you are <AGE> years old!".
+Remember the `hello.py` file we created? Let's modify it so that it will input your name and age in variables, and then print out:  "Hello, `<NAME>`, you are `<AGE>` years old!".
 
-For example if we entered "Han" for the name and "14" for the age it would print out:
+For example, if we entered `"Han"` for the name and `"14"` for the age, it would print out:
+`"Hello, Han, you are 14 years old!"`
 
-"Hello, Han you are 14 years old!"
+<details>
+<summary>Check out our solution!</summary>
+
+```python
+name = input("What is your name? ")
+age = input("What is your age? ")
+
+print(f"Hello, {name}, you are {age} years old!")
+```
+</details>
+
+
+## Check for Understanding
+
+### !challenge
+
+* type: multiple-choice
+* id: 97bac648-e693-4099-b77c-53087b4ed2bd
+* title: Select Best Option
+
+##### !question
+
+`print("Hello world!")` represents a(n):
+
+##### !end-question
+
+##### !options
+
+* Input
+* Output
+* Variable
+* Constant
+
+##### !end-options
+
+##### !answer
+
+Output
+
+##### !end-answer
+
+##### !explanation
+
+The `print` function _outputs_ the string `"Hello world!"` to the terminal.
+
+##### !end-explanation
+
+### !end-challenge
+
+
+
+### !challenge
+
+* type: short-answer
+* id: f045ec9d-1ae4-4aae-85f9-cdee3d2cdaee
+* title: Explain the Following Code
+
+##### !question
+
+Why is this not good code?
+
+```python
+MAX_QUANTITY = 20
+
+new_quantity = input("How many cookies do you want? ")
+MAX_QUANTITY = new_quantity
+```
+
+##### !end-question
+
+##### !answer
+
+/.+/
+
+##### !end-answer
+
+##### !placeholder
+
+Add your explanation here...
+
+##### !end-placeholder
+
+<!--optional-->
+##### !explanation
+
+A variable name in all uppercase characters is a _constant_, which is *not* supposed to be reassignable.
+
+##### !end-explanation
+
+### !end-challenge
+
 
 ## Summary
 
