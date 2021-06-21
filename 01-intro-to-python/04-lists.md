@@ -127,7 +127,7 @@ output: ```2```
 ```python
 
 def find_index_of_item(item, list_of_items):
-    return None
+    pass
 
 ```
 
@@ -174,9 +174,9 @@ Three examples of working implementations:
 ```python
 def find_index_of_item(item, list_of_items):
     default = -1
-    for count, current_item in enumerate(list_of_items):
-        if current_item == item:
-            return count
+    for i in range(len(list_of_items)):
+        if list_of_items[i] == item:
+            return i
     return default
 
 def find_index_of_item(item, list_of_items):
@@ -249,7 +249,7 @@ output: ```1```
 ```python
 
 def count_item_in_list(item, list_of_items):
-    return None
+    pass
 
 ```
 
@@ -365,7 +365,7 @@ outputs: ```[]```
 ```python
 
 def icecream_sundae(flavors, toppings):
-    return None
+    pass
 
 ```
 
@@ -421,7 +421,7 @@ def icecream_sundae(flavors, toppings):
             result.append(pair)
     return result
 
-def icecream_sunday(flavors, toppings):
+def icecream_sundae(flavors, toppings):
     result = []
     for flavor_index in range(len(flavors)):
         for topping_index in range(len(toppings)):
