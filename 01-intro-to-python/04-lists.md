@@ -520,7 +520,7 @@ So far our Snowman game has used a constant as the secret word (`SNOWMAN_WORD = 
 
 ## Debugging
 
-How do you know what your code is doing when it's generating a random word?  Use print() to print out the word during development.  Adding a print statement here will print the word to the terminal and make it easier to debug your code:
+How do you know what your code is doing when it's generating a random word?  Use `print()` to print out the word during development.  Adding a print statement here will print the word to the terminal and make it easier to debug your code:
 ```python
 snowman_word = r.word(
     word_min_length=SNOWMAN_MIN_WORD_LENGTH, 
