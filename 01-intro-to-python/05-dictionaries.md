@@ -425,7 +425,10 @@ result = False
 
 You might be saying to yourself, what about the `in` operator?  We can just use the line of code `if letter in correct_guesses_list` to do this same thing, but under the hood, that `in` operator is doing the same search that's written out above here.  Either way, finding things in a list always includes searching through the list one element at a time.  Also, we've got to do some logic work to say if it's in the list, then our user has guessed it, and if it isn't in the list then our user hasn't guessed it.
 
-Luckily for us, we have dictionaries!  Dictionaries allow us to store a value with a key.  If we put every letter in the secret word into the dictionary, and set the initial values to `False`, we can change the value to `True` when a user guesses a letter that's in the list.  Then, if we want to know if a user has guessed a particular letter, we can just check the value for that letter in the dictionary and get a `True`/`False` answer that will tell us if our user has guessed that letter or not.
+Luckily for us, we have dictionaries!  Dictionaries allow us to store a value with a key. Let's consider the following:
+* We can put every letter from the secret word into the dictionary and set the initial values to `False`.
+* When a user guesses a letter that's in the secret word, we can change the value to `True`.
+* Then, if we want to know if a user has guessed a particular letter, we can just check the value for that letter in the dictionary and get a `True` or `False` answer that will tell us if our user has guessed that letter or not.
 
 The first thing we need to do is convert the secret word `snowman_word` into a dictionary.  Write a function `build_word_dict` that takes a string and returns a dictionary, where each unique letter from the word is a key and all of the values are `False`.  
 
