@@ -69,6 +69,8 @@ Lets say we want to play a different game after we finish playing Guess the Numb
 
 We're now looking at moving around big code blocks.  Then if we change our minds and want to move it back, or add another game (and so on) things quickly get messy.  Functions encapsulate code blocks into re-usable chunks that we can then call in whatever order we want.  They also help us reuse these blocks of code in other programs.
 
+
+
 ## Guess the Number
 
 Lets build a "Guess the number" function.  This function will:
@@ -154,10 +156,179 @@ temperature = convert_to_fahrenheit(50)
 print(temperature) # prints the return value of 122.0
 ```
 
+## Practice Problems
+
+<!--BEGIN CHALLENGE-->
+
+### !challenge
+
+* type: code-snippet
+* language: python3.6
+* id: 16e0108f-727f-43f7-a2a7-3561f4368239
+* title: Compare Two Items
+* points: 1
+* topics: python, functions
+
+##### !question
+
+Write a function `compare` that takes two arguments, two numbers.  The function has the following behavior:
+* If the first item is greater than the second, the function returns `True`.
+* If the first argument is smaller or equal to the second, the functionr returns `False`.
+
+Example inputs and outputs:
+
+input: ```compare(3, 7)```  
+output: ```False```  
+
+input: ```compare(7, 3)```
+output: ```True```  
+
+input:  ```compare(7, 7)```  
+output: ```False```
+
+##### !end-question
+
+##### !placeholder
+
+```python
+
+def compare(first, second):
+    pass
+
+```
+
+##### !end-placeholder
+
+##### !tests
+```python
+
+import unittest
+from main import *
+
+
+class TestCompare(unittest.TestCase):
+    def test_less(self):
+        self.assertEqual(compare(3, 7),False)
+
+    def test_greater(self):
+        self.assertEqual(compare(7, 3),True)
+
+    def test_equal(self):
+        self.assertEqual(compare(7, 7),False)
+
+```
+##### !end-tests
+
+<!--optional-->
+##### !explanation
+
+A working implementation:
+
+```python
+
+def compare(first, second):
+    if first > second:
+        return True
+    else:
+        return False
+
+```
+
+##### !end-explanation
+
+### !end-challenge
+
+<!--END CHALLENGE-->
+
+<!--BEGIN CHALLENGE-->
+
+### !challenge
+
+* type: code-snippet
+* language: python3.6
+* id: aa042095-db32-442b-bbb3-a05da7a7616e
+* title: Convert Miles to Kilometers
+* points: 1
+* topics: python, functions
+
+##### !question
+
+Write a function `convert_mi_to_km` that takes one argument, a number `miles`.  The function has the follwing behavior:
+* The function converts the length in miles to kilometers and returns the length in kilometers.
+* The formula for converting miles to kilometers is `kilometers = miles * 1.6`.
+* _The actual conversion rate is 1.609344 but for this problem please use 1.6._
+
+Example inputs and outputs:
+
+input: ```convert_mi_to_km(1)```  
+output: ```1.6```
+
+input: ```convert_mi_to_km(0)```  
+output: ```0```
+
+input: ```convert_mi_to_km(3.5)```
+output: ```5.6```
+
+
+
+##### !end-question
+
+##### !placeholder
+
+```python
+
+def convert_mi_to_km(miles):
+    pass
+
+```
+
+##### !end-placeholder
+
+##### !tests
+```python
+
+import main
+import unittest
+
+
+class TestConversion(unittest.TestCase):
+    def test_one(self):
+        self.assertEqual(convert_mi_to_km(1),1.6)
+
+    def test_zero(self):
+        self.assertEqual(convert_mi_to_km(0),0)
+
+    def test_float(self):
+        self.assertEqual(convert_mi_to_km(3.5),5.6)
+
+```
+
+##### !end-tests
+
+<!--optional-->
+##### !explanation
+
+A working implementation:
+
+```python
+
+def convert_mi_to_km(miles):
+    km = miles * 1.6
+    return km
+
+```
+
+##### !end-explanation
+
+### !end-challenge
+
+<!--END CHALLENGE-->
 
 ## Snowman!
 
-It's time to add a new game!  The new game is a word guessing game called Snowman.  
+It's time to add a new game!  The new game is a word guessing game called Snowman.
+
+Before getting started, create a new file in your precourse directory called `snowman.py` and open it in VSCode.
 
 In Snowman:
 
@@ -167,7 +338,7 @@ In Snowman:
     * For every wrong guess we are going to remember the number of wrong guesses and print out more and more of a snowman drawing.  
 1.  When the snowman is finished and the user is out of guesses, they lose the game.  
 
-We are going to start by building just a small piece of this game.  To start, for debugging purposes, we're always going to use the same word.  Add it as a constant at the top of the file.  Here's our version:
+We are going to start by building just a small piece of this game.  To start, for debugging purposes, we're always going to use the same word.  Add it as a constant at the top of the `snowman.py` file.  Here's our version:
 
 ```python
 
