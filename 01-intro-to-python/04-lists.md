@@ -101,7 +101,7 @@ for i in new_list_2:
 
 ##### !question
 
-Write a function `find_index_of_item` that takes two variables, an item and a list called list_of_items.  The function has the following behavior:
+Write a function `find_index_of_item` that takes two arguments, an item and a list called list_of_items.  The function has the following behavior:
 * If the list contains the item, the function returns the index of the item in the list.  
 * If the list contains the item multiple times, the function returns the index of the first time the item appears in the list.  
 * If the list does not contain the item, the function returns -1.
@@ -218,7 +218,7 @@ def find_index_of_item(item, list_of_items):
 ##### !question
 
 
-Write a function `count_item_in_list` that takes two variables, an item and a list called list_of_items.  The function has the following behavior:
+Write a function `count_item_in_list` that takes two arguments, an item and a list called list_of_items.  The function has the following behavior:
 * The function returns the number of times the item appears in the list 
 * If the list does not contain the item, the function returns 0 .
 
@@ -341,7 +341,7 @@ def find_index_of_item(item, list_of_items):
 
 ##### !question
 
-Write a function `icecream_sundae` that takes two lists, one list of ice cream flavors and one list of toppings, and returns a new list that contains all of the possible ice cream sundae combinations that can be made by combining each flavor with each toppings.  If the flavors are "vanilla" and "chocolate" and the toppings are "chocolate sauce" and "berry sauce", the output list should contain "vanilla with chocolate sauce", "vanilla with berry sauce", "chocolate with chocolate sauce", "chocolate with berry sauce".  
+Write a function `icecream_sundae` that takes two arguments, one list of ice cream flavors and one list of toppings, and returns a new list that contains all of the possible ice cream sundae combinations that can be made by combining each flavor with each toppings.  If the flavors are "vanilla" and "chocolate" and the toppings are "chocolate sauce" and "berry sauce", the output list should contain "vanilla with chocolate sauce", "vanilla with berry sauce", "chocolate with chocolate sauce", "chocolate with berry sauce".  
 
 Note the addition of the word "with" in the combined version.  You can assume that both of the input lists only contain strings.
 
