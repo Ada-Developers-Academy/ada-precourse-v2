@@ -1,12 +1,12 @@
 # Functions
 
-<iframe src="https://adaacademy.hosted.panopto.com/Panopto/Pages/Embed.aspx?pid=9d7fa1b5-2551-4a68-934d-acb701843534&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&start=0&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
-
 ## Learning Goals
 
 At the end of this lesson we will be able to:
 
-- Understand and use functions
+- Define functions
+- Return values from functions
+- Call functions
 
 ## Introduction
 
@@ -16,7 +16,25 @@ In this section we will be building on the code that you wrote in the previous l
 
 ## What is a Function?
 
-* **function**: a named chunk of code that is callable and performs a task.  Functions can take in values called arguments and can have a return value.  
+* **Function**: a named chunk of code that is callable and performs a task. 
+
+Functions must be defined in order to be invoked. A function definition contains a signature and a body. Function signatures are comprised of 2 parts: the name and parameters. In the function signature, `def` indicates the start of the function definition followed by its name. The parenthesis of a function signature may contain zero or more parameters that represent pieces of data to be provided as input(s).  
+
+```Python
+# Start Function Signature
+def function_name(some_paramater, another_parameter): # End of Function Signature
+    # Start of Function Body
+    print(some_parameter, another_parameter)
+    # End of Function Body
+```
+
+There are a variety of ways to describe 'using a function' such as '*calling* a function', '*invoking* a function', '*executing* a function', etc. All of these phrases describe the same action of "performing the code inside this function". (For consistency, **call** will be used throughout this lesson). To call a function, all that needs to be provided are the function name and arguments (values to be passed into the function). 
+
+```Python
+function_name(some_argument, another_arguments)
+```
+
+Here are additional examples:
 
 ```python
 
@@ -52,8 +70,6 @@ Lets say we want to play a different game after we finish playing Guess the Numb
 We're now looking at moving around big code blocks.  Then if we change our minds and want to move it back, or add another game (and so on) things quickly get messy.  Functions encapsulate code blocks into re-usable chunks that we can then call in whatever order we want.  They also help us reuse these blocks of code in other programs.
 
 ## Guess the Number
-
-
 
 Lets build a "Guess the number" function.  This function will:
 
@@ -102,122 +118,42 @@ def guess_the_number():
 guess_the_number()
 
 ```
-
 </details>
 
-## Helper Functions
 
-A helper function is a function that does part of the work for another function.  They make our code easier to read by breaking long functions up into smaller pieces.  We recommend giving helper functions descriptive names, to help with readability.
 
-Imagine we want to build a tool that will convert a temperature in fahrenheit to celsius, and a temperature in celsius to fahrenheit. There are two different rules that the temperature converter must know about. It would be reasonable to place these conversion formulas into two separate helper functions `convert_to_celsius` and `convert_to_fahrenheit`.
-
-```python
-
-def convert_to_fahrenheit(temp):
-    return 9/5*temp + 32
-
-def convert_to_celsius(temp):
-    return 5/9*(temp-32)
-
-```
-
-Then, we could write another function `temp_converter` that takes the temperature and the unit of measurement as parameters, and calls `convert_to_celsius` or `convert_to_fahrenheit` depending on the unit.
-
-```python
-
-def temp_converter(temp, unit)
-    if unit == "fahrenheit":
-           return convert_to_celsius(temp)
-   elif unit == "celsius"
-           return convert_to_fahrenheit(temp)
-
-```
 
 ### The `return` Keyword
 
-Notice the `return` keyword in the functions above.  This means that these functions calculate a value and return it to the calling function.
+Functions can be designed to either calculate and return a specific result or only execute blocks of code. For the former, functions with a `return` keyword will return a value or data structure to its calling function. Without the `return` keyword, a function will execute the function body and then return `None`. We can demonstrate the values below by using `print()` which will execute the function call and its return value. 
 
-So:
 
-```py
-fahrenheit_temp = convert_to_fahrenheit(100)
-print(f"The temp is 212.0 degrees fahrenheit")
+```Python
+def greeting():
+    return "Hello"
+
+print(some_function()) # returns "hello"
+
+def farewell():
+    print("Goodbye)
+
+print(farewell()) # prints "Goodbye" and returns None 
 ```
 
-Will print "The temp is  degrees fahrenheit".  This way you can call a function and get a value or an answer sent back after the function completes.  We can use this to simplify `guess_the_number`.
+
+### Return values and Variables 
+
+Because functions can return a value, they're often used in variable assignments. In the example below, the variable `temperature` is initialized by executing `convert_to_fahrenheit()` and then assigns the return value to `temperature`. 
 
 
-## Exercise:  Breaking Up `guess_the_number`
+```Python
+def convert_to_fahrenheit(temp):
+    return 9/5*temp + 32
 
-The function `guess_the_number` can be broken up into two conceptual pieces, getting user input, and then processing the user input.  
-
-1.  Start by writing a function called `get_number_from_user`
-    * Then pull all of the pieces of code in `guess_the_number` that have to do with getting user input into `get_number_from_user`.  
-    * Include any conditional statement that validate user input as a number.  
-    * This function should ask the user for a number and then give an error message if the user inputs anything other than a number.  
-    * Last, it should return the valid user input, or None if there was no valid input.  
-    * In `guess_the_number`, call this function and store the result in user_input.
-1.  Then the `guess_the_number` function can use the previous `if...else` statements to tell the user if their guess was too high or too low.
- 
-<details>
-<summary> Our version at this point </summary>
-
-```python
-
-import random
-
-RANGE_LOW = 0
-RANGE_HIGH = 100
-# pick a random number
-random_number = random.randint(RANGE_LOW, RANGE_HIGH)
-
-
-def guess_the_number():
-
-    user_input = get_number_from_user()
-
-    if user_input < RANGE_LOW or user_input > RANGE_HIGH:
-        print(f"Your guess is out of bounds.")
-        print(f"It must be between {RANGE_LOW} and {RANGE_HIGH}")
-    elif user_input == random_number:
-        print("You guessed the number!  Good job!")
-    elif user_input > random_number:
-        print("Your guess is too high")
-    elif user_input < random_number:
-        print("Your guess is too low")
-
-
-def get_number_from_user():
-    user_input_string = input("Guess the number: ")
-    user_input = None
-    if user_input_string.isnumeric():
-        user_input = int(user_input_string)
-    else:
-        print("You must input a number!")
-
-    return user_input
-
-# Run the guess_the_number function to test it
-guess_the_number()
+temperature = convert_to_fahrenheit(50)
+print(temperature) # prints the return value of 122.0
 ```
-</details>
 
-<!-- available callout types: info, success, warning, danger, secondary  -->
-### !callout-secondary
-
-## Each Function Does **One** Thing!
-
-Notice in our code that now each function is doing exactly **one** thing.  `get_number_from_user` does just that, it reads in a number from the user.  Similarly `guess_the_number` now just processes the user's guess.  This makes each step *much* easier to read and test.
-
-### !end-callout
-
-### !callout-info
-
-## None and potential Errors
-
-Notice that in our version, if the user does not give a valid input, the return value will be `None`.  This will cause an error in the conditionals in `guess_the_number`, because `None` can not be compared to a number.  That's ok, we're building to a full solution.  Many times when writing code, it is useful to write and test a small portion, and then when we're confident that it works, moving on to build the next portion.
-
-### !end-callout
 
 ## Snowman!
 
@@ -487,6 +423,3 @@ class TestPython2(unittest.TestCase):
 
 Let's go back to the questions proposed in the introduction to this lesson.  What do functions add to our code?  
 
-Now that we have broken the various sections into functions, we can easily swap the order of the games, play a game multiple times, or add new games in new functions and insert them in any order we want.  
-
-Functions add flexibility and structure to our code, and make code easier to maintain and read.  In the next lesson we will work on adding more functionality to our functions with loops. 
