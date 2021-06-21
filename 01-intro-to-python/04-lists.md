@@ -429,7 +429,7 @@ def icecream_sunday(flavors, toppings):
             result.append(pair)
     return result
 
-def icecream_sunday(flavors, toppings):
+def icecream_sundae(flavors, toppings):
     result = []
     flavor_index = 0
     topping_index = 0
