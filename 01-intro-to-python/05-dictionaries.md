@@ -180,7 +180,7 @@ def get_value_from_dictionary(dict, key):
 
 ##### !question
 
-Write a function `dict_counter` that takes two variables, a dictionary and a key that may or may  not be in the dictionary.  The function has the following behavior:
+Write a function `dict_counter` that takes two arguments, a dictionary and a key that may or may  not be in the dictionary.  The function has the following behavior:
 1. If the key is in the dictionary, increment the value associated with that key by 1.  
 1. If the key is not in the dictionary, set the value for that key to 1.
 1. Return the updated dictionary.
