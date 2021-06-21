@@ -341,7 +341,7 @@ def find_index_of_item(item, list_of_items):
 
 ##### !question
 
-Write a function `icecream_sunday` that takes two lists, one list of ice cream flavors and one list of toppings, and returns a new list that contains all of the possible ice cream sunday combinations that can be made by combining each flavor with each toppings.  If the flavors are "vanilla" and "chocolate" and the toppings are "chocolate sauce" and "berry sauce", the output list should contain "vanilla with chocolate sauce", "vanilla with berry sauce", "chocolate with chocolate sauce", "chocolate with berry sauce".  
+Write a function `icecream_sundae` that takes two lists, one list of ice cream flavors and one list of toppings, and returns a new list that contains all of the possible ice cream sundae combinations that can be made by combining each flavor with each toppings.  If the flavors are "vanilla" and "chocolate" and the toppings are "chocolate sauce" and "berry sauce", the output list should contain "vanilla with chocolate sauce", "vanilla with berry sauce", "chocolate with chocolate sauce", "chocolate with berry sauce".  
 
 Note the addition of the word "with" in the combined version.  You can assume that both of the input lists only contain strings.
 
