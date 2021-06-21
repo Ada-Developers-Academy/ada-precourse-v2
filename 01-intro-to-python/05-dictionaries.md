@@ -293,7 +293,7 @@ def dict_counter(dict, key):
 
 ##### !question
 
-Write a function `build_a_dictionary` that takes two variables, a list of keys and a list of values.  The function has the following behavior:
+Write a function `build_a_dictionary` that takes two arguments, a list of keys and a list of values.  The function has the following behavior:
 1. Verify that the inputs are valid (the inputs are valid if the two lists match in length)
 1. Create a new dictionary that contains all of the keys and values
 1. The keys and values must be matched in order, ie, the key at index 0 in the key list goes with the value at index 0 in the value list
