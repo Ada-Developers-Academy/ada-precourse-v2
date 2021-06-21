@@ -346,16 +346,16 @@ Write a function `icecream_sundae` that takes two lists, one list of ice cream f
 Note the addition of the word "with" in the combined version.  You can assume that both of the input lists only contain strings.
 
 Example inputs and outputs:
-inputs: ```icecream_sunday(["vanilla", "chocolate", "strawberry"], ["whipped cream", "nuts", "a cherry"])```   
+inputs: ```icecream_sundae(["vanilla", "chocolate", "strawberry"], ["whipped cream", "nuts", "a cherry"])```   
 output: ```["vanilla with whipped cream", "vanilla with nuts", "vanilla with a cherry", "chocolate with whipped cream", "chocolate with nuts", "chocolate with a cherry", "strawberry with whipped cream", "strawberry with nuts", "strawberry with a cherry"]```
 
-inputs: ```icecream_sunday(["a", "b"], ["c", "d", "e"])```  
+inputs: ```icecream_sundae(["a", "b"], ["c", "d", "e"])```  
 outputs: ```["a with c", "a with d", "a with e", "b with c", "b with d", "b with e"]```
 
-inputs: ```icecream_sunday(["vanilla", "strawberry"], [])```  
+inputs: ```icecream_sundae(["vanilla", "strawberry"], [])```  
 outputs: ```[]```
 
-inputs: ```icecream_sunday([], ["chocolate sauce", "caramel sauce"])```  
+inputs: ```icecream_sundae([], ["chocolate sauce", "caramel sauce"])```  
 outputs: ```[]```
 
 ##### !end-question
@@ -364,7 +364,7 @@ outputs: ```[]```
 
 ```python
 
-def icecream_sunday(flavors, toppings):
+def icecream_sundae(flavors, toppings):
     return None
 
 ```
