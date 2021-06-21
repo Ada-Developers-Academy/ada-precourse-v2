@@ -377,18 +377,18 @@ def icecream_sundae(flavors, toppings):
 import unittest
 from main import *
 
-class TestIcecreamSunday(unittest.TestCase):
+class TestIcecreamSundae(unittest.TestCase):
     def test_with_content(self):
-        self.assertEqual(icecream_sunday(["vanilla", "chocolate", "strawberry"], ["whipped cream", "nuts", "a cherry"]), ["vanilla with whipped cream", "vanilla with nuts", "vanilla with a cherry", "chocolate with whipped cream", "chocolate with nuts", "chocolate with a cherry", "strawberry with whipped cream", "strawberry with nuts", "strawberry with a cherry"])
+        self.assertEqual(icecream_sundae(["vanilla", "chocolate", "strawberry"], ["whipped cream", "nuts", "a cherry"]), ["vanilla with whipped cream", "vanilla with nuts", "vanilla with a cherry", "chocolate with whipped cream", "chocolate with nuts", "chocolate with a cherry", "strawberry with whipped cream", "strawberry with nuts", "strawberry with a cherry"])
 
     def test_with_letters(self):
-        self.assertEqual(icecream_sunday(["a", "b"], ["c", "d", "e"]), ["a with c", "a with d", "a with e", "b with c", "b with d", "b with e"])
+        self.assertEqual(icecream_sundae(["a", "b"], ["c", "d", "e"]), ["a with c", "a with d", "a with e", "b with c", "b with d", "b with e"])
 
     def test_with_empty_toppings(self):
-        self.assertEqual(icecream_sunday(["vanilla", "strawberry"], []), [])
+        self.assertEqual(icecream_sundae(["vanilla", "strawberry"], []), [])
 
     def test_with_empty_flavors(self):
-        self.assertEqual(icecream_sunday([], ["chocolate sauce", "caramel sauce"]), [])
+        self.assertEqual(icecream_sundae([], ["chocolate sauce", "caramel sauce"]), [])
 
 ```
 ##### !end-tests
