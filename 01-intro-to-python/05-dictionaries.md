@@ -427,7 +427,7 @@ You might be saying to yourself, what about the `in` operator?  We can just use 
 
 Luckily for us, we have dictionaries!  Dictionaries allow us to store a value with a key.  If we put every letter in the secret word into the dictionary, and set the initial values to `False`, we can change the value to `True` when a user guesses a letter that's in the list.  Then, if we want to know if a user has guessed a particular letter, we can just check the value for that letter in the dictionary and get a `True`/`False` answer that will tell us if our user has guessed that letter or not.
 
-The first thing we need to do is convert the secret word snowman_word into a dictionary.  Write a function build_word_dict that takes a string and returns a dictionary where each unique letter from the word is a key and all of the values are `False`.  
+The first thing we need to do is convert the secret word `snowman_word` into a dictionary.  Write a function `build_word_dict` that takes a string and returns a dictionary, where each unique letter from the word is a key and all of the values are `False`.  
 
 <details>
 <summary>Write the function and when you are finished, compare your code with ours.</summary>
