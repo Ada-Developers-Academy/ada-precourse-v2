@@ -408,7 +408,7 @@ Our end goal is to display each letter of the word with an underscore, or '_' ch
 
 ### Building a Word Dictionary
 
-Lets start by taking a look at the data structure that we're using to hold the correctly guessed letters.  Right now, it's a list.  If we wanted to find out if our user had guessed a particular letter from the word, we would need to loop through the list to see if we find the letter.  If we find the letter, we know our user has guessed it, and if we don't find the letter, we know they haven't.  That's a lot of work to find out if the user has guessed a particular letter!  Here's the code to solve this problem:
+Let's start by taking a look at the data structure that we're using to hold the correctly guessed letters.  Right now, it's a list.  If we wanted to find out if our user had guessed a particular letter from the word, we would need to loop through the list to see if we find the letter.  If we find the letter, we know our user has guessed it, and if we don't find the letter, we know they haven't.  That's a lot of work to find out if the user has guessed a particular letter!  Here's the code to solve this problem:
 
 ```python
 
