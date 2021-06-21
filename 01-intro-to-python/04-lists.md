@@ -335,7 +335,7 @@ def find_index_of_item(item, list_of_items):
 * type: code-snippet
 * language: python3.6
 * id: 555531b1-7ebc-4129-8f2b-8f7732180b14
-* title: Ice Cream Sunday
+* title: Ice Cream Sundae
 * points: 1
 * topics: python, lists
 
