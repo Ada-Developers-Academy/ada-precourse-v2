@@ -452,7 +452,7 @@ def icecream_sundae(flavors, toppings):
 
 ## Snowman Project
 
-It's time to jump back into our Snowman Project, open up your snowman.py and lets get started!
+It's time to jump back into our Snowman Project. Open up your `snowman.py` and let's get started!
 
 ### Adding A Random Word
 
