@@ -395,7 +395,7 @@ def build_a_dictionary(keys, values):
 
 ## Snowman Project
 
-The last piece of our snowman game is displaying to the user word with the letters they have guessed correctly so far.  Open up your `snowman.py` and let's finish this game!
+The last piece of our snowman game is displaying the word with the letters that the users have guessed correctly so far.  Open up your `snowman.py` and let's finish this game!
 
 ### Displaying User Progress
 
