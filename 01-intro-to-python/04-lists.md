@@ -528,7 +528,7 @@ snowman_word = r.word(
 print(snowman_word)
 ```
 
-Printing the value of variables in your code is an easy way to see what's going on inside your code.  Nobody writes perfect code!  There are always bugs, and learning how to debug is a core part of learning to be a programmer.  One strategy for debugging is to start by figuring out what your code is doing, and then work on making it do what you want.  Think of yourself as a detective, and instead of focusing on what you think your code should be doing, focus on figuring out exactly what it is doing.  Using all kinds of print statements is a simple way to start to look inside your code as it's running and see what's happening.
+Printing the value of variables in your code is an easy way to see what's going on inside your code.  Nobody writes perfect code!  There are always bugs, and learning how to debug is a core part of learning to be a programmer.  One strategy for debugging is to start by figuring out what your code is doing, and then work on making it do what you want.  Think of yourself as a detective, and instead of focusing on what you think your code _should be_ doing, focus on figuring out exactly what it _is_ doing.  Using all kinds of print statements is a simple way to start looking inside your code as it's running and see what's happening.
 
 ### !end-callout
 
