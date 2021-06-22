@@ -73,7 +73,9 @@ We're now looking at moving around big code blocks.  Then if we change our minds
 
 ## Guess the Number
 
-Lets build a "Guess the number" function.  This function will:
+Let's start working with functions by adding a "Guess the number" function to our `Guess the Number` project.  Open up your `game.py` in VSCode and let's jump right in!
+
+The "Guess the number" function will:
 
 1.  Read in a number from the user
 1.  If the user entered a number:
