@@ -98,7 +98,7 @@ To run the code in the file, first return to the terminal.  Check to see if you 
 ls
 ```
 
-If you are not in the correct folder, move to the correct folder using the `cd` command.  Once you are in the correct folder, run the code you saved in your `hello.py` file using:
+If you are not in the correct folder, move "down" to the correct folder using the `cd` command (or, if you need to move "up," use `cd ..`).  Once you are in the correct folder, run the code you saved in your `hello.py` file using:
 
 ```sh
 python3 hello.py
