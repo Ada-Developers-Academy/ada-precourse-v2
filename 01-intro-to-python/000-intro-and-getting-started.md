@@ -104,7 +104,7 @@ If you are not in the correct folder, move "down" to the correct folder using th
 python3 hello.py
 ```
 
-You should see the prompt `What is your name? ` and when you enter your name and press enter, you should see `Hello, (name)` on the next line!
+You should see the prompt `What is your name? ` and when you enter your name and press return, you should see `Hello, (name)` on the next line!
 
 ```sh
 python3 hello.py
