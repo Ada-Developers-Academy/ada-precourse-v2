@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Welcome to the Intro to Python part of the Precourse at Ada Developers Academy!  If you have not yet gone through the Preparing for Ada content, we highly recommend you complete those lessons before beginning this portion of the Precourse.  
+Welcome to the *Intro to Python* part of the Precourse at Ada Developers Academy!  If you have not yet gone through the *Preparing for Ada* content, we highly recommend you complete those lessons before beginning this portion of the Precourse.  
 
 This Intro to Python course uses the Ada Build curriculum as a "textbook" reference.  If you haven't seen the Ada Build content, that's ok!  Each lesson will contain a "Textbook for this section" link to the relevant Ada Build section near the top of the lesson.
 
