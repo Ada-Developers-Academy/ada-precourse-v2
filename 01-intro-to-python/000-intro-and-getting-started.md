@@ -10,7 +10,7 @@ This Intro to Python course uses the Ada Build curriculum as a "textbook" refere
 
 There are three main learning goals in this section of the Precourse:
 
-* Review and practice with core Python programming concepts from the Ada Build curriculum:
+* Review and practice core Python programming concepts from the Ada Build curriculum:
     * Variables and IO
     * Conditionals
     * Functions
