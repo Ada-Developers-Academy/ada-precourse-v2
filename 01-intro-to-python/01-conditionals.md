@@ -335,7 +335,7 @@ Remember, in an `if...elif...else` block, only one of the conditional statements
 
 ##### !explanation
 
-In an `if...elif...else` block, once one conditional statement is true, then it stops looking at any other conditionals.  Doesn't matter how many _could_ be true.  The program executes the first true conditional it finds and then finishes the block.
+In an `if...elif...else` block, once one conditional statement is true, then it stops looking at any other conditionals.  It doesn't matter how many _could_ be true.  The program executes the first true conditional it finds and then finishes the block.
 
 ##### !end-explanation
 
