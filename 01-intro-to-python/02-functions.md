@@ -257,7 +257,7 @@ def compare(first, second):
 
 Write a function `convert_mi_to_km` that takes one argument, a number `miles`.  The function has the follwing behavior:
 * The function converts the length in miles to kilometers and returns the length in kilometers.
-* The formula for converting miles to kilometers is `kilometers = miles * 1.6`.
+* The formula for converting miles to kilometers is `miles * 1.6`.
 * _The actual conversion rate is 1.609344 but for this problem please use 1.6._
 
 Example inputs and outputs:
