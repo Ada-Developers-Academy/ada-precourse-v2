@@ -270,7 +270,7 @@ def print_multiple(word, amount):
 <!--END CHALLENGE-->
 ## Guess The Number Project
 
-In our previous work on this project, we built some solid functionality, but it isn't very game-like yet.  Now we're going to use loops to add complexity and build more interactivity.  Open up your `game.py` and lets get started!
+In our previous work on this project, we built some solid functionality, but it isn't very game-like yet.  Now we're going to use loops to add complexity and build more interactivity.  Open up your `game.py` and let's get started!
 
 ### Validating User input
 
