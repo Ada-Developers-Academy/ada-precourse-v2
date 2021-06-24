@@ -49,7 +49,7 @@ Then we can move into that folder with:
 cd ada
 ```
 
-Then lets create a subfolder for the precourse.  This is where we can keep our pre-ada materials.  Then we can move into (or change directory `cd`) into that subfolder.
+Now, let's create a subfolder for the Precourse.  This is where we can keep our pre-ada materials.  Then we can move into (or change directory `cd`) into that subfolder.
 
 ```sh
 mkdir precourse
