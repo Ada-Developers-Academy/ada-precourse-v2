@@ -83,7 +83,7 @@ code .
 
 Notice the "." after `code`.  The "." stands for the current folder.  So we told VS Code to open the current folder as a project.  This will be quite handy once we start at Ada.
 
-Next fill in the empty file "hello.py" with the following (copy and paste or type it in) and save the file.
+Next, fill in the empty file `hello.py` with the following (copy and paste or type it in) and save the file.
 
 ```python
 # hello.py
