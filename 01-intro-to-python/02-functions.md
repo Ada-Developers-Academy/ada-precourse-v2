@@ -175,7 +175,7 @@ print(temperature) # prints the return value of 122.0
 
 Write a function `compare` that takes two arguments, two numbers.  The function has the following behavior:
 * If the first item is greater than the second, the function returns `True`.
-* If the first argument is smaller or equal to the second, the functionr returns `False`.
+* If the first argument is smaller or equal to the second, the function returns `False`.
 
 Example inputs and outputs:
 
@@ -595,4 +595,3 @@ class TestPython2(unittest.TestCase):
 ## Summary
 
 Let's go back to the questions proposed in the introduction to this lesson.  What do functions add to our code?  
-
