@@ -64,7 +64,7 @@ You can give this a try from inside of the Python command line:
 
 Your number probably won't be 35, though! Run it a few times to watch the number change.
 
-Using this, we can start our game as follows:
+Using this, we can start our game as follows (copy the following code into `game.py`):
 
 ```python
 import random
