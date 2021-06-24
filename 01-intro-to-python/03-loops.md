@@ -74,7 +74,203 @@ while flag_var:
 
 ```
 
-## Guess The Number
+## Practice Problems
+
+<!--BEGIN CHALLENGE-->
+
+### !challenge
+
+* type: code-snippet
+* language: python3.6
+* id: 9a27d597-95f0-4a9b-8736-807140aadfbc
+* title: Constant Loop
+* points: 1
+* topics: python, loops
+
+##### !question
+
+Write a function `print_ten` that takes one argument, a string.  The function has the following behavior:
+* The function returns a string that repeats a counter number (starting at 1) and then the string ten times
+* The function can use either a while loop or a for loop, but it must use a loop
+
+Example inputs and outputs:
+
+input: ```print_ten("snow")```
+output: ```"1 snow 2 snow 3 snow 4 snow 5 snow 6 snow 7 snow 8 snow 9 snow 10 snow"```
+
+input: ```print_ten("")```
+output: ```"1  2  3  4  5  6  7  8  9  10 "```
+
+input: ```print_ten("123")```
+output: ```"1 123 2 123 3 123 4 123 5 123 6 123 7 123 8 123 9 123 10 123"```
+
+##### !end-question
+
+##### !placeholder
+
+```python
+
+def print_ten(word):
+    pass
+
+```
+
+##### !end-placeholder
+
+##### !tests
+```python
+
+import unittest
+from main import *
+
+class TestPrintTen(unittest.TestCase):
+    def test_word(self):
+        self.assertEqual(print_ten("snow"),"1 snow 2 snow 3 snow 4 snow 5 snow 6 snow 7 snow 8 snow 9 snow 10 snow")
+    
+    def test_empty(self):
+        self.assertEqual(print_ten(""), "1  2  3  4  5  6  7  8  9  10 ")
+
+    def test_string(self):
+        self.assertEqual(print_ten("123"), "1 123 2 123 3 123 4 123 5 123 6 123 7 123 8 123 9 123 10 123")
+
+```
+##### !end-tests
+
+<!--optional-->
+##### !explanation
+
+Two examples of working implementations:
+
+```python
+
+def print_ten(word):
+    count = 1
+    result = ""
+    while count < 11:
+        if count > 1:
+            result += " "
+        result += str(count)
+        result += " "
+        result += word
+        count += 1
+
+    return result
+
+def print_ten(word):
+    result = ""
+    for i in range(1, 11):
+        if i > 1:
+            result += " "
+        result += str(i) + " "
+        result += word
+    return result
+
+```
+
+##### !end-explanation
+
+### !end-challenge
+
+<!--END CHALLENGE-->
+
+<!--BEGIN CHALLENGE-->
+
+### !challenge
+
+* type: code-snippet
+* language: python3.6
+* id: 648f56bd-9879-46f2-af82-94d962d51d13
+* title: Variable Loop
+* points: 1
+* topics: python, loops
+
+##### !question
+
+Write a function `print_multiple` that takes two argument, a string `word` and a number `amount`.  The function has the following behavior:
+* The function returns a string that repeats a counter number (starting at 1) and then the string `amount` number of times
+* The function can use either a while loop or a for loop, but it must use a loop
+
+Example inputs and outputs:
+
+input: ```print_multiple("snow", 4)```
+output: ```"1 snow 2 snow 3 snow 4 snow"```
+
+input: ```print_multipe("", 7)```
+output: ```"1  2  3  4  5  6  7 "```
+
+input: ```print_multiple("123", 11)```
+output: ```"1 123 2 123 3 123 4 123 5 123 6 123 7 123 8 123 9 123 10 123 11 123"```
+
+##### !end-question
+
+##### !placeholder
+
+```python
+
+def print_multiple(word, amount):
+    pass
+
+```
+
+##### !end-placeholder
+
+##### !tests
+```python
+
+import unittest
+from main import *
+
+class TestPrintMultiple(unittest.TestCase):
+    def test_word(self):
+        self.assertEqual(print_multiple("snow", 4),"1 snow 2 snow 3 snow 4 snow")
+    
+    def test_empty(self):
+        self.assertEqual(print_multiple("", 7), "1  2  3  4  5  6  7 ")
+
+    def test_string(self):
+        self.assertEqual(print_multiple("123", 11), "1 123 2 123 3 123 4 123 5 123 6 123 7 123 8 123 9 123 10 123 11 123")
+
+```
+##### !end-tests
+
+<!--optional-->
+##### !explanation
+
+Two examples of working implementations:
+
+```python
+
+def print_multiple(word, amount):
+    count = 1
+    result = ""
+    while count < amount + 1:
+        if count > 1:
+            result += " "
+        result += str(count)
+        result += " "
+        result += word
+        count += 1
+
+    return result
+
+def print_multiple(word, amount):
+    result = ""
+    for i in range(1, amount + 1):
+        if i > 1:
+            result += " "
+        result += str(i) + " "
+        result += word
+    return result
+
+```
+##### !end-explanation
+
+### !end-challenge
+
+<!--END CHALLENGE-->
+## Guess The Number Project
+
+In our previous work on this project, we built some solid functionality, but it isn't very game-like yet.  Now we're going to use loops to add complexity and build more interactivity.  Open up your `game.py` and let's get started!
 
 ### Validating User input
 
@@ -282,13 +478,13 @@ was {random_number}.")
 
 You have built a fully functional command line game!  If this is the first time you've done something like this, congratulations!  Go bug everybody you know and make them play it!  We will not be expanding the game further in these lessons, but if you are looking for a project to work on, this game can be a great jumping off point.  Consider adding options for the user to set the range for random number or the number of guesses.  What would be involved in turning it into a two player game where each player has a limited number of guesses?  
 
-## Snowman
+## Snowman Project
 
 ### Same Problem, New Context
 
 In programming many problems that look different are at the core the same problem, just with different details.  We can use this to our advantage in our work!  If we identify that a problem is similar to one we have already solved, we can take the solution we've already written and modify it for the new problem.
 
-We're going to switch now to working on Snowman.  First, let's take a look at the current version of our user input function `get_letter_from_user`:
+We're going to switch now to working on Snowman.  Start by opening up `snowman.py` in VSCode.  First, let's take a look at the current version of our user input function `get_letter_from_user`:
 
 ```python
 
