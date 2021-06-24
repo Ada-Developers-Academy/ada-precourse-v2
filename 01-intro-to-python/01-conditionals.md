@@ -47,6 +47,9 @@ We're going to begin building a game called "Guess the Number".  The rules are s
 
 Right now, our goal is to accept a single guess and tell the user if it was too high, too low, or just right.  In future lessons, we'll extend it to make it a more interesting game.
 
+
+Before we get started we need to set up the file that we're going to be working with.  Follow the instructions from the file setup lesson to navigate to the precourse directory that has your `hello.py` file.  Create a new file called `game.py` using the `touch` command and use the `code` command to open it in VSCode. 
+
 ### Generating Random Numbers
 
 For this project we're going to need to generate random numbers between 0 and 100.  We can do this by using the `randint` function from the `random` module.
