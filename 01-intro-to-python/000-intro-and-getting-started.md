@@ -41,7 +41,9 @@ Open up terminal and check out the screen. It is a text-based visual of our fold
 
 ```sh
 pwd
+`pwd` is short for "Present Working Directory".  It's a handy command to tell you which folder you are in.
 
+From this current location in our folder structure we will create a folder called `ada` with:
 ```sh
 mkdir ada
 ```
