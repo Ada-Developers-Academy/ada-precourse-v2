@@ -16,7 +16,7 @@ At the end of this lesson students will be able to:
 
 ### [Textbook for this section](https://colab.research.google.com/drive/1AmKeKvSJnNacUUIU9OLSInVohWJrPLkF?usp=sharing)
 
-In this section we will be building on the code you wrote in the previous lesson [Lists](04-lists.md).  If you would like to look at our example code for that lesson, you can find it [here](resources/src/04-lists/games_list.md).
+In this section we will be building on the code you wrote in the previous lesson [Lists](06-lists.md).  If you would like to look at our example code for that lesson, you can find it [here](resources/src/04-lists/games_list.md).
 
 ### Dictionaries, A New Kind of Data Structure
 
@@ -718,7 +718,7 @@ Game Description:
 1. The game prints out all of the incorrect letters that have been guessed
 1. The game loops back to asking the user to guess a letter and continues that pattern until either the user has guessed all of the letters in the word, or the snowman drawing is complete.
 
-[Click here to begin the Snowman Project checkpoint and write the final version!](06-snowman.checkpoint.md)
+[Click here to begin the Snowman Project checkpoint and write the final version!](08-snowman.checkpoint.md)
 
 ## Summary
 
