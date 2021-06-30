@@ -289,19 +289,19 @@ def convert_mi_to_km(miles):
 ##### !tests
 ```python
 
-import main
+from main import convert_mi_to_km
 import unittest
 
 
 class TestConversion(unittest.TestCase):
     def test_one(self):
-        self.assertEqual(convert_mi_to_km(1),1.6)
+        self.assertAlmostEqual(convert_mi_to_km(1),1.6)
 
     def test_zero(self):
-        self.assertEqual(convert_mi_to_km(0),0)
+        self.assertAlmostEqual(convert_mi_to_km(0),0)
 
     def test_float(self):
-        self.assertEqual(convert_mi_to_km(3.5),5.6)
+        self.assertAlmostEqual(convert_mi_to_km(3.5),5.6)
 
 ```
 
