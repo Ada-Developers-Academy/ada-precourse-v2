@@ -4,9 +4,9 @@
 
 <iframe src="https://adaacademy.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=209606a9-85a4-4945-b34e-acb5001d2a0e&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&start=0&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 
-It's very helpful to split your screen when writing code with one half of the screen consisting of your editor and the other the terminal or browser.  This way you can go back and forth between the editor and terminal with minimal disruption. 
+It's very helpful to split our screen when writing code with one half of the screen consisting of our editor and the other the terminal or browser.  This way we can go back and forth between the editor and terminal with minimal disruption. 
 
-There are a number of tools available to help you split your screen including:
+There are a number of tools available to help us split our screen including:
 
 * [MacOS Split Desktops](https://www.digitaltrends.com/computing/how-to-use-split-view-on-a-mac/)
 * Install [Rectangle](https://rectangleapp.com/) - Free
@@ -22,13 +22,13 @@ To launch terminal hit <kbd>cmd</kbd> + <kbd>spacebar</kbd> and then type termin
 
 ![launch terminal](images/launch-terminal.png)
 
-You can also add the terminal application to your dock, by right-clicking on the application. 
+We can also add the terminal application to our dock, by right-clicking on the application. 
 
 ![add terminal to dock](images/add-to-dock.png)
 
-There are a variety of keyboard combinations and commands you can use when using the terminal.
+There are a variety of keyboard combinations and commands we can use when using the terminal.
 
-You can even write programs to automate the terminal and thus the operating system, which is called **shell programming**.  
+We can even write programs to automate the terminal and thus the operating system, which is called **shell programming**.  
 
 ### The Mac Keyboard
 
@@ -60,7 +60,7 @@ Macs have a number of special keys which are a little different from Windows.  Y
 
 ### The Python Repl
 
-You can enter `python` in the terminal to enter a Read-Eval-Print-Loop environment.  This lets you enter individual lines of Python 3 code and see it immediately evaluated.
+We can enter `python` in the terminal to enter a Read-Eval-Print-Loop environment.  This lets us enter individual lines of Python 3 code and see it immediately evaluated.
 
 There are a few shortcut commands that are helpful to know.
 
@@ -74,9 +74,9 @@ There are a few shortcut commands that are helpful to know.
 
 ### Running Python Files
 
-You can run python files from the terminal by typing `python3` followed by the name of the file.  
+We can run python files from the terminal by typing `python3` followed by the name of the file.  
 
-For example if you have a file named, `example_file.py`, you could run the file from the terminal with the following.
+For example if we have a file named, `example_file.py`, we could run the file from the terminal with the following.
 
 ```bash
 $ python3 example_file.py
