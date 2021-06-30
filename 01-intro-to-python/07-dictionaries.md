@@ -79,19 +79,16 @@ distance = planet_dict["venus"]
 ##### !question
 
 Write a function `get_value_from_dictionary` that takes two arguments, a dictionary and a key that may or may not be in the dictionary.  The function has the following behavior:
-* If the dictionary contains the key, the function returns the value that matches the key.
-* If the dictionary does not contain the key, the function returns None.
+* If the dictionary contains the key, the function returns the **value** for that the key.
+* If the dictionary does not contain the key, the function returns `None`.
 
 Example inputs and outputs:
 
-input: ```get_value_from_dictionary({"dog":"cat", "tree":"bush", "star":"planet"}, "tree")
-output: ```"bush"```
-
-input: ```get_value_from_dictionary({"dog":"cat", "tree":"bush", "star":"planet"}, "chocolate")
-output: ```None```
-
-input: ```get_value_from_dictionary({"dog":"cat", "tree":"bush", "star":"planet"}, "cat")
-output: ```None```
+|input|output|
+|--|--|
+| `dict = {"dog":"cat", "tree":"bush", "star":"planet"}` <br/> `key = "tree"`|`"bush"`|
+| `dict = {"dog":"cat", "tree":"bush", "star":"planet"}` <br/> `key = "chocolate"`|`None`|
+| `dict = {"dog":"cat", "tree":"bush", "star":"planet"}` <br/> `key = "cat"`|`None`|
 
 ##### !end-question
 
@@ -110,7 +107,7 @@ def get_value_from_dictionary(dict, key):
 ```python
 
 import unittest
-from main import *
+from main import get_value_from_dictionary
 
 class TestGetFromDict(unittest.TestCase):
     def test_success(self):
@@ -187,14 +184,11 @@ Write a function `dict_counter` that takes two arguments, a dictionary and a key
 
 Example inputs and outputs:
 
-input: ```dict_counter({"dog":1, "tree":1, "star":4}, "tree")
-output: ```{"dog":1, "tree":2, "star":4}```
-
-input: ```dict_counter({"dog":1, "tree":1, "star":4}, "chocolate")
-output: ```{"dog":1, "tree":1, "star":4, "chocolate":1}```
-
-input: ```dict_counter({}, "chocolate")
-output: ```{"chocolate":1}```
+|input|output|
+|--|--|
+| `dict = {"dog":1, "tree":1, "star":4}` <br/> `key = "tree"`|`{"dog":1, "tree":2, "star":4}`|
+| `dict = {"dog":1, "tree":1, "star":4}` <br/> `key = "chocolate"`|`{"dog":1, "tree":1, "star":4, "chocolate":1}`|
+| `dict = {}` <br/> `key = "chocolate"`|`{"chocolate":1}`|
 
 ##### !end-question
 
@@ -213,7 +207,7 @@ def dict_counter(dict, key):
 ```python
 
 import unittest
-from main import *
+from main import dict_counter
 
 class TestDictCounter(unittest.TestCase):
     def test_increment_existing(self):
@@ -225,13 +219,13 @@ class TestDictCounter(unittest.TestCase):
     def test_add_new_empty_dict(self):
         self.assertEqual(dict_counter({}, "chocolate"), {"chocolate":1})
     
-    def test_sequence(self)
+    def test_sequence(self):
         dict = {"dog":1, "tree":1, "star":4}
         dict = dict_counter(dict, "cat")
-        self.assert_equal(dict, {"dog":1, "tree":1, "star":4, "cat":1})
+        self.assertEqual(dict, {"dog":1, "tree":1, "star":4, "cat":1})
         
         dict = dict_counter(dict, "cat")
-        self.assert_equal(dict, {"dog":1, "tree":1, "star":4, "cat":2})
+        self.assertEqual(dict, {"dog":1, "tree":1, "star":4, "cat":2})
 
 
 ```
@@ -301,17 +295,12 @@ Write a function `build_a_dictionary` that takes two arguments, a list of keys a
 
 Example inputs and outputs:
 
-input: ```build_a_dictionary(["dog", "cat", "bird", "mouse"], [1, 2, 3, 4])```
-output: ```{"dog":1, "cat":2, "bird":3, "mouse":4}```
-
-input: ```build_a_dictionary([1, 2, 3, 4], ["dog", "cat", "bird", "mouse"])```
-output: ```{1: "dog", 2: "cat", 3: "bird", 4: "mouse"}```
-
-input: ```build_a_dictionary([1, 2,], ["dog", "cat", "bird", "mouse"])```
-output: ```None```
-
-input: ```build_a_dictionary(["dog", "cat", "bird", "mouse"], [])```
-output: ```None```
+|input|ouput|
+|--|--|
+|`keys=["dog", "cat", "bird", "mouse"]` <br/> `values=[1, 2, 3, 4]`|`{"dog":1, "cat":2, "bird":3, "mouse":4}`|
+|`keys=[1, 2, 3, 4]` <br/> `values=["dog", "cat", "bird", "mouse"]`|`{1: "dog", 2: "cat", 3: "bird", 4: "mouse"}`|
+|`keys=[1, 2,]` <br/> `values=["dog", "cat", "bird", "mouse"]`|`None`|
+|`keys=["dog", "cat", "bird", "mouse"]` <br/> `values=[]`|`None`|
 
 ##### !end-question
 
@@ -330,7 +319,7 @@ def build_a_dictionary(keys, values):
 ```python
 
 import unittest
-from main import *
+from main import build_a_dictionary
 
 class TestBuildADictionary(unittest.TestCase):
     def test_success(self):
@@ -593,14 +582,12 @@ Write a function `get_word_progress` that takes two variables, a word and a dict
 
 Example inputs and outputs:
 
-input: ```get_word_progress("pepper", {"p":True, "e": False, "r": False})```
-output: ```"p _ p p _ _"```
 
-input: ```get_word_progress("tiger", {"e":False, "g": False, "i": False, "r": False, "t": False})```
-output: ```"_ _ _ _ _"```
-
-input: ```get_word_progress("swamp", {"a":True, "m": True, "p": True, "s": True, "w": True})```
-output: ```"s w a m p"```
+|input|output|
+|--|--|
+|`word="pepper"` <br/> `word_dict={"p":True, "e": False, "r": False}`|`"p _ p p _ _"`|
+|`word="tiger"` <br/> `word_dict={"e":False, "g": False, "i": False, "r": False, "t": False}`|`"_ _ _ _ _"`|
+|`word="swamp"` <br/> `word_dict={"a":True, "m": True, "p": True, "s": True, "w": True}`|`"s w a m p"`|
 
 <!--This can be regular **Markdown**-->
 
@@ -620,9 +607,8 @@ def get_word_progress(word, word_dict):
 ##### !tests
 ```python
 
-import main
 import unittest
-from main import *
+from main import get_word_progress
 
 
 class TestGetWordProgress(unittest.TestCase):
