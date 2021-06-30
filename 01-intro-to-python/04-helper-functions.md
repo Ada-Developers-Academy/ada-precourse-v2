@@ -4,8 +4,10 @@
 
 At the end of this lesson we will be able to:
 
+- Identify places where helper functions would be useful
 - Create helper functions
 - Refactor larger functions into smaller pieces
+
 
 ## Introduction
 
@@ -86,35 +88,38 @@ def pemdas(n1,n2,n3,n4,n5,n6):
 ```
 What happens if the exponent or the division is inaccurate within this expression? It would be much harder to test each calculation within this expression. To improve overall readability, what helper functions should we add? (Note: exclude detecting parenthesis)
 
+<br/>
+
 <details>
-<summary>click here to see the helper functions and code
-```Python
-    def multiply(n1, n2):
-        return n1*n2
+    
+<summary>click here to see the helper functions and code    </summary>
+    
+```python
+def multiply(n1, n2):
+    return n1*n2
 
-    def add(n1,n2):
-        return n1+n2
+def add(n1,n2):
+    return n1+n2
 
-    def subtract(n1,n2):
-        return n1-n2
+def subtract(n1,n2):
+    return n1-n2
 
-    def divide(n1,n2):
-        return n1 / n2
+def divide(n1,n2):
+    return n1 / n2
 
-    def exponent(n1, n2):
-        return n1**n2 
+def exponent(n1, n2):
+    return n1**n2 
 
-    def pemdas(n1,n2,n3,n4,n5,n6):
-        result = 0 
-        result += exponent(n1, n2)
-        result = multiply(result, n3)
-        result = divide(result, n4)
-        result = add(result, n5)
-        result = subtract(result, n6)
+def pemdas(n1,n2,n3,n4,n5,n6):
+    result = 0 
+    result += exponent(n1, n2)
+    result = multiply(result, n3)
+    result = divide(result, n4)
+    result = add(result, n5)
+    result = subtract(result, n6)
 
-        return result 
-    ```
-</summary>
+    return result 
+```
 </details>
 
 
@@ -244,7 +249,12 @@ Functions add flexibility and structure to our code, and make code easier to mai
 
 ##### !question
 
-Best Burger needs help creating `order_summary` for their drive-thru display. Best Burger menu include: $5.25 cheeseburger, $2.50 fries, and a $4.25 milkshake. Create the helper function `calculate_order` that takes in a list of items and calculates the total to be used in `order_summary`. 
+Best Burger needs help creating `order_summary` for their drive-thru display. Best Burger menu include: $5.25 burger, $2.50 fries, and a $4.25 milkshake. Create the helper function `calculate_total` that takes in a list of items and calculates the total to be used in `order_summary`.
+
+|example input `items`| example output (return value) |
+|--|--|
+|`['fries', 'fries', 'burger']`| `10.25`|
+|`['fries', 'milkshake', 'burger']`| `12`|
 
 ##### !end-question
 
@@ -252,11 +262,11 @@ Best Burger needs help creating `order_summary` for their drive-thru display. Be
 
 ```py
 
-def calculate_order(items):
+def calculate_total(order_items):
     pass 
 
 def order_summary(order_items):
-    total = calculate_order(order_items)
+    total = calculate_total(order_items)
     
     print("*** Welcome to Best Burger ***")
     print("Order Items: ")
@@ -271,8 +281,7 @@ def order_summary(order_items):
 
 ```py
 import unittest
-import main as p
-import numpy as np
+from main import calculate_total
 
 class TestPython1(unittest.TestCase):
     def test_total_of_different_items(self):
@@ -294,7 +303,7 @@ class TestPython1(unittest.TestCase):
         order = []
 
         # Act/Arrange
-        self.assertEqual(calcuate_total(order), 0)
+        self.assertEqual(calculate_total(order), 0)
 ```
 
 ##### !end-tests
@@ -313,13 +322,18 @@ class TestPython1(unittest.TestCase):
 
 FastBooks needs help developing an income statement generator. Given a list of expense costs, create the function `calculate_expenses`. This function will be used in `calculate_net_income`.  
 
+|example input `expense costs`| example output (return value) |
+|--|--|
+|`[10, 20, 30]`| `60`|
+
+
 ##### !end-question
 
 ##### !placeholder
 
 ```py
 
-def calculate_expenses(expense_cost):
+def calculate_expenses(expense_costs):
     pass 
 
 def calculate_net_income(revenue, expense_costs):
@@ -335,8 +349,7 @@ def calculate_net_income(revenue, expense_costs):
 
 ```py
 import unittest
-import main as p
-import numpy as np
+from main import calculate_expenses
 
 class TestPython1(unittest.TestCase):
     def test_total_of_different_costs(self):
