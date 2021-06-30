@@ -11,7 +11,7 @@ At the end of this lesson we will be able to...
 
 ## Introduction
 
-**[Textbook for this section:](https://colab.research.google.com/drive/1kfE-bujlwiJoDxTWIXa8u1GPGDJAnjvS?usp=sharing) **
+**[Textbook for this section:](https://colab.research.google.com/drive/1kfE-bujlwiJoDxTWIXa8u1GPGDJAnjvS?usp=sharing)**
 
 In this lesson we will have a quick refresher on variables, and then go into an explanation of IO.
 
