@@ -179,14 +179,11 @@ Write a function `compare` that takes two arguments, two numbers.  The function 
 
 Example inputs and outputs:
 
-input: ```compare(3, 7)```  
-output: ```False```  
-
-input: ```compare(7, 3)```
-output: ```True```  
-
-input:  ```compare(7, 7)```  
-output: ```False```
+|input|output|
+|--|--|
+| `first = 3` <br/> `second = 7`|`False`|
+| `first = 7` <br/> `second = 3`|`True`|
+| `first = 7` <br/> `second = 7`|`False`|
 
 ##### !end-question
 
@@ -205,7 +202,7 @@ def compare(first, second):
 ```python
 
 import unittest
-from main import *
+from main import compare
 
 
 class TestCompare(unittest.TestCase):
@@ -262,16 +259,11 @@ Write a function `convert_mi_to_km` that takes one argument, a number `miles`.  
 
 Example inputs and outputs:
 
-input: ```convert_mi_to_km(1)```  
-output: ```1.6```
-
-input: ```convert_mi_to_km(0)```  
-output: ```0```
-
-input: ```convert_mi_to_km(3.5)```
-output: ```5.6```
-
-
+|input|output|
+|--|--|
+| `miles = 1` |`1.6`|
+| `miles = 0` |`0`|
+| `miles = 3.5` |`5.6`|
 
 ##### !end-question
 

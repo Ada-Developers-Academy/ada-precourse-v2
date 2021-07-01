@@ -108,17 +108,12 @@ Write a function `find_index_of_item` that takes two arguments, an item and a li
 
 Example inputs and outputs:
 
-input: ```find_index_of_item(3, [1, 4, 5, 6, 2, 3, 9])```  
-output: ```5```
-
-input: ```find_index_of_item("cat", ["dog", "cow", "goat", "pig"])```  
-output: ```-1```
-
-input: ```find_index_of_item("chocolate", [])```  
-output: ```-1```
-
-input: ```find_index_of_item(-93, [1, 30, -93, 99, -3, -93, 25, 16])```  
-output: ```2```
+|input|output|
+|--|--|
+| `item = 3`<br/> `list_of_items = [1, 4, 5, 6, 2, 3, 9]`|`5`|
+| `item = "cat"`<br/> `list_of_items = ["dog", "cow", "goat", "pig"]`|`-1`|
+| `item = "chocolate"`<br/> `list_of_items = []`|`-1`|
+| `item = -93`<br/> `list_of_items = [1, 30, -93, 99, -3, -93, 25, 16]`|`2`|
 
 ##### !end-question
 
@@ -137,7 +132,7 @@ def find_index_of_item(item, list_of_items):
 ```python
 
 import unittest
-from main import *
+from main import find_index_of_item
 
 class TestFindIndexOfItemChallenge(unittest.TestCase):
     def test_find_success(self):
@@ -224,21 +219,12 @@ Write a function `count_item_in_list` that takes two arguments, an item and a li
 
 Example inputs and outputs:
 
-input: ```count_item_in_list(3, [1, 3, 3, 6, 2, 3, 9])```  
-output: ```3```
-
-
-input: ```count_item_in_list("cat", ["dog", "cow", "goat", "pig"])```  
-output: ```0```
-
-
-input: ```count_item_in_list(38, [])```  
-output: ```0```
-
-
-input: ```count_item_in_list("dog", ["dog", "cat", "cow", "goat", "pig"])```  
-output: ```1```
-
+|input|output|
+|--|--|
+| `item = 3`<br/> `list_of_items = [1, 3, 3, 6, 2, 3, 9]`|`3`|
+| `item = "cat"`<br/> `list_of_items = ["dog", "cow", "goat", "pig"]`|`0`|
+| `item = 38`<br/> `list_of_items = []`|`0`|
+| `item = "dog"`<br/> `list_of_items = ["dog", "cat", "cow", "goat", "pig"]`|`1`|
 <!--This can be regular **Markdown**-->
 
 ##### !end-question
@@ -259,7 +245,7 @@ def count_item_in_list(item, list_of_items):
 ```python
 
 import unittest
-from main import *
+from main import count_item_in_list
 
 class TestCountItemInListChallenge(unittest.TestCase):
     def test_find_multiple(self):
@@ -346,17 +332,13 @@ Write a function `icecream_sundae` that takes two arguments, one list of ice cre
 Note the addition of the word "with" in the combined version.  You can assume that both of the input lists only contain strings.
 
 Example inputs and outputs:
-inputs: ```icecream_sundae(["vanilla", "chocolate", "strawberry"], ["whipped cream", "nuts", "a cherry"])```   
-output: ```["vanilla with whipped cream", "vanilla with nuts", "vanilla with a cherry", "chocolate with whipped cream", "chocolate with nuts", "chocolate with a cherry", "strawberry with whipped cream", "strawberry with nuts", "strawberry with a cherry"]```
 
-inputs: ```icecream_sundae(["a", "b"], ["c", "d", "e"])```  
-outputs: ```["a with c", "a with d", "a with e", "b with c", "b with d", "b with e"]```
-
-inputs: ```icecream_sundae(["vanilla", "strawberry"], [])```  
-outputs: ```[]```
-
-inputs: ```icecream_sundae([], ["chocolate sauce", "caramel sauce"])```  
-outputs: ```[]```
+|input|output|
+|--|--|
+| `flavors = ["vanilla", "chocolate", "strawberry"]`<br/> `toppings = ["whipped cream", "nuts", "a cherry"]`|`["vanilla with whipped cream", "vanilla with nuts", "vanilla with a cherry", "chocolate with whipped cream", "chocolate with nuts", "chocolate with a cherry", "strawberry with whipped cream", "strawberry with nuts", "strawberry with a cherry"]`|
+| `flavors = ["a", "b"]`<br/> `toppings = ["c", "d", "e"]`|`["a with c", "a with d", "a with e", "b with c", "b with d", "b with e"]`|
+| `flavors = ["vanilla", "strawberry"]`<br/> `toppings = []`|`[]`|
+| `flavors = []`<br/> `toppings = ["chocolate sauce", "caramel sauce"]`|`[]`|
 
 ##### !end-question
 
@@ -375,7 +357,7 @@ def icecream_sundae(flavors, toppings):
 ```python
 
 import unittest
-from main import *
+from main import icecream_sundae
 
 class TestIcecreamSundae(unittest.TestCase):
     def test_with_content(self):
