@@ -21,4 +21,4 @@ By the end of this lesson we should be able to...
 
 ## Installfest Instructions
 
-To install the software required for Ada follow the [Installfest](installfest/installfest.resource.md) instructions given here.
+To install the software required for Ada follow the [Installfest](installfest/installfest.resource.md) instructions.
