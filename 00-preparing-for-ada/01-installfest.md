@@ -19,16 +19,6 @@ By the end of this lesson we should be able to...
 
 - Install a variety of Mac software using [Homebrew](https://brew.sh/)
 
+## Installfest Instructions
+
 To install the software required for Ada follow the given [Installfest](installfest/installfest.resource.md).
-
-## Unclear?
-
-If you are uncertain which kind of Mac you have you can go to **About This Mac**
-
-![About this mac menu item](images/about-this-mac-menu.png)
-
-Then look for the word Intel or M1 in the description.
-
-![About this mac screen](images/about-this-mac-intel.png)
-
-![About this mac M1 screen](images/m1-screenshot.png)
