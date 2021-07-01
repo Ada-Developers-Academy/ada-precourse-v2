@@ -19,13 +19,7 @@ By the end of this lesson we should be able to...
 
 - Install a variety of Mac software using [Homebrew](https://brew.sh/)
 
-## Intel-based Macs
-
-If you have an Intel-based Mac you can follow the [Installfest](installfest/installfest-intel.resource.md).
-
-## Apple Silicon Macs
-
-If you have an M1-based Mac you need to first follow the [M1 installfest-setup](installfest/installfest-m1.resource.md) instead of the Intel-based installfest.
+To install the software required for Ada follow the given [Installfest](installfest/installfest.resource.md).
 
 ## Unclear?
 
