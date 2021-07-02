@@ -95,14 +95,11 @@ Write a function `print_ten` that takes one argument, a string.  The function ha
 
 Example inputs and outputs:
 
-input: ```print_ten("snow")```
-output: ```"1 snow 2 snow 3 snow 4 snow 5 snow 6 snow 7 snow 8 snow 9 snow 10 snow"```
-
-input: ```print_ten("")```
-output: ```"1  2  3  4  5  6  7  8  9  10 "```
-
-input: ```print_ten("123")```
-output: ```"1 123 2 123 3 123 4 123 5 123 6 123 7 123 8 123 9 123 10 123"```
+|input|output|
+|--|--|
+| `word = "snow"`|`"1 snow 2 snow 3 snow 4 snow 5 snow 6 snow 7 snow 8 snow 9 snow 10 snow"`|
+| `word = ""`|`"1  2  3  4  5  6  7  8  9  10 "`|
+| `word = "123"`|`"1 123 2 123 3 123 4 123 5 123 6 123 7 123 8 123 9 123 10 123"`|
 
 ##### !end-question
 
@@ -121,7 +118,7 @@ def print_ten(word):
 ```python
 
 import unittest
-from main import *
+from main import print_ten
 
 class TestPrintTen(unittest.TestCase):
     def test_word(self):
@@ -192,14 +189,11 @@ Write a function `print_multiple` that takes two argument, a string `word` and a
 
 Example inputs and outputs:
 
-input: ```print_multiple("snow", 4)```
-output: ```"1 snow 2 snow 3 snow 4 snow"```
-
-input: ```print_multipe("", 7)```
-output: ```"1  2  3  4  5  6  7 "```
-
-input: ```print_multiple("123", 11)```
-output: ```"1 123 2 123 3 123 4 123 5 123 6 123 7 123 8 123 9 123 10 123 11 123"```
+|input|output|
+|--|--|
+| `word = "snow"`<br/> `amount = 4`|`"1 snow 2 snow 3 snow 4 snow"`|
+| `word = ""` <br/> `amount = 7`|`"1  2  3  4  5  6  7 "`|
+| `word = "123"` <br/> `amount = 11`|`"1 123 2 123 3 123 4 123 5 123 6 123 7 123 8 123 9 123 10 123 11 123"`|
 
 ##### !end-question
 
@@ -218,7 +212,7 @@ def print_multiple(word, amount):
 ```python
 
 import unittest
-from main import *
+from main import print_multiple
 
 class TestPrintMultiple(unittest.TestCase):
     def test_word(self):
