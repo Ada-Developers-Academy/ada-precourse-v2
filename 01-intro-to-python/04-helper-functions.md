@@ -17,7 +17,7 @@ A helper function is a function that does part of the work for another function.
 
 ## Functions Best Practice
 
-Ideally, every function should be designed to handle *one* task in accordance to the (single-responsibility principle)[https://en.wikipedia.org/wiki/Single-responsibility_principle].  
+Ideally, every function should be designed to handle *one* task in accordance to the [ingle-responsibility principle](https://en.wikipedia.org/wiki/Single-responsibility_principle).  
 
 ### !end-callout
 
@@ -79,7 +79,7 @@ Let's recall our learnings from the `Return keyword` section of the previous Fun
 
 ## Breaking Up Long Expressions 
 
-Sometimes code will have long expressions that are not easy to read. Imagine we are writing a function to mimic the order of operations rule, (PEMDAS)[https://en.wikipedia.org/wiki/Order_of_operations#Mnemonics]. We could write the function as a long expression like so:
+Sometimes code will have long expressions that are not easy to read. Imagine we are writing a function to mimic the order of operations rule, [PEMDAS](https://en.wikipedia.org/wiki/Order_of_operations#Mnemonics). We could write the function as a long expression like so:
 
 ```Python
 def pemdas(n1,n2,n3,n4,n5,n6):
@@ -92,7 +92,7 @@ What happens if the exponent or the division is inaccurate within this expressio
 
 <details>
     
-<summary>click here to see the helper functions and code    </summary>
+<summary>Click here to see the helper functions code </summary>
     
 ```python
 def multiply(n1, n2):
