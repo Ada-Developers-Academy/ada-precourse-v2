@@ -2,6 +2,8 @@
 
 ## Learning Goals
 
+<iframe src="https://adaacademy.hosted.panopto.com/Panopto/Pages/Embed.aspx?pid=a39ba8bc-1711-4c3a-a804-ad65007c2576&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=true&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+
 At the end of this lesson we will be able to:
 
 - Identify places where helper functions would be useful
@@ -17,7 +19,7 @@ A helper function is a function that does part of the work for another function.
 
 ## Functions Best Practice
 
-Ideally, every function should be designed to handle *one* task in accordance to the [ingle-responsibility principle](https://en.wikipedia.org/wiki/Single-responsibility_principle).  
+Ideally, every function should be designed to handle *one* task in accordance to the [single-responsibility principle](https://en.wikipedia.org/wiki/Single-responsibility_principle).  
 
 ### !end-callout
 
