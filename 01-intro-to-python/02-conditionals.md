@@ -25,9 +25,9 @@ Let's take a look at the following code and consider what's going on:
 >>> if n < 5:
 ...     print(f"{n} is too small!")
 ...  elif n == 5:
-        print("{n} is just right!")
+        print(f"{n} is just right!")
 ...  else:
-...     print("{n} is too large!")
+...     print(f"{n} is too large!")
 ...
 5 is just right!
 ```
