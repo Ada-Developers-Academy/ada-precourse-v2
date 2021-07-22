@@ -24,9 +24,9 @@ Let's take a look at the following code and consider what's going on:
 >>> n = random.randint(1, 10) 
 >>> if n < 5:
 ...     print(f"{n} is too small!")
-...  elif n == 5:
-        print(f"{n} is just right!")
-...  else:
+... elif n == 5:
+...     print(f"{n} is just right!")
+... else:
 ...     print(f"{n} is too large!")
 ...
 5 is just right!
