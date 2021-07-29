@@ -26,7 +26,7 @@ Note that in the losing message to the user there are two space between the sent
 
 Go to the [Snowman Game Repl](https://replit.com/@adacore/snowmanproject) and fork the project.  
 
-![forking](images/forking.png)
+![forking](images/fork_snowman_.png)
 
 You can also give the repl a new name here.
 
