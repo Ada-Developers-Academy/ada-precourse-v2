@@ -24,7 +24,7 @@ Note that in the losing message to the user there are two space between the sent
 
 ##### !question
 
-Go to the [Snowman Game Repl](https://repl.it/@ChrisMcAnally/snowmanproject#game.py) and fork the project.  
+Go to the [Snowman Game Repl](https://replit.com/@adacore/snowmanproject) and fork the project.  
 
 ![forking](images/forking.png)
 
