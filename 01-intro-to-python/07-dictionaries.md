@@ -42,7 +42,7 @@ Dictionaries associate each piece of data with a unique key, and then we can use
 
 | Vocab          | Definition                                                    | Synonyms  | How to Use in a Sentence                                                      |
 | -------------- | ------------------------------------------------------------- | --------- | ----------------------------------------------------------------------------- |
-| dictionary | A collection that associates unique keys with values | hashtable | "This dictionary uses planet names as the key and the value is the distance from the sun." |
+| dictionary | A collection that associates unique keys with values | hash table | "This dictionary uses planet names as the key and the value is the distance from the sun." |
 | key | A string.  All of the keys in a dictionary must be unique. | address | "The keys for the dictionary are all the planets, 'mercury', 'venus', 'mars', and so on." |
 | value | A piece of data of any possible type. | content | "The value for the key 'mercury' is '36 million miles'."|
 
@@ -295,7 +295,7 @@ Write a function `build_a_dictionary` that takes two arguments, a list of keys a
 
 Example inputs and outputs:
 
-|input|ouput|
+|input|output|
 |--|--|
 |`keys=["dog", "cat", "bird", "mouse"]` <br/> `values=[1, 2, 3, 4]`|`{"dog":1, "cat":2, "bird":3, "mouse":4}`|
 |`keys=[1, 2, 3, 4]` <br/> `values=["dog", "cat", "bird", "mouse"]`|`{1: "dog", 2: "cat", 3: "bird", 4: "mouse"}`|
@@ -719,7 +719,7 @@ Game Description:
 1. User is prompted to guess a letter
 1. The game checks the letter to see if it is in the word
 1. The game prints out a section of the snowman drawing, showing one level for each incorrectly guessed letters
-1. The game prints out a hidden version of the word, where each correct letter is displayed and unguessed letters are hidden
+1. The game prints out a hidden version of the word, where each correct letter is displayed and un-guessed letters are hidden
 1. The game prints out all of the incorrect letters that have been guessed
 1. The game loops back to asking the user to guess a letter and continues that pattern until either the user has guessed all of the letters in the word, or the snowman drawing is complete.
 
@@ -727,4 +727,4 @@ Game Description:
 
 ## Summary
 
-Congratuations, you wrote two fully functional, interactive, playable command line games and you have completed the Ada pre-course curriculum.  We encourage you to continue to explore programming between now and when you start at Ada, in whatever form appeals to you.  If you're looking for some ideas, consider taking these projects and expanding them! Some ideas include building a dashboard for your user where they can choose the game they want to play, or expanding Snowman to a 'Wheel of Fortune' type game!
+Congratulations, you wrote two fully functional, interactive, playable command line games and you have completed the Ada pre-course curriculum.  We encourage you to continue to explore programming between now and when you start at Ada, in whatever form appeals to you.  If you're looking for some ideas, consider taking these projects and expanding them! Some ideas include building a dashboard for your user where they can choose the game they want to play, or expanding Snowman to a 'Wheel of Fortune' type game!
