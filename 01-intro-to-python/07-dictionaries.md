@@ -634,14 +634,21 @@ Here is our implementation:
 
 def get_word_progress(word, word_dict):
     output_string = ""
+    elem_num = 0
+    
     for elem in word:
+        if elem_num > 0:
+            output_string += " "
+
         if word_dict[elem]:
             output_string += elem
         else:
             output_string += "_"
-        output_string += " "
+            
+        elem_num += 1
+            
     return output_string
-
+    
 ```
 
 ##### !end-explanation
@@ -658,8 +665,11 @@ First, let's switch to printing out the result instead of returning it:
 
 def get_word_progress(word, word_dict):
     output_string = ""
+    elem_num = 0
+    
     for elem in word:
        # ...
+       
     #return output_string
     print(output_string)
 
@@ -675,14 +685,21 @@ Next, we want to return either `True` or `False`.  We are already looping throug
 
 def get_word_progress(word, word_dict):
     output_string = ""
+    elem_num = 0
     result = True
+
     for elem in word:
+        if elem_num > 0:
+            output_string += " "
+
         if word_dict[elem]:
             output_string += elem
         else:
             result = False
             output_string += "_"
-        output_string += " "
+
+        elem_num += 1
+
     print(output_string)
     return result
 
