@@ -677,9 +677,11 @@ def get_word_progress(word, word_dict):
 
 Next, we want to return either `True` or `False`.  We are already looping through the word to build the output string, so now we need to add some logic to determine if every letter in the word has been guessed or not.  If all of them have been guessed, the function returns `True`.  If any of them haven't been guessed, the function returns `False`.
 
+<br/>
+
 <details>
-<summary> Edit your `get_word_progress` function and when you are finished, compare your edits to ours.</summary>
-</summary>
+
+<summary>Edit your <code>get_word_progress</code> function and when you are finished, compare your edits to ours.</summary>
 
 ```python
 
