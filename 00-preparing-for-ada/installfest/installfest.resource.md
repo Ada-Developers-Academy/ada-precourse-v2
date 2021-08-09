@@ -81,7 +81,7 @@ You should also verify that `pip` is working with `pip --version` and it should 
 ### VS Code
 
 * [VS Code](https://code.visualstudio.com/) is a very extensible open-source editor which supports a variety of languages including Python, and JavaScript.  
-* In VS Code, type <kbd>shift</kbd> + <kbd>cmd</kbd> + <kbd>p</kbd> and type **shell command to install the terminal shell command**.
+* In VS Code, type <kbd>shift</kbd> + <kbd>cmd</kbd> + <kbd>p</kbd> and type **>shell command install code command in path**.
   * This only needs to be done once to allow you to launch VS code from the terminal
 * Now, to launch VS Code from terminal, type `code` followed by the file name or directory name
   * For example `code .` will open the present directory as a project folder.

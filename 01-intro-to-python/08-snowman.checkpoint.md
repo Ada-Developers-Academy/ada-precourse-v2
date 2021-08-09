@@ -24,9 +24,9 @@ Note that in the losing message to the user there are two space between the sent
 
 ##### !question
 
-Go to the [Snowman Game Repl](https://repl.it/@ChrisMcAnally/snowmanproject#game.py) and fork the project.  
+Go to the [Snowman Game Repl](https://replit.com/@adacore/snowmanproject) and fork the project.  
 
-![forking](images/forking.png)
+![forking](images/fork_snowman.png)
 
 You can also give the repl a new name here.
 
@@ -58,7 +58,6 @@ You should make use of the following functions from the previous lessons (alread
 
 - `print_snowman_graphic(num_wrong_guesses)` - This function prints out the appropriate snowman image depending on the number of wrong guesses the player has made.
 - `build_word_dict(word)` - This function builds a dictionary with a key-value pair for each letter in word where the key is the letter and the value is `False`.
-- `print_word_list(word, word_dict)` - This function prints out either letters from the word or underscores depending on if those letters have been guessed or not.
 - `get_letter_from_user(wrong_list, correct_guesses_list)` - This function gets a letter guess from the user and doesn't accept a previously guessed letter or a non alphabetic character.
 - `get_word_progress(word, word_dict)` - This function prints the word with hidden letters and returns `True` if all the letters in the word are guessed.
 
