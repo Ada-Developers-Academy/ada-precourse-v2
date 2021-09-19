@@ -121,6 +121,8 @@ You can make sure git is installed properly by entering the following at the ter
 
 - `git config --get user.name` Should show your name
 - `git config --get user.email` Should show the email address associated with your GitHub account
+- `git config --global core.editor "code --wait"` 
+  - This will set vscode to be the default editor for git commit messages (more on that in the course).
 
 ## Browsers
 
