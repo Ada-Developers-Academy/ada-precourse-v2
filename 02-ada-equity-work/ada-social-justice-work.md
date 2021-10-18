@@ -7,4 +7,4 @@ Please interact with this content in a way that honors your own identity and nee
 * [Ada Social Justice Prework](https://docs.google.com/document/d/14g9J9LIaafUTLx_7BXyHkyUA8fN6jdom8Gap1x1soAo/edit?usp=sharing)
 
 * [Ada Intro to Gender Inclusion and Justice](https://docs.google.com/document/d/1UdAJffKGdlkOzLXg_6IQrNYKdmvQ8qfoB_O-o43M8CM/edit)
-
+* [Ada Introduction to Microaggressions and Micro-Affirmations](https://docs.google.com/document/d/1jPnpXXAZKcNyuTB71xXIBMdU13cZMgMub94OQyjM7Rs/edit?usp=sharing)
