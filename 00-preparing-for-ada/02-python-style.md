@@ -15,7 +15,7 @@ Some highlights include:
   * Continuation lines should align wrapped elements either vertically using Python's implicit line joining inside parentheses, brackets and braces, or using a hanging indent. When using a hanging indent the following should be considered; there should be no arguments on the first line and further indentation should be used to clearly distinguish itself as a continuation line:
 * **[Maximum line length = 79 characters](https://www.python.org/dev/peps/pep-0008/#id19)**  - You should have no more than 79 characters on a single line.
 * **[Imports should be on separate lines](https://www.python.org/dev/peps/pep-0008/#id23)** 
-* **[Function & variable names](https://www.python.org/dev/peps/pep-0008/#id45)** - Function & variable names should be lower case with each word separated by spaces.
+* **[Function & variable names](https://www.python.org/dev/peps/pep-0008/#id45)** - Function & variable names should be lower case with each word separated by underscores.
 
 ## Why Worry About Style?
 
