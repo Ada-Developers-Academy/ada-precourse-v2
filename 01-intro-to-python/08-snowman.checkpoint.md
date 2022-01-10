@@ -4,10 +4,6 @@
 
 ### !callout-warning
 
-## Note About Spacing
-
-Note that in the losing message to the user there are two space between the sentences in, "Sorry, you lose!  The word was {snowman_word}"
-
 ### !end-callout
 
 
