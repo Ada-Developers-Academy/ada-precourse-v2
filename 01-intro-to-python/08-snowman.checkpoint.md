@@ -53,9 +53,9 @@ When adding your code, you only need to modify the `snowman(snowman_word)` funct
 You should make use of the following functions from the previous lessons (already created for you):
 
 - `print_snowman_graphic(num_wrong_guesses)` - This function prints out the appropriate snowman image depending on the number of wrong guesses the player has made.
-- `build_word_dict(snowman_word)` - This function builds a dictionary with a key-value pair for each letter in snowman_word where the key is the letter and the value is `False`.
-- `get_letter_from_user(snowman_word_dict, wrong_guesses_list)` - This function gets a letter guess from the user and doesn't accept a previously guessed letter or a non alphabetic character.
-- `get_word_progress(snowman_word, snowman_word_dict)` - This function prints the snowman_word with hidden letters and returns `True` if all the letters in the snowman_word are guessed.
+- `build_word_dict(snowman_word)` - This function takes snowman_word as input and returns a dictionary with a key-value pair for each letter in snowman_word where the key is the letter and the value is `False`.
+- `get_letter_from_user(snowman_word_dict, wrong_guesses_list)` - This function takes the snowman_word_dict and the list of characters that have been guessed incorrectly (wrong_guesses_list) as input. It asks for input from the user of a single character until a valid character is provided and then returns this character.
+- `get_word_progress(snowman_word, snowman_word_dict)` - This function takes the snowman_word and snowman_word_dict as input. It prints an output_string that shows the correct letter guess placements as well as the placements for the letters yet to be guessed. It returns True if all the letters of the word have been guessed, and False otherwise.
 
 
 When you finish place a link to your repl here.
