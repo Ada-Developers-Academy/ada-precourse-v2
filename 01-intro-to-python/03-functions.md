@@ -33,7 +33,7 @@ def function_name(some_paramater, another_parameter): # End of Function Signatur
 There are a variety of ways to describe 'using a function' such as '*calling* a function', '*invoking* a function', '*executing* a function', etc. All of these phrases describe the same action of "performing the code inside this function". (For consistency, **call** will be used throughout this lesson). To call a function, all that needs to be provided are the function name and arguments (values to be passed into the function). 
 
 ```Python
-function_name(some_argument, another_arguments)
+function_name(some_argument, another_argument)
 ```
 
 Here are additional examples:
@@ -69,9 +69,15 @@ In the last lesson we wrote a series of conditionals to validate and test user i
 
 Lets say we want to play a different game after we finish playing Guess the Number.  We could just add the code for the new game after the code that's in the file right now, but then what if we want to change the order of the games?  
 
-We're now looking at moving around big code blocks.  Then if we change our minds and want to move it back, or add another game (and so on) things quickly get messy.  Functions encapsulate code blocks into re-usable chunks that we can then call in whatever order we want.  They also help us reuse these blocks of code in other programs.
+We're now looking at moving around big code blocks.  Then if we change our minds and want to move it back, or add another game (and so on) things quickly get messy.  
 
+<!-- available callout types: info, success, warning, danger, secondary  -->
+### !callout-info
 
+## Why Functions?
+Functions encapsulate code blocks into re-usable chunks that we can then call in whatever order we want.  They also help us reuse these blocks of code in other programs.
+
+### !end-callout
 
 ## Guess the Number
 
@@ -131,19 +137,43 @@ guess_the_number()
 
 ### The `return` Keyword
 
-Functions can be designed to either calculate and return a specific result or only execute blocks of code. For the former, functions with a `return` keyword will return a value or data structure to its calling function. Without the `return` keyword, a function will execute the function body and then return `None`. We can demonstrate the values below by using `print()` which will execute the function call and its return value. 
+Functions can be designed to either return a specific value or execute blocks of code without returning a value. For the former, functions with a `return` keyword will return a value or data structure to its calling function. The `return` keyword ends the execution of the function. We will sometimes hear it referred to as "returning out of the function."
 
+If we don't provide a value after `return`, the function will return `None`. Furthermore, without the `return` keyword, a function will execute the function body and then return `None`. We can demonstrate the values below by using `print()` which will execute the function call and then return `None`. 
+
+Sometimes we will want to write a function that returns `None`. In this case, it is best practice to explicitly return `None` rather than rely on Python's default behavior. This is especially true if we return non-`None` values elsewhere in the function, as the omission of the explicit `return None` looks like an oversight.
+
+In each of the examples below we will store the return value of the function in a variable `result` and then print the value of `result`. This will allow us to analyze the behavior and the return value of each function.
 
 ```Python
+# an example function that returns a value
 def greeting():
     return "Hello"
 
-print(some_function()) # returns "hello"
+result = greeting()
+print(result) # "hello"
 
+# an example function that prints Goodbye 
+# and returns None (implicit return)
 def farewell():
-    print("Goodbye)
+    print("Goodbye")
 
-print(farewell()) # prints "Goodbye" and returns None 
+result = farewell() # prints "Goodbye"
+print(result) # None
+
+# an example function that returns a temperature converted to fahrenheit 
+# for numeric arguments and returns None for non-numeric arguments.
+def convert_to_fahrenheit(temp_in_celsius):
+    if not isinstance(temp_in_celsius, int) / and not isinstance(temp_in_celsius, float):
+        return None
+
+    return 9/5*temp_in_celsius+32
+
+result = convert_to_fahrenheit(0)
+print(result) # 32
+
+result = convert_to_fahrenheit("non numeric value")
+print(result) # None
 ```
 
 
