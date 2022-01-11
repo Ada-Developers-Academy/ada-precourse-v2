@@ -40,7 +40,7 @@ We can run use a Python repl to run and test our code, but if we want to write l
 Open up terminal and check out the screen. It is a text-based visual of our folder and file structure. Let's find out where we are:
 
 ```sh
-pwd
+$ pwd
 ```
 
 `pwd` is short for "Present Working Directory".  It's a handy command to tell you which folder you are in.
@@ -48,20 +48,20 @@ pwd
 From this current location in our folder structure we will create a folder called `ada` with:
 
 ```sh
-mkdir ada
+$ mkdir ada
 ```
 
 Then we can move into that folder with:
 
 ```sh
-cd ada
+$ cd ada
 ```
 
 Now, let's create a subfolder for the Precourse.  This is where we can keep our pre-ada materials.  Then we can move into (or change directory `cd`) into that subfolder.
 
 ```sh
-mkdir precourse
-cd precourse
+$ mkdir precourse
+$ cd precourse
 ```
 
 ### !callout-info
@@ -75,13 +75,13 @@ If you ever forget or want to find out what folder you are in, remember that you
 Next we can create a blank text file to hold some Python code with the `touch` command.
 
 ```sh
-touch hello.py
+$ touch hello.py
 ```
 
 We can open that folder (if VS code is properly setup) with the `code` command.
 
 ```sh
-code .
+$ code .
 ```
 
 Notice the "." after `code`.  The "." stands for the current folder.  So we told VS Code to open the current folder as a project.  This will be quite handy once we start at Ada.
@@ -98,19 +98,19 @@ print(f"Hello, {name}!")
 To run the code in the file, first return to the terminal.  Check to see if you are in the same folder as your file.  To see all of the files in your current folder use the command `ls`.
 
 ```sh
-ls
+$ ls
 ```
 
 If you are not in the correct folder, move "down" to the correct folder using the `cd` command (or, if you need to move "up," use `cd ..`).  Once you are in the correct folder, run the code you saved in your `hello.py` file using:
 
 ```sh
-python3 hello.py
+$ python3 hello.py
 ```
 
 You should see the prompt `What is your name? ` and when you enter your name and press return, you should see `Hello, (name)` on the next line!
 
 ```sh
-python3 hello.py
+$ python3 hello.py
 What is your name? Jasmine
 Hello, Jasmine!
 ```
@@ -119,7 +119,7 @@ Congratulations, you just wrote your first Python file!
 
 ## Followup Exercise
 
-Modify the "hello.py" program above to read in both your name and age and print out:  "Hello <NAME> you are <AGE> years old!".
+Modify the "hello.py" program above to read in both your name and age and print out:  "Hello \<NAME\> you are \<AGE\> years old!".
 
 For example, if we entered "Han" for the name and "14" for the age, it would print out:
 
