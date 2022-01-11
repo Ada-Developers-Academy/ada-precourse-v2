@@ -139,11 +139,9 @@ guess_the_number()
 
 Functions can be designed to either return a specific value or execute blocks of code without returning a value. For the former, functions with a `return` keyword will return a value or data structure to its calling function. The `return` keyword ends the execution of the function. We will sometimes hear it referred to as "returning out of the function."
 
-If we don't provide a value after `return`, the function will return `None`. Furthermore, without the `return` keyword, a function will execute the function body and then return `None`. We can demonstrate the values below by using `print()` which will execute the function call and then return `None`. 
+#### Return values and Variables 
 
-Sometimes we will want to write a function that returns `None`. In this case, it is best practice to explicitly return `None` rather than rely on Python's default behavior. This is especially true if we return non-`None` values elsewhere in the function, as the omission of the explicit `return None` looks like an oversight.
-
-In each of the examples below we will store the return value of the function in a variable `result` and then print the value of `result`. This will allow us to analyze the behavior and the return value of each function.
+Because functions can return a value, they're often used in variable assignments. In each of the example below, and subsequnt examples, we will store the return value of the function in a variable `result` and then print the value of `result`. This will allow us to analyze the behavior and the return value of each function.
 
 ```Python
 # an example function that returns a value
@@ -152,7 +150,11 @@ def greeting():
 
 result = greeting()
 print(result) # "hello"
+```
 
+If we don't provide a value after `return`, the function will return `None`. Furthermore, without the `return` keyword, a function will execute the function body and then return `None`. We can demonstrate the values below by using `print()` which will execute the function call and then return `None`. 
+
+```Python
 # an example function that prints Goodbye 
 # and returns None (implicit return)
 def farewell():
@@ -160,11 +162,15 @@ def farewell():
 
 result = farewell() # prints "Goodbye"
 print(result) # None
+```
 
+Sometimes we will want to write a function that returns `None`. In this case, it is best practice to explicitly return `None` rather than rely on Python's default behavior. This is especially true if we return non-`None` values elsewhere in the function, as the omission of the explicit `return None` looks like an oversight.
+
+```Python
 # an example function that returns a temperature converted to fahrenheit 
 # for numeric arguments and returns None for non-numeric arguments.
-def convert_to_fahrenheit(temp_in_celsius):
-    if not isinstance(temp_in_celsius, int) / and not isinstance(temp_in_celsius, float):
+def convert_to_fahrenheit(temp):
+    if not isinstance(temp, int) / and not isinstance(temp, float):
         return None
 
     return 9/5*temp_in_celsius+32
@@ -177,9 +183,7 @@ print(result) # None
 ```
 
 
-### Return values and Variables 
 
-Because functions can return a value, they're often used in variable assignments. In the example below, the variable `temperature` is initialized by executing `convert_to_fahrenheit()` and then assigns the return value to `temperature`. 
 
 
 ```Python
