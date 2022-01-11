@@ -182,18 +182,6 @@ result = convert_to_fahrenheit("non numeric value")
 print(result) # None
 ```
 
-
-
-
-
-```Python
-def convert_to_fahrenheit(temp):
-    return 9/5*temp + 32
-
-temperature = convert_to_fahrenheit(50)
-print(temperature) # prints the return value of 122.0
-```
-
 ## Practice Problems
 
 <!--BEGIN CHALLENGE-->
