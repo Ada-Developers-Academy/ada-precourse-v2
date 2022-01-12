@@ -44,9 +44,9 @@ $ pwd
 ```
 ### !callout-info
 
-## What's the `$` mean?
+## `$` Represents the Prompt
 
-This $ represents the command line prompt, and should not be typed in. This is a common style choice in command line tutorials and code examples, so we should get comfortable seeing it! 
+This $ represents the command line prompt, and should not be typed in. 
 
 ### !end-callout
 
