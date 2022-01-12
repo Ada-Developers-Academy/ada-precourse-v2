@@ -42,6 +42,13 @@ Open up terminal and check out the screen. It is a text-based visual of our fold
 ```sh
 $ pwd
 ```
+### !callout-info
+
+## What's the `$` mean?
+
+This $ represents the command line prompt, and should not be typed in. This is a common style choice in command line tutorials and code examples, so we should get comfortable seeing it! 
+
+### !end-callout
 
 `pwd` is short for "Present Working Directory".  It's a handy command to tell you which folder you are in.
 
@@ -119,8 +126,10 @@ Congratulations, you just wrote your first Python file!
 
 ## Followup Exercise
 
-Modify the "hello.py" program above to read in both your name and age and print out:  "Hello \<NAME\> you are \<AGE\> years old!".
+Modify the "hello.py" program above to read in both your name and age and print out:  `Hello <NAME> you are <AGE> years old!`.
 
 For example, if we entered "Han" for the name and "14" for the age, it would print out:
 
-"Hello, Han you are 14 years old!"
+```sh
+Hello, Han you are 14 years old!
+```
