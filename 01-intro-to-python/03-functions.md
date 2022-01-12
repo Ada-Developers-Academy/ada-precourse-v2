@@ -24,7 +24,7 @@ Functions must be defined in order to be invoked. A function definition contains
 
 ```Python
 # Start Function Signature
-def function_name(some_paramater, another_parameter): # End of Function Signature
+def function_name(some_parameter, another_parameter): # End of Function Signature
     # Start of Function Body
     print(some_parameter, another_parameter)
     # End of Function Body
@@ -33,7 +33,7 @@ def function_name(some_paramater, another_parameter): # End of Function Signatur
 There are a variety of ways to describe 'using a function' such as '*calling* a function', '*invoking* a function', '*executing* a function', etc. All of these phrases describe the same action of "performing the code inside this function". (For consistency, **call** will be used throughout this lesson). To call a function, all that needs to be provided are the function name and arguments (values to be passed into the function). 
 
 ```Python
-function_name(some_argument, another_arguments)
+function_name(some_argument, another_argument)
 ```
 
 Here are additional examples:
@@ -69,9 +69,15 @@ In the last lesson we wrote a series of conditionals to validate and test user i
 
 Lets say we want to play a different game after we finish playing Guess the Number.  We could just add the code for the new game after the code that's in the file right now, but then what if we want to change the order of the games?  
 
-We're now looking at moving around big code blocks.  Then if we change our minds and want to move it back, or add another game (and so on) things quickly get messy.  Functions encapsulate code blocks into re-usable chunks that we can then call in whatever order we want.  They also help us reuse these blocks of code in other programs.
+We're now looking at moving around big code blocks.  Then if we change our minds and want to move it back, or add another game (and so on) things quickly get messy.  
 
+<!-- available callout types: info, success, warning, danger, secondary  -->
+### !callout-info
 
+## Why Functions?
+Functions encapsulate code blocks into re-usable chunks that we can then call in whatever order we want.  They also help us reuse these blocks of code in other programs.
+
+### !end-callout
 
 ## Guess the Number
 
@@ -131,33 +137,49 @@ guess_the_number()
 
 ### The `return` Keyword
 
-Functions can be designed to either calculate and return a specific result or only execute blocks of code. For the former, functions with a `return` keyword will return a value or data structure to its calling function. Without the `return` keyword, a function will execute the function body and then return `None`. We can demonstrate the values below by using `print()` which will execute the function call and its return value. 
+Functions can either be designed to return a specific value, or to execute blocks of code _without_ returning a value. For the former, a function with a `return` keyword returns a value or data structure to its calling function. The `return` keyword ends the execution of the function. This is referred to as "returning from the function," or "returning out of the function."
 
+#### Return values and Variables 
+
+Because functions can return a value, they're often used in variable assignments. In the example below, and the other examples which follow, we will store the return value of the function in a variable `result` and then print the value of `result`. This will allow us to analyze the behavior and the return value of each function.
 
 ```Python
+# an example function that returns a value
 def greeting():
     return "Hello"
 
-print(some_function()) # returns "hello"
-
-def farewell():
-    print("Goodbye)
-
-print(farewell()) # prints "Goodbye" and returns None 
+result = greeting()
+print(result) # "hello"
 ```
 
-
-### Return values and Variables 
-
-Because functions can return a value, they're often used in variable assignments. In the example below, the variable `temperature` is initialized by executing `convert_to_fahrenheit()` and then assigns the return value to `temperature`. 
-
+We can use `return` without providing it a value. This is usually done if we need to exit a function before reaching its end, and the function doesn't otherwise return a value. If we don't provide a value after `return`, the function implicitly returns `None`. Even without the `return` keyword, a function will execute its function body and then return `None`. We can demonstrate this with the code below, which executes the function call, implicitly returning `None`. We then print the returned value, which displays `None`.
 
 ```Python
-def convert_to_fahrenheit(temp):
-    return 9/5*temp + 32
+# an example function that prints Goodbye 
+# and returns None (implicit return)
+def farewell():
+    print("Goodbye")
 
-temperature = convert_to_fahrenheit(50)
-print(temperature) # prints the return value of 122.0
+result = farewell() # prints "Goodbye"
+print(result) # None
+```
+
+Sometimes we need to write a function that returns `None` under certain conditions. In this case, it is best practice to return `None` explicitly rather than rely on Python's default behavior. This is especially true if we return non-`None` values elsewhere in the function, as the omission of the explicit `return None` looks like an oversight.
+
+```Python
+# an example function that returns a temperature converted to fahrenheit 
+# for numeric arguments and returns None for non-numeric arguments.
+def convert_to_fahrenheit(temp):
+    if not isinstance(temp, int) and not isinstance(temp, float):
+        return None
+
+    return 9/5*temp_in_celsius+32
+
+result = convert_to_fahrenheit(0)
+print(result) # 32
+
+result = convert_to_fahrenheit("non numeric value")
+print(result) # None
 ```
 
 ## Practice Problems
@@ -254,7 +276,7 @@ def compare(first, second):
 
 ##### !question
 
-Write a function `convert_mi_to_km` that takes one argument, a number `miles`.  The function has the follwing behavior:
+Write a function `convert_mi_to_km` that takes one argument, a number `miles`.  The function has the following behavior:
 * The function converts the length in miles to kilometers and returns the length in kilometers.
 * The formula for converting miles to kilometers is `miles * 1.6`.
 * _The actual conversion rate is 1.609344 but for this problem please use 1.6._
