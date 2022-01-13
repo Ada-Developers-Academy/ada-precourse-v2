@@ -130,7 +130,7 @@ Sometimes we want to have a readable name for a value like a variable, but we wa
 
 ## Capitalization does not prevent reassignment:
 
-Naming variables in all capital letters is a convention to communicate that such variables have constant values that will not change, however, it does not actually prevent reassignment.
+Naming variables in all capital letters is a convenantion to communicate that such variables have constant values that will not change, however, it does not actually prevent reassignment.
 
 ### !end-callout
 
@@ -208,7 +208,7 @@ Create a new file called `story.py` in the precourse directory. Your program wil
 
 The completed story will have user input in place of the variables: `"I can't believe it's already <holiday>! I can't wait to put on my <noun> and visit every <place> in my neighborhood."`
 
-For example, if we entered "Thanksgiving" for the holiday, "cat" for the noun, and "fire station" for the place it would print out: "I can't believe it's already Thanksgiving! I can't wait to put on my cat and visit every fire station in my neighborhood."
+For example, if we entered `"Thanksgiving"` for the holiday, `"cat"` for the noun, and `"fire station"` for the place it would print out: `"I can't believe it's already Thanksgiving! I can't wait to put on my cat and visit every fire station in my neighborhood."`
 
 <details>
 <summary>Check out our solution!</summary>
