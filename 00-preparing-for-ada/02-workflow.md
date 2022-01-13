@@ -43,7 +43,7 @@ Macs have a number of special keys which are a little different from Windows.  Y
 | <kbd>cmd</kbd> + <kbd>k</kbd>       | clear your screen                                                                                   |
 | `touch <filename>`                  | creates a new file named filename                                                                   |
 | `pwd`                               | <b>p</b>rints the <b>w</b>orking <b>d</b>irectory (displays the full path of the current directory) |
-| `cd`                                | <b>c</b>change <b>d</b>irectory                                                                     |
+| `cd`                                | <b>c</b>hange <b>d</b>irectory                                                                     |
 | `cd ..`                             | go back a directory                                                                                 |
 | `cd ~`                              | choose home directory                                                                               |
 | `ls`                                | list the items in the directory                                                                     |
