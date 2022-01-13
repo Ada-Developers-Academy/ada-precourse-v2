@@ -116,7 +116,7 @@ $ python3 example_file.py
 
 ### Additional Resources
 - https://www.davidbaumgold.com/tutorials/command-line/
-- https://blog.teamtreehouse.com/introduction-to-the-mac-os-x-command-line
+
 
 
 
