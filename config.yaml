@@ -69,9 +69,14 @@ Standards:
         UID: b4385d80-5e21-4934-a031-1c66e8605c01
         Path: /01-intro-to-python/07-dictionaries.md
       -
+
+        Type: Lesson
+        UID: 0920082b-f9ad-4640-a71b-d48a42a05d45
+        Path: /01-intro-to-python/08-errors.md
+      -
         Type: Checkpoint
         UID: f732de97-d800-482f-8f2c-8fb88e9e34b6
-        Path: /01-intro-to-python/08-snowman.checkpoint.md
+        Path: /01-intro-to-python/09-snowman.checkpoint.md
       - 
         Type: Resource
         UID: 4ba8f29d-fa11-4a26-8b9b-be5be478c5d1
