@@ -22,38 +22,44 @@ In this lesson we will have a quick refresher on variables, and then go into an 
 | Vocab          | Definition                                                    | Synonyms  | How to Use in a Sentence                                                      |
 | -------------- | ------------------------------------------------------------- | --------- | ----------------------------------------------------------------------------- |
 | Variable |  Name for a piece of data we have stored. | Reference | We assigned 21 to the variable |
-| IO | Input and Output | Recieved and sent data | Our IO was done by entering data into and printing things out on the terminal screen. |
-| Input | A way to get information _in_ to a program. | Recieved data | Our input comes from a spreadsheet | 
+| IO | Input and Output | Received and sent data | Our IO was done by entering data into and printing things out on the terminal screen. |
+| Input | A way to get information _in_ to a program. | Received data | Our input comes from a spreadsheet | 
 | Output | A way to get _out_ of a program. | Sent data | We directed output to Google's website. |
 
 ### Syntax
 
-We can start by running the Python repl by entering `python3` in the terminal and doing the following:
+Create a new file `variables_practice.py` in the precourse directory you created in the previous lesson called "Introduction and Getting Started". As a reminder, you use the touch command to create a new file. 
+
+Add the following to your new file:
 
 ```python
->>> # Create a new variable named "ami", and store 
->>> #   the string "Sailor Mercury":
->>> ami = "Sailor Mercury"
->>>
->>> # Create a new variable named "cats" and store the 
->>> #   number 2:
->>> cats = 2
->>>
->>> # "print" using some variables and a format string.
->>> print(f"{ami} has {cats} cats!")
-Sailor Mercury has 2 cats!
->>>
->>> # Ask the user what the cats are named.
->>> first_cat = input("Name of the first cat? ")
-Name of the first cat? Luna
->>> second_cat = input("Name of the second cat? ")
-Name of the second cat? Artemis
+# Create a new variable named "ami" and store the string "Sailor Mercury":
+ami = "Sailor Mercury"
+
+# Create a new variable named "cats" and store the number 2:
+cats = 2
+
+# "print" using some variables and f-strings.
+print(f"{ami} has {cats} cats!")
+# Sailor Mercury has 2 cats!
+
+# Ask the user what the cats are named.
+first_cat = input("Name of the first cat? ")
+second_cat = input("Name of the second cat? ")
+```
+
+When you're finished writing your program, save it and then run it by using:
+```sh
+python3 variables_practice.py
 ```
 
 ## Variables
 
 As you've already seen, variables are how we store data in Python programs.  They are the basic building blocks for almost all programs in almost all programming languages.
 
+In the above example, the variable `ami` stores the string value of "Sailor Mercury" and the variable `cats` stores the value of 2. We can use string interpolation to substitute values of variables into placeholders in a string. 
+
+To do string interpolation we use "formatted string literals" (f-strings for short). To use f-strings, begin a string with `f` or `F` before the opening quotation mark. Then inside this string, you write a Python expression between { and } that refer to variables.
 
 ## Variable Practice
 
@@ -110,36 +116,48 @@ Which of the following are variables in the example above?
 In the textbook above, we learned about the `type` function that can be used on variables to return the data type (more specifically, the data type class) of its value. 
 
 ```python
->>> mystery = "32"
->>> type(mystery)
-<class 'str'>
+mystery = "32"
+print(type(mystery)) 
+# <class 'str'>
 ```
 
 ## Constants
 
-Sometimes we want to have a readable name for a value like a variable, but we want to make sure it never changes.  In Python, a _constant_ is a type of variable whose value **cannot** be changed.  Constants are named containers for values that cannot be reassigned.
+Sometimes we want to have a readable name for a value like a variable, but we want to make sure it never changes.  In Python, a _constant_ is a type of variable whose value **should not** be changed.  Constants are named containers for values that should not be reassigned.
+
+<!-- available callout types: info, success, warning, danger, secondary  -->
+### !callout-info
+
+## Capitalization does not prevent reassignment:
+
+Naming variables in all capital letters is a convenantion to communicate that such variables have constant values that will not change, however, it does not actually prevent reassignment.
+
+### !end-callout
 
 We create constants by creating variables with all uppercase letters.  We can break up words with underscores.
 
 **Examples**
 
 ```python
-# Gravity accellerates at 9.8 m/s^2
+# Gravity accelerates at 9.8 m/s^2
 GRAVITY = 9.8
 
 print(f"Gravity is {GRAVITY} m/s^2 at sea level on earth")
 
 # Another constant example
+DOZEN = 12
+
+# Yet another constant example
 MAX_LENGTH = 79
 ```
 
 So why use constants?
 
-1. Using constants makes code more **readable**.  Named values helps communicate their meaning.
+1. Using constants makes code more **readable**.  Named values help communicate their meaning.
 1. It helps avoid typos because it would be easy to accidentally type 9.7 at some point in your program and never catch the bug.
-1. If the constant value needs to be changed later it's nice to have 1 line which assigns the value in the entire program.
+1. If the constant value needs to be changed in the future it's nice to have 1 line which assigns the value in the entire program.
 
-As we build our Snowman program, we will use the following constants:
+In each of the lessons in Practice with Python we will be building a part of a project called Snowman. We will use the following constants:
 
 1.  **SNOWMAN_MIN_WORD_LENGTH** - The shortest length of word we will allow.
 1.  **SNOWMAN_MAX_WORD_LENGTH** - The longest length of word we will allow.
@@ -157,60 +175,52 @@ As for getting data _in_, we're going to introduce a new function that will get 
 The `input` function takes a string that prints to the terminal, and then waits for the user to type on the rest of the _line_. Once the user hits the return key, the function receives that value.
 
 ```python
->>> input("What is your favorite programming language? ")
+input("What is your favorite programming language? ")
+```
+```python
 What is your favorite programming language? Python!
-'Python!'
 ```
 
 Notice the space after the question mark.  If you forget it, there will be no space before the user starts typing:
 
 ```python
->>> input("What is your favorite programming language?")
-What is your favorite programming language?Python!
-'Python!'
+input("What is your favorite programming language?")
 ```
-
+```python
+What is your favorite programming language?Python!
+```
 This still works; it just looks a little awkward.
 
-This isn't so useful on its own, but we can now store the result of calling `input` in a variable for later use:
+This isn't so useful on its own, but we can now store the result of calling `input` in a variable for later use. Add the code below to `variables_practice.py` and run the code to practice using the `input` function.
 
 ```python
->>> language = input("What is your favorite \
->>> programming language? ")
-What is your favorite programming language? Python!
->>>
->>> print(f"{language} is my favorite too!")
-Python is my favorite too!
+# The user's input will be stored in the variable called language
+language = input("What is your favorite programming language? ")
+
+print(f"{language} is my favorite too!")
 ```
 
-<!-- available callout types: info, success, warning, danger, secondary  -->
-### !callout-info
+## Follow-up Exercise
 
-## The backslash above
+We've already practiced using the input function in the previous lesson when we asked a user to input their name and age. Now we'll write a short program that asks users for words to fill in some blanks to complete a story.
 
-Notice we put "\" at the end of `input("What is your favorite programming language? ")`, because the line is too long.  Otherwise the line is too long to fit in learn.  Inside a string, if you put a \ at the end of a line the string will continue on the next line.  It's a way to make things fit.
+Create a new file called `story.py` in the precourse directory. Your program will print out a completed story with user input. Ask the user for a holiday, a noun, and a place. 
 
-### !end-callout
+The completed story will have user input in place of the variables: `"I can't believe it's already <holiday>! I can't wait to put on my <noun> and visit every <place> in my neighborhood."`
 
-
-## Followup Exercise
-
-Remember the `hello.py` file we created? Let's modify it so that it will input your name and age in variables, and then print out:  "Hello, `<NAME>`, you are `<AGE>` years old!".
-
-For example, if we entered `"Han"` for the name and `"14"` for the age, it would print out:
-`"Hello, Han, you are 14 years old!"`
+For example, if we entered `"Thanksgiving"` for the holiday, `"cat"` for the noun, and `"fire station"` for the place it would print out: `"I can't believe it's already Thanksgiving! I can't wait to put on my cat and visit every fire station in my neighborhood."`
 
 <details>
 <summary>Check out our solution!</summary>
 
 ```python
-name = input("What is your name? ")
-age = input("What is your age? ")
+holiday = input("Enter a holiday: ")
+noun = input("Enter a noun: ")
+place = input("Enter a place: ")
 
-print(f"Hello, {name}, you are {age} years old!")
+print(f"I can't believe it's already {holiday}! I can't wait to put on my {noun} and visit every {place} in my neighborhood.")
 ```
 </details>
-
 
 ## Check for Understanding
 
