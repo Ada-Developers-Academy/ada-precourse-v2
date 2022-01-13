@@ -2,7 +2,7 @@
 
 ## MacOS 
 
-An operating system is a type of software that provides the behind-the-scenes operations that allow humans to interact with computers. Some of these operations include:
+An operating system provides the behind-the-scenes operations that allow humans to interact with computers. Some of these operations include:
 - allocating memory and storage to run scheduled tasks
 - enforcing security mechanisms and regulating the behavior of processes
 - providing common services and functionalities for software applications
