@@ -69,7 +69,7 @@ There are a few shortcut commands that are helpful to know.
 | Command                                  | Description                    |
 | :--------------------------------------- | :----------------------------- |
 | `python`   or `python3`                  | start interactive Python session |
-| `exit()` or <kbd>ctrl</kbd> + <kbd>d</kbd> | exit an `irb` session          |
+| `exit()` or <kbd>ctrl</kbd> + <kbd>d</kbd> | exit Python session          |
 | <kbd>ctrl</kbd> + <kbd>c</kbd>           | interrupt/stop a command       |
 
 ### Running Python Files
