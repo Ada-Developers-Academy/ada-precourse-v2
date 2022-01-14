@@ -53,7 +53,7 @@ Errors in Python often have two parts - a stack trace and an error message. The 
 
 | Vocab       | Definition                                                                                                                                            | Synonyms  | How to Use in a Sentence                                                                                                                                                           |
 | ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- | --------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Stack Trace | A report of the functions that were called certain point in time during the execution of a program. | Traceback | "When debugging that error, we should check the stack trace to see what line of code caused it," "The stack trace is very long, but we can see what test called this function here." |
+| Stack Trace | A report of the functions that were called at a certain point in time during the execution of a program. | Traceback | "When debugging that error, we should check the stack trace to see what line of code caused it," "The stack trace is very long, but we can see what test called this function here." |
 
 Stack traces tell us where the error happened. They are useful for showing us what chain of events led up to the error, and what lines of code are responsible. This is what the stack trace is for the error from above:
 
