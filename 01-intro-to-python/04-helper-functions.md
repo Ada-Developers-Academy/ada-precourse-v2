@@ -62,9 +62,11 @@ def display_order_summary(item_prices):
 
 ### !callout-info
 
-## Assigning Variables to Function Calls
+## Capturing the Return Value of Function Calls in Variables
 
-Let's recall our learnings from the `Return keyword` section of the previous Functions. If a function has a return value, we can assign a variable to its function call and expect a value. Let's breakdown the `sub_total` variable assignment in `display_order_summary`:
+Let's recall our learnings from the `Return keyword` section of the previous Functions. If a function has a return value, we often want to capture that value and use it in our code.  The way to do this is to call the function with a variable assignment.  The syntax for this is _variable = function call_.  We set the variable that we want to store the return value of the function equal to the function call.  When this syntax is executed, first the function will run, and then the return value of the function will be stored in the variable.
+
+Let's breakdown the `sub_total` variable assignment in `display_order_summary`:
 
     - `sub_total` is assigned to the function call, `calculate_subtotal`.
     - `calculate_subtotal` runs and returns a value of 40 when finished.
@@ -251,12 +253,12 @@ Functions add flexibility and structure to our code, and make code easier to mai
 
 ##### !question
 
-Best Burger needs help creating `order_summary` for their drive-thru display. Best Burger menu include: $5.25 burger, $2.50 fries, and a $4.25 milkshake. Create the helper function `calculate_total` that takes in a list of items and calculates the total to be used in `order_summary`.
+Ada Bubble Tea needs help creating `drink_summary` for their online order display. Each drink has a four options: tea flavor, milk, and boba.  The tea flavor options are oolong ($4.50), jasmine ($4.50) and silver needle ($5.00).  The milk options are none ($0.00), dairy ($0.50), oat ($0.75) and soy ($0.50).  The boba options are yes ($0.50) and no ($0.00). Create the helper function `calculate_total` that takes in a data structure that represents the order and calculates the total to be used in `drink_summary`.
 
-|example input `items`| example output (return value) |
+|example input `drink_data`| example output (return value) |
 |--|--|
-|`['fries', 'fries', 'burger']`| `10.25`|
-|`['fries', 'milkshake', 'burger']`| `12`|
+|`{'flavor':'oolong', 'milk':'none', 'boba':'yes'}`| `5.00`|
+|`{'flavor':'silver needle', 'milk':'oat', 'boba':'yes'}`| `6.25`|
 
 ##### !end-question
 
@@ -264,17 +266,25 @@ Best Burger needs help creating `order_summary` for their drive-thru display. Be
 
 ```py
 
-def calculate_total(order_items):
+def calculate_total(drink_data):
     pass 
 
-def order_summary(order_items):
-    total = calculate_total(order_items)
+def drink_summary(drink_data):
+    total = calculate_total(drink_data)
+
+    print("*** Drink Summary ***")
+    drink_display = drink_data['flavor'].capitalize()
+    if drink_data['milk'] != 'none' or drink_data['boba'] != 'no':
+        drink_display = drink_display + " with "
+    if drink_data['milk'] != 'none':
+        drink_display = drink_display + drink_data['milk'] + ' milk'
+    if drink_data['milk'] != 'none' and drink_data['boba'] != 'no':
+        drink_display = drink_display + " and "
+    if drink_data['boba'] != 'no':
+        drink_display = drink_display + 'boba'
     
-    print("*** Welcome to Best Burger ***")
-    print("Order Items: ")
-    for item in order_items:
-        print(item)
-    print(f"Total: {total}")
+    print(drink_display)
+    print(f"Drink total: {total}")
 ```
 
 ##### !end-placeholder
@@ -286,91 +296,124 @@ import unittest
 from main import calculate_total
 
 class TestPython1(unittest.TestCase):
-    def test_total_of_different_items(self):
+    def test_total_of_least_expensive_drink(self):
         # Arrange
-        order = ["burger", "fries", "milkshake"]
+        drink = {'flavor':'oolong', 'milk':'none', 'boba':'no'}
 
         # Act/Assert
-        self.assertEqual(calculate_total(order), 12)
+        self.assertEqual(calculate_total(drink), 4.5)
 
-    def test_order_of_same_item(self):
+    def test_total_of_most_expensive_drink(self):
         # Arrange
-        order = ["fries", "fries", "fries"]
+        drink = {'flavor':'silver needle', 'milk':'oat', 'boba':'yes'}
         
         # Act/Arrange
-        self.assertEqual(calculate_total(order), 7.5)
+        self.assertEqual(calculate_total(drink), 6.25)
 
-    def test_no_items(self):
-        # Arrange
-        order = []
-
-        # Act/Arrange
-        self.assertEqual(calculate_total(order), 0)
 ```
 
 ##### !end-tests
 ### !end-challenge
 
+<!--BEGIN CHALLENGE-->
+
 ### !challenge
 
 * type: code-snippet
 * language: python3.6
-* id: 366207b9-4c9e-4843-9a83-60f02b121867
-* title: Net Income 
-* points: 1
-* topics: python, functions
+* id: b0746ef4-8fc2-4187-8c44-eb7a5c5adf58
+* title: Number Converter
 
 ##### !question
+The Ada Web Design company often has clients send them color changes for websites.  Sometimes the clients send these colors in RGB format, but websites use hexadecimal color codes to represent colors.  The RGB format describes a color by setting red, green and blue values in the range of 0-255.  Hex color codes also include red, green and blue values, but the values are converted to base-16, aka hexadecimal.
 
-FastBooks needs help developing an income statement generator. Given a list of expense costs, create the function `calculate_expenses`. This function will be used in `calculate_net_income`.  
+Write a function that converts an RGB color dictionary to to a hex color string.  This function should use the helper function `number_to_hex_string`, which takes a number and returns the hexadecimal representation of that number in a two digit string format.
 
-|example input `expense costs`| example output (return value) |
+* The RGB color dictionary will have a red, green and blue value, each in the range of 0-255.  The dictionary will be in the format `{'r':255, 'g':255, 'b':255}`
+* Hex color codes are in the format _#RRGGBB_, where RR is the red value in hexadecimal, GG is the green value in hexadecimal and BB is the blue value in hexadecimal.  
+
+|example input `rgb`| example output (return value) |
 |--|--|
-|`[10, 20, 30]`| `60`|
-
+|`{'r':255, 'g':255, 'b':255}`| `'#FFFFFF'`|
+|`{'r':100, 'g':50, 'b':5}`| `'#643205'`|
+|`{'r':0, 'g':0, 'b':0}`| `'#000000'`|
 
 ##### !end-question
 
 ##### !placeholder
 
-```py
+```python
 
-def calculate_expenses(expense_costs):
-    pass 
+def color_converter(rgb):
+    pass
 
-def calculate_net_income(revenue, expense_costs):
-    expenses = calculate_expenses(expense_costs)
-    net_income = revenue - expenses
-    return net_income
+def number_to_hex_string(num):
+    prefix = '0x'
+    hex_string = hex(num)
+    if hex_string.startswith(prefix):
+        hex_string = hex_string[len(prefix):]
+    if len(hex_string) < 2:
+        hex_string = '0' + hex_string
+    return hex_string.upper()
 
 ```
 
 ##### !end-placeholder
 
 ##### !tests
+```python
 
-```py
 import unittest
-from main import calculate_expenses
+from main import color_converter, number_to_hex_string
+
 
 class TestPython1(unittest.TestCase):
-    def test_total_of_different_costs(self):
-        # Arrange
-        expenses = [100, 2000, 200]
+    def test_red(self):
+        #Arrange
+        rgb = {'r':255, 'g':0, 'b':0}
 
-        # Act/Assert
-        self.assertEqual(calculate_expenses(expenses), 2300)
+        #Act/Assert
+        self.assertEqual(color_converter(rgb), '#FF0000')
 
-    def test_no_expenses(self):
-        # Arrange
-        expenses = []
+    def test_blue(self):
+        #Arrange
+        rgb = {'r':0, 'g':0, 'b':255}
 
-        # Act/Arrange
-        self.assertEqual(calculate_expenses(expenses), 0)
+        #Act/Assert
+        self.assertEqual(color_converter(rgb), '#0000FF')
+
+    def test_purple(self):
+        #Arrange
+        rgb = {'r':106, 'g':13, 'b':173}
+
+        #Act/Assert
+        self.assertEqual(color_converter(rgb), '#6A0DAD')
+    
+    def test_grey(self):
+         #Arrange
+        rgb = {'r':75, 'g':75, 'b':75}
+
+        #Act/Assert
+        self.assertEqual(color_converter(rgb), '#4B4B4B')
+       
 ```
-
 ##### !end-tests
+
+<!--optional-->
+##### !hint
+
+##### !end-hint
+
+<!--optional, checkpoints only-->
+##### !rubric
+
+##### !end-rubric
+
+<!--optional-->
+##### !explanation
+
+##### !end-explanation
+
 ### !end-challenge
 
-
-
+<!--END CHALLENGE-->
