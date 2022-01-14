@@ -73,10 +73,12 @@ Let's breakdown the `sub_total` variable assignment in `display_order_summary`:
     -  40 is now assigned to `subtotal`. 
 
     ```Python
+
     # before executing
     sub_total = calculate_subtotal(item_prices)
     # after executing 
     sub_total = 40 
+
     ```
 ### !end-callout
 
@@ -253,12 +255,12 @@ Functions add flexibility and structure to our code, and make code easier to mai
 
 ##### !question
 
-Ada Bubble Tea needs help creating `drink_summary` for their online order display. Each drink has a four options: tea flavor, milk, and boba.  The tea flavor options are oolong ($4.50), jasmine ($4.50) and silver needle ($5.00).  The milk options are none ($0.00), dairy ($0.50), oat ($0.75) and soy ($0.50).  The boba options are yes ($0.50) and no ($0.00). Create the helper function `calculate_total` that takes in a data structure that represents the order and calculates the total to be used in `drink_summary`.
+Ada Bubble Tea needs help creating `drink_summary` for their online order display. Each drink has three options: tea flavor, milk, and boba.  The tea flavor options are oolong ($4.50), jasmine ($4.50) and silver needle ($5.00).  The milk options are none ($0.00), dairy ($0.50), oat ($0.75) and soy ($0.50).  The boba options are yes ($0.50) and no ($0.00). Create the helper function `calculate_total` that takes in a data structure that represents the order and calculates the total to be used in `drink_summary`.
 
-|example input `drink_data`| example output (return value) |
+|example input `flavor`, `milk`, `boba`| example output (return value) |
 |--|--|
-|`{'flavor':'oolong', 'milk':'none', 'boba':'yes'}`| `5.00`|
-|`{'flavor':'silver needle', 'milk':'oat', 'boba':'yes'}`| `6.25`|
+|`'oolong', 'none', 'yes'`| `5.00`|
+|`'silver needle', 'oat', 'yes'}`| `6.25`|
 
 ##### !end-question
 
@@ -266,25 +268,25 @@ Ada Bubble Tea needs help creating `drink_summary` for their online order displa
 
 ```py
 
-def calculate_total(drink_data):
+def calculate_total(flavor, milk, boba):
     pass 
 
-def drink_summary(drink_data):
-    total = calculate_total(drink_data)
+def drink_summary(flavor, milk, boba):
+    total = calculate_total(flavor, milk, boba)
 
-    print("*** Drink Summary ***")
-    drink_display = drink_data['flavor'].capitalize()
-    if drink_data['milk'] != 'none' or drink_data['boba'] != 'no':
-        drink_display = drink_display + " with "
-    if drink_data['milk'] != 'none':
-        drink_display = drink_display + drink_data['milk'] + ' milk'
-    if drink_data['milk'] != 'none' and drink_data['boba'] != 'no':
-        drink_display = drink_display + " and "
-    if drink_data['boba'] != 'no':
+    print('*** Drink Summary ***')
+    drink_display = flavor.capitalize()
+    if milk != 'none' or boba != 'no':
+        drink_display = drink_display + ' with '
+    if milk != 'none':
+        drink_display = drink_display + milk + ' milk'
+    if milk != 'none' and boba != 'no':
+        drink_display = drink_display + ' and '
+    if boba != 'no':
         drink_display = drink_display + 'boba'
     
     print(drink_display)
-    print(f"Drink total: {total}")
+    print(f'Drink total: {total}')
 ```
 
 ##### !end-placeholder
@@ -298,17 +300,21 @@ from main import calculate_total
 class TestPython1(unittest.TestCase):
     def test_total_of_least_expensive_drink(self):
         # Arrange
-        drink = {'flavor':'oolong', 'milk':'none', 'boba':'no'}
+        flavor='oolong'
+        milk='none'
+        boba='no'
 
         # Act/Assert
-        self.assertEqual(calculate_total(drink), 4.5)
+        self.assertEqual(calculate_total(flavor, milk, boba), 4.5)
 
     def test_total_of_most_expensive_drink(self):
         # Arrange
-        drink = {'flavor':'silver needle', 'milk':'oat', 'boba':'yes'}
+        flavor='silver needle'
+        milk='oat'
+        boba='yes'
         
         # Act/Arrange
-        self.assertEqual(calculate_total(drink), 6.25)
+        self.assertEqual(calculate_total(flavor, milk, boba), 6.25)
 
 ```
 
@@ -327,16 +333,16 @@ class TestPython1(unittest.TestCase):
 ##### !question
 The Ada Web Design company often has clients send them color changes for websites.  Sometimes the clients send these colors in RGB format, but websites use hexadecimal color codes to represent colors.  The RGB format describes a color by setting red, green and blue values in the range of 0-255.  Hex color codes also include red, green and blue values, but the values are converted to base-16, aka hexadecimal.
 
-Write a function that converts an RGB color dictionary to to a hex color string.  This function should use the helper function `number_to_hex_string`, which takes a number and returns the hexadecimal representation of that number in a two digit string format.
+Write a function that converts an RGB color to to a hex color string.  This function should use the helper function `number_to_hex_string`, which takes a number and returns the hexadecimal representation of that number in a two digit string format.
 
-* The RGB color dictionary will have a red, green and blue value, each in the range of 0-255.  The dictionary will be in the format `{'r':255, 'g':255, 'b':255}`
+* The RGB color will be passed into the function as red, green and blue values, each in the range of 0-255.  
 * Hex color codes are in the format _#RRGGBB_, where RR is the red value in hexadecimal, GG is the green value in hexadecimal and BB is the blue value in hexadecimal.  
 
-|example input `rgb`| example output (return value) |
+|example input `red`, `green`, `blue`| example output (return value) |
 |--|--|
-|`{'r':255, 'g':255, 'b':255}`| `'#FFFFFF'`|
-|`{'r':100, 'g':50, 'b':5}`| `'#643205'`|
-|`{'r':0, 'g':0, 'b':0}`| `'#000000'`|
+|`255, 255, 255`| `'#FFFFFF'`|
+|`100, 50, 5`| `'#643205'`|
+|`0, 0, 0`| `'#000000'`|
 
 ##### !end-question
 
@@ -344,7 +350,7 @@ Write a function that converts an RGB color dictionary to to a hex color string.
 
 ```python
 
-def color_converter(rgb):
+def color_converter(red, green, blue):
     pass
 
 def number_to_hex_string(num):
@@ -370,49 +376,42 @@ from main import color_converter, number_to_hex_string
 class TestPython1(unittest.TestCase):
     def test_red(self):
         #Arrange
-        rgb = {'r':255, 'g':0, 'b':0}
-
+        red = 255
+        green = 0
+        blue = 0
         #Act/Assert
-        self.assertEqual(color_converter(rgb), '#FF0000')
+        self.assertEqual(color_converter(red, green, blue), '#FF0000')
 
     def test_blue(self):
         #Arrange
-        rgb = {'r':0, 'g':0, 'b':255}
+        red = 0
+        green = 0
+        blue = 255
 
         #Act/Assert
-        self.assertEqual(color_converter(rgb), '#0000FF')
+        self.assertEqual(color_converter(red, green, blue), '#0000FF')
 
     def test_purple(self):
         #Arrange
-        rgb = {'r':106, 'g':13, 'b':173}
+        red = 106
+        green = 13
+        blue = 173
 
         #Act/Assert
-        self.assertEqual(color_converter(rgb), '#6A0DAD')
+        self.assertEqual(color_converter(red, green, blue), '#6A0DAD')
     
     def test_grey(self):
          #Arrange
-        rgb = {'r':75, 'g':75, 'b':75}
+        red = 75
+        green = 75
+        blue = 75
 
         #Act/Assert
-        self.assertEqual(color_converter(rgb), '#4B4B4B')
+        self.assertEqual(color_converter(red, green, blue), '#4B4B4B')
        
 ```
 ##### !end-tests
 
-<!--optional-->
-##### !hint
-
-##### !end-hint
-
-<!--optional, checkpoints only-->
-##### !rubric
-
-##### !end-rubric
-
-<!--optional-->
-##### !explanation
-
-##### !end-explanation
 
 ### !end-challenge
 

@@ -478,7 +478,7 @@ You have built a fully functional command line game!  If this is the first time 
 
 In programming many problems that look different are at the core the same problem, just with different details.  We can use this to our advantage in our work!  If we identify that a problem is similar to one we have already solved, we can take the solution we've already written and modify it for the new problem.
 
-We're going to switch now to working on Snowman.  Start by opening up `snowman.py` in VSCode.  First, let's take a look at the current version of our user input function `get_letter_from_user`:
+We're going to switch now to working on Snowman.  Start by opening up `snowman.py` in VSCode.  First, let's take a look at the current version of our user input helper function `get_letter_from_user`:
 
 ```python
 
@@ -533,6 +533,7 @@ Imagine we are playing a game of Snowman with a group of children.  We would pro
 1.  Add a loop to the main snowman similar to the loop in `guess_the_word`.  
 1.  Add two counters `correct_guesses` and `wrong_guesses`.
 1.  Adjust the loop to allow the user to continue to guess until they reach `SNOWMAN_WRONG_GUESSES` wrong guesses.
+1.  Use the helper function `get_letter_from_user` to get user input in the loop.
 1.  Track the number of correct and incorrect guesses, adding one to the proper counter when the user makes a guess.
 
 When finished print out, "You made X correct and Y incorrect guesses" where X and Y are the number of correct and incorrect guesses.
@@ -681,7 +682,7 @@ def snowman():
     correct_guesses = 0
     wrong_guesses = 0
     while wrong_guesses < SNOWMAN_WRONG_GUESSES and correct_guesses < len(SNOWMAN_WORD):
-        guessed_letter = input('Please enter a letter')
+        guessed_letter = get_letter_from_user()
         if guessed_letter in SNOWMAN_WORD:
             correct_guesses += 1
         else:
@@ -710,10 +711,10 @@ SNOWMAN_7 = '-----------'
 
 ```
 
-Our end goal is to have a function that we can pass the current `wrong_count` value to and it will draw the appropriate amount of the snowman.  Let's start by writing a function which will draw a specific element of the snowman based on a passed value.  For example, if we pass the function 7, we want the function to draw SNOWMAN_7.  This will seem slightly contrived, but it is just a starting place.  
+Our end goal is to have a helper function that we can pass the current `wrong_count` value to and it will draw the appropriate amount of the snowman.  Let's start by writing a function which will draw a specific element of the snowman based on a passed value.  For example, if we pass the function 7, we want the function to draw SNOWMAN_7.  This will seem slightly contrived, but it is just a starting place.  
 
 <details>
-<summary>Once you've written the function, compare what you have to our version.</summary>
+<summary>Once you've written the helper function, compare what you have to our version.</summary>
 
 ```python
 
@@ -820,4 +821,4 @@ Now we're going to add a loop inside this function to make it draw not just one 
 
 ## Summary
 
-Loops are incredibly powerful.  By adding a few loops we have transformed our Guess the Number code into a fully functional game!  We have also added core functionality to Snowman.  In the next lesson we will use the `list` data structure to add functinality to our Snowman game. 
+Loops are incredibly powerful.  By adding a few loops we have transformed our Guess the Number code into a fully functional game!  We have also added core functionality to Snowman.  In the next lesson we will use the `list` data structure to add functionality to our Snowman game. 
