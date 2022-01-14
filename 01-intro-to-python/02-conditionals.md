@@ -143,7 +143,7 @@ Now that we have our input as an integer, we can compare it to the random number
 
 In fact, we want to add a *fourth* option, which tells the user that the number they picked was outside the range of allowed numbers!
 
-We can do this by nesting `if...else` statements inside of eachother:
+We can do this by nesting `if...else` statements inside of each other:
 
 ```python
 import random
