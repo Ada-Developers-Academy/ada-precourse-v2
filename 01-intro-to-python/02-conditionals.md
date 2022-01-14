@@ -91,7 +91,7 @@ user_input_string = input("Guess the number: ")
 
 This is where things get tricky, though!  In order to compare the user input to the random number generated, we need to convert it into a number as well.  We can use the `int` function for that, but if you pass it a badly formatted string, it will cause an error.
 
-Let's try this out, what happens when you add the following line to a python file and run it?
+Let's try this out, what happens when you add the following line to a new python file and run it?
 
 ```python
 int("four")
