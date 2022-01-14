@@ -7,7 +7,7 @@ An operating system provides the behind-the-scenes operations that allow humans 
 - enforcing security and otherwise regulating how programs run
 - providing common services and functionalities for software applications
 
-The [operating system](https://en.wikipedia.org/wiki/Operating_system) we'll be using at Ada is **MacOS**, a unix-based operating system owned and distributed by Apple Inc. 
+The [operating system](https://en.wikipedia.org/wiki/Operating_system) we'll be using at Ada is **MacOS**, a Unix-based operating system owned and distributed by Apple Inc. 
 
 ### !callout-info
 
