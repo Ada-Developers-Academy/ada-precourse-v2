@@ -25,7 +25,6 @@ In this section we will be building on the code that you wrote in the previous l
 
 
 ```python
-
 # while loop
 test = 0
 while test < 10:
@@ -71,7 +70,6 @@ while flag_var:
 # The value of num is 6
 # the value of num is 9
 # the value of num is 12
-
 ```
 
 ## Practice Problems
@@ -462,11 +460,10 @@ We want to run the loop at most the max guesses number of times, but if the user
         # inside the loop, so there's no need to do anything here in that case.
         if waiting_for_correct_guess:
             print(f"You ran out of guesses!  The correct answer \
-was {random_number}.")
-
+            was {random_number}.")
     ```
 
-    Check the last assumption that we made that we only need to check `waiting_for_correct_guess` to give the user the "You ran out of guesses" feedback.  It seems like we're checking the wrong variable!  In cases like this it can be useful to "be the computer" and run through the code manually.  Write down the state of the variables at each pass through the loop and make sure that the loop is doing what we think it is doing.  Does the waiting_for_correct_guess variable give us the information that we think it does in every situation?  Walk through the code with various possibilities (we call these test cases, a possible list is first, the user guesses correctly, second, the user doesn't guess and runs out of guesses, and last, the user guesses correctly on the last try) and confirm that the code works.
+    Check the last assumption that we made – that we only need to check `waiting_for_correct_guess` to give the user the "You ran out of guesses" feedback.  It seems like we're checking the wrong variable!  In cases like this it can be useful to "be the computer" and run through the code manually.  Write down the state of the variables at each pass through the loop and make sure that the loop is doing what we think it is doing.  Does the waiting_for_correct_guess variable give us the information that we think it does in every situation?  Walk through the code with various possibilities (we call these test cases, a possible list is first, the user guesses correctly, second, the user doesn't guess and runs out of guesses, and last, the user guesses correctly on the last try) and confirm that the code works.
 
 ### Guess the Number is Done..?
 
