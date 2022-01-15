@@ -86,7 +86,7 @@ In the terminal, let's make a new directory and change our current directory to 
 
 First let's create a new directory using `mkdir` followed by the directory name `first_folder`. 
     - Ex: `mkdir first_folder`
-Then we can change the current directory using `cd` followed by the directory name. Rather than type the entire name of the directory, we can press the **tab** key to have __autocomplete__ the name for us!  
+Then we can change the current directory using `cd` followed by the directory name. Rather than type the entire name of the directory, we can enter the first few letters, and then press the **tab** key to have the terminal __autocomplete__ the name for us!  
     - Ex: `cd first` then press the **tab** key to see the terminal filled in the rest of the directory name for us! Autocomplete is a handy feature that makes navigating the command line and code easier for us. 
 ### !end-callout
 
