@@ -115,7 +115,7 @@ $ python3 example_file.py
 ```
 
 ### Additional Resources
-- https://www.davidbaumgold.com/tutorials/command-line/
+- [Getting to Know the Command Line](https://www.davidbaumgold.com/tutorials/command-line/)
 
 
 
