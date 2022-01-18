@@ -72,7 +72,7 @@ We can also add the terminal application to our dock, by right-clicking on the a
 
 ![add terminal to dock](images/add-to-dock.png)
 
-There are a variety of keyboard combinations and commands we can use when using the terminal.
+There are a variety of keyboard combinations and commands we can use when working in the terminal.
 
 We can even write programs to automate the terminal and thus the operating system, which is called **shell programming**.
 
@@ -213,12 +213,12 @@ There are a few directories that will be handy for us to know about. We don't ne
 | `/etc`                                         | Holds system configuration files. Pronounced Et-see.                                                                                                                                                                                 |
 | `/usr`                                         | Holds programs and data that any user can access, and which aren't needed during system startup. Pronounced the same as "user." Note this is different from the `/Users` directory, which is where user home directories are stored. |
 | `/usr/local/bin`                               | Holds programs (binaries) that are not part of the core system. A lot of what we install using `brew` ends up here!                                                                                                                  |
-| `/tmp`                                         | Hold temporary files typically created by currently running programs. Pronounced the same as "temp."                                                                                                                                 |
+| `/tmp`                                         | Holds temporary files typically created by currently running programs. Pronounced the same as "temp."                                                                                                                                 |
 | `/var`                                         | Holds _variable length_ (hence var) files, which is a fancy way of saying log files. Long-running programs often log information somewhere in this directory, which we can use to troubleshoot if a program starts misbehaving!      |
 
 ### The Python Repl
 
-We can enter `python` in the terminal to enter a Read-Eval-Print-Loop environment. This lets us enter individual lines of Python 3 code and see it immediately evaluated.
+We can enter `python3` in the terminal to start up a Read-Eval-Print-Loop environment. This lets us enter individual lines of Python 3 code and see it immediately evaluated.
 
 There are a few shortcut commands that are helpful to know.
 
