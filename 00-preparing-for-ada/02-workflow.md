@@ -1,39 +1,38 @@
 # Programming Workflow
 
-## MacOS 
+## MacOS
 
 An operating system provides the behind-the-scenes operations that allow humans to interact with computers. Some of these operations include:
+
 - allocating system resources
 - enforcing security and otherwise regulating how programs run
 - providing common services and functionalities for software applications
 
-The [operating system](https://en.wikipedia.org/wiki/Operating_system) we'll be using at Ada is **MacOS**, a Unix-based operating system owned and distributed by Apple Inc. 
+The [operating system](https://en.wikipedia.org/wiki/Operating_system) we'll be using at Ada is **MacOS**, a Unix-based operating system owned and distributed by Apple Inc.
 
 ### !callout-info
 
 ## Updating Software
 
-We'll find that our Macs will need to update the operating system periodically to keep up with security and new features. To check our machine's MacOS version, we can go to the top left corner of our screen and click  > About This Mac. 
+We'll find that our Macs will need to update the operating system periodically to keep up with security and new features. To check our machine's MacOS version, we can go to the top left corner of our screen and click  > About This Mac.
 
 <br>
 
 Generally, it's a good idea to update our Mac's software to the latest version by going to System Preferences > Software Update.
 
-
 ### !end-callout
-
 
 ## MacOS Screen Setup
 
 <iframe src="https://adaacademy.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=209606a9-85a4-4945-b34e-acb5001d2a0e&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&start=0&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 
-It's very helpful to split our screen when writing code with one half of the screen consisting of our editor and the other the terminal or browser.  This way we can go back and forth between the editor and terminal with minimal disruption. 
+It's very helpful to split our screen when writing code with one half of the screen consisting of our editor and the other the terminal or browser. This way we can go back and forth between the editor and terminal with minimal disruption.
 
 There are a number of tools available to help us split our screen including:
 
-* [MacOS Split Desktops](https://www.digitaltrends.com/computing/how-to-use-split-view-on-a-mac/)
-* Install [Rectangle](https://rectangleapp.com/) - Free
-* Install [Moom App](https://manytricks.com/moom/) - $10
+- [MacOS Split Desktops](https://www.digitaltrends.com/computing/how-to-use-split-view-on-a-mac/)
+- Install [Rectangle](https://rectangleapp.com/) - Free
+- Install [Moom App](https://manytricks.com/moom/) - $10
 
 ## Customizing the Mouse
 
@@ -63,37 +62,37 @@ In the preferences search (top-right of the System Preferences window), enter `d
 
 <iframe src="https://adaacademy.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=2cdaf784-ea88-4e27-872f-abd6002f4863&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&start=0&interactivity=all" width=720 height=405 style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 
-As web developers we regularly use the terminal to run, edit, test and debug our applications.  As such it's important to get familiar with using the MacOS terminal. 
+As web developers we regularly use the terminal to run, edit, test and debug our applications. As such it's important to get familiar with using the MacOS terminal.
 
-To launch terminal hit <kbd>cmd</kbd> + <kbd>Space</kbd> and then type terminal.  
+To launch terminal hit <kbd>cmd</kbd> + <kbd>Space</kbd> and then type terminal.
 
 ![launch terminal](images/launch-terminal.png)
 
-We can also add the terminal application to our dock, by right-clicking on the application. 
+We can also add the terminal application to our dock, by right-clicking on the application.
 
 ![add terminal to dock](images/add-to-dock.png)
 
 There are a variety of keyboard combinations and commands we can use when using the terminal.
 
-We can even write programs to automate the terminal and thus the operating system, which is called **shell programming**.  
+We can even write programs to automate the terminal and thus the operating system, which is called **shell programming**.
 
 ### The Mac Keyboard
 
-Macs have a number of special keys which are a little different from Windows.  You can read more about it on [keyshorts.com](https://keyshorts.com/blogs/blog/41999105-the-ultimate-guide-to-macbook-keyboard).  The control, alt/option and command keys are used for a variety of shortcuts in the terminal.
+Macs have a number of special keys which are a little different from Windows. You can read more about it on [keyshorts.com](https://keyshorts.com/blogs/blog/41999105-the-ultimate-guide-to-macbook-keyboard). The control, alt/option and command keys are used for a variety of shortcuts in the terminal.
 
 ![Mac Keyboard Diagram](images/keyboard.png)
 
 #### Terminal Shortcuts
 
-| <div style="width:200px;">Command</div>                             | Description                                                                                         |
-| :---------------------------------- | :-------------------------------------------------------------------------------------------------- |
-| <kbd>cmd</kbd> + <kbd>k</kbd>       | clear your screen                                                                                   |
-| <kbd>&#8593;</kbd>                  | view the previous command                                                                           |
-| <kbd>ctrl</kbd> + <kbd>a</kbd>      | go to beginning of line                                                                             |
-| <kbd>ctrl</kbd> + <kbd>e</kbd>      | go to end of line                                                                                   |
-| <kbd>alt</kbd> + <kbd>&#8594;</kbd> | move to the right, one word                                                                         |
-| <kbd>alt</kbd> + <kbd>&#8592;</kbd> | move to the left, one word                                                                          |
-| <kbd>ctrl</kbd> + <kbd>c</kbd>      | interrupt/stop a command                                                                            |
+| <div style="width:200px;">Command</div> | Description                 |
+| :-------------------------------------- | :-------------------------- |
+| <kbd>cmd</kbd> + <kbd>k</kbd>           | clear your screen           |
+| <kbd>&#8593;</kbd>                      | view the previous command   |
+| <kbd>ctrl</kbd> + <kbd>a</kbd>          | go to beginning of line     |
+| <kbd>ctrl</kbd> + <kbd>e</kbd>          | go to end of line           |
+| <kbd>alt</kbd> + <kbd>&#8594;</kbd>     | move to the right, one word |
+| <kbd>alt</kbd> + <kbd>&#8592;</kbd>     | move to the left, one word  |
+| <kbd>ctrl</kbd> + <kbd>c</kbd>          | interrupt/stop a command    |
 
 #### Useful Terminal Commands
 
@@ -111,20 +110,20 @@ Finally, some commands need a target or argument, indicated by `[target]`. The t
 
 Try to identify the commands, options, and targets while reading the examples below.
 
-| <div style="width:200px;">Command</div>                             | Description                                                                                         |
-| :---------------------------------- | :-------------------------------------------------------------------------------------------------- |
-| `touch <filename>`                  | creates a new file named filename                                                                   |
-| `pwd`                               | <b>p</b>rints the <b>w</b>orking <b>d</b>irectory (displays the full path of the current directory) |
-| `cd`                                | <b>c</b>hange <b>d</b>irectory                                                                     |
-| `cd ..`                             | go back a directory                                                                                 |
-| `cd ~`                              | choose home directory                                                                               |
-| `ls`                                | list the items in the directory                                                                     |
-| `ls -a`                             | list the items in the directory, including hidden files                                             |
-| `open <filename>` | Opens the specified filename using the program MacOS considers to be the default application for that kind of file. For instance, `open myfile.txt` would open the file `myfile.txt` in the default application for text (`.txt`) files, which is usually TextEdit. |
-| `open .` | The terminal interprets  `.` as "the current directory." So this says to open the current directory using the default application for directories, which is Finder. So `open .` will open a new Finder window showing the contents of the current directory.  |
-| `mkdir <dirname>`                   | make a new directory                                                                                |
-| `rm <filename>`                     | removes the file named filename                                                                     |
-| `rm -r <dirname>`                   | removes the directory named dirname (and everything in it)                                          |
+| <div style="width:200px;">Command</div> | Description                                                                                                                                                                                                                                                         |
+| :-------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `touch <filename>`                      | creates a new file named filename                                                                                                                                                                                                                                   |
+| `pwd`                                   | <b>p</b>rints the <b>w</b>orking <b>d</b>irectory (displays the full path of the current directory)                                                                                                                                                                 |
+| `cd`                                    | <b>c</b>hange <b>d</b>irectory                                                                                                                                                                                                                                      |
+| `cd ..`                                 | go back a directory                                                                                                                                                                                                                                                 |
+| `cd ~`                                  | choose home directory                                                                                                                                                                                                                                               |
+| `ls`                                    | list the items in the directory                                                                                                                                                                                                                                     |
+| `ls -a`                                 | list the items in the directory, including hidden files                                                                                                                                                                                                             |
+| `open <filename>`                       | Opens the specified filename using the program MacOS considers to be the default application for that kind of file. For instance, `open myfile.txt` would open the file `myfile.txt` in the default application for text (`.txt`) files, which is usually TextEdit. |
+| `open .`                                | The terminal interprets `.` as "the current directory." So this says to open the current directory using the default application for directories, which is Finder. So `open .` will open a new Finder window showing the contents of the current directory.         |
+| `mkdir <dirname>`                       | make a new directory                                                                                                                                                                                                                                                |
+| `rm <filename>`                         | removes the file named filename                                                                                                                                                                                                                                     |
+| `rm -r <dirname>`                       | removes the directory named dirname (and everything in it)                                                                                                                                                                                                          |
 
 ### MacOS Files
 
@@ -164,11 +163,12 @@ The top of the directory structure is called the **root**, and is written as a f
 │          ...
 └── var
 ```
+
 </details>
 
 For instance, a file called `echo` which is located in a directory called `bin`, a directory found in the root, would be referenced with `/bin/echo`. We start the path with a forward slash representing the root directory, and separate each name in the path with the same forward slash character.
 
-What if we had a different file called `research-paper.doc` stored in the `Documents` folder belonging to a user called `ada`? In MacOS, every user has their own home directory, which shares the same name as the user, and is stored in the `/Users` directory. So by the same process, starting from the root, and listing each directory name, the full path would be referenced with `/Users/ada/Documents/research-paper.doc`. 
+What if we had a different file called `research-paper.doc` stored in the `Documents` folder belonging to a user called `ada`? In MacOS, every user has their own home directory, which shares the same name as the user, and is stored in the `/Users` directory. So by the same process, starting from the root, and listing each directory name, the full path would be referenced with `/Users/ada/Documents/research-paper.doc`.
 
 #### Absolute and Relative Paths
 
@@ -180,23 +180,23 @@ If we were currently in the home directory of the `ada` user (`/Users/ada`), the
 
 There are a few directories that will be handy for us to know about. We don't need a lot of detail at the moment, but as we work more with MacOS computers, we may need to be aware of what some of these are used for.
 
-| <div style="width:200px;">Directory Name</div> | Description|
-|-|-|
-| `/` | The root directory. This is the top of the file system. All other directories and files can be reached from here. |
-| `/Applications` | Primary location where MacOS UI-based programs (such as web browsers, VS Code, and Zoom) are installed. |
-| `/Users/<user_name>` | The home directory for a user. A user named `ada` would have their home directory at the path `/Users/ada`. We can also refer to this directory with the shortcut character `~`. |
-| `/bin` | Holds so-called "essential" system programs (called binaries, hence bin) such as `echo` (prints a message), `cat` (prints a file), `cp` (copies a file or directory), and more! |
-| `/etc` | Holds system configuration files. Pronounced Et-see. |
-| `/usr` | Holds programs and data that any user can access, and which aren't needed during system startup. Pronounced the same as "user." Note this is different from the `/Users` directory, which is where user home directories are stored. |
-| `/usr/local/bin` | Holds programs (binaries) that are not part of the core system. A lot of what we install using `brew` ends up here! |
-| `/tmp` | Hold temporary files typically created by currently running programs. Pronounced the same as "temp." |
-| `/var` | Holds _variable length_ (hence var) files, which is a fancy way of saying log files. Long-running programs often log information somewhere in this directory, which we can use to troubleshoot if a program starts misbehaving! |
+| <div style="width:200px;">Directory Name</div> | Description                                                                                                                                                                                                                          |
+| ---------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `/`                                            | The root directory. This is the top of the file system. All other directories and files can be reached from here.                                                                                                                    |
+| `/Applications`                                | Primary location where MacOS UI-based programs (such as web browsers, VS Code, and Zoom) are installed.                                                                                                                              |
+| `/Users/<user_name>`                           | The home directory for a user. A user named `ada` would have their home directory at the path `/Users/ada`. We can also refer to this directory with the shortcut character `~`.                                                     |
+| `/bin`                                         | Holds so-called "essential" system programs (called binaries, hence bin) such as `echo` (prints a message), `cat` (prints a file), `cp` (copies a file or directory), and more!                                                      |
+| `/etc`                                         | Holds system configuration files. Pronounced Et-see.                                                                                                                                                                                 |
+| `/usr`                                         | Holds programs and data that any user can access, and which aren't needed during system startup. Pronounced the same as "user." Note this is different from the `/Users` directory, which is where user home directories are stored. |
+| `/usr/local/bin`                               | Holds programs (binaries) that are not part of the core system. A lot of what we install using `brew` ends up here!                                                                                                                  |
+| `/tmp`                                         | Hold temporary files typically created by currently running programs. Pronounced the same as "temp."                                                                                                                                 |
+| `/var`                                         | Holds _variable length_ (hence var) files, which is a fancy way of saying log files. Long-running programs often log information somewhere in this directory, which we can use to troubleshoot if a program starts misbehaving!      |
 
 ### !callout-info
 
 ## Command Practice & Tips
 
-In the terminal, let's make a new directory and change our current directory to  this new one.
+In the terminal, let's make a new directory and change our current directory to this new one.
 
 <br>
 
@@ -208,31 +208,31 @@ After confirming that we're in the home directory, let's create a new directory 
 
 <br>
 
-We can change our current directory using `cd` followed by the directory name. Rather than type the entire name of the directory, we can press the <kbd>tab</kbd> key to *autocomplete* the name for us!  For example, we can type `cd first` then press the <kbd>tab</kbd> key to see the terminal fill the rest of the directory name for us! Autocomplete is a handy feature that makes navigating the command line and code easier for developers.
+We can change our current directory using `cd` followed by the directory name. Rather than type the entire name of the directory, we can press the <kbd>tab</kbd> key to _autocomplete_ the name for us! For example, we can type `cd first` then press the <kbd>tab</kbd> key to see the terminal fill the rest of the directory name for us! Autocomplete is a handy feature that makes navigating the command line and code easier for developers.
 
 <br>
 
-And just like that, we've created the directory `first_folder`. When we enter `pwd` again, we should see its path as `/Users/<your_username>/first_folder`. 
+And just like that, we've created the directory `first_folder`. When we enter `pwd` again, we should see its path as `/Users/<your_username>/first_folder`.
 
 ### !end-callout
 
 ### The Python Repl
 
-We can enter `python` in the terminal to enter a Read-Eval-Print-Loop environment.  This lets us enter individual lines of Python 3 code and see it immediately evaluated.
+We can enter `python` in the terminal to enter a Read-Eval-Print-Loop environment. This lets us enter individual lines of Python 3 code and see it immediately evaluated.
 
 There are a few shortcut commands that are helpful to know.
 
 #### Python Repl commands
 
-| Command                                  | Description                    |
-| :--------------------------------------- | :----------------------------- |
-| `python`   or `python3`                  | start interactive Python session |
-| `exit()` or <kbd>ctrl</kbd> + <kbd>d</kbd> | exit Python session          |
-| <kbd>ctrl</kbd> + <kbd>c</kbd>           | interrupt/stop a command       |
+| Command                                    | Description                      |
+| :----------------------------------------- | :------------------------------- |
+| `python` or `python3`                      | start interactive Python session |
+| `exit()` or <kbd>ctrl</kbd> + <kbd>d</kbd> | exit Python session              |
+| <kbd>ctrl</kbd> + <kbd>c</kbd>             | interrupt/stop a command         |
 
 ### Running Python Files
 
-We can run python files from the terminal by typing `python3` followed by the name of the file.  
+We can run python files from the terminal by typing `python3` followed by the name of the file.
 
 For example if we have a file named, `example_file.py`, we could run the file from the terminal with the following.
 
@@ -241,8 +241,5 @@ $ python3 example_file.py
 ```
 
 ### Additional Resources
+
 - [Getting to Know the Command Line](https://www.davidbaumgold.com/tutorials/command-line/)
-
-
-
-
