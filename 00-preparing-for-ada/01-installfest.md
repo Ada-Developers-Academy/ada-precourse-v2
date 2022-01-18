@@ -8,22 +8,23 @@ It's important to ensure that everyone has all the right tools, with compatible 
 
 Many students will have some set of these tools installed already, but be sure to read through all of these instructions to make sure they are compatible. If any of these instructions are unclear, try asking for help in Slack (after it's been installed).
 
-Note that many of these tools are under regular development, and may have newer versions than are listed here. Generally, any version the same or newer than what is mentioned in the instructions will be fine, but be sure to ask in Slack if there is any uncertainty about the correct versions of the required software. 
+Note that many of these tools are under regular development, and may have newer versions than are listed here. Generally, any version the same or newer than what is mentioned in the instructions will be fine, but be sure to ask in Slack if there is any uncertainty about the correct versions of the required software.
 
 Follow the steps below, typing any necessary commands into the Terminal application, which can be found in Finder under Applications > Utilities > Terminal.
 
 After finishing, keep an eye on Slack for anyone else asking for help, and share your experiences!
 
 <!-- available callout types: info, success, warning, danger, secondary  -->
+
 ### !callout-danger
 
 ## A Tale of 2 Macs
 
-In late 2020, Apple released a new type of Macbook using an in-house designed ARM-based chip called the M1.  Prior to this Apple had used Intel x86 CPUs.
+In late 2020, Apple released a new type of Macbook using an in-house designed ARM-based chip called the M1. Prior to this Apple had used Intel x86 CPUs.
 
 <br>
 
-Computers with M1 CPUs are great!  However... as they are still newer, not all developer tools have been updated to work with the new architecture.  For the most part M1 Macs will be fine for working at Ada, and support improves with each passing day.  However you may encounter some issues regarding libraries not tuned for the M1.  That's often the price for living on the cutting-edge!
+Computers with M1 CPUs are great! However... as they are still newer, not all developer tools have been updated to work with the new architecture. For the most part M1 Macs will be fine for working at Ada, and support improves with each passing day. However you may encounter some issues regarding libraries not tuned for the M1. That's often the price for living on the cutting-edge!
 
 <br>
 
@@ -43,7 +44,7 @@ By the end of this lesson we should be able to...
 
 ## Xcode Command-line Developer tools
 
-Apple provides a set of UNIX-style development tools on the command-line.  To install it go to terminal and enter
+Apple provides a set of UNIX-style development tools on the command-line. To install it go to terminal and enter
 
 ```
 $ xcode-select --install
@@ -96,7 +97,7 @@ It will also give some options to automatically install:
 - VS Code
 - Slack for Mac
 
-Copy the line below in its entirety (avoiding the `$`), paste it into the terminal and hit enter.  You will be prompted for your password.  Don't be alarmed if you don't see anything appear as you type. It's still getting entered.
+Copy the line below in its entirety (avoiding the `$`), paste it into the terminal and hit enter. You will be prompted for your password. Don't be alarmed if you don't see anything appear as you type. It's still getting entered.
 
 ```bash
 $ /bin/bash -c "$(curl -fsSL https://gist.githubusercontent.com/CheezItMan/e31aebdb0f686c1a194e980b24f3cea4/raw/5710e04d17a7840df3df0ea95502da275a9943cb/ada_c14_installfest.bash)"
@@ -106,7 +107,7 @@ $ /bin/bash -c "$(curl -fsSL https://gist.githubusercontent.com/CheezItMan/e31ae
 
 ### About Homebrew
 
-[Homebrew](https://brew.sh/) is a package manager for Mac.  Basically that means that Homebrew helps us install programs, update them, and prevent conflicts between applications or tools.
+[Homebrew](https://brew.sh/) is a package manager for Mac. Basically that means that Homebrew helps us install programs, update them, and prevent conflicts between applications or tools.
 
 #### Verification
 
@@ -120,11 +121,11 @@ We should see, after a bit of processing, `Your system is ready to brew.`
 
 ### About Python 3
 
-Macs come with an older version of Python, usually 2.7.x.  However we will be using a version of Python 3 and we need to set up the Mac to use it.  The long command we entered previously used homebrew to install it.
+Macs come with an older version of Python, usually 2.7.x. However we will be using a version of Python 3 and we need to set up the Mac to use it. The long command we entered previously used homebrew to install it.
 
 #### PIP - Python's Package Installer Program
 
-We also use a program called **pip** to install additional python packages which we can then use in our programs.  Pip was installed along with Python 3 during the previous command.
+We also use a program called **pip** to install additional python packages which we can then use in our programs. Pip was installed along with Python 3 during the previous command.
 
 #### Verification
 
@@ -134,17 +135,17 @@ We should also verify that `pip` is working with `pip --version`. It should be i
 
 ### VS Code
 
-* [VS Code](https://code.visualstudio.com/) is a very extensible open-source editor which supports a variety of languages including Python, and JavaScript.  
-* In VS Code, type <kbd>shift</kbd> + <kbd>cmd</kbd> + <kbd>p</kbd> and type **>shell command install code command in path**.
-  * This only needs to be done once to allow us to launch VS Code from the terminal
-* After the previous step completes, to launch VS Code from the terminal, type `code` followed by the file name or directory name
-  * For example `code .` will open the present directory as a project folder.
+- [VS Code](https://code.visualstudio.com/) is a very extensible open-source editor which supports a variety of languages including Python, and JavaScript.
+- In VS Code, type <kbd>shift</kbd> + <kbd>cmd</kbd> + <kbd>p</kbd> and type **>shell command install code command in path**.
+  - This only needs to be done once to allow us to launch VS Code from the terminal
+- After the previous step completes, to launch VS Code from the terminal, type `code` followed by the file name or directory name
+  - For example `code .` will open the present directory as a project folder.
 
 #### VS Code Extensions
 
-VS Code also supports a number of extensions which can be installed to provide new or different functionality. 
+VS Code also supports a number of extensions which can be installed to provide new or different functionality.
 
-Extensions can be searched for and installed from the "Extensions" menu on the sidebar of VS Code. 
+Extensions can be searched for and installed from the "Extensions" menu on the sidebar of VS Code.
 
 ![Extensions Sidebar Button](images/vscode-extensions.png)
 
@@ -152,12 +153,12 @@ Extensions can be searched for and installed from the "Extensions" menu on the s
 
 This extension is _required_ for doing Python development in VS Code.
 
-*  [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) - The standard Python extension to provide syntax highlighting and code suggestions.
+- [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) - The standard Python extension to provide syntax highlighting and code suggestions.
 
 After installing the Python extension:
 
-* Open the command-palette with <kbd>shift</kbd> + <kbd>cmd</kbd> + <kbd>p</kbd>  and enter `Python: select interpreter`
-* Select the Python interpreter that was reported when we checked the version earlier.
+- Open the command-palette with <kbd>shift</kbd> + <kbd>cmd</kbd> + <kbd>p</kbd> and enter `Python: select interpreter`
+- Select the Python interpreter that was reported when we checked the version earlier.
 
 ![VS Code Select Python Interpreter](images/select-interpreter.png)
 
@@ -167,12 +168,12 @@ After installing the Python extension:
 
 Some recommended extensions include:
 
-*  [Live Share](https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare) - A way to collaborate on source code like Google Docs.
-*  [Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one) - An extension to help writing markdown files
-*  [Indent Rainbow](https://marketplace.visualstudio.com/items?itemName=oderwat.indent-rainbow) - A nice extension to help you line up your indentations.
-*  [Bracket Pair Colorizer](https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer) - This extension colors matching brackets {} to match and make them easier to identify.
-*  [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) - A style checker for JavaScript code.
-*  [Git History](https://marketplace.visualstudio.com/items?itemName=donjayamanne.githistory) - Adds useful commands to VS Code for exploring and managing the history of Git repositories.
+- [Live Share](https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare) - A way to collaborate on source code like Google Docs.
+- [Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one) - An extension to help writing markdown files
+- [Indent Rainbow](https://marketplace.visualstudio.com/items?itemName=oderwat.indent-rainbow) - A nice extension to help you line up your indentations.
+- [Bracket Pair Colorizer](https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer) - This extension colors matching brackets {} to match and make them easier to identify.
+- [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) - A style checker for JavaScript code.
+- [Git History](https://marketplace.visualstudio.com/items?itemName=donjayamanne.githistory) - Adds useful commands to VS Code for exploring and managing the history of Git repositories.
 
 ### !callout-warning
 
@@ -198,13 +199,13 @@ We can confirm whether Git is installed properly by entering the following comma
 
 - `$ git config --get user.name` Should show your name. This was prompted by the Installfest script.
 - `$ git config --get user.email` Should show the email address associated with your GitHub account. This was also prompted by the Installfest script.
-- `$ git config --global core.editor "code --wait"` 
+- `$ git config --global core.editor "code --wait"`
   - This will set vscode to be the default editor for git commit messages (more on that in the course).
   - This should have been set by the Installfest script as well, but it doesn't hurt to run it again here.
 
 ## Browsers
 
-We will be using [Firefox](https://www.mozilla.org/en-US/firefox/) as our primary browser at Ada.  If you did not elect to install it automatically above, we can install it with:
+We will be using [Firefox](https://www.mozilla.org/en-US/firefox/) as our primary browser at Ada. If you did not elect to install it automatically above, we can install it with:
 
 ```bash
 $ brew install --cask firefox
@@ -212,7 +213,7 @@ $ brew install --cask firefox
 
 Or we can go to the website and install it manually.
 
-It's often useful to have multiple browsers installed for development purposes. Another fine browser to install is Google Chrome.  We can install Google Chrome with Homebrew by typing:
+It's often useful to have multiple browsers installed for development purposes. Another fine browser to install is Google Chrome. We can install Google Chrome with Homebrew by typing:
 
 ```bash
 $ brew install --cask google-chrome
@@ -222,7 +223,7 @@ Or again, we can go to Google's website and install it manually.
 
 ## It's All About Communication! Slack
 
-Lastly, we should already have Ada's primary mode of communication installed... [**Slack!**](https://slack.com/downloads/osx). There should have been a prompt to install it during the Installfest script. While it is **possible** to get by using the Slack website, we recommend **strongly** to use the Desktop client.  If you did not use the Installfest script to install it, we can install Slack now with homebrew, using the command:
+Lastly, we should already have Ada's primary mode of communication installed... [**Slack!**](https://slack.com/downloads/osx). There should have been a prompt to install it during the Installfest script. While it is **possible** to get by using the Slack website, we recommend **strongly** to use the Desktop client. If you did not use the Installfest script to install it, we can install Slack now with homebrew, using the command:
 
 ```bash
 $ brew install --cask slack
@@ -232,14 +233,13 @@ Or we can go to [slack.com](https://slack.com) and install it manually.
 
 ### Why Slack?
 
-When Ada has announcements or students want to share general information, we generally use Slack.  If we have updates to projects or homework, we will use Slack.  We only use e-mail for personal communication and things we need to keep a record of (like absences).
+When Ada has announcements or students want to share general information, we generally use Slack. If we have updates to projects or homework, we will use Slack. We only use e-mail for personal communication and things we need to keep a record of (like absences).
 
 That being said, please get familiar and comfortable with Slack, and make it your own space to build special-interest channels and discussion spaces.
 
-It's also critically important to use emojis (not really, but it's fun!).  So once we have Slack running, we can follow the directions [**here**](https://get.slack.help/hc/en-us/articles/206870177-Create-custom-emoji) to install a Slack Emoji of our own!
+It's also critically important to use emojis (not really, but it's fun!). So once we have Slack running, we can follow the directions [**here**](https://get.slack.help/hc/en-us/articles/206870177-Create-custom-emoji) to install a Slack Emoji of our own!
 
 A great site for Slack Emoji inspiration can be found [**here**](https://slackmojis.com/).
-
 
 ## Customizing the Shell
 
@@ -247,7 +247,7 @@ A great site for Slack Emoji inspiration can be found [**here**](https://slackmo
 
 Since MacOS Catalina, the default shell has been a shell called `zsh` (read as zee shell, or zish).
 
-A shell is a set of commands and user interface for controlling an operating system via the terminal.  Newer Macs use `zsh` by default, while older Macs use a version of the Bash shell which is no longer supported.
+A shell is a set of commands and user interface for controlling an operating system via the terminal. Newer Macs use `zsh` by default, while older Macs use a version of the Bash shell which is no longer supported.
 
 More information about the differences between [zsh and bash](https://dev.to/jasmin/a-brief-difference-between-zsh-and-bash-5ebp) can make for an interesting read.
 
@@ -263,9 +263,9 @@ Then set the **Shells open with:** to `/bin/zsh`.
 
 ### Oh My Zsh - Optional
 
-Zsh is a very customizable environment, and there's a great community-driven framework for managing `zsh` configurations, providing thousands of helper functions, plugins, and themes.  Basically, it lets us customize the look and feel of the terminal and add custom commands and shortcuts.  The most amazing thing is that **it comes with git integration!**
+Zsh is a very customizable environment, and there's a great community-driven framework for managing `zsh` configurations, providing thousands of helper functions, plugins, and themes. Basically, it lets us customize the look and feel of the terminal and add custom commands and shortcuts. The most amazing thing is that **it comes with git integration!**
 
-Using **Oh My Zsh** is completely optional at Ada, but it can be handy for its support of git and other extensibility.  You are welcome to install it if this sounds interesting.
+Using **Oh My Zsh** is completely optional at Ada, but it can be handy for its support of git and other extensibility. You are welcome to install it if this sounds interesting.
 
 Oh My Zsh can be installed with:
 
@@ -283,7 +283,7 @@ Many settings related to `zsh` are stored in our home directory in a hidden file
 
 <br>
 
-The most common way this is observed is when the shorter aliases of `python`,  instead of `python3`, and `pip`, instead of `pip3`, stop working. This might mean that Oh My Zsh has overwritten the shell configuration. If this happens, please reach out for support on Slack.
+The most common way this is observed is when the shorter aliases of `python`, instead of `python3`, and `pip`, instead of `pip3`, stop working. This might mean that Oh My Zsh has overwritten the shell configuration. If this happens, please reach out for support on Slack.
 
 ### !end-callout
 
@@ -310,4 +310,4 @@ If displayed, we can fix it by going to **System Preferences > Security & Privac
 1.  Git
 1.  Slack
 
-These tools will be important as we begin to write programs at Ada.  
+These tools will be important as we begin to write programs at Ada.
