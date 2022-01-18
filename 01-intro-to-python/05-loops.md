@@ -35,31 +35,31 @@ while counter < 10:
     print(f"The value of counter is {counter}")
 
 # while loop with flag
-flag_var = True
+keep_running = True
 counter = 0
-while flag_var:
+while keep_running:
     counter = counter + 3
-    if(counter > 10):
-        flag_var = False
+    if counter > 10 :
+        keep_running = False
     print(f"The value of counter is {counter}")
 
 # for loop using ranges
-for num in range(3):
-    print(f"The value of num is {num}")
+for number in range(3):
+    print(f"The value of num is {number}")
 
-for num in range(2, 5):
-    print(f"The value of num is {num}")
+for number in range(2, 5):
+    print(f"The value of num is {number}")
 
 # for-each loop over a collection
-for item in item_list:
-    print(item)
+for number in number_list:
+    print(number)
 ```
 
 ## `while` Loops
 
 While loops are handy when we don’t know how many times we need to perform an action. They check if a condition is true and continue to loop until that condition evaluates to false. This condition statement could be a complex logic expression, or it could be a single Boolean variable that we treat as a flag and set to false when we’re ready to stop. 
 
-We declare a while loop with the ‘while’ keyword, followed by the condition we want to evaluate, then a colon: 
+We declare a while loop with the `while` keyword, followed by the condition we want to evaluate, then a colon: 
 
 ```python
 while <condition>:
@@ -83,15 +83,17 @@ while counter < 10:
 
 In this example we’ve set up variable `counter` before the while loop.  The condition we check each time before entering the loop is whether the value of `counter` is less than 10.  Every pass through the loop we're increasing `counter` by 2, until it holds the value 10.  Once `counter` is holding the value 10, the expression `counter < 10` evaluates to false and we no longer enter the loop body.
 
-What could it look like if we wanted to use a flag instead?
+At the beginning of this section we mentioned that while loops are great when we don't know how many times they will need to run, but in the loop above we can definitely say that it will run 5 times.  This can be better represented using a ranged for loop, which we will look at in the following section.
+
+What could our previous example look like if we wanted to use a flag?
 
 ```python
-flag_var = True
+keep_running = True
 counter = 0
-while flag_var:
+while keep_running:
     counter = counter + 2
-    if(counter >= 10):
-        flag_var = False
+    if counter >= 10 :
+        keep_running = False
     print(f"The value of counter is {counter}")
 
 # When run, this code will output:
@@ -108,14 +110,16 @@ Here, we’ve declared the variables `counter` and `flag_var` before the loop.  
 
 For loops let us loop over a fixed sequence, commonly a sequence of numbers, or items in a data structure.  This makes them our preferred choice when we know how many times we want to take an action. 
 
-For loops have a little more syntax than a while loop.  We declare a for loop using the `for` keyword, followed by a variable name (which we use inside the loop body to refer to the current value of the sequence we're iterating over), then the keyword `in`, followed by the sequence we are iterating over, and capped off with a colon:
+For loops need a little bit more information than a while loop.  While this makes the syntax of the loop itself a little more involved, on the other hand it means that all the information needed for the loop is collected in one place, making it a little more difficult to make mistakes!
+
+We declare a for loop using the `for` keyword, followed by a variable name (which we use inside the loop body to refer to each iterated value), then the keyword `in`, followed by the iterable expression we are iterating over, and capped off with a colon:
 
 ```python
-for <variable_name> in <sequence_name>:
+for <variable_name> in <iterable_expression>:
     # Do something with <variable_name>
 ```
 
-Say we want to print "Hello!" 3 times. When we know the exact number of times to take an action, we can use the `range` function to give us a list of numbers to iterate over.  `range` has some helpful options, if we pass it a single integer parameter, `range` will generate a sequence from 0 to the number you passed _exclusive_.  This means if you call `range(3)` it will create the sequence `[0, 1, 2]`. If we use this with a for loop, it would look something like this:  
+Say we want to print "Hello!" 3 times. When we know the exact number of times to take an action, we can use the `range` function to give us a list of numbers to iterate over.  `range` has some helpful options, if we pass it a single integer parameter, `range` will generate a sequence from 0 to the number we passed _exclusive_.  This means if we call `range(3)` it will create the sequence `[0, 1, 2]`, it _excludes_ 3. If we use this with a for loop, it would look something like this:  
 
 ```python
 for number in range(3):
@@ -131,7 +135,7 @@ for number in range(3):
 # the value of number is 2
 ```
 
-If we need to perform work a specific number of times, but we don't want our count to start at 0, `range` still has us covered.  We can define the start of our number sequence by passing `range` two parameters, the number we want to start at (inclusive) and where we want to end (exclusive).  For example, if we call `range(2,5)` it will give us the number sequence `[2, 3, 4]`. Using this version of `range` in a for loop, we can do the following:
+If we need to perform work a specific number of times, but we don't want our count to start at 0, `range` still has us covered.  We can define the start of our number sequence by passing `range` two parameters, the number we want to start at (inclusive) and where we want to end (exclusive).  For example, if we call `range(2,5)` it will give us the number sequence `[2, 3, 4]`, 2 is included but 5 is excluded.  Using this version of `range` in a for loop, we can do the following:
 
 ```python
 for number in range(2, 5):
@@ -143,18 +147,30 @@ for number in range(2, 5):
 # the value of number is 4
 ```
 
-We won't go further into iterating over lists here since we'll learn more about them in the next lesson, but it's helpful to know that we can use for loops to inspect each item in a list of values and perform some action with it:
+In the while loop section above, we mentioned that we could better represent the first example as a ranged for loop, since we know we want to enter the loop exactly 5 times. Because a for loop iterates over values, we should also be able to remove the `counter` variable.  We've seen through examples that the default behavior for `range` is to create a list by increasing values by one until the upper limit is reached.  However, we can pass a third argument to `range` which tells it how big of a step we want between our values.  We can generate the list of values we need to rewrite our while loop example by calling `range(2, 11, 2)`. This will give us a number sequence that starts at 2, increases by 2 for each value, and stops when our limit 11 (which is always excluded) is reached: `[2, 4, 6, 8, 10]`.  Putting it all together, that loop looks like:
 
 ```python
-number_list = [1, 2, 3, 4]
-for number in number_list:
+for number in range(2, 11, 2):
     print(f"The value of number is {number}")
 
 # When run, this code will output:
-# The value of number is 1
-# the value of number is 2
-# the value of number is 3
-# the value of number is 4
+# The value of number is 2
+# The value of number is 4
+# The value of number is 6
+# The value of number is 8
+# The value of number is 10
+```
+
+We won't go further into iterating over lists here since we'll learn more about them in the next lesson, but it's helpful to know that we can use for loops to inspect each item in a list of values and perform some action with it:
+
+```python
+word_list = ["Hello", "world"]
+for word in word_list:
+    print(f"The current word is {word}")
+
+# When run, this code will output:
+# The current word is Hello
+# The current word is world
 ```
 
 ## Practice Problems
