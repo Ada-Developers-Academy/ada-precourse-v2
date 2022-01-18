@@ -76,7 +76,7 @@ At this point, get some coffee... it may take a while... maybe homebrewed coffee
 
 ## Xcode Command Line Tools Depend on the OS Version
 
-Apple releases MacOS updates relatively frequently. It is often necessary to update the Xcode command line tools after an OS update. If `brew` suddenly starts failing after a recent OS update, try running the `xcode-select --install` command again to see if that resolves the issue.
+Apple releases MacOS updates relatively frequently. It is often necessary to update the Xcode command line tools after an OS update. If `brew` suddenly starts failing after a recent OS update, try running the `$ xcode-select --install` command again to see if that resolves the issue.
 
 ### !end-callout
 
@@ -129,9 +129,9 @@ We also use a program called **pip** to install additional python packages which
 
 #### Verification
 
-We can verify that the Python installation worked by running the command `python --version` and see that it prints something like `Python 3.9.1`. If it is not using the correct version, perhaps the step above about restarting the terminal was skipped. Try quitting the terminal and reopening it to see if that fixes it... If not, reach out to a classmate or instructor!
+We can verify that the Python installation worked by running the command `$ python --version` and see that it prints something like `Python 3.9.1`. If it is not using the correct version, perhaps the step above about restarting the terminal was skipped. Try quitting the terminal and reopening it to see if that fixes it... If not, reach out to a classmate or instructor!
 
-We should also verify that `pip` is working with `pip --version`. It should be in a python3 folder and display a message like `pip 20.3.1 from /usr/local/lib/python3.9/site-packages/pip (python 3.9)`
+We should also verify that `pip` is working with `$ pip --version`. It should be in a python3 folder and display a message like `pip 20.3.1 from /usr/local/lib/python3.9/site-packages/pip (python 3.9)`
 
 ### VS Code
 
@@ -139,7 +139,7 @@ We should also verify that `pip` is working with `pip --version`. It should be i
 - In VS Code, type <kbd>shift</kbd> + <kbd>cmd</kbd> + <kbd>p</kbd> and type **>shell command install code command in path**.
   - This only needs to be done once to allow us to launch VS Code from the terminal
 - After the previous step completes, to launch VS Code from the terminal, type `code` followed by the file name or directory name
-  - For example `code .` will open the present directory as a project folder.
+  - For example `$ code .` will open the present directory as a project folder.
 
 #### VS Code Extensions
 
