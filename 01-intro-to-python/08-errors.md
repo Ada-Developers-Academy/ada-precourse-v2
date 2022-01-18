@@ -36,9 +36,9 @@ However, we instead get an error output. This is what the output looks like:
 
 ```
 Traceback (most recent call last):
-  File "/Users/auberonlopez/programming/ada/scratch/greeter.py", line 4, in <module>
+  File "/Users/ada/scratch/greeter.py", line 4, in <module>
     print_greeting("Xinting")
-  File "/Users/auberonlopez/programming/ada/scratch/greeter.py", line 2, in print_greeting
+  File "/Users/ada/scratch/greeter.py", line 2, in print_greeting
     print(f"Hello {preson}!")
 NameError: name 'preson' is not defined
 ```
@@ -59,9 +59,9 @@ Stack traces tell us where the error happened. They are useful for showing us wh
 
 ```
 Traceback (most recent call last):
-  File "/Users/auberonlopez/programming/ada/scratch/greeter.py", line 4, in <module>
+  File "/Users/ada/scratch/greeter.py", line 4, in <module>
     print_greeting("Xinting")
-  File "/Users/auberonlopez/programming/ada/scratch/greeter.py", line 2, in print_greeting
+  File "/Users/ada/scratch/greeter.py", line 2, in print_greeting
     print(f"Hello {preson}!")
 ```
 
@@ -70,7 +70,7 @@ What does this stack trace show? It shows what chain of functions was called whe
 The stack trace in this example has two parts. The first one shows where our function was called:
 
 ```
-  File "/Users/auberonlopez/programming/ada/scratch/greeter.py", line 4, in <module>
+  File "/Users/ada/scratch/greeter.py", line 4, in <module>
     print_greeting("Xinting")
 ```
 
@@ -79,7 +79,7 @@ This tells us the file the function was called in, and the line the function cal
 The second part shows what happened inside that `print_greeting` function:
 
 ```
-  File "/Users/auberonlopez/programming/ada/scratch/greeter.py", line 2, in print_greeting
+  File "/Users/ada/scratch/greeter.py", line 2, in print_greeting
     print(f"Hello {preson}!")
 ```
 
@@ -120,9 +120,9 @@ print_greeting("Xinting")
 
 ```
 Traceback (most recent call last):
-  File "/Users/auberonlopez/programming/ada/scratch/greeter.py", line 4, in <module>
+  File "/Users/ada/scratch/greeter.py", line 4, in <module>
     print_greeting("Xinting")
-  File "/Users/auberonlopez/programming/ada/scratch/greeter.py", line 2, in print_greeting
+  File "/Users/ada/scratch/greeter.py", line 2, in print_greeting
     print(f"Hello {preson}!")
 NameError: name 'preson' is not defined
 ```
@@ -211,7 +211,7 @@ When we run this, we get the following output:
 
 ```
 Traceback (most recent call last):
-  File "/Users/auberonlopez/programming/ada/scratch/number.py", line 2, in <module>
+  File "/Users/ada/scratch/number.py", line 2, in <module>
     parsed_number = int(number_str)
 ValueError: invalid literal for int() with base 10: '7.0'
 ```
@@ -225,7 +225,7 @@ What's the best query to put into a search engine to help us determine the cause
 * `ValueError: invalid literal for int() with base 10: '7.0'`
 * `ValueError: invalid literal for int() with base 10`
 * `ValueError`
-* `File "/Users/auberonlopez/programming/ada/scratch/number.py", line 2, in <module>`
+* `File "/Users/ada/scratch/number.py", line 2, in <module>`
 
 ##### !end-options
 
@@ -254,17 +254,17 @@ Suppose we get an error output that looks like this:
 
 ```
 Traceback (most recent call last):
-  File "/Users/auberonlopez/programming/ada/scratch/number.py", line 16, in <module>
+  File "/Users/ada/scratch/number.py", line 16, in <module>
     a()
-  File "/Users/auberonlopez/programming/ada/scratch/number.py", line 5, in a
+  File "/Users/ada/scratch/number.py", line 5, in a
     b()
-  File "/Users/auberonlopez/programming/ada/scratch/number.py", line 11, in b
+  File "/Users/ada/scratch/number.py", line 11, in b
     something()
-  File "/Users/auberonlopez/programming/ada/scratch/number.py", line 14, in something
+  File "/Users/ada/scratch/number.py", line 14, in something
     ada()
-  File "/Users/auberonlopez/programming/ada/scratch/number.py", line 2, in ada
+  File "/Users/ada/scratch/number.py", line 2, in ada
     lovelace()
-  File "/Users/auberonlopez/programming/ada/scratch/number.py", line 8, in lovelace
+  File "/Users/ada/scratch/number.py", line 8, in lovelace
     1 / 0
 ZeroDivisionError: division by zero
 ```
