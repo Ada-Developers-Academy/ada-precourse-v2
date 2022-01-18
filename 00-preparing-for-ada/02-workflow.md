@@ -97,7 +97,7 @@ After confirming that we're in the home directory, let's create a new directory 
 
 <br>
 
-We can change our current directory using `cd` followed by the directory name. Rather than type the entire name of the directory, we can press the **tab** key to *autocomplete* the name for us!  For example, we can type `cd first` then press the **tab** key to see the terminal fill the rest of the directory name for us! Autocomplete is a handy feature that makes navigating the command line and code easier for developers.
+We can change our current directory using `cd` followed by the directory name. Rather than type the entire name of the directory, we can press the <kbd>tab</kbd> key to *autocomplete* the name for us!  For example, we can type `cd first` then press the <kbd>tab</kbd> key to see the terminal fill the rest of the directory name for us! Autocomplete is a handy feature that makes navigating the command line and code easier for developers.
 
 <br>
 
