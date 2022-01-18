@@ -571,7 +571,7 @@ Let's start with tracking incorrect guesses.  We know we are going to have a max
 
 ###  Using `wrong_guesses_list` in `get_letter_from_user`
 
-Now that we have a list incorrect guesses, we can use them in `get_letter_from_user` to prevent our user from inputting the same incorrect letter multiple times.  
+Now that we have a list incorrect guesses, we can use them in the helper function `get_letter_from_user` to prevent our user from inputting the same incorrect letter multiple times.  
 
 1. The first step is to pass the variable `wrong_guesses_list` to `get_letter_from_user` as an argument.  
 1. Next, We will need to update our function definition of `get_letter_from_user` with a new parameter.  
@@ -657,7 +657,7 @@ def snowman():
 
 ##### !question
 
-Update the function `get_letter_from_user` so that it takes an additional argument (correct_guesses) and uses that along with `wrong_guesses` to print the "You have already guessed that letter" as feedback to the user if the user has already guessed the letter.
+Update the helper function `get_letter_from_user` so that it takes an additional argument (correct_guesses) and uses that along with `wrong_guesses` to print the "You have already guessed that letter" as feedback to the user if the user has already guessed the letter.
 
 ##### !end-question
 
@@ -848,7 +848,7 @@ def get_letter_from_user(wrong_list, correct_guesses_list):
 
 ## Using Lists to Improve Readability and Simplify Code
 
-In the last lesson we wrote the function `print_snowman` that drew our snowman up to the height that corresponded to the number of incorrect guesses.  The code for that function was fairly long because our graphic was broken up into seven constants.  We will use a list to simplify and streamline this code.
+In the last lesson we wrote the helper function `print_snowman` that drew our snowman up to the height that corresponded to the number of incorrect guesses.  The code for that function was fairly long because our graphic was broken up into seven constants.  We will use a list to simplify and streamline this code.
 
 1. The first step is to store all of the drawing constants in a list:
 
