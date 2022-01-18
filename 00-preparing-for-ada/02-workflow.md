@@ -89,7 +89,7 @@ In the terminal, let's make a new directory and change our current directory to 
 
 <br>
 
-First, let's enter `cd` or `cd ~` to go to the home directory. To double check our current path, enter the command `pwd` which should display our home directory path `Users/<your_username>`.
+First, let's enter `cd` or `cd ~` to go to the home directory. To double check our current path, enter the command `pwd` which should display our home directory path `/Users/<your_username>`.
 
 <br>
 
