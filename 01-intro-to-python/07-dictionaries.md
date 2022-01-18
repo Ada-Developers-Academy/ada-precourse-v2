@@ -419,10 +419,10 @@ Luckily for us, we have dictionaries!  Dictionaries allow us to store a value wi
 * When a user guesses a letter that's in the secret word, we can change the value to `True`.
 * Then, if we want to know if a user has guessed a particular letter, we can just check the value for that letter in the dictionary and get a `True` or `False` answer that will tell us if our user has guessed that letter or not.
 
-The first thing we need to do is convert the secret word `snowman_word` into a dictionary.  Write a function `build_word_dict` that takes a string and returns a dictionary, where each unique letter from the word is a key and all of the values are `False`.  
+The first thing we need to do is convert the secret word `snowman_word` into a dictionary.  Write a helper function `build_word_dict` that takes a string and returns a dictionary, where each unique letter from the word is a key and all of the values are `False`.  
 
 <details>
-<summary>Write the function and when you are finished, compare your code with ours.</summary>
+<summary>Write the helper function and when you are finished, compare your code with ours.</summary>
 
 ```python
 
@@ -489,7 +489,7 @@ def snowman():
 
 </details>
 
-The next step is to update our function `get_letter_from_user` to use the word dictionary instead of the list of correct letters.  Right now, we're only telling a user if they've guessed a letter before, but while we're updating this function let's modify it to tell the user if they've guessed a letter before, and if that letter is in the word or not.  There is one important change to be aware of, right now we're just checking if the letter the user guessed is in the list of correct letters.  If we do that with the dictionary, we'll end up with a logical error!  Consider these code snippets:
+The next step is to update our helper function `get_letter_from_user` to use the word dictionary instead of the list of correct letters.  Right now, we're only telling a user if they've guessed a letter before, but while we're updating this function let's modify it to tell the user if they've guessed a letter before, and if that letter is in the word or not.  There is one important change to be aware of, right now we're just checking if the letter the user guessed is in the list of correct letters.  If we do that with the dictionary, we'll end up with a logical error!  Consider these code snippets:
 
 ```python
 
@@ -523,7 +523,7 @@ elif (user_input_string in word_dict and word_dict[user_input_string]) or user_i
 
 <details>
 <summary>
-Update your `get_letter_from_user` function and make the following changes:
+Update your `get_letter_from_user` helper function and make the following changes:
 1. Change the first parameter to be the word dictionary instead of a list
 1. Add additional feedback to the user when they attempt to guess a letter that they have already guessed that informs them if the letter is in the word or not.
 
@@ -556,7 +556,7 @@ def get_letter_from_user(word_dict, list2):
 
 ### Displaying User Progress
 
-Now we're going to get back to our original goal, displaying each letter of the word with an '_' character if the letter has not yet been guessed and the correct letter if it has been guessed.  For example, if the word is `pepper` and our user has guessed the letters `p`, and `r`, we want to print out `p _ p p _ r`.  Each time they guess a correct letter, we want to print out an updated version of this string.  We're going to start by writing a function that generates and returns this string.  This function will need to:
+Now we're going to get back to our original goal, displaying each letter of the word with an '_' character if the letter has not yet been guessed and the correct letter if it has been guessed.  For example, if the word is `pepper` and our user has guessed the letters `p`, and `r`, we want to print out `p _ p p _ r`.  Each time they guess a correct letter, we want to print out an updated version of this string.  We're going to start by writing a helper function that generates and returns this string.  This function will need to:
 
 * Create an empty string
 * Loop over each letter in the word
@@ -578,7 +578,7 @@ Now we're going to get back to our original goal, displaying each letter of the 
 
 ##### !question
 
-Write a function `get_word_progress` that takes two variables, a word and a dictionary where each letter in the word is a key and the values are `True` or `False`.  The function returns a string that represents the word, with spaces between each letter.  For each letter, if the value in the dictionary is `True`, the letter is displayed.  If the value in the dictionary is `False`, the letter is replaced with a `_` character.
+Write a helper function `get_word_progress` that takes two variables, a word and a dictionary where each letter in the word is a key and the values are `True` or `False`.  The function returns a string that represents the word, with spaces between each letter.  For each letter, if the value in the dictionary is `True`, the letter is displayed.  If the value in the dictionary is `False`, the letter is replaced with a `_` character.
 
 Example inputs and outputs:
 
@@ -657,7 +657,7 @@ def get_word_progress(word, word_dict):
 
 <!--END CHALLENGE-->
 
-Now that we have the function `get_word_progress` working, let's revisit our original goal.  Right now we're returning the display string, but we really want to display it.  Also, the name of the function `get_word_progress` implies that we're going to get some information about our user's progress toward guessing all of the letters.  Let's revisit this function and make some minor changes.
+Now that we have the helper function `get_word_progress` working, let's revisit our original goal.  Right now we're returning the display string, but we really want to display it.  Also, the name of the function `get_word_progress` implies that we're going to get some information about our user's progress toward guessing all of the letters.  Let's revisit this function and make some minor changes.
 
 First, let's switch to printing out the result instead of returning it:
 
@@ -681,7 +681,7 @@ Next, we want to return either `True` or `False`.  We are already looping throug
 
 <details>
 
-<summary>Edit your <code>get_word_progress</code> function and when you are finished, compare your edits to ours.</summary>
+<summary>Edit your <code>get_word_progress</code> helper function and when you are finished, compare your edits to ours.</summary>
 
 ```python
 
@@ -711,7 +711,7 @@ def get_word_progress(word, word_dict):
 
 ### Snowman Project
 
-We have all of the pieces we need to build the final version, and now it's time to bring all the pieces together into a fully functional Snowman game!  The last piece of the puzzle is to incorporate the `get_word_progress` function and end the game with a success message if the user guesses all of the letters in the word.  Use the following description of the final version as a guide and follow the link below to write and test your final version of Snowman!
+We have all of the pieces we need to build the final version, and now it's time to bring all the pieces together into a fully functional Snowman game!  The last piece of the puzzle is to incorporate the `get_word_progress` helper function and end the game with a success message if the user guesses all of the letters in the word.  Use the following description of the final version as a guide and follow the link below to write and test your final version of Snowman!
 
 Game Description:
 1. User starts the game from the command line

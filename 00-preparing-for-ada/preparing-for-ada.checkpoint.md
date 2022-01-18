@@ -5,8 +5,8 @@
 
 ### !challenge
 
-* type: checkbox
-* id: c9b91802-c6d7-4046-8fdb-f4466074b6ae
+* type: tasklist
+* id: 84b6d8a7-dd9c-4d21-b994-a8ecc5cdf2e5
 * title: Installfest Checklist
 * points: 5
 * topics: installfest
@@ -27,41 +27,8 @@ I have successfully installed:
 * Firefox
 * Slack
 
-
 ##### !end-options
 
-##### !answer
-
-* Xcode command-line Tools
-* Homebrew
-* Python 3
-* PIP
-* Visual Studio Code
-* Firefox
-* Slack
-
-##### !end-answer
-
-<!-- other optional sections -->
-##### !hint
-
-Just check each item you install, you can verify the command-line items with:
-
-```
-# Xcode Command Line tools
-xcode-select --install
-
-# Homebrew
-brew doctor
-
-# Python 3
-python --version
-pip --version
-```
-
-It will say correct, when all are checked.
-
-##### !end-hint
 <!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
 <!-- !explanation - !end-explanation (markdown, students can see after answering correctly) -->
 

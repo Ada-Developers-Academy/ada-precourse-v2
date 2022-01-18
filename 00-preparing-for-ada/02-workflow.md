@@ -1,5 +1,28 @@
 # Programming Workflow
 
+## MacOS 
+
+An operating system provides the behind-the-scenes operations that allow humans to interact with computers. Some of these operations include:
+- allocating system resources
+- enforcing security and otherwise regulating how programs run
+- providing common services and functionalities for software applications
+
+The [operating system](https://en.wikipedia.org/wiki/Operating_system) we'll be using at Ada is **MacOS**, a Unix-based operating system owned and distributed by Apple Inc. 
+
+### !callout-info
+
+## Updating Software
+
+We'll find that our Macs will need to update the operating system periodically to keep up with security and new features. To check our machine's MacOS version, we can go to the top left corner of our screen and click  > About This Mac. 
+
+<br>
+
+Generally, it's a good idea to update our Mac's software to the latest version by going to System Preferences > Software Update.
+
+
+### !end-callout
+
+
 ## MacOS Screen Setup
 
 <iframe src="https://adaacademy.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=209606a9-85a4-4945-b34e-acb5001d2a0e&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&start=0&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
@@ -92,7 +115,7 @@ Try to identify the commands, options, and targets while reading the examples be
 | :---------------------------------- | :-------------------------------------------------------------------------------------------------- |
 | `touch <filename>`                  | creates a new file named filename                                                                   |
 | `pwd`                               | <b>p</b>rints the <b>w</b>orking <b>d</b>irectory (displays the full path of the current directory) |
-| `cd`                                | <b>c</b>change <b>d</b>irectory                                                                     |
+| `cd`                                | <b>c</b>hange <b>d</b>irectory                                                                     |
 | `cd ..`                             | go back a directory                                                                                 |
 | `cd ~`                              | choose home directory                                                                               |
 | `ls`                                | list the items in the directory                                                                     |
@@ -169,6 +192,30 @@ There are a few directories that will be handy for us to know about. We don't ne
 | `/tmp` | Hold temporary files typically created by currently running programs. Pronounced the same as "temp." |
 | `/var` | Holds _variable length_ (hence var) files, which is a fancy way of saying log files. Long-running programs often log information somewhere in this directory, which we can use to troubleshoot if a program starts misbehaving! |
 
+### !callout-info
+
+## Command Practice & Tips
+
+In the terminal, let's make a new directory and change our current directory to  this new one.
+
+<br>
+
+First, let's enter `cd` or `cd ~` to go to the home directory. To double check our current path, enter the command `pwd` which should display our home directory path `/Users/<your_username>`.
+
+<br>
+
+After confirming that we're in the home directory, let's create a new directory using `mkdir` followed by the directory name `first_folder`. The command should look like: `$ mkdir first_folder`
+
+<br>
+
+We can change our current directory using `cd` followed by the directory name. Rather than type the entire name of the directory, we can press the <kbd>tab</kbd> key to *autocomplete* the name for us!  For example, we can type `cd first` then press the <kbd>tab</kbd> key to see the terminal fill the rest of the directory name for us! Autocomplete is a handy feature that makes navigating the command line and code easier for developers.
+
+<br>
+
+And just like that, we've created the directory `first_folder`. When we enter `pwd` again, we should see its path as `/Users/<your_username>/first_folder`. 
+
+### !end-callout
+
 ### The Python Repl
 
 We can enter `python` in the terminal to enter a Read-Eval-Print-Loop environment.  This lets us enter individual lines of Python 3 code and see it immediately evaluated.
@@ -180,7 +227,7 @@ There are a few shortcut commands that are helpful to know.
 | Command                                  | Description                    |
 | :--------------------------------------- | :----------------------------- |
 | `python`   or `python3`                  | start interactive Python session |
-| `exit()` or <kbd>ctrl</kbd> + <kbd>d</kbd> | exit an `irb` session          |
+| `exit()` or <kbd>ctrl</kbd> + <kbd>d</kbd> | exit Python session          |
 | <kbd>ctrl</kbd> + <kbd>c</kbd>           | interrupt/stop a command       |
 
 ### Running Python Files
@@ -192,6 +239,10 @@ For example if we have a file named, `example_file.py`, we could run the file fr
 ```bash
 $ python3 example_file.py
 ```
+
+### Additional Resources
+- [Getting to Know the Command Line](https://www.davidbaumgold.com/tutorials/command-line/)
+
 
 
 

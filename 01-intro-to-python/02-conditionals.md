@@ -17,19 +17,18 @@ In this section we will be building on the code that you learned in the previous
 
 Let's take a look at the following code and consider what's going on:
 ```python
->>> import random
->>> random.randint(1, 10) # pick a number from 1 to 10
-7
->>> # pick another number from 1 to 10
->>> n = random.randint(1, 10) 
->>> if n < 5:
-...     print(f"{n} is too small!")
-... elif n == 5:
-...     print(f"{n} is just right!")
-... else:
-...     print(f"{n} is too large!")
-...
-5 is just right!
+import random
+
+random.randint(1, 10) # pick a number from 1 to 10
+
+# pick another number from 1 to 10 and store the value
+n = random.randint(1, 10) 
+if n < 5:
+    print(f"{n} is too small!")
+elif n == 5:
+    print(f"{n} is just right!")
+else:
+    print(f"{n} is too large!")
 ```
 
 ## Vocabulary
@@ -54,17 +53,17 @@ Before we get started we need to set up the file that we're going to be working 
 
 For this project we're going to need to generate random numbers between 0 and 100.  We can do this by using the `randint` function from the `random` module.
 
-You can give this a try from inside of the Python command line:
+You can give this a try by copying the following code into `game.py` then running it using the `python3` command:
 
 ```python
->>> import random
->>> random.randint(0, 100)
-35
+import random
+
+print(random.randint(0, 100))
 ```
 
-Your number probably won't be 35, though! Run it a few times to watch the number change.
+You should see a new number each execution! Run it a few times to watch the number change.
 
-Using this, we can start our game as follows (copy the following code into `game.py`):
+Using this, we can start our game as follows (replace the contents of `game.py` with the following code):
 
 ```python
 import random
@@ -92,19 +91,24 @@ user_input_string = input("Guess the number: ")
 
 This is where things get tricky, though!  In order to compare the user input to the random number generated, we need to convert it into a number as well.  We can use the `int` function for that, but if you pass it a badly formatted string, it will cause an error.
 
+Let's try this out, what happens when you add the following line to a new python file and run it?
+
 ```python
->>> int("four")
+int("four")
+```
+
+We should get a ValueError similar to what's shown below:
+
+```sh
 Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
+  File "path/to/file.py", line 1, in <module>
 ValueError: invalid literal for int() with base 10: 'four'
->>>
 ```
 
 To get around this, we are going to use the string method `isnumeric`.  This will allow us to check if the string is well formatted _before_ we attempt to convert it into an integer.
 
 ```python
->>> "four".isnumeric()
-False
+print("four".isnumeric()) # Outputs `False`
 ```
 
 Note: `isnumeric` _should_ be named `is_numeric`, but Python doesn't always follow its own naming conventions everywhere.
@@ -139,7 +143,7 @@ Now that we have our input as an integer, we can compare it to the random number
 
 In fact, we want to add a *fourth* option, which tells the user that the number they picked was outside the range of allowed numbers!
 
-We can do this by nesting `if...else` statements inside of eachother:
+We can do this by nesting `if...else` statements inside of each other:
 
 ```python
 import random
