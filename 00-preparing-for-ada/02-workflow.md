@@ -13,9 +13,10 @@ The [operating system](https://en.wikipedia.org/wiki/Operating_system) we'll be 
 
 ## Updating Software
 
-We'll find that our Macs will need to update the operating system periodically to keep up with security and new features Apple builds. Generally, it's a good idea to update our Mac's software. The version of MacOS we'll use at Ada is **Monterrey**. Unless we make an announcement stating otherwise, we will use Monterrey for the entirety of the program.  
+We'll find that our Macs will need to update the operating system periodically to keep up with security and new features. To check our machine's MacOS version, we can go to the top left corner of our screen and click  > About This Mac. 
 
-To check our machine's MacOS version, we go to the top left corner of our screen and click  > About This Mac. 
+Generally, it is a good idea to update our Mac's software to the latest version by going to System Preferences > Software Update.
+
 
 ### !end-callout
 
