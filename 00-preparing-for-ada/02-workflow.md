@@ -93,7 +93,7 @@ First, let's enter `cd` or `cd ~` to go to the home directory. To double check o
 
 <br>
 
-After confirming that we're in the home directory, let's create a new directory using `mkdir` followed by the directory name `first_folder`. The command should look like: `mkdir first_folder`
+After confirming that we're in the home directory, let's create a new directory using `mkdir` followed by the directory name `first_folder`. The command should look like: `$ mkdir first_folder`
 
 <br>
 
