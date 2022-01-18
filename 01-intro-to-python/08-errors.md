@@ -65,7 +65,7 @@ Traceback (most recent call last):
     print(f"Hello {preson}!")
 ```
 
-What does this stack trace show? It shows what chain of functions were called when the error occurred. It's telling us where the error happened, and under what conditions.
+What does this stack trace show? It shows what chain of functions was called when the error occurred. It's telling us where the error happened, and under what conditions.
 
 The stack trace in this example has two parts. The first one shows where our function was called:
 
