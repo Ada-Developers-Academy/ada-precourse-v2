@@ -17,7 +17,7 @@ We'll find that our Macs will need to update the operating system periodically t
 
 <br>
 
-Generally, it is a good idea to update our Mac's software to the latest version by going to System Preferences > Software Update.
+Generally, it's a good idea to update our Mac's software to the latest version by going to System Preferences > Software Update.
 
 
 ### !end-callout
