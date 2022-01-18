@@ -180,27 +180,26 @@ for word in word_list:
 
 ### !challenge
 
-- type: code-snippet
-- language: python3.6
-- id: 9a27d597-95f0-4a9b-8736-807140aadfbc
-- title: Constant Loop
-- points: 1
-- topics: python, loops
+* type: code-snippet
+* language: python3.6
+* id: 9a27d597-95f0-4a9b-8736-807140aadfbc
+* title: Constant Loop
+* points: 1
+* topics: python, loops
 
 ##### !question
 
-Write a function `print_ten` that takes one argument, a string. The function has the following behavior:
-
-- The function returns a string that repeats a counter number (starting at 1) and then the string ten times
-- The function can use either a while loop or a for loop, but it must use a loop
+Write a function `print_ten` that takes one argument, a string.  The function has the following behavior:
+* The function returns a string that repeats a counter number (starting at 1) and then the string ten times
+* The function can use either a while loop or a for loop, but it must use a loop
 
 Example inputs and outputs:
 
-| input           | output                                                                                                                                  |
-| --------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
-| `word = "snow"` | `"1 snow 2 snow 3 snow 4 snow 5 snow 6 snow 7 snow 8 snow 9 snow 10 snow"`                                                              |
-| `word = ""`     | <code>"1&nbsp;&nbsp;2&nbsp;&nbsp;3&nbsp;&nbsp;4&nbsp;&nbsp;5&nbsp;&nbsp;6&nbsp;&nbsp;7&nbsp;&nbsp;8&nbsp;&nbsp;9&nbsp;&nbsp;10 "</code> |
-| `word = "123"`  | `"1 123 2 123 3 123 4 123 5 123 6 123 7 123 8 123 9 123 10 123"`                                                                        |
+|input|output|
+|--|--|
+| `word = "snow"`|`"1 snow 2 snow 3 snow 4 snow 5 snow 6 snow 7 snow 8 snow 9 snow 10 snow"`|
+| `word = ""`|<code>"1&nbsp;&nbsp;2&nbsp;&nbsp;3&nbsp;&nbsp;4&nbsp;&nbsp;5&nbsp;&nbsp;6&nbsp;&nbsp;7&nbsp;&nbsp;8&nbsp;&nbsp;9&nbsp;&nbsp;10 "</code>|
+| `word = "123"`|`"1 123 2 123 3 123 4 123 5 123 6 123 7 123 8 123 9 123 10 123"`|
 
 ##### !end-question
 
@@ -272,27 +271,26 @@ def print_ten(word):
 
 ### !challenge
 
-- type: code-snippet
-- language: python3.6
-- id: 648f56bd-9879-46f2-af82-94d962d51d13
-- title: Variable Loop
-- points: 1
-- topics: python, loops
+* type: code-snippet
+* language: python3.6
+* id: 648f56bd-9879-46f2-af82-94d962d51d13
+* title: Variable Loop
+* points: 1
+* topics: python, loops
 
 ##### !question
 
-Write a function `print_multiple` that takes two argument, a string `word` and a number `amount`. The function has the following behavior:
-
-- The function returns a string that repeats a counter number (starting at 1) and then the string `amount` number of times
-- The function can use either a while loop or a for loop, but it must use a loop
+Write a function `print_multiple` that takes two argument, a string `word` and a number `amount`.  The function has the following behavior:
+* The function returns a string that repeats a counter number (starting at 1) and then the string `amount` number of times
+* The function can use either a while loop or a for loop, but it must use a loop
 
 Example inputs and outputs:
 
-| input                              | output                                                                                          |
-| ---------------------------------- | ----------------------------------------------------------------------------------------------- |
-| `word = "snow"`<br/> `amount = 4`  | `"1 snow 2 snow 3 snow 4 snow"`                                                                 |
-| `word = ""` <br/> `amount = 7`     | <code>"1&nbsp;&nbsp;2&nbsp;&nbsp;3&nbsp;&nbsp;4&nbsp;&nbsp;5&nbsp;&nbsp;6&nbsp;&nbsp;7 "</code> |
-| `word = "123"` <br/> `amount = 11` | `"1 123 2 123 3 123 4 123 5 123 6 123 7 123 8 123 9 123 10 123 11 123"`                         |
+|input|output|
+|--|--|
+| `word = "snow"`<br/> `amount = 4`|`"1 snow 2 snow 3 snow 4 snow"`|
+| `word = ""` <br/> `amount = 7`|<code>"1&nbsp;&nbsp;2&nbsp;&nbsp;3&nbsp;&nbsp;4&nbsp;&nbsp;5&nbsp;&nbsp;6&nbsp;&nbsp;7 "</code>|
+| `word = "123"` <br/> `amount = 11`|`"1 123 2 123 3 123 4 123 5 123 6 123 7 123 8 123 9 123 10 123 11 123"`|
 
 ##### !end-question
 
@@ -812,8 +810,8 @@ Now we're going to add a loop inside this function to make it draw not just one 
 
 1. Start by adding a `for` loop that prints the entire snowman.
 
-   - Use the `range()` function with the `for` loop.
-   - With the `range()` function, remember that the number of items in the drawing is the same as the constant SNOWMAN_WRONG_GUESSES.
+   * Use the `range()` function with the `for` loop.
+   * With the `range()` function, remember that the number of items in the drawing is the same as the constant SNOWMAN_WRONG_GUESSES.
 
    _Warning_ the range function is _exclusive_, which means it goes up to but does not include the last element of the given range. This means that `range(2, 7) = [2, 3, 4, 5, 6]`
 
