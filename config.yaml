@@ -15,10 +15,6 @@ Standards:
         UID: f5a99ab6-c687-4706-aceb-eaeb5e5c59b0
         Path: /00-preparing-for-ada/01-installfest.md
       -
-        Type: Resource
-        UID: cb2c97c0-9534-4025-b23b-a2a6c980afe0
-        Path: /00-preparing-for-ada/installfest/installfest.resource.md
-      -
         Type: Lesson
         UID: a3a851b4-a725-4e6b-acd1-96d948a90d21
         Path: /00-preparing-for-ada/02-workflow.md
