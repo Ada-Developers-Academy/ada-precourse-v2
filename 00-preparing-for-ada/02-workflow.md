@@ -125,6 +125,30 @@ Try to identify the commands, options, and targets while reading the examples be
 | `rm <filename>`                         | removes the file named filename                                                                                                                                                                                                                                     |
 | `rm -r <dirname>`                       | removes the directory named dirname (and everything in it)                                                                                                                                                                                                          |
 
+### !callout-info
+
+## Command Practice & Tips
+
+In the terminal, let's make a new directory and change our current directory to this new one.
+
+<br>
+
+First, let's enter `cd` or `cd ~` to go to the home directory. To double check our current path, enter the command `pwd` which should display our home directory path `/Users/<your_username>`.
+
+<br>
+
+After confirming that we're in the home directory, let's create a new directory using `mkdir` followed by the directory name `first_folder`. The command should look like: `$ mkdir first_folder`
+
+<br>
+
+We can change our current directory using `cd` followed by the directory name. Rather than type the entire name of the directory, we can press the <kbd>tab</kbd> key to _autocomplete_ the name for us! For example, we can type `cd first` then press the <kbd>tab</kbd> key to see the terminal fill the rest of the directory name for us! Autocomplete is a handy feature that makes navigating the command line and code easier for developers.
+
+<br>
+
+And just like that, we've created the directory `first_folder`. When we enter `pwd` again, we should see its path as `/Users/<your_username>/first_folder`.
+
+### !end-callout
+
 ### MacOS Files
 
 MacOS stores your files in a collection of nested directories. A directory can contain files, as well as other directories. Some directories are related to your user account, especially your home directory, and others are related to how the computer runs as a whole. As developers, we occasionally need to work with system files, and so learning about some of the standard file locations can be useful.
@@ -191,30 +215,6 @@ There are a few directories that will be handy for us to know about. We don't ne
 | `/usr/local/bin`                               | Holds programs (binaries) that are not part of the core system. A lot of what we install using `brew` ends up here!                                                                                                                  |
 | `/tmp`                                         | Hold temporary files typically created by currently running programs. Pronounced the same as "temp."                                                                                                                                 |
 | `/var`                                         | Holds _variable length_ (hence var) files, which is a fancy way of saying log files. Long-running programs often log information somewhere in this directory, which we can use to troubleshoot if a program starts misbehaving!      |
-
-### !callout-info
-
-## Command Practice & Tips
-
-In the terminal, let's make a new directory and change our current directory to this new one.
-
-<br>
-
-First, let's enter `cd` or `cd ~` to go to the home directory. To double check our current path, enter the command `pwd` which should display our home directory path `/Users/<your_username>`.
-
-<br>
-
-After confirming that we're in the home directory, let's create a new directory using `mkdir` followed by the directory name `first_folder`. The command should look like: `$ mkdir first_folder`
-
-<br>
-
-We can change our current directory using `cd` followed by the directory name. Rather than type the entire name of the directory, we can press the <kbd>tab</kbd> key to _autocomplete_ the name for us! For example, we can type `cd first` then press the <kbd>tab</kbd> key to see the terminal fill the rest of the directory name for us! Autocomplete is a handy feature that makes navigating the command line and code easier for developers.
-
-<br>
-
-And just like that, we've created the directory `first_folder`. When we enter `pwd` again, we should see its path as `/Users/<your_username>/first_folder`.
-
-### !end-callout
 
 ### The Python Repl
 
