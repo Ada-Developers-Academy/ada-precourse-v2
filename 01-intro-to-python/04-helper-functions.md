@@ -62,20 +62,43 @@ def display_order_summary(item_prices):
 
 ### !callout-info
 
-## Assigning Variables to Function Calls
+## Capturing the Return Value of Function Calls in Variables
 
-Let's recall our learnings from the `Return keyword` section of the previous Functions. If a function has a return value, we can assign a variable to its function call and expect a value. Let's breakdown the `sub_total` variable assignment in `display_order_summary`:
+Let's recall our learnings from the `Return keyword` section of the previous Functions reading.
 
-    - `sub_total` is assigned to the function call, `calculate_subtotal`.
-    - `calculate_subtotal` runs and returns a value of 40 when finished.
-    -  40 is now assigned to `subtotal`. 
+<br>
 
-    ```Python
-    # before executing
-    sub_total = calculate_subtotal(item_prices)
-    # after executing 
-    sub_total = 40 
-    ```
+If a function has a return value, we often want to capture that value, and use it in our code later. To do this, we set up a variable assignment to receive the result of the function call.
+
+<br>
+
+The syntax for this is `variable_name = function_call()`.
+
+<br>
+
+We set a variable, which we want to receive the return value of the function, equal to the result of calling the function. When this code is executed, Python sees that we are trying to assign a value, so it evaluates everything on the right-hand side of the assignment (in this case, running our function call), and then stores the result in the variable.
+
+<br>
+
+<details>
+
+<summary>Expand for a breakdown of the <code>sub_total</code> variable assignment in <code>display_order_summary</code>.</summary>
+
+
+  1. `sub_total` is set up to receive a variable assignment, so Python looks at the code to the right of the assignment, where it sees `calculate_subtotal(item_prices)`.
+  1. `calculate_subtotal` runs and returns a value of 40 when finished.
+  1. The expression result, 40, is assigned to `subtotal`. 
+
+```python
+# before right-hand side evaluation
+sub_total = calculate_subtotal(item_prices)
+
+# after right-hand side evaluation
+sub_total = 40 
+```
+
+</details>
+
 ### !end-callout
 
 
@@ -232,12 +255,6 @@ Notice that in our version, if the user does not give a valid input, the return 
 
 ### !end-callout
 
-## Summary
-
-Now that we have broken the various sections into functions, we can easily swap the order of the games, play a game multiple times, or add new games in new functions and insert them in any order we want.  
-
-Functions add flexibility and structure to our code, and make code easier to maintain and read.  In the next lesson we will work on adding more functionality to our functions with loops. 
-
 ## Practice Problems 
 
 ### !challenge
@@ -251,12 +268,14 @@ Functions add flexibility and structure to our code, and make code easier to mai
 
 ##### !question
 
-Best Burger needs help creating `order_summary` for their drive-thru display. Best Burger menu include: $5.25 burger, $2.50 fries, and a $4.25 milkshake. Create the helper function `calculate_total` that takes in a list of items and calculates the total to be used in `order_summary`.
+Ada Bubble Tea needs help creating `drink_summary` for their online order display. Each drink has three options: tea flavor, milk, and boba.  The tea flavor options are _oolong_ ($4.50), _jasmine_ ($4.50), and _silver needle_ ($5.00).  The milk options are _none_ ($0.00), _dairy_ ($0.50), _oat_ ($0.75), and _soy_ ($0.50).  The boba options are _yes_ ($0.50), and _no_ ($0.00).
 
-|example input `items`| example output (return value) |
+Create the helper function `calculate_total`. It takes in parameters representing the order, and calculates the total to be used in `drink_summary`.
+
+|example input `flavor`, `milk`, `boba`| example output (return value) |
 |--|--|
-|`['fries', 'fries', 'burger']`| `10.25`|
-|`['fries', 'milkshake', 'burger']`| `12`|
+|`'oolong', 'none', 'yes'`| `5.00`|
+|`'silver needle', 'oat', 'yes'`| `6.25`|
 
 ##### !end-question
 
@@ -264,17 +283,25 @@ Best Burger needs help creating `order_summary` for their drive-thru display. Be
 
 ```py
 
-def calculate_total(order_items):
+def calculate_total(flavor, milk, boba):
     pass 
 
-def order_summary(order_items):
-    total = calculate_total(order_items)
+def drink_summary(flavor, milk, boba):
+    total = calculate_total(flavor, milk, boba)
+
+    print('*** Drink Summary ***')
+    drink_display = flavor.capitalize()
+    if milk != 'none' or boba != 'no':
+        drink_display = drink_display + ' with '
+    if milk != 'none':
+        drink_display = drink_display + milk + ' milk'
+    if milk != 'none' and boba != 'no':
+        drink_display = drink_display + ' and '
+    if boba != 'no':
+        drink_display = drink_display + 'boba'
     
-    print("*** Welcome to Best Burger ***")
-    print("Order Items: ")
-    for item in order_items:
-        print(item)
-    print(f"Total: {total}")
+    print(drink_display)
+    print(f'Drink total: {total}')
 ```
 
 ##### !end-placeholder
@@ -286,91 +313,149 @@ import unittest
 from main import calculate_total
 
 class TestPython1(unittest.TestCase):
-    def test_total_of_different_items(self):
+    def test_total_of_least_expensive_drink(self):
         # Arrange
-        order = ["burger", "fries", "milkshake"]
+        flavor='oolong'
+        milk='none'
+        boba='no'
 
         # Act/Assert
-        self.assertEqual(calculate_total(order), 12)
+        self.assertEqual(calculate_total(flavor, milk, boba), 4.5)
 
-    def test_order_of_same_item(self):
+    def test_total_of_most_expensive_drink(self):
         # Arrange
-        order = ["fries", "fries", "fries"]
+        flavor='silver needle'
+        milk='oat'
+        boba='yes'
         
         # Act/Arrange
-        self.assertEqual(calculate_total(order), 7.5)
+        self.assertEqual(calculate_total(flavor, milk, boba), 6.25)
 
-    def test_no_items(self):
-        # Arrange
-        order = []
-
-        # Act/Arrange
-        self.assertEqual(calculate_total(order), 0)
 ```
 
 ##### !end-tests
 ### !end-challenge
 
+<!--BEGIN CHALLENGE-->
+
 ### !challenge
 
 * type: code-snippet
 * language: python3.6
-* id: 366207b9-4c9e-4843-9a83-60f02b121867
-* title: Net Income 
-* points: 1
-* topics: python, functions
+* id: b0746ef4-8fc2-4187-8c44-eb7a5c5adf58
+* title: Number Converter
 
 ##### !question
+The Ada Web Design company often has clients send them color changes for websites.  Sometimes the clients send these colors in RGB format, but websites use hexadecimal color codes to represent colors.  The RGB format describes a color by setting red, green and blue values in the range of 0-255.  Hex color codes also include red, green and blue values, but the individual values are converted to base 16, aka hexadecimal, before being combined into a single string.
 
-FastBooks needs help developing an income statement generator. Given a list of expense costs, create the function `calculate_expenses`. This function will be used in `calculate_net_income`.  
+<br>
 
-|example input `expense costs`| example output (return value) |
+<details>
+
+<summary>Expand for a brief overview of hexadecimal numbers.</summary>
+
+Hexadecimal numbers work the same way as the decimal (base 10) numbers we use on a day-to-day basis, but rather than using 10 (from deci) digits, 0-9, it uses 16 digits (from hex, meaning 6, and deci, meaning 10). Since the decimal system already uses the digits 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, where do these extra 6 digits come from? We use letters!
+
+A = 10, B = 11, C = 12, D = 13, E = 14, F = 15
+
+Even though decimal uses only 10 individual digits, it can represent _many_ more quantities. To do so, we use place value (the position of a digit) to stand in for multiples of a quantity. When we write 42, this is really shorthand for 4 tens, and 2 ones. When we write 1792, this is shorthand for 1 thousand, 7 hundreds, 9 tens, and 2 ones.
+
+We are so used to thinking about numbers in decimal, it can be challenging to think of writing them differently, but there's no reason why humans _had_ to write in base 10. In fact, cultures around the world have used a variety of numeric writing systems.
+
+Computers use a way of representing numbers called binary, which uses only 2 (from bi) digits: 0, and 1. We can use place values to represent more quantities, such as 101010. This means 1 thirty-two, 0 sixteens, 1 eight, 0 fours, 1 two, and 0 ones. Or decimal 42!
+
+Binary numbers can get very long very quickly, but hexadecimal can be used to write binary values more concisely. We won't discuss this exact relationship here, but know there is a quick way to change from binary 101010 to hexadecimal 2A. Hexadecimal 2A means 2 sixteens, and 10 ones, or decimal 42 once more!
+
+</details>
+
+<br>
+
+Write a function that converts an RGB color to to a hex color string.  This function should use the helper function `number_to_hex_string`, which takes a number and returns the hexadecimal representation of that number in a two digit string format.
+
+* The RGB color will be passed into the function as red, green and blue values, each in the range of 0-255.  
+* Hex color codes are in the format _#RRGGBB_, where RR is the red value in hexadecimal, GG is the green value in hexadecimal and BB is the blue value in hexadecimal.  
+
+|example input `red`, `green`, `blue`| example output (return value) |
 |--|--|
-|`[10, 20, 30]`| `60`|
-
+|`255, 255, 255`| `'#FFFFFF'`|
+|`100, 50, 5`| `'#643205'`|
+|`0, 0, 0`| `'#000000'`|
 
 ##### !end-question
 
 ##### !placeholder
 
-```py
+```python
 
-def calculate_expenses(expense_costs):
-    pass 
+def color_converter(red, green, blue):
+    pass
 
-def calculate_net_income(revenue, expense_costs):
-    expenses = calculate_expenses(expense_costs)
-    net_income = revenue - expenses
-    return net_income
+def number_to_hex_string(num):
+    prefix = '0x'
+    hex_string = hex(num)
+    if hex_string.startswith(prefix):
+        hex_string = hex_string[len(prefix):]
+    if len(hex_string) < 2:
+        hex_string = '0' + hex_string
+    return hex_string.upper()
 
 ```
 
 ##### !end-placeholder
 
 ##### !tests
+```python
 
-```py
 import unittest
-from main import calculate_expenses
+from main import color_converter, number_to_hex_string
+
 
 class TestPython1(unittest.TestCase):
-    def test_total_of_different_costs(self):
-        # Arrange
-        expenses = [100, 2000, 200]
+    def test_red(self):
+        #Arrange
+        red = 255
+        green = 0
+        blue = 0
+        #Act/Assert
+        self.assertEqual(color_converter(red, green, blue), '#FF0000')
 
-        # Act/Assert
-        self.assertEqual(calculate_expenses(expenses), 2300)
+    def test_blue(self):
+        #Arrange
+        red = 0
+        green = 0
+        blue = 255
 
-    def test_no_expenses(self):
-        # Arrange
-        expenses = []
+        #Act/Assert
+        self.assertEqual(color_converter(red, green, blue), '#0000FF')
 
-        # Act/Arrange
-        self.assertEqual(calculate_expenses(expenses), 0)
+    def test_purple(self):
+        #Arrange
+        red = 106
+        green = 13
+        blue = 173
+
+        #Act/Assert
+        self.assertEqual(color_converter(red, green, blue), '#6A0DAD')
+    
+    def test_grey(self):
+         #Arrange
+        red = 75
+        green = 75
+        blue = 75
+
+        #Act/Assert
+        self.assertEqual(color_converter(red, green, blue), '#4B4B4B')
+       
 ```
-
 ##### !end-tests
+
+
 ### !end-challenge
 
+<!--END CHALLENGE-->
 
+## Summary
 
+Now that we have broken the various sections into functions, we can easily swap the order of the games, play a game multiple times, or add new games in new functions and insert them in any order we want.  
+
+Functions add flexibility and structure to our code, and make code easier to maintain and read.  In the next lesson we will work on adding more functionality to our functions with loops. 
