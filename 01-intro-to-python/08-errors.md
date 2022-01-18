@@ -11,7 +11,7 @@ At the end of this lesson students will be able to:
 
 ## Introduction
 
-Errors are a part of part of writing code. No matter how experienced or how skilled a programmer is, they will still sometimes make mistakes! Error output help us find those mistakes and give hints on how to fix them. Python error output can be a bit tricky to decipher at first, but it becomes easier and easier with practice!
+Errors are a part of writing code. No matter how experienced or how skilled a programmer is, they will still sometimes make mistakes! Error output helps us find those mistakes and gives hints on how to fix them. Python error output can be a bit tricky to decipher at first, but it becomes easier and easier with practice!
 
 ## An example error
 
