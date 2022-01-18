@@ -335,6 +335,28 @@ class TestPython1(unittest.TestCase):
 ##### !question
 The Ada Web Design company often has clients send them color changes for websites.  Sometimes the clients send these colors in RGB format, but websites use hexadecimal color codes to represent colors.  The RGB format describes a color by setting red, green and blue values in the range of 0-255.  Hex color codes also include red, green and blue values, but the individual values are converted to base 16, aka hexadecimal, before being combined into a single string.
 
+<br>
+
+<details>
+
+<summary>Expand for a brief overview of hexadecimal numbers.</summary>
+
+Hexadecimal numbers work the same way as the decimal (base 10) numbers we use on a day-to-day basis, but rather than using 10 (from deci) digits, 0-9, it uses 16 digits (from hex, meaning 6, and deci, meaning 10). Since the decimal system already uses the digits 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, where do these extra 6 digits come from? We use letters!
+
+A = 10, B = 11, C = 12, D = 13, E = 14, F = 15
+
+Even though decimal uses only 10 individual digits, it can represent _many_ more quantities. To do so, we use place value (the position of a digit) to stand in for multiples of a quantity. When we write 42, this is really shorthand for 4 tens, and 2 ones. When we write 1792, this is shorthand for 1 thousand, 7 hundreds, 9 tens, and 2 ones.
+
+We are so used to thinking about numbers in decimal, it can be challenging to think of writing them differently, but there's no reason why humans _had_ to write in base 10. In fact, cultures around the world have used a variety of numeric writing systems.
+
+Computers use a way of representing numbers called binary, which uses only 2 (from bi) digits: 0, and 1. We can use place values to represent more quantities, such as 101010. This means 1 thirty-two, 0 sixteens, 1 eight, 0 fours, 1 two, and 0 ones. Or decimal 42!
+
+Binary numbers can get very long very quickly, but hexadecimal can be used to write binary values more concisely. We won't discuss this exact relationship here, but know there is a quick way to change from binary 101010 to hexadecimal 2A. Hexadecimal 2A means 2 sixteens, and 10 ones, or decimal 42 once more!
+
+</details>
+
+<br>
+
 Write a function that converts an RGB color to to a hex color string.  This function should use the helper function `number_to_hex_string`, which takes a number and returns the hexadecimal representation of that number in a two digit string format.
 
 * The RGB color will be passed into the function as red, green and blue values, each in the range of 0-255.  
