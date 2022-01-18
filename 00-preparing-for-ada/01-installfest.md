@@ -2,7 +2,7 @@
 
 ## Overview
 
-In this, our first full lesson, we'll get some software installed for using at Ada.
+In this, our first full lesson, we'll get some software installed that we'll need at Ada.
 
 It's important to ensure that everyone has all the right tools, with compatible versions, so we can successfully begin programming along with the Ada curriculum.
 
@@ -103,7 +103,7 @@ Copy the line below in its entirety (avoiding the `$`), paste it into the termin
 $ /bin/bash -c "$(curl -fsSL https://gist.githubusercontent.com/CheezItMan/e31aebdb0f686c1a194e980b24f3cea4/raw/5710e04d17a7840df3df0ea95502da275a9943cb/ada_c14_installfest.bash)"
 ```
 
-**When the install finishes quit and restart your terminal.** Without doing this, the installation above may not take affect.
+**When the install finishes, quit and restart your terminal.** Without doing this, the installation above may not take affect.
 
 ### About Homebrew
 
@@ -200,7 +200,7 @@ We can confirm whether Git is installed properly by entering the following comma
 - `$ git config --get user.name` Should show your name. This was prompted by the Installfest script.
 - `$ git config --get user.email` Should show the email address associated with your GitHub account. This was also prompted by the Installfest script.
 - `$ git config --global core.editor "code --wait"`
-  - This will set vscode to be the default editor for git commit messages (more on that in the course).
+  - This will set VS Code to be the default editor for Git commit messages (more on that in the course).
   - This should have been set by the Installfest script as well, but it doesn't hurt to run it again here.
 
 ## Browsers
@@ -265,7 +265,7 @@ Then set the **Shells open with:** to `/bin/zsh`.
 
 Zsh is a very customizable environment, and there's a great community-driven framework for managing `zsh` configurations, providing thousands of helper functions, plugins, and themes. Basically, it lets us customize the look and feel of the terminal and add custom commands and shortcuts. The most amazing thing is that **it comes with git integration!**
 
-Using **Oh My Zsh** is completely optional at Ada, but it can be handy for its support of git and other extensibility. You are welcome to install it if this sounds interesting.
+Using **Oh My Zsh** is completely optional at Ada, but it can be handy for its support of Git and other extensibility. You are welcome to install it if this sounds interesting.
 
 Oh My Zsh can be installed with:
 
