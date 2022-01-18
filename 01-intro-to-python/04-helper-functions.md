@@ -255,7 +255,9 @@ Functions add flexibility and structure to our code, and make code easier to mai
 
 ##### !question
 
-Ada Bubble Tea needs help creating `drink_summary` for their online order display. Each drink has three options: tea flavor, milk, and boba.  The tea flavor options are oolong ($4.50), jasmine ($4.50) and silver needle ($5.00).  The milk options are none ($0.00), dairy ($0.50), oat ($0.75) and soy ($0.50).  The boba options are yes ($0.50) and no ($0.00). Create the helper function `calculate_total` that takes in a data structure that represents the order and calculates the total to be used in `drink_summary`.
+Ada Bubble Tea needs help creating `drink_summary` for their online order display. Each drink has three options: tea flavor, milk, and boba.  The tea flavor options are _oolong_ ($4.50), _jasmine_ ($4.50), and _silver needle_ ($5.00).  The milk options are _none_ ($0.00), _dairy_ ($0.50), _oat_ ($0.75), and _soy_ ($0.50).  The boba options are _yes_ ($0.50), and _no_ ($0.00).
+
+Create the helper function `calculate_total`. It takes in parameters representing the order, and calculates the total to be used in `drink_summary`.
 
 |example input `flavor`, `milk`, `boba`| example output (return value) |
 |--|--|
