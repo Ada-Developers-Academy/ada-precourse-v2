@@ -176,13 +176,13 @@ After searching for this error, we might receive a result like [this excellent p
 
 VS Code will often help us find bugs by underlining parts of your code with possible issues. This is what our example code looks like in VS Code:
 
-![The sample code used in this lesson as displayed in VS Code. There is a squiggly line underneath the misspelled preson variable.](/01-intro-to-python/images/vscode-underlining.png)
+![The sample code used in this lesson as displayed in VS Code. There is a squiggly line underneath the misspelled preson variable.](images/vscode-underlining.png)
 
 Note that there's a squiggly underline beneath our variable name with the typo! Super useful!
 
 To get even more information, we can hover the mouse over the underlined portion:
 
-![The sample code used in this lesson as displayed in VS Code. A message box displays details about the underlined error: "preson" is not defined.](/01-intro-to-python/images/vscode-hover.png)
+![The sample code used in this lesson as displayed in VS Code. A message box displays details about the underlined error: "preson" is not defined.](images/vscode-hover.png)
 
 We can see that it warns us that the variable is not defined. Sometimes the warning that VS Code gives when hovering is different than what we get when running the program. It's often useful to look at both to see if one is easier to understand than the other!
 

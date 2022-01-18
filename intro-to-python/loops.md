@@ -13,7 +13,7 @@ At the end of this lesson students will be able to:
 
 ### [Textbook for this section](https://colab.research.google.com/drive/1m9h053kS6bjAeiHnEHIP39fqbyOO7glc?usp=sharing)
 
-In this section we will be building on the code that you wrote in the previous lesson [Helper Functions](04-helper-functions.md). If you would like to look at our example code version for that lesson, you can find it [here](resources/src/02-functions/games_function.md).
+In this section we will be building on the code that you wrote in the previous lesson [Helper Functions](helper-functions.md). If you would like to look at our example code version for that lesson, you can find it [here](resources/src/functions/games_function.md).
 
 ## Vocabulary and Syntax
 
