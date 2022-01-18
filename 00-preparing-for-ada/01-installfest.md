@@ -76,7 +76,7 @@ At this point, get some coffee... it may take a while... maybe homebrewed coffee
 
 ## Xcode Command Line Tools Depend on the OS Version
 
-Apple releases MacOS updates relatively frequently. It is often necessary to update the Xcode command line tools after an OS update. If `brew` suddenly starts failing after a recent OS update, try running the `xcode-select` command given above again to see if that resolves the issue.
+Apple releases MacOS updates relatively frequently. It is often necessary to update the Xcode command line tools after an OS update. If `brew` suddenly starts failing after a recent OS update, try running the `xcode-select --install` command again to see if that resolves the issue.
 
 ### !end-callout
 
