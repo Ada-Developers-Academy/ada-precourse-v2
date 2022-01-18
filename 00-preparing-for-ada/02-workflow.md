@@ -101,7 +101,7 @@ We can change our current directory using `cd` followed by the directory name. R
 
 <br>
 
-And just like that, we've created the directory `first_folder`. When we enter `pwd` again, we should see its path as `Users/<your_username>/first_folder`. 
+And just like that, we've created the directory `first_folder`. When we enter `pwd` again, we should see its path as `/Users/<your_username>/first_folder`. 
 
 ### !end-callout
 
