@@ -64,22 +64,41 @@ def display_order_summary(item_prices):
 
 ## Capturing the Return Value of Function Calls in Variables
 
-Let's recall our learnings from the `Return keyword` section of the previous Functions. If a function has a return value, we often want to capture that value and use it in our code.  The way to do this is to call the function with a variable assignment.  The syntax for this is _variable = function call_.  We set the variable that we want to store the return value of the function equal to the function call.  When this syntax is executed, first the function will run, and then the return value of the function will be stored in the variable.
+Let's recall our learnings from the `Return keyword` section of the previous Functions reading.
 
-Let's breakdown the `sub_total` variable assignment in `display_order_summary`:
+<br>
 
-    - `sub_total` is assigned to the function call, `calculate_subtotal`.
-    - `calculate_subtotal` runs and returns a value of 40 when finished.
-    -  40 is now assigned to `subtotal`. 
+If a function has a return value, we often want to capture that value, and use it in our code later. To do this, we set up a variable assignment to receive the result of the function call.
 
-    ```Python
+<br>
 
-    # before executing
-    sub_total = calculate_subtotal(item_prices)
-    # after executing 
-    sub_total = 40 
+The syntax for this is `variable_name = function_call()`.
 
-    ```
+<br>
+
+We set a variable, which we want to receive the return value of the function, equal to the result of calling the function. When this code is executed, Python sees that we are trying to assign a value, so it evaluates everything on the right-hand side of the assignment (in this case, running our function call), and then stores the result in the variable.
+
+<br>
+
+<details>
+
+<summary>Expand for a breakdown of the <code>sub_total</code> variable assignment in <code>display_order_summary</code>.</summary>
+
+
+  1. `sub_total` is set up to receive a variable assignment, so Python looks at the code to the right of the assignment, where it sees `calculate_subtotal(item_prices)`.
+  1. `calculate_subtotal` runs and returns a value of 40 when finished.
+  1. The expression result, 40, is assigned to `subtotal`. 
+
+```python
+# before right-hand side evaluation
+sub_total = calculate_subtotal(item_prices)
+
+# after right-hand side evaluation
+sub_total = 40 
+```
+
+</details>
+
 ### !end-callout
 
 
