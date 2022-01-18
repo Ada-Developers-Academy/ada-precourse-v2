@@ -281,7 +281,7 @@ Create the helper function `calculate_total`. It takes in parameters representin
 |example input `flavor`, `milk`, `boba`| example output (return value) |
 |--|--|
 |`'oolong', 'none', 'yes'`| `5.00`|
-|`'silver needle', 'oat', 'yes'}`| `6.25`|
+|`'silver needle', 'oat', 'yes'`| `6.25`|
 
 ##### !end-question
 
