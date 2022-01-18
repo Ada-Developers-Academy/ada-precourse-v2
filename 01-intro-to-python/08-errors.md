@@ -26,7 +26,7 @@ def print_greeting(person):
 print_greeting("Xinting")
 ```
 
-We expect that when we run the program we get the following output:
+We expect that when we run the program we will get the following output:
 
 ```
 Hello Xinting!
@@ -74,7 +74,7 @@ The stack trace in this example has two parts. The first one shows where our fun
     print_greeting("Xinting")
 ```
 
-This tells us the file the function was called in, and the line the function call happened. It also displays the line of code where the function was called. In this case, we can see that `print_greeting("Xinting")` was executed in line 4 of `greeter.py`.
+This tells us the file the function was called in, and the line the function call happened on. It also displays the line of code where the function was called. In this case, we can see that `print_greeting("Xinting")` was executed in line 4 of `greeter.py`.
 
 The second part shows what happened inside that `print_greeting` function:
 
@@ -89,13 +89,13 @@ Together, these parts of the traceback tell the story of how we got to the line 
 
 ### Error message
 
-After the traceback, the error output will include an error message that descibes the actual problem. Here's what the error message looks like in our example:
+After the traceback, the error output includes an error message that describes the actual problem. Here's what the error message looks like in our example:
 
 ```
 NameError: name 'preson' is not defined
 ```
 
-This error message has two parts: the type of the error and a description of the error.
+This error message has two parts: the type of the error, and a description of the error.
 
 The first part before the colon tells us the type of error, in this case a `NameError`. This type of error occurs when Python is unable to find a variable or function with the name specified in the code.
 
@@ -129,6 +129,8 @@ NameError: name 'preson' is not defined
 
 From the stack trace, we determined that the error occurred on line 2. From the error message, we determined that Python was unable to find a variable named `preson`. Based on this, take a moment to see if you can spot the bug in the program!
 
+<br>
+
 <details>
 <summary>Expand to see answer</summary>
 
@@ -148,9 +150,9 @@ print_greeting("Xinting")
 
 ### The good stuff is usually at the bottom
 
-Stack traces can get VERY long if there's lots of function calls. Usually, you don't need to look at the whole thing. Start by looking just at the error message, and the last part of the stack trace. This will tell you the error that happened, and the line where the error actually occurred.
+Stack traces can get VERY long if there are lots of function calls. Usually, we don't need to look at the whole thing. We can start by looking just at the error message, and the last part of the stack trace. This will tell us the error that happened, and the line where the error actually occurred.
 
-### Search engines are your friend!
+### Search engines are our friend!
 
 What if we looked at the error message and it wasn't clear to us what it was saying? We can search for the error message online to help us find out what's going on!
 
@@ -168,25 +170,25 @@ NameError: name is not defined
 
 Note that we removed `'preson'` because that variable name is specific to our code.
 
-When I searched this error, I got [this excellent page](https://careerkarma.com/blog/python-nameerror-name-is-not-defined/) that described a `NameError` and possible causes/fixes.
+After searching for this error, we might receive a result like [this excellent page](https://careerkarma.com/blog/python-nameerror-name-is-not-defined/) that describes a `NameError` and possible causes and fixes.
 
-### VS Code is your friend!
+### VS Code is our friend!
 
-VS Code will often help you find bugs by underlining possible parts of your code with issues. For example, this is what our example code looks like in VS Code:
+VS Code will often help us find bugs by underlining parts of your code with possible issues. This is what our example code looks like in VS Code:
 
-![vscode_underline](/01-intro-to-python/images/vscode-underlining.png)
+![The sample code used in this lesson as displayed in VS Code. There is a squiggly line underneath the misspelled preson variable.](/01-intro-to-python/images/vscode-underlining.png)
 
 Note that there's a squiggly underline beneath our variable name with the typo! Super useful!
 
-To get even more information, you can hover your mouse over the underlined portion:
+To get even more information, we can hover the mouse over the underlined portion:
 
-![vscode_hover](/01-intro-to-python/images/vscode-hover.png)
+![The sample code used in this lesson as displayed in VS Code. A message box displays details about the underlined error: "preson" is not defined.](/01-intro-to-python/images/vscode-hover.png)
 
-We can see that it warns us that the variable is not defined. You may notice that the warning that VS Code gives when hovering is different than what we get when running the program. It's often useful to look at both to see if one is easier to understand than the other!
+We can see that it warns us that the variable is not defined. Sometimes the warning that VS Code gives when hovering is different than what we get when running the program. It's often useful to look at both to see if one is easier to understand than the other!
 
 ## Summary
 
-Reading error output is an essential skill for software engineers. In this lesson we learned how we can use the stack trace to see where an error happened and the error message to tell what went wrong. We now know that the useful part of the error output is often at the bottom. We also found that VS Code and search engines can be helpful in deciphering confusing error messages.
+Reading error output is an essential skill for software engineers. In this lesson we learned how we can use the stack trace to see where an error happened, and the error message to tell what went wrong. We now know that the useful part of the error output is often at the bottom. We also found that VS Code and search engines can be helpful in deciphering confusing error messages.
 
 ## Questions
 
@@ -288,7 +290,7 @@ What line does the `ZeroDivisionError` occur at in our code?
 ##### !end-answer
 
 #### !explanation
-Remember, the good stuff is often at the bottom! The last part of the stack trace tells us that the error happened on line 8. All the other parts of the stack trace are just telling us which functions were called on our way to line 8.
+Remember, the good stuff is often at the bottom! The last part of the stack trace tells us that the error happened on line 8. All the other parts of the stack trace are telling us which functions were called on our way to line 8.
 #### !end-explanation
 
 ### !end-challenge
