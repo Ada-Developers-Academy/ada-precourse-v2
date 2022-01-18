@@ -8,5 +8,98 @@ Standards:
     ContentFiles:
       -
         Type: Lesson
-        UID: d225025a-5ba3-464b-a669-3bb165924e32
-        Path: /00-preparing-for-ada/pre-ada-checklist.md 
+        UID: a0dcfc49-d7ae-4d85-8f83-22ebb7982872
+        Path: /preparing-for-ada/starter.md
+      -
+        Type: Lesson
+        UID: f5a99ab6-c687-4706-aceb-eaeb5e5c59b0
+        Path: /preparing-for-ada/installfest.md
+      -
+        Type: Lesson
+        UID: a3a851b4-a725-4e6b-acd1-96d948a90d21
+        Path: /preparing-for-ada/workflow.md
+      - 
+        Type: Lesson
+        UID: 7ff13769-cfc8-42f6-b550-1a0b8a8e4933
+        Path: /preparing-for-ada/python-style.md          
+      -
+        Type: Checkpoint
+        UID: d5884ace-2cf9-46e5-b279-29ef1a501cbb
+        Path: /preparing-for-ada/preparing-for-ada.checkpoint.md
+  - Title: Practice with Python
+    Description: Coding Guess the Number and Snowman
+    UID: 93a229d0-2bf8-48ca-a0f7-9a72a0a323b3
+    SuccessCriteria:
+      - success criteria
+    ContentFiles:
+      -
+        Type: Lesson
+        UID: 43d91d87-455b-41dd-bc8f-c5e0c54b1015
+        Path: /intro-to-python/intro-and-getting-started.md     
+      -
+        Type: Lesson
+        UID: a63942ea-ef3e-43bd-aa69-cecba91a3845
+        Path: /intro-to-python/variables-and-io.md
+      -
+        Type: Lesson
+        UID: 36f31874-6a19-4257-a94e-0e1319032a11
+        Path: /intro-to-python/conditionals.md
+      -
+        Type: Lesson
+        UID: 78485f2f-da36-4cea-95ca-9019b7a32e13
+        Path: /intro-to-python/functions.md        
+      -
+        Type: Lesson
+        UID: d61c1dff-618a-43eb-b5de-0c0e79d95528
+        Path: /intro-to-python/helper-functions.md        
+      -
+        Type: Lesson
+        UID: e6128aa7-9956-4588-8492-40a3d01772b0
+        Path: /intro-to-python/loops.md
+      -
+        Type: Lesson
+        UID: 0089a87e-1c65-4b67-9c0a-55e4213610d5
+        Path: /intro-to-python/lists.md
+      -
+        Type: Lesson
+        UID: b4385d80-5e21-4934-a031-1c66e8605c01
+        Path: /intro-to-python/dictionaries.md
+      -
+
+        Type: Lesson
+        UID: 0920082b-f9ad-4640-a71b-d48a42a05d45
+        Path: /intro-to-python/errors.md
+      -
+        Type: Checkpoint
+        UID: f732de97-d800-482f-8f2c-8fb88e9e34b6
+        Path: /intro-to-python/snowman.checkpoint.md
+      - 
+        Type: Resource
+        UID: 4ba8f29d-fa11-4a26-8b9b-be5be478c5d1
+        Path: /intro-to-python/resources/src/loops/game-loop.md
+      - 
+        Type: Resource
+        UID: 11ee4a28-c0fe-4467-ad10-577e2087cd0f
+        Path: /intro-to-python/resources/src/functions/games_function.md
+      - 
+        Type: Resource
+        UID: 8b5cb812-02ae-488f-9fa7-9c4ca82a3e45
+        Path: /intro-to-python/resources/src/lists/games_list.md
+      -
+        Type: Resource
+        UID: 17f73dd9-889e-4310-8ea1-d5cb4aeade70
+        Path: /intro-to-python/resources/src/dictionaries/games_dictionary.md
+      -
+        Type: Resource
+        UID: 8dcfa218-e7a1-499c-b30e-dab52ba8474b
+        Path: /intro-to-python/resources/src/conditionals/games_conditional.md
+  - Title: Social Justice
+    Description: Prework for the Social Justice Training
+    UID: daffd069-1de3-43dd-9f15-37e66ddbf673
+    SuccessCriteria:
+      - success criteria
+    ContentFiles:
+      -
+        Type: Lesson
+        UID: be54361c-2647-45bc-87a4-2b3673e496ea
+        Path: /ada-equity-work/ada-social-justice-work.md
