@@ -13,7 +13,7 @@ At the end of this lesson we will be able to:
 
 **[Textbook for this section:](https://colab.research.google.com/drive/1huE7PyavZSJIou4mh5G2e7yfG08Vb7da?usp=sharing)**
 
-In this section we will be building on the code that you learned in the previous lesson [Variables and IO](./01-variables-and-io.md).  
+In this section we will be building on the code that you learned in the previous lesson [Variables and IO](./variables-and-io.md).  
 
 Let's take a look at the following code and consider what's going on:
 ```python

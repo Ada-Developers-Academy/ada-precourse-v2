@@ -14,7 +14,7 @@ At the end of this lesson we will be able to:
 
 ### [Textbook for this section](https://colab.research.google.com/drive/1e8CaljqZrKJyFm7Ry5qHynp7GdoVHFLk?usp=sharing)
 
-In this section we will be building on the code that you wrote in the previous lesson [Conditionals](./02-conditionals.md).  If you would like to look at our example code version for that lesson, you can find it [here](resources/src/01-conditionals/games_conditional.md)
+In this section we will be building on the code that you wrote in the previous lesson [Conditionals](./conditionals.md).  If you would like to look at our example code version for that lesson, you can find it [here](resources/src/conditionals/games_conditional.md)
 
 ## What is a Function?
 
