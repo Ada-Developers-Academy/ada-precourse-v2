@@ -169,7 +169,7 @@ def get_value_from_dictionary(dict, key):
 ##### !challenge
 
 * type: code-snippet
-* language: python2.7
+* language: python3.6
 * id: e165737f-196a-4872-b674-4f70ccbb57e8
 * title: Dictionary Counter
 * points: 1
@@ -195,7 +195,6 @@ Example inputs and outputs:
 ##### !placeholder
 
 ```python
-
 def dict_counter(dict, key):
     pass
 
@@ -226,7 +225,6 @@ class TestDictCounter(unittest.TestCase):
         
         dict = dict_counter(dict, "cat")
         self.assertEqual(dict, {"dog":1, "tree":1, "star":4, "cat":2})
-
 
 ```
 ##### !end-tests
