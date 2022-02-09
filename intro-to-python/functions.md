@@ -173,7 +173,7 @@ def convert_to_fahrenheit(temp):
     if not isinstance(temp, int) and not isinstance(temp, float):
         return None
 
-    return 9/5*temp_in_celsius+32
+    return 9/5*temp+32
 
 result = convert_to_fahrenheit(0)
 print(result) # 32
