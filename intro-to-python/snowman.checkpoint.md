@@ -12,7 +12,7 @@
 * type: short-answer
 * id: e035450e-a9c7-48b7-b3e1-44e74b0eac08
 * title: The Final Snowman
-* points: 4
+* points: 3
 * topics: python, dictionaries, functions, lists
 
 ##### !question
