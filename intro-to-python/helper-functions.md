@@ -343,43 +343,27 @@ class TestPython1(unittest.TestCase):
 * type: code-snippet
 * language: python3.6
 * id: b0746ef4-8fc2-4187-8c44-eb7a5c5adf58
-* title: Number Converter
+* title: Speeding
 
 ##### !question
-The Ada Web Design company often has clients send them color changes for websites.  Sometimes the clients send these colors in RGB format, but websites use hexadecimal color codes to represent colors.  The RGB format describes a color by setting red, green and blue values in the range of 0-255.  Hex color codes also include red, green and blue values, but the individual values are converted to base 16, aka hexadecimal, before being combined into a single string.
+You are driving a car from another country in the United States. The speed limit limit is posted in MPH, but your car speedometer shows your speed in kilometers per hour. 
 
-<br>
+Write a function `am_i_speeding` that takes in a `speed` in units of kilometers per hour and a `speed_limit` in units of miles per hour. The function `am_i_speeding` should return 
+- `True` if you are speeding
+- `False` if you are are not speeding
+- `None` if `speed` or `speed_limit` is not a float or an int.
 
-<details>
+The function `am_i_speeding` should use the following provided helper functions: 
+- `convert_km_to_mi` to convert the `speed` to a mi/hr
+- `validate_num` to validate that `speed` and `speed_limit` are a float or an int
 
-<summary>Expand for a brief overview of hexadecimal numbers.</summary>
 
-Hexadecimal numbers work the same way as the decimal (base 10) numbers we use on a day-to-day basis, but rather than using 10 (from deci) digits, 0-9, it uses 16 digits (from hex, meaning 6, and deci, meaning 10). Since the decimal system already uses the digits 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, where do these extra 6 digits come from? We use letters!
-
-A = 10, B = 11, C = 12, D = 13, E = 14, F = 15
-
-Even though decimal uses only 10 individual digits, it can represent _many_ more quantities. To do so, we use place value (the position of a digit) to stand in for multiples of a quantity. When we write 42, this is really shorthand for 4 tens, and 2 ones. When we write 1792, this is shorthand for 1 thousand, 7 hundreds, 9 tens, and 2 ones.
-
-We are so used to thinking about numbers in decimal, it can be challenging to think of writing them differently, but there's no reason why humans _had_ to write in base 10. In fact, cultures around the world have used a variety of numeric writing systems.
-
-Computers use a way of representing numbers called binary, which uses only 2 (from bi) digits: 0, and 1. We can use place values to represent more quantities, such as 101010. This means 1 thirty-two, 0 sixteens, 1 eight, 0 fours, 1 two, and 0 ones. Or decimal 42!
-
-Binary numbers can get very long very quickly, but hexadecimal can be used to write binary values more concisely. We won't discuss this exact relationship here, but know there is a quick way to change from binary 101010 to hexadecimal 2A. Hexadecimal 2A means 2 sixteens, and 10 ones, or decimal 42 once more!
-
-</details>
-
-<br>
-
-Write a function that converts an RGB color to to a hex color string.  This function should use the helper function `number_to_hex_string`, which takes a number and returns the hexadecimal representation of that number in a two digit string format.
-
-* The RGB color will be passed into the function as red, green and blue values, each in the range of 0-255.  
-* Hex color codes are in the format _#RRGGBB_, where RR is the red value in hexadecimal, GG is the green value in hexadecimal and BB is the blue value in hexadecimal.  
-
-|example input `red`, `green`, `blue`| example output (return value) |
+|example input (`speed`, `speed_limit`)| example output (return value) |
 |--|--|
-|`255, 255, 255`| `'#FFFFFF'`|
-|`100, 50, 5`| `'#643205'`|
-|`0, 0, 0`| `'#000000'`|
+|`100, 55`| `True`|
+|`80, 55`| `False`|
+|`"hello"`, `55`| `None`|
+|`100`, `"hello"`| `None`|
 
 ##### !end-question
 
@@ -387,17 +371,17 @@ Write a function that converts an RGB color to to a hex color string.  This func
 
 ```python
 
-def color_converter(red, green, blue):
+def am_i_speeding(speed, speed_limit):
     pass
 
-def number_to_hex_string(num):
-    prefix = '0x'
-    hex_string = hex(num)
-    if hex_string.startswith(prefix):
-        hex_string = hex_string[len(prefix):]
-    if len(hex_string) < 2:
-        hex_string = '0' + hex_string
-    return hex_string.upper()
+def convert_km_to_mi(num):
+    return num*0.62137
+
+def validate_num(num):
+    if not isinstance(num, int) and not isinstance(num, float):
+        return False
+    else:
+        return True
 
 ```
 
@@ -407,47 +391,64 @@ def number_to_hex_string(num):
 ```python
 
 import unittest
-from main import color_converter, number_to_hex_string
+from main import validate_num, convert_km_to_mi, am_i_speeding
 
 
 class TestPython1(unittest.TestCase):
-    def test_red(self):
+    def test_speeding_is_true(self):
         #Arrange
-        red = 255
-        green = 0
-        blue = 0
-        #Act/Assert
-        self.assertEqual(color_converter(red, green, blue), '#FF0000')
-
-    def test_blue(self):
-        #Arrange
-        red = 0
-        green = 0
-        blue = 255
+        speed = 100
+        speed_limit = 55
 
         #Act/Assert
-        self.assertEqual(color_converter(red, green, blue), '#0000FF')
+        self.assertEqual(am_i_speeding(speed, speed_limit), True)
 
-    def test_purple(self):
+    def test_speeding_is_false(self):
         #Arrange
-        red = 106
-        green = 13
-        blue = 173
+        speed = 80
+        speed_limit = 55
 
         #Act/Assert
-        self.assertEqual(color_converter(red, green, blue), '#6A0DAD')
+        self.assertEqual(am_i_speeding(speed, speed_limit), False)
+
+    def test_invalid_speed(self):
+        #Arrange
+        speed = "hello"
+        speed_limit = 55
+
+        #Act/Assert
+        self.assertEqual(am_i_speeding(speed, speed_limit), None)
     
-    def test_grey(self):
-         #Arrange
-        red = 75
-        green = 75
-        blue = 75
+    def test_invalid_speed_limit(self):
+        #Arrange
+        speed = 100
+        speed_limit = "hello"
 
         #Act/Assert
-        self.assertEqual(color_converter(red, green, blue), '#4B4B4B')
+        self.assertEqual(am_i_speeding(speed, speed_limit), None)
        
 ```
 ##### !end-tests
+
+##### !explanation
+
+##### !explanation
+
+An example of a working implementation:
+
+```python
+def am_i_speeding(speed, speed_limit):
+    # validate speed and speed_limit
+    if not validate_num(speed) or not validate_num(speed_limit):
+        return None
+    
+    # convert speed to mi/hr and compare to speed_limit
+    if convert_km_to_mi(speed) > speed_limit:
+        return True
+    else:
+        return False      
+```
+##### !end-explanation
 
 
 ### !end-challenge
@@ -459,3 +460,4 @@ class TestPython1(unittest.TestCase):
 Now that we have broken the various sections into functions, we can easily swap the order of the games, play a game multiple times, or add new games in new functions and insert them in any order we want.  
 
 Functions add flexibility and structure to our code, and make code easier to maintain and read.  In the next lesson we will work on adding more functionality to our functions with loops. 
+
