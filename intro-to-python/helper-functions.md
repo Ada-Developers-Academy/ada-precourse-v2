@@ -211,15 +211,15 @@ We set a variable, which we want to receive the return value of the function, eq
 
 
   1. `sub_total` is set up to receive a variable assignment, so Python looks at the code to the right of the assignment, where it sees `calculate_subtotal(item_prices)`.
-  1. `calculate_subtotal` runs and returns a value of 40 when finished.
-  1. The expression result, 40, is assigned to `subtotal`. 
+  1. `calculate_subtotal` runs and returns a value of 23.00 when finished.
+  1. The expression result, 23.00, is assigned to `subtotal`. 
 
 ```python
 # before right-hand side evaluation
 sub_total = calculate_subtotal(item_prices)
 
 # after right-hand side evaluation
-sub_total = 40 
+sub_total = 23.00 
 ```
 
 </details>
