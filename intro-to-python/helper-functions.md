@@ -23,6 +23,88 @@ Ideally, every function should be designed to handle *one* task in accordance to
 
 ### !end-callout
 
+### `convert_celsius_to_fahrenheit` Example
+
+Let's recall the `convert_celsius_to_fahrenheit` example from the [Function](./functions.md) lesson. 
+
+```Python
+# an example function that returns a temperature in celsius converted to fahrenheit 
+# for numeric arguments and returns None for non-numeric arguments.
+def convert_celsius_to_fahrenheit(temp):
+    if not isinstance(temp, int) and not isinstance(temp, float):
+        return None
+
+    return 9/5*temp+32
+
+
+result = convert_celsius_to_fahrenheit(0)
+print(result) # 32
+
+result = convert_celsius_to_fahrenheit("non numeric value")
+print(result) # None
+```
+
+This function `convert_celsius_to_fahrenheit` first validates that the `temp` is a numeric value, and then returns the `temp` converted to fahrenheit.
+
+In order to follow best practices, our functions should have a single responsibility. As such, we write helper function `valiate_num` to validate the argument `temp` and call this function in `convert_celsius_to_fahrenheit`.
+
+```Python
+def validate_num(num):
+    if isinstance(num, int) or isinstance(num, float):
+        return True
+    else:
+        return False
+
+
+def convert_celsius_to_fahrenheit(temp):
+    if not validate_num(temp):
+        return None
+    
+    return 9/5*temp+32
+```
+
+In addition to helping us follow the single responsibility principle, we may note that understanding the conditional logic in `validate_num` is a bit more straight forward than in the initial function, where we have a compound conditional that includes `not` before each condition.
+
+## Reuse
+
+Another benefit of helper functions is that we can use them as many times as we like. Imagine that in addition to converting a temperature from Celsius to Fahrenheit, we also want to convert from Celsius to Kelvins. We can write another function `convert_celsius_to_kelvin` that also calls `validate_num`.
+
+```Python
+def validate_num(num):
+    if isinstance(num, int) or isinstance(num, float):
+        return True
+    else:
+        return False
+
+
+def convert_celsius_to_fahrenheit(temp):
+    if not validate_num(temp):
+        return None
+
+    return 9/5*temp+32
+
+
+def convert_celsius_to_kelvin(temp):
+    if not validate_num(temp):
+        return None
+
+    return temp+273.15
+    return 9/5*temp+32
+
+
+result = convert_celsius_to_fahrenheit(0)
+print(result)  # 32
+
+result = convert_celsius_to_fahrenheit("non numeric value")
+print(result)  # None
+
+result = convert_celsius_to_kelvin(0)
+print(result)  # 273.15
+
+result = convert_celsius_to_kelvin("non numeric value")
+print(result)  # None
+```
+
 ## Breaking Up Long Functions
 
 Imagine we are building an ecommerce webapp that will display an order summary. In order to create this summary, two calculations must be performed: subtotal of all items purchased and sales tax. It would be reasonable to place these calculations into two separate helper functions: `calculate_subtotal` and `calculate_sales_tax`. 
@@ -436,7 +518,7 @@ class TestPython1(unittest.TestCase):
 
 An example of a working implementation:
 
-```python
+```Python
 def am_i_speeding(speed, speed_limit):
     # validate speed and speed_limit
     if not validate_num(speed) or not validate_num(speed_limit):
