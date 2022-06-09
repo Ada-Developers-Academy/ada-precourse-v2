@@ -15,6 +15,8 @@ At the end of this lesson we will be able to:
 
 A helper function is a function that does part of the work for another function. They make our code easier to read by breaking up long expressions or functions into smaller pieces. We recommend giving helper functions descriptive names, to help with readability.
 
+## Single Responsibility Principle
+
 ### !callout-info
 
 ## Functions Best Practice
@@ -23,30 +25,22 @@ Ideally, every function should be designed to handle *one* task in accordance to
 
 ### !end-callout
 
-### `convert_celsius_to_fahrenheit` Example
-
 Let's recall the `convert_celsius_to_fahrenheit` example from the [Function](./functions.md) lesson. 
 
 ```Python
-# an example function that returns a temperature in celsius converted to fahrenheit 
-# for numeric arguments and returns None for non-numeric arguments.
+# an example function that returns a temperature in
+# celsius converted to fahrenheit for numeric arguments
+# and returns None for non-numeric arguments.
 def convert_celsius_to_fahrenheit(temp):
     if not isinstance(temp, int) and not isinstance(temp, float):
         return None
 
     return 9/5*temp+32
-
-
-result = convert_celsius_to_fahrenheit(0)
-print(result) # 32
-
-result = convert_celsius_to_fahrenheit("non numeric value")
-print(result) # None
 ```
 
 This function `convert_celsius_to_fahrenheit` first validates that the `temp` is a numeric value, and then returns the `temp` converted to fahrenheit.
 
-In order to follow best practices, our functions should have a single responsibility. As such, we write helper function `valiate_num` to validate the argument `temp` and call this function in `convert_celsius_to_fahrenheit`.
+In order to follow best practices, our functions should have a single responsibility. As such, we can write a helper function `valiate_num` to encapsulate the functionality of validating the argument `temp`.  We will call this helper function in `convert_celsius_to_fahrenheit`.
 
 ```Python
 def validate_num(num):
@@ -89,7 +83,6 @@ def convert_celsius_to_kelvin(temp):
         return None
 
     return temp+273.15
-    return 9/5*temp+32
 
 
 result = convert_celsius_to_fahrenheit(0)
@@ -511,8 +504,6 @@ class TestPython1(unittest.TestCase):
        
 ```
 ##### !end-tests
-
-##### !explanation
 
 ##### !explanation
 
