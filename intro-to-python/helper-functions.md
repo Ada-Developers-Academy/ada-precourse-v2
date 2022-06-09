@@ -29,7 +29,7 @@ Let's recall the `convert_celsius_to_fahrenheit` example from the [Function](./f
 
 ```Python
 # an example function that returns a temperature in
-# celsius converted to fahrenheit for numeric arguments
+# Celsius converted to Fahrenheit for numeric arguments
 # and returns None for non-numeric arguments.
 def convert_celsius_to_fahrenheit(temp):
     if not isinstance(temp, int) and not isinstance(temp, float):
@@ -38,7 +38,7 @@ def convert_celsius_to_fahrenheit(temp):
     return 9/5*temp+32
 ```
 
-This function `convert_celsius_to_fahrenheit` first validates that the `temp` is a numeric value, and then returns the `temp` converted to fahrenheit.
+This function `convert_celsius_to_fahrenheit` first validates that the `temp` is a numeric value, and then returns the `temp` converted to Fahrenheit.
 
 In order to follow best practices, our functions should have a single responsibility. As such, we can write a helper function `valiate_num` to encapsulate the functionality of validating the argument `temp`.  We will call this helper function in `convert_celsius_to_fahrenheit`.
 
@@ -57,7 +57,7 @@ def convert_celsius_to_fahrenheit(temp):
     return 9/5*temp+32
 ```
 
-In addition to helping us follow the single responsibility principle, we may note that understanding the conditional logic in `validate_num` is a bit more straight forward than in the initial function, where we have a compound conditional that includes `not` before each condition.
+In addition to helping us follow the single responsibility principle, we may note that understanding the conditional logic in `validate_num` is a bit more straight forward than in the initial function, where we have a compound conditional that includes `not` before each condition (`if not isinstance(temp, int) and not isinstance(temp, float):`).
 
 ## Reuse
 
@@ -99,29 +99,21 @@ print(result)  # None
 ```
 
 ## Breaking Up Long Functions
+Let's look at another example using helper functions to ensure functions have a single responsibility. In addition, this example will demonstrate how breaking up long functions using helper functions can enhance readability. 
 
-Imagine we are building an ecommerce webapp that will display an order summary. In order to create this summary, two calculations must be performed: subtotal of all items purchased and sales tax. It would be reasonable to place these calculations into two separate helper functions: `calculate_subtotal` and `calculate_sales_tax`. 
+Imagine we are building an ecommerce webapp that will display an order summary. In order to create this summary, two calculations must be performed: (1) subtotal of all items purchased and (2) sales tax. Then these values need to be displayed.
+
+Let's look at a single function that performs all these tasks.
 
 ```Python
-def calculate_subtotal(item_prices):
-    total = 0
+def calculate_and_display_bill(item_prices, sales_tax_rate):
+    sub_total = 0
     for price in item_prices:
-        total += price
-    return float(total)
+        sub_total += price
 
-def calculate_sales_tax(total):
-    sales_tax_rate = .08
-    sales_tax_total = total * sales_tax_rate
-    return float(sales_tax_total)
-```
+    sales_tax_total = sub_total * sales_tax_rate
 
-Then, we could create another function `display_order_summary` that takes in a list of item prices and calls `calculate_subtotal` and `calculate_sales_tax`. 
-
-```Python
-def display_order_summary(item_prices):
-    sub_total = calculate_subtotal(item_prices)
-    sales_tax_total = calculate_sales_tax(sub_total) 
-    grand_total = sub_total + sales_tax_total
+    grand_total = sub_total+sales_tax_total
 
     sub_total = "$ {:.2f}".format(sub_total)
     grand_total = "$ {:.2f}".format(grand_total)
@@ -132,8 +124,66 @@ def display_order_summary(item_prices):
         Item(s) Subtotal:  {sub_total}
         Sales Tax:         {sales_tax_total}
         --------------
-        Grand Total:       {grand_total}""") 
+        Grand Total:       {grand_total}""")
+
+
+bill = calculate_and_display_bill([5.00, 8.00, 10.00], 0.08)
+print(bill)
+# **** Order Summary ****
+#
+#        Item(s) Subtotal:  $ 23.00
+#        Sales Tax:         $  1.84
+#        --------------
+#        Grand Total:       $ 24.84
 ```
+
+Now let's look at how we could use helper functions to encapsulate the different parts of the problem including calculating the subtotal, calculating the sales tax, and formatting the numeric output with functions `calculate_subtotal`, `calculate_sales_tax`, and `format_cost`. 
+
+```Python
+def calculate_subtotal(item_prices):
+    sub_total = 0
+    for price in item_prices:
+        sub_total += price
+
+    return sub_total
+
+
+def calculate_sales_tax(sub_total, sales_tax_rate):
+    sales_tax_total = sub_total * sales_tax_rate
+    return sales_tax_total
+
+
+def format_cost(cost):
+    return "$ {:.2f}".format(cost)
+```
+
+We will call these helper functions in a function `display_order_summary` that takes in the `item_prices` and `sales_tax_rate` and returns a string that summarizes the order.
+
+```Python
+def display_order_summary(item_prices, sales_tax_rate):
+    sub_total = calculate_subtotal(item_prices)
+    sales_tax_total = calculate_sales_tax(sub_total, sales_tax_rate)
+    grand_total = sub_total+sales_tax_total
+
+    return (f"""
+        **** Order Summary ****\n  
+        Item(s) Subtotal:  {format_cost(sub_total)}
+        Sales Tax:         {format_cost(sales_tax_total)}
+        --------------
+        Grand Total:       {format_cost(grand_total)}""")
+
+
+bill = display_order_summary([5.00, 8.00, 10.00], 0.08)
+print(bill)
+# **** Order Summary ****
+#
+#        Item(s) Subtotal:  $ 23.00
+#        Sales Tax:         $  1.84
+#        --------------
+#        Grand Total:       $ 24.84
+```
+
+Note that each function is easier to read and has a single responsibility.
 
 ### !callout-info
 
