@@ -69,13 +69,13 @@ In the last lesson we wrote a series of conditionals to validate and test user i
 
 Lets say we want to play a different game after we finish playing Guess the Number.  We could just add the code for the new game after the code that's in the file right now, but then what if we want to change the order of the games?  
 
-We're now looking at moving around big code blocks.  Then if we change our minds and want to move it back, or add another game (and so on) things quickly get messy.  
+We're now looking at moving around big code blocks.  Then if we change our minds and want to move it back, or add another game (and so on) things quickly get messy. 
 
 <!-- available callout types: info, success, warning, danger, secondary  -->
 ### !callout-info
 
 ## Why Functions?
-Functions encapsulate code blocks into re-usable chunks that we can then call in whatever order we want.  They also help us reuse these blocks of code in other programs.
+Functions encapsulate code blocks into re-usable chunks that we can then call in whatever order we want or as many times as we want.  They also help us reuse these blocks of code in other programs.
 
 ### !end-callout
 
@@ -92,7 +92,7 @@ The "Guess the number" function will:
 
 Lets write this code and place it in a function called `guess_the_number`.  Then call the function at the bottom of the file.
 
-Try writing this in VS code and then compare your answer to ours below.
+Try writing `guess_the_number` in VS code and then compare your answer to ours below.
 
 <details>
 <summary> Our version at this point </summary>
@@ -133,7 +133,56 @@ guess_the_number()
 </details>
 
 
+Now that we have a `guess_the_number` function, we can call this function multiple time to give the user a fair chance at actually guessing the number.
 
+
+<details>
+<summary>Add multiple function calls as shown in the details tag</summary>
+
+```python
+import random
+
+RANGE_LOW = 0
+RANGE_HIGH = 100
+# pick a random number
+random_number = random.randint(RANGE_LOW, RANGE_HIGH)
+
+
+def guess_the_number():
+    user_input_string = input("Guess the number: ")
+    user_input = None
+
+    if user_input_string.isnumeric():
+        user_input = int(user_input_string)
+
+        if user_input < RANGE_LOW or user_input > RANGE_HIGH:
+            print(f"Your guess is out of bounds.")
+            print(f"It must be between {RANGE_LOW} and {RANGE_HIGH}")
+        elif user_input == random_number:
+            print("You guessed the number!  Good job!")
+        elif user_input > random_number:
+            print("Your guess is too high")
+        elif user_input < random_number:
+            print("Your guess is too low")
+        
+    else:
+        print("You must input a number!")
+
+guess_the_number()
+guess_the_number()
+guess_the_number()
+guess_the_number()
+guess_the_number()
+guess_the_number()
+guess_the_number()
+guess_the_number()
+guess_the_number()
+guess_the_number()
+```
+
+</details>
+
+With this example, we can see that using a function allows us to run the same code multiple times, while keeping the code relatively concise. This code could be even more concise by using a loop, a topic we will review later future lessons. 
 
 ### The `return` Keyword
 
