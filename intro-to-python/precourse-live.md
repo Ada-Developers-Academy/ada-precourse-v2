@@ -7,4 +7,4 @@ Precourse Live is 5 instructor lead sessions to review and practice the precours
 ## Resources
 At Ada, we use a variety of tools to communicate. This means that resources for classroom activities can live on different platforms.
 
-Resources relevant to precourse live sessions will be documented here: [C18 Precourse Live - Class Resource - Student Doc](https://docs.google.com/document/d/146mCuTfzFej3mPmlHvpqVLkomkzESunotaL5uVIZFFc/edit?usp=sharing)
+Resources relevant to precourse live sessions will be documented here: [C18 Precourse Live - Class Resource - Student Doc](https://docs.google.com/document/d/1rgIgmt0W04dz4Lv13Mg6dvt6MsLIYV5WfRNBR-_3de4/edit?usp=sharing)
