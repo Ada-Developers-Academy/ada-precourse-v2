@@ -218,7 +218,7 @@ Sometimes we need to write a function that returns `None` under certain conditio
 ```Python
 # an example function that returns a temperature converted to fahrenheit 
 # for numeric arguments and returns None for non-numeric arguments.
-def convert_to_fahrenheit(temp):
+def convert_celsius_to_fahrenheit(temp):
     if not isinstance(temp, int) and not isinstance(temp, float):
         return None
 
@@ -230,6 +230,60 @@ print(result) # 32
 result = convert_to_fahrenheit("non numeric value")
 print(result) # None
 ```
+
+To further motivate using functions, let's review some example code that makes use of the `convert_celsius_to_fahrenheit` function. Note that by encapsulating the functionality of converting a temperature from Celsius to Fahrenheit in a function, we can use simply call this function for different arguments. 
+
+```Python
+# Temperatures in Celsius
+mumbai_temp = 28
+tokyo_temp = 20
+paris_temp = 21
+madrid_temp = "madrid"
+
+# Output temperature in Fahrenheit
+print("The temperature in Mumbai is ", convert_celsius_to_fahrenheit(mumbai_temp), "°F")
+print("The temperature in Tokyo is ", convert_celsius_to_fahrenheit(tokyo_temp), "°F")
+print("The temperature in Paris is ", convert_celsius_to_fahrenheit(paris_temp), "°F")
+print("The temperature in Madrid is ", convert_celsius_to_fahrenheit(madrid_temp), "°F")
+```
+
+Look at the length of the code required if we did not write the function `convert_celsius_to_fahrenheit`. Notice the amount of repeated code. 
+
+```Python
+# Temperatures in Celsius
+mumbai_temp = 28
+tokyo_temp = 20
+paris_temp = 21
+madrid_temp = "madrid"
+
+# Convert temperatures
+if not isinstance(mumbai_temp, int) and not isinstance(mumbai_temp, float):
+    mumbai_temp_fahrenheit = None
+else: 
+    mumbai_temp_fahrenheit = 9/5*mumbai_temp+32
+
+if not isinstance(tokyo_temp, int) and not isinstance(tokyo_temp, float):
+    tokyo_temp_fahrenheit = None
+else: 
+    tokyo_temp_fahrenheit = 9/5*tokyo_temp+32
+
+if not isinstance(paris_temp, int) and not isinstance(paris_temp, float):
+    paris_temp_fahrenheit = None
+else: 
+    paris_temp_fahrenheit = 9/5*paris_temp+32
+
+if not isinstance(madrid_temp, int) and not isinstance(madrid_temp, float):
+    madrid_temp_fahrenheit = None
+else: 
+    madrid_temp_fahrenheit = 9/5*madrid_temp+32
+
+
+# Output temperature in Fahrenheit
+print("The temperature in Mumbai is ", mumbai_temp_fahrenheit, "°F")
+print("The temperature in Tokyo is ", tokyo_temp_fahrenheit, "°F")
+print("The temperature in Paris is ", paris_temp_fahrenheit, "°F")
+print("The temperature in Madrid is ", madrid_temp_fahrenheit, "°F")
+
 
 ## Practice Problems
 
