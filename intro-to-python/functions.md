@@ -167,19 +167,18 @@ print(result) # None
 Sometimes we need to write a function that returns `None` under certain conditions. In this case, it is best practice to return `None` explicitly rather than rely on Python's default behavior. This is especially true if we return non-`None` values elsewhere in the function, as the omission of the explicit `return None` looks like an oversight.
 
 ```Python
-# an example function that returns a temperature in celsius converted to fahrenheit 
+# an example function that returns a temperature converted to fahrenheit 
 # for numeric arguments and returns None for non-numeric arguments.
-def convert_celsius_to_fahrenheit(temp):
+def convert_to_fahrenheit(temp):
     if not isinstance(temp, int) and not isinstance(temp, float):
         return None
 
     return 9/5*temp+32
 
-
-result = convert_celsius_to_fahrenheit(0)
+result = convert_to_fahrenheit(0)
 print(result) # 32
 
-result = convert_celsius_to_fahrenheit("non numeric value")
+result = convert_to_fahrenheit("non numeric value")
 print(result) # None
 ```
 

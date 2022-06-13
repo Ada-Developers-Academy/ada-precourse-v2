@@ -15,8 +15,6 @@ At the end of this lesson we will be able to:
 
 A helper function is a function that does part of the work for another function. They make our code easier to read by breaking up long expressions or functions into smaller pieces. We recommend giving helper functions descriptive names, to help with readability.
 
-## Single Responsibility Principle
-
 ### !callout-info
 
 ## Functions Best Practice
@@ -25,95 +23,30 @@ Ideally, every function should be designed to handle *one* task in accordance to
 
 ### !end-callout
 
-Let's recall the `convert_celsius_to_fahrenheit` example from the [Function](./functions.md) lesson. 
-
-```Python
-# an example function that returns a temperature in
-# Celsius converted to Fahrenheit for numeric arguments
-# and returns None for non-numeric arguments.
-def convert_celsius_to_fahrenheit(temp):
-    if not isinstance(temp, int) and not isinstance(temp, float):
-        return None
-
-    return 9/5*temp+32
-```
-
-This function `convert_celsius_to_fahrenheit` first validates that the `temp` is a numeric value, and then returns the `temp` converted to Fahrenheit.
-
-In order to follow best practices, our functions should have a single responsibility. As such, we can write a helper function `valiate_num` to encapsulate the functionality of validating the argument `temp`.  We will call this helper function in `convert_celsius_to_fahrenheit`.
-
-```Python
-def validate_num(num):
-    if isinstance(num, int) or isinstance(num, float):
-        return True
-    else:
-        return False
-
-
-def convert_celsius_to_fahrenheit(temp):
-    if not validate_num(temp):
-        return None
-    
-    return 9/5*temp+32
-```
-
-In addition to helping us follow the single responsibility principle, we may note that understanding the conditional logic in `validate_num` is a bit more straight forward than in the initial function, where we have a compound conditional that includes `not` before each condition (`if not isinstance(temp, int) and not isinstance(temp, float):`).
-
-## Reuse
-
-Another benefit of helper functions is that we can use them as many times as we like. Imagine that in addition to converting a temperature from Celsius to Fahrenheit, we also want to convert from Celsius to Kelvins. We can write another function `convert_celsius_to_kelvin` that also calls `validate_num`.
-
-```Python
-def validate_num(num):
-    if isinstance(num, int) or isinstance(num, float):
-        return True
-    else:
-        return False
-
-
-def convert_celsius_to_fahrenheit(temp):
-    if not validate_num(temp):
-        return None
-
-    return 9/5*temp+32
-
-
-def convert_celsius_to_kelvin(temp):
-    if not validate_num(temp):
-        return None
-
-    return temp+273.15
-
-
-result = convert_celsius_to_fahrenheit(0)
-print(result)  # 32
-
-result = convert_celsius_to_fahrenheit("non numeric value")
-print(result)  # None
-
-result = convert_celsius_to_kelvin(0)
-print(result)  # 273.15
-
-result = convert_celsius_to_kelvin("non numeric value")
-print(result)  # None
-```
-
 ## Breaking Up Long Functions
-Let's look at another example using helper functions to ensure functions have a single responsibility. In addition, this example will demonstrate how breaking up long functions using helper functions can enhance readability. 
 
-Imagine we are building an ecommerce webapp that will display an order summary. In order to create this summary, two calculations must be performed: (1) subtotal of all items purchased and (2) sales tax. Then these values need to be displayed.
-
-Let's look at a single function that performs all these tasks.
+Imagine we are building an ecommerce webapp that will display an order summary. In order to create this summary, two calculations must be performed: subtotal of all items purchased and sales tax. It would be reasonable to place these calculations into two separate helper functions: `calculate_subtotal` and `calculate_sales_tax`. 
 
 ```Python
-def calculate_and_display_bill(item_prices, sales_tax_rate):
-    sub_total = 0
+def calculate_subtotal(item_prices):
+    total = 0
     for price in item_prices:
-        sub_total += price
+        total += price
+    return float(total)
 
-    sales_tax_total = sub_total * sales_tax_rate
+def calculate_sales_tax(total):
+    sales_tax_rate = .08
+    sales_tax_total = total * sales_tax_rate
+    return float(sales_tax_total)
+```
 
-    grand_total = sub_total+sales_tax_total
+Then, we could create another function `display_order_summary` that takes in a list of item prices and calls `calculate_subtotal` and `calculate_sales_tax`. 
+
+```Python
+def display_order_summary(item_prices):
+    sub_total = calculate_subtotal(item_prices)
+    sales_tax_total = calculate_sales_tax(sub_total) 
+    grand_total = sub_total + sales_tax_total
 
     sub_total = "$ {:.2f}".format(sub_total)
     grand_total = "$ {:.2f}".format(grand_total)
@@ -124,66 +57,8 @@ def calculate_and_display_bill(item_prices, sales_tax_rate):
         Item(s) Subtotal:  {sub_total}
         Sales Tax:         {sales_tax_total}
         --------------
-        Grand Total:       {grand_total}""")
-
-
-bill = calculate_and_display_bill([5.00, 8.00, 10.00], 0.08)
-print(bill)
-# **** Order Summary ****
-#
-#        Item(s) Subtotal:  $ 23.00
-#        Sales Tax:         $  1.84
-#        --------------
-#        Grand Total:       $ 24.84
+        Grand Total:       {grand_total}""") 
 ```
-
-Now let's look at how we could use helper functions to encapsulate the different parts of the problem including calculating the subtotal, calculating the sales tax, and formatting the numeric output with functions `calculate_subtotal`, `calculate_sales_tax`, and `format_cost`. 
-
-```Python
-def calculate_subtotal(item_prices):
-    sub_total = 0
-    for price in item_prices:
-        sub_total += price
-
-    return sub_total
-
-
-def calculate_sales_tax(sub_total, sales_tax_rate):
-    sales_tax_total = sub_total * sales_tax_rate
-    return sales_tax_total
-
-
-def format_cost(cost):
-    return "$ {:.2f}".format(cost)
-```
-
-We will call these helper functions in a function `display_order_summary` that takes in the `item_prices` and `sales_tax_rate` and returns a string that summarizes the order.
-
-```Python
-def display_order_summary(item_prices, sales_tax_rate):
-    sub_total = calculate_subtotal(item_prices)
-    sales_tax_total = calculate_sales_tax(sub_total, sales_tax_rate)
-    grand_total = sub_total+sales_tax_total
-
-    return (f"""
-        **** Order Summary ****\n  
-        Item(s) Subtotal:  {format_cost(sub_total)}
-        Sales Tax:         {format_cost(sales_tax_total)}
-        --------------
-        Grand Total:       {format_cost(grand_total)}""")
-
-
-bill = display_order_summary([5.00, 8.00, 10.00], 0.08)
-print(bill)
-# **** Order Summary ****
-#
-#        Item(s) Subtotal:  $ 23.00
-#        Sales Tax:         $  1.84
-#        --------------
-#        Grand Total:       $ 24.84
-```
-
-Note that each function is easier to read and has a single responsibility.
 
 ### !callout-info
 
@@ -211,15 +86,15 @@ We set a variable, which we want to receive the return value of the function, eq
 
 
   1. `sub_total` is set up to receive a variable assignment, so Python looks at the code to the right of the assignment, where it sees `calculate_subtotal(item_prices)`.
-  1. `calculate_subtotal` runs and returns a value of 23.00 when finished.
-  1. The expression result, 23.00, is assigned to `subtotal`. 
+  1. `calculate_subtotal` runs and returns a value of 40 when finished.
+  1. The expression result, 40, is assigned to `subtotal`. 
 
 ```python
 # before right-hand side evaluation
 sub_total = calculate_subtotal(item_prices)
 
 # after right-hand side evaluation
-sub_total = 23.00 
+sub_total = 40 
 ```
 
 </details>
@@ -468,27 +343,43 @@ class TestPython1(unittest.TestCase):
 * type: code-snippet
 * language: python3.6
 * id: b0746ef4-8fc2-4187-8c44-eb7a5c5adf58
-* title: Speeding
+* title: Number Converter
 
 ##### !question
-You are driving a car from another country in the United States. The speed limit limit is posted in MPH, but your car speedometer shows your speed in kilometers per hour. 
+The Ada Web Design company often has clients send them color changes for websites.  Sometimes the clients send these colors in RGB format, but websites use hexadecimal color codes to represent colors.  The RGB format describes a color by setting red, green and blue values in the range of 0-255.  Hex color codes also include red, green and blue values, but the individual values are converted to base 16, aka hexadecimal, before being combined into a single string.
 
-Write a function `am_i_speeding` that takes in a `speed` in units of kilometers per hour and a `speed_limit` in units of miles per hour. The function `am_i_speeding` should return 
-- `True` if you are speeding
-- `False` if you are are not speeding
-- `None` if `speed` or `speed_limit` is not a float or an int.
+<br>
 
-The function `am_i_speeding` should use the following provided helper functions: 
-- `convert_km_to_mi` to convert the `speed` to a mi/hr
-- `validate_num` to validate that `speed` and `speed_limit` are a float or an int
+<details>
 
+<summary>Expand for a brief overview of hexadecimal numbers.</summary>
 
-|example input (`speed`, `speed_limit`)| example output (return value) |
+Hexadecimal numbers work the same way as the decimal (base 10) numbers we use on a day-to-day basis, but rather than using 10 (from deci) digits, 0-9, it uses 16 digits (from hex, meaning 6, and deci, meaning 10). Since the decimal system already uses the digits 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, where do these extra 6 digits come from? We use letters!
+
+A = 10, B = 11, C = 12, D = 13, E = 14, F = 15
+
+Even though decimal uses only 10 individual digits, it can represent _many_ more quantities. To do so, we use place value (the position of a digit) to stand in for multiples of a quantity. When we write 42, this is really shorthand for 4 tens, and 2 ones. When we write 1792, this is shorthand for 1 thousand, 7 hundreds, 9 tens, and 2 ones.
+
+We are so used to thinking about numbers in decimal, it can be challenging to think of writing them differently, but there's no reason why humans _had_ to write in base 10. In fact, cultures around the world have used a variety of numeric writing systems.
+
+Computers use a way of representing numbers called binary, which uses only 2 (from bi) digits: 0, and 1. We can use place values to represent more quantities, such as 101010. This means 1 thirty-two, 0 sixteens, 1 eight, 0 fours, 1 two, and 0 ones. Or decimal 42!
+
+Binary numbers can get very long very quickly, but hexadecimal can be used to write binary values more concisely. We won't discuss this exact relationship here, but know there is a quick way to change from binary 101010 to hexadecimal 2A. Hexadecimal 2A means 2 sixteens, and 10 ones, or decimal 42 once more!
+
+</details>
+
+<br>
+
+Write a function that converts an RGB color to to a hex color string.  This function should use the helper function `number_to_hex_string`, which takes a number and returns the hexadecimal representation of that number in a two digit string format.
+
+* The RGB color will be passed into the function as red, green and blue values, each in the range of 0-255.  
+* Hex color codes are in the format _#RRGGBB_, where RR is the red value in hexadecimal, GG is the green value in hexadecimal and BB is the blue value in hexadecimal.  
+
+|example input `red`, `green`, `blue`| example output (return value) |
 |--|--|
-|`100, 55`| `True`|
-|`80, 55`| `False`|
-|`"hello"`, `55`| `None`|
-|`100`, `"hello"`| `None`|
+|`255, 255, 255`| `'#FFFFFF'`|
+|`100, 50, 5`| `'#643205'`|
+|`0, 0, 0`| `'#000000'`|
 
 ##### !end-question
 
@@ -496,17 +387,17 @@ The function `am_i_speeding` should use the following provided helper functions:
 
 ```python
 
-def am_i_speeding(speed, speed_limit):
+def color_converter(red, green, blue):
     pass
 
-def convert_km_to_mi(num):
-    return num*0.62137
-
-def validate_num(num):
-    if not isinstance(num, int) and not isinstance(num, float):
-        return False
-    else:
-        return True
+def number_to_hex_string(num):
+    prefix = '0x'
+    hex_string = hex(num)
+    if hex_string.startswith(prefix):
+        hex_string = hex_string[len(prefix):]
+    if len(hex_string) < 2:
+        hex_string = '0' + hex_string
+    return hex_string.upper()
 
 ```
 
@@ -516,62 +407,47 @@ def validate_num(num):
 ```python
 
 import unittest
-from main import validate_num, convert_km_to_mi, am_i_speeding
+from main import color_converter, number_to_hex_string
 
 
 class TestPython1(unittest.TestCase):
-    def test_speeding_is_true(self):
+    def test_red(self):
         #Arrange
-        speed = 100
-        speed_limit = 55
+        red = 255
+        green = 0
+        blue = 0
+        #Act/Assert
+        self.assertEqual(color_converter(red, green, blue), '#FF0000')
+
+    def test_blue(self):
+        #Arrange
+        red = 0
+        green = 0
+        blue = 255
 
         #Act/Assert
-        self.assertEqual(am_i_speeding(speed, speed_limit), True)
+        self.assertEqual(color_converter(red, green, blue), '#0000FF')
 
-    def test_speeding_is_false(self):
+    def test_purple(self):
         #Arrange
-        speed = 80
-        speed_limit = 55
+        red = 106
+        green = 13
+        blue = 173
 
         #Act/Assert
-        self.assertEqual(am_i_speeding(speed, speed_limit), False)
-
-    def test_invalid_speed(self):
-        #Arrange
-        speed = "hello"
-        speed_limit = 55
-
-        #Act/Assert
-        self.assertEqual(am_i_speeding(speed, speed_limit), None)
+        self.assertEqual(color_converter(red, green, blue), '#6A0DAD')
     
-    def test_invalid_speed_limit(self):
-        #Arrange
-        speed = 100
-        speed_limit = "hello"
+    def test_grey(self):
+         #Arrange
+        red = 75
+        green = 75
+        blue = 75
 
         #Act/Assert
-        self.assertEqual(am_i_speeding(speed, speed_limit), None)
+        self.assertEqual(color_converter(red, green, blue), '#4B4B4B')
        
 ```
 ##### !end-tests
-
-##### !explanation
-
-An example of a working implementation:
-
-```Python
-def am_i_speeding(speed, speed_limit):
-    # validate speed and speed_limit
-    if not validate_num(speed) or not validate_num(speed_limit):
-        return None
-    
-    # convert speed to mi/hr and compare to speed_limit
-    if convert_km_to_mi(speed) > speed_limit:
-        return True
-    else:
-        return False      
-```
-##### !end-explanation
 
 
 ### !end-challenge
@@ -583,4 +459,3 @@ def am_i_speeding(speed, speed_limit):
 Now that we have broken the various sections into functions, we can easily swap the order of the games, play a game multiple times, or add new games in new functions and insert them in any order we want.  
 
 Functions add flexibility and structure to our code, and make code easier to maintain and read.  In the next lesson we will work on adding more functionality to our functions with loops. 
-
