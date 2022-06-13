@@ -119,9 +119,9 @@ def calculate_and_display_bill(item_prices, sales_tax_rate):
     grand_total = sub_total + sales_tax_total
 
     # display totals
-    sub_total = "$ {:.2f}".format(sub_total)
-    sales_tax_total = "$  {:.2f}".format(sales_tax_total)
-    grand_total = "$ {:.2f}".format(grand_total)
+    sub_total = f"${sub_total}:.2f"
+    sales_tax_total = f"${sales_tax_total}:.2f"
+    grand_total = f"${grand_total}:.2f"
     
 
     return (f"""
@@ -159,7 +159,7 @@ def calculate_sales_tax(sub_total, sales_tax_rate):
 
 
 def format_cost(cost):
-    return "$ {:.2f}".format(cost)
+    return f"${cost:.2f}"
 ```
 
 We will call these helper functions in a function `display_order_summary` that takes in the `item_prices` and `sales_tax_rate` and returns a string that summarizes the order.
@@ -239,8 +239,17 @@ Sometimes code will have long expressions that are not easy to read. Imagine we 
 Let's examine this function for calculating the total cost.
 
 ```Python
-def calculate_car_cost1(sale_price, trade_in_value, reg_fee, title_fee, doc_fee, sales_tax_rate):
+def calculate_car_cost1(sale_price, trade_in_value, reg_fee, title_fee, doc_fee, is_electric, sales_tax_rate):
     return (sale_price - trade_in_value)*(1+sales_tax_rate) + reg_fee + title_fee + doc_fee
+
+print(calculate_car_cost(12000, 5000, 500, 100, 100, 0.10))  # => 8400.0
+```
+
+```Python
+def calculate_car_cost1(sale_price, trade_in_value, reg_fee, title_fee, doc_fee, sales_tax_rate):
+    taxable_cost = sale_price - trade_in_value
+    nontaxable_cost = reg_fee + title_fee + doc_fee
+    return taxable_cost*(1+sales_tax_rate) + nontaxable_cost
 
 print(calculate_car_cost(12000, 5000, 500, 100, 100, 0.10))  # => 8400.0
 ```
@@ -254,18 +263,15 @@ def calculate_taxable_cost(sale_price, trade_in_value):
     return sale_price - trade_in_value
 
 
-def calculate_nontaxable_cost(non_taxable_costs):
-    total = 0
-    for cost in non_taxable_costs:
-        total += cost
-    return total
+def calculate_nontaxable_cost(reg_fee, title_fee, doc_fee):
+    return reg_fee + title_fee + doc_fee
 
 
 def calculate_sales_tax(taxable_cost, sales_tax_rate):
     return sales_tax_rate * taxable_cost
 
 
-def calculate_car_cost(sale_price, trade_in_value, non_taxable_costs, sales_tax_rate):
+def calculate_car_cost(sale_price, trade_in_value, reg_fee, title_fee, doc_fee, sales_tax_rate):
     return calculate_taxable_cost(sale_price, trade_in_value)*(1+sales_tax_rate) + calculate_nontaxable_cost(non_taxable_costs)
 
 
