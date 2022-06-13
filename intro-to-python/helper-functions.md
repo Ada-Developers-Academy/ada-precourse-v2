@@ -119,9 +119,9 @@ def calculate_and_display_bill(item_prices, sales_tax_rate):
     grand_total = sub_total + sales_tax_total
 
     # display totals
-    sub_total = f"${sub_total}:.2f"
-    sales_tax_total = f"${sales_tax_total}:.2f"
-    grand_total = f"${grand_total}:.2f"
+    sub_total = f"${sub_total:.2f}"
+    sales_tax_total = f"${sales_tax_total:.2f}"
+    grand_total = f"${grand_total:.2f}"
     
 
     return (f"""
@@ -234,54 +234,88 @@ sub_total = 23.00
 
 ## Breaking Up Long Expressions 
 
-Sometimes code will have long expressions that are not easy to read. Imagine we are calculating the total cost of buying a car. We need to consider the sale price, the trade in value (if any), the registration costs, the document fees, and the sales tax. In this situation, sales tax is only applies to the sale price minus the trade in value. The sales tax does not apply to the registration, title, or document fees.
+Sometimes code will have long expressions that are not easy to read. Imagine we are calculating the total cost of buying a car. We need to consider the sale price, the trade in value (if any), the registration fee, the title fee, the document fee, and the sales tax. In this situation, sales tax only applies to the sale price minus the trade in value. The sales tax does not apply to the registration, title, or document fees. Furthermore, the dealership is waving the document fee if the vehicle is electric.
 
 Let's examine this function for calculating the total cost.
 
 ```Python
-def calculate_car_cost1(sale_price, trade_in_value, reg_fee, title_fee, doc_fee, is_electric, sales_tax_rate):
-    return (sale_price - trade_in_value)*(1+sales_tax_rate) + reg_fee + title_fee + doc_fee
+def calculate_car_cost(sale_price, trade_in_value, reg_fee, title_fee, doc_fee, is_electric, sales_tax_rate):
+    total_cost = (sale_price - trade_in_value) * \
+        (1+sales_tax_rate) + reg_fee + title_fee
 
-print(calculate_car_cost(12000, 5000, 500, 100, 100, 0.10))  # => 8400.0
+    if not is_electric:
+        total_cost += doc_fee
+
+    return total_cost
+
+
+total_cost = calculate_car_cost(12000, 5000, 500, 100, 200, True, 0.10)
+print(total_cost) #=> 8300.0
 ```
+
+Notice that the expression for calculating the total cost is quite longand a bit unclear. Why is each computation within the mathematical expression necessary? One way to add clarity is to split up the expression into multiple lines.
 
 ```Python
-def calculate_car_cost1(sale_price, trade_in_value, reg_fee, title_fee, doc_fee, sales_tax_rate):
-    taxable_cost = sale_price - trade_in_value
-    nontaxable_cost = reg_fee + title_fee + doc_fee
-    return taxable_cost*(1+sales_tax_rate) + nontaxable_cost
+def calculate_car_cost(sale_price, trade_in_value, reg_fee, title_fee, doc_fee, is_electric, sales_tax_rate):
 
-print(calculate_car_cost(12000, 5000, 500, 100, 100, 0.10))  # => 8400.0
+    taxable_cost = sale_price - trade_in_value
+
+    nontaxable_cost = reg_fee + title_fee
+    if not is_electric:
+        nontaxable_cost += doc_fee
+
+    sales_tax = taxable_cost * sales_tax_rate
+
+    total_cost = taxable_cost + sales_tax + nontaxable_cost
+
+    return total_cost
+
+
+total_cost = calculate_car_cost(12000, 5000, 500, 100, 200, True, 0.10)
+print(total_cost)  # => 8300.0
 ```
 
-Our return expression is quite long and a bit unclear. Why is each computation within the mathematical expression necessary? Let's use helper functions to add clarity to this expression. 
-
-We will create helper functions to return the total taxable cost, the total non-taxable cost, and the total sales tax. We will call these functions in an updated `calculate_car_cost` function. For calculating the non-taxable costs, rather then itemizing each of the costs (reg_fee, title_fee, and doc_fee), we will include them in a list similar to the previous example with menu items. 
+Another way to enhance readability is to use helper functions. We will create helper functions to return the total taxable cost, the total non-taxable cost, and the total sales tax. We will call these functions in an updated `calculate_car_cost` function.
 
 ```Python
 def calculate_taxable_cost(sale_price, trade_in_value):
     return sale_price - trade_in_value
 
 
-def calculate_nontaxable_cost(reg_fee, title_fee, doc_fee):
-    return reg_fee + title_fee + doc_fee
+def calculate_nontaxable_cost(reg_fee, title_fee, doc_fee, is_electric):
+    total = reg_fee + title_fee
+
+    if not is_electric:
+        total += doc_fee
+
+    return total
 
 
 def calculate_sales_tax(taxable_cost, sales_tax_rate):
     return sales_tax_rate * taxable_cost
 
 
-def calculate_car_cost(sale_price, trade_in_value, reg_fee, title_fee, doc_fee, sales_tax_rate):
-    return calculate_taxable_cost(sale_price, trade_in_value)*(1+sales_tax_rate) + calculate_nontaxable_cost(non_taxable_costs)
+def calculate_car_cost(sale_price, trade_in_value, reg_fee, title_fee, doc_fee, is_electric, sales_tax_rate):
+    taxable_cost = calculate_taxable_cost(sale_price, trade_in_value)
+    sales_tax = calculate_sales_tax(taxable_cost, sales_tax_rate)
+    nontaxable_cost = calculate_nontaxable_cost(reg_fee, title_fee, doc_fee, is_electric)
+
+    return taxable_cost + sales_tax + nontaxable_cost
 
 
-print(calculate_car_cost(12000, 5000, [500, 100, 100], 0.10))  # => 8400.0
+total_cost = calculate_car_cost(12000, 5000, 500, 100, 200, True, 0.10)
+print(total_cost)  # => 8300.0
 ```
 
-Note that in addition to bring clarity the `calculate_car_cost`, the helper functions make the code easier to change and maintain. If the individual elements that go into the non-taxable cost change, we will only need to update the `calculate_non_taxable_cost` function.
+Note that in addition to enhancing readability in the `calculate_car_cost`, the helper functions make the code easier to change and maintain. Imagine it's now 2030, and car dealerships are no longer providing an incentive for buying an electric car. To make this change, we only need to update the `calculate_non_taxable_cost` function. 
 
+### !callout-info
 
-Imagine we are writing a function to convert a speed in miles/hour to meters/second. We know that there are mimic the order of operations rule, [PEMDAS](https://en.wikipedia.org/wiki/Order_of_operations#Mnemonics). We could write the function as a long expression like so:
+### Different Approaches
+
+Like most algorithms, there is not one right way or even best way to approach this problem. Separating out the different parts of the computation onto separate lines may be sufficient to add clarity and enhance readability. Using helper functions may be a preferred solution if additional complexity is added to the different parts of the computation or you anticipate needing to modify the algorithms for these different parts (taxable and nontaxable costs).
+
+### !end-callout
 
 
 ## Guess The Number Project
