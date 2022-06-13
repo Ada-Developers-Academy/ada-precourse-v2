@@ -297,12 +297,12 @@ def count_item_in_list(item, list_of_items):
             count += 1
     return count
 
-def count_item_in_list(item, list_of_items):
-    count = 0
+def find_index_of_item(item, list_of_items):
+    count = -1
     index = 0
     while index < len(list_of_items):
-        if list_of_items[index] == item:
-            count += 1
+        if list_of_items[count] == item:
+            count += count
         index += 1
     return count
 

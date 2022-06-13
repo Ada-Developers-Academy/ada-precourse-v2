@@ -105,7 +105,7 @@ while keep_running:
 # The value of counter is 10
 ```
 
-Here, we’ve declared the variables `counter` and `keep_running` before the loop. The condition we check to enter our while loop is whether `keep_running` is set to true. In the previous example we checked `counter`’s value directly in the while declaration, but with our flag, we instead check if `counter >= 10` inside our loop and use that to decide if `keep_running` should change to false.
+Here, we’ve declared the variables `counter` and `flag_var` before the loop. The condition we check to enter our while loop is whether `flag_var` is set to true. In the previous example we checked `counter`’s value directly in the while declaration, but with our flag, we instead check if `counter >= 10` inside our loop and use that to decide if `flag_var` should change to false.
 
 ## `for` Loops
 
