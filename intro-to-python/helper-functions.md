@@ -101,23 +101,28 @@ print(result)  # None
 ## Breaking Up Long Functions
 Let's look at another example using helper functions to ensure functions have a single responsibility. In addition, this example will demonstrate how breaking up long functions using helper functions can enhance readability. 
 
-Imagine we are building an ecommerce webapp that will display an order summary. In order to create this summary, two calculations must be performed: (1) subtotal of all items purchased and (2) sales tax. Then these values need to be displayed.
+Imagine we are building an ecommerce webapp that will display an order summary. In order to create this summary, multiple calculations must be performed: calculating the subtotal of all items purchased, calculating the sales tax, and calculating the grand_total. Then these values need to be displayed.
 
 Let's look at a single function that performs all these tasks.
 
 ```Python
 def calculate_and_display_bill(item_prices, sales_tax_rate):
+    # calculate subtotal
     sub_total = 0
     for price in item_prices:
         sub_total += price
 
+    # add subtotal to calculate sales tax
     sales_tax_total = sub_total * sales_tax_rate
 
-    grand_total = sub_total+sales_tax_total
+    # calculate grand total
+    grand_total = sub_total + sales_tax_total
 
+    # display totals
     sub_total = "$ {:.2f}".format(sub_total)
-    grand_total = "$ {:.2f}".format(grand_total)
     sales_tax_total = "$  {:.2f}".format(sales_tax_total)
+    grand_total = "$ {:.2f}".format(grand_total)
+    
 
     return (f"""
         **** Order Summary ****\n  
@@ -163,7 +168,7 @@ We will call these helper functions in a function `display_order_summary` that t
 def display_order_summary(item_prices, sales_tax_rate):
     sub_total = calculate_subtotal(item_prices)
     sales_tax_total = calculate_sales_tax(sub_total, sales_tax_rate)
-    grand_total = sub_total+sales_tax_total
+    grand_total = sub_total + sales_tax_total
 
     return (f"""
         **** Order Summary ****\n  
@@ -229,48 +234,48 @@ sub_total = 23.00
 
 ## Breaking Up Long Expressions 
 
-Sometimes code will have long expressions that are not easy to read. Imagine we are writing a function to mimic the order of operations rule, [PEMDAS](https://en.wikipedia.org/wiki/Order_of_operations#Mnemonics). We could write the function as a long expression like so:
+Sometimes code will have long expressions that are not easy to read. Imagine we are calculating the total cost of buying a car. We need to consider the sale price, the trade in value (if any), the registration costs, the document fees, and the sales tax. In this situation, sales tax is only applies to the sale price minus the trade in value. The sales tax does not apply to the registration, title, or document fees.
+
+Let's examine this function for calculating the total cost.
 
 ```Python
-def pemdas(n1,n2,n3,n4,n5,n6):
-    result = ((((n1**n2)*n3)/n4)+n5)-n6
-    return result
+def calculate_car_cost1(sale_price, trade_in_value, reg_fee, title_fee, doc_fee, sales_tax_rate):
+    return (sale_price - trade_in_value)*(1+sales_tax_rate) + reg_fee + title_fee + doc_fee
+
+print(calculate_car_cost(12000, 5000, 500, 100, 100, 0.10))  # => 8400.0
 ```
-What happens if the exponent or the division is inaccurate within this expression? It would be much harder to test each calculation within this expression. To improve overall readability, what helper functions should we add? (Note: exclude detecting parenthesis)
 
-<br/>
+Our return expression is quite long and a bit unclear. Why is each computation within the mathematical expression necessary? Let's use helper functions to add clarity to this expression. 
 
-<details>
-    
-<summary>Click here to see the helper functions code </summary>
-    
-```python
-def multiply(n1, n2):
-    return n1*n2
+We will create helper functions to return the total taxable cost, the total non-taxable cost, and the total sales tax. We will call these functions in an updated `calculate_car_cost` function. For calculating the non-taxable costs, rather then itemizing each of the costs (reg_fee, title_fee, and doc_fee), we will include them in a list similar to the previous example with menu items. 
 
-def add(n1,n2):
-    return n1+n2
+```Python
+def calculate_taxable_cost(sale_price, trade_in_value):
+    return sale_price - trade_in_value
 
-def subtract(n1,n2):
-    return n1-n2
 
-def divide(n1,n2):
-    return n1 / n2
+def calculate_nontaxable_cost(non_taxable_costs):
+    total = 0
+    for cost in non_taxable_costs:
+        total += cost
+    return total
 
-def exponent(n1, n2):
-    return n1**n2 
 
-def pemdas(n1,n2,n3,n4,n5,n6):
-    result = 0 
-    result += exponent(n1, n2)
-    result = multiply(result, n3)
-    result = divide(result, n4)
-    result = add(result, n5)
-    result = subtract(result, n6)
+def calculate_sales_tax(taxable_cost, sales_tax_rate):
+    return sales_tax_rate * taxable_cost
 
-    return result 
+
+def calculate_car_cost(sale_price, trade_in_value, non_taxable_costs, sales_tax_rate):
+    return calculate_taxable_cost(sale_price, trade_in_value)*(1+sales_tax_rate) + calculate_nontaxable_cost(non_taxable_costs)
+
+
+print(calculate_car_cost(12000, 5000, [500, 100, 100], 0.10))  # => 8400.0
 ```
-</details>
+
+Note that in addition to bring clarity the `calculate_car_cost`, the helper functions make the code easier to change and maintain. If the individual elements that go into the non-taxable cost change, we will only need to update the `calculate_non_taxable_cost` function.
+
+
+Imagine we are writing a function to convert a speed in miles/hour to meters/second. We know that there are mimic the order of operations rule, [PEMDAS](https://en.wikipedia.org/wiki/Order_of_operations#Mnemonics). We could write the function as a long expression like so:
 
 
 ## Guess The Number Project
