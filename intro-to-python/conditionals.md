@@ -63,7 +63,16 @@ print(random.randint(0, 100))
 
 You should see a new number each execution! Run it a few times to watch the number change.
 
-Using this, we can start our game as follows (replace the contents of `game.py` with the following code):
+### !callout-info
+
+### Constants
+
+Before continuing, consider how you could use constants to hold the high and low values for the range.
+<br>
+Give it a try, and then view our implementation.
+
+<details>
+<summary><code>game.py</code> with constants for high and low values.</summary>
 
 ```python
 import random
@@ -73,6 +82,10 @@ RANGE_HIGH = 100
 
 random_number = random.randint(RANGE_LOW, RANGE_HIGH)
 ```
+
+</details>
+
+### !end-callout
 
 ### Getting User Input
 
