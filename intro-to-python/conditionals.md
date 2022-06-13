@@ -33,8 +33,8 @@ else:
 
 ## Vocabulary
 
-| Vocab                        | Definition                                                   | How to Use in a Sentence |
-| ------------------------------------------------------------ | ------------------------------- | ------------------------------------------------ |
+| <div style="width:175px">Vocab</div>| Definition| How to Use in a Sentence |
+| -- | --| -- |
 | `random.randint` | A function that will generate a random integer in a range.  | We used `random.randint(5, 15)` to get a random integer between 5 and 15.  |
 | `if...else`  | A statement to do one of two things based on a condition.  | We wrote an `if...else` statement to determine if the person was old enough to consume alcohol.  |
 |  `if...elif...else` | A statement to conditionally do one of three or more things.  | We wrote an `if...elif...else` statement to print out if the person was too young, too old or just the right age | 
@@ -209,7 +209,7 @@ else:
 ### !callout-info
 ## Take Note:
 
-As with `if`, the `else` portion of the statement is optional.  That last branch could have simply been an `else` but we decided to explicitly state what was going on.  
+As with `if`, the `else` portion of the statement is optional.  That last branch <code>elif user_input < random_number</code> could have simply been an `else` but we decided to explicitly state what was going on.  
 <br/>
 Let's take a look at an example when using only an `if` _without_ an explicit `else` might make sense:  
 
@@ -225,7 +225,7 @@ users_bday_year = input("What year were you born? ")
 # other code goes on from here
 ```
 <br/>
-In this instance, the program only prints out a comment to the user _if_ their birthday is the same as today's date.  There's no need for an `else` because we have nothing _else_ we want to do with our information.  The code simply moves on from there.  
+In this instance, the program only prints out a comment to the user <strong>if</strong> their birthday is the same as today's date.  There's no need for an <code>else</code> because we have nothing <strong>else</strong> we want to do with our information.  The code simply moves on from there.  
 
 ### !end-callout
 
