@@ -255,7 +255,10 @@ print("The temperature in Madrid is ", convert_celsius_to_fahrenheit(madrid_temp
 # The temperature in Madrid is  None °F
 ```
 
-Look at the length of the code required if we did not write the function `convert_celsius_to_fahrenheit`. Notice the amount of repeated code. 
+Expand the section below to look at the length of the code required if we did not write the function `convert_celsius_to_fahrenheit`. Notice the amount of repeated code. 
+
+<details>
+<summary>Code without a function</summary>
 
 ```Python
 # Temperatures in Celsius
@@ -299,8 +302,8 @@ print("The temperature in Madrid is ", madrid_temp_fahrenheit, "°F")
 # The temperature in Madrid is  None °F
 ```
 
+</details>
 
-<!-- available callout types: info, success, warning, danger, secondary, star  -->
 ### !callout-info
 
 ## The DRY Principle
