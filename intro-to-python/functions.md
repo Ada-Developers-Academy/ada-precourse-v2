@@ -71,7 +71,6 @@ Lets say we want to play a different game after we finish playing Guess the Numb
 
 We're now looking at moving around big code blocks.  Then if we change our minds and want to move it back, or add another game (and so on) things quickly get messy. 
 
-<!-- available callout types: info, success, warning, danger, secondary  -->
 ### !callout-info
 
 ## Why Functions?
@@ -135,9 +134,11 @@ guess_the_number()
 
 Now that we have a `guess_the_number` function, we can call this function multiple time to give the user a fair chance at actually guessing the number.
 
+Add the multiple function calls in VS code, play the game, and then view our solution below.
+
 
 <details>
-<summary>Add multiple function calls as shown in the details tag</summary>
+<summary>Our version with multiple function calls</summary>
 
 ```python
 import random
@@ -182,7 +183,7 @@ guess_the_number()
 
 </details>
 
-With this example, we can see that using a function allows us to run the same code multiple times, while keeping the code relatively concise. This code could be even more concise by using a loop, a topic we will review later future lessons. 
+With this example, we can see that using a function allows us to run the same code multiple times, while keeping the code relatively concise. This code could be even more concise by using a loop, a topic we will review a future lesson. 
 
 ### The `return` Keyword
 
@@ -232,7 +233,7 @@ result = convert_celsius_to_fahrenheit("non numeric value")
 print(result) # None
 ```
 
-To further motivate using functions, let's review some example code that makes use of the `convert_celsius_to_fahrenheit` function. Note that by encapsulating the functionality of converting a temperature from Celsius to Fahrenheit in a function, we can use simply call this function for different arguments. 
+To further motivate using functions, let's review some example code that makes use of the `convert_celsius_to_fahrenheit` function. Note that by encapsulating the functionality of converting a temperature from Celsius to Fahrenheit in a function, we can call this function for different arguments. 
 
 ```Python
 # Temperatures in Celsius
@@ -246,6 +247,12 @@ print("The temperature in Mumbai is ", convert_celsius_to_fahrenheit(mumbai_temp
 print("The temperature in Tokyo is ", convert_celsius_to_fahrenheit(tokyo_temp), "°F")
 print("The temperature in Paris is ", convert_celsius_to_fahrenheit(paris_temp), "°F")
 print("The temperature in Madrid is ", convert_celsius_to_fahrenheit(madrid_temp), "°F")
+
+# # Output
+# The temperature in Mumbai is  82.4 °F
+# The temperature in Tokyo is  68.0 °F
+# The temperature in Paris is  69.80000000000001 °F
+# The temperature in Madrid is  None °F
 ```
 
 Look at the length of the code required if we did not write the function `convert_celsius_to_fahrenheit`. Notice the amount of repeated code. 
@@ -285,6 +292,22 @@ print("The temperature in Tokyo is ", tokyo_temp_fahrenheit, "°F")
 print("The temperature in Paris is ", paris_temp_fahrenheit, "°F")
 print("The temperature in Madrid is ", madrid_temp_fahrenheit, "°F")
 
+# # Output
+# The temperature in Mumbai is  82.4 °F
+# The temperature in Tokyo is  68.0 °F
+# The temperature in Paris is  69.80000000000001 °F
+# The temperature in Madrid is  None °F
+```
+
+
+<!-- available callout types: info, success, warning, danger, secondary, star  -->
+### !callout-info
+
+## The DRY Principle
+
+"DRY stands for Don’t Repeat Yourself. It is a software development principle aiming to reduce code duplication which can lead to a poor refactoring and a poor maintenance. In other word, if you have to copy and paste the same exact lines of codes which provide the same functionality, then chances are that your codes don’t follow the DRY at all." Functions are one tool we have for writing DRY code.[source](https://medium.com/@Ialimijoro/the-dry-principle-and-why-you-should-use-it-f02435ae9449)
+
+### !end-callout
 
 ## Practice Problems
 
