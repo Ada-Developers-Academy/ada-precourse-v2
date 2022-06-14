@@ -32,18 +32,23 @@ By using a list, we can store as many ice cream flavors as we want.  Also, pytho
 def favorite_flavors():
     icecream_flavors = []
     flavor = ""
-    while not flavor == "done": # this loop will run until the 
-                                # user types in the word "done"
+    while not flavor == "done":  # this loop will run until the
+        # user types in the word "done"
         flavor = input("What is an icecream flavor that you like? ")
-        icecream_flavors.append(flavor) # when we append something to a list,
-                                        # we add it to the end of the list
-    
-    for flavor in icecream_flavors: # this loop will iterate over each element 
-                                    # in the list, and store them one at a time 
-                                    # in the variable flavor
+        # add all flavors except for done
+        if not flavor == "done":
+            # when we append something to a list, we add it to the end of the list
+            icecream_flavors.append(flavor)
+
+    for flavor in icecream_flavors:  # this loop will iterate over each element
+        # in the list, and store them one at a time
+        # in the variable flavor
         print(f"{flavor} is a great ice cream flavor!")
 
     return icecream_flavors
+
+
+favorite_flavors()
 
 ```
 
@@ -445,7 +450,7 @@ So far our Snowman game has used a constant as the secret word (`SNOWMAN_WORD = 
     ```console
     $ pip3 install wonderwords
     ```
-1. Once that's done, add the line `from wonderwords import RandomWord` to the top of our file.
+2. Once that's done, add the line `from wonderwords import RandomWord` to the top of our file.
     * This will import the class `RandomWord` for us to use in our code.
     ```python
     import random
@@ -455,8 +460,8 @@ So far our Snowman game has used a constant as the secret word (`SNOWMAN_WORD = 
     # ... rest of file
 
     ```
-1. Next, add the constants `SNOWMAN_MAX_WORD_LENGTH = 8` and `SNOWMAN_MIN_WORD_LENGTH = 5` with the other constants at the top of the file.    
-1. Last, add the following lines of code to the top of the `snowman` function:
+3. Next, add the constants `SNOWMAN_MAX_WORD_LENGTH = 8` and `SNOWMAN_MIN_WORD_LENGTH = 5` with the other constants at the top of the file.    
+4. Last, add the following lines of code to the top of the `snowman` function:
     ```python
 
         r = RandomWord()
@@ -474,7 +479,7 @@ So far our Snowman game has used a constant as the secret word (`SNOWMAN_WORD = 
  We are passing two arguments (word_min_length and word_max_length) using keyword arguments.  Again, we will not be covering these topics further in the pre-course, but they will come up later in the Ada curriculum.  The arguments that we are passing to the function `word` will instruct `word` to give us an English word where the length is between the SNOWMAN_MIN_WORD_LENGTH and SNOWMAN_MAX_WORD_LENGTH.  Feel free to experiment with setting different values for the constants.
     </details>
 
-1. The last piece of adding our new random word is replacing the constant `SNOWMAN_WORD` in the conditional test inside of the `snowman` function with the new `snowman_word` variable.
+5. The last piece of adding our new random word is replacing the constant `SNOWMAN_WORD` in the conditional test inside of the `snowman` function with the new `snowman_word` variable.
 
     ```python
 
