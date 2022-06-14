@@ -338,12 +338,12 @@ Note the addition of the word "with" in the combined version.  You can assume th
 
 Example inputs and outputs:
 
-|input|output|
+|<div style="width:250px;">input<div>|output|
 |--|--|
-| `flavors = ["vanilla", "chocolate", "strawberry"]`<br/> `toppings = ["whipped cream", "nuts", "a cherry"]`|`["vanilla with whipped cream", "vanilla with nuts", "vanilla with a cherry", "chocolate with whipped cream", "chocolate with nuts", "chocolate with a cherry", "strawberry with whipped cream", "strawberry with nuts", "strawberry with a cherry"]`|
-| `flavors = ["a", "b"]`<br/> `toppings = ["c", "d", "e"]`|`["a with c", "a with d", "a with e", "b with c", "b with d", "b with e"]`|
-| `flavors = ["vanilla", "strawberry"]`<br/> `toppings = []`|`[]`|
-| `flavors = []`<br/> `toppings = ["chocolate sauce", "caramel sauce"]`|`[]`|
+| `flavors = ["vanilla", "chocolate", "strawberry"]`<br /> <br />`toppings = ["whipped cream", "nuts", "a cherry"]`|`["vanilla with whipped cream", "vanilla with nuts", "vanilla with a cherry", "chocolate with whipped cream", "chocolate with nuts", "chocolate with a cherry", "strawberry with whipped cream", "strawberry with nuts", "strawberry with a cherry"]`|
+| `flavors = ["a", "b"]`<br /> <br />`toppings = ["c", "d", "e"]`|`["a with c", "a with d", "a with e", "b with c", "b with d", "b with e"]`|
+| `flavors = ["vanilla", "strawberry"]`<br /> <br />`toppings = []`|`[]`|
+| `flavors = []`<br /> <br />`toppings = ["chocolate sauce", "caramel sauce"]`|`[]`|
 
 ##### !end-question
 
