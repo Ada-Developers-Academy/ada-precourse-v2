@@ -593,7 +593,7 @@ Now that we have a list incorrect guesses, we can use them in the helper functio
             user_input = get_letter_from_user(wrong_guesses_list)
         # ...
 
-    def get_letter_from_user(wrong_list):
+    def get_letter_from_user(wrong_guesses_list):
         valid_input = False
         user_input_string = None
         while not valid_input:
@@ -603,7 +603,7 @@ Now that we have a list incorrect guesses, we can use them in the helper functio
             elif len(user_input_string) > 1:
                 print("You can only input one letter at a time!")
             # NEW SECTION
-            elif user_input_string in wrong_list:
+            elif user_input_string in wrong_guesses_list:
                 print("You have already guessed that letter!")
             # END NEW SECTION
             else:
@@ -662,14 +662,14 @@ def snowman():
 
 ##### !question
 
-Update the helper function `get_letter_from_user` so that it takes an additional argument (correct_guesses) and uses that along with `wrong_guesses` to print the "You have already guessed that letter" as feedback to the user if the user has already guessed the letter.
+Update the helper function `get_letter_from_user` so that it takes an additional argument (`correct_guesses_list`) and uses that along with `wrong_guesses_list` to print the "You have already guessed that letter" as feedback to the user if the user has already guessed the letter.
 
 ##### !end-question
 
 ##### !placeholder
 
 ```py
-def get_letter_from_user(wrong_list, correct_guesses):
+def get_letter_from_user(wrong_guesses_list, correct_guesses_list):
     valid_input = False
     user_input_string = None
     while not valid_input:
@@ -679,7 +679,7 @@ def get_letter_from_user(wrong_list, correct_guesses):
         elif len(user_input_string) > 1:
             print("You can only input one letter at a time!")
         # UPDATE THIS AREA
-        elif user_input_string in wrong_list:
+        elif user_input_string in wrong_guesses_list:
             print("You have already guessed that letter!")
         # END UPDATE AREA
         else:
@@ -715,11 +715,11 @@ class SimplisticTest(unittest.TestCase):
             'z'
         ]
         correct_guesses_list = ['a', 'b', 'c']
-        wrong_list = ['d', 'e', 'f']
+        wrong_guesses_list = ['d', 'e', 'f']
         with unittest.mock.patch('builtins.input', side_effect=input_letters):
 
             # Act
-            answer = p.get_letter_from_user(wrong_list, correct_guesses_list)
+            answer = p.get_letter_from_user(wrong_guesses_list, correct_guesses_list)
         # Assert
         self.assertTrue(re.match('You have already guessed that letter', mock_stdout.getvalue(), flags=re.IGNORECASE), msg=f"Expected: {'You have already guessed that letter'} but recieved: {mock_stdout.getvalue()}")
 
@@ -731,11 +731,11 @@ class SimplisticTest(unittest.TestCase):
             'z'
         ]
         correct_guesses_list = ['a', 'b', 'c']
-        wrong_list = ['d', 'e', 'f']
+        wrong_guesses_list = ['d', 'e', 'f']
         with unittest.mock.patch('builtins.input', side_effect=input_letters):
 
             # Act
-            p.get_letter_from_user(wrong_list, correct_guesses_list)
+            p.get_letter_from_user(wrong_guesses_list, correct_guesses_list)
         # Assert
         self.assertTrue(re.match('You have already guessed that letter', mock_stdout.getvalue(), flags=re.IGNORECASE), msg=f"Expected {'You have already guessed that letter'} but recieved: {mock_stdout.getvalue()}")
 
@@ -747,13 +747,13 @@ class SimplisticTest(unittest.TestCase):
             'z'
         ]
         correct_guesses_list = ['a', 'b', 'c']
-        wrong_list = ['d', 'e', 'f']
+        wrong_guesses_list = ['d', 'e', 'f']
         with unittest.mock.patch('builtins.input', side_effect=input_letters):
 
             # Act
-            answer = p.get_letter_from_user(wrong_list, correct_guesses_list)
+            answer = p.get_letter_from_user(wrong_guesses_list, correct_guesses_list)
         # Assert
-        self.assertTrue(answer == input_letters[-1], msg=f"Expected after guessing a previously guessed letter to reprompt the user and read in and return a valid letter.  Guessing {input_letters} with correct guesses list {correct_guesses_list} and incorrect guesses list {wrong_list}.  The function returned {answer}")
+        self.assertTrue(answer == input_letters[-1], msg=f"Expected after guessing a previously guessed letter to reprompt the user and read in and return a valid letter.  Guessing {input_letters} with correct guesses list {correct_guesses_list} and incorrect guesses list {wrong_guesses_list}.  The function returned {answer}")
 
     @patch('sys.stdout', new_callable=io.StringIO)
     def test_prints_only_one_letter_at_a_time_for_input_with_multiple_characters(self, mock_stdout):
@@ -763,11 +763,11 @@ class SimplisticTest(unittest.TestCase):
             'z'
         ]
         correct_guesses_list = ['a', 'b', 'c']
-        wrong_list = ['d', 'e', 'f']
+        wrong_guesses_list = ['d', 'e', 'f']
         with unittest.mock.patch('builtins.input', side_effect=input_letters):
 
             # Act
-            p.get_letter_from_user(wrong_list, correct_guesses_list)
+            p.get_letter_from_user(wrong_guesses_list, correct_guesses_list)
         # Assert
         self.assertTrue(re.match('You can only input one letter at a time!', mock_stdout.getvalue(), flags=re.IGNORECASE), msg=f"Expected to print {'You can only input one letter at a time!'} when 'zzzzz' is entered.")
 
@@ -779,11 +779,11 @@ class SimplisticTest(unittest.TestCase):
             'z'
         ]
         correct_guesses_list = ['a', 'b', 'c']
-        wrong_list = ['d', 'e', 'f']
+        wrong_guesses_list = ['d', 'e', 'f']
         with unittest.mock.patch('builtins.input', side_effect=input_letters):
 
             # Act
-            p.get_letter_from_user(wrong_list, correct_guesses_list)
+            p.get_letter_from_user(wrong_guesses_list, correct_guesses_list)
         # Assert
         self.assertTrue(re.match('You must input a letter!', mock_stdout.getvalue(), flags=re.IGNORECASE), msg=f"Expected to print {'You must input a letter!'} when a number is input.")
 
@@ -792,11 +792,11 @@ class SimplisticTest(unittest.TestCase):
         # Arrange
         input_letters = ['a']
         correct_guesses_list = ['b', 'c']
-        wrong_list = ['d', 'e', 'f']
+        wrong_guesses_list = ['d', 'e', 'f']
         with unittest.mock.patch('builtins.input', side_effect=input_letters):
 
             # Act
-            answer = p.get_letter_from_user(wrong_list, correct_guesses_list)
+            answer = p.get_letter_from_user(wrong_guesses_list, correct_guesses_list)
         # Assert
         self.assertTrue(answer == input_letters[0], msg=f"When the user guesses a letter that has not been previously guessed, that letter should be returned.")
 
@@ -805,11 +805,11 @@ class SimplisticTest(unittest.TestCase):
         # Arrange
         input_letters = ['a']
         correct_guesses_list = []
-        wrong_list = []
+        wrong_guesses_list = []
         with unittest.mock.patch('builtins.input', side_effect=input_letters):
 
             # Act
-            answer = p.get_letter_from_user(wrong_list, correct_guesses_list)
+            answer = p.get_letter_from_user(wrong_guesses_list, correct_guesses_list)
         # Assert
         self.assertTrue(answer == input_letters[0], msg="When the no letter has been guessed any valid letter is accepted and returned.")
 
@@ -826,7 +826,7 @@ class SimplisticTest(unittest.TestCase):
 A sample solution could be:
 
 ```python
-def get_letter_from_user(wrong_list, correct_guesses_list):
+def get_letter_from_user(wrong_guesses_list, correct_guesses_list):
     valid_input = False
     user_input_string = None
     while not valid_input:
@@ -836,7 +836,7 @@ def get_letter_from_user(wrong_list, correct_guesses_list):
         elif len(user_input_string) > 1:
             print("You can only input one letter at a time!")
         # NEW SECTION
-        elif user_input_string in wrong_list or user_input_string in correct_guesses_list:
+        elif user_input_string in wrong_guesses_list or user_input_string in correct_guesses_list:
             print("You have already guessed that letter!")
         # END NEW SECTION
         else:
