@@ -4,7 +4,7 @@
 
 The style in our code is just as important as the code itself. Programmers use code standards along with company style guides to ensure that all programmers are using the same style. Code with good style is easy to read, understand, and modify.
 
-At Ada, we will be using the [PEP8](https://www.python.org/dev/peps/pep-0008/)  coding style guide. 
+At Ada, we will be using the [PEP8](https://www.python.org/dev/peps/pep-0008/) coding style guide. 
 
 We encourage you to look it over and your instructors will be referring to it when we make comments on your coding style.
 
@@ -15,6 +15,7 @@ Some highlights include:
     * Note that this is the recommendation in the [PEP8 coding style guide](https://peps.python.org/pep-0008/#tabs-or-spaces). However, one reason we may chose not to follow this guideline is accessibility. Folks who need to display the text larger will find that spaces can consume a great deal of horizontal space, and thus may prefer a tab that can be adjusted by the editor.
   * Continuation lines should align wrapped elements either vertically using Python's implicit line joining inside parentheses, brackets and braces, or using a hanging indent. When using a hanging indent the following should be considered; there should be no arguments on the first line and further indentation should be used to clearly distinguish itself as a continuation line:
 * **[Maximum line length = 79 characters](https://www.python.org/dev/peps/pep-0008/#id19)**  - You should have no more than 79 characters on a single line.
+  * VS Code provides vertical rules to indicate when you are nearing the line limit. To turn on the vertical lines, open the **Command Palette**(`settings.json`) with `cmd` `shift` `p` or by choosing Command Palette after clicking the gear in the bottom left corner. 
 * **[Imports should be on separate lines](https://www.python.org/dev/peps/pep-0008/#id23)** 
 * **[Function & variable names](https://www.python.org/dev/peps/pep-0008/#id45)** - Function & variable names should be lower case with each word separated by underscores.
 
