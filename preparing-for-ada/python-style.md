@@ -12,6 +12,7 @@ Some highlights include:
 
 * **[4-space indentation](https://www.python.org/dev/peps/pep-0008/#id17)** - Use 4 spaces per indentation level.
   * Use spaces not tabs to indent
+    * Note that this is the recommendation in the [PEP8 coding style guide](https://peps.python.org/pep-0008/#tabs-or-spaces). However, one reason we may chose not to follow this guideline is accessibility. Folks who need to display the text larger will find that spaces can consume a great deal of horizontal space, and thus may prefer a tab that can be adjusted by the editor.
   * Continuation lines should align wrapped elements either vertically using Python's implicit line joining inside parentheses, brackets and braces, or using a hanging indent. When using a hanging indent the following should be considered; there should be no arguments on the first line and further indentation should be used to clearly distinguish itself as a continuation line:
 * **[Maximum line length = 79 characters](https://www.python.org/dev/peps/pep-0008/#id19)**  - You should have no more than 79 characters on a single line.
 * **[Imports should be on separate lines](https://www.python.org/dev/peps/pep-0008/#id23)** 
