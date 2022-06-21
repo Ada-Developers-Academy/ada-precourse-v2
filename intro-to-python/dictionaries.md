@@ -81,9 +81,9 @@ adas_address = {
 }
 ```
 
-Note that the values paired with `"name"`, `"city"`, and `"state"` are strings. The `"street"` value is a list holding the first and second lines of the address, and the `"zip_code"` is an integer. 
+Notice that `adas_address` is a *heterogenous* dictionary. The values paired with `"name"`, `"city"`, and `"state"` are *strings*. The `"street"` value is a *list* holding the first and second lines of the address, and the `"zip_code"` is an *integer*.
 
-Later in the core curriculum, we will learn about classes and objects and how they are used to group and store data with different datatypes similar to a heterogenous dictionary.
+Later in the core curriculum, we will learn about classes and objects and how they are used to group and store data with different datatypes similar to a *heterogenous* dictionary.
 
 ### Planet Distance
 
@@ -97,7 +97,7 @@ planet_dict = {
 }
 ```
 
-Notice that `planet_dict` is a *uniform* or *homogenous* dictionary. All the values have the same datatype. Given this, we may chose to drop the `"million miles"` from the values and use Integers for the values. 
+Notice that `planet_dict` is a *uniform* or *homogenous* dictionary. All the values have the same datatype, they are *strings*. Given this, we may chose to drop the `"million miles"` from the values and use *integers* for the values. 
 
 ```Python
 planet_dict = {
@@ -107,7 +107,7 @@ planet_dict = {
 }
 ```
 
-Now that all the values are integers, it is easy to iterate over the `planet_dict` and perform calculations. For instance, we may want to calculate the average distance or the max distance. Iterating over the data and processing the data in a uniform fashion is one benefits of a homogenous dictionary.
+Now that all the values are *integers*, it is easy to iterate over the `planet_dict` and perform calculations. For instance, we may want to calculate the average distance or the max distance. Iterating over the data and processing the data in a uniform fashion is one benefits of *homogenous* dictionaries.
 
 ## Practice Problems
 
