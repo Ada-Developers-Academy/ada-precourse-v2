@@ -63,6 +63,52 @@ distance = planet_dict["venus"]
 # distance = "67 million miles"
 
 ```  
+
+## Heterogenous vs. Homogenous Dictionaries
+
+Dictionaries store data using key-value pairs. Let's look at a few examples where the datatype of the values is different within a single dictionary (heterogenous) and where the datatype of the values is the same withing a single dictionary (homogenous).
+
+### Address
+Let's look at an address dictionary in more detail.
+
+```Python
+adas_address = {
+    "name":  "Ada Developers Academy"
+    "street": ["315 5th Ave S", "Suite 200"]
+    "city": "Seattle"
+    "state": "WA"
+    "zip_code": 98104
+}
+```
+
+Note that the values paired with `"name"`, `"city"`, and `"state"` are strings. The `"street"` value is a list holding the first and second lines of the address, and the `"zip_code"` is an integer. 
+
+Later in the core curriculum, we will learn about classes and objects and how they are used to group and store data with different datatypes similar to a heterogenous dictionary.
+
+### Planet Distance
+
+Let's revisit the `planet_dict`: 
+
+```Python
+planet_dict = {
+    "mercury": "36 million miles", 
+    "venus": "67 million miles",
+    "mars": "142 million miles", 
+}
+```
+
+Notice that `planet_dict` is a *uniform* or *homogenous* dictionary. All the values have the same datatype. Given this, we may chose to drop the `"million miles"` from the values and use Integers for the values. 
+
+```Python
+planet_dict = {
+    "mercury": 36, 
+    "venus": 67,
+    "mars": 142, 
+}
+```
+
+Now that all the values are integers, it is easy to iterate over the `planet_dict` and perform calculations. For instance, we may want to calculate the average distance or the max distance. Iterating over the data and processing the data in a uniform fashion is one benefits of a homogenous dictionary.
+
 ## Practice Problems
 
 <!--BEGIN CHALLENGE-->
