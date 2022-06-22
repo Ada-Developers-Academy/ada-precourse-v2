@@ -559,8 +559,8 @@ Now we're going to get back to our original goal, displaying each letter of the 
 * Create an empty string
 * Loop over each letter in the word
 * Check if the letter has been guessed or not
-    * If the value of "guessed" is true add the letter to the string
-    * If the value of "guessed" is false add '_' to the string
+    * If the value of "guessed" is `True` add the letter to the string
+    * If the value of "guessed" is `False` add '_' to the string
 * Add 1 space between each letter/underscore
 
 <!--BEGIN CHALLENGE-->
@@ -576,7 +576,7 @@ Now we're going to get back to our original goal, displaying each letter of the 
 
 ##### !question
 
-Write a helper function `generate_word_progress_string` that takes two variables, a word and a dictionary where each letter in the word is a key and the values are `True` or `False`.  The function returns a string that represents the word, with spaces between each letter.  For each letter, if the value in the dictionary is `True`, the letter is displayed.  If the value in the dictionary is `False`, the letter is replaced with a `_` character.
+Write a helper function `generate_word_progress_string` that takes two parameters, a word and a dictionary where each letter in the word is a key and the values are `True` or `False`.  The function returns a string that represents the word, with spaces between each letter.  For each letter, if the value in the dictionary is `True`, the letter is displayed.  If the value in the dictionary is `False`, the letter is replaced with a `_` character.
 
 Example inputs and outputs:
 
@@ -609,7 +609,7 @@ import unittest
 from main import generate_word_progress_string
 
 
-class TestGetWordProgress(unittest.TestCase):
+class TestGetWordProgressString(unittest.TestCase):
     def test_mixed(self):
         self.assertEqual(generate_word_progress_string("pepper", {"p":True, "e": False, "r": False}), "p _ p p _ _")
 
@@ -673,15 +673,82 @@ def print_word_progress_string(word, word_dict):
 
 ### Getting Word Guessing Progress
 
-The helper function `print_word_progress_string` provides a visual display of the players progress towards guessing the word. We also need to write a function that returns `True` if all the letters have been guesses, and `False` otherwise. Let's name this function `get_word_progress`. 
+The helper function `print_word_progress_string` provides a visual display of the players progress towards guessing the word. We also need to write a function that indicates whether or not all the letters of the word have been guessed. We will name this function `get_word_progress`. The function `get_word_progress` should return `True` if all the letters have been guesses, and `False` otherwise.
 
-Similar to `print_word_progress_string`, to determine whether or not all the letters have been guessed, we need to loop through all the letters (keys) in the `word_dict` and check the corresponding values. If all of the letters have been guessed (all the values are `True`), the function returns `True`.  If any of the letters haven't been guessed (the value is `False`), the function returns `False`.  
 
-<br/>
+This function will need to:
 
-<details>
+* Loop over each letter (key) in the `word_dict`
+    * If `word_dict[letter]` is `False`, return `False`
+* Once the loop terminates without encountering a `False` value, return `True`
 
-<summary>Implement the <code>get_word_progress</code> helper function and when you are finished, compare your function to ours.</summary>
+
+<!--BEGIN CHALLENGE-->
+
+### !challenge
+
+* type: code-snippet
+* language: python3.6
+* id: df6395a3-bf75-4fa0-a8ab-b39e1d5f707b
+* title: Get Word Progress
+* points: 1
+* topics: python, dictionaries
+
+##### !question
+
+Write a helper function `get_word_progress(word, word_dict)` that takes two parameters, a word and a dictionary where each letter in the word is a key and the values are `True` or `False`.  The function returns `True` if every value in the dictionary is `True` and `False` if any of the values in the dictionary are `False`.
+
+Example inputs and outputs:
+
+|input|output|
+|--|--|
+|`word="pepper"` <br/> `word_dict={"p":True, "e": False, "r": False}`|`False`|
+|`word="tiger"` <br/> `word_dict={"e":False, "g": False, "i": False, "r": False, "t": False}`|`False`|
+|`word="swamp"` <br/> `word_dict={"a":True, "m": True, "p": True, "s": True, "w": True}`|`True`|
+
+<!--This can be regular **Markdown**-->
+
+##### !end-question
+
+##### !placeholder
+
+```python
+
+def get_word_progress(word, word_dict):
+    pass
+
+```
+
+##### !end-placeholder
+
+##### !tests
+```python
+
+import unittest
+from main import get_word_progress
+
+
+class TestGetWordProgress(unittest.TestCase):
+    def test_mixed_first_true(self):
+        self.assertEqual(get_word_progress("pepper", {"p":True, "e": False, "r": False}), False)
+
+    def test_mixed_last_true(self):
+        self.assertEqual(get_word_progress("pepper", {"p":False, "e": False, "r": True}), False)
+
+    def test_all_false(self):
+        self.assertEqual(get_word_progress("tiger", {"e":False, "g": False, "i": False, "r": False, "t": False}), False)
+    
+    def test_all_true(self):
+        self.assertEqual(get_word_progress("swamp", {"a":True, "m": True, "p": True, "s": True, "w": True}), True)
+
+
+```
+##### !end-tests
+
+<!--optional-->
+##### !explanation
+
+Here is our implementation:
 
 ```python
 
@@ -690,10 +757,14 @@ def get_word_progress(word, word_dict):
         if not word_dict[elem]:
             return False
     return True
-
+    
 ```
 
-</details>
+##### !end-explanation
+
+### !end-challenge
+
+<!--END CHALLENGE-->
 
 ### Snowman Project
 
