@@ -128,6 +128,109 @@ It is intended to give you additional practice writing Python code and getting u
 
 <!-- ======================= END CHALLENGE ======================= -->
 
+<!-- available callout types: info, success, warning, danger, secondary, star  -->
+### !callout-info
+
+## Tests
+
+Learn checks the correctness of code submissions using unit tests. Testing is introduced early in Unit 1 of the Ada Core Curriculum. Reading and writing tests is emphasized throughout the curriculum.<br>
+
+<br>Until testing is formally introduced, you may find it a bit tricky to read the output of failing tests in Learn. Do your best to use the requirements and the test output to debug your code. You may also find it helpful to review the Precourse lesson on [Errors](../intro-to-python/errors.md)<br>
+
+<br>Below are two examples of tests results for incorrect code for the "Hello, World!" code challenge above.<br>
+
+<details>
+<summary>Expand the arrow to review the test results for an indentation error.</summary>
+<br>Code:
+
+```Python
+def hello_world():
+    '''
+    INPUT: 2 dimensional numpy array
+    OUTPUT: boolean
+    Return true
+    '''
+        print("Hello World!")
+```
+<br>Test Results:
+
+```bash
+
+E
+======================================================================
+ERROR: test_methods (unittest.loader._FailedTest)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_methods
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/unittest/loader.py", line 428, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "/usr/local/lib/python3.6/unittest/loader.py", line 369, in _get_module_from_name
+    __import__(name)
+  File "/usr/src/app/test_methods.py", line 7, in <module>
+    import main as p
+  File "/usr/src/app/main.py", line 7
+    print("Hello World!")
+    ^
+IndentationError: unexpected indent
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+FAILED (errors=1)
+
+```
+
+</details>
+
+<details>
+<summary>Expand the arrow to review the test failure for incorrect capitalization.</summary>
+<br>Code:
+
+```Python
+
+def hello_world():
+    '''
+    INPUT: 2 dimensional numpy array
+    OUTPUT: boolean
+    Return true
+    '''
+
+    print("hello world!")
+
+```
+
+<br>Test Results:
+
+```bash
+
+F
+======================================================================
+FAIL: test_prints_hello_world (test_methods.TestPython1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/usr/src/app/test_methods.py", line 15, in test_prints_hello_world
+    self.assertEqual("Hello World!", fake_out.getvalue().strip())
+AssertionError: 'Hello World!' != 'hello world!'
+- Hello World!
+? ^     ^
++ hello world!
+? ^     ^
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+FAILED (failures=1)
+
+```
+
+</details>
+
+
+
+### !end-callout
+
 ### Links to Code
 
 Other programming exercises called Project Challenges will ask you to submit a link to code in [repl.it](https://repl.it).  Later, after you start at Ada we will have you submit work in Learn from [Github](https://github.com).
