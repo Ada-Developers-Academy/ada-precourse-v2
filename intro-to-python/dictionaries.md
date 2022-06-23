@@ -81,9 +81,9 @@ adas_address = {
 }
 ```
 
-Notice that `adas_address` is a *heterogeneous* dictionary. The values paired with `"name"`, `"city"`, and `"state"` are *strings*. The `"street"` value is a *list* holding the first and second lines of the address, and the `"zip_code"` is an *integer*.
+Notice that `adas_address` is a *heterogeneous* dictionary. The values paired with `"name"`, `"city"`, and `"state"` are *strings*. In contrast, the `"street"` value is a *list* holding the first and second lines of the address, and the `"zip_code"` is an *integer*.
 
-Later in the core curriculum, we will learn about classes and objects and how they are used to group and store data with different datatypes similar to a *heterogeneous* dictionary.
+*Heterogeneous* dictionaries are often used to group data with different data types together. Later in the core curriculum, we will learn about classes and objects and how they are similarly used to group and store data with different data types.
 
 ### Planet Distance
 
@@ -97,7 +97,7 @@ planet_dict = {
 }
 ```
 
-Notice that `planet_dict` is a *uniform* or *homogeneous* dictionary. All the values have the same datatype, they are *strings*. Given this, we may chose to drop the `"million miles"` from the values and use *integers* for the values. 
+Notice that `planet_dict` is a *uniform* or *homogeneous* dictionary. All the values have the same data type, they are all *strings*. Given this, we may chose to drop the `"million miles"` from the values and instead use *integers* for the values. 
 
 ```Python
 planet_dict = {
@@ -107,7 +107,7 @@ planet_dict = {
 }
 ```
 
-Now that all the values are *integers*, it is easy to iterate over the `planet_dict` and perform calculations. For instance, we may want to calculate the average distance or the max distance. Iterating over the data and processing the data in a uniform fashion is one benefits of *homogeneous* dictionaries.
+Now that all the values are *integers*, it is easy to iterate over the `planet_dict` and perform calculations as we no longer have to parse the numbers out of the string values and cast them to integers. For instance, we may want to calculate the average distance or the max distance. Iterating over the data and processing the data in a uniform fashion is one benefit of *homogeneous* dictionaries.
 
 ## Practice Problems
 
