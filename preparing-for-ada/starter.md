@@ -1,6 +1,6 @@
 # Getting Started & The Pre-Ada Topics
 
-Welcome to this the Ada Course.  This course, through the "Learn" Learning Management System is a major tool we will use in your education at Ada. The Precourse Unit consists of three Topics: **Getting Ready**, **Practice with Python**, and **Social Justic**. Each topic has a collection of lessons you will need to complete **prior to starting at Ada**.
+Welcome to the Ada Precourse! This course, delivered through the "Learn" Learning Management System, is a major tool we will use throughout your education at Ada. The Precourse Unit consists of three Topics: **Getting Ready**, **Practice with Python**, and **Social Justice**. Each topic has a collection of lessons you will need to complete **prior to starting at Ada**.
 
 ## Learn Terms
 
@@ -169,15 +169,18 @@ You can learn [how to create a gist](https://docs.github.com/en/github/writing-o
 
 After you submit a Learn challenge, you can leave comments or questions for your instructors. To do so, click on the three vertical dots in the right hand corner of the Learn challenge, and then click view details.
 
-![Learn challenge view details](./images/starter_details.png)
+![Learn challenge view details](./images/starter_details.png)  
+*Fig. After submitting an answer, these three dots appear. Clicking them shows a popup menu with the option to View Details.*
 
 In the details view, on the right hand side, enter your comment or question and click send.
 
-![Learn comment view](./images/starter_comments.png)
+![Learn comment view](./images/starter_comments.png)  
+*Fig. The Detail View, where you can review your submission history for the challenge, leave comments, and receive feedback.*
 
 Keep an eye on the alert bell at the top to the left of your username to see follow-up and feedback from instructors.
 
-![Learn alert bell](./images/starter_bell.png)
+![Learn alert bell](./images/starter_bell.png)  
+*Fig. The alert bell will show a notification when you receive feedback. Be sure to clear the notifications after reviewing them so that it's easier to notice when a new one arrives.*
 
 ## This Topic
 
