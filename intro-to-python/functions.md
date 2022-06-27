@@ -69,13 +69,12 @@ In the last lesson we wrote a series of conditionals to validate and test user i
 
 Lets say we want to play a different game after we finish playing Guess the Number.  We could just add the code for the new game after the code that's in the file right now, but then what if we want to change the order of the games?  
 
-We're now looking at moving around big code blocks.  Then if we change our minds and want to move it back, or add another game (and so on) things quickly get messy.  
+We're now looking at moving around big code blocks.  Then if we change our minds and want to move it back, or add another game (and so on) things quickly get messy. 
 
-<!-- available callout types: info, success, warning, danger, secondary  -->
 ### !callout-info
 
 ## Why Functions?
-Functions encapsulate code blocks into re-usable chunks that we can then call in whatever order we want.  They also help us reuse these blocks of code in other programs.
+Functions encapsulate code blocks into re-usable chunks that we can then call in whatever order we want or as many times as we want.  They also help us reuse these blocks of code in other programs.
 
 ### !end-callout
 
@@ -92,7 +91,7 @@ The "Guess the number" function will:
 
 Lets write this code and place it in a function called `guess_the_number`.  Then call the function at the bottom of the file.
 
-Try writing this in VS code and then compare your answer to ours below.
+Try writing `guess_the_number` in VS code and then compare your answer to ours below.
 
 <details>
 <summary> Our version at this point </summary>
@@ -133,7 +132,58 @@ guess_the_number()
 </details>
 
 
+Now that we have a `guess_the_number` function, we can call this function multiple times to give the user a fair chance at actually guessing the number.
 
+Add the multiple function calls in VS code, play the game, and then view our solution below.
+
+
+<details>
+<summary>Our version with multiple function calls</summary>
+
+```python
+import random
+
+RANGE_LOW = 0
+RANGE_HIGH = 100
+# pick a random number
+random_number = random.randint(RANGE_LOW, RANGE_HIGH)
+
+
+def guess_the_number():
+    user_input_string = input("Guess the number: ")
+    user_input = None
+
+    if user_input_string.isnumeric():
+        user_input = int(user_input_string)
+
+        if user_input < RANGE_LOW or user_input > RANGE_HIGH:
+            print(f"Your guess is out of bounds.")
+            print(f"It must be between {RANGE_LOW} and {RANGE_HIGH}")
+        elif user_input == random_number:
+            print("You guessed the number!  Good job!")
+        elif user_input > random_number:
+            print("Your guess is too high")
+        elif user_input < random_number:
+            print("Your guess is too low")
+        
+    else:
+        print("You must input a number!")
+
+guess_the_number()
+guess_the_number()
+guess_the_number()
+guess_the_number()
+guess_the_number()
+guess_the_number()
+guess_the_number()
+guess_the_number()
+guess_the_number()
+guess_the_number()
+```
+
+</details>
+
+With this example, we can see that using a function allows us to run the same code multiple times, while keeping the code relatively concise. This code could be even more concise by using a loop, a topic we will review in a future lesson. 
 
 ### The `return` Keyword
 
@@ -182,6 +232,86 @@ print(result) # 32
 result = convert_celsius_to_fahrenheit("non numeric value")
 print(result) # None
 ```
+
+To further motivate using functions, let's review some example code that makes use of the `convert_celsius_to_fahrenheit` function. Note that by encapsulating the functionality of converting a temperature from Celsius to Fahrenheit in a function, we can call this function with different arguments. 
+
+```Python
+# Temperatures in Celsius
+mumbai_temp = 28
+tokyo_temp = 20
+paris_temp = 21
+madrid_temp = "madrid"
+
+# Output temperature in Fahrenheit
+print("The temperature in Mumbai is ", convert_celsius_to_fahrenheit(mumbai_temp), "°F")
+print("The temperature in Tokyo is ", convert_celsius_to_fahrenheit(tokyo_temp), "°F")
+print("The temperature in Paris is ", convert_celsius_to_fahrenheit(paris_temp), "°F")
+print("The temperature in Madrid is ", convert_celsius_to_fahrenheit(madrid_temp), "°F")
+
+# Output
+# The temperature in Mumbai is  82.4 °F
+# The temperature in Tokyo is  68.0 °F
+# The temperature in Paris is  69.80000000000001 °F
+# The temperature in Madrid is  None °F
+```
+
+Expand the section below to look at the length of the code required if we did not write the function `convert_celsius_to_fahrenheit`. Notice the amount of repeated code. 
+
+<details>
+<summary>Code without a function</summary>
+
+```Python
+# Temperatures in Celsius
+mumbai_temp = 28
+tokyo_temp = 20
+paris_temp = 21
+madrid_temp = "madrid"
+
+# Convert temperatures
+if not isinstance(mumbai_temp, int) and not isinstance(mumbai_temp, float):
+    mumbai_temp_fahrenheit = None
+else: 
+    mumbai_temp_fahrenheit = 9/5*mumbai_temp+32
+
+if not isinstance(tokyo_temp, int) and not isinstance(tokyo_temp, float):
+    tokyo_temp_fahrenheit = None
+else: 
+    tokyo_temp_fahrenheit = 9/5*tokyo_temp+32
+
+if not isinstance(paris_temp, int) and not isinstance(paris_temp, float):
+    paris_temp_fahrenheit = None
+else: 
+    paris_temp_fahrenheit = 9/5*paris_temp+32
+
+if not isinstance(madrid_temp, int) and not isinstance(madrid_temp, float):
+    madrid_temp_fahrenheit = None
+else: 
+    madrid_temp_fahrenheit = 9/5*madrid_temp+32
+
+
+# Output temperature in Fahrenheit
+print("The temperature in Mumbai is ", mumbai_temp_fahrenheit, "°F")
+print("The temperature in Tokyo is ", tokyo_temp_fahrenheit, "°F")
+print("The temperature in Paris is ", paris_temp_fahrenheit, "°F")
+print("The temperature in Madrid is ", madrid_temp_fahrenheit, "°F")
+
+# Output
+# The temperature in Mumbai is  82.4 °F
+# The temperature in Tokyo is  68.0 °F
+# The temperature in Paris is  69.80000000000001 °F
+# The temperature in Madrid is  None °F
+```
+
+</details>
+
+### !callout-info
+
+## The DRY Principle
+
+"DRY stands for Don’t Repeat Yourself. It is a software development principle aiming to reduce code duplication which can lead to a poor refactoring and a poor maintenance. In other word, if you have to copy and paste the same exact lines of codes which provide the same functionality, then chances are that your codes don’t follow the DRY at all." [source](https://medium.com/@Ialimijoro/the-dry-principle-and-why-you-should-use-it-f02435ae9449) <br>
+<br>Functions are one of our most powerful tools for writing DRY code.
+
+### !end-callout
 
 ## Practice Problems
 
