@@ -1,8 +1,16 @@
-# Getting Started & The Pre-Ada Units
+# Getting Started & The Pre-Ada Topics
 
-Welcome to this the Ada Course.  This course, through the "Learn" Learning Management System is a major tool we will use in your education at Ada.  The first units are Pre-Ada units you will need to complete **prior to starting at Ada**.
+Welcome to the Ada Precourse! This course, delivered through the "Learn" Learning Management System, is a major tool we will use throughout your education at Ada. The Precourse Unit consists of three Topics: **Getting Ready**, **Practice with Python**, and **Social Justice**. Each topic has a collection of lessons you will need to complete **prior to starting at Ada**.
 
-The purpose of the Pre-Ada unit is to keep you coding (and talking about code) between admissions and the first day of class. You should understand the topics covered in the precourse and [Build curriculum](http://ada-developers-academy.github.io/ada-build/) and practice this understanding with the assignments provided. Take this opportunity to meet and study with peers in your cohort.  You will have been invited to the Cohort Slack, and we will set up a channel to discuss the course and coding challenges.  **Take advantage of it.**
+## Learn Terms
+
+| Term | Definition | Example | Used in a Sentence |
+| -- | -- | -- |--|
+| Lesson | A combination of written material, video lessons, and code challenges focused on one main concept.  | Getting Started & The Pre-Ada Topics, Installfest - Getting Software Installed  | "Conditionals is the name of a lesson in the Practice with Python topic." |
+| Topic | A collection of related lessons. Topics appear as a square on the main Learn course page. | Getting Ready, Practice with Python, Social Justice | "Social Justice is a topic in the Precourse unit" |
+| Unit | A collection of related topics | Precourse, About Ada, Unit 1 | "Precourse is the first unit in the C18 Learn Course" |
+
+The purpose of the Precourse Unit is to keep you coding (and talking about code) between admissions and the first day of class. You should understand the topics covered in the Precourse and [Build curriculum](http://ada-developers-academy.github.io/ada-build/) and practice this understanding with the assignments provided. Take this opportunity to meet and study with peers in your cohort.  You will have been invited to the Cohort Slack, and we will set up a channel to discuss the course and coding challenges.  **Take advantage of it.**
 
 All admitted students are expected to be well-versed with the concepts covered [Ada Build curriculum](http://ada-developers-academy.github.io/ada-build/) on the first day of their cohort. This includes conditional flows, loops, functions, lists, dictionaries and Python basics. As such, you are expected to complete all exercises in the Precourse.  
 
@@ -26,7 +34,7 @@ In this course you can always resubmit work.  If you want a 2nd-round of instruc
 
 ## Due Dates
 
-# The Precourse should be completed by Monday February 28th at 7pm PST
+# The Precourse should be completed by Monday August 29th at 7pm PST
 
 ### !end-callout
 
@@ -48,7 +56,7 @@ We also want you to learn a bit of workflow and learn to use [VS Code](https://c
 ## Your Pre-Ada Responsibilities
 
 * Complete the installfest and make sure you have everything installed
-* Complete Each unit of the pre-ada material
+* Complete all the lessons in each topic of the Precourse Unit.
 
 ## Coding Exercises
 
@@ -87,7 +95,6 @@ def hello_world():
     '''
     # Put your code here
 
-#   return 1
 ```
 
 ##### !end-placeholder
@@ -105,8 +112,6 @@ class TestPython1(unittest.TestCase):
         with patch('sys.stdout', new = StringIO()) as fake_out: 
             p.hello_world()
             self.assertEqual("Hello World!", fake_out.getvalue().strip())
-
-        # self.assertEqual(1,p.doSomething())
 ```
 
 ##### !end-tests
@@ -122,6 +127,111 @@ It is intended to give you additional practice writing Python code and getting u
 ### !end-challenge
 
 <!-- ======================= END CHALLENGE ======================= -->
+
+<!-- available callout types: info, success, warning, danger, secondary, star  -->
+### !callout-info
+
+## Tests
+
+Learn checks the correctness of code submissions using unit tests. Testing is introduced early in Unit 1 of the Ada Core Curriculum. Reading and writing tests is emphasized throughout the curriculum.<br>
+
+<br>Until testing is formally introduced, you may find it a bit tricky to read the output of failing tests in Learn. Do your best to use the requirements and the test output to debug your code. You may also find it helpful to review the Precourse lesson on [Errors](../intro-to-python/errors.md)<br>
+
+<br>Below are two examples of tests results for incorrect code for the "Hello, World!" code challenge above.<br>
+
+<br>
+
+<details>
+<summary>Expand the arrow to review the test results for an indentation error.</summary>
+<br>Code:
+
+```Python
+def hello_world():
+    '''
+    INPUT: 2 dimensional numpy array
+    OUTPUT: boolean
+    Return true
+    '''
+        print("Hello World!")
+```
+<br>Test Results:
+
+```bash
+
+E
+======================================================================
+ERROR: test_methods (unittest.loader._FailedTest)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_methods
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/unittest/loader.py", line 428, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "/usr/local/lib/python3.6/unittest/loader.py", line 369, in _get_module_from_name
+    __import__(name)
+  File "/usr/src/app/test_methods.py", line 7, in <module>
+    import main as p
+  File "/usr/src/app/main.py", line 7
+    print("Hello World!")
+    ^
+IndentationError: unexpected indent
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+FAILED (errors=1)
+
+```
+
+</details>
+
+<details>
+<summary>Expand the arrow to review the test failure for incorrect capitalization.</summary>
+<br>Code:
+
+```Python
+
+def hello_world():
+    '''
+    INPUT: 2 dimensional numpy array
+    OUTPUT: boolean
+    Return true
+    '''
+
+    print("hello world!")
+
+```
+
+<br>Test Results:
+
+```bash
+
+F
+======================================================================
+FAIL: test_prints_hello_world (test_methods.TestPython1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/usr/src/app/test_methods.py", line 15, in test_prints_hello_world
+    self.assertEqual("Hello World!", fake_out.getvalue().strip())
+AssertionError: 'Hello World!' != 'hello world!'
+- Hello World!
+? ^     ^
++ hello world!
+? ^     ^
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+FAILED (failures=1)
+
+```
+
+</details>
+
+
+
+### !end-callout
 
 ### Links to Code
 
@@ -160,8 +270,25 @@ You can learn [how to create a gist](https://docs.github.com/en/github/writing-o
 
 <!-- ======================= END CHALLENGE ======================= -->
 
-## This Lesson
+## Learn Comments
 
-This lesson is about workflow, Python style and basic types and operations.  This should feel like review and give you a smooth start.  Try to work through things a bit at a time and feel free to walk away for a bit when you are stuck, or shout out for support on Slack.  
+After you submit a Learn challenge, you can leave comments or questions for your instructors. To do so, click on the three vertical dots in the right hand corner of the Learn challenge, and then click view details.
+
+![Learn challenge view details](./images/starter_details.png)  
+*Fig. After submitting an answer, these three dots appear. Clicking them shows a popup menu with the option to View Details.*
+
+In the details view, on the right hand side, enter your comment or question and click send.
+
+![Learn comment view](./images/starter_comments.png)  
+*Fig. The Detail View, where you can review your submission history for the challenge, leave comments, and receive feedback.*
+
+Keep an eye on the alert bell at the top to the left of your username to see follow-up and feedback from instructors.
+
+![Learn alert bell](./images/starter_bell.png)  
+*Fig. The alert bell will show a notification when you receive feedback. Be sure to clear the notifications after reviewing them so that it's easier to notice when a new one arrives.*
+
+## This Topic
+
+This topic includes lessons about workflow, Python style and basic types and operations.  This should feel like review and give you a smooth start.  Try to work through things a bit at a time and feel free to walk away for a bit when you are stuck, or shout out for support on Slack.  
 
 We'll let you get started...
