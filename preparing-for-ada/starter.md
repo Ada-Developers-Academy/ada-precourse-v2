@@ -139,6 +139,8 @@ Learn checks the correctness of code submissions using unit tests. Testing is in
 
 <br>Below are two examples of tests results for incorrect code for the "Hello, World!" code challenge above.<br>
 
+<br>
+
 <details>
 <summary>Expand the arrow to review the test results for an indentation error.</summary>
 <br>Code:
