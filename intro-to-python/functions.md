@@ -132,7 +132,7 @@ guess_the_number()
 </details>
 
 
-Now that we have a `guess_the_number` function, we can call this function multiple time to give the user a fair chance at actually guessing the number.
+Now that we have a `guess_the_number` function, we can call this function multiple times to give the user a fair chance at actually guessing the number.
 
 Add the multiple function calls in VS code, play the game, and then view our solution below.
 
@@ -183,7 +183,7 @@ guess_the_number()
 
 </details>
 
-With this example, we can see that using a function allows us to run the same code multiple times, while keeping the code relatively concise. This code could be even more concise by using a loop, a topic we will review a future lesson. 
+With this example, we can see that using a function allows us to run the same code multiple times, while keeping the code relatively concise. This code could be even more concise by using a loop, a topic we will review in a future lesson. 
 
 ### The `return` Keyword
 
@@ -233,7 +233,7 @@ result = convert_celsius_to_fahrenheit("non numeric value")
 print(result) # None
 ```
 
-To further motivate using functions, let's review some example code that makes use of the `convert_celsius_to_fahrenheit` function. Note that by encapsulating the functionality of converting a temperature from Celsius to Fahrenheit in a function, we can call this function for different arguments. 
+To further motivate using functions, let's review some example code that makes use of the `convert_celsius_to_fahrenheit` function. Note that by encapsulating the functionality of converting a temperature from Celsius to Fahrenheit in a function, we can call this function with different arguments. 
 
 ```Python
 # Temperatures in Celsius
@@ -248,7 +248,7 @@ print("The temperature in Tokyo is ", convert_celsius_to_fahrenheit(tokyo_temp),
 print("The temperature in Paris is ", convert_celsius_to_fahrenheit(paris_temp), "°F")
 print("The temperature in Madrid is ", convert_celsius_to_fahrenheit(madrid_temp), "°F")
 
-# # Output
+# Output
 # The temperature in Mumbai is  82.4 °F
 # The temperature in Tokyo is  68.0 °F
 # The temperature in Paris is  69.80000000000001 °F
@@ -308,7 +308,8 @@ print("The temperature in Madrid is ", madrid_temp_fahrenheit, "°F")
 
 ## The DRY Principle
 
-"DRY stands for Don’t Repeat Yourself. It is a software development principle aiming to reduce code duplication which can lead to a poor refactoring and a poor maintenance. In other word, if you have to copy and paste the same exact lines of codes which provide the same functionality, then chances are that your codes don’t follow the DRY at all." Functions are one tool we have for writing DRY code.[source](https://medium.com/@Ialimijoro/the-dry-principle-and-why-you-should-use-it-f02435ae9449)
+"DRY stands for Don’t Repeat Yourself. It is a software development principle aiming to reduce code duplication which can lead to a poor refactoring and a poor maintenance. In other word, if you have to copy and paste the same exact lines of codes which provide the same functionality, then chances are that your codes don’t follow the DRY at all." [source](https://medium.com/@Ialimijoro/the-dry-principle-and-why-you-should-use-it-f02435ae9449) <br>
+<br>Functions are one of our most powerful tools for writing DRY code.
 
 ### !end-callout
 
