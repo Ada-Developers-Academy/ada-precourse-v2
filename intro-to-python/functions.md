@@ -295,7 +295,7 @@ print("The temperature in Tokyo is ", tokyo_temp_fahrenheit, "°F")
 print("The temperature in Paris is ", paris_temp_fahrenheit, "°F")
 print("The temperature in Madrid is ", madrid_temp_fahrenheit, "°F")
 
-# # Output
+# Output
 # The temperature in Mumbai is  82.4 °F
 # The temperature in Tokyo is  68.0 °F
 # The temperature in Paris is  69.80000000000001 °F
