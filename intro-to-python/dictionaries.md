@@ -655,7 +655,7 @@ def generate_word_progress_string(word, word_dict):
 
 <!--END CHALLENGE-->
 
-Now that we have the helper function `generate_word_progress_string` working, let's revisit our original goal.  Right now we're returning the display string, but we really want to display it. Let's switch to printing out the result instead of returning it. We'll rename our function to `print_word_progress_string`:
+Now that we have the helper function `generate_word_progress_string` working, let's revisit our original goal.  Right now we're returning the progress string, but what we really want to do is display it. Let's switch to printing out the result instead of returning it. We'll rename our function to `print_word_progress_string`:
 
 ```python
 
@@ -680,7 +680,7 @@ This function will need to:
 
 * Loop over each letter (key) in the `word_dict`
     * If `word_dict[letter]` is `False`, return `False`
-* Once the loop terminates without encountering a `False` value, return `True`
+* If the loop terminates without encountering a `False` value, return `True`
 
 
 <!--BEGIN CHALLENGE-->
@@ -696,7 +696,7 @@ This function will need to:
 
 ##### !question
 
-Write a helper function `get_word_progress(word, word_dict)` that takes two parameters, a word and a dictionary where each letter in the word is a key and the values are `True` or `False`.  The function returns `True` if every value in the dictionary is `True` and `False` if any of the values in the dictionary are `False`.
+Write a helper function `get_word_progress(word, word_dict)` that takes two parameters, a word and a dictionary where each letter in the word is a key and the values are `True` or `False`.  The function returns `True` if every value in the dictionary is `True`. The function returns `False` if any of the values in the dictionary are `False`.
 
 Example inputs and outputs:
 
