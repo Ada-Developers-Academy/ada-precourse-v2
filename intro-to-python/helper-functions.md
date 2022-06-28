@@ -101,23 +101,28 @@ print(result)  # None
 ## Breaking Up Long Functions
 Let's look at another example using helper functions to ensure functions have a single responsibility. In addition, this example will demonstrate how breaking up long functions using helper functions can enhance readability. 
 
-Imagine we are building an ecommerce webapp that will display an order summary. In order to create this summary, two calculations must be performed: (1) subtotal of all items purchased and (2) sales tax. Then these values need to be displayed.
+Imagine we are building an ecommerce web app that will display an order summary. In order to create this summary, multiple calculations must be performed: calculating the subtotal of all items purchased, calculating the sales tax, and calculating the grand total. Then these values need to be displayed.
 
 Let's look at a single function that performs all these tasks.
 
 ```Python
 def calculate_and_display_bill(item_prices, sales_tax_rate):
+    # calculate subtotal
     sub_total = 0
     for price in item_prices:
         sub_total += price
 
+    # add subtotal to calculate sales tax
     sales_tax_total = sub_total * sales_tax_rate
 
-    grand_total = sub_total+sales_tax_total
+    # calculate grand total
+    grand_total = sub_total + sales_tax_total
 
-    sub_total = "$ {:.2f}".format(sub_total)
-    grand_total = "$ {:.2f}".format(grand_total)
-    sales_tax_total = "$  {:.2f}".format(sales_tax_total)
+    # display totals
+    sub_total = f"${sub_total:.2f}"
+    sales_tax_total = f"${sales_tax_total:.2f}"
+    grand_total = f"${grand_total:.2f}"
+    
 
     return (f"""
         **** Order Summary ****\n  
@@ -137,6 +142,16 @@ print(bill)
 #        Grand Total:       $ 24.84
 ```
 
+<!-- available callout types: info, success, warning, danger, secondary, star  -->
+### !callout-info
+
+## Formatting Floats
+
+`f"${num:.2f}"` is one way to format a floating point number as a string with two decimal places. [Follow your curiosity to learn more](https://www.delftstack.com/howto/python/python-format-float-to-string/).
+
+### !end-callout
+
+
 Now let's look at how we could use helper functions to encapsulate the different parts of the problem including calculating the subtotal, calculating the sales tax, and formatting the numeric output with functions `calculate_subtotal`, `calculate_sales_tax`, and `format_cost`. 
 
 ```Python
@@ -154,7 +169,7 @@ def calculate_sales_tax(sub_total, sales_tax_rate):
 
 
 def format_cost(cost):
-    return "$ {:.2f}".format(cost)
+    return f"${cost:.2f}"
 ```
 
 We will call these helper functions in a function `display_order_summary` that takes in the `item_prices` and `sales_tax_rate` and returns a string that summarizes the order.
@@ -163,7 +178,7 @@ We will call these helper functions in a function `display_order_summary` that t
 def display_order_summary(item_prices, sales_tax_rate):
     sub_total = calculate_subtotal(item_prices)
     sales_tax_total = calculate_sales_tax(sub_total, sales_tax_rate)
-    grand_total = sub_total+sales_tax_total
+    grand_total = sub_total + sales_tax_total
 
     return (f"""
         **** Order Summary ****\n  
@@ -229,48 +244,88 @@ sub_total = 23.00
 
 ## Breaking Up Long Expressions 
 
-Sometimes code will have long expressions that are not easy to read. Imagine we are writing a function to mimic the order of operations rule, [PEMDAS](https://en.wikipedia.org/wiki/Order_of_operations#Mnemonics). We could write the function as a long expression like so:
+Sometimes code will have long expressions that are not easy to read. Imagine we are calculating the total cost of buying a car. We need to consider the sale price, the trade in value (if any), the registration fee, the title fee, the document fee, and the sales tax. In this situation, sales tax only applies to the sale price minus the trade in value. The sales tax does not apply to the registration, title, or document fees. Furthermore, the dealership is waving the document fee if the vehicle is electric.
+
+Let's examine this function for calculating the total cost.
 
 ```Python
-def pemdas(n1,n2,n3,n4,n5,n6):
-    result = ((((n1**n2)*n3)/n4)+n5)-n6
-    return result
+def calculate_car_cost(sale_price, trade_in_value, reg_fee, title_fee, doc_fee, is_electric, sales_tax_rate):
+    total_cost = (sale_price - trade_in_value) * \
+        (1+sales_tax_rate) + reg_fee + title_fee
+
+    if not is_electric:
+        total_cost += doc_fee
+
+    return total_cost
+
+
+total_cost = calculate_car_cost(12000, 5000, 500, 100, 200, True, 0.10)
+print(total_cost) # => 8300.0
 ```
-What happens if the exponent or the division is inaccurate within this expression? It would be much harder to test each calculation within this expression. To improve overall readability, what helper functions should we add? (Note: exclude detecting parenthesis)
 
-<br/>
+Notice that the expression for calculating the total cost is quite long and a bit unclear: Why is each computation within the mathematical expression necessary? One way to add clarity is to split up the expression into multiple lines.
 
-<details>
-    
-<summary>Click here to see the helper functions code </summary>
-    
-```python
-def multiply(n1, n2):
-    return n1*n2
+```Python
+def calculate_car_cost(sale_price, trade_in_value, reg_fee, title_fee, doc_fee, is_electric, sales_tax_rate):
 
-def add(n1,n2):
-    return n1+n2
+    taxable_cost = sale_price - trade_in_value
 
-def subtract(n1,n2):
-    return n1-n2
+    nontaxable_cost = reg_fee + title_fee
+    if not is_electric:
+        nontaxable_cost += doc_fee
 
-def divide(n1,n2):
-    return n1 / n2
+    sales_tax = taxable_cost * sales_tax_rate
 
-def exponent(n1, n2):
-    return n1**n2 
+    total_cost = taxable_cost + sales_tax + nontaxable_cost
 
-def pemdas(n1,n2,n3,n4,n5,n6):
-    result = 0 
-    result += exponent(n1, n2)
-    result = multiply(result, n3)
-    result = divide(result, n4)
-    result = add(result, n5)
-    result = subtract(result, n6)
+    return total_cost
 
-    return result 
+
+total_cost = calculate_car_cost(12000, 5000, 500, 100, 200, True, 0.10)
+print(total_cost)  # => 8300.0
 ```
-</details>
+
+Another way to enhance readability is to use helper functions. We will create helper functions to return the total taxable cost, the total nontaxable cost, and the total sales tax. We will call these functions in an updated `calculate_car_cost` function.
+
+```Python
+def calculate_taxable_cost(sale_price, trade_in_value):
+    return sale_price - trade_in_value
+
+
+def calculate_nontaxable_cost(reg_fee, title_fee, doc_fee, is_electric):
+    total = reg_fee + title_fee
+
+    if not is_electric:
+        total += doc_fee
+
+    return total
+
+
+def calculate_sales_tax(taxable_cost, sales_tax_rate):
+    return sales_tax_rate * taxable_cost
+
+
+def calculate_car_cost(sale_price, trade_in_value, reg_fee, title_fee, doc_fee, is_electric, sales_tax_rate):
+    taxable_cost = calculate_taxable_cost(sale_price, trade_in_value)
+    sales_tax = calculate_sales_tax(taxable_cost, sales_tax_rate)
+    nontaxable_cost = calculate_nontaxable_cost(reg_fee, title_fee, doc_fee, is_electric)
+
+    return taxable_cost + sales_tax + nontaxable_cost
+
+
+total_cost = calculate_car_cost(12000, 5000, 500, 100, 200, True, 0.10)
+print(total_cost)  # => 8300.0
+```
+
+Note that in addition to enhancing readability in the `calculate_car_cost`, the helper functions make the code easier to change and maintain. Imagine it's now 2030, and car dealerships are no longer providing an incentive for buying an electric car. Because of our helper functions, we only need to update the `calculate_non_taxable_cost` function to make this change. 
+
+### !callout-info
+
+### Different Approaches
+
+Like most algorithms, there is not one right way or even best way to approach this problem. Separating out the different parts of the computation onto separate lines may be sufficient to add clarity and enhance readability. Using helper functions may be a preferred solution if additional complexity is added to the different parts of the computation or you anticipate needing to modify the algorithms for these different parts (taxable and nontaxable costs).
+
+### !end-callout
 
 
 ## Guess The Number Project
