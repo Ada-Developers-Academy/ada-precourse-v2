@@ -101,7 +101,7 @@ print(result)  # None
 ## Breaking Up Long Functions
 Let's look at another example using helper functions to ensure functions have a single responsibility. In addition, this example will demonstrate how breaking up long functions using helper functions can enhance readability. 
 
-Imagine we are building an ecommerce webapp that will display an order summary. In order to create this summary, multiple calculations must be performed: calculating the subtotal of all items purchased, calculating the sales tax, and calculating the grand_total. Then these values need to be displayed.
+Imagine we are building an ecommerce web app that will display an order summary. In order to create this summary, multiple calculations must be performed: calculating the subtotal of all items purchased, calculating the sales tax, and calculating the grand total. Then these values need to be displayed.
 
 Let's look at a single function that performs all these tasks.
 
@@ -250,10 +250,10 @@ def calculate_car_cost(sale_price, trade_in_value, reg_fee, title_fee, doc_fee, 
 
 
 total_cost = calculate_car_cost(12000, 5000, 500, 100, 200, True, 0.10)
-print(total_cost) #=> 8300.0
+print(total_cost) # => 8300.0
 ```
 
-Notice that the expression for calculating the total cost is quite longand a bit unclear. Why is each computation within the mathematical expression necessary? One way to add clarity is to split up the expression into multiple lines.
+Notice that the expression for calculating the total cost is quite long and a bit unclear: Why is each computation within the mathematical expression necessary? One way to add clarity is to split up the expression into multiple lines.
 
 ```Python
 def calculate_car_cost(sale_price, trade_in_value, reg_fee, title_fee, doc_fee, is_electric, sales_tax_rate):
@@ -275,7 +275,7 @@ total_cost = calculate_car_cost(12000, 5000, 500, 100, 200, True, 0.10)
 print(total_cost)  # => 8300.0
 ```
 
-Another way to enhance readability is to use helper functions. We will create helper functions to return the total taxable cost, the total non-taxable cost, and the total sales tax. We will call these functions in an updated `calculate_car_cost` function.
+Another way to enhance readability is to use helper functions. We will create helper functions to return the total taxable cost, the total nontaxable cost, and the total sales tax. We will call these functions in an updated `calculate_car_cost` function.
 
 ```Python
 def calculate_taxable_cost(sale_price, trade_in_value):
@@ -307,7 +307,7 @@ total_cost = calculate_car_cost(12000, 5000, 500, 100, 200, True, 0.10)
 print(total_cost)  # => 8300.0
 ```
 
-Note that in addition to enhancing readability in the `calculate_car_cost`, the helper functions make the code easier to change and maintain. Imagine it's now 2030, and car dealerships are no longer providing an incentive for buying an electric car. To make this change, we only need to update the `calculate_non_taxable_cost` function. 
+Note that in addition to enhancing readability in the `calculate_car_cost`, the helper functions make the code easier to change and maintain. Imagine it's now 2030, and car dealerships are no longer providing an incentive for buying an electric car. Because of our helper functions, we only need to update the `calculate_non_taxable_cost` function to make this change. 
 
 ### !callout-info
 
