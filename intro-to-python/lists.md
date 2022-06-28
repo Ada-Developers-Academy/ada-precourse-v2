@@ -35,13 +35,12 @@ def favorite_flavors():
     while not flavor == "done":  # this loop will run until the
         # user types in the word "done"
         flavor = input("What is an icecream flavor that you like? ")
-        # add all flavors except for done
-        if not flavor == "done":
-            # when we append something to a list, we add it to the end of the list
+        if not flavor == "done":         # add all flavors except for done
+            # to append something to a list means to add that thing to the end of the list
             icecream_flavors.append(flavor)
 
     for flavor in icecream_flavors:  # this loop will iterate over each element
-        # in the list, and store them one at a time
+        # in the list and store them one at a time
         # in the variable flavor
         print(f"{flavor} is a great ice cream flavor!")
 
@@ -461,7 +460,7 @@ So far our Snowman game has used a constant as the secret word (`SNOWMAN_WORD = 
 
     ```
 3. Next, add the constants `SNOWMAN_MAX_WORD_LENGTH = 8` and `SNOWMAN_MIN_WORD_LENGTH = 5` with the other constants at the top of the file.    
-4. Last, add the following lines of code to the top of the `snowman` function:
+4. Then, add the following lines of code to the top of the `snowman` function:
     ```python
 
         r = RandomWord()
@@ -662,7 +661,7 @@ def snowman():
 
 ##### !question
 
-Update the helper function `get_letter_from_user` so that it takes an additional argument (`correct_guesses_list`) and uses that along with `wrong_guesses_list` to print the "You have already guessed that letter" as feedback to the user if the user has already guessed the letter.
+Update the helper function `get_letter_from_user` so that it takes an additional argument (`correct_guesses_list`). Use this new argument along with `wrong_guesses_list` to print "You have already guessed that letter" as feedback to the user if the user has already guessed the letter.
 
 ##### !end-question
 
