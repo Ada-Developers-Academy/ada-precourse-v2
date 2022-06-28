@@ -142,6 +142,16 @@ print(bill)
 #        Grand Total:       $ 24.84
 ```
 
+<!-- available callout types: info, success, warning, danger, secondary, star  -->
+### !callout-info
+
+## Formatting Floats
+
+`f"${num:.2f}"` is one way to format a floating point number as a string with two decimal places. [Follow your curiosity to learn more](https://www.delftstack.com/howto/python/python-format-float-to-string/).
+
+### !end-callout
+
+
 Now let's look at how we could use helper functions to encapsulate the different parts of the problem including calculating the subtotal, calculating the sales tax, and formatting the numeric output with functions `calculate_subtotal`, `calculate_sales_tax`, and `format_cost`. 
 
 ```Python
