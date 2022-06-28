@@ -34,7 +34,7 @@ def favorite_flavors():
     flavor = ""
     while not flavor == "done":  # this loop will run until the
         # user types in the word "done"
-        flavor = input("What is an icecream flavor that you like? ")
+        flavor = input("What is an ice cream flavor that you like? ")
         if not flavor == "done":         # add all flavors except for done
             # to append something to a list means to add that thing to the end of the list
             icecream_flavors.append(flavor)
