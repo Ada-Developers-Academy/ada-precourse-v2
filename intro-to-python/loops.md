@@ -197,9 +197,9 @@ Example inputs and outputs:
 
 |input|output|
 |--|--|
-| `word = "snow"`|`"1 snow 2 snow 3 snow 4 snow 5 snow 6 snow 7 snow 8 snow 9 snow 10 snow"`|
-| `word = ""`|<code>"1&nbsp;&nbsp;2&nbsp;&nbsp;3&nbsp;&nbsp;4&nbsp;&nbsp;5&nbsp;&nbsp;6&nbsp;&nbsp;7&nbsp;&nbsp;8&nbsp;&nbsp;9&nbsp;&nbsp;10 "</code>|
-| `word = "123"`|`"1 123 2 123 3 123 4 123 5 123 6 123 7 123 8 123 9 123 10 123"`|
+| `word = "snow"`|`"1 snow 2 snow 3 snow 4 snow 5 snow 6 snow 7 snow 8 snow 9 snow 10 snow "`|
+| `word = ""`|<code>"1&nbsp;&nbsp;2&nbsp;&nbsp;3&nbsp;&nbsp;4&nbsp;&nbsp;5&nbsp;&nbsp;6&nbsp;&nbsp;7&nbsp;&nbsp;8&nbsp;&nbsp;9&nbsp;&nbsp;10  "</code>|
+| `word = "123"`|`"1 123 2 123 3 123 4 123 5 123 6 123 7 123 8 123 9 123 10 123 "`|
 
 ##### !end-question
 
@@ -220,13 +220,13 @@ from main import print_ten
 
 class TestPrintTen(unittest.TestCase):
     def test_word(self):
-        self.assertEqual(print_ten("snow"),"1 snow 2 snow 3 snow 4 snow 5 snow 6 snow 7 snow 8 snow 9 snow 10 snow")
+        self.assertEqual(print_ten("snow"),"1 snow 2 snow 3 snow 4 snow 5 snow 6 snow 7 snow 8 snow 9 snow 10 snow ")
 
     def test_empty(self):
-        self.assertEqual(print_ten(""), "1  2  3  4  5  6  7  8  9  10 ")
+        self.assertEqual(print_ten(""), "1  2  3  4  5  6  7  8  9  10  ")
 
     def test_string(self):
-        self.assertEqual(print_ten("123"), "1 123 2 123 3 123 4 123 5 123 6 123 7 123 8 123 9 123 10 123")
+        self.assertEqual(print_ten("123"), "1 123 2 123 3 123 4 123 5 123 6 123 7 123 8 123 9 123 10 123 ")
 ```
 
 ##### !end-tests
@@ -242,11 +242,10 @@ def print_ten(word):
     count = 1
     result = ""
     while count < 11:
-        if count > 1:
-            result += " "
         result += str(count)
         result += " "
         result += word
+        result += " "
         count += 1
 
     return result
@@ -254,10 +253,8 @@ def print_ten(word):
 def print_ten(word):
     result = ""
     for i in range(1, 11):
-        if i > 1:
-            result += " "
         result += str(i) + " "
-        result += word
+        result += word + " "
     return result
 ```
 

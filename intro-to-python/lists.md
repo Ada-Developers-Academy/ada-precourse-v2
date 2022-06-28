@@ -32,18 +32,22 @@ By using a list, we can store as many ice cream flavors as we want.  Also, pytho
 def favorite_flavors():
     icecream_flavors = []
     flavor = ""
-    while not flavor == "done": # this loop will run until the 
-                                # user types in the word "done"
-        flavor = input("What is an icecream flavor that you like? ")
-        icecream_flavors.append(flavor) # when we append something to a list,
-                                        # we add it to the end of the list
-    
-    for flavor in icecream_flavors: # this loop will iterate over each element 
-                                    # in the list, and store them one at a time 
-                                    # in the variable flavor
+    while not flavor == "done":  # this loop will run until the
+        # user types in the word "done"
+        flavor = input("What is an ice cream flavor that you like? ") # ask for user input
+        if not flavor == "done":         # add all flavors except for done
+            # to append something to a list means to add that thing to the end of the list
+            icecream_flavors.append(flavor)
+
+    for flavor in icecream_flavors:  # this loop will iterate over each element
+        # in the list and store them one at a time
+        # in the variable flavor
         print(f"{flavor} is a great ice cream flavor!")
 
     return icecream_flavors
+
+
+favorite_flavors()
 
 ```
 
@@ -333,12 +337,12 @@ Note the addition of the word "with" in the combined version.  You can assume th
 
 Example inputs and outputs:
 
-|input|output|
+|<div style="width:250px;">input<div>|output|
 |--|--|
-| `flavors = ["vanilla", "chocolate", "strawberry"]`<br/> `toppings = ["whipped cream", "nuts", "a cherry"]`|`["vanilla with whipped cream", "vanilla with nuts", "vanilla with a cherry", "chocolate with whipped cream", "chocolate with nuts", "chocolate with a cherry", "strawberry with whipped cream", "strawberry with nuts", "strawberry with a cherry"]`|
-| `flavors = ["a", "b"]`<br/> `toppings = ["c", "d", "e"]`|`["a with c", "a with d", "a with e", "b with c", "b with d", "b with e"]`|
-| `flavors = ["vanilla", "strawberry"]`<br/> `toppings = []`|`[]`|
-| `flavors = []`<br/> `toppings = ["chocolate sauce", "caramel sauce"]`|`[]`|
+| `flavors = ["vanilla", "chocolate", "strawberry"]`<br /> <br />`toppings = ["whipped cream", "nuts", "a cherry"]`|`["vanilla with whipped cream", "vanilla with nuts", "vanilla with a cherry", "chocolate with whipped cream", "chocolate with nuts", "chocolate with a cherry", "strawberry with whipped cream", "strawberry with nuts", "strawberry with a cherry"]`|
+| `flavors = ["a", "b"]`<br /> <br />`toppings = ["c", "d", "e"]`|`["a with c", "a with d", "a with e", "b with c", "b with d", "b with e"]`|
+| `flavors = ["vanilla", "strawberry"]`<br /> <br />`toppings = []`|`[]`|
+| `flavors = []`<br /> <br />`toppings = ["chocolate sauce", "caramel sauce"]`|`[]`|
 
 ##### !end-question
 
@@ -445,7 +449,7 @@ So far our Snowman game has used a constant as the secret word (`SNOWMAN_WORD = 
     ```console
     $ pip3 install wonderwords
     ```
-1. Once that's done, add the line `from wonderwords import RandomWord` to the top of our file.
+2. Once that's done, add the line `from wonderwords import RandomWord` to the top of our file.
     * This will import the class `RandomWord` for us to use in our code.
     ```python
     import random
@@ -455,8 +459,8 @@ So far our Snowman game has used a constant as the secret word (`SNOWMAN_WORD = 
     # ... rest of file
 
     ```
-1. Next, add the constants `SNOWMAN_MAX_WORD_LENGTH = 8` and `SNOWMAN_MIN_WORD_LENGTH = 5` with the other constants at the top of the file.    
-1. Last, add the following lines of code to the top of the `snowman` function:
+3. Next, add the constants `SNOWMAN_MAX_WORD_LENGTH = 8` and `SNOWMAN_MIN_WORD_LENGTH = 5` with the other constants at the top of the file.    
+4. Then, add the following lines of code to the top of the `snowman` function:
     ```python
 
         r = RandomWord()
@@ -474,7 +478,7 @@ So far our Snowman game has used a constant as the secret word (`SNOWMAN_WORD = 
  We are passing two arguments (word_min_length and word_max_length) using keyword arguments.  Again, we will not be covering these topics further in the pre-course, but they will come up later in the Ada curriculum.  The arguments that we are passing to the function `word` will instruct `word` to give us an English word where the length is between the SNOWMAN_MIN_WORD_LENGTH and SNOWMAN_MAX_WORD_LENGTH.  Feel free to experiment with setting different values for the constants.
     </details>
 
-1. The last piece of adding our new random word is replacing the constant `SNOWMAN_WORD` in the conditional test inside of the `snowman` function with the new `snowman_word` variable.
+5. The last piece of adding our new random word is replacing the constant `SNOWMAN_WORD` in the conditional test inside of the `snowman` function with the new `snowman_word` variable.
 
     ```python
 
@@ -588,7 +592,7 @@ Now that we have a list incorrect guesses, we can use them in the helper functio
             user_input = get_letter_from_user(wrong_guesses_list)
         # ...
 
-    def get_letter_from_user(wrong_list):
+    def get_letter_from_user(wrong_guesses_list):
         valid_input = False
         user_input_string = None
         while not valid_input:
@@ -598,7 +602,7 @@ Now that we have a list incorrect guesses, we can use them in the helper functio
             elif len(user_input_string) > 1:
                 print("You can only input one letter at a time!")
             # NEW SECTION
-            elif user_input_string in wrong_list:
+            elif user_input_string in wrong_guesses_list:
                 print("You have already guessed that letter!")
             # END NEW SECTION
             else:
@@ -657,14 +661,14 @@ def snowman():
 
 ##### !question
 
-Update the helper function `get_letter_from_user` so that it takes an additional argument (correct_guesses) and uses that along with `wrong_guesses` to print the "You have already guessed that letter" as feedback to the user if the user has already guessed the letter.
+Update the helper function `get_letter_from_user` so that it takes an additional argument (`correct_guesses_list`). Use this new argument along with `wrong_guesses_list` to print "You have already guessed that letter" as feedback to the user if the user has already guessed the letter.
 
 ##### !end-question
 
 ##### !placeholder
 
 ```py
-def get_letter_from_user(wrong_list, correct_guesses):
+def get_letter_from_user(wrong_guesses_list, correct_guesses_list):
     valid_input = False
     user_input_string = None
     while not valid_input:
@@ -674,7 +678,7 @@ def get_letter_from_user(wrong_list, correct_guesses):
         elif len(user_input_string) > 1:
             print("You can only input one letter at a time!")
         # UPDATE THIS AREA
-        elif user_input_string in wrong_list:
+        elif user_input_string in wrong_guesses_list:
             print("You have already guessed that letter!")
         # END UPDATE AREA
         else:
@@ -710,11 +714,11 @@ class SimplisticTest(unittest.TestCase):
             'z'
         ]
         correct_guesses_list = ['a', 'b', 'c']
-        wrong_list = ['d', 'e', 'f']
+        wrong_guesses_list = ['d', 'e', 'f']
         with unittest.mock.patch('builtins.input', side_effect=input_letters):
 
             # Act
-            answer = p.get_letter_from_user(wrong_list, correct_guesses_list)
+            answer = p.get_letter_from_user(wrong_guesses_list, correct_guesses_list)
         # Assert
         self.assertTrue(re.match('You have already guessed that letter', mock_stdout.getvalue(), flags=re.IGNORECASE), msg=f"Expected: {'You have already guessed that letter'} but recieved: {mock_stdout.getvalue()}")
 
@@ -726,11 +730,11 @@ class SimplisticTest(unittest.TestCase):
             'z'
         ]
         correct_guesses_list = ['a', 'b', 'c']
-        wrong_list = ['d', 'e', 'f']
+        wrong_guesses_list = ['d', 'e', 'f']
         with unittest.mock.patch('builtins.input', side_effect=input_letters):
 
             # Act
-            p.get_letter_from_user(wrong_list, correct_guesses_list)
+            p.get_letter_from_user(wrong_guesses_list, correct_guesses_list)
         # Assert
         self.assertTrue(re.match('You have already guessed that letter', mock_stdout.getvalue(), flags=re.IGNORECASE), msg=f"Expected {'You have already guessed that letter'} but recieved: {mock_stdout.getvalue()}")
 
@@ -742,13 +746,13 @@ class SimplisticTest(unittest.TestCase):
             'z'
         ]
         correct_guesses_list = ['a', 'b', 'c']
-        wrong_list = ['d', 'e', 'f']
+        wrong_guesses_list = ['d', 'e', 'f']
         with unittest.mock.patch('builtins.input', side_effect=input_letters):
 
             # Act
-            answer = p.get_letter_from_user(wrong_list, correct_guesses_list)
+            answer = p.get_letter_from_user(wrong_guesses_list, correct_guesses_list)
         # Assert
-        self.assertTrue(answer == input_letters[-1], msg=f"Expected after guessing a previously guessed letter to reprompt the user and read in and return a valid letter.  Guessing {input_letters} with correct guesses list {correct_guesses_list} and incorrect guesses list {wrong_list}.  The function returned {answer}")
+        self.assertTrue(answer == input_letters[-1], msg=f"Expected after guessing a previously guessed letter to reprompt the user and read in and return a valid letter.  Guessing {input_letters} with correct guesses list {correct_guesses_list} and incorrect guesses list {wrong_guesses_list}.  The function returned {answer}")
 
     @patch('sys.stdout', new_callable=io.StringIO)
     def test_prints_only_one_letter_at_a_time_for_input_with_multiple_characters(self, mock_stdout):
@@ -758,11 +762,11 @@ class SimplisticTest(unittest.TestCase):
             'z'
         ]
         correct_guesses_list = ['a', 'b', 'c']
-        wrong_list = ['d', 'e', 'f']
+        wrong_guesses_list = ['d', 'e', 'f']
         with unittest.mock.patch('builtins.input', side_effect=input_letters):
 
             # Act
-            p.get_letter_from_user(wrong_list, correct_guesses_list)
+            p.get_letter_from_user(wrong_guesses_list, correct_guesses_list)
         # Assert
         self.assertTrue(re.match('You can only input one letter at a time!', mock_stdout.getvalue(), flags=re.IGNORECASE), msg=f"Expected to print {'You can only input one letter at a time!'} when 'zzzzz' is entered.")
 
@@ -774,11 +778,11 @@ class SimplisticTest(unittest.TestCase):
             'z'
         ]
         correct_guesses_list = ['a', 'b', 'c']
-        wrong_list = ['d', 'e', 'f']
+        wrong_guesses_list = ['d', 'e', 'f']
         with unittest.mock.patch('builtins.input', side_effect=input_letters):
 
             # Act
-            p.get_letter_from_user(wrong_list, correct_guesses_list)
+            p.get_letter_from_user(wrong_guesses_list, correct_guesses_list)
         # Assert
         self.assertTrue(re.match('You must input a letter!', mock_stdout.getvalue(), flags=re.IGNORECASE), msg=f"Expected to print {'You must input a letter!'} when a number is input.")
 
@@ -787,11 +791,11 @@ class SimplisticTest(unittest.TestCase):
         # Arrange
         input_letters = ['a']
         correct_guesses_list = ['b', 'c']
-        wrong_list = ['d', 'e', 'f']
+        wrong_guesses_list = ['d', 'e', 'f']
         with unittest.mock.patch('builtins.input', side_effect=input_letters):
 
             # Act
-            answer = p.get_letter_from_user(wrong_list, correct_guesses_list)
+            answer = p.get_letter_from_user(wrong_guesses_list, correct_guesses_list)
         # Assert
         self.assertTrue(answer == input_letters[0], msg=f"When the user guesses a letter that has not been previously guessed, that letter should be returned.")
 
@@ -800,11 +804,11 @@ class SimplisticTest(unittest.TestCase):
         # Arrange
         input_letters = ['a']
         correct_guesses_list = []
-        wrong_list = []
+        wrong_guesses_list = []
         with unittest.mock.patch('builtins.input', side_effect=input_letters):
 
             # Act
-            answer = p.get_letter_from_user(wrong_list, correct_guesses_list)
+            answer = p.get_letter_from_user(wrong_guesses_list, correct_guesses_list)
         # Assert
         self.assertTrue(answer == input_letters[0], msg="When the no letter has been guessed any valid letter is accepted and returned.")
 
@@ -821,7 +825,7 @@ class SimplisticTest(unittest.TestCase):
 A sample solution could be:
 
 ```python
-def get_letter_from_user(wrong_list, correct_guesses_list):
+def get_letter_from_user(wrong_guesses_list, correct_guesses_list):
     valid_input = False
     user_input_string = None
     while not valid_input:
@@ -831,7 +835,7 @@ def get_letter_from_user(wrong_list, correct_guesses_list):
         elif len(user_input_string) > 1:
             print("You can only input one letter at a time!")
         # NEW SECTION
-        elif user_input_string in wrong_list or user_input_string in correct_guesses_list:
+        elif user_input_string in wrong_guesses_list or user_input_string in correct_guesses_list:
             print("You have already guessed that letter!")
         # END NEW SECTION
         else:
