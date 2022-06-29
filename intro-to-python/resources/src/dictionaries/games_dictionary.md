@@ -90,18 +90,21 @@ def build_word_dict(word):
         word_dict[letter] = False
     return word_dict
     
-def get_word_progress(word, word_dict):
+def print_word_progress_string(word, word_dict):
     output_string = ""
-    result = True
     for elem in word:
         if word_dict[elem]:
             output_string += elem
         else:
-            result = False
             output_string += "_"
         output_string += " "
     print(output_string)
-    return result
+
+def get_word_progress(word, word_dict):
+    for elem in word:
+        if not word_dict[elem]:
+            return False
+    return True
 
 def get_letter_from_user(word_dict, list2):
     valid_input = False
