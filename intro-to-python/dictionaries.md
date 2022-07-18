@@ -66,7 +66,7 @@ distance = planet_dict["venus"]
 
 ## Heterogeneous vs. Homogeneous Dictionaries
 
-Dictionaries store data using key-value pairs. Let's look at a few examples where the datatype of the values is different within a single dictionary (heterogeneous) and where the datatype of the values is the same withing a single dictionary (homogeneous).
+Dictionaries store data using key-value pairs. Let's look at a few examples where the datatype of the values is different within a single dictionary (heterogeneous) and where the datatype of the values is the same within a single dictionary (homogeneous).
 
 ### Address
 Let's look at an address dictionary in more detail.
