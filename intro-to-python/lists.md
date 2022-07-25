@@ -525,6 +525,16 @@ So far, all we have done with our user input is check to see if it is in our wor
 
 Let's start with tracking incorrect guesses.  We know we are going to have a max of SNOWMAN_WRONG_GUESSES, so we could make that many variables and store our incorrect guesses in those variables.  This solution could be made to work, but every time we change the value of the constant we would have to rewrite our code.  Using a `list` gives us a way to store as many or as little wrong guesses as we want and will allow us to make the code flexible and easy to modify.
 
+<!-- available callout types: info, success, warning, danger, secondary, star  -->
+### !callout-warning
+
+## Video Lesson Discrepancy
+
+There is a small discrepancy between the video lesson for the snowman section of this lesson and the reading in Learn. In the Learn reading, the variable `wrong_guesses` was updated to the variable name `wrong_guesses_list` and
+`correct_guesses` was updated to the variable name `correct_guesses_list`. In the video lesson, the former variable names are used.
+
+### !end-callout
+
 1. Start by addding an incorrect guesses list variable to the top of the `snowman` function:
 
     ```python
