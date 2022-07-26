@@ -1,3 +1,0 @@
-# Pre Ada Checklist
-
-
