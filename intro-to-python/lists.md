@@ -876,7 +876,7 @@ In the last lesson we wrote the helper function `print_snowman` that drew our sn
 
     def print_snowman(wrong_guesses_count):
         for i in range(SNOWMAN_WRONG_GUESSES + 1 - wrong_guesses_count,
-                    SNOWMAN_WRONG_GUESSES + 1)
+                    SNOWMAN_WRONG_GUESSES + 1):
             if i == 1:
                 print(SNOWMAN_1)
             if(i == 2):
