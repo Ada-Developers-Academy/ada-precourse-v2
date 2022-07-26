@@ -1,6 +1,6 @@
 # Lists
 
-<iframe src="https://adaacademy.hosted.panopto.com/Panopto/Pages/Embed.aspx?pid=5a85cd50-b866-4aa4-a5e3-acb8005d04be&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&start=0&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+<iframe src="https://adaacademy.hosted.panopto.com/Panopto/Pages/Embed.aspx?pid=c65a7cda-04ef-4f27-acd7-aede010488c7&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=true&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 
 ## Learning Goals
 
@@ -525,16 +525,6 @@ So far, all we have done with our user input is check to see if it is in our wor
 
 Let's start with tracking incorrect guesses.  We know we are going to have a max of SNOWMAN_WRONG_GUESSES, so we could make that many variables and store our incorrect guesses in those variables.  This solution could be made to work, but every time we change the value of the constant we would have to rewrite our code.  Using a `list` gives us a way to store as many or as little wrong guesses as we want and will allow us to make the code flexible and easy to modify.
 
-<!-- available callout types: info, success, warning, danger, secondary, star  -->
-### !callout-warning
-
-## Video Lesson Discrepancy
-
-There is a small discrepancy between the video lesson for the snowman section of this lesson and the reading in Learn. In the Learn reading, the variable `wrong_guesses` was updated to the variable name `wrong_guesses_list` and
-`correct_guesses` was updated to the variable name `correct_guesses_list`. In the video lesson, the former variable names are used.
-
-### !end-callout
-
 1. Start by addding an incorrect guesses list variable to the top of the `snowman` function:
 
     ```python
@@ -886,7 +876,7 @@ In the last lesson we wrote the helper function `print_snowman` that drew our sn
 
     def print_snowman(wrong_guesses_count):
         for i in range(SNOWMAN_WRONG_GUESSES + 1 - wrong_guesses_count,
-                    SNOWMAN_WRONG_GUESSES + 1)
+                    SNOWMAN_WRONG_GUESSES + 1):
             if i == 1:
                 print(SNOWMAN_1)
             if(i == 2):
