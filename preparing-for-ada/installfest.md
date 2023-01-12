@@ -100,7 +100,7 @@ It will also give some options to automatically install:
 Copy the line below in its entirety (avoiding the `$`), paste it into the terminal and hit enter. You will be prompted for your password. Don't be alarmed if you don't see anything appear as you type. It's still getting entered.
 
 ```bash
-$ /bin/bash -c "$(curl -fsSL https://gist.githubusercontent.com/CheezItMan/e31aebdb0f686c1a194e980b24f3cea4/raw/5710e04d17a7840df3df0ea95502da275a9943cb/ada_c14_installfest.bash)"
+$ /bin/bash -c "$(curl -fsSL https://gist.githubusercontent.com/ada-instructors/8502dea62191eb8b4568b25c81519608/raw/cc3ca36eaedb8d5689e965a69f99b77de8e315b2/ada_installfest.bash)"
 ```
 
 **When the install finishes, quit and restart your terminal.** Without doing this, the installation above may not take affect.
