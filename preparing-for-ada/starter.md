@@ -34,7 +34,7 @@ In this course you can always resubmit work.  If you want a 2nd-round of instruc
 
 ## Due Dates
 
-# The Precourse should be completed by Monday August 29th at 7pm PST
+# The Precourse should be completed by Tuesday February 28th at 7pm PST
 
 ### !end-callout
 
