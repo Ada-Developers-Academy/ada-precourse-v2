@@ -13,6 +13,8 @@ However you choose to move through the materials, as you read through these reso
     * What kinds of impacts can that have when the responses are used to make decisions?
 3. What kinds of tasks are LLMs good at performing? What kinds of tasks do they struggle with? 
 4. What are a few considerations for using AI tools responsibly?
+5. What are some technical or physical limitations of LLMs?
+    * What are they able to process? What equipment or infrastructure does it take to keep an LLM running?
 
 ## Required Readings
 What are LLMs?
