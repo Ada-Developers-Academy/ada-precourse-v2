@@ -444,11 +444,31 @@ It's time to jump back into our Snowman Project. Open up your `snowman.py` and l
 
 So far our Snowman game has used a constant as the secret word (`SNOWMAN_WORD = 'broccoli'`), but a game that always uses the same word is not a great game.  The code to generate a random English word is outside of the scope of these lessons, although it is an interesting problem and worth spending some time thinking about.  We are going to use a _package_ to come up with a random word.  We are going to use the _wonderwords_ package.  
 
-1. Before we can use it in our code, we will need to install the package using the command line.  To install, copypasta this into your terminal:
+1. Before we can use it in our code, we will need to install the package using the command line. From our `snowman_project` directory, run the following commands one by one:
 
-    ```console
-    $ pip3 install wonderwords
-    ```
+```sh
+$ python3 -m venv venv
+$ source venv/bin/activate
+```
+
+<!-- prettier-ignore-start -->
+| Terminal Command | Notes |
+| ------------- | ----- |
+| `python3 -m venv venv` | Creates a virtual environment named `venv` for this project |
+| `source venv/bin/activate` | Activates this virtual environment |
+<!-- prettier-ignore-end -->
+
+At a high level, a virtual environment is an isolated space where you can work on your Python projects. We will create and use virtual environments for almost all Python projects we work on. Feel free to do your own research about virtual environments. For now, we'll focus on the implementation of our Snowman game and delve more into virtual environments later on. 
+
+After creating and activating our virtual environment, we can install the `wonderwords` package. Since our project requires the `wonderwords` package in order to work, we will add this project requirement to the `requirements.txt` file. We will also learn more about this file and project requirements later on. 
+
+<!-- prettier-ignore-start -->
+| Terminal Command | Notes |
+| ------------- | ----- |
+| `pip install wonderwords` | Install the `wonderwords` package to our virtual environment |
+| `pip freeze > requirements.txt ` | Adds any installed packages to requirements.txt |
+<!-- prettier-ignore-end -->
+
 2. Once that's done, add the line `from wonderwords import RandomWord` to the top of our file.
     * This will import the class `RandomWord` for us to use in our code.
     ```python

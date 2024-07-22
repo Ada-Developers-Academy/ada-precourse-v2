@@ -475,17 +475,37 @@ def convert_mi_to_km(miles):
 
 ## Snowman!
 
-It's time to add a new game!  The new game is a word guessing game called Snowman.
+It's time to add a new game!  The new game is a word guessing game called Snowman. We will run some commands in the terminal to set up this project. At this moment, we will not go into detail about all the commands we need to run to set up a Python project, but rest assured that we will spend time going over project setup later in Unit 1. For now, you can run the given commands and focus on writing the logic for the Snowman game.
 
-Before getting started, create a new file in your precourse directory called `snowman.py` and open it in VSCode.
+### Snowman Setup
+
+Before getting started, we'll want to make sure we're in our precourse directory by running `pwd` in the terminal. We should see some output like `/ada/precourse`. 
+
+To keep our projects organized, we usually create a unique folder for each project we work on. By running the following commands, one at a time, we will create a new directory in our precourse directory called `snowman_project`, change directories so that we are in our newly created directory, and then create two files.
+
+```sh
+$ mkdir snowman_project
+$ cd snowman_project
+$ touch snowman.py requirements.txt
+```
+
+<!-- prettier-ignore-start -->
+| Terminal Command | Notes |
+| ------------- | ----- |
+| `mkdir snowman_project` | Create a directory called `snowman_project` |
+| `cd snowman_project` | Change the current working directory to be `snowman_project` |
+| `touch snowman.py requirements.txt` | Create a file called `snowman.py` and another file called `requirements.txt`. At the moment we will only be using `snowman.py` and can ignore `requirements.txt` for now |
+<!-- prettier-ignore-end -->
+
+### Snowman Gameplay
 
 In Snowman:
 
 1.  The user is presented with a list of underscores "_".  Each Underscore represents one letter in a word.
-1.  The user guesses letters for the hidden word
+2.  The user guesses letters for the hidden word
     * For each correct guess, a letter will be replace the corresponding underscore.
     * For every wrong guess we are going to remember the number of wrong guesses and print out more and more of a snowman drawing.  
-1.  When the snowman is finished and the user is out of guesses, they lose the game.  
+3.  When the snowman is finished and the user is out of guesses, they lose the game.  
 
 We are going to start by building just a small piece of this game.  To start, for debugging purposes, we're always going to use the same word.  Add it as a constant at the top of the `snowman.py` file.  Here's our version:
 
@@ -500,7 +520,6 @@ SNOWMAN_WORD = "broccoli"
 We will start our game by reading in a letter from the user, similar to how we read in numbers with `guess_the_number`.  We will call this function `get_letter_from_user`.
 
 <!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
-<!-- Replace everything in square brackets [] and remove brackets  -->
 
 ### !challenge
 
@@ -516,16 +535,18 @@ We will start our game by reading in a letter from the user, similar to how we r
 This function is very similar to `get_number_from_user`.  
 
 1.  First, we will need to use `input` to get a string from the user and store it in a variable.  
-1.  Second, we need to check to see if the input is valid.  
+2.  Second, we need to check to see if the input is valid.  
     * In `get_number_from_user`, we used `isnumeric()` to ensure that the input was a number.  In this function, we need to check to see if the input is a letter, and if the input contains only one letter.
       - `letter_from_user.isalpha()` will return `True` if the string variable `letter_from_user` contains only alphabetical characters
       - `len(letter_from_user)` will tell us the length of the string
-2. Lastly, we need to return the input string
+3. Lastly, we need to return the input string
     - If the user gives bad input: 
       - We print "Invalid letter please enter a single character." 
       - Then return the input.  
     - If the user gives valid input:
       - Then we just return the input.
+
+Write your code in the cell block below and click "Run Tests" to check that your solution meets the outlined requirements and passes the tests. In order to run this code in VSCode, you will need to first add this code into your `snowman.py` file, then from the `snowman_project` directory you will run `python snowman.py` in the terminal. Running this command will execute your code.
 
 We will expand this to a full solution in the next lesson.
 
@@ -615,9 +636,6 @@ class TestPython1(unittest.TestCase):
 ### !end-challenge
 
 <!-- ======================= END CHALLENGE ======================= -->
-
-
-### snowman
 
 <!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
 <!-- Replace everything in square brackets [] and remove brackets  -->
