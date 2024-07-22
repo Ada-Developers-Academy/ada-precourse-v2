@@ -458,6 +458,8 @@ $ source venv/bin/activate
 | `source venv/bin/activate` | Activates this virtual environment |
 <!-- prettier-ignore-end -->
 
+After running `source venv/bin/activate` to activate our virtual environment, we should now see that each line of our terminal now begins with `(venv)`. This tells us that our virtual environment named `venv` has been activated. 
+
 At a high level, a virtual environment is an isolated space where you can work on your Python projects. We will create and use virtual environments for almost all Python projects we work on. Feel free to do your own research about virtual environments. For now, we'll focus on the implementation of our Snowman game and delve more into virtual environments later on. 
 
 After creating and activating our virtual environment, we can install the `wonderwords` package. Since our project requires the `wonderwords` package in order to work, we will add this project requirement to the `requirements.txt` file. We will also learn more about this file and project requirements later on. 
@@ -469,7 +471,7 @@ After creating and activating our virtual environment, we can install the `wonde
 | `pip freeze > requirements.txt ` | Adds any installed packages to requirements.txt |
 <!-- prettier-ignore-end -->
 
-2. Once that's done, add the line `from wonderwords import RandomWord` to the top of our file.
+1. Once that's done, add the line `from wonderwords import RandomWord` to the top of our file.
     * This will import the class `RandomWord` for us to use in our code.
     ```python
     import random
@@ -479,8 +481,8 @@ After creating and activating our virtual environment, we can install the `wonde
     # ... rest of file
 
     ```
-3. Next, add the constants `SNOWMAN_MAX_WORD_LENGTH = 8` and `SNOWMAN_MIN_WORD_LENGTH = 5` with the other constants at the top of the file.    
-4. Then, add the following lines of code to the top of the `snowman` function:
+2. Next, add the constants `SNOWMAN_MAX_WORD_LENGTH = 8` and `SNOWMAN_MIN_WORD_LENGTH = 5` with the other constants at the top of the file.    
+3. Then, add the following lines of code to the top of the `snowman` function:
     ```python
 
         r = RandomWord()
@@ -935,6 +937,13 @@ In the last lesson we wrote the helper function `print_snowman` that drew our sn
             print(SNOWMAN_GRAPHIC[i])
 
     ```
+
+
+### Deactivating the Virtual Environment
+
+When we're done working on the Snowman game for the time being, we should deactivate our virtual environment. We can do so by running `deactivate` in the terminal. We should no longer see `(venv)` at the start of each line in our terminal. 
+
+When we start working on `snowman.py` again, we will need to reactivate the virtual environment before we can execute our code. 
 
 ## Summary
 

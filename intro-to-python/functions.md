@@ -546,7 +546,7 @@ This function is very similar to `get_number_from_user`.
     - If the user gives valid input:
       - Then we just return the input.
 
-Write your code in the cell block below and click "Run Tests" to check that your solution meets the outlined requirements and passes the tests. In order to run this code in VSCode, you will need to first add this code into your `snowman.py` file, then from the `snowman_project` directory you will run `python snowman.py` in the terminal. Running this command will execute your code.
+We can write our code in the cell block below and click "Run Tests" to check that our solution meets the outlined requirements and passes the tests. In order to run this code in VSCode, we'll need to first add this code into `snowman.py` file, then from the `snowman_project` directory we will run `python snowman.py` in the terminal. Running this command will execute our code.
 
 We will expand this to a full solution in the next lesson.
 
@@ -638,7 +638,6 @@ class TestPython1(unittest.TestCase):
 <!-- ======================= END CHALLENGE ======================= -->
 
 <!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
-<!-- Replace everything in square brackets [] and remove brackets  -->
 
 ### !challenge
 
@@ -757,6 +756,7 @@ class TestPython2(unittest.TestCase):
 ### !end-challenge
 
 <!-- ======================= END CHALLENGE ======================= -->
+
 ## Summary
 
 Let's go back to the questions proposed in the introduction to this lesson.  What do functions add to our code?  
