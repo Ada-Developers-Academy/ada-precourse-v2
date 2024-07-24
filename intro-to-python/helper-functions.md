@@ -35,7 +35,7 @@ def convert_celsius_to_fahrenheit(temp):
     if not isinstance(temp, int) and not isinstance(temp, float):
         return None
 
-    return 9/5*temp+32
+    return 9 / 5 * temp + 32
 ```
 
 This function `convert_celsius_to_fahrenheit` first validates that the `temp` is a numeric value, and then returns the `temp` converted to Fahrenheit.
@@ -44,17 +44,13 @@ In order to follow best practices, our functions should have a single responsibi
 
 ```Python
 def validate_num(num):
-    if isinstance(num, int) or isinstance(num, float):
-        return True
-    else:
-        return False
-
+    return isinstance(num, int) or isinstance(num, float)
 
 def convert_celsius_to_fahrenheit(temp):
     if not validate_num(temp):
         return None
     
-    return 9/5*temp+32
+    return 9 / 5 * temp + 32
 ```
 
 In addition to helping us follow the single responsibility principle, we may note that understanding the conditional logic in `validate_num` is a bit more straight forward than in the initial function, where we have a compound conditional that includes `not` before each condition (`if not isinstance(temp, int) and not isinstance(temp, float):`).
@@ -65,18 +61,13 @@ Another benefit of helper functions is that we can use them as many times as we 
 
 ```Python
 def validate_num(num):
-    if isinstance(num, int) or isinstance(num, float):
-        return True
-    else:
-        return False
-
+    return isinstance(num, int) or isinstance(num, float)
 
 def convert_celsius_to_fahrenheit(temp):
     if not validate_num(temp):
         return None
 
-    return 9/5*temp+32
-
+    return 9 / 5 * temp + 32
 
 def convert_celsius_to_kelvin(temp):
     if not validate_num(temp):
@@ -555,13 +546,10 @@ def am_i_speeding(speed, speed_limit):
     pass
 
 def convert_km_to_mi(num):
-    return num*0.62137
+    return num * 0.62137
 
 def validate_num(num):
-    if not isinstance(num, int) and not isinstance(num, float):
-        return False
-    else:
-        return True
+    return isinstance(num, int) or isinstance(num, float)
 
 ```
 
@@ -621,10 +609,8 @@ def am_i_speeding(speed, speed_limit):
         return None
     
     # convert speed to mi/hr and compare to speed_limit
-    if convert_km_to_mi(speed) > speed_limit:
-        return True
-    else:
-        return False      
+    miles_per_hour = convert_km_to_mi(speed)
+    return miles_per_hour > speed_limit     
 ```
 ##### !end-explanation
 
