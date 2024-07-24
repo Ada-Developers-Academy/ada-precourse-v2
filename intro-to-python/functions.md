@@ -223,7 +223,7 @@ def convert_celsius_to_fahrenheit(temp):
     if not isinstance(temp, int) and not isinstance(temp, float):
         return None
 
-    return 9/5*temp+32
+    return 9 / 5 * temp + 32
 
 
 result = convert_celsius_to_fahrenheit(0)
@@ -243,16 +243,16 @@ paris_temp = 21
 madrid_temp = "madrid"
 
 # Output temperature in Fahrenheit
-print("The temperature in Mumbai is ", convert_celsius_to_fahrenheit(mumbai_temp), "°F")
-print("The temperature in Tokyo is ", convert_celsius_to_fahrenheit(tokyo_temp), "°F")
-print("The temperature in Paris is ", convert_celsius_to_fahrenheit(paris_temp), "°F")
-print("The temperature in Madrid is ", convert_celsius_to_fahrenheit(madrid_temp), "°F")
+print("The temperature in Mumbai is", convert_celsius_to_fahrenheit(mumbai_temp), "°F")
+print("The temperature in Tokyo is", convert_celsius_to_fahrenheit(tokyo_temp), "°F")
+print("The temperature in Paris is", convert_celsius_to_fahrenheit(paris_temp), "°F")
+print("The temperature in Madrid is", convert_celsius_to_fahrenheit(madrid_temp), "°F")
 
 # Output
-# The temperature in Mumbai is  82.4 °F
-# The temperature in Tokyo is  68.0 °F
-# The temperature in Paris is  69.80000000000001 °F
-# The temperature in Madrid is  None °F
+# The temperature in Mumbai is 82.4 °F
+# The temperature in Tokyo is 68.0 °F
+# The temperature in Paris is 69.80000000000001 °F
+# The temperature in Madrid is None °F
 ```
 
 Expand the section below to look at the length of the code required if we did not write the function `convert_celsius_to_fahrenheit`. Notice the amount of repeated code. 
@@ -271,35 +271,35 @@ madrid_temp = "madrid"
 if not isinstance(mumbai_temp, int) and not isinstance(mumbai_temp, float):
     mumbai_temp_fahrenheit = None
 else: 
-    mumbai_temp_fahrenheit = 9/5*mumbai_temp+32
+    mumbai_temp_fahrenheit = 9 / 5 * mumbai_temp + 32
 
 if not isinstance(tokyo_temp, int) and not isinstance(tokyo_temp, float):
     tokyo_temp_fahrenheit = None
 else: 
-    tokyo_temp_fahrenheit = 9/5*tokyo_temp+32
+    tokyo_temp_fahrenheit = 9 / 5 * tokyo_temp + 32
 
 if not isinstance(paris_temp, int) and not isinstance(paris_temp, float):
     paris_temp_fahrenheit = None
 else: 
-    paris_temp_fahrenheit = 9/5*paris_temp+32
+    paris_temp_fahrenheit = 9 / 5 * paris_temp + 32
 
 if not isinstance(madrid_temp, int) and not isinstance(madrid_temp, float):
     madrid_temp_fahrenheit = None
 else: 
-    madrid_temp_fahrenheit = 9/5*madrid_temp+32
+    madrid_temp_fahrenheit = 9 / 5 * madrid_temp + 32
 
 
 # Output temperature in Fahrenheit
-print("The temperature in Mumbai is ", mumbai_temp_fahrenheit, "°F")
-print("The temperature in Tokyo is ", tokyo_temp_fahrenheit, "°F")
-print("The temperature in Paris is ", paris_temp_fahrenheit, "°F")
-print("The temperature in Madrid is ", madrid_temp_fahrenheit, "°F")
+print("The temperature in Mumbai is", mumbai_temp_fahrenheit, "°F")
+print("The temperature in Tokyo is", tokyo_temp_fahrenheit, "°F")
+print("The temperature in Paris is", paris_temp_fahrenheit, "°F")
+print("The temperature in Madrid is", madrid_temp_fahrenheit, "°F")
 
 # Output
-# The temperature in Mumbai is  82.4 °F
-# The temperature in Tokyo is  68.0 °F
-# The temperature in Paris is  69.80000000000001 °F
-# The temperature in Madrid is  None °F
+# The temperature in Mumbai is 82.4 °F
+# The temperature in Tokyo is 68.0 °F
+# The temperature in Paris is 69.80000000000001 °F
+# The temperature in Madrid is None °F
 ```
 
 </details>
@@ -379,14 +379,11 @@ class TestCompare(unittest.TestCase):
 A working implementation:
 
 ```python
-
 def compare(first, second):
-    if first > second:
-        return True
-    else:
-        return False
-
+    return first > second
 ```
+
+We could write an `if`/`else` statement, but remember, a comparison expression like `first > second` results in a `Boolean` value. If the function needs to return a `Boolean` result, there's no need for an extra conditional check. We should just return the `Boolean` created by the comparison!
 
 ##### !end-explanation
 
@@ -527,8 +524,7 @@ This function is very similar to `get_number_from_user`.
     - If the user gives valid input:
       - Then we just return the input.
 
-We will expand this to a full solution in the next lesson.
-
+We will continue expanding Snowman into a full game throughout the precourse lessons.
 
 ##### !end-question
 
