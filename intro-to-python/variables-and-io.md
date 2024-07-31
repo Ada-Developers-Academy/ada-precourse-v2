@@ -28,7 +28,7 @@ In this lesson we will have a quick refresher on variables, and then go into an 
 
 ### Syntax
 
-Create a new file `variables_practice.py` in the Precourse directory we created in the previous lesson called "Introduction and Getting Started". As a reminder, we use the `touch` command to create a new file. 
+Create a new file `variables_practice.py` in the `precourse` directory we created in the previous lesson called "Introduction and Getting Started". As a reminder, we use the `touch` command to create a new file. 
 
 Add the following code to `variables_practice.py`:
 
@@ -164,11 +164,11 @@ In each of the lessons in Practice with Python we will be building a part of a p
 
 ## Input/Output (IO)
 
-Input and output (collectively called "I/O" or "IO" for short) are how we get data _in_ to and _out_ of our programs.  You've already used one IO function in your coding challenge: `print`.  The `print` function _outputs_ what we give it to the terminal, so the user can see it.
+Input and output (collectively called "I/O" or "IO" for short) are how we get data _in_ to and _out_ of our programs.  You've likely seen and used one IO function in your coding journey: `print`.  The `print` function _outputs_ what we give it to the terminal, so the user can see it.
 
 While there are other types of output (eg. writing to files and sending things over the internet) `print` will do just fine for our purposes right now.
 
-As for getting data _in_, we will use another function to get input from the user and the terminal.  This function has the helpfully obvious name `input`.  When we call `input`, it prints a prompt in the terminal to the user to ask for their input.
+As for getting data _in_, we will use another function to get input from the user and the terminal.  This function has the helpfully clear name `input`.  When we call `input`, it prints a prompt in the terminal to the user to ask for their input.
 
 ### The `input` Function
 
@@ -191,7 +191,9 @@ What is your favorite programming language?Python!
 ```
 This still works; it just looks a little awkward.
 
-This isn't so useful on its own right now because we're not doing anything with the user input, but we can now store the result of calling `input` in a variable for later use. On a new line in `variables_practice.py` add the code below and run the code to practice using the `input` function.
+Gathering user input may not be exciting on it's own, but we can now store the result of calling `input` in a variable for later use. Once we have the input in a variable we can print the value, perform operations on the data, or even create games such as a fill-in-the-blank story with words that a user must fill in to complete the tale.
+
+On a new line in `variables_practice.py` add the code below and run the code to practice using the `input` function.
 
 ```python
 # The user's input will be stored in the variable called language

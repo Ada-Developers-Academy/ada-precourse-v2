@@ -13,9 +13,10 @@ At the end of this lesson we will be able to:
 
 **[Textbook for this section](https://colab.research.google.com/drive/1huE7PyavZSJIou4mh5G2e7yfG08Vb7da?usp=sharing)**
 
-In this section we will be building on the concepts from [Variables and IO](./variables-and-io.md).  
+In this section we will be building on the concepts from [Variables and IO](./variables-and-io.md). This code snippet will form the basis of a game we will build in the following lessons.
 
 Let's take a look at the following code and consider what's going on:
+
 ```python
 import random
 
@@ -29,14 +30,15 @@ else:
     print(f"{n} is too large!")
 ```
 
-## Vocabulary
-
-| <div style="width:175px">Vocab</div>| Definition| How to Use in a Sentence |
+| <div style="width:175px">Vocab</div>| Code| Description |
 | -- | --| -- |
-| `random.randint` | A function that will generate a random integer in a range.  | We used `random.randint(5, 15)` to get a random integer between 5 and 15. |
-| `if...else`  | A statement to do one of two things based on a condition.  | We wrote an `if...else` statement to determine if the person was old enough to consume alcohol.  |
-|  `if...elif...else` | A statement to conditionally do one of three or more things.  | We wrote an `if...elif...else` statement to print out if the person was too young, too old or just the right age. | 
-
+| `n = random.randint(1, 10) ` | Invoke the `randint` method from the `random` module that will generate a random integer between 1 and 10. The random integer returned from calling `randint` will be assigned to the variable `n`. |
+| `if n < 5:`  | An if statement that checks if the random integer referenced by `n` is less than 5 |
+| `print(f"{n} is too small!")` | If the condition from the if statement evaluates to `True`, then use the `print` method and string interpolation to print a string that tells a user the random number is too small. |
+| `elif n == 5:` | An `elif` statement that is checked if the conditional statement before does not evaluate to `True`. The statement checks if `n` is equal to the integer 5 |
+| `print(f"{n} is just right!")` | If the condition from the `elif` statement evaluates to `True`, then print a string that tells the user the random number `n` is just right. |
+| `else:` | If none of the conditions from the `if` and `elif` statements evaluate to `True`, then the logic associated with the `else` will execute |
+| `print(f"{n} is too large!")` | Print a string that tells a user that the random number `n` is too large. |
 
 ## Guess the Number
 
@@ -170,11 +172,11 @@ if user_input_string.isnumeric():
     user_input = int(user_input_string)
 
     if user_input < RANGE_LOW or user_input > RANGE_HIGH:
-        print(f"Your guess is out of bounds.")
+        print("Your guess is out of bounds.")
         print(f"It must be between {RANGE_LOW} and {RANGE_HIGH}")
     else:
         if user_input == random_number:
-            print("You guessed the number!  Good job!")
+            print("You guessed the number! Good job!")
         else:
             if user_input > random_number:
                 print("Your guess is too high")
@@ -204,10 +206,10 @@ if user_input_string.isnumeric():
     user_input = int(user_input_string)
 
     if user_input < RANGE_LOW or user_input > RANGE_HIGH:
-        print(f"Your guess is out of bounds.")
+        print("Your guess is out of bounds.")
         print(f"It must be between {RANGE_LOW} and {RANGE_HIGH}")
     elif user_input == random_number:
-        print("You guessed the number!  Good job!")
+        print("You guessed the number! Good job!")
     elif user_input > random_number:
         print("Your guess is too high")
     elif user_input < random_number:
@@ -236,7 +238,7 @@ users_bday_year = input("What year were you born? ")
 # other code goes on from here
 ```
 <br/>
-In this instance, the program only prints out a comment to the user <strong>if</strong> their birthday is the same as today's date.  There's no need for an <code>else</code> because we have nothing <strong>else</strong> we want to do with our information.  The code simply executes the lines of the program from there.  
+In this instance, the program only prints out a comment to the user **<strong>**if** their birthday is the same as today's date.  There's no need for an `else` because we have nothing **else** we want to do with our information.  The code simply executes the lines of the program from there.  
 
 ### !end-callout
 
@@ -361,4 +363,4 @@ In an `if...elif...else` block, once one conditional statement is true, then it 
 
 We've learned how to generate random numbers and how to check if a user's guess is the same as the random number by using the `if`, `elif`, and `else` to make conditional statements.
 
-We also learned how to process the user's input with `isnumeric` and `int` in order to use it in our program.
+We also learned how to process a user's input with `isnumeric` and `int` in order to convert a string to a number for use in our program.
