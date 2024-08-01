@@ -15,7 +15,7 @@ At the end of this lesson we will be able to...
 
 In this lesson we will have a quick refresher on variables, and then go into an explanation of IO.
 
-## Vocabulary and Syntax
+## Vocabulary
 
 ### Definitions
 
@@ -25,33 +25,6 @@ In this lesson we will have a quick refresher on variables, and then go into an 
 | IO | Input and Output, describes any operation that transfers data to or from some source | Received and sent data | An example of IO is typing data _into_ our terminal and then that data is _outputted_ to the terminal screen. |
 | Input | A way to get information _in_ to a program. | Received data | Our input comes from a spreadsheet | 
 | Output | A way to get _out_ of a program. | Sent data | The output will be shown on our monitor. |
-
-### Syntax
-
-Create a new file `variables_practice.py` in the `precourse` directory we created in the previous lesson called "Introduction and Getting Started". As a reminder, we use the `touch` command to create a new file. 
-
-Add the following code to `variables_practice.py`:
-
-```python
-# Create a new variable named "ami" and store the string "Sailor Mercury":
-ami = "Sailor Mercury"
-
-# Create a new variable named "cats" and store the number 2:
-cats = 2
-
-# "print" using some variables and f-strings.
-print(f"{ami} has {cats} cats!")
-# Sailor Mercury has 2 cats!
-
-# Ask the user what the cats are named.
-first_cat = input("What is the name of the first cat? ")
-second_cat = input("What is the name of the second cat? ")
-```
-
-When we're finished writing our program, we should save it and then execute it by running this command:
-```sh
-python3 variables_practice.py
-```
 
 ## Variables
 
@@ -193,7 +166,11 @@ This still works; it just looks a little awkward.
 
 Gathering user input may not be exciting on it's own, but we can now store the result of calling `input` in a variable for later use. Once we have the input in a variable we can print the value, perform operations on the data, or even create games such as a fill-in-the-blank story with words that a user must fill in to complete the tale.
 
-On a new line in `variables_practice.py` add the code below and run the code to practice using the `input` function.
+### Syntax
+
+Create a new file `variables_practice.py` in the `precourse` directory we created in the previous lesson called "Introduction and Getting Started". As a reminder, we use the `touch` command to create a new file. 
+
+Add the following code to `variables_practice.py`:
 
 ```python
 # The user's input will be stored in the variable called language
@@ -201,6 +178,18 @@ language = input("What is your favorite programming language? ")
 
 print(f"{language} is my favorite too!")
 ```
+
+| <div style="width:175px"> Code </div>| Description | 
+| -- | -- | 
+| `language = input("What is your favorite programming language? ")` | Call the `input` function with a string that will be displayed to a user. A user's response to the question will be returned from calling `input` as a string and that value be stored in the variable `language`. |
+| `print(f"{language} is my favorite too!")` | Call the `print` function with a string that uses string interpolation to display the value referenced by `language` |
+
+When we're finished writing our program, we should save it and then execute it by running this command:
+```sh
+python3 variables_practice.py
+```
+
+In the following lessons we will use the `input` function to build a guessing game.
 
 ## Follow-up Exercise
 

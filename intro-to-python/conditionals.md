@@ -30,8 +30,8 @@ else:
     print(f"{n} is too large!")
 ```
 
-| <div style="width:175px">Vocab</div>| Code| Description |
-| -- | --| -- |
+| <div style="width:175px"> Code </div>| Description | 
+| -- | -- | 
 | `n = random.randint(1, 10) ` | Invoke the `randint` method from the `random` module that will generate a random integer between 1 and 10. The random integer returned from calling `randint` will be assigned to the variable `n`. |
 | `if n < 5:`  | An if statement that checks if the random integer referenced by `n` is less than 5 |
 | `print(f"{n} is too small!")` | If the condition from the if statement evaluates to `True`, then use the `print` method and string interpolation to print a string that tells a user the random number is too small. |

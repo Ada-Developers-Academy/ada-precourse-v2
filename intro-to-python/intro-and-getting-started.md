@@ -126,7 +126,7 @@ Congratulations, you just wrote and executed your first Python file!
 
 ## Follow-up Exercise
 
-Modify the "hello.py" program above to read in both your name and age and print out:  `Hello <NAME>. You are <AGE> years old!`.
+Modify the `hello.py` program above to read in both your name and age and print out:  `Hello <NAME>. You are <AGE> years old!`.
 
 For example, if we entered "Han" for the name and "14" for the age, it would print out:
 
