@@ -29,7 +29,22 @@ In this lesson we will have a quick refresher on variables, and then go into an 
 
 ## Variables
 
-As we've already seen, variables are how we store data in Python programs.  They are the basic building blocks for almost all programs in almost all programming languages.
+Variables are how we store data in Python programs.  They are the basic building blocks for almost all programs in almost all programming languages.
+
+Consider this code snippet:
+
+```python
+
+# Create a new variable named "ami" and store the string "Sailor Mercury":
+ami = "Sailor Mercury"
+
+# Create a new variable named "cats" and store the number 2:
+cats = 2
+
+# "print" using some variables and f-strings.
+print(f"{ami} has {cats} cats!") # Sailor Mercury has 2 cats!
+
+```
 
 In the above example, the variable `ami` stores the string value of "Sailor Mercury" and the variable `cats` stores the value of 2. We can use string interpolation to substitute values of variables into placeholders in a string. 
 
@@ -167,7 +182,7 @@ This still works; it just looks a little awkward.
 
 Gathering user input may not be exciting on it's own, but we can now store the result of calling `input` in a variable for later use. Once we have the input in a variable we can print the value, perform operations on the data, or even create games such as a fill-in-the-blank story with words that a user must fill in to complete the tale.
 
-### Syntax
+## Practice Exercises
 
 Create a new file `variables_practice.py` in the `precourse` directory we created in the previous lesson called "Introduction and Getting Started". As a reminder, we use the `touch` command to create a new file. 
 
@@ -182,8 +197,9 @@ print(f"{language} is my favorite too!")
 
 | <div style="width:175px"> Code </div>| Description | 
 | -- | -- | 
-| `language = input("What is your favorite programming language? ")` | Call the `input` function with a string that will be displayed to a user. A user's response to the question will be returned from calling `input` as a string and that value be stored in the variable `language`. |
-| `print(f"{language} is my favorite too!")` | Call the `print` function with a string that uses string interpolation to display the value referenced by `language` |
+| `language = ...` | We are declaring a variable named `language` that will store the value returned by a function call. |
+| `... input("What is your favorite programming language? ")` | We call the `input` function with a string that will be displayed to a user. The user's response will be returned as a string when we call `input`. |
+| `print(f"{language} is my favorite too!")` | Call the `print` function with an f-string which uses string interpolation to display the value referenced by `language` |
 
 When we're finished writing our program, we should save it and then execute it by running this command:
 ```sh
@@ -192,7 +208,7 @@ python3 variables_practice.py
 
 In the following lessons we will use the `input` function to build a guessing game.
 
-## Follow-up Exercise
+### Complete the Story
 
 We've already practiced using the input function in the previous lesson when we asked a user to input their name and age. Now we'll write a short program that asks users for words to fill in some blanks to complete a story.
 

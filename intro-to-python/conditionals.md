@@ -75,6 +75,7 @@ Give it a try, and then view our implementation.
 
 <details>
 <summary><code>game.py</code> with constant variables for high and low values.</summary>
+
 ```python
 import random
 
