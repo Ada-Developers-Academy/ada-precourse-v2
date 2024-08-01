@@ -89,18 +89,34 @@ The following script will install some tools we will use including:
 - Pip 3
 - Git
 - Node
+- VS Code
 
 It will also give some options to automatically install:
 
 - Firefox
 - Google Chrome
-- VS Code
 - Slack for Mac
+
+### !callout-danger
+
+## Remove Previous Installations Before Running the Installfest Script
+
+Adies are curious and have often installed some of these tools already. If this describes you, please remove any previous installations of Homebrew, Python, Node, Git, or VS Code before running the Installfest script. This will help avoid conflicts and ensure that the correct versions are installed so that everyone is using the same tools.
+
+<br />
+
+If you are unsure how to remove these tools, please reach out for help in Slack!
+
+<br />
+
+If you already have any of the optional tools installed, you do not need to uninstall them. Just respond `N` when prompted to install them. If you do *not* have them installed, you should install at least one of the web browsers (Firefox or Chrome), and Slack. The curriculum will assume you have access to one of these browsers, and Slack is required for communication. There should be no issue with using installations of the optional tools that you performed on your own.
+
+### !end-callout
 
 Copy the line below in its entirety (avoiding the `$`), paste it into the terminal and hit enter. You will be prompted for your password. Don't be alarmed if you don't see anything appear as you type. It's still getting entered.
 
 ```bash
-$ /bin/bash -c "$(curl -fsSL https://gist.githubusercontent.com/ada-instructors/8502dea62191eb8b4568b25c81519608/raw/d5fef9ae70f660e1dc9b628d44377f393937e04e/ada_installfest.bash)"
+$ /bin/zsh -c "$(curl -fsSL https://gist.githubusercontent.com/ada-instructors/21027e509214e96551b1a20943e9731c/raw/a865e293723373efe5130493c001646c69c6bb32/ada_installfest.zsh)"
 ```
 
 **When the install finishes, quit and restart your terminal.** Without doing this, the installation above may not take affect.
