@@ -137,7 +137,7 @@ We should see, after a bit of processing, `Your system is ready to brew.`
 
 ### About Python 3
 
-Macs come with an older version of Python, usually 2.7.x. However we will be using a version of Python 3 and we need to set up the Mac to use it. The long command we entered previously used homebrew to install it.
+Macs come with an older version of Python 3, which is primarily intended for use by the Mac system software itself. To develop our own Python programs, we set up a newer version of Python that we can update and modify without affecting the system-installed version. The long command we entered previously used Homebrew to install it.
 
 #### PIP - Python's Package Installer Program
 
@@ -145,9 +145,11 @@ We also use a program called **pip** to install additional python packages which
 
 #### Verification
 
-We can verify that the Python installation worked by running the command `$ python --version` and see that it prints something like `Python 3.9.1`. If it is not using the correct version, perhaps the step above about restarting the terminal was skipped. Try quitting the terminal and reopening it to see if that fixes it... If not, reach out to a classmate or instructor!
+We can verify that the Python installation worked by running the command `$ python --version` and see that it prints something like `Python 3.12.2`. A newer (larger-numbered) version is also fine, and only means that time has elapsed since these instructions were last updated.
 
-We should also verify that `pip` is working with `$ pip --version`. It should be in a python3 folder and display a message like `pip 20.3.1 from /usr/local/lib/python3.9/site-packages/pip (python 3.9)`
+If you see and older (smaller-numbered, such as a version starting with `3.11` or lower) it is not using the correct version. Perhaps the step above about restarting the terminal was skipped. Try quitting the terminal and reopening it to see if that fixes it... If not, reach out to a classmate or instructor!
+
+We should also verify that `pip` is working with `$ pip --version`. It should be in a python3 folder and display a message like `pip 24.0 from /usr/local/lib/python3.12/site-packages/pip (python 3.12)`. Again, a newer version is fine, but an older version (such as `23.0` or lower) is a sign that something went wrong.
 
 ### VS Code
 
