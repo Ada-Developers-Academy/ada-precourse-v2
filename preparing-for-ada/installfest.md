@@ -121,6 +121,14 @@ $ /bin/zsh -c "$(curl -fsSL https://gist.githubusercontent.com/ada-instructors/2
 
 **When the install finishes, quit and restart your terminal.** Without doing this, the installation above may not take affect.
 
+### !callout-danger
+
+## Check for Errors After Running the Installfest Script
+
+Be sure to read any messages that appear in the terminal after running the script. If there are any errors, please reach out for help in Slack.
+
+### !end-callout
+
 ### About Homebrew
 
 [Homebrew](https://brew.sh/) is a package manager for Mac. Basically that means that Homebrew helps us install programs, update them, and prevent conflicts between applications or tools.
