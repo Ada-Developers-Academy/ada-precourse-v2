@@ -163,7 +163,8 @@ VS Code also supports a number of extensions which can be installed to provide n
 
 Extensions can be searched for and installed from the "Extensions" menu on the sidebar of VS Code.
 
-![Extensions Sidebar Button](images/vscode-extensions.png)
+![Extensions Sidebar Button. It resembles a set of building blocks.](images/vscode-extensions.png)  
+*Fig. The Extensions button (circled) in the sidebar of VS Code*
 
 ##### Required Extensions
 
@@ -176,9 +177,11 @@ After installing the Python extension:
 - Open the command-palette with <kbd>shift</kbd> + <kbd>cmd</kbd> + <kbd>p</kbd> and enter `Python: select interpreter`
 - Select the Python interpreter that was reported when we checked the version earlier.
 
-![VS Code Select Python Interpreter](images/select-interpreter.png)
+![List of suggestions displayed by the Command Palette after typing "Python: Select In".](images/select-interpreter.png)  
+*Fig. Locate the option to select the Python interpreter*
 
-![Python 3.9 interpreter](images/python-3.9-interpreter.png)
+![VS Code showing a list of available python versions installed on this computer.](images/python-version-interpreter.png)  
+*Fig. Pick the Python version that matches the version reported earlier.*
 
 ##### Recommended Extensions
 
