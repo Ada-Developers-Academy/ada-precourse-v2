@@ -155,7 +155,7 @@ We also use a program called **pip** to install additional python packages which
 
 We can verify that the Python installation worked by running the command `$ python --version` and see that it prints something like `Python 3.12.2`. A newer (larger-numbered) version is also fine, and only means that time has elapsed since these instructions were last updated.
 
-If you see and older (smaller-numbered, such as a version starting with `3.11` or lower) it is not using the correct version. Perhaps the step above about restarting the terminal was skipped. Try quitting the terminal and reopening it to see if that fixes it... If not, reach out to a classmate or instructor!
+If you see an older (smaller-numbered, such as a version starting with `3.11` or lower) it is not using the correct version. Perhaps the step above about restarting the terminal was skipped. Try quitting the terminal and reopening it to see if that fixes it... If not, reach out to a classmate or instructor!
 
 We should also verify that `pip` is working with `$ pip --version`. It should be in a python3 folder and display a message like `pip 24.0 from /usr/local/lib/python3.12/site-packages/pip (python 3.12)`. Again, a newer version is fine, but an older version (such as `23.0` or lower) is a sign that something went wrong.
 
