@@ -64,7 +64,7 @@ Then we can move into that folder with:
 $ cd ada
 ```
 
-Now, let's create a subfolder for the Precourse.  This is where we can keep our pre-ada materials.  Then we can move into (or change directory `cd`) into that subfolder.
+Now, let's create a subfolder for the Precourse.  This is where we can keep our materials related to our Precourse work.  Then we can move into (or change directory `cd`) into that subfolder.
 
 ```sh
 $ mkdir precourse
@@ -93,7 +93,7 @@ $ code .
 
 Notice the "." after `code`.  The "." stands for the current folder.  So we told VS Code to open the current folder as a project.  This will be quite handy once we start at Ada.
 
-Next, fill in the empty file `hello.py` with the following (copy and paste or type it in) and save the file.
+Next, type the following code into the empty file `hello.py` and save the file.
 
 ```python
 # hello.py
@@ -122,14 +122,27 @@ What is your name? Jasmine
 Hello, Jasmine!
 ```
 
-Congratulations, you just wrote your first Python file!
+Congratulations, you just wrote and executed your first Python file!
 
-## Followup Exercise
+## Follow-up Exercise
 
-Modify the "hello.py" program above to read in both your name and age and print out:  `Hello <NAME> you are <AGE> years old!`.
+Modify the `hello.py` program above to read in both your name and age and print out:  `Hello <NAME>. You are <AGE> years old!`.
 
 For example, if we entered "Han" for the name and "14" for the age, it would print out:
 
 ```sh
-Hello, Han you are 14 years old!
+Hello, Han. You are 14 years old!
 ```
+Give it a try, and then view our implementation.
+
+<details>
+<summary><code>hello.py</code> Follow-up Solution.</summary>
+
+```python
+# hello.py
+name = input("What is your name? ")
+age = input("What is your age? ")
+
+print(f"Hello, {name}. You are {age} years old!")
+```
+</details>

@@ -14,13 +14,13 @@ At the end of this lesson we will be able to:
 
 ### [Textbook for this section](https://colab.research.google.com/drive/1e8CaljqZrKJyFm7Ry5qHynp7GdoVHFLk?usp=sharing)
 
-In this section we will be building on the code that you wrote in the previous lesson [Conditionals](./conditionals.md).  If you would like to look at our example code version for that lesson, you can find it [here](resources/src/conditionals/games_conditional.md)
+In this section we will be building on the Guess the Number game that we wrote in the [Conditionals](./conditionals.md) lesson.  [Here](resources/src/conditionals/games_conditional.md) is an example solution to the game. 
 
 ## What is a Function?
 
-* **Function**: a named chunk of code that is callable and performs a task. 
+* **Function**: a named block of code that encapsulates a specific task that can be invoked. 
 
-Functions must be defined in order to be invoked. A function definition contains a signature and a body. Function signatures are comprised of 2 parts: the name and parameters. In the function signature, `def` indicates the start of the function definition followed by its name. The parenthesis of a function signature may contain zero or more parameters that represent pieces of data to be provided as input(s).  
+Functions must be defined in order to be invoked. A function definition contains a signature and a body. Function signatures are comprised of 2 parts: the name and parameters. In the function signature, the `def` keyword indicates the start of the function definition followed by its name. The parenthesis of a function signature may contain zero or more parameters that represent pieces of data to be provided as input(s).  
 
 ```Python
 # Start Function Signature
@@ -30,7 +30,7 @@ def function_name(some_parameter, another_parameter): # End of Function Signatur
     # End of Function Body
 ```
 
-There are a variety of ways to describe 'using a function' such as '*calling* a function', '*invoking* a function', '*executing* a function', etc. All of these phrases describe the same action of "performing the code inside this function". (For consistency, **call** will be used throughout this lesson). To call a function, all that needs to be provided are the function name and arguments (values to be passed into the function). 
+There are a variety of ways to describe 'using a function' such as '*calling* a function', '*invoking* a function', '*executing* a function', etc. All of these phrases describe the same action of "executing the code inside this function". For consistency, **call** will be used throughout this lesson. To call a function, we need to provide the function name and the function's arguments (values to be passed into the function). 
 
 ```Python
 function_name(some_argument, another_argument)
@@ -43,11 +43,11 @@ Here are additional examples:
 # This line defines the new function and assigns it a name
 def my_new_function():
     # code block here
-    # note that each line is indented 
-    # compared to the definition
+    # note that each line is indented compared to the definition
     x = 1
     y = 2
-    z = x + y
+    sum = x + y
+    print(sum)
 
 # This line calls the function
 my_new_function()
@@ -57,37 +57,37 @@ my_new_function()
 def my_func_with_args(arg1, arg2):
     x = arg1
     y = arg2
+    difference = arg1 - arg2
+    print(difference)
 
 # Calling the function with arguments
-my_func_with_args(1, 2)
+my_func_with_args(3, 2)
 
 ```
 
-### Why Functions?
+### Why Write and Use Functions?
 
-In the last lesson we wrote a series of conditionals to validate and test user input for the "Guess the Number" game.  At this point, we may be looking at the code and thinking, this looks good, it works, why add functions?  
+In the "Conditionals" lesson we wrote a series of conditionals to validate and test user input for the "Guess the Number" game.  At this point, we may be looking at the code and thinking, "this looks good, it works, why do we need functions"?  
 
-Lets say we want to play a different game after we finish playing Guess the Number.  We could just add the code for the new game after the code that's in the file right now, but then what if we want to change the order of the games?  
-
-We're now looking at moving around big code blocks.  Then if we change our minds and want to move it back, or add another game (and so on) things quickly get messy. 
+Imagine we'd like a user to be able to play the game more than once. Without functions, the code as it is currently written requires that we copy the logic every time a user plays the game. If we want to allow the user to play the game 5 times, then we would need to write the same block of code 5 times. 
 
 ### !callout-info
 
-## Why Functions?
-Functions encapsulate code blocks into re-usable chunks that we can then call in whatever order we want or as many times as we want.  They also help us reuse these blocks of code in other programs.
+## Encapsulating Code With Functions
+Functions encapsulate code blocks into re-usable chunks that we can call whenever we want and as many times as we want.  Functions enable us to avoid repeating code because we can invoke the function by name and and pass it data as arguments, instead of writing the same block of code again in another part of our program.
 
 ### !end-callout
 
 ## Guess the Number
 
-Let's start working with functions by adding a "Guess the number" function to our `Guess the Number` project.  Open up your `game.py` in VSCode and let's jump right in!
+Let's start working with functions by adding a `guess_the_number` function to our "Guess the Number" game.  Open up your `game.py` in VSCode and let's jump right in!
 
 The "Guess the number" function will:
 
 1.  Read in a number from the user
-1.  If the user entered a number:
-    1.  Inform the user if their number is lower or higher than the random number at the top of the code above:
-1.  Otherwise if the user entered a non-number, tell them it wasn't a number
+2.  If the user entered a number:
+    1.  Inform the user if their number is lower, higher, or the same as the random number
+3.  Otherwise if the user entered a non-number, tell them they need to enter a number
 
 Lets write this code and place it in a function called `guess_the_number`.  Then call the function at the bottom of the file.
 
@@ -114,10 +114,10 @@ def guess_the_number():
         user_input = int(user_input_string)
 
         if user_input < RANGE_LOW or user_input > RANGE_HIGH:
-            print(f"Your guess is out of bounds.")
+            print("Your guess is out of bounds.")
             print(f"It must be between {RANGE_LOW} and {RANGE_HIGH}")
         elif user_input == random_number:
-            print("You guessed the number!  Good job!")
+            print("You guessed the number! Good job!")
         elif user_input > random_number:
             print("Your guess is too high")
         elif user_input < random_number:
@@ -126,15 +126,15 @@ def guess_the_number():
     else:
         print("You must input a number!")
 
+# invoke the function to play the game
 guess_the_number()
 
 ```
 </details>
 
+Now that we have a `guess_the_number` function, we can call this function multiple times so that the user can play the game more than once.
 
-Now that we have a `guess_the_number` function, we can call this function multiple times to give the user a fair chance at actually guessing the number.
-
-Add the multiple function calls in VS code, play the game, and then view our solution below.
+Add multiple function calls in VS code, play the game, and then view our solution below.
 
 
 <details>
@@ -157,10 +157,10 @@ def guess_the_number():
         user_input = int(user_input_string)
 
         if user_input < RANGE_LOW or user_input > RANGE_HIGH:
-            print(f"Your guess is out of bounds.")
+            print("Your guess is out of bounds.")
             print(f"It must be between {RANGE_LOW} and {RANGE_HIGH}")
         elif user_input == random_number:
-            print("You guessed the number!  Good job!")
+            print("You guessed the number! Good job!")
         elif user_input > random_number:
             print("Your guess is too high")
         elif user_input < random_number:
@@ -183,15 +183,15 @@ guess_the_number()
 
 </details>
 
-With this example, we can see that using a function allows us to run the same code multiple times, while keeping the code relatively concise. This code could be even more concise by using a loop, a topic we will review in a future lesson. 
+With this example, we can see that calling a function allows us to run the same code multiple times without repeating a large block of code, which makes our code more concise.  This code could be even more concise by using a loop, which we'll cover in a future lesson.  Run `game.py` to play the Guess the Number game.
 
 ### The `return` Keyword
 
-Functions can either be designed to return a specific value, or to execute blocks of code _without_ returning a value. For the former, a function with a `return` keyword returns a value or data structure to its calling function. The `return` keyword ends the execution of the function. This is referred to as "returning from the function," or "returning out of the function."
+Functions can either be designed to return a specific value, or to execute blocks of code _without_ returning a value. For the former scenario, a function with a `return` keyword returns a value. The `return` keyword ends the execution of the function. This is referred to as "returning from the function," or "returning out of the function." 
 
 #### Return values and Variables 
 
-Because functions can return a value, they're often used in variable assignments. In the example below, and the other examples which follow, we will store the return value of the function in a variable `result` and then print the value of `result`. This will allow us to analyze the behavior and the return value of each function.
+Because functions can return a value, they're often used in variable assignments. In the example below, and the other examples which follow, we will store the value returned by a function in a variable `result` and then print the value of `result`. This will allow us to analyze the behavior and the return value of each function.
 
 ```Python
 # an example function that returns a value
@@ -202,7 +202,7 @@ result = greeting()
 print(result) # "hello"
 ```
 
-We can use `return` without providing it a value. This is usually done if we need to exit a function before reaching its end, and the function doesn't otherwise return a value. If we don't provide a value after `return`, the function implicitly returns `None`. Even without the `return` keyword, a function will execute its function body and then return `None`. We can demonstrate this with the code below, which executes the function call, implicitly returning `None`. We then print the returned value, which displays `None`.
+We can use `return` without providing it a value. This is usually done if we need to exit a function before reaching its end, but the function doesn't need to return a value. If we don't provide a value after `return`, the function implicitly returns `None`. Even if a function does not have the `return` keyword, a function will execute its function body and then implicitly return `None`. We can demonstrate this with the code below, which executes the function call and implicitly returns `None`. We then print the returned value, which displays `None`.
 
 ```Python
 # an example function that prints Goodbye 
@@ -308,7 +308,8 @@ print("The temperature in Madrid is", madrid_temp_fahrenheit, "°F")
 
 ## The DRY Principle
 
-"DRY stands for Don’t Repeat Yourself. It is a software development principle aiming to reduce code duplication which can lead to a poor refactoring and a poor maintenance. In other word, if you have to copy and paste the same exact lines of codes which provide the same functionality, then chances are that your codes don’t follow the DRY at all." [source](https://medium.com/@Ialimijoro/the-dry-principle-and-why-you-should-use-it-f02435ae9449) <br>
+DRY stands for "Don’t Repeat Yourself" and it is a software development principle that aims to reduce code repetition. Less repeated code helps make our projects more readable and easier to maintain. If we find ourselves copy and pasting lines of code in our program, we should exam our code and see if we can write a function that we can call instead so that our code follows the DRY principle. <br>
+
 <br>Functions are one of our most powerful tools for writing DRY code.
 
 ### !end-callout
@@ -328,9 +329,9 @@ print("The temperature in Madrid is", madrid_temp_fahrenheit, "°F")
 
 ##### !question
 
-Write a function `compare` that takes two arguments, two numbers.  The function has the following behavior:
-* If the first item is greater than the second, the function returns `True`.
-* If the first argument is smaller or equal to the second, the function returns `False`.
+Write a function `compare` that takes two arguments that are both integers.  The function has the following behavior:
+* If the first argument is greater than the second, the function returns `True`.
+* If the first argument is less than or equal to the second, the function returns `False`.
 
 Example inputs and outputs:
 
@@ -404,7 +405,7 @@ We could write an `if`/`else` statement, but remember, a comparison expression l
 
 ##### !question
 
-Write a function `convert_mi_to_km` that takes one argument, a number `miles`.  The function has the following behavior:
+Write a function `convert_mi_to_km` that takes one argument `miles`, which is an integer.  The function has the following behavior:
 * The function converts the length in miles to kilometers and returns the length in kilometers.
 * The formula for converting miles to kilometers is `miles * 1.6`.
 * _The actual conversion rate is 1.609344 but for this problem please use 1.6._
@@ -459,8 +460,7 @@ A working implementation:
 ```python
 
 def convert_mi_to_km(miles):
-    km = miles * 1.6
-    return km
+    return miles * 1.6
 
 ```
 
@@ -472,22 +472,43 @@ def convert_mi_to_km(miles):
 
 ## Snowman!
 
-It's time to add a new game!  The new game is a word guessing game called Snowman.
+It's time to add a new game!  The new game is a word guessing game called Snowman.  We will run some commands in the terminal to set up this project.  At this moment, we will not go into detail about all the commands we need to run to set up a Python project, but rest assured that we will spend time going over project setup later in Unit 1.  For now, you can run the given commands and focus on writing the logic for the Snowman game.
 
-Before getting started, create a new file in your precourse directory called `snowman.py` and open it in VSCode.
+### Snowman Setup
+
+Before getting started, we'll want to make sure we're in our Precourse directory by running `pwd` in the terminal. We should see some output like `/ada/precourse`. 
+
+To keep our projects organized, we usually create a unique folder for each project we work on. By running the following commands, one at a time, we will create a new directory in our Precourse directory called `snowman_project`, change directories so that we are in our newly created directory, and then create two files.
+
+```sh
+$ mkdir snowman_project
+$ cd snowman_project
+$ touch snowman.py requirements.txt
+```
+
+<!-- prettier-ignore-start -->
+| Terminal Command | Notes |
+| ------------- | ----- |
+| `mkdir snowman_project` | Create a directory called `snowman_project` |
+| `cd snowman_project` | Change the current working directory to be `snowman_project` |
+| `touch snowman.py requirements.txt` | Create a file called `snowman.py` and another file called `requirements.txt`. At the moment we will only be using `snowman.py` and can ignore `requirements.txt` for now |
+<!-- prettier-ignore-end -->
+
+### Snowman Gameplay
 
 In Snowman:
 
 1.  The user is presented with a list of underscores "_".  Each Underscore represents one letter in a word.
-1.  The user guesses letters for the hidden word
-    * For each correct guess, a letter will be replace the corresponding underscore.
+1.  The user guesses letters for the hidden word 
+    * For each correct guess, a letter will replace the corresponding underscore.
     * For every wrong guess we are going to remember the number of wrong guesses and print out more and more of a snowman drawing.  
-1.  When the snowman is finished and the user is out of guesses, they lose the game.  
+2.  When the snowman is finished and the user is out of guesses, they lose the game.  
 
-We are going to start by building just a small piece of this game.  To start, for debugging purposes, we're always going to use the same word.  Add it as a constant at the top of the `snowman.py` file.  Here's our version:
+We are going to start by building just a small piece of this game.  To start, for debugging purposes, we're always going to use the same hidden word each time the game is played.  Open up the file `snowman.py` and add a constant variable that represents the hidden word to the file.  Here's our version:
 
 ```python
 
+# Constant variable that references the hidden word 
 SNOWMAN_WORD = "broccoli"
 
 ```
@@ -496,155 +517,31 @@ SNOWMAN_WORD = "broccoli"
 
 We will start our game by reading in a letter from the user, similar to how we read in numbers with `guess_the_number`.  We will call this function `get_letter_from_user`.
 
-<!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
-<!-- Replace everything in square brackets [] and remove brackets  -->
-
-### !challenge
-
-* type: code-snippet
-* language: python3.6
-* id: c751d441-f566-4ab7-acc1-390b8710213e
-* title: get_letter_from_user
-* points: 1
-* topics: python, python-functions
-
-##### !question
-
-This function is very similar to `get_number_from_user`.  
-
 1.  First, we will need to use `input` to get a string from the user and store it in a variable.  
 1.  Second, we need to check to see if the input is valid.  
-    * In `get_number_from_user`, we used `isnumeric()` to ensure that the input was a number.  In this function, we need to check to see if the input is a letter, and if the input contains only one letter.
-      - `letter_from_user.isalpha()` will return `True` if the string variable `letter_from_user` contains only alphabetical characters
+    * In `guess_the_number`, we used `isnumeric()` to ensure that the input was a number.  In this function, we need to check to see if the input is a letter, and if the input contains only one letter.
+      - If we have a variable which holds our input named `letter_from_user` then `letter_from_user.isalpha()` will return `True` if the string variable `letter_from_user` contains only alphabetical characters.
       - `len(letter_from_user)` will tell us the length of the string
-2. Lastly, we need to return the input string
+1. Lastly, we need to return the input string
     - If the user gives bad input: 
       - We print "Invalid letter please enter a single character." 
       - Then return the input.  
     - If the user gives valid input:
       - Then we just return the input.
 
-We will continue expanding Snowman into a full game throughout the precourse lessons.
+Use the outlined requirements for `get_letter_from_user` and write this function in `snowman.py`. After we've written our function we also need to call the function in order for Python to execute the logic we just wrote. Then, we can run the file with `python3 snowman.py` in the terminal to manually test that our code is working. 
 
-##### !end-question
+We can add debugging print statements to our function so that we can see certain values in our terminal if our logic isn't working as expected. For example, if we are curious about what the length of the user input is, we could add `print (len(letter))` in our function. After we have debugged an issue, we should be sure to remove the debugging print statement so that our file doesn't become cluttered with debugging code.
 
-##### !placeholder
+<br/>
 
-```py
-def get_letter_from_user():
-    # Your code goes here
-```
+<details>
+<summary>Once you've written <code>get_letter_from_user</code>, compare what you have to what we have in <code>snowman.py</code> so far.</summary>
 
-##### !end-placeholder
+```python
 
-##### !tests
-
-```py
-import sys
-from unittest import mock
-from unittest.mock import patch
-import io
-import unittest
-import re
-import main as p
-
-class TestPython1(unittest.TestCase):
-
-    @patch('sys.stdout', new_callable=io.StringIO)
-    def test_p_one(self, mock_stdout):
-        # Arrange
-        input_letter = "a"
-        with unittest.mock.patch('builtins.input', return_value=input_letter):
-            # Act
-            answer = p.get_letter_from_user()
-
-        # Assert
-        assert re.match('', mock_stdout.getvalue())
-        assert answer == input_letter
-
-
-    @patch('sys.stdout', new_callable=io.StringIO)
-    def test_p_two(self, mock_stdout):
-        # Arrange
-        input_letter = "!"
-        with unittest.mock.patch('builtins.input', return_value=input_letter):
-            # Act
-            answer = p.get_letter_from_user()
-
-        # Assert
-        assert re.match('invalid letter please enter a single character', mock_stdout.getvalue(), flags=re.IGNORECASE)
-        assert answer == input_letter
-
-    @patch('sys.stdout', new_callable=io.StringIO)
-    def test_p_three(self, mock_stdout):
-        # Arrange
-        input_letter = "223"
-        with unittest.mock.patch('builtins.input', return_value=input_letter):
-            # Act
-            answer = p.get_letter_from_user()
-
-        # Assert
-        assert re.match('Invalid letter please enter a single character.', mock_stdout.getvalue(), flags=re.IGNORECASE)
-        assert answer == input_letter
-
-    @patch('sys.stdout', new_callable=io.StringIO)
-    def test_p_four(self, mock_stdout):
-        # Arrange
-        input_letter = "z"
-        with unittest.mock.patch('builtins.input', return_value=input_letter):
-            # Act
-            answer = p.get_letter_from_user()
-
-        # Assert
-        assert re.match('', mock_stdout.getvalue(), flags=re.IGNORECASE)
-        assert answer == input_letter
-
-```
-
-##### !end-tests
-
-<!-- other optional sections -->
-<!-- !hint - !end-hint (markdown, hidden, students click to view) -->
-<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
-<!-- !explanation - !end-explanation (markdown, students can see after answering correctly) -->
-
-### !end-challenge
-
-<!-- ======================= END CHALLENGE ======================= -->
-
-
-### snowman
-
-<!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
-<!-- Replace everything in square brackets [] and remove brackets  -->
-
-### !challenge
-
-* type: code-snippet
-* language: python3.6
-* id: 2604b524-92e8-43fb-adc3-de4b29f0b451
-* title: snowman
-* points: 1
-* topics: python
-
-##### !question
-
-We are now going to work on the main `snowman` function (the function we will call when we want to play the game Snowman).  This function is structurally similar to `guess_the_number`, but will be shorter for now.  
-
-The only check we have to do on the letter is check if it's in the word or not.  To do that, we're going to use the python keyword `in`.  The syntax for `in` is `thing1 in thing2`.  This expression evaluates to `True` if `thing2` contains `thing1`, and false otherwise.  We can use it in a conditional expression as `if thing1 in thing2:`.
-
-1.  First, use `get_letter_from_user` to get a letter
-1.  Check if the letter is in `SNOWMAN_WORD` 
-    - print "Letter found" if the letter is in `SNOWMAN_WORD`.
-    - print "Letter not found" if it's not in `SNOWMAN_WORD`.
-1.  If the letter is in `SNOWMAN_WORD` return `True` otherwise return `False` if it's not in `SNOWMAN_WORD`.
-
-##### !end-question
-
-##### !placeholder
-
-```py
-SNOWMAN_WORD = "pasta"
+# Our hidden word 
+SNOWMAN_WORD = "broccoli"
 
 def get_letter_from_user():
     letter = input("Please enter a letter > ")
@@ -653,88 +550,62 @@ def get_letter_from_user():
     
     return letter
 
+# Invoke the function the we wrote
+get_letter_from_user()
+
+```
+</details>
+
+### Step 2:  Check for a letter in SNOWMAN_WORD
+
+We are now going to work on the main `snowman` function (the function we will call when we want to play the game Snowman).  This function is  similar to `guess_the_number`.
+
+The only check we have to do on the letter is check if it's in the word or not.  To do that, we're going to use the python keyword `in`.  The syntax for `in` is `thing1 in thing2`.  This expression evaluates to `True` if `thing2` contains `thing1`, and `False` otherwise.  We can use it in a conditional expression as `if thing1 in thing2:`.
+
+Our requirements for the `snowman` function are:
+1.  Use `get_letter_from_user` to get a letter
+1.  Check if the letter is in `SNOWMAN_WORD` 
+    - print "Letter found" if the letter is in `SNOWMAN_WORD`.
+    - print "Letter not found" if it's not in `SNOWMAN_WORD`.
+1.  Return `True` if the letter is in `SNOWMAN_WORD`, otherwise return `False` if it's not in `SNOWMAN_WORD`.
+
+Use the outlined requirements above to write the `snowman` function in `snowman.py`. We should call the `snowman` function and execute the file to check that our logic is working as we expect it to.
+
+<br/>
+
+<details>
+<summary>Once you've written <code>snowman</code>, compare what you have to our sample code in <code>snowman.py</code> so far.</summary>
+
+```python
+
+# Our hidden word 
+SNOWMAN_WORD = "broccoli"
+
+def get_letter_from_user():
+    letter = input("Please enter a letter > ")
+
+    if len(letter) > 1 or not letter.isalpha():
+        print("Invalid letter please enter a single character.")
+    
+    return letter
 
 def snowman():
-    # Your code is here
+    user_letter = get_letter_from_user()
+    if user_letter in SNOWMAN_WORD:
+        print("Letter found")
+        return True
+    else:
+        print("Letter not found")
+        return False
+
+# Since the snowman function calls get_letter_from_user, we should test that snowman works as we expect it to by calling it
+snowman()
 
 ```
+</details>
 
-##### !end-placeholder
-
-##### !tests
-
-```py
-import sys
-from unittest import mock
-from unittest.mock import patch
-import io
-import unittest
-import re
-import main as p
-
-class TestPython2(unittest.TestCase):
-
-    @patch('sys.stdout', new_callable=io.StringIO)
-    def test_p_one(self, mock_stdout):
-        # Arrange
-        input_letter = "a"
-        with unittest.mock.patch('builtins.input', return_value=input_letter):
-            # Act
-            answer = p.snowman()
-
-        # Assert
-        assert re.match('Letter found', mock_stdout.getvalue(), flags=re.IGNORECASE)
-        assert answer # True if it's in the snowman word
-
-
-    @patch('sys.stdout', new_callable=io.StringIO)
-    def test_p_two(self, mock_stdout):
-        # Arrange
-        input_letter = "z"
-        with unittest.mock.patch('builtins.input', return_value=input_letter):
-            # Act
-            answer = p.snowman()
-
-        # Assert
-        assert re.match('Letter not found', mock_stdout.getvalue(), flags=re.IGNORECASE)
-        assert answer == False
-    
-    @patch('sys.stdout', new_callable=io.StringIO)
-    def test_p_three(self, mock_stdout):
-        # Arrange
-        input_letter = "p"
-        with unittest.mock.patch('builtins.input', return_value=input_letter):
-            # Act
-            answer = p.snowman()
-
-        # Assert
-        assert re.match('Letter found', mock_stdout.getvalue(), flags=re.IGNORECASE)
-        assert answer # True if it's in the snowman word
-
-    @patch('sys.stdout', new_callable=io.StringIO)
-    def test_p_four(self, mock_stdout):
-        # Arrange
-        input_letter = "e"
-        with unittest.mock.patch('builtins.input', return_value=input_letter):
-            # Act
-            answer = p.snowman()
-
-        # Assert
-        assert re.match('Letter not found', mock_stdout.getvalue(), flags=re.IGNORECASE)
-        assert answer == False
-
-```
-
-##### !end-tests
-
-<!-- other optional sections -->
-<!-- !hint - !end-hint (markdown, hidden, students click to view) -->
-<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
-<!-- !explanation - !end-explanation (markdown, students can see after answering correctly) -->
-
-### !end-challenge
-
-<!-- ======================= END CHALLENGE ======================= -->
 ## Summary
 
-Let's go back to the questions proposed in the introduction to this lesson.  What do functions add to our code?  
+We learned that a function is a named block of code that encapsulates a specific task that can be invoked. When we create a function we should come up with a name that describes what the function does and also define the arguments that should be passed to the function. Additionally, functions keep our code DRY because we can call a function when we need the logic inside the function to run instead of needing to repeat what was already written. 
+
+We also set up the Snowman project in our `snowman_project` directory and started writing functions for the Snowman game in `snowman.py`. We will continue adding to our game in future lessons.
