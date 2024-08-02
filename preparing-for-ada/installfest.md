@@ -269,24 +269,6 @@ A great site for Slack Emoji inspiration can be found [**here**](https://slackmo
 
 ## Customizing the Shell
 
-### Setting zsh as the Default Shell
-
-Since MacOS Catalina, the default shell has been a shell called `zsh` (read as zee shell, or zish).
-
-A shell is a set of commands and user interface for controlling an operating system via the terminal. Newer Macs use `zsh` by default, while older Macs use a version of the Bash shell which is no longer supported.
-
-More information about the differences between [zsh and bash](https://dev.to/jasmin/a-brief-difference-between-zsh-and-bash-5ebp) can make for an interesting read.
-
-If the terminal title bar displays `zsh` as a part of it, then your machine should already be configured to be using `zsh`.
-
-Otherwise, to set your shell to `zsh`, first start terminal, and then go to Terminal > Preferences.
-
-![set terminal preferences](images/terminal-preferences.png)
-
-Then set the **Shells open with:** to `/bin/zsh`.
-
-![set default shell to zsh](images/set-default-shell.png)
-
 ### Oh My Zsh - Optional
 
 Zsh is a very customizable environment, and there's a great community-driven framework for managing `zsh` configurations, providing thousands of helper functions, plugins, and themes. Basically, it lets us customize the look and feel of the terminal and add custom commands and shortcuts. The most amazing thing is that **it comes with git integration!**
