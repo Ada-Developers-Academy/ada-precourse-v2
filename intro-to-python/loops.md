@@ -13,103 +13,109 @@ At the end of this lesson students will be able to:
 
 ### [Textbook for this section](https://colab.research.google.com/drive/1m9h053kS6bjAeiHnEHIP39fqbyOO7glc?usp=sharing)
 
-In this section we will be building on the code that you wrote in the previous lesson [Helper Functions](helper-functions.md). If you would like to look at our example code version for that lesson, you can find it [here](resources/src/functions/games_function.md).
+In this section we will be building on the code that you wrote in the lesson [Helper Functions](helper-functions.md). If you would like to look at our example code version for that lesson, you can find it [here](resources/src/functions/games_function.md).
 
 ## Vocabulary and Syntax
 
 | Vocab | Definition | Synonyms | How to Use in a Sentence |
 | -- | -- | -- | -- |
-| while loop | A loop that repeats a code block inside it as long as a boolean conditional statement is true. The statement is tested before executing the code block inside the loop. | pre-test loop | "The code in the while loop will run until the test is false." |
-| for loop | A loop that _iterates_ or repeats over a sequence. In python it is often used to iterate over a `list` data structure. It is also commonly paired with the `range` [function](https://docs.python.org/3.3/library/stdtypes.html?highlight=range#ranges), which returns a list of numbers. The `for` loop repeats n times, where n is the length of the sequence being looped over. | iterate | "To repeat the code five times we will use a for loop." |
-| flag | A variable that is used to indicate that a condition has been met. Usually a flag is a boolean variable and the value is changed to indicate that the goal or target (whatever the condition is) has been achieved. | signal | "The while loop will stop when the flag is changed." |
+| while loop | A loop that repeats a code block inside it as long as its conditional statement evaluates to `True`. The statement is tested before executing the code block inside the loop. | sentinel controlled loop, pre-test loop | "The code in the while loop will run until the test is false." |
+| for loop | A loop that _iterates_ a certain number of times or repeats over a sequence. In Python it is often used to iterate over a `list` data structure. It is also commonly paired with the `range` [function](https://docs.python.org/3.3/library/stdtypes.html?highlight=range#ranges), which returns a list of numbers. The `for` loop repeats n times, where n is the length of the sequence being looped over. | counter controlled loop | "To repeat the code five times we will use a for loop." |
+| flag | A variable that is used to indicate that a condition has been met. Usually a flag is a boolean variable and the value is changed to indicate that the goal or target (whatever the condition is) has been achieved. | signal | "The while loop will stop when the value of the flag is changed from `True` to `False`." |
 
 ### Loop Examples
 
-Take a few moments to examine the different kinds of loops below, then guess what their output will be.
+Hypothesize the outputs for each of the different loops below.
 
 ```python
-# while loop
+# Example 1: while loop
 counter = 0
 while counter < 10:
     counter = counter + 2
     print(f"The value of counter is {counter}")
 
-# while loop with flag
-keep_running = True
-counter = 0
-while keep_running:
-    counter = counter + 3
-    if counter > 10 :
-        keep_running = False
-    print(f"The value of counter is {counter}")
+# Example 2: while loop with flag
 
-# for loop using ranges
+def check_if_order_is_complete():
+
+    user_input = input("Do you want to add additional items to your order? Please enter 'Yes' or 'No': ")
+
+    if user_input == "Yes":
+        is_user_still_ordering = True
+    else:
+        is_user_still_ordering = False
+
+    return is_user_still_ordering
+
+is_order_incomplete = check_if_order_is_complete()
+
+while is_order_incomplete:
+    is_order_incomplete = check_if_order_is_complete()
+
+print("You have finished ordering.")
+
+# Example 3: for loop using ranges
 for number in range(3):
     print(f"The value of num is {number}")
 
 for number in range(2, 5):
     print(f"The value of num is {number}")
 
-# for-each loop over a collection
-for word in word_list:
-    print(f"The current word is {word}")
+# Example 4: for-each loop over a collection
+a_string = "Hello, World!"
+for letter in a_string:
+    print(f"The current letter is {letter}")
 ```
 
 ## `while` Loops
 
-While loops are handy when we don’t know how many times we need to perform an action. They check if a condition is true and continue to loop until that condition evaluates to false. This condition statement could be a complex logic expression, or it could be a single Boolean variable that we treat as a flag and set to false when we’re ready to stop.
+While loops are handy when we don’t know how many times we need to perform an action. They check if a condition is true and continue to loop until that condition evaluates to false. This condition statement could be a complex logic expression, or it could be a single B\boolean variable that we treat as a flag and set to `False` when we’re ready to stop.
 
 We declare a while loop with the `while` keyword, followed by the condition we want to evaluate, then a colon:
 
 ```python
 while <condition>:
-    # Take actions inside the loop
+    # Take actions inside the loop if the condition is true
 ```
 
-With that in mind, let’s take another look at the first while loop we saw above.
+With that in mind, let’s take another look at the second while loop we saw above.
 
 ```python
-counter = 0
-while counter < 10:
-    counter = counter + 2
-    print(f"The value of counter is {counter}")
+# A function that asks a user if they want to add more items to an order
+# If they do want to add to the order then the function returns True
+# If they do not want to add to the order then the function returns False 
 
-# When run, this code will output:
-# The value of counter is 2
-# The value of counter is 4
-# The value of counter is 6
-# The value of counter is 8
-# The value of counter is 10
+def check_if_order_is_complete():
+
+    user_input = input("Do you want to add additional items to your order? Please enter 'Yes' or 'No': ")
+
+    if user_input == "Yes":
+        is_user_still_ordering = True
+    else:
+        is_user_still_ordering = False
+
+    return is_user_still_ordering
+
+# Call the function check_if_order_is_complete and store the return value in the variable is_order_incomplete 
+is_order_incomplete = check_if_order_is_complete()
+
+# While a user's order is not complete, the block of code in the loop will continue to ask the user if they want to add to their order
+while is_order_incomplete:
+    is_order_incomplete = check_if_order_is_complete()
+
+# When a user's order is complete, a message will be printed to let the user know they have finished ordering.
+print("You have finished ordering.")
 ```
 
-In this example we’ve set up variable `counter` before the while loop. The condition we check each time before entering the loop is whether the value of `counter` is less than 10. Every pass through the loop we're increasing `counter` by 2, until it holds the value 10. Once `counter` is holding the value 10, the expression `counter < 10` evaluates to false and we no longer enter the loop body.
+In this example we call the function `check_if_order_is_complete` which returns a boolean value depending on a user's input. We call this function before the while loop and store the return value in the variable `is_order_incomplete`. This variable is the flag we use for our while loop. Before entering the loop, Python will check the condition that comes after the `while` keyword. If `is_order_incomplete` evaluates to `True` then the loop body will execute, which will call the `check_if_order_is_complete` again. 
 
-At the beginning of this section we mentioned that while loops are great when we don't know how many times they will need to run, but in the loop above we can definitely say that it will run 5 times. This can be better represented using a ranged for loop, which we will look at in the following section.
+When a user is done ordering, `check_if_order_is_complete` will return `False` which will change the value of our flag variable and we no longer enter the loop body. Then we print a message to let the user know they have finished ordering.
 
-What could our previous example look like if we wanted to use a flag?
-
-```python
-keep_running = True
-counter = 0
-while keep_running:
-    counter = counter + 2
-    if counter >= 10 :
-        keep_running = False
-    print(f"The value of counter is {counter}")
-
-# When run, this code will output:
-# The value of counter is 2
-# The value of counter is 4
-# The value of counter is 6
-# The value of counter is 8
-# The value of counter is 10
-```
-
-Here, we’ve declared the variables `counter` and `keep_running` before the loop. The condition we check to enter our while loop is whether `keep_running` is set to true. In the previous example we checked `counter`’s value directly in the while declaration, but with our flag, we instead check if `counter >= 10` inside our loop and use that to decide if `keep_running` should change to false.
+At the beginning of this section we mentioned that while loops are great when we don't know how many times they will need to run. In this example, we do not know how many times we need to ask a user if they are done with their order. While a user is still ordering, we will ask them if they want to add additional items to their order and when the user decides they do not want to add additional items, then the while loop will stop running, and the subsequent Python code will execute.
 
 ## `for` Loops
 
-For loops let us loop over a fixed sequence, commonly a sequence of numbers, or items in a data structure. This makes them our preferred choice when we know how many times we want to take an action.
+For loops let us loop over a fixed sequence, commonly a sequence of numbers, letters in a string, or items in a data structure. This makes them our preferred choice when we know how many times we want to take an action.
 
 For loops need a little bit more information than a while loop. While this makes the syntax of the loop itself a little more involved, on the other hand it means that all the information needed for the loop is collected in one place, making it a little more difficult to make mistakes!
 
