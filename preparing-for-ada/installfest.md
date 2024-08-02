@@ -89,21 +89,45 @@ The following script will install some tools we will use including:
 - Pip 3
 - Git
 - Node
+- VS Code
 
 It will also give some options to automatically install:
 
 - Firefox
 - Google Chrome
-- VS Code
 - Slack for Mac
+
+### !callout-danger
+
+## Remove Previous Installations Before Running the Installfest Script
+
+Adies are curious and have often installed some of these tools already. If this describes you, please remove any previous installations of Homebrew, Python, Node, Git, or VS Code before running the Installfest script. This will help avoid conflicts and ensure that the correct versions are installed so that everyone is using the same tools.
+
+<br />
+
+If you are unsure how to remove these tools, please reach out for help in Slack!
+
+<br />
+
+If you already have any of the optional tools installed, you do not need to uninstall them. Just respond `N` when prompted to install them. If you do *not* have them installed, you should install at least one of the web browsers (Firefox or Chrome), and Slack. The curriculum will assume you have access to one of these browsers, and Slack is required for communication. There should be no issue with using installations of the optional tools that you performed on your own.
+
+### !end-callout
 
 Copy the line below in its entirety (avoiding the `$`), paste it into the terminal and hit enter. You will be prompted for your password. Don't be alarmed if you don't see anything appear as you type. It's still getting entered.
 
 ```bash
-$ /bin/bash -c "$(curl -fsSL https://gist.githubusercontent.com/ada-instructors/8502dea62191eb8b4568b25c81519608/raw/d5fef9ae70f660e1dc9b628d44377f393937e04e/ada_installfest.bash)"
+$ /bin/zsh -c "$(curl -fsSL https://gist.githubusercontent.com/ada-instructors/21027e509214e96551b1a20943e9731c/raw/98e4f9fc0d9db4dff4876e30dd08f8f88919994b/ada_installfest.zsh)"
 ```
 
 **When the install finishes, quit and restart your terminal.** Without doing this, the installation above may not take affect.
+
+### !callout-danger
+
+## Check for Errors After Running the Installfest Script
+
+Be sure to read any messages that appear in the terminal after running the script. If there are any errors, please reach out for help in Slack.
+
+### !end-callout
 
 ### About Homebrew
 
@@ -121,7 +145,7 @@ We should see, after a bit of processing, `Your system is ready to brew.`
 
 ### About Python 3
 
-Macs come with an older version of Python, usually 2.7.x. However we will be using a version of Python 3 and we need to set up the Mac to use it. The long command we entered previously used homebrew to install it.
+Macs come with an older version of Python 3, which is primarily intended for use by the Mac system software itself. To develop our own Python programs, we set up a newer version of Python that we can update and modify without affecting the system-installed version. The long command we entered previously used Homebrew to install it.
 
 #### PIP - Python's Package Installer Program
 
@@ -129,16 +153,16 @@ We also use a program called **pip** to install additional python packages which
 
 #### Verification
 
-We can verify that the Python installation worked by running the command `$ python --version` and see that it prints something like `Python 3.9.1`. If it is not using the correct version, perhaps the step above about restarting the terminal was skipped. Try quitting the terminal and reopening it to see if that fixes it... If not, reach out to a classmate or instructor!
+We can verify that the Python installation worked by running the command `$ python --version` and see that it prints something like `Python 3.12.2`. A newer (larger-numbered) version is also fine, and only means that time has elapsed since these instructions were last updated.
 
-We should also verify that `pip` is working with `$ pip --version`. It should be in a python3 folder and display a message like `pip 20.3.1 from /usr/local/lib/python3.9/site-packages/pip (python 3.9)`
+If you see an older (smaller-numbered, such as a version starting with `3.11` or lower) it is not using the correct version. Perhaps the step above about restarting the terminal was skipped. Try quitting the terminal and reopening it to see if that fixes it... If not, reach out to a classmate or instructor!
+
+We should also verify that `pip` is working with `$ pip --version`. It should be in a python3 folder and display a message like `pip 24.0 from /usr/local/lib/python3.12/site-packages/pip (python 3.12)`. Again, a newer version is fine, but an older version (such as `23.0` or lower) is a sign that something went wrong.
 
 ### VS Code
 
 - [VS Code](https://code.visualstudio.com/) is a very extensible open-source editor which supports a variety of languages including Python, and JavaScript.
-- In VS Code, type <kbd>shift</kbd> + <kbd>cmd</kbd> + <kbd>p</kbd> and type **>shell command install code command in path**.
-  - This only needs to be done once to allow us to launch VS Code from the terminal
-- After the previous step completes, to launch VS Code from the terminal, type `code` followed by the file name or directory name
+- To launch VS Code from the terminal, type `code` followed by the file name or directory name
   - For example `$ code .` will open the present directory as a project folder.
 
 #### VS Code Extensions
@@ -147,7 +171,8 @@ VS Code also supports a number of extensions which can be installed to provide n
 
 Extensions can be searched for and installed from the "Extensions" menu on the sidebar of VS Code.
 
-![Extensions Sidebar Button](images/vscode-extensions.png)
+![Extensions Sidebar Button. It resembles a set of building blocks.](images/vscode-extensions.png)  
+*Fig. The Extensions button (circled) in the sidebar of VS Code*
 
 ##### Required Extensions
 
@@ -160,9 +185,11 @@ After installing the Python extension:
 - Open the command-palette with <kbd>shift</kbd> + <kbd>cmd</kbd> + <kbd>p</kbd> and enter `Python: select interpreter`
 - Select the Python interpreter that was reported when we checked the version earlier.
 
-![VS Code Select Python Interpreter](images/select-interpreter.png)
+![List of suggestions displayed by the Command Palette after typing "Python: Select In".](images/select-interpreter.png)  
+*Fig. Locate the option to select the Python interpreter*
 
-![Python 3.9 interpreter](images/python-3.9-interpreter.png)
+![VS Code showing a list of available python versions installed on this computer.](images/python-version-interpreter.png)  
+*Fig. Pick the Python version that matches the version reported earlier.*
 
 ##### Recommended Extensions
 
@@ -241,24 +268,6 @@ It's also critically important to use emojis (not really, but it's fun!). So onc
 A great site for Slack Emoji inspiration can be found [**here**](https://slackmojis.com/).
 
 ## Customizing the Shell
-
-### Setting zsh as the Default Shell
-
-Since MacOS Catalina, the default shell has been a shell called `zsh` (read as zee shell, or zish).
-
-A shell is a set of commands and user interface for controlling an operating system via the terminal. Newer Macs use `zsh` by default, while older Macs use a version of the Bash shell which is no longer supported.
-
-More information about the differences between [zsh and bash](https://dev.to/jasmin/a-brief-difference-between-zsh-and-bash-5ebp) can make for an interesting read.
-
-If the terminal title bar displays `zsh` as a part of it, then your machine should already be configured to be using `zsh`.
-
-Otherwise, to set your shell to `zsh`, first start terminal, and then go to Terminal > Preferences.
-
-![set terminal preferences](images/terminal-preferences.png)
-
-Then set the **Shells open with:** to `/bin/zsh`.
-
-![set default shell to zsh](images/set-default-shell.png)
 
 ### Oh My Zsh - Optional
 
