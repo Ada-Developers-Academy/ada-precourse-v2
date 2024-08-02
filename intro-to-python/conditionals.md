@@ -31,12 +31,11 @@ else:
     print(f"{n} is too large!")
 ```
 
-| <div style="width:175px"> Code </div>| Description | 
+| <div style="width:200px"> Code </div>| Description |
 | -- | -- | 
 | `n = random.randint(1, 10) ` | Invoke the `randint` method from the `random` module that will generate a random integer between 1 and 10. The random integer returned from calling `randint` will be assigned to the variable `n`. |
 | `if n < 5:`  | An if statement that checks if the random integer referenced by `n` is less than 5 |
 | `print(f"{n} is too small!")` | If the condition from the if statement evaluates to `True`, then use the `print` method and string interpolation to print a string that tells a user the random number is too small. |
-| `elif n == 5:` | An `elif` statement that is checked if the conditional statement before does not evaluate to `True`. The statement checks if `n` is equal to the integer 5 |
 | `print(f"{n} is just right!")` | If the condition from the `elif` statement evaluates to `True`, then print a string that tells the user the random number `n` is just right. |
 | `else:` | If none of the conditions from the `if` and `elif` statements evaluate to `True`, then the logic associated with the `else` will execute |
 | `print(f"{n} is too large!")` | Print a string that tells a user that the random number `n` is too large. |
