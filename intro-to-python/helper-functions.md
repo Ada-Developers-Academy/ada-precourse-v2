@@ -527,7 +527,7 @@ Write a function `am_i_speeding` that takes in a `speed` in units of kilometers 
 - `None` if `speed` or `speed_limit` is not a float or an int.
 
 The function `am_i_speeding` should use the following provided helper functions: 
-- `convert_km_to_mi` to convert the `speed` to a miles per hour
+- `convert_km_to_mi` to convert the `speed` to miles per hour
 - `is_valid_num` to validate that `speed` and `speed_limit` are a float or an int
 
 
