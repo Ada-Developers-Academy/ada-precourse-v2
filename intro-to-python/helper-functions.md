@@ -40,40 +40,40 @@ def convert_celsius_to_fahrenheit(temp):
 
 This function `convert_celsius_to_fahrenheit` first validates that the `temp` is a numeric value, and then returns the `temp` converted to Fahrenheit.
 
-In order to follow best practices, our functions should have a single responsibility. As such, we can write a helper function `valiate_num` to encapsulate the functionality of validating the argument `temp`.  We will call this helper function in `convert_celsius_to_fahrenheit`.
+In order to follow best practices, our functions should have a single responsibility. As such, we can write a helper function `is_valid_num` to encapsulate the functionality of validating the argument `temp`.  We will call this helper function in `convert_celsius_to_fahrenheit`.
 
-```Python
-def validate_num(num):
+```python
+def is_valid_num(num):
     return isinstance(num, int) or isinstance(num, float)
 
 def convert_celsius_to_fahrenheit(temp):
-    if not validate_num(temp):
+    if not is_valid_num(temp):
         return None
     
     return 9 / 5 * temp + 32
 ```
 
-In addition to helping us follow the single responsibility principle, we may note that understanding the conditional logic in `validate_num` is a bit more straight forward than in the initial function, where we have a compound conditional that includes `not` before each condition (`if not isinstance(temp, int) and not isinstance(temp, float):`).
+In addition to helping us follow the single responsibility principle, we may note that understanding the conditional logic in `is_valid_num` is a bit more straight forward than in the initial function, where we have a compound conditional that includes `not` before each condition (`if not isinstance(temp, int) and not isinstance(temp, float):`).
 
 ## Reuse
 
-Another benefit of helper functions is that we can use them as many times as we like. Imagine that in addition to converting a temperature from Celsius to Fahrenheit, we also want to convert from Celsius to Kelvins. We can write another function `convert_celsius_to_kelvin` that also calls `validate_num`.
+Another benefit of helper functions is that we can use them as many times as we like. Imagine that in addition to converting a temperature from Celsius to Fahrenheit, we also want to convert from Celsius to Kelvins. We can write another function `convert_celsius_to_kelvin` that also calls `is_valid_num`.
 
 ```Python
-def validate_num(num):
+def is_valid_num(num):
     return isinstance(num, int) or isinstance(num, float)
 
 def convert_celsius_to_fahrenheit(temp):
-    if not validate_num(temp):
+    if not is_valid_num(temp):
         return None
 
     return 9 / 5 * temp + 32
 
 def convert_celsius_to_kelvin(temp):
-    if not validate_num(temp):
+    if not is_valid_num(temp):
         return None
 
-    return temp+273.15
+    return temp + 273.15
 
 
 result = convert_celsius_to_fahrenheit(0)
@@ -241,8 +241,8 @@ Let's examine this function for calculating the total cost.
 
 ```Python
 def calculate_car_cost(sale_price, trade_in_value, reg_fee, title_fee, doc_fee, is_electric, sales_tax_rate):
-    total_cost = (sale_price - trade_in_value) * \
-        (1 + sales_tax_rate) + reg_fee + title_fee
+    total_cost = ((sale_price - trade_in_value) * 
+        (1 + sales_tax_rate) + reg_fee + title_fee)
 
     if not is_electric:
         total_cost += doc_fee
@@ -314,7 +314,7 @@ Note that in addition to enhancing readability in the `calculate_car_cost`, the 
 
 ### Different Approaches
 
-Like most algorithms, there is not one right way or even best way to approach this problem. Separating out the different parts of the computation onto separate lines may be sufficient to add clarity and enhance readability. Using helper functions may be a preferred solution if additional complexity is added to the different parts of the computation or you anticipate needing to modify the algorithms for these different parts (taxable and nontaxable costs).
+Like most algorithms, there is not one right or best way to approach this problem. Separating out the different parts of the computation onto separate lines may be sufficient to add clarity and enhance readability. Using helper functions may be a preferred solution if additional complexity is added to the different parts of the computation or you anticipate needing to modify the algorithms for these different parts (taxable and nontaxable costs).
 
 ### !end-callout
 
@@ -363,8 +363,8 @@ guess_the_number()
     * Then pull all of the pieces of code in `guess_the_number` that have to do with getting user input into `get_number_from_user`.  
     * Include any conditional statements that validate user input as a number.  
     * This function should ask the user for a number and then give an error message if the user inputs anything other than a number.  
-    * Last, it should return the valid user input, or None if there was no valid input.  
-    * In `guess_the_number`, call this function and store the result in user_input.
+    * Last, it should return the valid user input, or `None` if there was no valid input.  
+    * In `guess_the_number`, call `get_number_from_user` and store the result in `user_input`.
 1.  Then the `guess_the_number` function can use the previous `if...else` statements to tell the user if their guess was too high or too low.
 
 <br>
@@ -519,7 +519,7 @@ class TestPython1(unittest.TestCase):
 * title: Speeding
 
 ##### !question
-You are driving a car from another country in the United States. The speed limit limit is posted in miles per hour, but your car speedometer shows your speed in kilometers per hour. 
+You are driving a car from another country in the United States. The speed limit is posted in miles per hour, but your car speedometer shows your speed in kilometers per hour. 
 
 Write a function `am_i_speeding` that takes in a `speed` in units of kilometers per hour and a `speed_limit` in units of miles per hour. The function `am_i_speeding` should return 
 - `True` if you are speeding
@@ -527,8 +527,8 @@ Write a function `am_i_speeding` that takes in a `speed` in units of kilometers 
 - `None` if `speed` or `speed_limit` is not a float or an int.
 
 The function `am_i_speeding` should use the following provided helper functions: 
-- `convert_km_to_mi` to convert the `speed` to a mi/hr
-- `validate_num` to validate that `speed` and `speed_limit` are a float or an int
+- `convert_km_to_mi` to convert the `speed` to a miles per hour
+- `is_valid_num` to validate that `speed` and `speed_limit` are a float or an int
 
 
 |example input (`speed`, `speed_limit`)| example output (return value) |
@@ -550,7 +550,7 @@ def am_i_speeding(speed, speed_limit):
 def convert_km_to_mi(num):
     return num * 0.62137
 
-def validate_num(num):
+def is_valid_num(num):
     return isinstance(num, int) or isinstance(num, float)
 
 ```
@@ -561,7 +561,7 @@ def validate_num(num):
 ```python
 
 import unittest
-from main import validate_num, convert_km_to_mi, am_i_speeding
+from main import is_valid_num, convert_km_to_mi, am_i_speeding
 
 
 class TestPython1(unittest.TestCase):
@@ -607,7 +607,7 @@ An example of a working implementation:
 ```Python
 def am_i_speeding(speed, speed_limit):
     # validate speed and speed_limit
-    if not validate_num(speed) or not validate_num(speed_limit):
+    if not is_valid_num(speed) or not is_valid_num(speed_limit):
         return None
     
     # convert speed to mi/hr and compare to speed_limit
