@@ -35,9 +35,16 @@ while counter < 10:
     print(f"The value of counter is {counter}")
 
 # Example 2: while loop with flag
+keep_running = True
+counter = 0
+while keep_running:
+    counter = counter + 3
+    if counter > 10 :
+        keep_running = False
+    print(f"The value of counter is {counter}")
 
+# Example 3: another while loop with flag
 def check_if_order_is_complete():
-
     user_input = input("Do you want to add additional items to your order? Please enter 'Yes' or 'No': ")
 
     if user_input == "Yes":
@@ -54,14 +61,15 @@ while is_order_incomplete:
 
 print("You have finished ordering.")
 
-# Example 3: for loop using ranges
+# Example 4: for loop using range
 for number in range(3):
     print(f"The value of num is {number}")
 
+# Example 5: for loop using range
 for number in range(2, 5):
     print(f"The value of num is {number}")
 
-# Example 4: for-each loop over a collection
+# Example 6: for-each loop over a collection
 a_string = "Hello, World!"
 for letter in a_string:
     print(f"The current letter is {letter}")
@@ -69,7 +77,7 @@ for letter in a_string:
 
 ## `while` Loops
 
-While loops are handy when we don’t know how many times we need to perform an action. They check if a condition is true and continue to loop until that condition evaluates to false. This condition statement could be a complex logic expression, or it could be a single B\boolean variable that we treat as a flag and set to `False` when we’re ready to stop.
+While loops are handy when we don’t know how many times we need to perform an action. They check if a condition is true and continue to loop until that condition evaluates to false. This condition statement could be a complex logic expression, or it could be a single boolean variable that we treat as a flag and set to `False` when we’re ready to stop.
 
 We declare a while loop with the `while` keyword, followed by the condition we want to evaluate, then a colon:
 
@@ -78,7 +86,7 @@ while <condition>:
     # Take actions inside the loop if the condition is true
 ```
 
-With that in mind, let’s take another look at the second while loop we saw above.
+With that in mind, let’s take another look at the third while loop we saw above.
 
 ```python
 # A function that asks a user if they want to add more items to an order
@@ -86,7 +94,6 @@ With that in mind, let’s take another look at the second while loop we saw abo
 # If they do not want to add to the order then the function returns False 
 
 def check_if_order_is_complete():
-
     user_input = input("Do you want to add additional items to your order? Please enter 'Yes' or 'No': ")
 
     if user_input == "Yes":
@@ -154,7 +161,7 @@ for number in range(2, 5):
 # the value of number is 4
 ```
 
-In the while loop section above, we mentioned that we could better represent the first example as a ranged for loop, since we know we want to enter the loop exactly 5 times. Because a for loop iterates over values, we should also be able to remove the `counter` variable. We've seen through examples that the default behavior for `range` is to create a list by increasing our starting value by one until the upper limit is reached. However, we can pass a third argument to `range` which tells it how big of a step we want between our values. We can generate the list of values we need to rewrite our while loop example by calling `range(2, 11, 2)`. This will give us a number sequence that starts at 2, increases by 2 for each value, and stops when our limit 11 (which is always excluded) is reached: `[2, 4, 6, 8, 10]`. Putting it all together, that loop looks like:
+In the while loop section above, the first example is a while loop that runs exactly 5 times. Since we know how many times the loop's logic should execute, we can refactor this while loop into a ranged for loop. Because a for loop iterates over values, we can also remove the `counter` variable. We've seen through examples that the default behavior for `range` is to create a list by increasing our starting value by one until the upper limit is reached. However, we can pass a third argument to `range` which tells it how many steps to increment by each time. We can generate the list of values we need to refactor our while loop example by calling `range(2, 11, 2)`. This will give us a number sequence that starts at 2, increases by 2 for each time, and stops when our limit 11 (which is always excluded) is reached: `[2, 4, 6, 8, 10]`. Putting it all together, that loop looks like:
 
 ```python
 for number in range(2, 11, 2):
@@ -361,13 +368,13 @@ def print_multiple(word, amount):
 
 <!--END CHALLENGE-->
 
-## Guess The Number Project
+## Guess the Number Project
 
 In our previous work on this project, we built some solid functionality, but it isn't very game-like yet. Now we're going to use loops to add complexity and build more interactivity. Open up your `game.py` and let's get started!
 
-### Validating User input
+### Validating User Input
 
-In the previous lesson, we pulled the user input into it's own function, while acknowledging that we weren't actually doing the work of validating the input. We let the user know that the input is not good, but then we just return it:
+In the previous lesson, we pulled the user input into its own function, while acknowledging that we weren't actually doing the work of validating the input. We let the user know that the input is not good, but then we just return it:
 
 ```python
 def get_number_from_user():
@@ -383,15 +390,20 @@ def get_number_from_user():
 
 What we really want to do in this function is to compel the user to give us valid input, and only return our input when it is valid. We can't really force the user to give us valid input, but what we can do is repeat the process of asking for input until we get something that is valid (or just keep asking forever). In cases like this, where we need to repeat a process but there is uncertainty about how many times we will do so, a while loop is the ideal tool to use.
 
-To solve this problem we are going to use a flag controlled while loop. A "flag" is a term for a boolean variable that is set before we enter the loop, and then at some point will be flipped inside the loop to signal that the loop should end (and that the whatever action the loop was trying to accomplish has been completed).
+To solve this problem we are going to use a flag controlled while loop. A "flag" is a term for a boolean variable that is set before we enter the loop, and then at some point will be flipped inside the loop to signal that the loop should end (and that whatever action the loop was trying to accomplish has been completed).
+
+Add a while loop with a flag to the `get_number_from_user` function to continue to loop until the user gives valid input.  
+
+<br>
 
 <details>
-<summary>Add a while loop with a flag to the get_number_from_user function to continue to loop until the user gives valid input.  Once you have finished, click here to compare your solution to ours</summary>
+<summary>Once you have finished, click here to compare your solution to ours.</summary>
 
 ```python
 def get_number_from_user():
     valid_input = False
     user_input = None
+
     while not valid_input:
         user_input_string = input("Guess the number: ")
 
@@ -404,7 +416,7 @@ def get_number_from_user():
     return user_input
 ```
 
-Notice that our solution uses a not in the while test. We could use a flag that is set it to true, and then when we get valid input set it to false. Think about the readability of our code in that case. It would not make sense to have a variable named valid_input set to true, if we are trying to get a valid input at the end (starting true then setting to false makes it seem like we're not getting valid input). Changing the variable name to something like `attempting_valid_input` would work better to make the code readable. In that case, the code would look like this:
+Notice that our solution uses a `not` in the while test. This operator negates, or inverts, a boolean value. We could use a flag that is set it to true, and then when we get valid input set it to false. Think about the readability of our code in that case. It would not make sense to have a variable named valid_input set to true, if we are trying to get a valid input at the end (starting with flag that is `True` then setting it to `False` makes it seem like we're not getting valid input). Changing the variable name to something like `attempting_valid_input` would work better to make the code readable. In that case, the code would look like this:
 
 ```python
 def get_number_from_user():
@@ -426,9 +438,9 @@ def get_number_from_user():
 
 </details>
 
-### Keep The Guessing Game Going!
+### Keep the Guessing Game Going!
 
-Now that we have a way to get valid input from the user, it's time to take a look at the `guess_the_number` function. There are two ways to play this type of guessing game, the first is with unlimited guesses and the second is with a max number of guesses. Let's start with the first version with unlimited guesses. The current version of the function is:
+Now that we have a way to get valid input from the user, it's time to take a look at the `guess_the_number` function. There are two ways to play this type of guessing game, the first is with unlimited guesses and the second is with a maximum number of guesses. Let's start with the first version with unlimited guesses. The current version of the function is:
 
 ```python
     random_number = random.randint(RANGE_LOW, RANGE_HIGH)
@@ -436,10 +448,10 @@ Now that we have a way to get valid input from the user, it's time to take a loo
     user_input = get_number_from_user()
 
     if user_input < RANGE_LOW or user_input > RANGE_HIGH:
-        print(f"Your guess is out of bounds.")
+        print("Your guess is out of bounds.")
         print(f"It must be between {RANGE_LOW} and {RANGE_HIGH}")
     elif user_input == random_number:
-        print("You guessed the number!  Good job!")
+        print("You guessed the number! Good job!")
     elif user_input > random_number:
         print("Your guess is too high")
     elif user_input < random_number:
@@ -448,14 +460,17 @@ Now that we have a way to get valid input from the user, it's time to take a loo
 
 Add a while loop with a flag that tests to see if the user has guessed the correct number.
 
+<br>
+
 <details>
-<summary>When you are finished, compare your code to our version here</summary>
+<summary>When you are finished, compare your code to our version here.</summary>
 
 ```python
 def guess_the_number():
     random_number = random.randint(RANGE_LOW, RANGE_HIGH)
 
     waiting_for_correct_guess = True
+
     while waiting_for_correct_guess:
         user_input = get_number_from_user()
 
@@ -473,24 +488,24 @@ def guess_the_number():
 
 </details>
 
-Now let's work on the version with a maximum number of guesses. At first glance this seems like a good candidate for a for loop because we have a max number of times we're going to run the loop, but let's dig into the actual sequence.
+Now let's work on the version with a maximum number of guesses. At first glance this seems like a good candidate for a for loop because we have a maximum number of times we're going to run the loop, but let's dig into the actual sequence.
 
-We want to run the loop at most the max guesses number of times, but if the user guesses the number correctly we want to end the loop early. In this case, a more complex while loop conditional statement along with a counter variable will result in a loop that does exactly what we want and also is easy to read and understand.
+We want to run the loop at most the guesses number of times, but if the user guesses the number correctly before reaching the maximum number of guesses we want to end the loop early. In this case, we do not actually know how many times the loop should run so a more complex while loop conditional statement along with a counter variable will result in a loop that does exactly what we want and also is easy to read and understand.
 
-1.  Start by adding a counter variable `num_guesses` and increment inside of the while loop:
+1.  First, add a counter variable `num_guesses` and increment it inside of the while loop:
 
     ```python
     def guess_the_number():
         # ...
         num_guesses = 0
+
         while waiting_for_correct_guess:
-            # if the += operator is unfamiliar,
-            # it is the same as num_guesses = num_guesses + 1
+            # the += operator is the same as num_guesses = num_guesses + 1
             num_guesses += 1
             # ...
     ```
 
-1.  Next, add a max guesses constant to the other constants at the top of the file and set it to any integer value (in our example we will use 20.) Then add a comparison in the while loop to check to see if the current number of guesses is greater than or equal to the max guesses (on our first time through the loop the number of guesses starts at 0, so by the time we get to the max number of guesses we've already guessed that many times):
+2.  Next, add a constant variable to represent the maximum guesses underneath the other variable at the top of the file and set it to any integer value (in our example we will use 20.) Then add a comparison in the while loop to check to see if the current number of guesses is greater than or equal to the maximum number of guesses (on our first time through the loop the number of guesses starts at 0, so by the time we get to the maximum number of guesses we've already guessed that many times):
 
     ```python
     # ...
@@ -500,13 +515,12 @@ We want to run the loop at most the max guesses number of times, but if the user
         # ...
 
         num_guesses = 0
-        while (waiting_for_correct_guess and
-                   num_guesses <= MAX_GUESSES):
+        while (waiting_for_correct_guess and num_guesses <= MAX_GUESSES):
             num_guesses += 1
             # ...
     ```
 
-1.  Last, let's add some feedback to the user to let them know what's going on!
+3.  Lastly, let's add some feedback to the user to let them know what's going on!
 
     ```python
     MAX_GUESSES = 20
@@ -522,10 +536,10 @@ We want to run the loop at most the max guesses number of times, but if the user
             num_guesses += 1
             user_input = get_number_from_user()
             if user_input == random_number:
-                print("You guessed the number!  Good job!")
+                print("You guessed the number! Good job!")
                 waiting_for_correct_guess = False
             elif user_input < RANGE_LOW or user_input > RANGE_HIGH:
-                print(f"Your guess is out of bounds.")
+                print("Your guess is out of bounds.")
                 print(f"It must be between {RANGE_LOW} and {RANGE_HIGH}")
             elif user_input > random_number:
                 print("Your guess is too high")
@@ -543,12 +557,20 @@ We want to run the loop at most the max guesses number of times, but if the user
         # correct answer before they were booted out of the loop.  Also, if they
         # got the correct answer, they were given feedback about that
         # inside the loop, so there's no need to do anything here in that case.
+        
         if waiting_for_correct_guess:
-            print(f"You ran out of guesses!  The correct answer \
-            was {random_number}.")
+            print(f"You ran out of guesses! The correct answer was {random_number}.")
+
+    # Call the function to test it
+    guess_the_number()
     ```
 
-    Check the last assumption that we made – that we only need to check `waiting_for_correct_guess` to give the user the "You ran out of guesses" feedback. It seems like we're checking the wrong variable! In cases like this it can be useful to "be the computer" and run through the code manually. Write down the state of the variables at each pass through the loop and make sure that the loop is doing what we think it is doing. Does the `waiting_for_correct_guess` variable give us the information that we think it does in every situation? Walk through the code with various possibilities (we call these test cases, a possible list is first, the user guesses correctly, second, the user doesn't guess and runs out of guesses, and last, the user guesses correctly on the last try) and confirm that the code works.
+    Execute the code in `game.py`. Check the last assumption that we made – that we only need to check `waiting_for_correct_guess` to give the user the "You ran out of guesses" feedback. It seems like we're checking the wrong variable! In cases like this it can be useful to "be the computer" and run through the code manually. Write down the state of the variables at each pass through the loop and make sure that the loop is doing what we think it is doing. Does the `waiting_for_correct_guess` variable give us the information that we think it does in every situation? Walk through the code with the following various possibilities, also known as "test cases": 
+    * The user guesses correctly
+    * The user doesn't guess and runs out of guesses
+    * The user guesses correctly on the last try
+   
+    Confirm that the code works according to the requirements for the test cases outlined above.
 
 ### Guess the Number is Done..?
 
@@ -558,13 +580,14 @@ You have built a fully functional command line game! If this is the first time y
 
 ### Same Problem, New Context
 
-In programming many problems that look different are at the core the same problem, just with different details. We can use this to our advantage in our work! If we identify that a problem is similar to one we have already solved, we can take the solution we've already written and modify it for the new problem.
+In programming, many problems that look different are at the core the same problem just with different details. We can use this to our advantage in our work! If we identify that a problem is similar to one we have already solved, we can take the solution we've already written and modify it for the new problem.
 
 We're going to switch now to working on Snowman.  Start by opening up `snowman.py` in VSCode.  First, let's take a look at the current version of our user input helper function `get_letter_from_user`:
 
 ```python
 def get_letter_from_user():
     user_input_string = input("Guess a letter: ")
+
     if not user_input_string.isalpha():
         print("You must input a letter!")
     elif len(user_input_string) > 1:
@@ -573,15 +596,18 @@ def get_letter_from_user():
     return user_input_string
 ```
 
-The problem here is the same as `get_number_from_user`, except instead of a number we want to continue to ask the user for a letter until they give us a single letter.
+The problem here is the same as `get_number_from_user`, except instead of a number we want to continue to ask the user for a letter until they give us a single letter. Add a while loop to `get_letter_from_user` so that the function will continue to run until a user provides a single letter when prompted for input. If we run into bugs or our code is not running as we expect it to, we can add debugging print statements in our function to see the values of variables in order to reason about what is going on. Be sure to execute the code with the `python3` command from the terminal and check if the refactored code works as expected. 
+
+<br>
 
 <details>
-<summary>Add a while loop to this function.  When you are finished compare your version with ours</summary>
+<summary>When you are finished compare your version with ours.</summary>
 
 ```python
 def get_letter_from_user():
     valid_input = False
     user_input_string = None
+
     while not valid_input:
         user_input_string = input("Guess a letter: ")
         if not user_input_string.isalpha():
@@ -592,38 +618,35 @@ def get_letter_from_user():
             valid_input = True
 
     return user_input_string
+
+# Call the method to test out the new functionality 
+get_letter_from_user()
 ```
 
 </details>
 
 ### Tracking User Input
 
-<!-- Loop Challenge -->
-<!-- prettier-ignore-start -->
-### !challenge
-* type: code-snippet
-* language: python3.6
-* id: b10f595e-5a13-4f56-9f41-43ce92e08242
-* title: Loops Exercise
-### !question
+Imagine we are playing a game of Snowman with a group of children.  We would probably keep track of the letters that they guessed, and with correct letters we would add to the word and with incorrect we would add to the snowman drawing.  In this version we are going to keep track of the number of correct and incorrect guesses from the user.  If the user guesses the same incorrect letter multiple times we'll count it as a new wrong guess every time. In `snowman.py` make changes to the `snowman` function according to the requirements below.
 
-Imagine we are playing a game of Snowman with a group of children.  We would probably keep track of the letters that they guessed, and with correct letters we would add to the word and with incorrect we would add to the snowman drawing.  In this version we are going to keep track of the number of correct and incorrect guesses from the user.  If the user guesses the same incorrect letter multiple times we'll count it as a new wrong guess every time.  
-
-1.  Add a loop to the main snowman similar to the loop in `guess_the_word`.  
+1.  Add a loop to the main `snowman` function similar to the loop in `guess_the_number`.  
 2.  Add two counters `correct_guesses` and `wrong_guesses`.
-3.  Adjust the loop to allow the user to continue to guess until they reach `SNOWMAN_WRONG_GUESSES` wrong guesses. If the number of `correct_guesses` is equal to the length of `SNOWMAN_WORD` then that means the word has been guessed and the user should no longer be able to submit guesses. 
+3.  Adjust the loop to allow the user to continue to guess until they reach 7 `SNOWMAN_WRONG_GUESSES`. If the number of `correct_guesses` is equal to the length of `SNOWMAN_WORD` then that means the word has been guessed and the user should no longer be able to submit guesses. 
 4.  Use the helper function `get_letter_from_user` to get user input in the loop.
 5.  Track the number of correct and incorrect guesses, adding one to the proper counter when the user makes a guess.
+6.  We no longer need to return `True` or `False` in the `snowman` function so we can remove that code from the function
 
 When finished print out, "You made X correct and Y incorrect guesses" where X and Y are the number of correct and incorrect guesses.
 
-Submit your code here:
+Use the debugging techniques we have discussed and execute `snowman.py` to test that your solution works according to the requirements.
 
-### !end-question
-### !placeholder
+<br>
+
+<details>
+<summary>When you are finished compare your version of <code>snowman.py</code> with ours.</summary>
+
 ```python
-SNOWMAN_WORD = "snowman"
-
+SNOWMAN_WORD = "broccoli"
 SNOWMAN_WRONG_GUESSES = 7
 
 def get_letter_from_user():
@@ -641,139 +664,28 @@ def get_letter_from_user():
     return user_input_string
 
 def snowman():
-    # Add code to repeat guesses until the total wrong guesses 
-    # equals SNOWMAN_WRONG_GUESSES or number of correct guesses
-    # equals the length of SNOWMAN_WORD.
-```
-### !end-placeholder
-### !tests
-```python
-import sys
-from unittest import mock
-from unittest.mock import patch
-import io
-import unittest
-import re
-# import sys
-# import unittest
-# import user_input
-# import io
-# from unittest.mock import patch
-# import re
-
-from main import *
-
-class TestChallenge(unittest.TestCase):
-
-    @patch('sys.stdout', new_callable=io.StringIO)
-    def test_will_print_out_out_of_guesses_if_number_of_guesses_is_exhausted(self, mock_stdout):
-        # Arrange
-        SNOWMAN_WRONG_GUESSES = 7
-        input_letters = [
-            'a',
-            'z',
-            'b',
-            'c',
-            'd',
-            'e',
-            'f',
-            'g',
-            'h',
-            'i',
-            'j',
-            'k'
-        ]
-        with unittest.mock.patch('builtins.input', side_effect=input_letters):
-            # Act
-            snowman()
-
-        # Assert
-        correct_answer = f"You made 1 correct and {SNOWMAN_WRONG_GUESSES} incorrect guesses"
-
-        self.assertTrue(re.match(correct_answer,
-                        mock_stdout.getvalue(), flags=re.IGNORECASE), msg=f"expected {correct_answer} but recieved {mock_stdout.getvalue()}")
-
-    @patch('sys.stdout', new_callable=io.StringIO)
-    def test_will_repeat_until_guesses_exhausted_even_if_word_guessed(self, mock_stdout):
-        # Arrange
-        input_letters = [
-            's',
-            'n',
-            'o',
-            'w',
-            'm',
-            'a',
-            'n',
-            'b',
-            'c',
-            'd',
-            'e',
-            'f',
-            'g',
-            'h',
-            'i',
-            'j',
-            'k',
-        ]
-        with unittest.mock.patch('builtins.input', side_effect=input_letters):
-            # Act
-            snowman()
-
-        # Assert
-        correct_answer = f"You made 7 correct and {0} incorrect guesses"
-        self.assertTrue(re.match(correct_answer,
-                        mock_stdout.getvalue(), flags=re.IGNORECASE), f"expected {correct_answer}, but received {mock_stdout.getvalue()}") 
-
-    @patch('sys.stdout', new_callable=io.StringIO)
-    def test_will_will_output_0_correct_for_all_invalid_guesses(self, mock_stdout):
-        # Arrange
-        input_letters = [
-            'b',
-            'c',
-            'd',
-            'e',
-            'f',
-            'g',
-            'h',
-            'i',
-            'j',
-            'k',
-            'l',
-        ]
-        with unittest.mock.patch('builtins.input', side_effect=input_letters):
-            # Act
-            snowman()
-
-        # Assert
-        correct_answer = "You made 0 correct and 7 incorrect guesses"
-        self.assertTrue(re.match("You made 0 correct and 7 incorrect guesses",
-                        mock_stdout.getvalue(), flags=re.IGNORECASE), f"expected {correct_answer} but received {mock_stdout.getvalue()}")
-
-
-```
-### !end-tests
-### !explanation
-An example of a working implementation:
-```python
-def snowman():
     correct_guesses = 0
     wrong_guesses = 0
+
     while wrong_guesses < SNOWMAN_WRONG_GUESSES and correct_guesses < len(SNOWMAN_WORD):
-        guessed_letter = get_letter_from_user()
-        if guessed_letter in SNOWMAN_WORD:
+        user_letter = get_letter_from_user()
+        if user_letter in SNOWMAN_WORD:
+            print("Letter found")
             correct_guesses += 1
         else:
+            print("Letter not found")
             wrong_guesses += 1
     
     print(f"You made {correct_guesses} correct and {wrong_guesses} incorrect guesses")
+
+snowman()
 ```
-### !end-explanation
-### !end-challenge
-<!-- prettier-ignore-end -->
+
+</details>
 
 ### Drawing Pictures
 
-Add these ASCII snowman drawing constants to the top of the file. Notice that the number of elements in the drawing is the same as SNOWMAN_WRONG_GUESSES. For each wrong guess, we will want to add a new element to the drawing:
+Add these string ASCII snowman drawings as constant variables to the top of `snowman.py`. Notice that the number of constant variables that make up the drawing is the same as SNOWMAN_WRONG_GUESSES. For each wrong guess, we will want to add a new element to the drawing:
 
 ```python
 SNOWMAN_1 = '*   *   *  '
@@ -785,108 +697,95 @@ SNOWMAN_6 = '* (_ : _)  '
 SNOWMAN_7 = '-----------'
 ```
 
-Our end goal is to have a helper function that we can pass the current `wrong_count` value to and it will draw the appropriate amount of the snowman.  Let's start by writing a function which will draw a specific element of the snowman based on a passed value.  For example, if we pass the function 7, we want the function to draw SNOWMAN_7.  This will seem slightly contrived, but it is just a starting place.  
+Our end goal is to have a helper function called `print_snowman` that we can pass the current `wrong_guesses` value to and it will draw the appropriate amount of the snowman.  Let's start by writing `print_snowman` which will have a parameter called `wrong_guesses_count` which will draw a specific element of the snowman based on a passed value.  For example, if we pass the function 7, we want the function to draw SNOWMAN_7.  This will seem slightly contrived, but it is just a starting place.
+
+<br> 
 
 <details>
-<summary>Once you've written the helper function, compare what you have to our version.</summary>
+<summary>Once you've written <code>print_snowman</code>, run your code to see how it works and then compare what you have to our version.</summary>
 
 ```python
-def print_snowman(id):
-    if id == 1:
+def print_snowman(wrong_guesses_count):
+    if wrong_guesses_count == 1:
         print(SNOWMAN_1)
-    elif id == 2:
+    elif wrong_guesses_count == 2:
         print(SNOWMAN_2)
-    elif id == 3:
+    elif wrong_guesses_count == 3:
         print(SNOWMAN_3)
-    elif id == 4:
+    elif wrong_guesses_count == 4:
         print(SNOWMAN_4)
-    elif id == 5:
+    elif wrong_guesses_count == 5:
         print(SNOWMAN_5)
-    elif id == 6:
+    elif wrong_guesses_count == 6:
         print(SNOWMAN_6)
-    elif id == 7:
+    elif wrong_guesses_count == 7:
         print(SNOWMAN_7)
 ```
 
 </details>
 
-Now we're going to add a loop inside this function to make it draw not just one element of the snowman, but all of the elements. Unlike all of our other loops so far, we're not going to use a `while` loop, this time we're going to use a `for` loop. A `for` loop is a great tool when we know exactly how many times we're going to be executing our loop.
+Now we're going to add a loop inside the `print_snowman` function to make it draw not just one element of the snowman, but all the elements we want. We want to draw our snowman from the ground up, so if we have only 1 incorrect guess, we want to print the last element, if we have 2 incorrect guesses we want to print the last two elements, and so on. Our function should take in the number of incorrect guesses and use that value with the `range` function to draw the elements of the snowman in the order that we want.
 
-1. Start by adding a `for` loop that prints the entire snowman.
+Unlike our other loops so far, we're not going to use a `while` loop, this time we're going to use a `for` loop. A `for` loop is a great tool when we know exactly how many times we're going to be executing our loop.
 
-   * Use the `range()` function with the `for` loop.
-   * With the `range()` function, remember that the number of items in the drawing is the same as the constant SNOWMAN_WRONG_GUESSES.
+Start by adding a `for` loop 
 
-   _Warning_ the range function is _exclusive_, which means it goes up to but does not include the last element of the given range. This means that `range(2, 7) = [2, 3, 4, 5, 6]`
+* Use the `range()` function with the `for` loop.
+* With the `range()` function, we want to provide start and end values so that we only loop over a specific range according to the number of incorrect guesses a user has made
+* We will calculate the start and end values using `wrong_guesses_count`
 
-   <details>
-   <summary>When you have added the `for` loop to the function, compare what you have to our version.</summary>
+### !callout-info
 
-   ```python
-   def print_snowman():
+## The Range Function is Exclusive
+The range function is _exclusive_, which means it goes up to but does not include the last element of the given range. This means that `range(1, 8) = [1, 2, 3, 4, 5, 6, 7]`
 
-       for i in range(1, SNOWMAN_WRONG_GUESSES + 1)
-           if i == 1:
-               print(SNOWMAN_1)
-           elif i == 2:
-               print(SNOWMAN_2)
-           elif i == 3:
-               print(SNOWMAN_3)
-           elif i == 4:
-               print(SNOWMAN_4)
-           elif i == 5:
-               print(SNOWMAN_5)
-           elif i == 6:
-               print(SNOWMAN_6)
-           elif i == 7:
-               print(SNOWMAN_7)
-   ```
+### !end-callout
 
-   </details>
+  <details>
+  <summary> When you have updated <code>print_snowman</code>, compare what you have to our version.</summary>
 
-1. The next step is to modify the range of our for loop to only print the elements that we want. For Snowman, we want to draw our snowman from the ground up, so if we have only 1 incorrect guess, we want to print the last element, 2 incorrect guesses means the last two elements, and so on. Our function should take in the number of incorrect guesses and use that value in the range to draw the elements of the snowman in the order that we want.
+  ```python
+  def print_snowman(wrong_guesses_count):
+      snowman_image_start = SNOWMAN_WRONG_GUESSES + 1 - wrong_guesses_count
+      snowman_image_end = SNOWMAN_WRONG_GUESSES + 1
 
-   <details>
-   <summary> When you have updated the your function, compare what you have to our version.</summary>
-
-   ```python
-   def print_snowman(wrong_guesses_count):
-
-       for i in range(SNOWMAN_WRONG_GUESSES + 1 - wrong_guesses_count, SNOWMAN_WRONG_GUESSES + 1)
-           if i == 1:
-               print(SNOWMAN_1)
-           elif i == 2:
-               print(SNOWMAN_2)
-           elif i == 3:
-               print(SNOWMAN_3)
-           elif i == 4:
-               print(SNOWMAN_4)
-           elif i == 5:
-               print(SNOWMAN_5)
-           elif i == 6:
-               print(SNOWMAN_6)
-           elif i == 7:
-               print(SNOWMAN_7)
-   ```
+      for i in range(snowman_image_start, snowman_image_end)
+          if i == 1:
+              print(SNOWMAN_1)
+          elif i == 2:
+              print(SNOWMAN_2)
+          elif i == 3:
+              print(SNOWMAN_3)
+          elif i == 4:
+              print(SNOWMAN_4)
+          elif i == 5:
+              print(SNOWMAN_5)
+          elif i == 6:
+              print(SNOWMAN_6)
+          elif i == 7:
+              print(SNOWMAN_7)
+  ```
 
    </details>
 
-1. Finally, inside of the `snowman` function, add the `print_snowman` function call to the game loop to print out the current state of the snowman to the user after each guess.
+Finally, inside of the `snowman` function, add the `print_snowman` function call to the game loop to print out the current state of the snowman to the user after each guess.
 
-   ```python
-   def snowman():
-       correct_guesses = 0
-       wrong_guesses = 0
-       while wrong_guesses < SNOWMAN_WRONG_GUESSES:
-           user_input = get_letter_from_user()
-           if user_input in SNOWMAN_WORD:
-               print("You guessed a letter that's in the word!")
-               correct_guesses += 1
-           else:
-               print(f"The letter {user_input} is not in the word")
-               wrong_guesses += 1
-           print_snowman(wrong_guesses)
-   ```
+  ```python
+  def snowman():
+      correct_guesses = 0
+      wrong_guesses = 0
+      while wrong_guesses < SNOWMAN_WRONG_GUESSES:
+          user_input = get_letter_from_user()
+          if user_input in SNOWMAN_WORD:
+              print("You guessed a letter that's in the word!")
+              correct_guesses += 1
+          else:
+              print(f"The letter {user_input} is not in the word")
+              wrong_guesses += 1
+          print_snowman(wrong_guesses)
+  ```
+
+Execute `snowman.py` and test out the game!
 
 ## Summary
 
