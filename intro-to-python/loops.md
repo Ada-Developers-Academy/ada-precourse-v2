@@ -13,13 +13,13 @@ At the end of this lesson students will be able to:
 
 ### [Textbook for this section](https://colab.research.google.com/drive/1m9h053kS6bjAeiHnEHIP39fqbyOO7glc?usp=sharing)
 
-In this section we will be building on the code that you wrote in the lesson [Helper Functions](helper-functions.md). If you would like to look at our example code version for that lesson, you can find it [here](resources/src/functions/games_function.md).
+In this section we will be building on the code that you wrote in the lesson [Helper Functions](helper-functions.md). If you would like to look at our example code for that lesson, you can find it [here](resources/src/functions/games_function.md).
 
 ## Vocabulary and Syntax
 
 | Vocab | Definition | Synonyms | How to Use in a Sentence |
 | -- | -- | -- | -- |
-| while loop | A loop that repeats a code block inside it as long as its conditional statement evaluates to `True`. The statement is tested before executing the code block inside the loop. | sentinel controlled loop, pre-test loop | "The code in the while loop will run until the test is false." |
+| while loop | A loop that repeats a code block inside it as long as its conditional statement evaluates to `True`. The statement is tested before executing the code block inside the loop. | sentinel controlled loop, pre-test loop | "The code in the while loop will run as long as the test is true." |
 | for loop | A loop that _iterates_ a certain number of times or repeats over a sequence. In Python it is often used to iterate over a `list` data structure. It is also commonly paired with the `range` [function](https://docs.python.org/3.3/library/stdtypes.html?highlight=range#ranges), which returns a list of numbers. The `for` loop repeats n times, where n is the length of the sequence being looped over. | counter controlled loop | "To repeat the code five times we will use a for loop." |
 | flag | A variable that is used to indicate that a condition has been met. Usually a flag is a boolean variable and the value is changed to indicate that the goal or target (whatever the condition is) has been achieved. | signal | "The while loop will stop when the value of the flag is changed from `True` to `False`." |
 
@@ -33,7 +33,9 @@ counter = 0
 while counter < 10:
     counter = counter + 2
     print(f"The value of counter is {counter}")
+```
 
+```python
 # Example 2: while loop with flag
 keep_running = True
 counter = 0
@@ -42,34 +44,30 @@ while keep_running:
     if counter > 10 :
         keep_running = False
     print(f"The value of counter is {counter}")
+```
 
+```python
 # Example 3: another while loop with flag
-def check_if_order_is_complete():
-    user_input = input("Do you want to add additional items to your order? Please enter 'Yes' or 'No': ")
+ask_for_input = True 
+while ask_for_input: 
+    user_input = input("Do you want to keep running? Enter 'y' or 'n': ") 
+    ask_for_input = (user_input == 'y')
+```
 
-    if user_input == "Yes":
-        is_user_still_ordering = True
-    else:
-        is_user_still_ordering = False
-
-    return is_user_still_ordering
-
-is_order_incomplete = check_if_order_is_complete()
-
-while is_order_incomplete:
-    is_order_incomplete = check_if_order_is_complete()
-
-print("You have finished ordering.")
-
-# Example 4: for loop using range
+```python
+# Example 4: for loop using range with implicit start
 for number in range(3):
     print(f"The value of num is {number}")
+```
 
-# Example 5: for loop using range
+```python
+# Example 5: for loop using range with explicit start and stop
 for number in range(2, 5):
     print(f"The value of num is {number}")
+```
 
-# Example 6: for-each loop over a collection
+```python
+# Example 6: for-in loop over a collection
 a_string = "Hello, World!"
 for letter in a_string:
     print(f"The current letter is {letter}")
@@ -89,36 +87,17 @@ while <condition>:
 With that in mind, let’s take another look at the third while loop we saw above.
 
 ```python
-# A function that asks a user if they want to add more items to an order
-# If they do want to add to the order then the function returns True
-# If they do not want to add to the order then the function returns False 
-
-def check_if_order_is_complete():
-    user_input = input("Do you want to add additional items to your order? Please enter 'Yes' or 'No': ")
-
-    if user_input == "Yes":
-        is_user_still_ordering = True
-    else:
-        is_user_still_ordering = False
-
-    return is_user_still_ordering
-
-# Call the function check_if_order_is_complete and store the return value in the variable is_order_incomplete 
-is_order_incomplete = check_if_order_is_complete()
-
-# While a user's order is not complete, the block of code in the loop will continue to ask the user if they want to add to their order
-while is_order_incomplete:
-    is_order_incomplete = check_if_order_is_complete()
-
-# When a user's order is complete, a message will be printed to let the user know they have finished ordering.
-print("You have finished ordering.")
+ask_for_input = True 
+while ask_for_input: 
+    user_input = input("Do you want to keep running? Enter 'y' or 'n': ") 
+    ask_for_input = (user_input == 'y')
 ```
 
-In this example we call the function `check_if_order_is_complete` which returns a boolean value depending on a user's input. We call this function before the while loop and store the return value in the variable `is_order_incomplete`. This variable is the flag we use for our while loop. Before entering the loop, Python will check the condition that comes after the `while` keyword. If `is_order_incomplete` evaluates to `True` then the loop body will execute, which will call the `check_if_order_is_complete` again. 
+In this example, we set up a flag called `asked_for_input` with the value set to `True` indicating that we should as a user for input. While this variable's value is `True`, the loop's body will execute and ask a user for input. After a user enters some input, either "y" or "n", we compare the value of `user_input` to the string "y". When we use `==` to compare if two values are equal to each other, the result of that comparison will be a boolean value. 
 
-When a user is done ordering, `check_if_order_is_complete` will return `False` which will change the value of our flag variable and we no longer enter the loop body. Then we print a message to let the user know they have finished ordering.
+If `user_input` references "n" and we compare that variable to the string "y", then the return value of this comparison is `False`. If `user_input` references "y" and we compare that variable to the string "y", then the return value of this comparison is `True`.
 
-At the beginning of this section we mentioned that while loops are great when we don't know how many times they will need to run. In this example, we do not know how many times we need to ask a user if they are done with their order. While a user is still ordering, we will ask them if they want to add additional items to their order and when the user decides they do not want to add additional items, then the while loop will stop running, and the subsequent Python code will execute.
+Therefore, in the loop's body the flag called `ask_for_input` gets re-assigned the boolean value from comparing `user_input` with "y". If the flag's value remains `True` then the loop will continue to run. If the user entered 'n', which means that `user_input` does not equal 'y', then `ask_for_input` will be re-assigned the value `False` and the loop will stop running. 
 
 ## `for` Loops
 
@@ -475,10 +454,10 @@ def guess_the_number():
         user_input = get_number_from_user()
 
         if user_input < RANGE_LOW or user_input > RANGE_HIGH:
-            print(f"Your guess is out of bounds.")
+            print("Your guess is out of bounds.")
             print(f"It must be between {RANGE_LOW} and {RANGE_HIGH}")
         elif user_input == random_number:
-            print("You guessed the number!  Good job!")
+            print("You guessed the number! Good job!")
             waiting_for_correct_guess = False
         elif user_input > random_number:
             print("Your guess is too high")
