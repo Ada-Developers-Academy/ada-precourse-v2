@@ -703,9 +703,14 @@ def snowman():
         print_snowman(len(wrong_guesses_list))
         print(f"Wrong guesses: {wrong_guesses_list}")
 
+# Call the function run the code and test out the new changes
+snowman()
+
 ```
 
 </details>
+
+We've made a lot of changes to our code, execute `snowman.py` as we're coding to test out our new changes. If the code is not behaving as expected, add some debugging print statements to see what is happening. From there, try identifying which lines of code need to be updated to fix it. It's ok if you're code isn't working as described in the lesson. Reach out to Slack with your questions and to get help!
 
 ### Using `correct_guesses_list` in `get_letter_from_user`
 
@@ -761,6 +766,8 @@ def get_letter_from_user(wrong_guesses_list, correct_guesses_list):
     return user_input_string
 ```
 </details>
+
+
 
 ## Using Lists to Improve Readability and Simplify Code
 
@@ -835,6 +842,22 @@ In the Loops lesson we wrote the helper function `print_snowman` that drew our s
             print(SNOWMAN_GRAPHIC[i])
 
     ```
+
+    Execute the code in `snowman.py` to try the game out!
+  
+### Deactivating the Virtual Environment
+
+When we're done working on the Snowman game for the time being, we should deactivate our virtual environment. We can do so by running `deactivate` in the terminal. We should no longer see `(venv)` at the start of each line in our terminal. 
+
+```console
+(venv) snowman_project 
+(venv) snowman_project deactivate
+snowman_project
+```
+
+The first line of the terminal output above shows the terminal command line when the virtual environment is activated. The second line shows the `deactivate` command being run. The final line shows the what the terminal command line looks like when the virtual environment is deactivated.
+
+When we start working on `snowman.py` again, we will need to reactivate the virtual environment before we can execute our code. 
 
 ## Summary
 
