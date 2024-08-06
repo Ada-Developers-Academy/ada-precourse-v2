@@ -17,40 +17,39 @@ At the end of this lesson students will be able to:
 
 ### [Textbook for this section](https://colab.research.google.com/drive/1TK9Enhh0mITZ1649l-r4_gzeg2B3eRRu?usp=sharing)
 
-In this section we will be building on the code you wrote in the previous lesson [Loops](loops.md).  If you would like to look at our example code for that lesson, you can find it [here](resources/src/loops/game-loop.md).
+In this section we will be building on the code you wrote in the [Loops](loops.md) lesson.  If you would like to look at our example code for that lesson, you can find it [here](resources/src/loops/game-loop.md).
 
 ### Introducing Lists, Our First Data Structure!
 
-Variables are awesome!  We can store data, retrieve it, update it and use it in any way we like.  So far, though, are variables have been limited because they have only been able to hold one piece of data.  Imagine we want to write a program to ask for and then display the user's top five favorite flavors of ice cream.  We can store each flavor in it's own variable and then use those variables in our display.  
+Variables are awesome!  We can store data, retrieve it, update it and use it in any way we like.  So far, though, variables have been limited because they have only been able to hold one piece of data.  Imagine we want to write a program to ask for and then display the user's top five favorite flavors of ice cream.  We can store each flavor in it's own variable and then use those variables in our display.  
 
 What happens when we want to modify our program to store our user's top 10 favorite flavors?  We would have to add more variables and update the program to use those new variables.  _Lists_ change all of this!  Lists are a _data structure_ that can hold multiple pieces of data and we can access the data numerically starting with 0.  Lets go back to our ice cream example.  If we use a list to store our ice cream flavors, we can use one variable and then as our user inputs their favorite flavors, we can add the new flavor to the list!  
 
-By using a list, we can store as many ice cream flavors as we want.  Also, python provides us with ways to easily loop through all of the elements in a list so we can use a loop to display all of the flavors, which will simplify our code even further!  
+By using a list, we can store as many ice cream flavors as we want. Also, Python provides us with ways to easily loop through all of the elements in a list so we can use a loop to display all of the flavors, which will simplify our code even further! Take a look at the following block of code. It repeatedly asks a user to input a flavor of ice cream they like and adds that flavor to a list of ice cream flavors. The code will stop asking a user to input an ice cream flavor when a user inputs the string "done" and then the code loops over the ice cream flavors one at a time and prints them out. 
 
 ```python
 
 def favorite_flavors():
-    icecream_flavors = []
+    ice_cream_flavors = []
     flavor = ""
-    while not flavor == "done":  # this loop will run until the
-        # user types in the word "done"
-        flavor = input("What is an ice cream flavor that you like? ") # ask for user input
-        if not flavor == "done":         # add all flavors except for done
-            # to append something to a list means to add that thing to the end of the list
-            icecream_flavors.append(flavor)
 
-    for flavor in icecream_flavors:  # this loop will iterate over each element
-        # in the list and store them one at a time
-        # in the variable flavor
+    # this loop will run until the user types in the word "done"
+    while not flavor == "done":  
+        flavor = input("What is an ice cream flavor that you like? ") 
+        # add all flavors except for done
+        if not flavor == "done":
+            # add the user's flavor to the end of the list
+            ice_cream_flavors.append(flavor)
+
+    # this loop will iterate over each element in the list
+    for flavor in ice_cream_flavors:
+        # the looping variable called flavor references each flavor in the list one at a time 
         print(f"{flavor} is a great ice cream flavor!")
 
-    return icecream_flavors
-
+    return ice_cream_flavors
 
 favorite_flavors()
-
 ```
-
 
 ## Vocabulary and Syntax
 
@@ -59,29 +58,32 @@ favorite_flavors()
 | data structure| A collection of data that follows a set of rules for modifying and accessing the data.  Python provides four built in data structures, _lists_, _dictionaries_, _tuples_ and _sets_.  This curriculum will cover lists and dictionaries.     | Collection      | "We organize our collection of students into a list data structure" |
 | list      | a data structure consisting of a collection of elements (values or variables), each identified by at least one array index or key | Array | "We loop through the list and print out each value"    |
 | index      |The position of an element in a _sequence type_, that is, a type that stores data in order.  In Python, strings and lists are examples of sequence types.  In Python indexes start at 0. | Key | "We get the 1st element at index 0."    |
-| package      | A collection of modules distributed together  | Egg | "The wonderwords package can give us random words."    |
 |  module      | A file containing python code.  | Library | "This module has functions for calculating taxes."    |
+| package      | A collection of modules distributed together  | N/A | "We can add the wonderwords package to our project and use it to get random words."    |
+
+Before we get into some practice problems, let's look at some Python syntax related to lists. The snippet below shows how we can create an empty list, create a list with values in it, add a value to a list with the `append` method, access elements by their indices using square brackets, and loop through the elements. 
 
 ```python
+# creating a new empty list:
+new_empty_list = []
 
-# list syntax
-# creating a new list:
-new_list = []
-new_list_2 = ["lemon", "vanilla", "chocolate"]
+# creating a new list with values in it
+flavors = ["lemon", "vanilla", "chocolate"]
 
 # adding an element to a list:
-new_list_2.append("caramel")
-# new_list_2 = ["lemon", "vanilla", "chocolate", "caramel"]
+flavors.append("caramel")
+# new_list_populated_with_strings = ["lemon", "vanilla", "chocolate", "caramel"]
 
 # accessing an element of a list
-new_list_2[0]
+flavors[0]
 # "lemon"
-new_list_2[3]
+
+flavors[3]
 # "caramel"
 
 # looping through a list
-for i in new_list_2:
-    print(i)
+for flavor in flavors:
+    print(flavor)
 
 # output:
 # lemon
@@ -115,7 +117,7 @@ Example inputs and outputs:
 |input|output|
 |--|--|
 | `item = 3`<br/> `list_of_items = [1, 4, 5, 6, 2, 3, 9]`|`5`|
-| `item = "cat"`<br/> `list_of_items = ["dog", "cow", "goat", "pig"]`|`-1`|
+| `item = "cow"`<br/> `list_of_items = ["dog", "cow", "goat", "pig"]`|`1`|
 | `item = "chocolate"`<br/> `list_of_items = []`|`-1`|
 | `item = -93`<br/> `list_of_items = [1, 30, -93, 99, -3, -93, 25, 16]`|`2`|
 
@@ -180,20 +182,20 @@ def find_index_of_item(item, list_of_items):
 
 def find_index_of_item(item, list_of_items):
     default = -1
-    count = 0
+    item_index = 0
     for current_item in list_of_items:
         if current_item == item:
-            return count
-        count += 1
+            return item_index
+        item_index += 1
     return default
 
 def find_index_of_item(item, list_of_items):
     default = -1
-    count = 0
-    while count < len(list_of_items):
-        if list_of_items[count] == item:
-            return count
-        count += 1
+    item_index = 0
+    while item_index < len(list_of_items):
+        if list_of_items[item_index] == item:
+            return item_index
+        item_index += 1
     return default
 ```
 
@@ -317,6 +319,28 @@ def count_item_in_list(item, list_of_items):
 ### !end-challenge
 
 <!--END CHALLENGE-->
+
+### Nested Loops
+
+We can also nest loops so that we can iterate over two lists at the same time. Nested loops means a loop is inside of a loop. For example, we could have a while loop inside a for loop or a for loop inside of a for loop. That means while we are iterating over an element in a list, we can also be iterating over another list too which will give us access to two elements at the same time. 
+
+The syntax for nesting loops looks like this:
+```python
+# outer_loop Expression:
+    # inner_loop Expression:
+        # statement inside inner_loop
+
+list_of_letters = ["a", "b", "c"]
+list_of_nums = [1, 2, 3]
+
+for letter in list_of_letters:
+    for num in list_of_nums:
+        print(f"{letter} and {num}")
+
+# a and 1
+# b and 2
+# c and 3
+```
 
 <!--BEGIN CHALLENGE-->
 
@@ -444,23 +468,60 @@ It's time to jump back into our Snowman Project. Open up your `snowman.py` and l
 
 So far our Snowman game has used a constant as the secret word (`SNOWMAN_WORD = 'broccoli'`), but a game that always uses the same word is not a great game.  The code to generate a random English word is outside of the scope of these lessons, although it is an interesting problem and worth spending some time thinking about.  We are going to use a _package_ to come up with a random word.  We are going to use the _wonderwords_ package.  
 
-1. Before we can use it in our code, we will need to install the package using the command line.  To install, copypasta this into your terminal:
+1. Before we can use it in our code, we will need to install the package using the command line. From our `snowman_project` directory, run the following commands one by one:
 
     ```console
-    $ pip3 install wonderwords
+    $ python3 -m venv venv
+    $ source venv/bin/activate
     ```
-2. Once that's done, add the line `from wonderwords import RandomWord` to the top of our file.
+
+<!-- prettier-ignore-start -->
+| Terminal Command | Notes |
+| ------------- | ----- |
+| `python3 -m venv venv` | Creates a virtual environment named `venv` for this project |
+| `source venv/bin/activate` | Activates this virtual environment |
+<!-- prettier-ignore-end -->
+
+After running `source venv/bin/activate` to activate our virtual environment, we should now see that each line of our terminal now begins with `(venv)`. This tells us that our virtual environment named `venv` has been activated. Our terminal should now look something like this:
+
+```console
+
+(venv) snowman_project 
+
+```
+
+At a high level, a virtual environment is an isolated space where you can work on your Python projects. We will create and use virtual environments for almost all Python projects we work on. Feel free to do your own research about virtual environments. For now, we'll focus on the implementation of our Snowman game and delve more into virtual environments later on. 
+
+2. After creating and activating our virtual environment, we can install the `wonderwords` package. Since our project requires the `wonderwords` package in order to work, we will add this project requirement to the `requirements.txt` file. We will also learn more about this file and project requirements later on. 
+
+    Run the following commands in your terminal, one at a time. Note that `(venv)` is **not** part of the commands we need to run. It is displayed in the command line to indicate to us that our virtual environment is currently activated.
+
+    ```console
+    $ (venv) pip install wonderwords
+    $ (venv) pip freeze > requirements.txt
+    ```
+
+<!-- prettier-ignore-start -->
+| Terminal Command | Notes |
+| ------------- | ----- |
+| `pip install wonderwords` | Install the `wonderwords` package to our virtual environment |
+| `pip freeze > requirements.txt` | Adds any installed packages to requirements.txt |
+<!-- prettier-ignore-end -->
+
+3. Once that's done, add the line `from wonderwords import RandomWord` to the top of our file.
     * This will import the class `RandomWord` for us to use in our code.
+  
     ```python
     import random
     from wonderwords import RandomWord
-    #https://pypi.org/project/wonderwords/
+    # https://pypi.org/project/wonderwords/
 
     # ... rest of file
 
     ```
-3. Next, add the constants `SNOWMAN_MAX_WORD_LENGTH = 8` and `SNOWMAN_MIN_WORD_LENGTH = 5` with the other constants at the top of the file.    
-4. Then, add the following lines of code to the top of the `snowman` function:
+4. Next, add the constants `SNOWMAN_MAX_WORD_LENGTH = 8` and `SNOWMAN_MIN_WORD_LENGTH = 5` with the other constants at the top of the file.  
+ 
+5. Then, add the following lines of code inside the top of the `snowman` function:
     ```python
 
         r = RandomWord()
@@ -469,16 +530,20 @@ So far our Snowman game has used a constant as the secret word (`SNOWMAN_WORD = 
           word_max_length=SNOWMAN_MAX_WORD_LENGTH)
 
     ```
+
+    <br>
+
     <details>
     <summary>Curious about these lines of code?  Click here for more!</summary>
+
     The first line `r = RandomWord()` gives us a `RandomWord` object to work with.  We will not cover classes and objects in the pre-course material, but they will be a topic we will cover at Ada.  
     
     The next line, `snowman_word = r.word(word_min_length=SNOWMAN_MIN_WORD_LENGTH, word_max_length=SNOWMAN_MAX_WORD_LENGTH)` will call the function `word` on the the RandomWord object `r` and give us a random word.  
     
- We are passing two arguments (word_min_length and word_max_length) using keyword arguments.  Again, we will not be covering these topics further in the pre-course, but they will come up later in the Ada curriculum.  The arguments that we are passing to the function `word` will instruct `word` to give us an English word where the length is between the SNOWMAN_MIN_WORD_LENGTH and SNOWMAN_MAX_WORD_LENGTH.  Feel free to experiment with setting different values for the constants.
+    We are passing two arguments (`word_min_length` and `word_max_length`) using keyword arguments.  Again, we will not be covering these topics further in the Precourse, but they will come up later in the Ada curriculum.  The arguments that we are passing to the function `word` from `RandomWord` will instruct `word` to give us an English word where the length is between the `SNOWMAN_MIN_WORD_LENGTH` and `SNOWMAN_MAX_WORD_LENGTH`.  Feel free to experiment with setting different values for the constants.
     </details>
 
-5. The last piece of adding our new random word is replacing the constant `SNOWMAN_WORD` in the conditional test inside of the `snowman` function with the new `snowman_word` variable.
+6. The last piece of adding our new random word is replacing the constant `SNOWMAN_WORD` in the conditional test inside of the `snowman` function with the new `snowman_word` variable.
 
     ```python
 
@@ -487,17 +552,20 @@ So far our Snowman game has used a constant as the secret word (`SNOWMAN_WORD = 
         snowman_word = r.word(
           word_min_length=SNOWMAN_MIN_WORD_LENGTH, 
           word_max_length=SNOWMAN_MAX_WORD_LENGTH)
+
         correct_guesses = 0
         wrong_guesses = 0
+
         while wrong_guesses < SNOWMAN_WRONG_GUESSES:
             user_input = get_letter_from_user()
-            # Using the new variable instead of the constant SNOWMAN_WORD here:
+            # Now using the new variable snowman_word instead of the constant variable SNOWMAN_WORD here:
             if user_input in snowman_word:
                 print("You guessed a letter that's in the word!")
                 correct_guesses += 1
             else:
                 print(f"The letter {user_input} is not in the word")
                 wrong_guesses += 1
+
             print_snowman(wrong_guesses)
 
     ```
