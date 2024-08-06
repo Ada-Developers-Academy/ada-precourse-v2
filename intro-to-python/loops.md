@@ -879,6 +879,7 @@ Now we're going to add a loop inside this function to make it draw not just one 
            else:
                print(f"The letter {user_input} is not in the word")
                wrong_guesses += 1
+               
            print_snowman(wrong_guesses)
    ```
 
