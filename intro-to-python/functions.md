@@ -70,7 +70,7 @@ my_func_with_args(3, 2)
 In the "Conditionals" lesson we wrote a series of conditionals to validate and test user input for the "Guess the Number" game.  At this point, we may be looking at the code and thinking, "this looks good, it works, why do we need functions"?  
 
 Imagine we'd like a user to be able to play the game more than once. Without functions, the code as it is currently written requires that we copy the logic every time a user plays the game. If we want to allow the user to play the game 5 times, then we would need to write the same block of code 5 times. 
-print(f"The letter {user_input} is not in the word")
+
 ### !callout-info
 
 ## Encapsulating Code With Functions
