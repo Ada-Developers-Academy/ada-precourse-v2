@@ -649,10 +649,10 @@ def snowman():
     while wrong_guesses < SNOWMAN_WRONG_GUESSES and correct_guesses < len(SNOWMAN_WORD):
         user_letter = get_letter_from_user()
         if user_letter in SNOWMAN_WORD:
-            print("Letter found")
+            print("You guessed a letter that's in the word!")
             correct_guesses += 1
         else:
-            print("Letter not found")
+            print(f"The letter {user_input} is not in the word")
             wrong_guesses += 1
     
     print(f"You made {correct_guesses} correct and {wrong_guesses} incorrect guesses")
