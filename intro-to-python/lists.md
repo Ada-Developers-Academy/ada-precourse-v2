@@ -62,7 +62,13 @@ favorite_flavors()
 | module      | A file containing Python code.  | Library | "This module has functions for calculating taxes."    |
 | package      | A collection of modules distributed together  | N/A | "We can add the wonderwords package to our project and use it to get random words."    |
 
-Before we get into some practice problems, let's look at some Python syntax related to lists. The snippet below shows how we can create an empty list, create a list with values in it, add a value to a list with the `append` method, access elements by their indices using square brackets, and loop through the elements. 
+Before we get into some practice problems, let's look at some Python syntax related to lists. The snippet below shows how we can:
+
+1. create an empty list
+2. create a list with values in it
+3. add a value to a list with the `append` method
+4. access elements by their indices using square brackets 
+5. loop through a list's elements. 
 
 ```python
 # creating a new empty list:
@@ -73,7 +79,7 @@ flavors = ["lemon", "vanilla", "chocolate"]
 
 # adding an element to a list:
 flavors.append("caramel")
-# new_list_populated_with_strings = ["lemon", "vanilla", "chocolate", "caramel"]
+# ["lemon", "vanilla", "chocolate", "caramel"]
 
 # accessing an element of a list
 flavors[0]
@@ -188,6 +194,17 @@ def find_index_of_item(item, list_of_items):
         if current_item == item:
             return item_index
         item_index += 1
+    return default
+
+# Using a while loop here isn't the most concise solution,
+# but any time we can use a for loop, we can also use while loop!
+def find_index_of_item(item, list_of_items):
+    default = -1
+    count = 0
+    while count < len(list_of_items):
+        if list_of_items[count] == item:
+            return count
+        count += 1
     return default
     
 ```
@@ -306,24 +323,40 @@ def count_item_in_list(item, list_of_items):
 
 ### Nested Loops
 
-We can also nest loops so that we can iterate over two lists at the same time. Nested loops means a loop is inside of another loop. For example, we could have a while loop inside a for loop or a for loop inside of a for loop. That means while we are iterating over an element in a list, we can also be iterating over another list too which will give us access to two elements at the same time. 
+Say that we have two lists:
 
-The syntax for nesting loops looks like this:
 ```python
-# outer_loop Expression:
-    # inner_loop Expression:
-        # statement inside inner_loop
 
-list_of_letters = ["a", "b", "c"]
-list_of_nums = [1, 2, 3]
+list_1 = ["b", "c", "d"] 
+list_2 = ["a", "b", "c", "d", "e"]
 
-for letter in list_of_letters:
-    for num in list_of_nums:
-        print(f"{letter} and {num}")
+```
 
-# a and 1
-# b and 2
-# c and 3
+We want to see if each element in `list_1` also appears in `list_2`. To do this we could compare each element in `list_1` against each element of `list_2`. Nested loops can help us solve this problem! A nested loop means a loop is inside of another loop. For example, we could have a while loop inside a for loop or a for loop inside of a for loop.
+
+Our nested loops to compare the elements of `list_1` against the elements of `list_2` could look like the following:
+
+```python
+def are_elements_contained(list_1, list_2):
+    # Loop over each element of list_1
+    for letter_1 in list_1:
+        found_letter = False
+
+        # Loop over each element of list_2
+        for letter_2 in list_2:
+            if letter_1 == letter_2:
+                found_letter = True 
+
+        # If we leave the inner loop and found_letter is False
+        # then letter_1 from list_1 is not present in list_2
+        if not found_letter:
+            return False
+        
+    return True
+
+list_1 = ["b", "c", "d"]
+list_2 = ["a", "b", "c", "d", "e"]
+print(are_elements_contained(list_1, list_2))
 ```
 
 <!--BEGIN CHALLENGE-->
@@ -437,14 +470,14 @@ It's time to jump back into our Snowman Project. Open up your `snowman.py` and l
 
 ### Adding A Random Word
 
-So far our Snowman game has used a constant as the secret word (`SNOWMAN_WORD = 'broccoli'`), but a game that always uses the same word is not a great game.  The code to generate a random English word is outside of the scope of these lessons, although it is an interesting problem and worth spending some time thinking about.  We are going to use a _package_ to come up with a random word.  We are going to use the _wonderwords_ package.  
+So far our Snowman game has used a constant as the secret word (`SNOWMAN_WORD = 'broccoli'`), but a game that always uses the same word is not a great game.  The code to generate a random English word is outside of the scope of these lessons, although it is an interesting problem and worth spending some time thinking about.  We are going to use a _package_ to come up with a random word.  We are going to use the _wonderwords_ package.   
 
-1. Before we can use it in our code, we will need to install the package using the command line. We will need to navigate to the `snowman_project` directory if we're not already there. We can run `pwd` to check where we are and we should see something like `/ada/precourse/snowman_project`. Once we're in the correct directory, run the following commands one by one:
+Before we can use `wonderwords` in our code, we will need to install the package using the command line. We will need to navigate to the `snowman_project` directory if we're not already there. We can run `pwd` to check where we are and we should see something like `/ada/precourse/snowman_project`. Once we're in the correct directory, run the following commands one by one:
 
-    ```console
-    $ python3 -m venv venv
-    $ source venv/bin/activate
-    ```
+```console
+$ python3 -m venv venv
+$ source venv/bin/activate
+```
 
 <!-- prettier-ignore-start -->
 | Terminal Command | Notes |
@@ -461,16 +494,22 @@ After running `source venv/bin/activate` to activate our virtual environment, we
 
 ```
 
+### !callout-info
+
+## Virtual Environments
+
 At a high level, a virtual environment is an isolated space where you can work on your Python projects. We will create and use virtual environments for almost all Python projects we work on. Feel free to do your own research about virtual environments. For now, we'll focus on the implementation of our Snowman game and delve more into virtual environments later on. 
 
-2. After creating and activating our virtual environment, we can install the `wonderwords` package. Since our project requires the `wonderwords` package in order to work, we will add this project requirement to the `requirements.txt` file. We will also learn more about this file and project requirements later on. 
+### !end-callout
 
-    Run the following commands in your terminal, one at a time. Note that `(venv)` is **not** part of the commands we need to run. It is displayed in the command line to indicate to us that our virtual environment is currently activated.
+After creating and activating our virtual environment, we can install the `wonderwords` package. Since our project requires the `wonderwords` package in order to work, we will add this project requirement to the `requirements.txt` file. We will also learn more about this file and project requirements later on. 
 
-    ```console
-    $ (venv) pip install wonderwords
-    $ (venv) pip freeze > requirements.txt
-    ```
+Run the following commands in your terminal, one at a time. Note that `(venv)` is **not** part of the commands we need to run. It is displayed in the command line to indicate to us that our virtual environment is currently activated.
+
+```console
+$ (venv) pip install wonderwords
+$ (venv) pip freeze > requirements.txt
+```
 
 <!-- prettier-ignore-start -->
 | Terminal Command | Notes |
@@ -479,67 +518,67 @@ At a high level, a virtual environment is an isolated space where you can work o
 | `pip freeze > requirements.txt` | Add any installed packages to requirements.txt |
 <!-- prettier-ignore-end -->
 
-3. Once that's done, add the line `from wonderwords import RandomWord` to the top of `snowman.py`.
-    * This will import the class `RandomWord` for us to use in our code.
-  
-    ```python
-    import random
-    from wonderwords import RandomWord
-    # https://pypi.org/project/wonderwords/
+Once that's done, add the line `from wonderwords import RandomWord` to the top of `snowman.py`. This will import the class `RandomWord` for us to use in our code.
 
-    # ... rest of file
+```python
+import random
+from wonderwords import RandomWord
+# https://pypi.org/project/wonderwords/
 
-    ```
-4. Next, add the constants `SNOWMAN_MAX_WORD_LENGTH = 8` and `SNOWMAN_MIN_WORD_LENGTH = 5` with the other constants at the top of the file.  
+# ... rest of file
+
+```
+Next, add the constants `SNOWMAN_MAX_WORD_LENGTH = 8` and `SNOWMAN_MIN_WORD_LENGTH = 5` with the other constants at the top of the file.  
  
-5. Then, add the following lines of code inside the top of the `snowman` function:
-    ```python
+Then, add the following lines of code inside the top of the `snowman` function:
+```python
 
-        r = RandomWord()
-        snowman_word = r.word(
-          word_min_length=SNOWMAN_MIN_WORD_LENGTH, 
-          word_max_length=SNOWMAN_MAX_WORD_LENGTH)
+    r = RandomWord()
+    snowman_word = r.word(
+      word_min_length=SNOWMAN_MIN_WORD_LENGTH, 
+      word_max_length=SNOWMAN_MAX_WORD_LENGTH)
 
-    ```
+```
 
-    <br>
+<br>
 
-    <details>
-    <summary>Curious about these lines of code?  Click here for more!</summary>
+<details>
+<summary>Curious about these lines of code?  Click here for more!</summary>
 
-    Invoking the `RandomWord()` returns a `RandomWord` object that we save to the variable we call `r`.  We'll learn more about classes and objects soon in Unit 1.  
-    
-    The `RandomWord` object referenced by our variable `r` has a method called `word` and we invoke that method to get a random word.  
-    
-    We are passing two arguments (`word_min_length` and `word_max_length`) using keyword arguments.  Again, we will not be covering these topics further in the Precourse, but they will come up later in the Ada curriculum.  The arguments that we are passing to the method `word` from `RandomWord` will instruct `word` to give us an English word where the length is between the `SNOWMAN_MIN_WORD_LENGTH` and `SNOWMAN_MAX_WORD_LENGTH`.  Feel free to experiment with setting different values for the constants.
-    </details>
+Invoking the `RandomWord()` returns a `RandomWord` object that we save to the variable we call `r`.  We'll learn more about classes and objects soon in Unit 1.  
 
-6. We no longer need a hardcoded constant variable since we have a way to get random words. Replace the constant variable `SNOWMAN_WORD` in the conditional test inside of the `snowman` function with the new `snowman_word` variable. 
-7. 
-    ```python
+The `RandomWord` object referenced by our variable `r` has a method called `word` and we invoke that method to get a random word.  
 
-    def snowman():
-        r = RandomWord()
-        snowman_word = r.word(
-          word_min_length=SNOWMAN_MIN_WORD_LENGTH, 
-          word_max_length=SNOWMAN_MAX_WORD_LENGTH)
+We are passing two arguments (`word_min_length` and `word_max_length`) using keyword arguments.  Again, we will not be covering these topics further in the Precourse, but they will come up later in the Ada curriculum.  The arguments that we are passing to the method `word` from `RandomWord` will instruct `word` to give us an English word where the length is between the `SNOWMAN_MIN_WORD_LENGTH` and `SNOWMAN_MAX_WORD_LENGTH`.  Feel free to experiment with setting different values for the constants.
 
-        correct_guesses = 0
-        wrong_guesses = 0
+</details>
 
-        while wrong_guesses < SNOWMAN_WRONG_GUESSES:
-            user_input = get_letter_from_user()
-            # Use the new variable snowman_word instead of the constant variable SNOWMAN_WORD here:
-            if user_input in snowman_word:
-                print("You guessed a letter that's in the word!")
-                correct_guesses += 1
-            else:
-                print(f"The letter {user_input} is not in the word")
-                wrong_guesses += 1
+We no longer need a hardcoded constant variable since we have a way to get random words. Replace the constant variable `SNOWMAN_WORD` in the conditional test inside of the `snowman` function with the new `snowman_word` variable. Our code should now look something like this:
 
-            print_snowman(wrong_guesses)
+```python
 
-    ```
+def snowman():
+    r = RandomWord()
+    snowman_word = r.word(
+      word_min_length=SNOWMAN_MIN_WORD_LENGTH, 
+      word_max_length=SNOWMAN_MAX_WORD_LENGTH)
+
+    correct_guesses = 0
+    wrong_guesses = 0
+
+    while wrong_guesses < SNOWMAN_WRONG_GUESSES:
+        user_input = get_letter_from_user()
+        # Use the new variable snowman_word instead of the constant variable SNOWMAN_WORD here:
+        if user_input in snowman_word:
+            print("You guessed a letter that's in the word!")
+            correct_guesses += 1
+        else:
+            print(f"The letter {user_input} is not in the word")
+            wrong_guesses += 1
+
+        print_snowman(wrong_guesses)
+
+```
 
 ### !callout-info
 
@@ -560,12 +599,11 @@ Printing the value of variables in your code is an easy way to see what's going 
 
 ### !end-callout
 
-
 ### Tracking User Input
 
-So far, all we have done with our user input is check to see if it is in our word. But if we go back to the hypothetical game of snowman with a group of children, we would want to keep track of the letters that have been guessed.  We would also not accept guesses of the same letter that have already been guessed.  
+So far, all we have done with our user input is check to see if it is in our word. But if we go back to the hypothetical game of snowman with multiple players, we would want to keep track of the letters that have been guessed.  We would also not accept guesses of the same letter that have already been guessed.  
 
-Let's start with tracking incorrect guesses.  We know we are going to have a max of SNOWMAN_WRONG_GUESSES, so we could make that many variables and store our incorrect guesses in those variables.  This solution could be made to work, but every time we change the value of the constant we would have to rewrite our code.  Using a `list` gives us a way to store as many or as little wrong guesses as we want and will allow us to make the code flexible and easy to modify.
+Let's start with tracking incorrect guesses.  We know we are going to have a max of `SNOWMAN_WRONG_GUESSES`, so we could make that many variables and store our incorrect guesses in those variables.  This solution could be made to work, but every time we change the value of the constant we would have to rewrite our code.  Using a `list` gives us a way to store as many or as little wrong guesses as we want and will allow us to make the code flexible and easy to modify.
 
 1. Start by adding an incorrect guesses list variable to the `snowman` function:
 
@@ -711,7 +749,7 @@ snowman()
 
 </details>
 
-We've made a lot of changes to our code, execute `snowman.py` as we're coding to test out our new changes. If the code is not behaving as expected, add some debugging print statements to see what is happening. From there, try identifying which lines of code need to be updated to fix it. It's ok if you're code isn't working as described in the lesson. Reach out to Slack with your questions and to get help!
+We've made a lot of updates to our code, execute `snowman.py` as we're coding to test out our new changes. If the code is not behaving as expected, add some debugging print statements to see what is happening. From there, try identifying which lines of code need to be updated to fix it. It's ok if your code isn't working as described in the lesson. Reach out over Slack with your questions and to get help!
 
 ### Using `correct_guesses_list` in `get_letter_from_user`
 
@@ -813,7 +851,7 @@ In the Loops lesson we wrote the helper function `print_snowman` that drew our s
 
     ```
 
-2. Now, instead of using individual variables, we can use the indices of a list to access different parts of the snowman graphic. SNOWMAN_0 is now SNOWMAN_GRAPHIC[0], SNOWMAN_1 we use SNOWMAN_GRAPHIC[1], and so on.  Since the first index of a list is 0, not 1, this means that for element number `x` in the list, the index will be `x - 1`.  Let's update our code to use this new way of accessing each element of the graphic:
+2. Now, instead of using individual variables, we can use the indices of a list to access different parts of the snowman graphic. `SNOWMAN_0` is now `SNOWMAN_GRAPHIC[0]`, `SNOWMAN_1` is now `SNOWMAN_GRAPHIC[1]`, and so on.  Since the first index of a list is 0, not 1, this means that for element number `x` in the list, the index will be `x - 1`.  Let's update our code to use this new way of accessing each element of the graphic:
 
     ```python
 
