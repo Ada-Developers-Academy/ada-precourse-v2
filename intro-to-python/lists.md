@@ -598,7 +598,7 @@ Let's start with tracking incorrect guesses.  We know we are going to have a max
 
     ```
 
-3. In the previous version, we were incrementing a variable `wrong_guesses` each time the user guessed a letter that was not in the word, and then using that variable in the test for our while loop.  We can continue to use this variable, but we can use our list instead and simplify our code.  The number of elements in `wrong_guesses_list` is the number of incorrect guesses, so we can use the length of the list instead of the counter variable.  We get the length of the list by using the `len()` function.  We can also use the length of the list when we call the print_snowman function. Additionally, we can print the incorrect guesses to remind the user of what they have already guessed. Here's the updated version of the function:
+3. In the previous version, we were incrementing a variable `wrong_guesses` each time the user guessed a letter that was not in the word, and then using that variable in the test for our while loop.  We can continue to use this variable, but we can use our list instead and simplify our code.  The number of elements in `wrong_guesses_list` is the number of incorrect guesses, so we can use the length of the list instead of the counter variable.  We get the length of the list by using the `len()` function.  We can also use the length of the list when we call the `print_snowman` function. Additionally, we can print the incorrect guesses to remind the user of what they have already guessed. Here's the updated version of the function:
 
     ```python
 
@@ -795,11 +795,10 @@ In the Loops lesson we wrote the helper function `print_snowman` that drew our s
     ```python
 
     def print_snowman(wrong_guesses_count):
-        snowman_image_start = SNOWMAN_WRONG_GUESSES + 1 - wrong_guesses_count
-        snowman_image_end = SNOWMAN_WRONG_GUESSES + 1
-
-        for i in range(snowman_image_start, snowman_image_end)
-            if i == 1:
+        for i in range(SNOWMAN_WRONG_GUESSES - wrong_guesses_count, SNOWMAN_WRONG_GUESSES)
+            if i == 0:
+                print(SNOWMAN_0)
+            if(i == 1):
                 print(SNOWMAN_1)
             if(i == 2):
                 print(SNOWMAN_2)
@@ -811,35 +810,15 @@ In the Loops lesson we wrote the helper function `print_snowman` that drew our s
                 print(SNOWMAN_5)
             if(i == 6):
                 print(SNOWMAN_6)
-            if(i == 7):
-                print(SNOWMAN_7)
 
     ```
 
-2. Now, instead of using individual variables, we can use the indices of a list to access different parts of the snowman graphic. SNOWMAN_1 is now SNOWMAN_GRAPHIC[0], SNOWMAN_2 we use SNOWMAN_GRAPHIC[1], and so on.  Reminder - the first index of a list is 0, not 1.  That means that for element number `x` in the list, the index will be `x - 1`.  Let's update our code to use this new way of accessing each element of the graphic:
+2. Now, instead of using individual variables, we can use the indices of a list to access different parts of the snowman graphic. SNOWMAN_0 is now SNOWMAN_GRAPHIC[0], SNOWMAN_1 we use SNOWMAN_GRAPHIC[1], and so on.  Since the first index of a list is 0, not 1, this means that for element number `x` in the list, the index will be `x - 1`.  Let's update our code to use this new way of accessing each element of the graphic:
 
     ```python
 
     def print_snowman(wrong_guesses_count):
-        snowman_image_start = SNOWMAN_WRONG_GUESSES + 1 - wrong_guesses_count
-        snowman_image_end = SNOWMAN_WRONG_GUESSES + 1
-
-        for i in range(snowman_image_start, snowman_image_end)
-            print(SNOWMAN_GRAPHIC[i - 1])
-
-    ```
-
-    Notice in the above code that we have `+ 1` and `- 1`.  This is because in the first version if we wanted to draw the whole snowman we needed the math to produce the sequence 1 to 7 because we were using the numbers 1-7 in our constants and this made the code easier to read.  Now, we're using a list, so to draw the whole snowman we need the sequence to be 0 to 6.  We can now simplify some of our math with that in mind.
-
-    ```python
-
-    def print_snowman(wrong_guesses_count):
-        # + 1 and - 1 can be removed from our starting and ending points
-        snowman_image_start = SNOWMAN_WRONG_GUESSES - wrong_guesses_count
-        snowman_image_end = SNOWMAN_WRONG_GUESSES 
-
-        for i in range(snowman_image_start, snowman_image_end)
-            # We no longer need to offset the index by 1
+        for i in range(SNOWMAN_WRONG_GUESSES - wrong_guesses_count, SNOWMAN_WRONG_GUESSES)
             print(SNOWMAN_GRAPHIC[i])
 
     ```
