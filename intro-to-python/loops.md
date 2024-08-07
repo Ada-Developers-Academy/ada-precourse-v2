@@ -681,7 +681,7 @@ SNOWMAN_6 = '-----------'
 
 ## Zero-Based Counting
 
-Notice that the variable names for the element of the snowman drawing starts at 0 with the variable `SNOWMAN_0` and ends at 6 with the variable `SNOWMAN_6`. Often times in programming we use zero-based counting.  We'll dive more into this concept when we go over lists. For now, we'll proceed with our implementation of drawing a snowman based on counting from 0 upwards so if a user has 7 guesses then we'd count the guesses like 0, 1, 2, 3, 4, 5, 6.  
+Notice that the variable names for the element of the snowman drawing starts at 0 with the variable `SNOWMAN_0` and ends at 6 with the variable `SNOWMAN_6`. Often times in programming we use zero-based counting.  We'll dive more into this concept when we go over lists. For now, we'll proceed with our implementation of drawing a snowman based on counting from 0 upwards. So in our game, if a user has 7 guesses then we'd count the guesses like 0, 1, 2, 3, 4, 5, 6.  
 
 ### !end-callout
 
