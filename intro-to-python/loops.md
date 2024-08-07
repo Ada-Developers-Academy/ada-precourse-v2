@@ -667,16 +667,24 @@ snowman()
 Add these string ASCII snowman drawings as constant variables to the top of `snowman.py`. Notice that the number of constant variables that make up the drawing is the same as SNOWMAN_WRONG_GUESSES. For each wrong guess, we will want to add a new element to the drawing:
 
 ```python
-SNOWMAN_1 = '*   *   *  '
-SNOWMAN_2 = ' *   _ *   '
-SNOWMAN_3 = '   _[_]_ * '
-SNOWMAN_4 = '  * (")    '
-SNOWMAN_5 = '  \( : )/ *'
-SNOWMAN_6 = '* (_ : _)  '
-SNOWMAN_7 = '-----------'
+SNOWMAN_0 = '*   *   *  '
+SNOWMAN_1 = ' *   _ *   '
+SNOWMAN_2 = '   _[_]_ * '
+SNOWMAN_3 = '  * (")    '
+SNOWMAN_4 = '  \( : )/ *'
+SNOWMAN_5 = '* (_ : _)  '
+SNOWMAN_6 = '-----------'
 ```
 
-Our end goal is to have a helper function called `print_snowman` that we can pass the current `wrong_guesses` value to and it will draw the appropriate amount of the snowman.  Let's start by writing `print_snowman` which will have a parameter called `wrong_guesses_count` which will draw a specific element of the snowman based on a passed value.  For example, if we pass the function 7, we want the function to draw SNOWMAN_7.  This will seem slightly contrived, but it is just a starting place.
+### !callout-info
+
+## Zero-Based Counting
+
+Notice that the variable names for the element of the snowman drawing starts at 0 with the variable `SNOWMAN_0` and ends at 6 with the variable `SNOWMAN_6`. Often times in programming we use zero-based counting.  We'll dive more into this concept when we go over lists. For now, we'll proceed with our implementation of drawing a snowman based on counting from 0 upwards so if a user has 7 guesses then we'd count the guesses like 0, 1, 2, 3, 4, 5, 6.  
+
+### !end-callout
+
+Our end goal is to have a helper function called `print_snowman` that we can pass the current `wrong_guesses` value to and it will draw the appropriate amount of the snowman.  Let's start by writing `print_snowman` which will have a parameter called `wrong_guesses_count` which will draw a specific element of the snowman based on a passed value.  For example, if we pass the function 0, we want the function to draw SNOWMAN_0.  This will seem slightly contrived, but it is just a starting place.
 
 <br> 
 
@@ -685,7 +693,9 @@ Our end goal is to have a helper function called `print_snowman` that we can pas
 
 ```python
 def print_snowman(wrong_guesses_count):
-    if wrong_guesses_count == 1:
+    if wrong_guesses_count == 0:
+        print(SNOWMAN_0)
+    elif wrong_guesses_count == 1:
         print(SNOWMAN_1)
     elif wrong_guesses_count == 2:
         print(SNOWMAN_2)
@@ -697,8 +707,6 @@ def print_snowman(wrong_guesses_count):
         print(SNOWMAN_5)
     elif wrong_guesses_count == 6:
         print(SNOWMAN_6)
-    elif wrong_guesses_count == 7:
-        print(SNOWMAN_7)
 ```
 
 </details>
@@ -725,11 +733,10 @@ The range function is _exclusive_, which means it goes up to but does not includ
 
   ```python
   def print_snowman(wrong_guesses_count):
-      snowman_image_start = SNOWMAN_WRONG_GUESSES + 1 - wrong_guesses_count
-      snowman_image_end = SNOWMAN_WRONG_GUESSES + 1
-
-      for i in range(snowman_image_start, snowman_image_end)
-          if i == 1:
+      for i in range(SNOWMAN_WRONG_GUESSES - wrong_guesses_count, SNOWMAN_WRONG_GUESSES):
+          if i == 0:
+              print(SNOWMAN_0)
+          elif i == 1:
               print(SNOWMAN_1)
           elif i == 2:
               print(SNOWMAN_2)
@@ -741,8 +748,6 @@ The range function is _exclusive_, which means it goes up to but does not includ
               print(SNOWMAN_5)
           elif i == 6:
               print(SNOWMAN_6)
-          elif i == 7:
-              print(SNOWMAN_7)
   ```
 
    </details>
