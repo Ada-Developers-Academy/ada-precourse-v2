@@ -177,7 +177,7 @@ A solution for this problem can be broken into the following steps:
 
 <!--optional-->
 ##### !explanation
-Three examples of working implementations:
+Examples of working implementations:
 
 ```python
 def find_index_of_item(item, list_of_items):
@@ -295,7 +295,7 @@ A solution for this problem can be broken into the following steps:
 <!--optional-->
 ##### !explanation
 
-Three examples of working implementations:
+Examples of working implementations:
 
 ```python
 
@@ -436,7 +436,7 @@ A solution for this problem can be broken into the following steps:
 <!--optional-->
 ##### !explanation
 
-Three examples of working implementations:
+Examples of working implementations:
 
 ```python
 
