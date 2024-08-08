@@ -9,7 +9,7 @@ At the end of this lesson students will be able to:
 * Use and understand dictionaries
     * Create new dictionaries
     * Access key-value pairs in dictionaries
-    * update values of key-value pairs in dictionaries
+    * Update values of key-value pairs in dictionaries
 * Combine dictionaries and lists
 
 ## Introduction
@@ -20,7 +20,7 @@ In this section we will be building on the code you wrote in the previous lesson
 
 ### Dictionaries, A New Kind of Data Structure
 
-In the lists lesson we used our first complex data structure.  Lists are powerful and useful tools, but they do have some limitations.  Say we want to use our list to store all of the pieces of an address.  We could of course use several variables to store the city, state, zip code, street address, but as we saw in the list lesson, being able to store all of the information in one variable can make it simpler to access the data and pass the data to functions.  If we use a list, we can store each of these pieces of information, but to access them we need to remember the index where we stored them.  
+In the lists lesson we used our first data structure.  Lists are powerful and useful tools, but they do have some limitations.  Say we want to use our list to store all of the pieces of an address.  We could use several variables to store the city, state, zip code, street address, but as we saw in the list lesson, being able to store all of the information in one variable can make it simpler to access the data and pass the data to functions.  We can use a list to store each of these pieces of information, but we would need to remember the location where we stored them so we could access the elements by their index.  
 
 We could set up constants like:
 
@@ -30,35 +30,38 @@ CITY_INDEX = 1
 
 address=["Washington", "Seattle"]
 
-print( f"We live in {address[CITY_INDEX]}, \
-    {address[STATE_INDEX]}.")
+print( f"We live in {address[CITY_INDEX]}, {address[STATE_INDEX]}.")
 ```
 
 Using constants to remember the indices would make the code easier to read, but it's still not ideal. Enter dictionaries!
 
-Dictionaries associate each piece of data with a unique key, and then we can use the key to access the data in the dictionary. In the case of our address data structure, we can just make the keys meaningful words like "city" and "state", and then in our code whenever we want to access these pieces of the address, we can use the appropriate key to grab the data we want from the dictionary.
+Dictionaries __associate__ each piece of data with a unique key, and then we can use the key to access the data's value in the dictionary. In the case of our address data structure, we can use descriptive strings like "city" and "state", and then in our code whenever we want to access these pieces of the address, we can use the appropriate key to grab the data we want from the dictionary.
 
 ## Vocabulary and Syntax
 
 | Vocab          | Definition                                                    | Synonyms  | How to Use in a Sentence                                                      |
 | -------------- | ------------------------------------------------------------- | --------- | ----------------------------------------------------------------------------- |
-| dictionary | A collection that associates unique keys with values | hash table | "This dictionary uses planet names as the key and the value is the distance from the sun." |
-| key | A string.  All of the keys in a dictionary must be unique. | address | "The keys for the dictionary are all the planets, 'mercury', 'venus', 'mars', and so on." |
-| value | A piece of data of any possible type. | content | "The value for the key 'mercury' is '36 million miles'."|
+| dictionary | A collection that associates unique keys with values | hash table, associative array | "This dictionary uses a planet name as the key and the value is its distance from the sun." |
+| key | A key is used to retrieve a value stored in a dictionary. Keys in a dictionary must be unique. | address | "The keys for the dictionary are all the planets, 'mercury', 'venus', 'mars', and so on." |
+| value | A piece of data of any possible type. Values in a dictionary, unlike keys, are not necessarily unique. | content | "The value for the key 'mercury' is '36 million miles'."|
+
+Let's look at some Python syntax related to dictionaries. The snippet below shows how we can create an empty dictionary, create a dictionary with key-value pairs in it, add a key-value pair to a dictionary, and how to access a value from a dictionary with a key.
 
 ```python
 
 # Syntax for creating an empty dictionary
-first_dict = {}
+empty_dict = {}
 
 # Syntax for creating a dictionary with content
-planet_dict = {"mercury":"36 million miles", 
-"venus":"67 million miles"}
+planet_dict = {
+  "mercury":"36 million miles", 
+  "venus":"67 million miles"
+}
 
 # Adding a new key-value pair to an existing dictionary
 planet_dict["mars"] = "142 million miles"
 
-# Accessing a key-value pair
+# Accessing a value using a key
 distance = planet_dict["venus"]
 # distance = "67 million miles"
 
@@ -81,7 +84,7 @@ adas_address = {
 }
 ```
 
-Notice that `adas_address` is a *heterogeneous* dictionary. The values paired with `"name"`, `"city"`, and `"state"` are *strings*. In contrast, the `"street"` value is a *list* holding the first and second lines of the address, and the `"zip_code"` is an *integer*.
+Notice that `adas_address` is a *heterogeneous* dictionary. The values associated with `"name"`, `"city"`, and `"state"` are *strings*. In contrast, the key `"street"` is associated with a value that is a *list* that holds the first and second lines of the address, and the key `"zip_code"` is associated with an *integer*.
 
 *Heterogeneous* dictionaries are often used to group data with different data types together. Later in the core curriculum, we will learn about classes and objects and how they are similarly used to group and store data with different data types.
 
@@ -118,7 +121,7 @@ Now that all the values are *integers*, it is easy to iterate over the `planet_d
 * type: code-snippet
 * language: python3.6
 * id: 9af1ebe0-a2ec-42fb-b65f-479bd6e603e1
-* title: Basic Dictionary Interactions
+* title: Getting a Value from a Dictionary
 * points: 1
 * topics: python, dictionaries
 
@@ -185,22 +188,15 @@ A solution for this problem can be broken into the following steps:
 <!--optional-->
 ##### !explanation
 
-Two working implementations:
+An example solution:
 
 ```python
 
 def get_value_from_dictionary(dict, key):
     if key in dict:
         return dict[key]
-    else:
-        return None
 
-
-def get_value_from_dictionary(dict, key):
-    try:
-        return dict[key]
-    except KeyError:
-        return None
+    return None
 
 ```
 
@@ -224,7 +220,7 @@ def get_value_from_dictionary(dict, key):
 ##### !question
 
 Write a function `dict_counter` that takes two arguments, a dictionary and a key that may or may  not be in the dictionary.  The function has the following behavior:
-1. If the key is in the dictionary, increment the value associated with that key by 1.  
+1. If the key is in the dictionary, increment the integer value associated with that key by 1.  
 1. If the key is not in the dictionary, set the value for that key to 1.
 1. Return the updated dictionary.
 
@@ -289,7 +285,7 @@ A solution for this problem can be broken into the following steps:
 <!--optional-->
 ##### !explanation
 
-Two working implementations:
+An example solution:
 
 ```python
 
@@ -297,15 +293,6 @@ def dict_counter(dict, key):
     if key in dict:
         dict[key] += 1
     else:
-        dict[key] = 1
-
-    return dict
-
-
-def dict_counter(dict, key):
-    try:
-        dict[key] += 1
-    except KeyError:
         dict[key] = 1
 
     return dict
@@ -414,10 +401,9 @@ def build_a_dictionary(keys, values):
         for index in range(len(keys)):
             result[keys[index]] = values[index]
         return result
-    else:
-        return None
-    
 
+    return None
+    
 ```
 
 ##### !end-explanation
@@ -434,10 +420,10 @@ The last piece of our snowman game is displaying the word with the letters that 
 
 So far we have:
 
- *  The word 
+ *  The secret word 
  *  The list of correctly guessed letters  
  
-Our end goal is to display each letter of the word with an underscore, or '_' character, if the letter has not yet been guessed and the correct letter if it has been guessed.
+Our end goal is to display each letter of the word with an underscore `_` if the letter has not yet been guessed and display the correct letter if it has been guessed.
 
 ### Building a Word Dictionary
 
@@ -445,18 +431,19 @@ Let's start by taking a look at the data structure that we're using to hold the 
 
 ```python
 
-# assume we have a variable 'letter' that contains the letter that we're curious about
+# assume we have a variable `guessed_letter` that contains the letter that we're curious about
+guessed_letter = "a"
 
-for test_letter in correct_guesses_list:
-    if test_letter == letter:
+for letter in correct_guesses_list:
+    if letter == guessed_letter:
         result = True
 
-# if we didn't find the letter in the list, we can set the result to False.
+# if we didn't find `guessed_letter` in the list, we can set the result to False.
 result = False
 
 ```
 
-You might be saying to yourself, what about the `in` operator?  We can just use the line of code `if letter in correct_guesses_list` to do this same thing, but under the hood, that `in` operator is doing the same search that's written out above here.  Either way, finding things in a list always includes searching through the list one element at a time.  Also, we've got to do some logic work to say if it's in the list, then our user has guessed it, and if it isn't in the list then our user hasn't guessed it.
+You might be saying to yourself, what about the `in` operator?  We can just use the line of code `if guessed_letter in correct_guesses_list` to do this same thing, but under the hood, that `in` operator is doing the same search that's written above here.  Either way, finding things in a list always includes searching through the list one element at a time.  Also, we've got to do some logic work to say if it's in the list, then our user has guessed it, and if it isn't in the list then our user hasn't guessed it.
 
 Luckily for us, we have dictionaries!  Dictionaries allow us to store a value with a key. Let's consider the following:
 * We can put every letter from the secret word into the dictionary and set the initial values to `False`.
@@ -465,13 +452,16 @@ Luckily for us, we have dictionaries!  Dictionaries allow us to store a value wi
 
 The first thing we need to do is convert the secret word `snowman_word` into a dictionary.  Write a helper function `build_word_dict` that takes a string and returns a dictionary, where each unique letter from the word is a key and all of the values are `False`.  
 
+<br>
+
 <details>
-<summary>Write the helper function and when you are finished, compare your code with ours.</summary>
+<summary>Write <code>build_word_dict</code> and when you are finished, compare your code with ours.</summary>
 
 ```python
 
 def build_word_dict(word):
     word_dict = {}
+
     for letter in word:
         word_dict[letter] = False
     return word_dict
@@ -490,28 +480,43 @@ def build_word_dict(word):
     return word_dict
 ```
 
-The end result here will be the same, in the first example any time we find an already existing letter we'll overwrite it, but the values are always the same, so the end result of both of functions above will be the same.
+The end result here will be the same, in the first example any time we encounter a letter that is already in `word_dict` we'll overwrite it, but the values are always the same, so the end result of both of functions above will be the same.
 </details>
 
 ### Using the Word Dictionary
 
-Now that we have the `build_word_dict` function we need to call it in our `snowman()` function and replace the `correct_guesses_list` with the new dictionary that's generated by `build_word_dict`.
+Now that we have the `build_word_dict` function we need to call it in our `snowman()` function and replace the `correct_guesses_list` with the new dictionary that's generated by `build_word_dict`. 
+
+We will need to:
+1. Remove the `correct_guesses_list` since we won't be using it anymore
+2. Invoke `build_word_dict` and pass in `snowman_word` as an argument. We should use a variable called `snowman_dict` to capture the return value from calling the function.
+3. Refactor the call to `get_letter_from_user` so that the first argument is `snowman_dict` instead of `correct_guesses_list`, but we'll still need `wrong_guesses_list` so we can leave the second argument as is.
+4. Now that we have `snowman_dict`, we should use it to see if a user has correctly guessed a letter that is in the secret `snowman_word`  
+5. If the user's guess is correct, then we need to update `snowman_dict` dictionary. Before a correct guess, a key (represented by a letter) has a value set to `False`. After a correct guess, we need to update the key's value to `True`
+   1. Since we're using `snowman_dict` instead of `correct_guesses_list`, we can now remove the line of code `correct_guesses_list.append(user_input)` 
+
+<br>
 
 <details>
-<summary> Edit your `snowman()` function and when you are finished, compare your edits to ours.</summary>
+<summary> When you are finished editing <code>snowman()</code>, compare your edits to ours.</summary>
+
+In this solution, we have commented out obsolete lines of code to show where changes were made. Feel free to delete the lines of obsolete code in your own version to keep your solution uncluttered. Also note that we have changed the function call to `get_letter_from_user`, but we haven't changed the implementation of the function body yet so we should expect this function to be in a broken state. 
 
 ```python
 
 def snowman():
     r = RandomWord()
-    snowman_word = r.word(word_min_length=SNOWMAN_MIN_WORD_LENGTH, 
-                          word_max_length=SNOWMAN_MAX_WORD_LENGTH)
+    snowman_word = r.word(
+      word_min_length=SNOWMAN_MIN_WORD_LENGTH, 
+      word_max_length=SNOWMAN_MAX_WORD_LENGTH)
+
     print(f"debug info: {snowman_word}")
-    #correct_guesses_list = []
+
+    # correct_guesses_list = []
     snowman_dict = build_word_dict(snowman_word)
     wrong_guesses_list = []
     while len(wrong_guesses_list) < SNOWMAN_WRONG_GUESSES:
-        #user_input = get_letter_from_user(correct_guesses_list, wrong_guesses_list)
+        # user_input = get_letter_from_user(correct_guesses_list, wrong_guesses_list)
         # This function call won't work yet, the next step is to update this function
         # to use the word dictionary instead of the list we were using before.
         user_input = get_letter_from_user(snowman_dict, wrong_guesses_list)
@@ -521,7 +526,7 @@ def snowman():
                                        # Checking this way is faster than looking it up in
                                        # the word!
             print("You guessed a letter that's in the word!")
-            #correct_guesses_list.append(user_input)
+            # correct_guesses_list.append(user_input)
             snowman_dict[user_input] = True
         else:
             print(f"The letter {user_input} is not in the word")
@@ -533,23 +538,25 @@ def snowman():
 
 </details>
 
-The next step is to update our helper function `get_letter_from_user` to use the word dictionary instead of the list of correct letters.  Right now, we're only telling a user if they've guessed a letter before, but while we're updating this function let's modify it to tell the user if they've guessed a letter before, and if that letter is in the word or not.  There is one important change to be aware of, right now we're just checking if the letter the user guessed is in the list of correct letters.  If we do that with the dictionary, we'll end up with a logical error!  Consider these code snippets:
+The next step is to update our helper function `get_letter_from_user` to use the word dictionary instead of the list of correct letters.  Right now, we're only telling a user if they've guessed a letter before, but while we're updating this function let's modify it to tell the user if they've guessed a letter before, __and__ if that letter is in the word or not.  
+
+There is one important change to be aware of, right now we're just checking if the letter the user guessed is in the list of correct letters.  If we do that with the dictionary, we'll end up with a logical error!  Consider these code snippets:
 
 ```python
 
-#snippet from the version of get_letter_from_user:
+# Snippet from the previous version of get_letter_from_user:
 
 #...
-elif user_input_string in list1 or user_input_string in list2:
+elif user_input_string in wrong_guesses_list or user_input_string in correct_guesses_list:
     print("You already guessed that letter")
 #...
 
-# assume we replace the parameter list1 in the function call with the parameter `word_dict`
+# assume we replace the parameter `correct_guesses_list` in the function call with the parameter `word_dict`
 # if we just swap it in we'll end up with a logical error:
 
 #...
-elif user_input_string in word_dict or user_input_string in list2:
-    print("You already guessed that letter")
+elif user_input_string in wrong_guesses_list or user_input_string in word_dict:
+    print("You have already guessed that letter")
 #...
 
 ```
@@ -559,26 +566,29 @@ The logical error comes in because all of the letters from the word are in the w
 ```python
 
 #...
-elif (user_input_string in word_dict and word_dict[user_input_string]) or user_input_string in list2:
-    print("You already guessed that letter")
+elif user_input_string in wrong_guesses_list or (user_input_string in word_dict and word_dict[user_input_string]):
+    print("You have already guessed that letter")
 #...
 
 ```
 
+Update `get_letter_from_user` helper function and make the following changes:
+1. Change the first parameter to be the word dictionary instead of a list
+2. Add additional feedback to the user when they attempt to guess a letter that they have already guessed that informs them if the letter is in the word or not.
+
+<br>
+
 <details>
 <summary>
-Update your `get_letter_from_user` helper function and make the following changes:
-1. Change the first parameter to be the word dictionary instead of a list
-1. Add additional feedback to the user when they attempt to guess a letter that they have already guessed that informs them if the letter is in the word or not.
-
-When you are finished, compare your code with ours:
+When you are finished updating <code>get_letter_from_user</code>, compare your code with ours:
 </summary>
 
 ```python
 
-def get_letter_from_user(word_dict, list2):
+def get_letter_from_user(word_dict, wrong_guesses_list):
     valid_input = False
     user_input_string = None
+
     while not valid_input:
         user_input_string = input("Guess a letter: ")
         if not user_input_string.isalpha():
@@ -587,7 +597,7 @@ def get_letter_from_user(word_dict, list2):
             print("You can only input one letter at a time!")
         elif user_input_string in word_dict and word_dict[user_input_string]:
             print("You already guessed that letter and it's in the word!")
-        elif user_input_string in list2:
+        elif user_input_string in wrong_guesses_list:
             print("You already guessed that letter and it's not in the word!")
         else:
             valid_input = True
@@ -600,32 +610,18 @@ def get_letter_from_user(word_dict, list2):
 
 ### Displaying User Progress
 
-Now we're going to get back to our original goal, displaying each letter of the word with an '_' character if the letter has not yet been guessed and the correct letter if it has been guessed.  For example, if the word is `pepper` and our user has guessed the letters `p`, and `r`, we want to print out `p _ p p _ r`.  Each time they guess a correct letter, we want to print out an updated version of this string.  We're going to start by writing a helper function that generates and returns this string.  This function will need to:
+Now we're going to get back to our original goal, displaying each letter of the word with an underscore `_` if the letter has not yet been guessed and the correct letter if it has been guessed.  For example, if the word is `pepper` and our user has guessed the letters `p`, and `r`, we want to print out `p _ p p _ r`.  Each time they guess a correct letter, we want to print out an updated version of this string.  We're going to start by writing a helper function that generates and returns this string.  This function will need to:
 
 * Create an empty string
 * Loop over each letter in the word
 * Check if the letter has been guessed or not
     * If the value of "guessed" is `True` add the letter to the string
-    * If the value of "guessed" is `False` add '_' to the string
+    * If the value of "guessed" is `False` add `_` to the string
 * Add 1 space between each letter/underscore
 
-<!--BEGIN CHALLENGE-->
-
-### !challenge
-
-* type: code-snippet
-* language: python3.6
-* id: 8b55c0e8-f7db-45e3-8fdc-ae6a70e0fb32
-* title: Generate Word Progress String
-* points: 1
-* topics: python, dictionaries
-
-##### !question
-
-Write a helper function `generate_word_progress_string` that takes two parameters, a word and a dictionary where each letter in the word is a key and the values are `True` or `False`.  The function returns a string that represents the word, with spaces between each letter.  For each letter, if the value in the dictionary is `True`, the letter is displayed.  If the value in the dictionary is `False`, the letter is replaced with a `_` character.
+In `snowman.py` write a helper function `generate_word_progress_string` that takes two parameters, a word and a dictionary where each letter in the word is a key and the values are `True` or `False`.  The function returns a string that represents the word, with spaces between each letter.  For each letter, if the value in the dictionary is `True`, the letter is displayed.  If the value in the dictionary is `False`, the letter is replaced with a `_` character.
 
 Example inputs and outputs:
-
 
 |input|output|
 |--|--|
@@ -633,46 +629,24 @@ Example inputs and outputs:
 |`word="tiger"` <br/> `word_dict={"e":False, "g": False, "i": False, "r": False, "t": False}`|`"_ _ _ _ _"`|
 |`word="swamp"` <br/> `word_dict={"a":True, "m": True, "p": True, "s": True, "w": True}`|`"s w a m p"`|
 
-<!--This can be regular **Markdown**-->
+### !callout-info
 
-##### !end-question
+## Write Some Code, Check the Code, Repeat
 
-##### !placeholder
+As you're writing your implementation, be sure to call the helper function often so that you can see the output and confirm that it's working or not working. It's good practice to write a line or logical unit of code and then run it to check that you are getting expected output before moving on to the next line of code. It is easier to identify where a bug is in one or two lines of code versus ten lines of code.
 
-```python
+If you run into a bug, add debugging print statements or walk through the code line by line and make predictions about what should happen versus what actually happens to help you resolve the bug. 
 
-def generate_word_progress_string(word, word_dict):
-    pass
+Finally, recall that the helper function should __return__ a string. When you invoke the function, if you're not seeing any output printed to the terminal you will need to print the value returned from `generate_word_progress_string`.
 
-```
+As always, feel free to reach out over Slack if you need help!
 
-##### !end-placeholder
+### !end-callout
 
-##### !tests
-```python
+<br>
 
-import unittest
-from main import generate_word_progress_string
-
-
-class TestGetWordProgressString(unittest.TestCase):
-    def test_mixed(self):
-        self.assertEqual(generate_word_progress_string("pepper", {"p":True, "e": False, "r": False}), "p _ p p _ _")
-
-    def test_all_false(self):
-        self.assertEqual(generate_word_progress_string("tiger", {"e":False, "g": False, "i": False, "r": False, "t": False}), "_ _ _ _ _")
-    
-    def test_all_true(self):
-        self.assertEqual(generate_word_progress_string("swamp", {"a":True, "m": True, "p": True, "s": True, "w": True}), "s w a m p")
-
-
-```
-##### !end-tests
-
-<!--optional-->
-##### !explanation
-
-Here is our implementation:
+<details>
+<summary>Here is our implementation.</summary>
 
 ```python
 
@@ -695,11 +669,7 @@ def generate_word_progress_string(word, word_dict):
     
 ```
 
-##### !end-explanation
-
-### !end-challenge
-
-<!--END CHALLENGE-->
+</details>
 
 Now that we have the helper function `generate_word_progress_string` working, let's revisit our original goal.  Right now we're returning the progress string, but what we really want to do is display it. Let's switch to printing out the result instead of returning it. We'll rename our function to `print_word_progress_string`:
 
@@ -712,12 +682,12 @@ def print_word_progress_string(word, word_dict):
     for elem in word:
        # ...
        
-    #return output_string
+    # return output_string
     print(output_string)
 
 ```
 
-### Getting Word Guessing Progress
+### Get Game Progress
 
 The helper function `print_word_progress_string` provides a visual display of the players progress towards guessing the word. We also need to write a function that indicates whether or not all the letters of the word have been guessed. We will name this function `get_word_progress`. The function `get_word_progress` should return `True` if all the letters have been guesses, and `False` otherwise.
 
@@ -727,20 +697,6 @@ This function will need to:
 * Loop over each letter (key) in the `word_dict`
     * If `word_dict[letter]` is `False`, return `False`
 * If the loop terminates without encountering a `False` value, return `True`
-
-
-<!--BEGIN CHALLENGE-->
-
-### !challenge
-
-* type: code-snippet
-* language: python3.6
-* id: df6395a3-bf75-4fa0-a8ab-b39e1d5f707b
-* title: Get Word Progress
-* points: 1
-* topics: python, dictionaries
-
-##### !question
 
 Write a helper function `get_word_progress(word, word_dict)` that takes two parameters, a word and a dictionary where each letter in the word is a key and the values are `True` or `False`.  The function returns `True` if every value in the dictionary is `True`. The function returns `False` if any of the values in the dictionary are `False`.
 
@@ -752,49 +708,10 @@ Example inputs and outputs:
 |`word="tiger"` <br/> `word_dict={"e":False, "g": False, "i": False, "r": False, "t": False}`|`False`|
 |`word="swamp"` <br/> `word_dict={"a":True, "m": True, "p": True, "s": True, "w": True}`|`True`|
 
-<!--This can be regular **Markdown**-->
+<br>
+<details>
 
-##### !end-question
-
-##### !placeholder
-
-```python
-
-def get_word_progress(word, word_dict):
-    pass
-
-```
-
-##### !end-placeholder
-
-##### !tests
-```python
-
-import unittest
-from main import get_word_progress
-
-
-class TestGetWordProgress(unittest.TestCase):
-    def test_mixed_first_true(self):
-        self.assertEqual(get_word_progress("pepper", {"p":True, "e": False, "r": False}), False)
-
-    def test_mixed_last_true(self):
-        self.assertEqual(get_word_progress("pepper", {"p":False, "e": False, "r": True}), False)
-
-    def test_all_false(self):
-        self.assertEqual(get_word_progress("tiger", {"e":False, "g": False, "i": False, "r": False, "t": False}), False)
-    
-    def test_all_true(self):
-        self.assertEqual(get_word_progress("swamp", {"a":True, "m": True, "p": True, "s": True, "w": True}), True)
-
-
-```
-##### !end-tests
-
-<!--optional-->
-##### !explanation
-
-Here is our implementation:
+<summary>Here is our implementation.</summary>
 
 ```python
 
@@ -806,11 +723,7 @@ def get_word_progress(word, word_dict):
     
 ```
 
-##### !end-explanation
-
-### !end-challenge
-
-<!--END CHALLENGE-->
+</details>
 
 ### Snowman Project
 
@@ -830,4 +743,4 @@ Game Description:
 
 ## Summary
 
-Congratulations, you wrote two fully functional, interactive, playable command line games and you have completed the Ada pre-course curriculum.  We encourage you to continue to explore programming between now and when you start at Ada, in whatever form appeals to you.  If you're looking for some ideas, consider taking these projects and expanding them! Some ideas include building a dashboard for your user where they can choose the game they want to play, or expanding Snowman to a 'Wheel of Fortune' type game!
+Congratulations, you wrote two fully functional, interactive, playable command line games and you have completed the Ada Precourse curriculum!  We encourage you to continue to explore programming between now and when you start at Ada, in whatever form appeals to you.  If you're looking for some ideas, consider taking these projects and expanding them! Some ideas include building a dashboard for your user where they can choose the game they want to play, or expanding Snowman to a 'Wheel of Fortune' type game!
