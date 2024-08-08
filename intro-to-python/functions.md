@@ -565,8 +565,8 @@ The only check we have to do on the letter is check if it's in the word or not. 
 Our requirements for the `snowman` function are:
 1.  Use `get_letter_from_user` to get a letter
 1.  Check if the letter is in `SNOWMAN_WORD` 
-    - print "Letter found" if the letter is in `SNOWMAN_WORD`.
-    - print "Letter not found" if it's not in `SNOWMAN_WORD`.
+    - print "You guessed a letter that's in the word!" if the letter is in `SNOWMAN_WORD`.
+    - print "The letter [whatever letter is guessed] is not in the word" if it's not in `SNOWMAN_WORD`.
 1.  Return `True` if the letter is in `SNOWMAN_WORD`, otherwise return `False` if it's not in `SNOWMAN_WORD`.
 
 Use the outlined requirements above to write the `snowman` function in `snowman.py`. We should call the `snowman` function and execute the file to check that our logic is working as we expect it to.
@@ -590,12 +590,12 @@ def get_letter_from_user():
     return letter
 
 def snowman():
-    user_letter = get_letter_from_user()
-    if user_letter in SNOWMAN_WORD:
-        print("Letter found")
+    user_input = get_letter_from_user()
+    if user_input in SNOWMAN_WORD:
+        print("You guessed a letter that's in the word!")
         return True
     else:
-        print("Letter not found")
+        print(f"The letter {user_input} is not in the word")
         return False
 
 # Since the snowman function calls get_letter_from_user, we should test that snowman works as we expect it to by calling it

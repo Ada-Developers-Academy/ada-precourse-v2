@@ -1,6 +1,7 @@
 # Lists
 
-<iframe src="https://adaacademy.hosted.panopto.com/Panopto/Pages/Embed.aspx?pid=c65a7cda-04ef-4f27-acd7-aede010488c7&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=true&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+<!-- PRECOURSE UPDATE -->
+<!-- <iframe src="https://adaacademy.hosted.panopto.com/Panopto/Pages/Embed.aspx?pid=c65a7cda-04ef-4f27-acd7-aede010488c7&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=true&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe> -->
 
 ## Learning Goals
 
@@ -17,71 +18,79 @@ At the end of this lesson students will be able to:
 
 ### [Textbook for this section](https://colab.research.google.com/drive/1TK9Enhh0mITZ1649l-r4_gzeg2B3eRRu?usp=sharing)
 
-In this section we will be building on the code you wrote in the previous lesson [Loops](loops.md).  If you would like to look at our example code for that lesson, you can find it [here](resources/src/loops/game-loop.md).
+In this section we will be building on the code you wrote in the [Loops](loops.md) lesson.  If you would like to look at our example code for that lesson, you can find it [here](resources/src/loops/game-loop.md).
 
 ### Introducing Lists, Our First Data Structure!
 
-Variables are awesome!  We can store data, retrieve it, update it and use it in any way we like.  So far, though, are variables have been limited because they have only been able to hold one piece of data.  Imagine we want to write a program to ask for and then display the user's top five favorite flavors of ice cream.  We can store each flavor in it's own variable and then use those variables in our display.  
+Variables are awesome!  We can store data, retrieve it, update it and use it in any way we like.  So far, though, variables have been limited because they have only been able to hold one piece of data.  Imagine we want to write a program to ask for and then display the user's top five favorite flavors of ice cream.  We can store each flavor in it's own variable and then use those variables in our display.  
 
 What happens when we want to modify our program to store our user's top 10 favorite flavors?  We would have to add more variables and update the program to use those new variables.  _Lists_ change all of this!  Lists are a _data structure_ that can hold multiple pieces of data and we can access the data numerically starting with 0.  Lets go back to our ice cream example.  If we use a list to store our ice cream flavors, we can use one variable and then as our user inputs their favorite flavors, we can add the new flavor to the list!  
 
-By using a list, we can store as many ice cream flavors as we want.  Also, python provides us with ways to easily loop through all of the elements in a list so we can use a loop to display all of the flavors, which will simplify our code even further!  
+By using a list, we can store as many ice cream flavors as we want. Also, Python provides us with ways to easily loop through all of the elements in a list so we can use a loop to display all of the flavors, which will simplify our code even further! Take a look at the following block of code. It repeatedly asks a user to input a flavor of ice cream they like and adds that flavor to a list of ice cream flavors. The code will stop asking a user to input an ice cream flavor when a user inputs the string "done" and then the code loops over the ice cream flavors one at a time and prints them out. 
 
 ```python
 
 def favorite_flavors():
-    icecream_flavors = []
+    ice_cream_flavors = []
     flavor = ""
-    while not flavor == "done":  # this loop will run until the
-        # user types in the word "done"
-        flavor = input("What is an ice cream flavor that you like? ") # ask for user input
-        if not flavor == "done":         # add all flavors except for done
-            # to append something to a list means to add that thing to the end of the list
-            icecream_flavors.append(flavor)
 
-    for flavor in icecream_flavors:  # this loop will iterate over each element
-        # in the list and store them one at a time
-        # in the variable flavor
+    # this loop will run until the user types in the word "done"
+    while not flavor == "done":  
+        flavor = input("What is an ice cream flavor that you like? ") 
+        # add all flavors except for done
+        if not flavor == "done":
+            # add the user's flavor to the end of the list
+            ice_cream_flavors.append(flavor)
+
+    # this loop will iterate over each element in the list
+    for flavor in ice_cream_flavors:
+        # the looping variable called flavor references each flavor in the list one at a time 
         print(f"{flavor} is a great ice cream flavor!")
 
-    return icecream_flavors
-
+    return ice_cream_flavors
 
 favorite_flavors()
-
 ```
-
 
 ## Vocabulary and Syntax
 
 | Vocab          | Definition                                                    | Synonyms  | How to Use in a Sentence                                                      |
 | -------------- | ------------------------------------------------------------- | --------- | ----------------------------------------------------------------------------- |
 | data structure| A collection of data that follows a set of rules for modifying and accessing the data.  Python provides four built in data structures, _lists_, _dictionaries_, _tuples_ and _sets_.  This curriculum will cover lists and dictionaries.     | Collection      | "We organize our collection of students into a list data structure" |
-| list      | a data structure consisting of a collection of elements (values or variables), each identified by at least one array index or key | Array | "We loop through the list and print out each value"    |
-| index      |The position of an element in a _sequence type_, that is, a type that stores data in order.  In Python, strings and lists are examples of sequence types.  In Python indexes start at 0. | Key | "We get the 1st element at index 0."    |
-| package      | A collection of modules distributed together  | Egg | "The wonderwords package can give us random words."    |
-|  module      | A file containing python code.  | Library | "This module has functions for calculating taxes."    |
+| list      | A data structure consisting of a collection of elements (values or variables), each identified by at least one array index or key | Array | "We loop through the list and print out each value"    |
+| index      |The position of an element in a _sequence type_, that is, a type that stores data in order.  In Python, strings and lists are examples of sequence types.  In Python indices start at 0. | Key | "We get the 1st element at index 0."    |
+| module      | A file containing Python code.  | Library | "This module has functions for calculating taxes."    |
+| package      | A collection of modules distributed together  | N/A | "We can add the wonderwords package to our project and use it to get random words."    |
+
+Before we get into some practice problems, let's look at some Python syntax related to lists. The snippet below shows how we can:
+
+1. create an empty list
+2. create a list with values in it
+3. add a value to a list with the `append` method
+4. access elements by their indices using square brackets 
+5. loop through a list's elements. 
 
 ```python
+# creating a new empty list:
+new_empty_list = []
 
-# list syntax
-# creating a new list:
-new_list = []
-new_list_2 = ["lemon", "vanilla", "chocolate"]
+# creating a new list with values in it
+flavors = ["lemon", "vanilla", "chocolate"]
 
 # adding an element to a list:
-new_list_2.append("caramel")
-# new_list_2 = ["lemon", "vanilla", "chocolate", "caramel"]
+flavors.append("caramel")
+# ["lemon", "vanilla", "chocolate", "caramel"]
 
 # accessing an element of a list
-new_list_2[0]
+flavors[0]
 # "lemon"
-new_list_2[3]
+
+flavors[3]
 # "caramel"
 
 # looping through a list
-for i in new_list_2:
-    print(i)
+for flavor in flavors:
+    print(flavor)
 
 # output:
 # lemon
@@ -115,7 +124,7 @@ Example inputs and outputs:
 |input|output|
 |--|--|
 | `item = 3`<br/> `list_of_items = [1, 4, 5, 6, 2, 3, 9]`|`5`|
-| `item = "cat"`<br/> `list_of_items = ["dog", "cow", "goat", "pig"]`|`-1`|
+| `item = "cow"`<br/> `list_of_items = ["dog", "cow", "goat", "pig"]`|`1`|
 | `item = "chocolate"`<br/> `list_of_items = []`|`-1`|
 | `item = -93`<br/> `list_of_items = [1, 30, -93, 99, -3, -93, 25, 16]`|`2`|
 
@@ -168,7 +177,7 @@ A solution for this problem can be broken into the following steps:
 
 <!--optional-->
 ##### !explanation
-Three examples of working implementations:
+Examples of working implementations:
 
 ```python
 def find_index_of_item(item, list_of_items):
@@ -180,13 +189,15 @@ def find_index_of_item(item, list_of_items):
 
 def find_index_of_item(item, list_of_items):
     default = -1
-    count = 0
+    item_index = 0
     for current_item in list_of_items:
         if current_item == item:
-            return count
-        count += 1
+            return item_index
+        item_index += 1
     return default
 
+# Using a while loop here isn't the most concise solution,
+# but any time we can use a for loop, we can also use while loop!
 def find_index_of_item(item, list_of_items):
     default = -1
     count = 0
@@ -195,6 +206,7 @@ def find_index_of_item(item, list_of_items):
             return count
         count += 1
     return default
+    
 ```
 
 ##### !end-explanation
@@ -283,7 +295,7 @@ A solution for this problem can be broken into the following steps:
 <!--optional-->
 ##### !explanation
 
-Three examples of working implementations:
+Examples of working implementations:
 
 ```python
 
@@ -301,15 +313,6 @@ def count_item_in_list(item, list_of_items):
             count += 1
     return count
 
-def count_item_in_list(item, list_of_items):
-    count = 0
-    index = 0
-    while index < len(list_of_items):
-        if list_of_items[index] == item:
-            count += 1
-        index += 1
-    return count
-
 ```
 
 ##### !end-explanation
@@ -317,6 +320,44 @@ def count_item_in_list(item, list_of_items):
 ### !end-challenge
 
 <!--END CHALLENGE-->
+
+### Nested Loops
+
+Say that we have two lists:
+
+```python
+
+list_1 = ["b", "c", "d"] 
+list_2 = ["a", "b", "c", "d", "e"]
+
+```
+
+We want to see if each element in `list_1` also appears in `list_2`. To do this we could compare each element in `list_1` against each element of `list_2`. Nested loops can help us solve this problem! A nested loop means a loop is inside of another loop. For example, we could have a while loop inside a for loop or a for loop inside of a for loop.
+
+Our nested loops to compare the elements of `list_1` against the elements of `list_2` could look like the following:
+
+```python
+def are_elements_contained(list_1, list_2):
+    # Loop over each element of list_1
+    for letter_1 in list_1:
+        found_letter = False
+
+        # Loop over each element of list_2
+        for letter_2 in list_2:
+            if letter_1 == letter_2:
+                found_letter = True 
+
+        # If we leave the inner loop and found_letter is False
+        # then letter_1 from list_1 is not present in list_2
+        if not found_letter:
+            return False
+        
+    return True
+
+list_1 = ["b", "c", "d"]
+list_2 = ["a", "b", "c", "d", "e"]
+print(are_elements_contained(list_1, list_2))
+```
 
 <!--BEGIN CHALLENGE-->
 
@@ -395,7 +436,7 @@ A solution for this problem can be broken into the following steps:
 <!--optional-->
 ##### !explanation
 
-Three examples of working implementations:
+Examples of working implementations:
 
 ```python
 
@@ -415,19 +456,6 @@ def icecream_sundae(flavors, toppings):
             result.append(pair)
     return result
 
-def icecream_sundae(flavors, toppings):
-    result = []
-    flavor_index = 0
-    topping_index = 0
-    while flavor_index < len(flavors):
-        topping_index = 0
-        while topping_index < len(toppings):
-            pair = flavors[flavor_index] + " with " + toppings[topping_index]
-            result.append(pair)
-            topping_index += 1
-        flavor_index += 1
-    return result
-
 ```
 
 ##### !end-explanation
@@ -442,104 +470,159 @@ It's time to jump back into our Snowman Project. Open up your `snowman.py` and l
 
 ### Adding A Random Word
 
-So far our Snowman game has used a constant as the secret word (`SNOWMAN_WORD = 'broccoli'`), but a game that always uses the same word is not a great game.  The code to generate a random English word is outside of the scope of these lessons, although it is an interesting problem and worth spending some time thinking about.  We are going to use a _package_ to come up with a random word.  We are going to use the _wonderwords_ package.  
+So far our Snowman game has used a constant as the secret word (`SNOWMAN_WORD = 'broccoli'`), but a game that always uses the same word is not a great game.  The code to generate a random English word is outside of the scope of these lessons, although it is an interesting problem and worth spending some time thinking about.  We are going to use a _package_ to come up with a random word.  We are going to use the _wonderwords_ package.   
 
-1. Before we can use it in our code, we will need to install the package using the command line.  To install, copypasta this into your terminal:
+Before we can use `wonderwords` in our code, we will need to install the package using the command line. We will need to navigate to the `snowman_project` directory if we're not already there. We can run `pwd` to check where we are and we should see something like `/ada/precourse/snowman_project`. Once we're in the correct directory, run the following commands one by one:
 
-    ```console
-    $ pip3 install wonderwords
-    ```
-2. Once that's done, add the line `from wonderwords import RandomWord` to the top of our file.
-    * This will import the class `RandomWord` for us to use in our code.
-    ```python
-    import random
-    from wonderwords import RandomWord
-    #https://pypi.org/project/wonderwords/
+```console
+$ python3 -m venv venv
+$ source venv/bin/activate
+```
 
-    # ... rest of file
+<!-- prettier-ignore-start -->
+| Terminal Command | Notes |
+| ------------- | ----- |
+| `python3 -m venv venv` | Creates a virtual environment named `venv` for this project |
+| `source venv/bin/activate` | Activates this virtual environment |
+<!-- prettier-ignore-end -->
 
-    ```
-3. Next, add the constants `SNOWMAN_MAX_WORD_LENGTH = 8` and `SNOWMAN_MIN_WORD_LENGTH = 5` with the other constants at the top of the file.    
-4. Then, add the following lines of code to the top of the `snowman` function:
-    ```python
+After running `source venv/bin/activate` to activate our virtual environment, we should now see that each line of our terminal now begins with `(venv)`. This tells us that our virtual environment named `venv` has been activated. Our terminal should now look something like this:
 
-        r = RandomWord()
-        snowman_word = r.word(
-          word_min_length=SNOWMAN_MIN_WORD_LENGTH, 
-          word_max_length=SNOWMAN_MAX_WORD_LENGTH)
+```console
 
-    ```
-    <details>
-    <summary>Curious about these lines of code?  Click here for more!</summary>
-    The first line `r = RandomWord()` gives us a `RandomWord` object to work with.  We will not cover classes and objects in the pre-course material, but they will be a topic we will cover at Ada.  
-    
-    The next line, `snowman_word = r.word(word_min_length=SNOWMAN_MIN_WORD_LENGTH, word_max_length=SNOWMAN_MAX_WORD_LENGTH)` will call the function `word` on the the RandomWord object `r` and give us a random word.  
-    
- We are passing two arguments (word_min_length and word_max_length) using keyword arguments.  Again, we will not be covering these topics further in the pre-course, but they will come up later in the Ada curriculum.  The arguments that we are passing to the function `word` will instruct `word` to give us an English word where the length is between the SNOWMAN_MIN_WORD_LENGTH and SNOWMAN_MAX_WORD_LENGTH.  Feel free to experiment with setting different values for the constants.
-    </details>
+(venv) snowman_project 
 
-5. The last piece of adding our new random word is replacing the constant `SNOWMAN_WORD` in the conditional test inside of the `snowman` function with the new `snowman_word` variable.
+```
 
-    ```python
+### !callout-info
 
-    def snowman():
-        r = RandomWord()
-        snowman_word = r.word(
-          word_min_length=SNOWMAN_MIN_WORD_LENGTH, 
-          word_max_length=SNOWMAN_MAX_WORD_LENGTH)
-        correct_guesses = 0
-        wrong_guesses = 0
-        while wrong_guesses < SNOWMAN_WRONG_GUESSES:
-            user_input = get_letter_from_user()
-            # Using the new variable instead of the constant SNOWMAN_WORD here:
-            if user_input in snowman_word:
-                print("You guessed a letter that's in the word!")
-                correct_guesses += 1
-            else:
-                print(f"The letter {user_input} is not in the word")
-                wrong_guesses += 1
-            print_snowman(wrong_guesses)
+## Virtual Environments
 
-    ```
+At a high level, a virtual environment is an isolated space where you can work on your Python projects. We will create and use virtual environments for almost all Python projects we work on. Feel free to do your own research about virtual environments. For now, we'll focus on the implementation of our Snowman game and delve more into virtual environments later on. 
+
+### !end-callout
+
+After creating and activating our virtual environment, we can install the `wonderwords` package. Since our project requires the `wonderwords` package in order to work, we will add this project requirement to the `requirements.txt` file. We will also learn more about this file and project requirements later on. 
+
+Run the following commands in your terminal, one at a time. Note that `(venv)` is **not** part of the commands we need to run. It is displayed in the command line to indicate to us that our virtual environment is currently activated.
+
+```console
+$ (venv) pip install wonderwords
+$ (venv) pip freeze > requirements.txt
+```
+
+<!-- prettier-ignore-start -->
+| Terminal Command | Notes |
+| ------------- | ----- |
+| `pip install wonderwords` | Install the `wonderwords` package to our virtual environment |
+| `pip freeze > requirements.txt` | Add any installed packages to requirements.txt |
+<!-- prettier-ignore-end -->
+
+Once that's done, add the line `from wonderwords import RandomWord` to the top of `snowman.py`. This will import the class `RandomWord` for us to use in our code.
+
+```python
+import random
+from wonderwords import RandomWord
+# https://pypi.org/project/wonderwords/
+
+# ... rest of file
+
+```
+Next, add the constants `SNOWMAN_MAX_WORD_LENGTH = 8` and `SNOWMAN_MIN_WORD_LENGTH = 5` with the other constants at the top of the file.  
+ 
+Then, add the following lines of code inside the top of the `snowman` function:
+```python
+
+    r = RandomWord()
+    snowman_word = r.word(
+      word_min_length=SNOWMAN_MIN_WORD_LENGTH, 
+      word_max_length=SNOWMAN_MAX_WORD_LENGTH)
+
+```
+
+<br>
+
+<details>
+<summary>Curious about these lines of code?  Click here for more!</summary>
+
+Invoking the `RandomWord()` returns a `RandomWord` object that we save to the variable we call `r`.  We'll learn more about classes and objects soon in Unit 1.  
+
+The `RandomWord` object referenced by our variable `r` has a method called `word` and we invoke that method to get a random word.  
+
+We are passing two arguments (`word_min_length` and `word_max_length`) using keyword arguments.  Again, we will not be covering these topics further in the Precourse, but they will come up later in the Ada curriculum.  The arguments that we are passing to the method `word` from `RandomWord` will instruct `word` to give us an English word where the length is between the `SNOWMAN_MIN_WORD_LENGTH` and `SNOWMAN_MAX_WORD_LENGTH`.  Feel free to experiment with setting different values for the constants.
+
+</details>
+
+We no longer need a hardcoded constant variable since we have a way to get random words. Replace the constant variable `SNOWMAN_WORD` in the conditional test inside of the `snowman` function with the new `snowman_word` variable. Our code should now look something like this:
+
+```python
+
+def snowman():
+    r = RandomWord()
+    snowman_word = r.word(
+      word_min_length=SNOWMAN_MIN_WORD_LENGTH, 
+      word_max_length=SNOWMAN_MAX_WORD_LENGTH)
+
+    correct_guesses = 0
+    wrong_guesses = 0
+
+    while wrong_guesses < SNOWMAN_WRONG_GUESSES:
+        user_input = get_letter_from_user()
+        # Use the new variable snowman_word instead of the constant variable SNOWMAN_WORD here:
+        if user_input in snowman_word:
+            print("You guessed a letter that's in the word!")
+            correct_guesses += 1
+        else:
+            print(f"The letter {user_input} is not in the word")
+            wrong_guesses += 1
+
+        print_snowman(wrong_guesses)
+
+```
 
 ### !callout-info
 
 ## Debugging
 
 How do you know what your code is doing when it's generating a random word?  Use `print()` to print out the word during development.  Adding a print statement here will print the word to the terminal and make it easier to debug your code:
+
 ```python
+
 snowman_word = r.word(
     word_min_length=SNOWMAN_MIN_WORD_LENGTH, 
     word_max_length=SNOWMAN_MAX_WORD_LENGTH)
 print(snowman_word)
+
 ```
 
-Printing the value of variables in your code is an easy way to see what's going on inside your code.  Nobody writes perfect code!  There are always bugs, and learning how to debug is a core part of learning to be a programmer.  One strategy for debugging is to start by figuring out what your code is doing, and then work on making it do what you want.  Think of yourself as a detective, and instead of focusing on what you think your code _should be_ doing, focus on figuring out exactly what it _is_ doing.  Using all kinds of print statements is a simple way to start looking inside your code as it's running and see what's happening.
+Printing the value of variables in your code is an easy way to see what's going on inside your code.  Nobody writes perfect code!  There are always bugs, and learning and practicing how to debug is a core part of learning to be a programmer.  One strategy for debugging is to start by figuring out what your code is doing, and then work on making it do what you want.  Think of yourself as a detective, and instead of focusing on what you think your code _should be_ doing, focus on figuring out exactly what it _is_ doing.  Using all kinds of print statements is a simple way to start looking inside your code as it's running and see what's happening.
 
 ### !end-callout
 
-
 ### Tracking User Input
 
-So far, all we have done with our user input is check to see if it is in our word. But if we go back to the hypothetical game of snowman with a group, we would want to keep track of the letters that have been guessed.  We would also not accept guesses of the same letter that have already been guessed.  
+So far, all we have done with our user input is check to see if it is in our word. But if we go back to the hypothetical game of snowman with multiple players, we would want to keep track of the letters that have been guessed.  We would also not accept guesses of the same letter that have already been guessed.  
 
-Let's start with tracking incorrect guesses.  We know we are going to have a max of SNOWMAN_WRONG_GUESSES, so we could make that many variables and store our incorrect guesses in those variables.  This solution could be made to work, but every time we change the value of the constant we would have to rewrite our code.  Using a `list` gives us a way to store as many or as little wrong guesses as we want and will allow us to make the code flexible and easy to modify.
+Let's start with tracking incorrect guesses.  We know we are going to have a max of `SNOWMAN_WRONG_GUESSES`, so we could make that many variables and store our incorrect guesses in those variables.  This solution could be made to work, but every time we change the value of the constant we would have to rewrite our code.  Using a `list` gives us a way to store as many or as little wrong guesses as we want and will allow us to make the code flexible and easy to modify.
 
-1. Start by addding an incorrect guesses list variable to the top of the `snowman` function:
+1. Start by adding an incorrect guesses list variable to the `snowman` function:
 
     ```python
 
     def snowman():
+
         r = RandomWord()
-        snowman_word = r.word(word_min_length=SNOWMAN_MIN_WORD_LENGTH,
-                            word_max_length=SNOWMAN_MAX_WORD_LENGTH)
+        snowman_word = r.word(
+          word_min_length=SNOWMAN_MIN_WORD_LENGTH, 
+          word_max_length=SNOWMAN_MAX_WORD_LENGTH)
+
         wrong_guesses_list = []
         
         # ...
 
     ```
 
-1. Next we need to add each incorrect guess to the list.  We are going to do this with the list function `append` which adds elements to the end of the list:
+2. Next we need to add each incorrect guess to the list.  We are going to do this with the list function `append` which adds elements to the end of the list:
 
     ```python
 
@@ -553,15 +636,18 @@ Let's start with tracking incorrect guesses.  We know we are going to have a max
 
     ```
 
-1. In the previous version, we were incrementing a variable `wrong_guesses` each time the user guessed a letter that was not in the word, and then using that variable in the test for our while loop.  We can continue to use this variable, but we can use our list instead and simplify our code.  The number of elements in `wrong_guesses_list` is the number of incorrect guesses, so we can use the length of the list instead of the counter variable.  We get the length of the list by using the len() function.  We can also use the length of the list when we call the print_snowman function.  Here's the updated version of the function:
+3. In the previous version, we were incrementing a variable `wrong_guesses` each time the user guessed a letter that was not in the word, and then using that variable in the test for our while loop.  We can continue to use this variable, but we can use our list instead and simplify our code.  The number of elements in `wrong_guesses_list` is the number of incorrect guesses, so we can use the length of the list instead of the counter variable.  We get the length of the list by using the `len()` function.  We can also use the length of the list when we call the `print_snowman` function. Additionally, we can print the incorrect guesses to remind the user of what they have already guessed. Here's the updated version of the function:
 
     ```python
 
     def snowman():
         r = RandomWord()
-        snowman_word = r.word(word_min_length=SNOWMAN_MIN_WORD_LENGTH, 
-                              word_max_length=SNOWMAN_MAX_WORD_LENGTH)
+        snowman_word = r.word(
+          word_min_length=SNOWMAN_MIN_WORD_LENGTH, 
+          word_max_length=SNOWMAN_MAX_WORD_LENGTH)
+
         wrong_guesses_list = []
+
         while len(wrong_guesses_list) < SNOWMAN_WRONG_GUESSES:
             user_input = get_letter_from_user()
             if user_input in snowman_word:
@@ -569,7 +655,9 @@ Let's start with tracking incorrect guesses.  We know we are going to have a max
             else:
                 print(f"The letter {user_input} is not in the word")
                 wrong_guesses_list.append(user_input)
+
             print_snowman(len(wrong_guesses_list))
+            print(f"Wrong guesses: {wrong_guesses_list}")
 
     ```
 
@@ -578,8 +666,8 @@ Let's start with tracking incorrect guesses.  We know we are going to have a max
 Now that we have a list incorrect guesses, we can use them in the helper function `get_letter_from_user` to prevent our user from inputting the same incorrect letter multiple times.  
 
 1. The first step is to pass the variable `wrong_guesses_list` to `get_letter_from_user` as an argument.  
-1. Next, We will need to update our function definition of `get_letter_from_user` with a new parameter.  
-1. Last, we need to use the new information inside of `get_letter_from_user`.  
+2. Next, we will need to update our function definition of `get_letter_from_user` with a new parameter.  
+3. Last, we need to use the new information inside of `get_letter_from_user`.  
     * Python lists provide us with a handy `in` operator (syntax `item in list`) that returns `True` if the item is in the list and `False` if it is not.
 
     ```python
@@ -589,19 +677,22 @@ Now that we have a list incorrect guesses, we can use them in the helper functio
         # ...
         wrong_guesses_list = []
         while len(wrong_guesses_list) < SNOWMAN_WRONG_GUESSES:
+            # First we pass `wrong_guesses_list` when we call `get_letter_from_user()`
             user_input = get_letter_from_user(wrong_guesses_list)
         # ...
 
+    # We refactor `get_letter_from_user` to include a parameter `wrong_guesses_list`
     def get_letter_from_user(wrong_guesses_list):
         valid_input = False
         user_input_string = None
+
         while not valid_input:
             user_input_string = input("Guess a letter: ")
             if not user_input_string.isalpha():
                 print("You must input a letter!")
             elif len(user_input_string) > 1:
                 print("You can only input one letter at a time!")
-            # NEW SECTION
+            # NEW SECTION: check to see if the user's current guess has already been guessed.
             elif user_input_string in wrong_guesses_list:
                 print("You have already guessed that letter!")
             # END NEW SECTION
@@ -614,10 +705,12 @@ Now that we have a list incorrect guesses, we can use them in the helper functio
 
 ### Tracking Correct letters
 
-At this point we are keeping track of the incorrect letters guessed and using those to provide feedback to our user when they guess a new letter.  Now it is time to do the same thing but with correct letters!
+At this point we are keeping track of the incorrectly guessed letters and using those to provide feedback to our user when they guess a new letter.  Now it is time to do the same thing but with correct letters!
 
 1. Add a `correct_guesses_list` to the `snowman` function
-1. Add correct guesses to the list
+2. Add correct guesses to the list
+
+<br>
 
 <details>
 <summary>When you are finished, compare your code with ours</summary>
@@ -626,51 +719,49 @@ At this point we are keeping track of the incorrect letters guessed and using th
 
 def snowman():
     r = RandomWord()
-    snowman_word = r.word(word_min_length=SNOWMAN_MIN_WORD_LENGTH, word_max_length=SNOWMAN_MAX_WORD_LENGTH)
+    snowman_word = r.word(
+      word_min_length=SNOWMAN_MIN_WORD_LENGTH, 
+      word_max_length=SNOWMAN_MAX_WORD_LENGTH)
+
     print(f"debug info: {snowman_word}")
+    
+    # Add a new list to track correctly guessed letters
     correct_guesses_list = []
     wrong_guesses_list = []
+
     while len(wrong_guesses_list) < SNOWMAN_WRONG_GUESSES:
         user_input = get_letter_from_user(wrong_guesses_list)
         if user_input in snowman_word:
             print("You guessed a letter that's in the word!")
+            # Add a correctly guessed letter to `correct_guesses_list`
             correct_guesses_list.append(user_input)
         else:
             print(f"The letter {user_input} is not in the word")
             wrong_guesses_list.append(user_input)
+
         print_snowman(len(wrong_guesses_list))
         print(f"Wrong guesses: {wrong_guesses_list}")
+
+# Call the function run the code and test out the new changes
+snowman()
 
 ```
 
 </details>
 
+We've made a lot of updates to our code, execute `snowman.py` as we're coding to test out our new changes. If the code is not behaving as expected, add some debugging print statements to see what is happening. From there, try identifying which lines of code need to be updated to fix it. It's ok if your code isn't working as described in the lesson. Reach out over Slack with your questions and to get help!
+
 ### Using `correct_guesses_list` in `get_letter_from_user`
 
-<!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
-<!-- Replace everything in square brackets [] and remove brackets  -->
+Update the helper function `get_letter_from_user` so that it takes an additional argument `correct_guesses_list`. Use this new argument along with `wrong_guesses_list` to print "You have already guessed that letter" as feedback if the user has already guessed a letter in `correct_guesses_list`.
 
-### !challenge
-
-* type: code-snippet
-* language: python3.6
-* id: ca1d65d6-960e-4f58-af35-8b8663f8bcf7
-* title: get_letter_from_user detecting duplicate entries
-* points: 1
-* topics: python python-lists
-
-##### !question
-
-Update the helper function `get_letter_from_user` so that it takes an additional argument (`correct_guesses_list`). Use this new argument along with `wrong_guesses_list` to print "You have already guessed that letter" as feedback to the user if the user has already guessed the letter.
-
-##### !end-question
-
-##### !placeholder
+Here's what `get_letter_from_user` looks like so far:
 
 ```py
 def get_letter_from_user(wrong_guesses_list, correct_guesses_list):
     valid_input = False
     user_input_string = None
+
     while not valid_input:
         user_input_string = input("Guess a letter: ")
         if not user_input_string.isalpha():
@@ -686,148 +777,18 @@ def get_letter_from_user(wrong_guesses_list, correct_guesses_list):
 
     return user_input_string
 
-
 ```
 
-##### !end-placeholder
+<br>
 
-##### !tests
-
-
-```py
-import sys
-from unittest import mock
-from unittest.mock import patch
-import io
-import unittest
-import re
-
-import main as p
-
-class SimplisticTest(unittest.TestCase):
-
-    @patch('sys.stdout', new_callable=io.StringIO)
-    def test_prints_already_used_if_in_correct_guesses_list(self, mock_stdout):
-        # Arrange
-        input_letters = [
-            'a',
-            'z'
-        ]
-        correct_guesses_list = ['a', 'b', 'c']
-        wrong_guesses_list = ['d', 'e', 'f']
-        with unittest.mock.patch('builtins.input', side_effect=input_letters):
-
-            # Act
-            answer = p.get_letter_from_user(wrong_guesses_list, correct_guesses_list)
-        # Assert
-        self.assertTrue(re.match('You have already guessed that letter', mock_stdout.getvalue(), flags=re.IGNORECASE), msg=f"Expected: {'You have already guessed that letter'} but recieved: {mock_stdout.getvalue()}")
-
-    @patch('sys.stdout', new_callable=io.StringIO)
-    def test_prints_already_used_if_in_wrong_guesses_list(self, mock_stdout):
-        # Arrange
-        input_letters = [
-            'e',
-            'z'
-        ]
-        correct_guesses_list = ['a', 'b', 'c']
-        wrong_guesses_list = ['d', 'e', 'f']
-        with unittest.mock.patch('builtins.input', side_effect=input_letters):
-
-            # Act
-            p.get_letter_from_user(wrong_guesses_list, correct_guesses_list)
-        # Assert
-        self.assertTrue(re.match('You have already guessed that letter', mock_stdout.getvalue(), flags=re.IGNORECASE), msg=f"Expected {'You have already guessed that letter'} but recieved: {mock_stdout.getvalue()}")
-
-    @patch('sys.stdout', new_callable=io.StringIO)
-    def test_returns_valid_letter_after_invalid_guess(self, mock_stdout):
-        # Arrange
-        input_letters = [
-            'e',
-            'z'
-        ]
-        correct_guesses_list = ['a', 'b', 'c']
-        wrong_guesses_list = ['d', 'e', 'f']
-        with unittest.mock.patch('builtins.input', side_effect=input_letters):
-
-            # Act
-            answer = p.get_letter_from_user(wrong_guesses_list, correct_guesses_list)
-        # Assert
-        self.assertTrue(answer == input_letters[-1], msg=f"Expected after guessing a previously guessed letter to reprompt the user and read in and return a valid letter.  Guessing {input_letters} with correct guesses list {correct_guesses_list} and incorrect guesses list {wrong_guesses_list}.  The function returned {answer}")
-
-    @patch('sys.stdout', new_callable=io.StringIO)
-    def test_prints_only_one_letter_at_a_time_for_input_with_multiple_characters(self, mock_stdout):
-        # Arrange
-        input_letters = [
-            'zzzzz',
-            'z'
-        ]
-        correct_guesses_list = ['a', 'b', 'c']
-        wrong_guesses_list = ['d', 'e', 'f']
-        with unittest.mock.patch('builtins.input', side_effect=input_letters):
-
-            # Act
-            p.get_letter_from_user(wrong_guesses_list, correct_guesses_list)
-        # Assert
-        self.assertTrue(re.match('You can only input one letter at a time!', mock_stdout.getvalue(), flags=re.IGNORECASE), msg=f"Expected to print {'You can only input one letter at a time!'} when 'zzzzz' is entered.")
-
-    @patch('sys.stdout', new_callable=io.StringIO)
-    def test_prints_you_must_input_a_letter_for_non_alpha_input(self, mock_stdout):
-        # Arrange
-        input_letters = [
-            '3',
-            'z'
-        ]
-        correct_guesses_list = ['a', 'b', 'c']
-        wrong_guesses_list = ['d', 'e', 'f']
-        with unittest.mock.patch('builtins.input', side_effect=input_letters):
-
-            # Act
-            p.get_letter_from_user(wrong_guesses_list, correct_guesses_list)
-        # Assert
-        self.assertTrue(re.match('You must input a letter!', mock_stdout.getvalue(), flags=re.IGNORECASE), msg=f"Expected to print {'You must input a letter!'} when a number is input.")
-
-    @patch('sys.stdout', new_callable=io.StringIO)
-    def test_with_valid_input_the_1st_time_it_just_returns_the_input(self, mock_stdout):
-        # Arrange
-        input_letters = ['a']
-        correct_guesses_list = ['b', 'c']
-        wrong_guesses_list = ['d', 'e', 'f']
-        with unittest.mock.patch('builtins.input', side_effect=input_letters):
-
-            # Act
-            answer = p.get_letter_from_user(wrong_guesses_list, correct_guesses_list)
-        # Assert
-        self.assertTrue(answer == input_letters[0], msg=f"When the user guesses a letter that has not been previously guessed, that letter should be returned.")
-
-    @patch('sys.stdout', new_callable=io.StringIO)
-    def test_works_with_empty_lists(self, mock_stdout):
-        # Arrange
-        input_letters = ['a']
-        correct_guesses_list = []
-        wrong_guesses_list = []
-        with unittest.mock.patch('builtins.input', side_effect=input_letters):
-
-            # Act
-            answer = p.get_letter_from_user(wrong_guesses_list, correct_guesses_list)
-        # Assert
-        self.assertTrue(answer == input_letters[0], msg="When the no letter has been guessed any valid letter is accepted and returned.")
-
-```
-
-##### !end-tests
-
-<!-- other optional sections -->
-<!-- !hint - !end-hint (markdown, hidden, students click to view) -->
-<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
-##### !explanation
-
-
-A sample solution could be:
+<details>
+<summary>When you are finished, compare your code with ours</summary>
 
 ```python
 def get_letter_from_user(wrong_guesses_list, correct_guesses_list):
     valid_input = False
     user_input_string = None
+
     while not valid_input:
         user_input_string = input("Guess a letter: ")
         if not user_input_string.isalpha():
@@ -843,18 +804,15 @@ def get_letter_from_user(wrong_guesses_list, correct_guesses_list):
 
     return user_input_string
 ```
+</details>
 
-##### !end-explanation
 
-### !end-challenge
-
-<!-- ======================= END CHALLENGE ======================= -->
 
 ## Using Lists to Improve Readability and Simplify Code
 
-In the last lesson we wrote the helper function `print_snowman` that drew our snowman up to the height that corresponded to the number of incorrect guesses.  The code for that function was fairly long because our graphic was broken up into seven constants.  We will use a list to simplify and streamline this code.
+In the Loops lesson we wrote the helper function `print_snowman` that drew our snowman up to the height that corresponded to the number of incorrect guesses.  The code for that function was fairly long because our graphic was broken up into seven constants.  We will use a list to simplify and streamline this code.
 
-1. The first step is to store all of the drawing constants in a list:
+1. The first step is to store all of the drawing constants in a list referenced by the constant variable `SNOWMAN_GRAPHIC`:
 
     ```python
 
@@ -875,9 +833,10 @@ In the last lesson we wrote the helper function `print_snowman` that drew our sn
     ```python
 
     def print_snowman(wrong_guesses_count):
-        for i in range(SNOWMAN_WRONG_GUESSES + 1 - wrong_guesses_count,
-                    SNOWMAN_WRONG_GUESSES + 1):
-            if i == 1:
+        for i in range(SNOWMAN_WRONG_GUESSES - wrong_guesses_count, SNOWMAN_WRONG_GUESSES)
+            if i == 0:
+                print(SNOWMAN_0)
+            if(i == 1):
                 print(SNOWMAN_1)
             if(i == 2):
                 print(SNOWMAN_2)
@@ -889,32 +848,34 @@ In the last lesson we wrote the helper function `print_snowman` that drew our sn
                 print(SNOWMAN_5)
             if(i == 6):
                 print(SNOWMAN_6)
-            if(i == 7):
-                print(SNOWMAN_7)
 
     ```
 
-1. Now, instead of using SNOWMAN_1, we can use SNOWMAN_GRAPHIC[0], for SNOWMAN_2 we use SNOWMAN_GRAPHIC[1], and so on.  Reminder - the first index of a list is 0, not 1.  That means that for element number `x` in the list, the index will be `x - 1`.  Let's update our code to use this new way of accessing each element of the graphic:
+2. Now, instead of using individual variables, we can use the indices of a list to access different parts of the snowman graphic. `SNOWMAN_0` is now `SNOWMAN_GRAPHIC[0]`, `SNOWMAN_1` is now `SNOWMAN_GRAPHIC[1]`, and so on.  Since the first index of a list is 0, not 1, this means that for element number `x` in the list, the index will be `x - 1`.  Let's update our code to use this new way of accessing each element of the graphic:
 
     ```python
 
     def print_snowman(wrong_guesses_count):
-        for i in range(SNOWMAN_WRONG_GUESSES + 1 - wrong_guesses_count,
-                    SNOWMAN_WRONG_GUESSES + 1)
-            print(SNOWMAN_GRAPHIC[i - 1])
-
-    ```
-
-    Notice in the above code that we have `+ 1` and `- 1`.  This is because in the first version if we wanted to draw the whole snowman we needed the math to produce the sequence 1 to 7 because we were using the numbers 1-7 in our constants and this made the code easier to read.  Now, we're using a list, so to draw the whole snowman we need the sequence to be 0 to 6.  We can now simplify some of our math with that in mind.
-
-    ```python
-
-    def print_snowman(wrong_guesses_count):
-        for i in range(SNOWMAN_WRONG_GUESSES - wrong_guesses_count,
-                    SNOWMAN_WRONG_GUESSES)
+        for i in range(SNOWMAN_WRONG_GUESSES - wrong_guesses_count, SNOWMAN_WRONG_GUESSES)
             print(SNOWMAN_GRAPHIC[i])
 
     ```
+
+    Execute the code in `snowman.py` to try the game out!
+  
+### Deactivating the Virtual Environment
+
+When we're done working on the Snowman game for the time being, we should deactivate our virtual environment. We can do so by running `deactivate` in the terminal. We should no longer see `(venv)` at the start of each line in our terminal. 
+
+```console
+(venv) snowman_project 
+(venv) snowman_project deactivate
+snowman_project
+```
+
+The first line of the terminal output above shows the terminal command line when the virtual environment is activated. The second line shows the `deactivate` command being run. The final line shows the what the terminal command line looks like when the virtual environment is deactivated.
+
+When we start working on `snowman.py` again, we will need to reactivate the virtual environment before we can execute our code. 
 
 ## Summary
 

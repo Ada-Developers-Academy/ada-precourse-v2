@@ -767,6 +767,7 @@ Finally, inside of the `snowman` function, add the `print_snowman` function call
           else:
               print(f"The letter {user_input} is not in the word")
               wrong_guesses += 1
+                                                  
           print_snowman(wrong_guesses)
   ```
 
