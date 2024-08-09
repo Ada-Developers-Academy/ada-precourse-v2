@@ -20,10 +20,12 @@
 Go to the [Snowman Game Repl](https://replit.com/@adacore/snowmanproject) and fork the project.  
 
 ![forking](images/fork_snowman.png)
+*Fig. Select the "Fork" button to fork your own version of the project.* [*(Full size image)*](images/fork_snowman.png)
 
 You can also give the repl a new name here.
 
 ![new name](images/new-name.png)
+*Fig. You can rename your forked version of the project* [*(Full size image)*](images/new-name.png)
 
 You will need to complete the `snowman(snowman_word)` function using the other functions that we built in previous exercises.  
 
@@ -58,10 +60,10 @@ It returns `True` if all the letters of the word have been guessed, and `False` 
 When you finish, generate a "private join link" for your repl and submit the link here for review.
 
 ![Select the "Invite" button to generate a join link.](images/repl_invite.png)
-*Fig. Select the "Invite" button to generate a join link.*
+*Fig. Select the "Invite" button to generate a join link.* [*(Full size image)*](images/repl_invite.png)
 
 ![Enable the "Private join link" toggle so a link is generated and copy the link.](images/repl_join_link.png)
-*Fig. Enable the "Private join link" toggle so a link is generated and copy the link.*
+*Fig. Enable the "Private join link" toggle so a link is generated and copy the link.* [*(Full size image)*](images/repl_join_link.png)
 
 ##### !end-question
 
