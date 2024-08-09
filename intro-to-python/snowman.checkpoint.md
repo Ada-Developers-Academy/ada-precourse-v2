@@ -36,7 +36,7 @@ Alternatively you can select to play the game by entering "p" and see how it wor
 The `repl` you've cloned has several files:
 
 1. `main.py` that will run the game. You should not modify this file.
-1. `game.py` that holds the important `snowman(snowman_words)` function and you *will* modify
+1. `game.py` that holds the important `snowman(snowman_words)` function that you *will* modify
 2. `game_test.py` that holds a few written test that will allow us to test your code. You should not modify this file, but feel free to take a look at what these tests expect.
 
 Several functions have already been made for you to *use* as shown below. You do not need to create them again.
@@ -45,7 +45,7 @@ When adding your code, **you only need to modify the `snowman(snowman_word)` fun
 
 ---
 
-You should make use of the following functions from the previous lessons that are already created for you:
+You should make use of the following functions from the previous lessons which have been already created for you:
 
 - `print_snowman_graphic(num_wrong_guesses)` - This function prints out the appropriate snowman image depending on the number of wrong guesses the player has made.
 - `build_word_dict(snowman_word)` - This function takes `snowman_word` as input and returns a dictionary with a key-value pair for each letter in `snowman_word`, where the key is the letter and the value is `False`.
