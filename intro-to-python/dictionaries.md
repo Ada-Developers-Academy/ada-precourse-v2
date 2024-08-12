@@ -31,7 +31,7 @@ CITY_INDEX = 1
 
 address=["Washington", "Seattle"]
 
-print( f"We live in {address[CITY_INDEX]}, {address[STATE_INDEX]}.")
+print(f"We live in {address[CITY_INDEX]}, {address[STATE_INDEX]}.")
 ```
 
 Using constants to remember the indices would make the code easier to read, but it's still not ideal. Enter dictionaries!
@@ -43,10 +43,14 @@ Dictionaries __associate__ each piece of data with a unique key, and then we can
 | Vocab          | Definition                                                    | Synonyms  | How to Use in a Sentence                                                      |
 | -------------- | ------------------------------------------------------------- | --------- | ----------------------------------------------------------------------------- |
 | dictionary | A collection that associates unique keys with values | hash table, associative array | "This dictionary uses a planet name as the key and the value is its distance from the sun." |
-| key | A key is used to retrieve a value stored in a dictionary. Keys in a dictionary must be unique. | address | "The keys for the dictionary are all the planets, 'mercury', 'venus', 'mars', and so on." |
+| key | A key is used to retrieve a value stored in a dictionary. Keys in a dictionary must be unique. | name, label, or tag | "The keys for the dictionary are all the planets, 'mercury', 'venus', 'mars', and so on." |
 | value | A piece of data of any possible type. Values in a dictionary, unlike keys, are not necessarily unique. | content | "The value for the key 'mercury' is '36 million miles'."|
 
-Let's look at some Python syntax related to dictionaries. The snippet below shows how we can create an empty dictionary, create a dictionary with key-value pairs in it, add a key-value pair to a dictionary, and how to access a value from a dictionary with a key.
+Let's look at some Python syntax related to dictionaries. The snippet below shows how we can:
+* Create an empty dictionary
+* Create a dictionary with key-value pairs in it
+* Add a key-value pair to a dictionary
+* How to access a value from a dictionary with a key.
 
 ```python
 
@@ -55,8 +59,8 @@ empty_dict = {}
 
 # Syntax for creating a dictionary with content
 planet_dict = {
-  "mercury":"36 million miles", 
-  "venus":"67 million miles"
+  "mercury": "36 million miles", 
+  "venus": "67 million miles"
 }
 
 # Adding a new key-value pair to an existing dictionary
@@ -68,12 +72,25 @@ distance = planet_dict["venus"]
 
 ```  
 
+### !callout-info
+
+## Adding New Values to a Dictionary
+
+Notice that we do not use a method to add a value to a dictionary in the example above. When adding a new element to a list, we used an `append` method, which adds the element at the end of the list.
+
+<br />
+
+We usually don't think about dictionaries having their keys in a particular order, so they do not provide a method for adding a key-value pair "at the end". Instead, by using regular square bracket syntax with the key, and assigning the value with the assignment operator, Python will add the key to the dictionary if needed, or update the value associated with the key if the key is already present. 
+
+### !end-callout
+
+
 ## Heterogeneous vs. Homogeneous Dictionaries
 
 Dictionaries store data using key-value pairs. Let's look at a few examples where the datatype of the values is different within a single dictionary (heterogeneous) and where the datatype of the values is the same within a single dictionary (homogeneous).
 
 ### Address
-Let's look at an address dictionary in more detail.
+Let's look at how we might store an address using a dictionary in more detail.
 
 ```Python
 adas_address = {
@@ -122,7 +139,7 @@ Now that all the values are *integers*, it is easy to iterate over the `planet_d
 * type: code-snippet
 * language: python3.6
 * id: 9af1ebe0-a2ec-42fb-b65f-479bd6e603e1
-* title: Getting a Value from a Dictionary
+* title: Dictionaries
 * points: 1
 * topics: python, dictionaries
 
@@ -201,6 +218,12 @@ def get_value_from_dictionary(dict, key):
 
 ```
 
+Notice the use of the `in` operator in the if statement. What is this operator doing and how does it work? 
+
+<br/>
+
+In general, the `in` operator checks if value is included in a data structure or string. For dictionaries, `in` checks if a key is in a dictionary. If the key is present then the expression evaluates to `True` and if the key is absent then the expression evaluates to `False`.
+
 ##### !end-explanation
 
 ### !end-challenge
@@ -214,7 +237,7 @@ def get_value_from_dictionary(dict, key):
 * type: code-snippet
 * language: python3.6
 * id: e165737f-196a-4872-b674-4f70ccbb57e8
-* title: Dictionary Counter
+* title: Dictionaries
 * points: 1
 * topics: python, dictionaries
 
@@ -277,9 +300,15 @@ class TestDictCounter(unittest.TestCase):
 
 A solution for this problem can be broken into the following steps:
 
-1. Check to see if the dictionary contains the key
+1. Check to see whether the dictionary contains the key
 1. If the dictionary contains the key, increment the value associated with that key
 1. If the dictionary does not contain the key, add the key with the value 1 to the dictionary
+
+Another solution for this problem can look like this:
+
+1. Check to see whether the dictionary does **not** contain the key
+1. If the dictionary does **not** contain the key, add the key with the value 1 to the dictionary
+1. If the dictionary contains the key, increment the value associated with that key
 
 ##### !end-hint
 
@@ -290,6 +319,7 @@ An example solution:
 
 ```python
 
+# Example 1
 def dict_counter(dict, key):
     if key in dict:
         dict[key] += 1
@@ -298,7 +328,26 @@ def dict_counter(dict, key):
 
     return dict
 
+# Example 2
+def dict_counter(dict, key):
+    if key not in dict:
+        dict[key] = 1
+    else:
+        dict[key] += 1
+
+    return dict
+
 ```
+
+These two solutions are very similar. The first example checks whether a key is in a dictionary or not. If the key, representing a letter, is present then that means there is already a value for the letter and the code should increment this value by 1 to indicate that another occurrence of the letter has been found in the word. If the key is absent from the dictionary, this condition is captured in the else block, then the value of the key is set to 1 because this is the first occurrence of the letter in the word.
+
+<br/>
+
+The second example is equivalent to the first one, but it flips the check for the if statement. Instead, this approach checks whether a key is **not** in the dictionary. If the key is not in the dictionary, then the code will set the value for the key to 1. This means that when the logic in the else block is executed that the key is already in the dictionary and that the value should be incremented by 1 to accurately count the number of times a letter is in the word.
+
+<br/>
+
+In the first example, the code that adds 1 to an existing integer value is written before the code that initializes the value to 1. When thinking about our code, we have to keep in mind the logical order (not just the textual order) the code will run in. The attempt to add 1 cannot logically run until the value for that key has been set because we cannot add 1 to a value that does not exist yet.
 
 ##### !end-explanation
 
@@ -313,7 +362,7 @@ def dict_counter(dict, key):
 * type: code-snippet
 * language: python3.6
 * id: 96892e63-ae9e-46d1-8638-37090db5a2d3
-* title: Build a Dictionary
+* title: Dictionaries
 * points: 1
 * topics: python, dictionaries
 
@@ -391,17 +440,16 @@ Two working implementations:
 def build_a_dictionary(keys, values):
     if not len(keys) == len(values):
         return None
+
     result = {}
     for key, value in zip(keys, values):
         result[key] = value
-    return result
 
-def build_a_dictionary(keys, values):
-    if len(keys) == len(values):
-        result = {}
-        for index in range(len(keys)):
-            result[keys[index]] = values[index]
         return result
+        return result
+
+    return None
+    return result
 
     return None
     
@@ -432,15 +480,24 @@ Let's start by taking a look at the data structure that we're using to hold the 
 
 ```python
 
-# assume we have a variable `guessed_letter` that contains the letter that we're curious about
+# `correct_guesses_list` represents the letters in the secret word
+correct_guesses_list = ["c", "a", "t"]
+
+# Assume we have a variable `guessed_letter` that contains the letter that we're curious about
 guessed_letter = "a"
 
+# We haven't found `guessed_letter` in the list yet so we should set `result` to False.
+result = False
+
+# We want to check each letter in `correct_guesses_list` to see if it is the same as `guessed_letter`
 for letter in correct_guesses_list:
+    # if the letter in `correct_guesses_list` is the same as `guessed_letter` we can updated `result` to be `True`
     if letter == guessed_letter:
+        # when `result` is set to `True` that means `guessed_letter` was a letter in the word.
         result = True
 
-# if we didn't find `guessed_letter` in the list, we can set the result to False.
-result = False
+# If the condition in the if statement does not evaluate to `True`, then the value of `result` will still be `False` 
+return result
 
 ```
 
@@ -451,7 +508,7 @@ Luckily for us, we have dictionaries!  Dictionaries allow us to store a value wi
 * When a user guesses a letter that's in the secret word, we can change the value to `True`.
 * Then, if we want to know if a user has guessed a particular letter, we can just check the value for that letter in the dictionary and get a `True` or `False` answer that will tell us if our user has guessed that letter or not.
 
-The first thing we need to do is convert the secret word `snowman_word` into a dictionary.  Write a helper function `build_word_dict` that takes a string and returns a dictionary, where each unique letter from the word is a key and all of the values are `False`.  
+The first thing we need to do is store the letters from the secret word `snowman_word` in a dictionary, marking them all as "not guessed". Let's write a helper function `build_word_dict` that takes a string and returns a dictionary, where each unique letter from the word is a key and all of the values are `False`.  
 
 <br>
 
@@ -476,7 +533,7 @@ Notice that our function doesn't check to see if a letter is already in the dict
 def build_word_dict(word):
     word_dict = {}
     for letter in word:
-        if not letter in word_dict:
+        if letter not in word_dict:
             word_dict[letter] = False
     return word_dict
 ```
@@ -486,7 +543,7 @@ The end result here will be the same, in the first example any time we encounter
 
 ### Using the Word Dictionary
 
-Now that we have the `build_word_dict` function we need to call it in our `snowman()` function and replace the `correct_guesses_list` with the new dictionary that's generated by `build_word_dict`. 
+Now that we have the `build_word_dict` function, we need to call it in our `snowman()` function and replace the `correct_guesses_list` with the new dictionary that's generated by `build_word_dict`. 
 
 We will need to:
 1. Remove the `correct_guesses_list` since we won't be using it anymore
@@ -494,7 +551,7 @@ We will need to:
 3. Refactor the call to `get_letter_from_user` so that the first argument is `snowman_dict` instead of `correct_guesses_list`, but we'll still need `wrong_guesses_list` so we can leave the second argument as is.
 4. Now that we have `snowman_dict`, we should use it to see if a user has correctly guessed a letter that is in the secret `snowman_word`  
 5. If the user's guess is correct, then we need to update `snowman_dict` dictionary. Before a correct guess, a key (represented by a letter) has a value set to `False`. After a correct guess, we need to update the key's value to `True`
-   1. Since we're using `snowman_dict` instead of `correct_guesses_list`, we can now remove the line of code `correct_guesses_list.append(user_input)` 
+   - Since we're using `snowman_dict` instead of `correct_guesses_list`, we can now remove the line of code `correct_guesses_list.append(user_input)` 
 
 <br>
 
@@ -516,6 +573,7 @@ def snowman():
     # correct_guesses_list = []
     snowman_dict = build_word_dict(snowman_word)
     wrong_guesses_list = []
+
     while len(wrong_guesses_list) < SNOWMAN_WRONG_GUESSES:
         # user_input = get_letter_from_user(correct_guesses_list, wrong_guesses_list)
         # This function call won't work yet, the next step is to update this function
@@ -532,6 +590,7 @@ def snowman():
         else:
             print(f"The letter {user_input} is not in the word")
             wrong_guesses_list.append(user_input)
+
         print_snowman(len(wrong_guesses_list))
         print(f"Wrong guesses: {wrong_guesses_list}")
 
@@ -539,9 +598,9 @@ def snowman():
 
 </details>
 
-The next step is to update our helper function `get_letter_from_user` to use the word dictionary instead of the list of correct letters.  Right now, we're only telling a user if they've guessed a letter before, but while we're updating this function let's modify it to tell the user if they've guessed a letter before, __and__ if that letter is in the word or not.  
+The next step is to update our helper function `get_letter_from_user` to use the word dictionary instead of the list of correct letters.  Right now, we're only telling a user whether they've guessed a letter before, but while we're updating this function, let's modify it to tell the user whether they've guessed a letter before, __and__ whether that letter is in the word or not.  
 
-There is one important change to be aware of, right now we're just checking if the letter the user guessed is in the list of correct letters.  If we do that with the dictionary, we'll end up with a logical error!  Consider these code snippets:
+There is one important change of which to be aware. Right now we're just checking whether the letter the user guessed is in the list of correct letters.  If we do that with the dictionary, we'll end up with a logical error!  Consider these code snippets:
 
 ```python
 
@@ -549,7 +608,7 @@ There is one important change to be aware of, right now we're just checking if t
 
 #...
 elif user_input_string in wrong_guesses_list or user_input_string in correct_guesses_list:
-    print("You already guessed that letter")
+    print("You have already guessed that letter")
 #...
 
 # assume we replace the parameter `correct_guesses_list` in the function call with the parameter `word_dict`
@@ -561,8 +620,7 @@ elif user_input_string in wrong_guesses_list or user_input_string in word_dict:
 #...
 
 ```
-
-The logical error comes in because all of the letters from the word are in the word_dict!  If we only check to see if the letter is in the word_dict, we'll tell the user that they've already guessed a letter even if it's the first time they've guessed it if it's in the word!  We need to add a check that looks at the value to see if it's `True` or `False`:
+The logical error comes in because all of the letters from the word are already in `word_dict`, just with a `False` value! If we only check to see whether the letter is in `word_dict`, we'll tell the user that they've already guessed a letter even if it's the first time they've guessed it! We need to add a check that looks at the value to see whether it's `True` or `False`:
 
 ```python
 
@@ -615,7 +673,7 @@ Now we're going to get back to our original goal, displaying each letter of the 
 
 * Create an empty string
 * Loop over each letter in the word
-* Check if the letter has been guessed or not
+* Check whether the letter has been guessed or not
     * If the value of "guessed" is `True` add the letter to the string
     * If the value of "guessed" is `False` add `_` to the string
 * Add 1 space between each letter/underscore
@@ -634,11 +692,17 @@ Example inputs and outputs:
 
 ## Write Some Code, Check the Code, Repeat
 
-As you're writing your implementation, be sure to call the helper function often so that you can see the output and confirm that it's working or not working. It's good practice to write a line or logical unit of code and then run it to check that you are getting expected output before moving on to the next line of code. It is easier to identify where a bug is in one or two lines of code versus ten lines of code.
+As you're writing your implementation, be sure to call the helper function often so that you can see the output and confirm whether or not it's working. It's good practice to write a line or logical unit of code and then run it to check that you are getting the expected output before moving on to the next line of code. It is easier to identify where a bug is in one or two lines of code versus ten lines of code.
+
+<br/>
 
 If you run into a bug, add debugging print statements or walk through the code line by line and make predictions about what should happen versus what actually happens to help you resolve the bug. 
 
+<br/>
+
 Finally, recall that the helper function should __return__ a string. When you invoke the function, if you're not seeing any output printed to the terminal you will need to print the value returned from `generate_word_progress_string`.
+
+<br/>
 
 As always, feel free to reach out over Slack if you need help!
 
@@ -653,18 +717,18 @@ As always, feel free to reach out over Slack if you need help!
 
 def generate_word_progress_string(word, word_dict):
     output_string = ""
-    elem_num = 0
+    letter_num = 0
 
-    for elem in word:
-        if elem_num > 0:
+    for letter in word:
+        if letter_num > 0:
             output_string += " "
 
-        if word_dict[elem]:
-            output_string += elem
+        if word_dict[letter]:
+            output_string += letter
         else:
             output_string += "_"
 
-        elem_num += 1
+        letter_num += 1
 
     return output_string
     
@@ -690,7 +754,7 @@ def print_word_progress_string(word, word_dict):
 
 ### Get Game Progress
 
-The helper function `print_word_progress_string` provides a visual display of the players progress towards guessing the word. We also need to write a function that indicates whether or not all the letters of the word have been guessed. We will name this function `get_word_progress`. The function `get_word_progress` should return `True` if all the letters have been guesses, and `False` otherwise.
+The helper function `print_word_progress_string` provides a visual display of the player's progress towards guessing the word. We also need to write a function that indicates whether or not all the letters of the word have been guessed. We will name this function `get_word_progress`. The function `get_word_progress` should return `True` if all the letters have been guessed, and `False` otherwise.
 
 
 This function will need to:
@@ -717,8 +781,8 @@ Example inputs and outputs:
 ```python
 
 def get_word_progress(word, word_dict):
-    for elem in word:
-        if not word_dict[elem]:
+    for letter in word:
+        if not word_dict[letter]:
             return False
     return True
     
@@ -735,7 +799,7 @@ Game Description:
 1. A secret word is selected
 1. User is prompted to guess a letter
 1. The game checks the letter to see if it is in the word
-1. The game prints out a section of the snowman drawing, showing one level for each incorrectly guessed letters
+1. The game prints out a section of the snowman drawing, showing one level for each incorrectly guessed letter
 1. The game prints out a hidden version of the word, where each correct letter is displayed and un-guessed letters are hidden
 1. The game prints out all of the incorrect letters that have been guessed
 1. The game loops back to asking the user to guess a letter and continues that pattern until either the user has guessed all of the letters in the word, or the snowman drawing is complete.
