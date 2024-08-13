@@ -201,6 +201,17 @@ A solution for this problem can be broken into the following steps:
 1. If the dictionary contains the key, return the value associated with that key
 1. If the dictionary does not contain the key, return None
 
+<br/>
+
+To check whether a key is in a dictionary, we can use the `in` operator.
+
+```py
+# True or False depending on whether some_key exists as a key in the dictionary some_dict
+is_some_key_in_some_dict = some_key in some_dict
+```
+
+In general, the `in` operator checks whether some data is included in a data structure or string. For dictionaries, `in` checks whether a key is in a dictionary. If the key is present then the expression evaluates to `True` and if the key is absent then the expression evaluates to `False`.
+
 ##### !end-hint
 
 <!--optional-->
@@ -217,12 +228,6 @@ def get_value_from_dictionary(dict, key):
     return None
 
 ```
-
-Notice the use of the `in` operator in the if statement. What is this operator doing and how does it work? 
-
-<br/>
-
-In general, the `in` operator checks if value is included in a data structure or string. For dictionaries, `in` checks if a key is in a dictionary. If the key is present then the expression evaluates to `True` and if the key is absent then the expression evaluates to `False`.
 
 ##### !end-explanation
 
@@ -304,11 +309,13 @@ A solution for this problem can be broken into the following steps:
 1. If the dictionary contains the key, increment the value associated with that key
 1. If the dictionary does not contain the key, add the key with the value 1 to the dictionary
 
+<br/>
+
 Another solution for this problem can look like this:
 
 1. Check to see whether the dictionary does **not** contain the key
-1. If the dictionary does **not** contain the key, add the key with the value 1 to the dictionary
-1. If the dictionary contains the key, increment the value associated with that key
+2. If the dictionary does **not** contain the key, add the key with the value 1 to the dictionary
+3. If the dictionary contains the key, increment the value associated with that key
 
 ##### !end-hint
 
@@ -339,7 +346,7 @@ def dict_counter(dict, key):
 
 ```
 
-These two solutions are very similar. The first example checks whether a key is in a dictionary or not. If the key, representing a letter, is present then that means there is already a value for the letter and the code should increment this value by 1 to indicate that another occurrence of the letter has been found in the word. If the key is absent from the dictionary, this condition is captured in the else block, then the value of the key is set to 1 because this is the first occurrence of the letter in the word.
+These two solutions are very similar. The first example checks whether a key is in a dictionary. If the key, representing a letter, is present then that means there is already a value for the letter and the code should increment this value by 1 to indicate that another occurrence of the letter has been found in the word. If the key is absent from the dictionary, this condition is captured in the else block, then the value of the key is set to 1 because this is the first occurrence of the letter in the word.
 
 <br/>
 
@@ -347,7 +354,11 @@ The second example is equivalent to the first one, but it flips the check for th
 
 <br/>
 
-In the first example, the code that adds 1 to an existing integer value is written before the code that initializes the value to 1. When thinking about our code, we have to keep in mind the logical order (not just the textual order) the code will run in. The attempt to add 1 cannot logically run until the value for that key has been set because we cannot add 1 to a value that does not exist yet.
+In the first example, the code that adds 1 to an existing integer value is written before the code that initializes the value to 1, but due to the `if` logic, that doesn't mean it will run first. When thinking about our code, we have to keep in mind the logical order (not just the textual order) the code will run in.
+
+<br/>
+	
+Sometimes, we'll write our conditions so that the textual order of the instructions match the order we expect them to run. Other times, we might choose to use a condition that's easier to understand, but which results in the steps appearing to be "out of order." To more completely understand any code we read, we need to practice running the logic in our heads, not just reading the code in the order it appears.
 
 ##### !end-explanation
 
@@ -438,21 +449,13 @@ Two working implementations:
 ```python
 
 def build_a_dictionary(keys, values):
-    if not len(keys) == len(values):
+    if len(keys) != len(values):
         return None
-
+      
     result = {}
-    for key, value in zip(keys, values):
-        result[key] = value
-
-        return result
-        return result
-
-    return None
+    for index in range(len(keys)):
+        result[keys[index]] = values[index]
     return result
-
-    return None
-    
 ```
 
 ##### !end-explanation
@@ -497,7 +500,7 @@ for letter in correct_guesses_list:
         result = True
 
 # If the condition in the if statement does not evaluate to `True`, then the value of `result` will still be `False` 
-return result
+print(result)
 
 ```
 
@@ -633,7 +636,7 @@ elif user_input_string in wrong_guesses_list or (user_input_string in word_dict 
 
 Update `get_letter_from_user` helper function and make the following changes:
 1. Change the first parameter to be the word dictionary instead of a list
-2. Add additional feedback to the user when they attempt to guess a letter that they have already guessed that informs them if the letter is in the word or not.
+2. Add additional feedback to the user, when they attempt to guess a letter that they have already guessed, to inform them whether or not the letter is in the word.
 
 <br>
 
@@ -742,9 +745,9 @@ Now that we have the helper function `generate_word_progress_string` working, le
 
 def print_word_progress_string(word, word_dict):
     output_string = ""
-    elem_num = 0
+    letter_num = 0
     
-    for elem in word:
+    for letter in word:
        # ...
        
     # return output_string
