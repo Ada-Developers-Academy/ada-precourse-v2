@@ -40,7 +40,6 @@ def guess_the_number():
             print("Your guess is too low")
         if user_input < RANGE_LOW or user_input > RANGE_HIGH:
             print(f"Your guess is out of bounds.  The maximum is {RANGE_LOW} and the minimum is {RANGE_HIGH}")
-        
 
 def get_number_from_user():
     valid_input = False
@@ -56,16 +55,19 @@ def get_number_from_user():
 
     return user_input
 
-
 def snowman():
     r = RandomWord()
-    snowman_word = r.word(word_min_length=SNOWMAN_MIN_WORD_LENGTH,
-                          word_max_length=SNOWMAN_MAX_WORD_LENGTH)
-    #print(f"debug info: {snowman_word}")
+    snowman_word = r.word(
+      word_min_length=SNOWMAN_MIN_WORD_LENGTH, 
+      word_max_length=SNOWMAN_MAX_WORD_LENGTH)
+
+    print(f"debug info: {snowman_word}")
+
     snowman_dict = build_word_dict(snowman_word)
     wrong_guesses_list = []
     all_guessed = False
     get_word_progress(snowman_word, snowman_dict)
+
     while len(wrong_guesses_list) < SNOWMAN_WRONG_GUESSES and not all_guessed:
         user_input = get_letter_from_user(snowman_dict, wrong_guesses_list)
         if user_input in snowman_word:
@@ -74,6 +76,7 @@ def snowman():
         else:
             print(f"The letter {user_input} is not in the word")
             wrong_guesses_list.append(user_input)
+            
         print_snowman(len(wrong_guesses_list))
         all_guessed = get_word_progress(snowman_word, snowman_dict)
         print("Wrong guesses: " + " ".join(wrong_guesses_list))
@@ -83,7 +86,6 @@ def snowman():
     else:
         print(f"Sorry, you lose!  The word was {snowman_word}")
 
-
 def build_word_dict(word):
     word_dict = {}
     for letter in word:
@@ -92,17 +94,17 @@ def build_word_dict(word):
     
 def print_word_progress_string(word, word_dict):
     output_string = ""
-    for elem in word:
-        if word_dict[elem]:
-            output_string += elem
+    for letter in word:
+        if word_dict[letter]:
+            output_string += letter
         else:
             output_string += "_"
         output_string += " "
     print(output_string)
 
 def get_word_progress(word, word_dict):
-    for elem in word:
-        if not word_dict[elem]:
+    for letter in word:
+        if not word_dict[letter]:
             return False
     return True
 
@@ -127,8 +129,6 @@ def get_letter_from_user(word_dict, list2):
 def print_snowman(wrong_guesses_count):
     for i in range(SNOWMAN_WRONG_GUESSES - wrong_guesses_count, SNOWMAN_WRONG_GUESSES):
         print(SNOWMAN_GRAPHIC[i])
-
-
 
 #guess_the_number()
 snowman()
