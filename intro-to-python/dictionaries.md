@@ -197,9 +197,9 @@ class TestGetFromDict(unittest.TestCase):
 
 A solution for this problem can be broken into the following steps:
 
-1. Check to see if the dictionary contains the key
-1. If the dictionary contains the key, return the value associated with that key
+1. Check to see if the dictionary does **not** contain the key
 1. If the dictionary does not contain the key, return None
+2. If the dictionary does contain the key, return the value associated with that key
 
 <br/>
 
@@ -210,6 +210,12 @@ To check whether a key is in a dictionary, we can use the `in` operator.
 is_some_key_in_some_dict = some_key in some_dict
 ```
 
+We can use the `not` operator with the `in` operator too. 
+```py
+# True or False depending on whether some_key does not exist as a key in the dictionary some_dict
+is_some_key_in_some_dict = some_key not in some_dict
+```
+
 In general, the `in` operator checks whether some data is included in a data structure or string. For dictionaries, `in` checks whether a key is in a dictionary. If the key is present then the expression evaluates to `True` and if the key is absent then the expression evaluates to `False`.
 
 ##### !end-hint
@@ -217,17 +223,26 @@ In general, the `in` operator checks whether some data is included in a data str
 <!--optional-->
 ##### !explanation
 
-An example solution:
+Some example solutions:
 
 ```python
 
+def get_value_from_dictionary(dict, key):
+    if key not in dict:
+        return None
+	        
+    return dict[key]
+    
 def get_value_from_dictionary(dict, key):
     if key in dict:
         return dict[key]
 
     return None
-
 ```
+
+Both solutions work and are very similar! Pay close attention to the `if` statement and what is returned from each approach. We prefer the first solution because using the key to access a value from the dictionary and returning it is the main logic. This logic is **not** nested inside a conditional block and is less indented. 
+
+While the second example works, it nests the logic of getting a value inside a conditional block and `return None` is emphasized as the main logic. Writing the code this way does not quite capture our intent to return some value from a dictionary.
 
 ##### !end-explanation
 
@@ -444,7 +459,7 @@ A solution for this problem can be broken into the following steps:
 <!--optional-->
 ##### !explanation
 
-Two working implementations:
+An example solution:
 
 ```python
 
