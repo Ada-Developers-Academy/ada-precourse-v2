@@ -35,7 +35,7 @@ Each lesson will follow roughly the same sequence:
 
 ### Make a Program in a File
 
-We can run use a Python repl to run and test our code, but if we want to write longer blocks of code, it's easier to use files to write and run our code.  Lets create our first file to run our python code in!
+We can use a Python repl to run and test our code, but if we want to write longer blocks of code, it's easier to use files to write and run our code.  Lets create our first file to run our Python code in!
 
 Open up terminal and check out the screen. It is a text-based visual of our folder and file structure. Let's find out where we are:
 

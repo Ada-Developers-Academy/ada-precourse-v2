@@ -94,7 +94,7 @@ while ask_for_input:
     ask_for_input = (user_input == 'y')
 ```
 
-In this example, we set up a flag called `asked_for_input` with the value set to `True` indicating that we should as a user for input. While this variable's value is `True`, the loop's body will execute and ask a user for input. After a user enters some input, either "y" or "n", we compare the value of `user_input` to the string "y". When we use `==` to compare if two values are equal to each other, the result of that comparison will be a boolean value. 
+In this example, we set up a flag called `ask_for_input` with the value set to `True` indicating that we should as a user for input. While this variable's value is `True`, the loop's body will execute and ask a user for input. After a user enters some input, either "y" or "n", we compare the value of `user_input` to the string "y". When we use `==` to compare if two values are equal to each other, the result of that comparison will be a boolean value. 
 
 If `user_input` references "n" and we compare that variable to the string "y", then the return value of this comparison is `False`. If `user_input` references "y" and we compare that variable to the string "y", then the return value of this comparison is `True`.
 
@@ -141,7 +141,9 @@ for number in range(2, 5):
 # the value of number is 4
 ```
 
-In the while loop section above, the first example is a while loop that runs exactly 5 times. Since we know how many times the loop's logic should execute, we can refactor this while loop into a ranged for loop. Because a for loop iterates over values, we can also remove the `counter` variable. We've seen through examples that the default behavior for `range` is to create a list by increasing our starting value by one until the upper limit is reached. However, we can pass a third argument to `range` which tells it how many steps to increment by each time. We can generate the list of values we need to refactor our while loop example by calling `range(2, 11, 2)`. This will give us a number sequence that starts at 2, increases by 2 for each time, and stops when our limit 11 (which is always excluded) is reached: `[2, 4, 6, 8, 10]`. Putting it all together, that loop looks like:
+In the while loop section above, the first example is a while loop that runs exactly 5 times. Since we know how many times the loop's logic should execute, we can refactor this while loop into a ranged for loop. Because a for loop iterates over values, we can also remove the `counter` variable.
+
+We've seen through examples that the default behavior for `range` is to create a list by increasing our starting value by one until the upper limit is reached. However, we can pass a third argument to `range` which tells it how many steps to increment by each time. We can generate the list of values we need to refactor our while loop example by calling `range(2, 11, 2)`. This will give us a number sequence that starts at 2, increases by 2 for each time, and stops when our limit 11 (which is always excluded) is reached: `[2, 4, 6, 8, 10]`. Putting it all together, that loop looks like:
 
 ```python
 for number in range(2, 11, 2):
@@ -360,6 +362,7 @@ In the previous lesson, we pulled the user input into its own function, while ac
 def get_number_from_user():
     user_input_string = input("Guess the number: ")
     user_input = None
+
     if user_input_string.isnumeric():
         user_input = int(user_input_string)
     else:
@@ -396,12 +399,13 @@ def get_number_from_user():
     return user_input
 ```
 
-Notice that our solution uses a `not` in the while test. This operator negates, or inverts, a boolean value. We could use a flag that is set it to true, and then when we get valid input set it to false. Think about the readability of our code in that case. It would not make sense to have a variable named valid_input set to true, if we are trying to get a valid input at the end (starting with flag that is `True` then setting it to `False` makes it seem like we're not getting valid input). Changing the variable name to something like `attempting_valid_input` would work better to make the code readable. In that case, the code would look like this:
+Notice that our solution uses a `not` in the while test. This operator negates, or inverts, a boolean value. We could use a flag that is set it to `True`, and then when we get valid input set it to `False`. Think about the readability of our code in that case. It would not make sense to have a variable named `valid_input` set to `True`, if we are trying to get a valid input at the end (starting with flag that is `True` then setting it to `False` makes it seem like we're not getting valid input). Changing the variable name to something like `attempting_valid_input` would work better to make the code readable. In that case, the code would look like this:
 
 ```python
 def get_number_from_user():
     attempting_valid_input = True
     user_input = None
+
     while attempting_valid_input:
         user_input_string = input("Guess the number: ")
 
@@ -470,7 +474,7 @@ def guess_the_number():
 
 Now let's work on the version with a maximum number of guesses. At first glance this seems like a good candidate for a for loop because we have a maximum number of times we're going to run the loop, but let's dig into the actual sequence.
 
-We want to run the loop at most the guesses number of times, but if the user guesses the number correctly before reaching the maximum number of guesses we want to end the loop early. In this case, we do not actually know how many times the loop should run so a more complex while loop conditional statement along with a counter variable will result in a loop that does exactly what we want and also is easy to read and understand.
+We want to run the loop at most the same number of times as the number of maximum guesses, but if the user guesses the number correctly before reaching the maximum number of guesses we want to end the loop early. In this case, we do not actually know how many times the loop should run so a more complex while loop conditional statement along with a counter variable will result in a loop that does exactly what we want and also is easy to read and understand.
 
 1.  First, add a counter variable `num_guesses` and increment it inside of the while loop:
 
@@ -510,11 +514,12 @@ We want to run the loop at most the guesses number of times, but if the user gue
 
         waiting_for_correct_guess = True
         num_guesses = 0
-        while (waiting_for_correct_guess and
-                num_guesses <= MAX_GUESSES):
+
+        while (waiting_for_correct_guess and num_guesses <= MAX_GUESSES):
 
             num_guesses += 1
             user_input = get_number_from_user()
+
             if user_input == random_number:
                 print("You guessed the number! Good job!")
                 waiting_for_correct_guess = False
@@ -527,7 +532,7 @@ We want to run the loop at most the guesses number of times, but if the user gue
                 print("Your guess is too low")
 
         # At this point, there are two options.
-        #    1, the user ran out of guesses or
+        #    1. the user ran out of guesses or
         #    2. they got the correct answer.
         # We need to let them know if they ran out of guesses,
         # but if we check if num_guesses is >= MAX_GUESSES we could
@@ -547,7 +552,7 @@ We want to run the loop at most the guesses number of times, but if the user gue
 
     Execute the code in `game.py`. Check the last assumption that we made – that we only need to check `waiting_for_correct_guess` to give the user the "You ran out of guesses" feedback. It seems like we're checking the wrong variable! In cases like this it can be useful to "be the computer" and run through the code manually. Write down the state of the variables at each pass through the loop and make sure that the loop is doing what we think it is doing. Does the `waiting_for_correct_guess` variable give us the information that we think it does in every situation? Walk through the code with the following various possibilities, also known as "test cases": 
     * The user guesses correctly
-    * The user doesn't guess and runs out of guesses
+    * The user doesn't guess correctly and runs out of guesses
     * The user guesses correctly on the last try
    
     Confirm that the code works according to the requirements for the test cases outlined above.
@@ -568,11 +573,9 @@ We're going to switch now to working on Snowman.  Start by opening up `snowman.p
 def get_letter_from_user():
     user_input_string = input("Guess a letter: ")
 
-    if not user_input_string.isalpha():
-        print("You must input a letter!")
-    elif len(user_input_string) > 1:
-        print("You can only input one letter at a time!")
-
+    if len(user_input_string) > 1 or not user_input_string.isalpha():
+        print("Invalid letter please enter a single character.")
+    
     return user_input_string
 ```
 
@@ -607,7 +610,7 @@ get_letter_from_user()
 
 ### Tracking User Input
 
-Imagine we are playing a game of Snowman with a group of children.  We would probably keep track of the letters that they guessed, and with correct letters we would add to the word and with incorrect we would add to the snowman drawing.  In this version we are going to keep track of the number of correct and incorrect guesses from the user.  If the user guesses the same incorrect letter multiple times we'll count it as a new wrong guess every time. In `snowman.py` make changes to the `snowman` function according to the requirements below.
+Imagine we are playing a game of Snowman with several players.  We would probably keep track of the letters that they guessed, and with correct letters we would add to the word and with incorrect we would add to the snowman drawing.  In this version we are going to keep track of the number of correct and incorrect guesses from the user.  If the user guesses the same incorrect letter multiple times we'll count it as a new wrong guess every time. In `snowman.py` make changes to the `snowman` function according to the requirements below.
 
 1.  Add a loop to the main `snowman` function similar to the loop in `guess_the_number`.  
 2.  Add two counters `correct_guesses` and `wrong_guesses`.
@@ -632,6 +635,7 @@ SNOWMAN_WRONG_GUESSES = 7
 def get_letter_from_user():
     valid_input = False
     user_input_string = None
+
     while not valid_input:
         user_input_string = input("Guess a letter: ")
         if not user_input_string.isalpha():
@@ -648,8 +652,8 @@ def snowman():
     wrong_guesses = 0
 
     while wrong_guesses < SNOWMAN_WRONG_GUESSES and correct_guesses < len(SNOWMAN_WORD):
-        user_letter = get_letter_from_user()
-        if user_letter in SNOWMAN_WORD:
+        user_input = get_letter_from_user()
+        if user_input in SNOWMAN_WORD:
             print("You guessed a letter that's in the word!")
             correct_guesses += 1
         else:
@@ -759,6 +763,7 @@ Finally, inside of the `snowman` function, add the `print_snowman` function call
   def snowman():
       correct_guesses = 0
       wrong_guesses = 0
+
       while wrong_guesses < SNOWMAN_WRONG_GUESSES:
           user_input = get_letter_from_user()
           if user_input in SNOWMAN_WORD:

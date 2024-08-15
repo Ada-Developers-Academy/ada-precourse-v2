@@ -68,8 +68,11 @@ You should see a new number each execution! Run it a few times to watch the numb
 ### Constants
 
 Before continuing, consider how you could use constants to hold the high and low values for the range.
+
 <br/>
+
 Give it a try, and then view our implementation.
+
 <br/>
 
 <details>
@@ -115,7 +118,7 @@ We should get a ValueError similar to what's shown below:
 
 ```sh
 Traceback (most recent call last):
-  File "path/to/file.py", line 1, in <module>
+  File "path/to/game.py", line 9, in <module>
 ValueError: invalid literal for int() with base 10: 'four'
 ```
 
@@ -224,7 +227,9 @@ else:
 ## Take Note:
 
 As with `if`, the `else` portion of the statement is optional.  That last branch <code>elif user_input < random_number</code> could have simply been an `else` but we decided to explicitly state what was going on to make our code more readable.
+
 <br/>
+
 Let's take a look at an example when using only an `if` _without_ an explicit `else` might make sense:  
 
 ``` python
@@ -238,8 +243,10 @@ users_bday_year = input("What year were you born? ")
 ...
 # other code goes on from here
 ```
+
 <br/>
-In this instance, the program only prints out a comment to the user **<strong>**if** their birthday is the same as today's date.  There's no need for an `else` because we have nothing **else** we want to do with our information.  The code simply executes the lines of the program from there.  
+
+In this instance, the program only prints out a comment to the user <strong>if</strong> their birthday is the same as today's date.  There's no need for an <code>else</code> because we have nothing <strong>else</strong> we want to do with our information.  The code simply executes the lines of the program from there.  
 
 ### !end-callout
 

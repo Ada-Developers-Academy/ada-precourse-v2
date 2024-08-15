@@ -119,9 +119,9 @@ We create constants by creating variables with all uppercase letters.  We can br
 <!-- available callout types: info, success, warning, danger, secondary  -->
 ### !callout-info
 
-## Capitalization does not prevent reassignment:
+## Capitalization Does Not Prevent Reassignment:
 
-Naming variables in all capital letters is a convenantion to communicate that such variables have constant values that will not change, however, it does not actually prevent reassignment.
+Naming variables in all capital letters is a convention to communicate that such variables have constant values that will not change, however, it does not actually prevent reassignment.
 
 ### !end-callout
 
@@ -314,4 +314,4 @@ A variable name in all uppercase characters is a _constant_ variable. By convent
 
 ## Summary
 
-Variables and IO are useful for a wide variety of things and are the basic building blocks of almost all programs.  We've seen a few different ways to use variables that will help us write readable and maintainable code going forward.  We use variables to store things and use input and output to interact with the world outside of our programs.
+Variables and IO are useful for a wide variety of things and are the basic building blocks of almost all programs.  We've seen a few different ways to use variables that will help us write readable and maintainable code going forward.  We use variables to store values and use input and output to interact with the world outside of our programs.

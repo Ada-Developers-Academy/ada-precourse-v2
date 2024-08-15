@@ -470,7 +470,7 @@ It's time to jump back into our Snowman Project. Open up your `snowman.py` and l
 
 ### Adding A Random Word
 
-So far our Snowman game has used a constant as the secret word (`SNOWMAN_WORD = 'broccoli'`), but a game that always uses the same word is not a great game.  The code to generate a random English word is outside of the scope of these lessons, although it is an interesting problem and worth spending some time thinking about.  We are going to use a _package_ to come up with a random word.  We are going to use the _wonderwords_ package.   
+So far our Snowman game has used a constant as the secret word (`SNOWMAN_WORD = 'broccoli'`), but a game that always uses the same word is not a great game.  The code to generate a random English word is outside of the scope of these lessons, although it is an interesting problem and worth spending some time thinking about.  We are going to use a _package_ to come up with a random word.  We are going to use the `wonderwords` package.   
 
 Before we can use `wonderwords` in our code, we will need to install the package using the command line. We will need to navigate to the `snowman_project` directory if we're not already there. We can run `pwd` to check where we are and we should see something like `/ada/precourse/snowman_project`. Once we're in the correct directory, run the following commands one by one:
 
@@ -591,6 +591,7 @@ How do you know what your code is doing when it's generating a random word?  Use
 snowman_word = r.word(
     word_min_length=SNOWMAN_MIN_WORD_LENGTH, 
     word_max_length=SNOWMAN_MAX_WORD_LENGTH)
+
 print(snowman_word)
 
 ```
@@ -804,6 +805,21 @@ def get_letter_from_user(wrong_guesses_list, correct_guesses_list):
 
     return user_input_string
 ```
+
+After updating `get_letter_from_user` to include another parameter `correct_guesses_list`, we will also need to update where we invoke this function in `snowman()` to pass in a second argument. 
+
+Before the above change, the function call inside `snowman()` looked like:
+
+```python
+user_input = get_letter_from_user(wrong_guesses_list)
+```
+
+and after our latest refactor it should look like:
+
+```python
+user_input = get_letter_from_user(wrong_guesses_list, correct_guesses_list)
+```
+
 </details>
 
 
@@ -856,7 +872,7 @@ In the Loops lesson we wrote the helper function `print_snowman` that drew our s
     ```python
 
     def print_snowman(wrong_guesses_count):
-        for i in range(SNOWMAN_WRONG_GUESSES - wrong_guesses_count, SNOWMAN_WRONG_GUESSES)
+        for i in range(SNOWMAN_WRONG_GUESSES - wrong_guesses_count, SNOWMAN_WRONG_GUESSES):
             print(SNOWMAN_GRAPHIC[i])
 
     ```

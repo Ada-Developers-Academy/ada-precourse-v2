@@ -93,6 +93,8 @@ Lets write this code and place it in a function called `guess_the_number`.  Then
 
 Try writing `guess_the_number` in VS code and then compare your answer to ours below.
 
+<br/>
+
 <details>
 <summary> Our version at this point </summary>
 
@@ -136,6 +138,7 @@ Now that we have a `guess_the_number` function, we can call this function multip
 
 Add multiple function calls in VS code, play the game, and then view our solution below.
 
+<br/>
 
 <details>
 <summary>Our version with multiple function calls</summary>
@@ -189,7 +192,7 @@ With this example, we can see that calling a function allows us to run the same 
 
 Functions can either be designed to return a specific value, or to execute blocks of code _without_ returning a value. For the former scenario, a function with a `return` keyword returns a value. The `return` keyword ends the execution of the function. This is referred to as "returning from the function," or "returning out of the function." 
 
-#### Return values and Variables 
+#### Return Values and Variables 
 
 Because functions can return a value, they're often used in variable assignments. In the example below, and the other examples which follow, we will store the value returned by a function in a variable `result` and then print the value of `result`. This will allow us to analyze the behavior and the return value of each function.
 
@@ -199,7 +202,7 @@ def greeting():
     return "Hello"
 
 result = greeting()
-print(result) # "hello"
+print(result) # "Hello"
 ```
 
 We can use `return` without providing it a value. This is usually done if we need to exit a function before reaching its end, but the function doesn't need to return a value. If we don't provide a value after `return`, the function implicitly returns `None`. Even if a function does not have the `return` keyword, a function will execute its function body and then implicitly return `None`. We can demonstrate this with the code below, which executes the function call and implicitly returns `None`. We then print the returned value, which displays `None`.
@@ -259,6 +262,8 @@ Expand the section below to look at the length of the code required if we did no
 
 <details>
 <summary>Code without a function</summary>
+
+<br/>
 
 ```Python
 # Temperatures in Celsius
@@ -498,7 +503,7 @@ $ touch snowman.py requirements.txt
 
 In Snowman:
 
-1.  The user is presented with a list of underscores "_".  Each Underscore represents one letter in a word.
+1.  The user is presented with a list of underscores "_".  Each underscore represents one letter in a word.
 1.  The user guesses letters for the hidden word 
     * For each correct guess, a letter will replace the corresponding underscore.
     * For every wrong guess we are going to remember the number of wrong guesses and print out more and more of a snowman drawing.  
@@ -520,8 +525,8 @@ We will start our game by reading in a letter from the user, similar to how we r
 1.  First, we will need to use `input` to get a string from the user and store it in a variable.  
 1.  Second, we need to check to see if the input is valid.  
     * In `guess_the_number`, we used `isnumeric()` to ensure that the input was a number.  In this function, we need to check to see if the input is a letter, and if the input contains only one letter.
-      - If we have a variable which holds our input named `letter_from_user` then `letter_from_user.isalpha()` will return `True` if the string variable `letter_from_user` contains only alphabetical characters.
-      - `len(letter_from_user)` will tell us the length of the string
+      - If we have a variable which holds our input named `user_input_string` then `user_input_string.isalpha()` will return `True` if the string variable `user_input_string` contains only alphabetical characters.
+      - `len(user_input_string)` will tell us the length of the string
 1. Lastly, we need to return the input string
     - If the user gives bad input: 
       - We print "Invalid letter please enter a single character." 
@@ -531,7 +536,7 @@ We will start our game by reading in a letter from the user, similar to how we r
 
 Use the outlined requirements for `get_letter_from_user` and write this function in `snowman.py`. After we've written our function we also need to call the function in order for Python to execute the logic we just wrote. Then, we can run the file with `python3 snowman.py` in the terminal to manually test that our code is working. 
 
-We can add debugging print statements to our function so that we can see certain values in our terminal if our logic isn't working as expected. For example, if we are curious about what the length of the user input is, we could add `print (len(letter))` in our function. After we have debugged an issue, we should be sure to remove the debugging print statement so that our file doesn't become cluttered with debugging code.
+We can add debugging print statements to our function so that we can see certain values in our terminal if our logic isn't working as expected. For example, if we are curious about what the length of the user input is, we could add `print (len(user_input_string))` in our function. After we have debugged an issue, we should be sure to remove the debugging print statement so that our file doesn't become cluttered with debugging code.
 
 <br/>
 
@@ -544,11 +549,12 @@ We can add debugging print statements to our function so that we can see certain
 SNOWMAN_WORD = "broccoli"
 
 def get_letter_from_user():
-    letter = input("Please enter a letter > ")
-    if len(letter) > 1 or not letter.isalpha():
+    user_input_string = input("Guess a letter: ")
+     
+    if len(user_input_string) > 1 or not user_input_string.isalpha():
         print("Invalid letter please enter a single character.")
     
-    return letter
+    return user_input_string
 
 # Invoke the function the we wrote
 get_letter_from_user()
@@ -560,7 +566,7 @@ get_letter_from_user()
 
 We are now going to work on the main `snowman` function (the function we will call when we want to play the game Snowman).  This function is  similar to `guess_the_number`.
 
-The only check we have to do on the letter is check if it's in the word or not.  To do that, we're going to use the python keyword `in`.  The syntax for `in` is `thing1 in thing2`.  This expression evaluates to `True` if `thing2` contains `thing1`, and `False` otherwise.  We can use it in a conditional expression as `if thing1 in thing2:`.
+The only check we have to do on the letter is check whether it's in the word or not.  To do that, we're going to use the Python keyword `in`.  The syntax for `in` is `thing1 in thing2`.  This expression evaluates to `True` if `thing2` contains `thing1`, and `False` otherwise.  We can use it in a conditional expression as `if thing1 in thing2:`.
 
 Our requirements for the `snowman` function are:
 1.  Use `get_letter_from_user` to get a letter
@@ -582,12 +588,12 @@ Use the outlined requirements above to write the `snowman` function in `snowman.
 SNOWMAN_WORD = "broccoli"
 
 def get_letter_from_user():
-    letter = input("Please enter a letter > ")
+    user_input_string = input("Guess a letter: ")
 
-    if len(letter) > 1 or not letter.isalpha():
+    if len(user_input_string) > 1 or not user_input_string.isalpha():
         print("Invalid letter please enter a single character.")
     
-    return letter
+    return user_input_string
 
 def snowman():
     user_input = get_letter_from_user()

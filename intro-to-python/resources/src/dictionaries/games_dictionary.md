@@ -7,6 +7,7 @@ from wonderwords import RandomWord
 
 RANGE_LOW = 0
 RANGE_HIGH = 100
+MAX_GUESSES = 20
 
 SNOWMAN_GRAPHIC = [
     '*   *   *  ',
@@ -19,28 +20,33 @@ SNOWMAN_GRAPHIC = [
 ]
 
 SNOWMAN_WRONG_GUESSES = len(SNOWMAN_GRAPHIC)
-
 SNOWMAN_MAX_WORD_LENGTH = 8
 SNOWMAN_MIN_WORD_LENGTH = 5
 
 def guess_the_number():
-
-    random.seed()
     random_number = random.randrange(RANGE_LOW, RANGE_HIGH)
-    correct_guess = False
-    while not correct_guess:
-        user_input = get_number_from_user()
-            
-        if user_input == random_number:
-            print("You guessed the number!  Good job!")
-            correct_guess = True
-        if user_input > random_number:
-            print("Your guess is too high")
-        if user_input < random_number:
-            print("Your guess is too low")
-        if user_input < RANGE_LOW or user_input > RANGE_HIGH:
-            print(f"Your guess is out of bounds.  The maximum is {RANGE_LOW} and the minimum is {RANGE_HIGH}")
+           
+    waiting_for_correct_guess = True
+    num_guesses = 0
 
+    while (waiting_for_correct_guess and num_guesses <= MAX_GUESSES):
+        num_guesses += 1
+        user_input = get_number_from_user()
+
+        if user_input == random_number:
+            print("You guessed the number! Good job!")
+            waiting_for_correct_guess = False
+        elif user_input < RANGE_LOW or user_input > RANGE_HIGH:
+            print("Your guess is out of bounds.")
+            print(f"It must be between {RANGE_LOW} and {RANGE_HIGH}")
+        elif user_input > random_number:
+            print("Your guess is too high")
+        elif user_input < random_number:
+            print("Your guess is too low")
+
+    if waiting_for_correct_guess:
+        print(f"You ran out of guesses! The correct answer was {random_number}.")
+      
 def get_number_from_user():
     valid_input = False
     user_input = None
@@ -55,36 +61,29 @@ def get_number_from_user():
 
     return user_input
 
+# Snowman Section
 def snowman():
     r = RandomWord()
     snowman_word = r.word(
-      word_min_length=SNOWMAN_MIN_WORD_LENGTH, 
-      word_max_length=SNOWMAN_MAX_WORD_LENGTH)
+        word_min_length=SNOWMAN_MIN_WORD_LENGTH, 
+        word_max_length=SNOWMAN_MAX_WORD_LENGTH)
 
     print(f"debug info: {snowman_word}")
 
     snowman_dict = build_word_dict(snowman_word)
     wrong_guesses_list = []
-    all_guessed = False
-    get_word_progress(snowman_word, snowman_dict)
 
-    while len(wrong_guesses_list) < SNOWMAN_WRONG_GUESSES and not all_guessed:
+    while len(wrong_guesses_list) < SNOWMAN_WRONG_GUESSES:
         user_input = get_letter_from_user(snowman_dict, wrong_guesses_list)
-        if user_input in snowman_word:
+        if user_input in snowman_dict: 
             print("You guessed a letter that's in the word!")
             snowman_dict[user_input] = True
         else:
             print(f"The letter {user_input} is not in the word")
             wrong_guesses_list.append(user_input)
-            
-        print_snowman(len(wrong_guesses_list))
-        all_guessed = get_word_progress(snowman_word, snowman_dict)
-        print("Wrong guesses: " + " ".join(wrong_guesses_list))
 
-    if all_guessed:
-        print("Congratulations, you win!")
-    else:
-        print(f"Sorry, you lose!  The word was {snowman_word}")
+        print_snowman(len(wrong_guesses_list))
+        print(f"Wrong guesses: {wrong_guesses_list}")
 
 def build_word_dict(word):
     word_dict = {}
@@ -108,9 +107,10 @@ def get_word_progress(word, word_dict):
             return False
     return True
 
-def get_letter_from_user(word_dict, list2):
+def get_letter_from_user(word_dict, wrong_guesses_list):
     valid_input = False
     user_input_string = None
+
     while not valid_input:
         user_input_string = input("Guess a letter: ")
         if not user_input_string.isalpha():
@@ -119,7 +119,7 @@ def get_letter_from_user(word_dict, list2):
             print("You can only input one letter at a time!")
         elif user_input_string in word_dict and word_dict[user_input_string]:
             print("You already guessed that letter and it's in the word!")
-        elif user_input_string in list2:
+        elif user_input_string in wrong_guesses_list:
             print("You already guessed that letter and it's not in the word!")
         else:
             valid_input = True
@@ -130,6 +130,6 @@ def print_snowman(wrong_guesses_count):
     for i in range(SNOWMAN_WRONG_GUESSES - wrong_guesses_count, SNOWMAN_WRONG_GUESSES):
         print(SNOWMAN_GRAPHIC[i])
 
-#guess_the_number()
+# guess_the_number()
 snowman()
 ```
