@@ -242,6 +242,8 @@ def get_value_from_dictionary(dict, key):
 
 Both solutions work and are very similar! Pay close attention to the `if` statement and what is returned from each approach. We prefer the first solution because using the key to access a value from the dictionary and returning it is the main logic. This logic is **not** nested inside a conditional block and is less indented. 
 
+<br/>
+
 While the second example works, it nests the logic of getting a value inside a conditional block and `return None` is emphasized as the main logic. Writing the code this way does not quite capture our intent to return some value from a dictionary.
 
 ##### !end-explanation
