@@ -14,7 +14,7 @@ The purpose of the Precourse Unit is to keep you coding (and talking about code)
 
 All admitted students are expected to be well-versed with the concepts covered [Ada Build curriculum](http://ada-developers-academy.github.io/ada-build/) on the first day of their cohort. This includes conditional flows, loops, functions, lists, dictionaries and Python basics. As such, you are expected to complete all exercises in the Precourse.  
 
-As you complete each assignment you will recieve feedback, some of which is automated and others are not.  We are relatively new to using the Learn platform from [Galvanize](https://www.galvanize.com/), and as such there will be bumps in the process.  **Please be patient with bugs and let us know on Slack, so we can fix them.**
+As you complete each assignment you will receive feedback, some of which is automated and others are not.  The Learn platform is generally pretty reliable, but **if you run into any issues submitting assignments or receiving feedback, please let us know in Slack!**
 
 Some exercises here are multiple choice, some ask you to write code into a coding window, while others ask you to submit a link to your solution.  Many of the exercises here have tests to automatically tell you if you solved it or not.  Others require an instructor to review your code.  Be patient and we will try to deliver feedback as promptly as possible.  
 
