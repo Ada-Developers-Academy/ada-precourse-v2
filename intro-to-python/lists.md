@@ -808,7 +808,7 @@ def get_letter_from_user(wrong_guesses_list, correct_guesses_list):
 
 After updating `get_letter_from_user` to include another parameter `correct_guesses_list`, we will also need to update where we invoke this function in `snowman()` to pass in a second argument. 
 
-Before the above change, the function call inside `snowman()` looked like:
+Before the change above, the function call inside `snowman()` looked like:
 
 ```python
 user_input = get_letter_from_user(wrong_guesses_list)

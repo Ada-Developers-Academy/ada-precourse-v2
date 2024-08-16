@@ -104,11 +104,10 @@ import random
 
 RANGE_LOW = 0
 RANGE_HIGH = 100
-# pick a random number
-random_number = random.randint(RANGE_LOW, RANGE_HIGH)
-
 
 def guess_the_number():
+    # pick a random number
+    random_number = random.randint(RANGE_LOW, RANGE_HIGH)
     user_input_string = input("Guess the number: ")
     user_input = None
 
@@ -148,11 +147,10 @@ import random
 
 RANGE_LOW = 0
 RANGE_HIGH = 100
-# pick a random number
-random_number = random.randint(RANGE_LOW, RANGE_HIGH)
-
 
 def guess_the_number():
+    # pick a random number
+    random_number = random.randint(RANGE_LOW, RANGE_HIGH)
     user_input_string = input("Guess the number: ")
     user_input = None
 

@@ -7,12 +7,11 @@ import random
 RANGE_LOW = 0
 RANGE_HIGH = 100
 
-# pick a random number
-random_number = random.randint(RANGE_LOW, RANGE_HIGH)
-
 SNOWMAN_WORD = "broccoli"
 
 def guess_the_number():
+    # pick a random number
+    random_number = random.randint(RANGE_LOW, RANGE_HIGH)
     user_input = get_number_from_user()
 
     if user_input < RANGE_LOW or user_input > RANGE_HIGH:
