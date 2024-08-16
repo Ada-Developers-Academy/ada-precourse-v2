@@ -55,7 +55,7 @@ We also want you to learn a bit of workflow and learn to use [VS Code](https://c
 
 ## Your Pre-Ada Responsibilities
 
-* Complete the installfest and make sure you have everything installed
+* Complete the Installfest and make sure you have everything installed
 * Complete all the lessons in each topic of the Precourse Unit.
 
 ## Coding Exercises
@@ -118,7 +118,7 @@ class TestPython1(unittest.TestCase):
 
 ##### !explanation
 
-In this exercise you learned how to run a coding snippet.  This allows you to enter code and have it checked for correctness via some automated tests.  This will become standard practice accross the Ada Precourse.  
+In this exercise you learned how to run a coding snippet.  This allows you to enter code and have it checked for correctness via some automated tests.  This will become standard practice across the Ada Precourse.  
 
 It is intended to give you additional practice writing Python code and getting used to having it checked in Learn.
 
