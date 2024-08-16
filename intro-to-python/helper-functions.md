@@ -212,20 +212,18 @@ We set a variable, which we want to receive the return value of the function, eq
 <br>
 
 <details>
-
 <summary>Expand for a breakdown of the <code>sub_total</code> variable assignment in <code>display_order_summary</code>.</summary>
-
 
   1. `sub_total` is set up to receive a variable assignment, so Python looks at the code to the right of the assignment, where it sees `calculate_subtotal(item_prices)`.
   1. `calculate_subtotal` runs and returns a value of 23.00 when finished.
-  1. The expression result, 23.00, is assigned to `subtotal`. 
+  1. The expression result, 23.00, is assigned to `sub_total`. 
 
 ```python
 # before right-hand side evaluation
 sub_total = calculate_subtotal(item_prices)
 
-# after right-hand side evaluation
-sub_total = 23.00 
+# after right-hand side evaluation, `calculate_subtotal(item_prices)` returns 23.00 
+print(sub_total) # => 23.00
 ```
 
 </details>
@@ -254,7 +252,7 @@ total_cost = calculate_car_cost(12000, 5000, 500, 100, 200, True, 0.10)
 print(total_cost) # => 8300.0
 ```
 
-Notice that the expression for calculating the total cost is quite long and a bit unclear: Why is each computation within the mathematical expression necessary? One way to add clarity is to split up the expression into multiple lines, which will make your file longer, but there are times that we should prioritize readability over writing less code or shorter code. 
+Notice that the expression for calculating the total cost is quite long and a bit unclear. Why is each computation within the mathematical expression necessary? One way to add clarity is to split up the expression into multiple lines. Doing so will make your file longer, but that's okay, most times we should prioritize readability over writing the shortest amount of code possible.
 
 ```Python
 def calculate_car_cost(sale_price, trade_in_value, reg_fee, title_fee, doc_fee, is_electric, sales_tax_rate):
@@ -262,6 +260,7 @@ def calculate_car_cost(sale_price, trade_in_value, reg_fee, title_fee, doc_fee, 
     taxable_cost = sale_price - trade_in_value
 
     nontaxable_cost = reg_fee + title_fee
+
     if not is_electric:
         nontaxable_cost += doc_fee
 
@@ -333,27 +332,28 @@ import random
 
 RANGE_LOW = 0
 RANGE_HIGH = 100
-# pick a random number
-random_number = random.randint(RANGE_LOW, RANGE_HIGH)
 
 def guess_the_number():
-
+    # pick a random number
+    random_number = random.randint(RANGE_LOW, RANGE_HIGH)
     user_input_string = input("Guess the number: ")
     user_input = None
+
     if user_input_string.isnumeric():
         user_input = int(user_input_string)
+
+        if user_input < RANGE_LOW or user_input > RANGE_HIGH:
+            print("Your guess is out of bounds.")
+            print(f"It must be between {RANGE_LOW} and {RANGE_HIGH}")
+        elif user_input == random_number:
+            print("You guessed the number! Good job!")
+        elif user_input > random_number:
+            print("Your guess is too high")
+        elif user_input < random_number:
+            print("Your guess is too low")
+        
     else:
         print("You must input a number!")
-
-    if user_input < RANGE_LOW or user_input > RANGE_HIGH:
-        print(f"Your guess is out of bounds.")
-        print(f"It must be between {RANGE_LOW} and {RANGE_HIGH}")
-    elif user_input == random_number:
-        print("You guessed the number!  Good job!")
-    elif user_input > random_number:
-        print("Your guess is too high")
-    elif user_input < random_number:
-        print("Your guess is too low")
 
 # Run the guess_the_number function to test it
 guess_the_number()
@@ -378,18 +378,17 @@ import random
 
 RANGE_LOW = 0
 RANGE_HIGH = 100
-# pick a random number
-random_number = random.randint(RANGE_LOW, RANGE_HIGH)
 
 def guess_the_number():
-
+    # pick a random number
+    random_number = random.randint(RANGE_LOW, RANGE_HIGH)
     user_input = get_number_from_user()
 
     if user_input < RANGE_LOW or user_input > RANGE_HIGH:
-        print(f"Your guess is out of bounds.")
+        print("Your guess is out of bounds.")
         print(f"It must be between {RANGE_LOW} and {RANGE_HIGH}")
     elif user_input == random_number:
-        print("You guessed the number!  Good job!")
+        print("You guessed the number! Good job!")
     elif user_input > random_number:
         print("Your guess is too high")
     elif user_input < random_number:
