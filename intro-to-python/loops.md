@@ -676,7 +676,7 @@ SNOWMAN_0 = '*   *   *  '
 SNOWMAN_1 = ' *   _ *   '
 SNOWMAN_2 = '   _[_]_ * '
 SNOWMAN_3 = '  * (")    '
-SNOWMAN_4 = '  \( : )/ *'
+SNOWMAN_4 = '  \\( : )/ *'
 SNOWMAN_5 = '* (_ : _)  '
 SNOWMAN_6 = '-----------'
 ```

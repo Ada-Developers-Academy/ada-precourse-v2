@@ -837,7 +837,7 @@ In the Loops lesson we wrote the helper function `print_snowman` that drew our s
         ' *   _ *   ',
         '   _[_]_ * ',
         '  * (")    ',
-        '  \( : )/ *',
+        '  \\( : )/ *',
         '* (_ : _)  ',
         '-----------'
     ]
