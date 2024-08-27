@@ -681,6 +681,8 @@ SNOWMAN_5 = '* (_ : _)  '
 SNOWMAN_6 = '-----------'
 ```
 
+The value of `SNOWMAN_4` may look like it's one character off from the other values. From the textbook section for [Variables and IO](variables-and-io.md), remember that the backslash `\` character acts as an "escape" character within strings. Normally, this tells Python that the character following the backslash should be treated specially. But in this case, we don't want the parenthesis `(` to be treated specially—it has no special meaning when escaped. Rather, we want to print the backslash (the arm) and the parenthesis (the body). To do this, we need to escape the backslash itself. So, to print a backslash in a string, we need to use two backslashes `\\`. This is why the value of `SNOWMAN_4` is <code>'&nbsp;&nbsp;\\\\(&nbsp;:&nbsp;)/&nbsp;*'</code>.
+
 ### !callout-info
 
 ## Zero-Based Counting
