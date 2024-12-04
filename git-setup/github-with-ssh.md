@@ -90,23 +90,23 @@ Making sure that `id_ed25519.pub` matches the file we created earlier.
 
 Then we can go to `Settings` in our [Github](https://github.com) Account.
 
-![Github Settings](../assets/github-setup__github-settings.png)
+![Github Settings](images/github-setup__github-settings.png)
 
 Then we can find the `SSH and GPG Keys` section under `Access`.
 
-![SSH and GPG Keys](../assets/github-setup__github-ssh-and-gcp-keys.png)
+![SSH and GPG Keys](images/github-setup__github-ssh-and-gcp-keys.png)
 
 Then we can add a new ssh key with the `New SSH Key` button.
 
-![Create New SSH Key](../assets/github-setup__generate-new-ssh-key.png)
+![Create New SSH Key](images/github-setup__generate-new-ssh-key.png)
 
 Then we can give the key a name and paste the public key into the `Key` field.  
 
-![SSH Key Details](../assets/github-setup__new-public-ssh-key.png)
+![SSH Key Details](images/github-setup__new-public-ssh-key.png)
 
 We may need to confirm our password.
 
-![Password confirmation](../assets/github-setup__confirm-password.png)
+![Password confirmation](images/github-setup__confirm-password.png)
 
 Then we can save the key.
 
@@ -126,7 +126,7 @@ Go to [https://github.com/AdaGold/python-fizzbuzz](https://github.com/AdaGold/py
 
 Select the SSH Clone option
 
-![SSH Clone](../assets/github-setup__clone-with-ssh.png)
+![SSH Clone](images/github-setup__clone-with-ssh.png)
 
 1.  First click on the Green `Code` Button
 1.  Next Click on the `SSH` option

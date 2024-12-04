@@ -88,13 +88,13 @@ The diff of these changes can be displayed like this:
 +    return (deg_celsius * 1.8) + 32
 ```
 
-![Screenshot of a diff: two lines are removed: 1. "result = (deg_celsius * 1.8) + 32" 2. "return result". one line is added: "return (deg_celsius * 1.8) + 32"](../assets/intro-to-git_commits_diff.png)
+![Screenshot of a diff: two lines are removed: 1. "result = (deg_celsius * 1.8) + 32" 2. "return result". one line is added: "return (deg_celsius * 1.8) + 32"](images/intro-to-git_commits_diff.png)
 
 Note the `+` and `-` symbols at the beginning of each line to describe lines added and removed.
 
 We refer to the collection of differences between two resources, such as files or versions, as a **diff**.  A VCS can display a set of changes as a **diff**, allowing us to confirm our modifications before committing to our repo, or to review modifications made by others on our team.
 
-![Viewing a diff in VS Code. 1. "result = (deg_celsius * 1.8) + 32" 2. "return result". one line is added: "return (deg_celsius * 1.8) + 32"](../assets/intro-to-git_commits_vscode-diff.png)  
+![Viewing a diff in VS Code. 1. "result = (deg_celsius * 1.8) + 32" 2. "return result". one line is added: "return (deg_celsius * 1.8) + 32"](images/intro-to-git_commits_vscode-diff.png)  
 *Fig. Diffs can also be viewed using VS Code. Use the Source Control Panel to view a list of changed files in your project. Clicking any file will compare its current contents to the last checked in version. This screenshot sows the same change as the text display above, which deleted lines showing in red, and added lines in green.*
 
 ## When to Make a Commit
@@ -189,7 +189,7 @@ This `$ git status` output describes the code changes:
   - Git gives us a tip for how to track and stage that file
   - In this example, there is one new file: `tests/test_wave_06.py`
 
-![Viewing git status in VS Code](../assets/intro-to-git_commits_vscode-status.png)  
+![Viewing git status in VS Code](images/intro-to-git_commits_vscode-status.png)  
 *Fig. Git status is available in VS Code! Use the Source Control Panel (shown previously) to view a list of changed files in your project. We see `test_wave_01.py` marked with __A__ in Staged Changes, indicating that it will be added. `test_wave_05.py` is marked with __M__ in Changes, indicating Git has detected the modification, but the user has not added it to the pending commit. And `test_wave_06.py` is also under Changes, but marked with __U__, indicating that it is currently untracked.*
 
 ### Moving Changes to the Staging Area
@@ -223,7 +223,7 @@ $ git add <relative-path-to-untracked-file>
 
 Where `<relative-path-to-untracked-file>` is replaced with a relative path to the file.
 
-![Adding files to a commit using VS Code](../assets/intro-to-git_commits_vscode-add.png)  
+![Adding files to a commit using VS Code](images/intro-to-git_commits_vscode-add.png)  
 *Fig. We can add files to a commit using VS Code. Hovering over a file in the Source Control Panel gives us controls to view the file contents, revert the change, or add the change. Adding always moves the change to the Staged Changes. Reverting will unstage the change if staged, or restore to last committed version if unstaged.*
 
 ## Commits Are Made After Local and Staging
@@ -248,7 +248,7 @@ $ git commit -m "Some string that describes the changes, don't forget the quotes
 
 Where `"Some string that describes the changes, don't forget the quotes"` is replaced with an accurate message.
 
-![Preparing to commit files using VS Code](../assets/intro-to-git_commits_vscode-commit.png)  
+![Preparing to commit files using VS Code](images/intro-to-git_commits_vscode-commit.png)  
 *Fig. We can commit our change using VS Code. After adding the files we wish to commit to the Staged Changes area, we can enter a commit message, then commit the change by clicking the check mark.*
 
 ## About Commit Messages

@@ -6,15 +6,15 @@ A **P**ersonal **A**ccess **T**oken (PAT) is an alternative to SSH for authentic
 
 Before we can use a Personal Access Token we need to ensure that our email address is verified on Github. This is done by clicking on settings in Github.
 
-![Github Settings](../assets/github-setup__github-settings.png)
+![Github Settings](images/github-setup__github-settings.png)
 
 Then we can go to the access section and click on **Emails**.
 
-![Github Email Settings](../assets/github-setup__github-email-settings.png)
+![Github Email Settings](images/github-setup__github-email-settings.png)
 
 If our email is unverified we can click on *Resend verification email*. Then check our email to verify our email address with Github.
 
-![Verify Email Address](../assets/github-setup__email-verify-button.png)
+![Verify Email Address](images/github-setup__email-verify-button.png)
 
 <!-- Image Source:   https://docs.github.com/en/get-started/signing-up-for-github/verifying-your-email-address -->
 
@@ -22,29 +22,29 @@ If our email is unverified we can click on *Resend verification email*. Then che
 
 After verifying our email address we can create a Personal Access Token by first going to Settings --> Developer Settings --> Personal Access Tokens.
 
-![Github Settings](../assets/github-setup__github-settings.png)
+![Github Settings](images/github-setup__github-settings.png)
 
-![Developer Settings](../assets/github-setup__developer-settings.png)
+![Developer Settings](images/github-setup__developer-settings.png)
 
-![Personal Access Token](../assets/github-setup__personal-access-token.png)
+![Personal Access Token](images/github-setup__personal-access-token.png)
 
 Then we can click on *Generate new token*.
 
-![Generate New Token](../assets/github-setup__generate-new-token.png)
+![Generate New Token](images/github-setup__generate-new-token.png)
 
 Then we can give the token a note, set an expiration date and give it **repo** scope.
 
 We can optionally grant it Gist scope as well if we want to create gists from the command line.
 
-![Create PAT](../assets/github-setup__pat-token-settings.png)
+![Create PAT](images/github-setup__pat-token-settings.png)
 
-![Generate Token](../assets/github-setup__generate-token.png)
+![Generate Token](images/github-setup__generate-token.png)
 
 Then we can copy the token.  **We must copy the token before leaving this page, as Github will not show the token again.**
 
 **We should NOT close this browser tab until we finish the lesson**.
 
-![PAT Displayed](../assets/github-setup__copy-pat-token.png)
+![PAT Displayed](images/github-setup__copy-pat-token.png)
 
 ## Using the Token in Git
 
@@ -54,12 +54,12 @@ First go to the [Python Fizbuzz Repository](https://github.com/AdaGold/python-fi
 
 Fork the repository to your GitHub account.
 
-![Fork](../assets/github-setup__fork-repo1.png)
-![Fork Repository](../assets/github-setup__fork-repo2.png)
+![Fork](images/github-setup__fork-repo1.png)
+![Fork Repository](images/github-setup__fork-repo2.png)
 
 Then click on the **Code** button and select **https** and copy the link.
 
-![Clone Repository](../assets/github-setup__clone-repo.png)
+![Clone Repository](images/github-setup__clone-repo.png)
 
 Clone the repository with the following command: 
 
