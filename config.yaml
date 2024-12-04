@@ -26,6 +26,33 @@ Standards:
         Type: Lesson
         UID: d5884ace-2cf9-46e5-b279-29ef1a501cbb
         Path: /preparing-for-ada/preparing-for-ada.md
+  -
+    Title: Intro to Git
+    Description: "Intro to Git,  Git setup with Access Token, Git Workflow Setup, Commits"
+    UID: 37ec02c8-be30-43d4-9d9b-af37e7bb7ff7
+    SuccessCriteria:
+      - success criteria
+    ContentFiles:
+      -
+        Type: Lesson
+        UID: qCKw66
+        Path: /git-setup/intro-to-git-vocab-and-concepts.md
+      -
+        Type: Resource
+        UID: 610bc189-6b6b-4b35-b3af-1bc9ca4348bc
+        Path: /git-setup/github-with-ssh.md
+      -
+        Type: Lesson
+        UID: EgvjDl
+        Path: /git-setup/git-workflow-setup.md
+      -
+        Type: Lesson
+        UID: CltvdV
+        Path: /git-setup/commits.md
+      -
+        Type: Lesson
+        UID: 6c114fa6
+        Path: /git-setup/github-setup-with-access-token.md
   - Title: Practice with Python
     Description: Coding Guess the Number and Snowman
     UID: 93a229d0-2bf8-48ca-a0f7-9a72a0a323b3
