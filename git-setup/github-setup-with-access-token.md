@@ -28,9 +28,15 @@ After verifying our email address we can create a Personal Access Token by first
 
 ![Personal Access Token](images/github-setup__personal-access-token.png)
 
-Then we can click on *Generate new token*.
+"Personal Access Tokens" is a drop down with two options:
+- Fine-grained tokens
+- Tokens (classic)
+
+We want to choose "Tokens (classic)", then we can click on *Generate new token*.
 
 ![Generate New Token](images/github-setup__generate-new-token.png)
+
+This will open up another drop down, and we want to select the classic option again titled "Generate new token (classic)" with the subtitle "For general use".
 
 Then we can give the token a note, set an expiration date and give it **repo** scope.
 

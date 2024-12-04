@@ -28,7 +28,7 @@ Standards:
         Path: /preparing-for-ada/preparing-for-ada.md
   -
     Title: Intro to Git
-    Description: "Intro to Git,  Git setup with Access Token, Git Workflow Setup, Commits"
+    Description: "Intro to Git, Git Workflow Setup, Commits, Git setup with Access Token"
     UID: 37ec02c8-be30-43d4-9d9b-af37e7bb7ff7
     SuccessCriteria:
       - success criteria
