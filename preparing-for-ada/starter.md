@@ -34,6 +34,8 @@ In this course you can always resubmit work.  If you want a 2nd-round of instruc
 
 All Precourse materials should be completed before the first day of instruction for the cohort. 
 
+<br>
+
 For specific due dates and the ongoing class schedule, please:
 1. Visit [the Core Hub website](https://sites.google.com/adadevelopersacademy.org/adacorehub/home)
 2. Click the link for your cohort to view and have options to subscribe to your cohort's calendar
@@ -237,7 +239,7 @@ FAILED (failures=1)
 
 ### Links to Code
 
-Other programming exercises called Project Challenges will ask you to submit a link to code, typically from [Github](https://github.com). Through the program we will submit links to repositories or "repos" that contain full code projects, as well as gists, which are typically a single file or small set of documents.
+Other programming exercises called Project Challenges will ask you to submit a link to code, typically from [Github](https://github.com). Through the classroom period we will submit links to repositories or "repos" that contain full code projects, as well as gists, which are typically a single file or small set of documents.
 
 <!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
 <!-- Replace everything in square brackets [] and remove brackets  -->
@@ -255,7 +257,7 @@ Other programming exercises called Project Challenges will ask you to submit a l
 Submit a gist link below. For this submission we'd like you to:
 1. Follow [GitHub's creating gists documentation](https://docs.github.com/en/github/writing-on-github/creating-gists) to create a **Public** gist. 
 2. Add a Hello World Application to the gist file
-3. Submit a link to your gist
+3. Submit a link to your gist below
 
 ##### !end-question
 
