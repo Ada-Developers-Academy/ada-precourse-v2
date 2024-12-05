@@ -108,7 +108,7 @@ If you already have any of the optional tools installed, you do not need to unin
 Copy the line below in its entirety (avoiding the `$`), paste it into the terminal and hit enter. You will be prompted for your password. Don't be alarmed if you don't see anything appear as you type. It's still getting entered.
 
 ```bash
-$ /bin/zsh -c "$(curl -fsSL https://gist.githubusercontent.com/ada-instructors/21027e509214e96551b1a20943e9731c/raw/69f1ce6a6af12725cd9be90227caa8dc3d8f75f2/ada_installfest.zsh)"
+$ /bin/zsh -c "$(curl -fsSL https://gist.githubusercontent.com/ada-instructors/21027e509214e96551b1a20943e9731c/raw/ada_installfest.zsh)"
 ```
 
 **When the install finishes, quit and restart your terminal.** Without doing this, the installation above may not take affect.
