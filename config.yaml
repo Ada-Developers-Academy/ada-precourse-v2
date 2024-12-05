@@ -22,10 +22,6 @@ Standards:
         Type: Lesson
         UID: 7ff13769-cfc8-42f6-b550-1a0b8a8e4933
         Path: /preparing-for-ada/python-style.md          
-      -
-        Type: Lesson
-        UID: d5884ace-2cf9-46e5-b279-29ef1a501cbb
-        Path: /preparing-for-ada/preparing-for-ada.md
   -
     Title: Intro to Git
     Description: "Intro to Git, Git Workflow Setup, Commits, Git setup with Access Token"
@@ -63,10 +59,10 @@ Standards:
         Type: Instructor
         UID: 85eba4c5-2162-431a-91fe-437d30b3b624
         Path: /intro-to-python/precourse-live-instructor.md
-      -
-        Type: Lesson
-        UID: 51aa25a0-0496-44ac-84a5-aaff01527a55
-        Path: /intro-to-python/precourse-live.md 
+      # -
+      #   Type: Lesson
+      #   UID: 51aa25a0-0496-44ac-84a5-aaff01527a55
+      #   Path: /intro-to-python/precourse-live.md 
       -
         Type: Lesson
         UID: 43d91d87-455b-41dd-bc8f-c5e0c54b1015
@@ -124,13 +120,13 @@ Standards:
         Type: Resource
         UID: 8dcfa218-e7a1-499c-b30e-dab52ba8474b
         Path: /intro-to-python/resources/src/conditionals/games_conditional.md
-  - Title: Social Justice
-    Description: Prework for the Social Justice Training
-    UID: daffd069-1de3-43dd-9f15-37e66ddbf673
-    SuccessCriteria:
-      - success criteria
-    ContentFiles:
-      -
-        Type: Lesson
-        UID: be54361c-2647-45bc-87a4-2b3673e496ea
-        Path: /ada-equity-work/ada-social-justice-work.md
+  # - Title: Social Justice
+  #   Description: Prework for the Social Justice Training
+  #   UID: daffd069-1de3-43dd-9f15-37e66ddbf673
+  #   SuccessCriteria:
+  #     - success criteria
+  #   ContentFiles:
+  #     -
+  #       Type: Lesson
+  #       UID: be54361c-2647-45bc-87a4-2b3673e496ea
+  #       Path: /ada-equity-work/ada-social-justice-work.md
