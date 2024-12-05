@@ -22,10 +22,6 @@ Standards:
         Type: Lesson
         UID: 7ff13769-cfc8-42f6-b550-1a0b8a8e4933
         Path: /preparing-for-ada/python-style.md          
-      -
-        Type: Lesson
-        UID: d5884ace-2cf9-46e5-b279-29ef1a501cbb
-        Path: /preparing-for-ada/preparing-for-ada.md
   -
     Title: Intro to Git
     Description: "Intro to Git, Git Workflow Setup, Commits, Git setup with Access Token"
