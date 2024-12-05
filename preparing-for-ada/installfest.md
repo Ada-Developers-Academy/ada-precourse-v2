@@ -16,19 +16,11 @@ After finishing, keep an eye on Slack for anyone else asking for help, and share
 
 <!-- available callout types: info, success, warning, danger, secondary  -->
 
-### !callout-danger
+### !callout-info
 
 ## A Tale of 2 Macs
 
-In late 2020, Apple released a new type of Macbook using an in-house designed ARM-based chip called the M1. Prior to this Apple had used Intel x86 CPUs.
-
-<br>
-
-Computers with M1 CPUs are great! However... as they are still newer, not all developer tools have been updated to work with the new architecture. For the most part M1 Macs will be fine for working at Ada, and support improves with each passing day. However you may encounter some issues regarding libraries not tuned for the M1. That's often the price for living on the cutting-edge!
-
-<br>
-
-Keep an eye out in future lessons in case there are M1 concerns of which to be aware, and be sure to reach out for help if you encounter any complications.
+In late 2020, Apple released a new type of Macbook using an in-house designed ARM-based chip called the M1. Prior to this Apple had used Intel x86 CPUs. It's useful to know that different physical architectures of Macbooks exist, since on occasion it can mean different troubleshooting steps when there are installation issues.
 
 ### !end-callout
 
@@ -309,13 +301,30 @@ If displayed, we can fix it by going to **System Preferences > Security & Privac
 
 ![Open anyway](images/open-anyway.jpg)
 
-## In this lesson we installed:
+## Installfest Checklist
 
-1.  Xcode Command-line tools
-1.  Python 3
-1.  VS Code
-1.  Firefox
-1.  Git
-1.  Slack
+### !challenge
+* type: tasklist
+* id: 84b6d8a7-dd9c-4d21-b994-a8ecc5cdf2e5
+* title: Installfest Checklist
+* topics: installfest
+##### !question
 
-These tools will be important as we begin to write programs at Ada.
+I have successfully installed:
+
+##### !end-question
+##### !options
+
+* Xcode Command-line tools
+* Homebrew
+* Python 3
+* Pip 3
+* Git
+* Node
+* VS Code
+* Slack
+
+##### !end-options
+### !end-challenge
+
+
