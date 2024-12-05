@@ -59,10 +59,10 @@ Standards:
         Type: Instructor
         UID: 85eba4c5-2162-431a-91fe-437d30b3b624
         Path: /intro-to-python/precourse-live-instructor.md
-      -
-        Type: Lesson
-        UID: 51aa25a0-0496-44ac-84a5-aaff01527a55
-        Path: /intro-to-python/precourse-live.md 
+      # -
+      #   Type: Lesson
+      #   UID: 51aa25a0-0496-44ac-84a5-aaff01527a55
+      #   Path: /intro-to-python/precourse-live.md 
       -
         Type: Lesson
         UID: 43d91d87-455b-41dd-bc8f-c5e0c54b1015
