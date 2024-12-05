@@ -306,7 +306,7 @@ If displayed, we can fix it by going to **System Preferences > Security & Privac
 ### !challenge
 * type: tasklist
 * id: 84b6d8a7-dd9c-4d21-b994-a8ecc5cdf2e5
-* title: Installfest Checklist
+* title: Installfest
 * topics: installfest
 ##### !question
 
