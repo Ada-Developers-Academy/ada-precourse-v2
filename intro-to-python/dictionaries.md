@@ -487,8 +487,7 @@ The last piece of our snowman game is displaying the word with the letters that 
 
 ### Displaying User Progress
 
-So far we have:
-
+We have the two pieces of information we need to display the user progress:
  *  The secret word 
  *  The list of correctly guessed letters  
  
@@ -594,7 +593,7 @@ def snowman():
     snowman_dict = build_word_dict(snowman_word)
     wrong_guesses_list = []
 
-    while len(wrong_guesses_list) < SNOWMAN_WRONG_GUESSES:
+    while len(wrong_guesses_list) < SNOWMAN_MAX_WRONG_GUESSES:
         # user_input = get_letter_from_user(correct_guesses_list, wrong_guesses_list)
         # This function call won't work yet, the next step is to update this function
         # to use the word dictionary instead of the list we were using before.

@@ -20,7 +20,7 @@ SNOWMAN_GRAPHIC = [
     '-----------'
 ]
 
-SNOWMAN_WRONG_GUESSES = len(SNOWMAN_GRAPHIC)
+SNOWMAN_MAX_WRONG_GUESSES = len(SNOWMAN_GRAPHIC)
 SNOWMAN_MAX_WORD_LENGTH = 8
 SNOWMAN_MIN_WORD_LENGTH = 5
 
@@ -75,7 +75,7 @@ def snowman():
     correct_guesses_list = []
     wrong_guesses_list = []
 
-    while len(wrong_guesses_list) < SNOWMAN_WRONG_GUESSES:
+    while len(wrong_guesses_list) < SNOWMAN_MAX_WRONG_GUESSES:
         user_input = get_letter_from_user(wrong_guesses_list, correct_guesses_list)
         if user_input in snowman_word:
             print("You guessed a letter that's in the word!")
@@ -105,8 +105,8 @@ def get_letter_from_user(wrong_guesses_list, correct_guesses_list):
     return user_input_string
 
 def print_snowman(wrong_guesses_count):
-    for i in range(SNOWMAN_WRONG_GUESSES - wrong_guesses_count,
-                   SNOWMAN_WRONG_GUESSES):
+    for i in range(SNOWMAN_MAX_WRONG_GUESSES - wrong_guesses_count,
+                   SNOWMAN_MAX_WRONG_GUESSES):
             print(SNOWMAN_GRAPHIC[i])
 
 # guess_the_number()
