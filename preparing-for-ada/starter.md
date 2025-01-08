@@ -1,24 +1,22 @@
 # Getting Started & The Pre-Ada Topics
 
-Welcome to the Ada Precourse! This course, delivered through the "Learn" Learning Management System, is a major tool we will use throughout your education at Ada. The Precourse Unit consists of three Topics: **Getting Ready**, **Practice with Python**, and **Social Justice**. Each topic has a collection of lessons you will need to complete **prior to starting at Ada**.
+Welcome to the Ada Precourse! This course, delivered through the "Learn" Learning Management System, is a major tool we will use throughout your education at Ada. The Precourse Unit consists of three Topics: **Getting Ready**, **Intro to Git**, and **Practice with Python**. Each topic has a collection of lessons you will need to complete **prior to starting at Ada**.
 
 ## Learn Terms
 
 | Term | Definition | Example | Used in a Sentence |
 | -- | -- | -- |--|
 | Lesson | A combination of written material, video lessons, and code challenges focused on one main concept.  | Getting Started & The Pre-Ada Topics, Installfest - Getting Software Installed  | "Conditionals is the name of a lesson in the Practice with Python topic." |
-| Topic | A collection of related lessons. Topics appear as a square on the main Learn course page. | Getting Ready, Practice with Python, Social Justice | "Social Justice is a topic in the Precourse unit" |
-| Unit | A collection of related topics | Precourse, About Ada, Unit 1 | "Precourse is the first unit in the C18 Learn Course" |
+| Topic | A collection of related lessons. Topics appear as a square on the main Learn course page. | Getting Ready, Intro to Git, Practice with Python | "Practice with Python is a topic in the Precourse unit" |
+| Unit | A collection of related topics | Precourse, About Ada, Unit 1 | "Precourse is the first unit in the Learn curriculum" |
 
-The purpose of the Precourse Unit is to keep you coding (and talking about code) between admissions and the first day of class. You should understand the topics covered in the Precourse and [Build curriculum](http://ada-developers-academy.github.io/ada-build/) and practice this understanding with the assignments provided. Take this opportunity to meet and study with peers in your cohort.  You will have been invited to the Cohort Slack, and we will set up a channel to discuss the course and coding challenges.  **Take advantage of it.**
+The purpose of the Precourse Unit is to keep you coding (and talking about code) between admissions and the first day of class. You should understand the topics covered in the Precourse and [Build curriculum](http://ada-developers-academy.github.io/ada-build/) and practice this understanding with the assignments provided. Take this opportunity to meet and study with peers in your cohort. You will have been invited to the Cohort Slack, and we will set up a channel to discuss the course and coding challenges. All students are expected to participate in this space as part of engaging with the community, growing your network, and improving your skills around talking about code with others.
 
 All admitted students are expected to be well-versed with the concepts covered [Ada Build curriculum](http://ada-developers-academy.github.io/ada-build/) on the first day of their cohort. This includes conditional flows, loops, functions, lists, dictionaries and Python basics. As such, you are expected to complete all exercises in the Precourse.  
 
 As you complete each assignment you will receive feedback, some of which is automated and others are not.  The Learn platform is generally pretty reliable, but **if you run into any issues submitting assignments or receiving feedback, please let us know in Slack!**
 
 Some exercises here are multiple choice, some ask you to write code into a coding window, while others ask you to submit a link to your solution.  Many of the exercises here have tests to automatically tell you if you solved it or not.  Others require an instructor to review your code.  Be patient and we will try to deliver feedback as promptly as possible.  
-
-<iframe src="https://adaacademy.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=eb492361-e1ed-47f3-845e-acb5001ae8e6&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&start=0&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 
 <!-- available callout types: info, success, warning, danger, secondary  -->
 ### !callout-info
@@ -34,7 +32,13 @@ In this course you can always resubmit work.  If you want a 2nd-round of instruc
 
 ## Due Dates
 
-# The Precourse should be completed by Monday, September 2nd at 7pm PDT
+All Precourse materials should be completed before the first day of instruction for the cohort. 
+
+<br>
+
+For specific due dates and the ongoing class schedule, please:
+1. Visit [the Core Hub website](https://sites.google.com/adadevelopersacademy.org/adacorehub/home)
+2. Click the link for your cohort to view and have options to subscribe to your cohort's calendar
 
 ### !end-callout
 
@@ -235,7 +239,7 @@ FAILED (failures=1)
 
 ### Links to Code
 
-Other programming exercises called Project Challenges will ask you to submit a link to code in [repl.it](https://repl.it).  Later, after you start at Ada we will have you submit work in Learn from [Github](https://github.com).
+Other programming exercises called Project Challenges will ask you to submit a link to code, typically from [Github](https://github.com). Through the classroom period we will submit links to repositories or "repos" that contain full code projects, as well as gists, which are typically a single file or small set of documents.
 
 <!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
 <!-- Replace everything in square brackets [] and remove brackets  -->
@@ -250,7 +254,10 @@ Other programming exercises called Project Challenges will ask you to submit a l
 
 ##### !question
 
-Create a Hello World Application on [Repl.it](https://repl.it), and submit a link to your submission.
+Submit a gist link below. For this submission we'd like you to:
+1. Follow [GitHub's creating gists documentation](https://docs.github.com/en/github/writing-on-github/creating-gists) to create a **Public** gist. 
+2. Add a Hello World Application to the gist file
+3. Submit a link to your gist below
 
 ##### !end-question
 
@@ -262,7 +269,7 @@ Place your link here
 
 ##### !hint 
 
-You can learn [how to create a gist](https://docs.github.com/en/github/writing-on-github/creating-gists), or just create a program on [repl.it](https://repl.it).
+For another guide and more info on working with gists, check out the article ["What You Can Do With Gists on GitHub?"](https://www.geeksforgeeks.org/what-you-can-do-with-gists-on-github/) from GeeksforGeeks. If you are still running into issues after trying to follow both of the linked guides, reach out on Slack and folks will help you get unstuck!
 
 ##### !end-hint
 
