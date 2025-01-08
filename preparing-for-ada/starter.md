@@ -8,7 +8,7 @@ Welcome to the Ada Precourse! This course, delivered through the "Learn" Learnin
 | -- | -- | -- |--|
 | Lesson | A combination of written material, video lessons, and code challenges focused on one main concept.  | Getting Started & The Pre-Ada Topics, Installfest - Getting Software Installed  | "Conditionals is the name of a lesson in the Practice with Python topic." |
 | Topic | A collection of related lessons. Topics appear as a square on the main Learn course page. | Getting Ready, Intro to Git, Practice with Python | "Practice with Python is a topic in the Precourse unit" |
-| Unit | A collection of related topics | Precourse, About Ada, Unit 1 | "Precourse is the first unit in the C23 Learn Course" |
+| Unit | A collection of related topics | Precourse, About Ada, Unit 1 | "Precourse is the first unit in the Learn curriculum" |
 
 The purpose of the Precourse Unit is to keep you coding (and talking about code) between admissions and the first day of class. You should understand the topics covered in the Precourse and [Build curriculum](http://ada-developers-academy.github.io/ada-build/) and practice this understanding with the assignments provided. Take this opportunity to meet and study with peers in your cohort. You will have been invited to the Cohort Slack, and we will set up a channel to discuss the course and coding challenges. All students are expected to participate in this space as part of engaging with the community, growing your network, and improving your skills around talking about code with others.
 
