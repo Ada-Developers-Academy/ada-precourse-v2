@@ -729,6 +729,8 @@ def snowman():
       word_min_length=SNOWMAN_MIN_WORD_LENGTH, 
       word_max_length=SNOWMAN_MAX_WORD_LENGTH)
 
+    # This print statement is only for personal testing and   
+    # should be removed before sharing the code with others
     print(f"debug info: {snowman_word}")
     
     # Add a new list to track correctly guessed letters
