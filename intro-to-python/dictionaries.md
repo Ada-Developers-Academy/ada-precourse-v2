@@ -520,9 +520,9 @@ print(result)
 You might be saying to yourself, what about the `in` operator?  We can just use the line of code `if guessed_letter in letters_in_word` to do this same thing, but under the hood, that `in` operator is doing the same search that's written above here.  Either way, finding things in a list always includes searching through the list one element at a time.  Also, we've got to do some logic work to say if it's in the list, then our user has guessed it, and if it isn't in the list then our user hasn't guessed it.
 
 Luckily for us, we have dictionaries!  Dictionaries allow us to store a value with a key. Let's consider the following:
-* We can put every letter from the secret word into the dictionary and set the initial values to `False`.
-* When a user guesses a letter that's in the secret word, we can change the value to `True`.
-* Then, if we want to know if a user has guessed a particular letter, we can just check the value for that letter in the dictionary and get a `True` or `False` answer that will tell us if our user has guessed that letter or not.
+1. We can put every letter from the secret word into the dictionary and set the initial values to `False`.
+2. When a user guesses a letter that's in the secret word, we can change the value to `True`.
+3. Then, if we want to know if a user has guessed a particular letter, we can check the value for that letter in the dictionary and get a `True` or `False` answer that will tell us if our user has guessed that letter or not.
 
 The first thing we need to do is store the letters from the secret word `snowman_word` in a dictionary, marking them all as "not guessed". Let's write a helper function `build_letter_status_dict` that takes a string and returns a dictionary, where each unique letter from the word is a key and all of the values are `False`.  
 
@@ -732,11 +732,11 @@ Inside the function, we will need to:
 In `snowman.py` write the helper function `generate_word_progress_string` that follows the requirements above. 
 
 **Example inputs and outputs:**
-| Input | <div style="min-width:30px">Output</div> |
+| Input | <div style="min-width:135px">Output</div> |
 | -- | -- |
-|`snowman_word="pepper"` <br/> `correct_letter_guess_statuses={"p":True, "e": False, "r": False}`|`"p _ p p _ _"`|
-|`snowman_word="tiger"` <br/> `correct_letter_guess_statuses={"e":False, "g": False, "i": False, "r": False, "t": False}`|`"_ _ _ _ _"`|
-|`snowman_word="swamp"` <br/> `correct_letter_guess_statuses={"a":True, "m": True, "p": True, "s": True, "w": True}`|`"s w a m p"`|
+|`snowman_word="pepper"` <br/> `correct_letter_guess_statuses={"p": True, "e": False, "r": False}`|`"p _ p p _ _"`|
+|`snowman_word="tiger"` <br/> `correct_letter_guess_statuses={"e": False, "g": False, "i": False, "r": False, "t": False}`|`"_ _ _ _ _"`|
+|`snowman_word="swamp"` <br/> `correct_letter_guess_statuses={"a": True, "m": True, "p": True, "s": True, "w": True}`|`"s w a m p"`|
 
 ### !callout-info
 
@@ -798,23 +798,26 @@ def print_word_progress_string(snowman_word, correct_letter_guess_statuses):
 
 ### Get Game Progress
 
-The helper function `print_word_progress_string` provides a visual display of the player's progress towards guessing the word. We also need to write a function that indicates whether or not all the letters of the word have been guessed. We will name this function `get_word_progress`. The function `get_word_progress` should return `True` if all the letters have been guessed, and `False` otherwise.
-
+The helper function `print_word_progress_string` provides a visual display of the player's progress towards guessing the word. We also need to write a function that indicates whether or not all the letters of the word have been guessed. We will name this function `is_word_guessed`. The function `is_word_guessed` should return `True` if all the letters have been guessed, and `False` otherwise.
 
 This function will need to:
-
-* Loop over each letter (key) in the `correct_letter_guess_statuses` dict
+1. Loop over each letter (key) in the `correct_letter_guess_statuses` dict
     * If `correct_letter_guess_statuses[letter]` is `False`, return `False`
-* If the loop terminates without encountering a `False` value, return `True`
+2. If the loop terminates without encountering a `False` value, return `True`
 
-Write a helper function `get_word_progress(word, correct_letter_guess_statuses)` that takes two parameters, a word and a dictionary where each letter in the word is a key and the values are `True` or `False`.  The function returns `True` if every value in the dictionary is `True`. The function returns `False` if any of the values in the dictionary are `False`.
+Write a helper function `is_word_guessed` that:
+* takes two parameters
+  *  a string representing a word
+  *  a dictionary where each letter in the string parameter is a key and the values are either `True` or `False`.  
+* returns `True` if every value in the dictionary is `True`. 
+* returns `False` if any of the values in the dictionary are `False`.
 
 **Example inputs and outputs:**
 | Input | Output |
 |--|--|
-|`word="pepper"` <br/> `word_dict={"p":True, "e": False, "r": False}`|`False`|
-|`word="tiger"` <br/> `word_dict={"e":False, "g": False, "i": False, "r": False, "t": False}`|`False`|
-|`word="swamp"` <br/> `word_dict={"a":True, "m": True, "p": True, "s": True, "w": True}`|`True`|
+|`snowman_word="pepper"` <br/> `correct_letter_guess_statuses={"p": True, "e": False, "r": False}`|`False`|
+|`snowman_word="tiger"` <br/> `correct_letter_guess_statuses={"e": False, "g": False, "i": False, "r": False, "t": False}`|`False`|
+|`snowman_word="swamp"` <br/> `correct_letter_guess_statuses={"a": True, "m": True, "p": True, "s": True, "w": True}`|`True`|
 
 <br>
 <details>
@@ -823,8 +826,8 @@ Write a helper function `get_word_progress(word, correct_letter_guess_statuses)`
 
 ```python
 
-def get_word_progress(word, correct_letter_guess_statuses):
-    for letter in word:
+def is_word_guessed(snowman_word, correct_letter_guess_statuses):
+    for letter in snowman_word:
         if not correct_letter_guess_statuses[letter]:
             return False
     return True
@@ -835,7 +838,7 @@ def get_word_progress(word, correct_letter_guess_statuses):
 
 ### Snowman Project
 
-We have all of the pieces we need to build the final version, and now it's time to bring all the pieces together into a fully functional Snowman game!  The last piece of the puzzle is to incorporate the `print_word_progress_string` and `get_word_progress` helper functions and end the game with a success message if the user guesses all of the letters in the word.  Use the following description of the final version as a guide and follow the link below to write and test your final version of Snowman!
+We have all of the functions and info that we need to build the final version, and now it's time to bring them all together into a fully functional Snowman game! The last piece of the puzzle is to incorporate the `print_word_progress_string` and `is_word_guessed` helper functions, then end the game with a success message if the user guesses all of the letters in the word. Use the following description of the final version as a guide and follow the link below to write and test your final version of Snowman!
 
 Game Description:
 1. User starts the game from the command line
