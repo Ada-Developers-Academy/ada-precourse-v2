@@ -149,9 +149,8 @@ Write a function `get_value_from_dictionary` that takes two arguments, a diction
 * If the dictionary contains the key, the function returns the **value** for that the key.
 * If the dictionary does not contain the key, the function returns `None`.
 
-Example inputs and outputs:
-
-|input|output|
+**Example inputs and outputs:**
+| Input | Output |
 |--|--|
 | `dict = {"dog":"cat", "tree":"bush", "star":"planet"}` <br/> `key = "tree"`|`"bush"`|
 | `dict = {"dog":"cat", "tree":"bush", "star":"planet"}` <br/> `key = "chocolate"`|`None`|
@@ -271,8 +270,7 @@ Write a function `dict_counter` that takes two arguments, a dictionary and a key
 1. Return the updated dictionary.
 
 Example inputs and outputs:
-
-|input|output|
+| Input | Output |
 |--|--|
 | `dict = {"dog":1, "tree":1, "star":4}` <br/> `key = "tree"`|`{"dog":1, "tree":2, "star":4}`|
 | `dict = {"dog":1, "tree":1, "star":4}` <br/> `key = "chocolate"`|`{"dog":1, "tree":1, "star":4, "chocolate":1}`|
@@ -402,9 +400,8 @@ Write a function `build_a_dictionary` that takes two arguments, a list of keys a
 1. The keys and values must be matched in order, ie, the key at index 0 in the key list goes with the value at index 0 in the value list
 1. Return the new dictionary or None if the inputs are not valid
 
-Example inputs and outputs:
-
-|input|output|
+**Example inputs and outputs:**
+| Input | Output |
 |--|--|
 |`keys=["dog", "cat", "bird", "mouse"]` <br/> `values=[1, 2, 3, 4]`|`{"dog":1, "cat":2, "bird":3, "mouse":4}`|
 |`keys=[1, 2, 3, 4]` <br/> `values=["dog", "cat", "bird", "mouse"]`|`{1: "dog", 2: "cat", 3: "bird", 4: "mouse"}`|
@@ -537,11 +534,11 @@ The first thing we need to do is store the letters from the secret word `snowman
 ```python
 
 def build_letter_status_dict(snowman_word):
-    snowman_word_dict = {}
+    letter_status_dict = {}
 
     for letter in snowman_word:
-        snowman_word_dict[letter] = False
-    return snowman_word_dict
+         letter_status_dict[letter] = False
+    return  letter_status_dict
 
 ```
 
@@ -550,15 +547,16 @@ Notice that our function doesn't check to see if a letter is already in the dict
 ```python
 
 def build_letter_status_dict(snowman_word):
-    snowman_word_dict = {}
+    letter_status_dict = {}
+
     for letter in snowman_word:
-        if letter not in snowman_word_dict:
-            snowman_word_dict[letter] = False
-    return snowman_word_dict
+        if letter not in  letter_status_dict:
+             letter_status_dict[letter] = False
+    return  letter_status_dict
 
 ```
 
-The end result here will be the same, in the first example any time we encounter a letter that is already in `snowman_word_dict` we'll overwrite it, but the values are always the same, so the end result of both of functions above will be the same.
+The end result here will be the same, in the first example any time we encounter a letter that is already in ` letter_status_dict` we'll overwrite it, but the values are always the same, so the end result of both of functions above will be the same.
 </details>
 
 ### Using the Letter Status Dictionary
@@ -621,7 +619,7 @@ def snowman():
 
 </details>
 
-The next step is to update our helper function `get_letter_from_user` to use the word dictionary instead of the list of correct letters.  Right now, we're only telling a user whether they've guessed a letter before, but while we're updating this function, let's modify it to tell the user whether they've guessed a letter before, __and__ whether that letter is in the word or not.  
+The next step is to update our helper function `get_letter_from_user` to use our new dictionary instead of the list of correct letters.  Right now, we're only telling a user whether they've guessed a letter before, but while we're updating this function, let's modify it to tell the user whether they've guessed a letter before, __and__ whether that letter is in the word or not.  
 
 There is one important change of which to be aware. Right now we're just checking whether the letter the user guessed is in the list of correct letters.  If we do that with the dictionary, we'll end up with a logical error!  Consider these code snippets:
 
@@ -634,29 +632,48 @@ elif user_input_string in wrong_guesses_list or user_input_string in correct_gue
     print("You have already guessed that letter")
 #...
 
-# assume we replace the parameter `correct_guesses_list` in the function call with the parameter `word_dict`
-# if we just swap it in we'll end up with a logical error:
+```
+
+```py
+
+# Assume we replace the parameter `correct_guesses_list` in the function call 
+# with the parameter `correct_letter_guess_statuses`.
+# If we just swap it in we'll end up with a logical error:
 
 #...
-elif user_input_string in wrong_guesses_list or user_input_string in word_dict:
+elif user_input_string in wrong_guesses_list or user_input_string in correct_letter_guess_statuses:
     print("You have already guessed that letter")
 #...
 
 ```
-The logical error comes in because all of the letters from the word are already in `word_dict`, just with a `False` value! If we only check to see whether the letter is in `word_dict`, we'll tell the user that they've already guessed a letter even if it's the first time they've guessed it! We need to add a check that looks at the value to see whether it's `True` or `False`:
+
+The logical error comes in because all of the letters from the secret word are already keys in the dictionary `correct_letter_guess_statuses` with `False` values! If we only check to see whether the letter is in `correct_letter_guess_statuses`, this logic will tell the user that they've already guessed a letter even if it's the first time they've guessed it! We need to add a condition to our `elif` that looks at the value for a key in `correct_letter_guess_statuses to see whether it's `True` or `False`:
 
 ```python
 
 #...
-elif user_input_string in wrong_guesses_list or (user_input_string in word_dict and word_dict[user_input_string]):
+elif user_input_string in wrong_guesses_list or (user_input_string in correct_letter_guess_statuses and correct_letter_guess_statuses[user_input_string]):
     print("You have already guessed that letter")
 #...
 
 ```
 
-Update `get_letter_from_user` helper function and make the following changes:
+This line gets very long and breaks our Python PEP8 style best practices, so we can use parentheses around all of our conditional statements and break up the line around the `or` and `and` operators to make it a little easier to read without scrolling horizontally.
+
+```python
+
+#...
+elif (user_input_string in wrong_guesses_list 
+        or (user_input_string in correct_letter_guess_statuses 
+        and correct_letter_guess_statuses[user_input_string])):
+    print("You have already guessed that letter")
+#...
+
+```
+
+Now that we know how to deal with this logical error, we can update the `get_letter_from_user` helper function by making the following changes:
 1. Change the first parameter to be the word dictionary instead of a list
-2. Add additional feedback to the user, when they attempt to guess a letter that they have already guessed, to inform them whether or not the letter is in the word.
+2. Add additional feedback to the user when they attempt to guess a letter that they have already guessed, to inform them whether or not the letter is in the word.
 
 <br>
 
@@ -667,7 +684,7 @@ When you are finished updating <code>get_letter_from_user</code>, compare your c
 
 ```python
 
-def get_letter_from_user(word_dict, wrong_guesses_list):
+def get_letter_from_user(correct_letter_guess_statuses, wrong_guesses_list):
     valid_input = False
     user_input_string = None
 
@@ -677,7 +694,8 @@ def get_letter_from_user(word_dict, wrong_guesses_list):
             print("You must input a letter!")
         elif len(user_input_string) > 1:
             print("You can only input one letter at a time!")
-        elif user_input_string in word_dict and word_dict[user_input_string]:
+        elif (user_input_string in correct_letter_guess_statuses       # We've used parentheses to surround the conditional
+                and correct_letter_guess_statuses[user_input_string]): # so we can split it over 2 lines rather than 1 long line
             print("You already guessed that letter and it's in the word!")
         elif user_input_string in wrong_guesses_list:
             print("You already guessed that letter and it's not in the word!")
@@ -692,24 +710,33 @@ def get_letter_from_user(word_dict, wrong_guesses_list):
 
 ### Displaying User Progress
 
-Now we're going to get back to our original goal, displaying each letter of the word with an underscore `_` if the letter has not yet been guessed and the correct letter if it has been guessed.  For example, if the word is `pepper` and our user has guessed the letters `p`, and `r`, we want to print out `p _ p p _ r`.  Each time they guess a correct letter, we want to print out an updated version of this string.  We're going to start by writing a helper function that generates and returns this string.  This function will need to:
+Now we're going to get back to our original goal, showing a user's progress by: 
+* displaying each letter of the game's secret word with an underscore `_` if the letter has not yet been guessed 
+* displaying the correct letter if it has been guessed.  
+ 
+For example, if the word is `pepper` and our user has guessed the letters `p`, and `r`, we want to print out `p _ p p _ r`.  Each time they guess a correct letter, we want to print out an updated version of this string.  
 
-* Create an empty string
-* Loop over each letter in the word
-* Check whether the letter has been guessed or not
-    * If the value of "guessed" is `True` add the letter to the string
-    * If the value of "guessed" is `False` add `_` to the string
-* Add 1 space between each letter/underscore
+We will start by writing a helper function named `generate_word_progress_string` that creates and returns this string. This function will need to take in two parameters:
+1. a string representing a word
+2. a dictionary where each letter in the word is a key and the values are `True` or `False`
 
-In `snowman.py` write a helper function `generate_word_progress_string` that takes two parameters, a word and a dictionary where each letter in the word is a key and the values are `True` or `False`.  The function returns a string that represents the word, with spaces between each letter.  For each letter, if the value in the dictionary is `True`, the letter is displayed.  If the value in the dictionary is `False`, the letter is replaced with a `_` character.
+Inside the function, we will need to:
+1. Initialize a variable pointing to an empty string
+2. Loop over each letter in the string parameter
+3. Check the dictionary parameter to see whether the current letter has been guessed or not
+    * If the value of the current letter is `True` in the dictionary, add the letter to the string variable we declared
+    * If the value of the current letter is `False` in the dictionary, add `_` to the string variable we declared
+4. Add 1 space between each letter/underscore
+5. After the loop, return the variable holding our final progress string
 
-Example inputs and outputs:
+In `snowman.py` write the helper function `generate_word_progress_string` that follows the requirements above. 
 
-|input|output|
-|--|--|
-|`word="pepper"` <br/> `word_dict={"p":True, "e": False, "r": False}`|`"p _ p p _ _"`|
-|`word="tiger"` <br/> `word_dict={"e":False, "g": False, "i": False, "r": False, "t": False}`|`"_ _ _ _ _"`|
-|`word="swamp"` <br/> `word_dict={"a":True, "m": True, "p": True, "s": True, "w": True}`|`"s w a m p"`|
+**Example inputs and outputs:**
+| Input | <div style="min-width:30px">Output</div> |
+| -- | -- |
+|`snowman_word="pepper"` <br/> `correct_letter_guess_statuses={"p":True, "e": False, "r": False}`|`"p _ p p _ _"`|
+|`snowman_word="tiger"` <br/> `correct_letter_guess_statuses={"e":False, "g": False, "i": False, "r": False, "t": False}`|`"_ _ _ _ _"`|
+|`snowman_word="swamp"` <br/> `correct_letter_guess_statuses={"a":True, "m": True, "p": True, "s": True, "w": True}`|`"s w a m p"`|
 
 ### !callout-info
 
@@ -734,24 +761,24 @@ As always, feel free to reach out over Slack if you need help!
 <br>
 
 <details>
-<summary>Here is our implementation.</summary>
+<summary>Here is our implementation:</summary>
 
 ```python
 
-def generate_word_progress_string(word, word_dict):
+def generate_word_progress_string(snowman_word, correct_letter_guess_statuses):
     output_string = ""
-    letter_num = 0
+    is_not_first_letter = False
 
-    for letter in word:
-        if letter_num > 0:
+    for letter in snowman_word:
+        if is_not_first_letter:
             output_string += " "
 
-        if word_dict[letter]:
+        if correct_letter_guess_statuses[letter]:
             output_string += letter
         else:
             output_string += "_"
 
-        letter_num += 1
+        is_not_first_letter = True
 
     return output_string
     
@@ -759,19 +786,13 @@ def generate_word_progress_string(word, word_dict):
 
 </details>
 
-Now that we have the helper function `generate_word_progress_string` working, let's revisit our original goal.  Right now we're returning the progress string, but what we really want to do is display it. Let's switch to printing out the result instead of returning it. We'll rename our function to `print_word_progress_string`:
+Now that we have the helper function `generate_word_progress_string` working, let's revisit our original goal. Right now we're returning the progress string, but what we really want to do is display it to our users. To keep our functions focused on performing a single task, rather than changing our existing function, let's create a new function `print_word_progress_string` which will call `generate_word_progress_string` then print out the result:
 
 ```python
 
-def print_word_progress_string(word, word_dict):
-    output_string = ""
-    letter_num = 0
-    
-    for letter in word:
-       # ...
-       
-    # return output_string
-    print(output_string)
+def print_word_progress_string(snowman_word, correct_letter_guess_statuses):
+    progress_string = generate_word_progress_string(snowman_word, correct_letter_guess_statuses)
+    print(progress_string)
 
 ```
 
@@ -782,15 +803,14 @@ The helper function `print_word_progress_string` provides a visual display of th
 
 This function will need to:
 
-* Loop over each letter (key) in the `word_dict`
-    * If `word_dict[letter]` is `False`, return `False`
+* Loop over each letter (key) in the `correct_letter_guess_statuses` dict
+    * If `correct_letter_guess_statuses[letter]` is `False`, return `False`
 * If the loop terminates without encountering a `False` value, return `True`
 
-Write a helper function `get_word_progress(word, word_dict)` that takes two parameters, a word and a dictionary where each letter in the word is a key and the values are `True` or `False`.  The function returns `True` if every value in the dictionary is `True`. The function returns `False` if any of the values in the dictionary are `False`.
+Write a helper function `get_word_progress(word, correct_letter_guess_statuses)` that takes two parameters, a word and a dictionary where each letter in the word is a key and the values are `True` or `False`.  The function returns `True` if every value in the dictionary is `True`. The function returns `False` if any of the values in the dictionary are `False`.
 
-Example inputs and outputs:
-
-|input|output|
+**Example inputs and outputs:**
+| Input | Output |
 |--|--|
 |`word="pepper"` <br/> `word_dict={"p":True, "e": False, "r": False}`|`False`|
 |`word="tiger"` <br/> `word_dict={"e":False, "g": False, "i": False, "r": False, "t": False}`|`False`|
@@ -803,9 +823,9 @@ Example inputs and outputs:
 
 ```python
 
-def get_word_progress(word, word_dict):
+def get_word_progress(word, correct_letter_guess_statuses):
     for letter in word:
-        if not word_dict[letter]:
+        if not correct_letter_guess_statuses[letter]:
             return False
     return True
     
