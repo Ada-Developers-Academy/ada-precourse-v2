@@ -15,7 +15,7 @@ SNOWMAN_4 = '  \\( : )/ *'
 SNOWMAN_5 = '* (_ : _)  '
 SNOWMAN_6 = '-----------'
 
-SNOWMAN_WRONG_GUESSES = 7
+SNOWMAN_MAX_WRONG_GUESSES = 7
 SNOWMAN_WORD = "broccoli"
 
 def guess_the_number():
@@ -63,7 +63,7 @@ def snowman():
     correct_guesses = 0
     wrong_guesses = 0
 
-    while wrong_guesses < SNOWMAN_WRONG_GUESSES:
+    while wrong_guesses < SNOWMAN_MAX_WRONG_GUESSES:
         user_input = get_letter_from_user()
         if user_input in SNOWMAN_WORD:
             print("You guessed a letter that's in the word!")
@@ -90,7 +90,7 @@ def get_letter_from_user():
     return user_input_string
 
 def print_snowman(wrong_guesses_count):
-    for i in range(SNOWMAN_WRONG_GUESSES - wrong_guesses_count, SNOWMAN_WRONG_GUESSES):
+    for i in range(SNOWMAN_MAX_WRONG_GUESSES - wrong_guesses_count, SNOWMAN_MAX_WRONG_GUESSES):
         if i == 0:
             print(SNOWMAN_0)
         elif i == 1:
