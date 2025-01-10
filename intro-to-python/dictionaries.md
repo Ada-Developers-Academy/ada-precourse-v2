@@ -17,11 +17,11 @@ At the end of this lesson students will be able to:
 
 ### [Textbook for this section](https://colab.research.google.com/drive/1AmKeKvSJnNacUUIU9OLSInVohWJrPLkF?usp=sharing)
 
-In this section we will be building on the code you wrote in the previous lesson [Lists](lists.md).  If you would like to look at our example code for that lesson, you can find it [here](resources/src/lists/games_list.md).
+In this section we will be building on the code you wrote in the previous lesson [Lists](lists.md). If you would like to look at our example code for that lesson, you can find it [here](resources/src/lists/games_list.md).
 
 ### Dictionaries, A New Kind of Data Structure
 
-In the lists lesson we used our first data structure.  Lists are powerful and useful tools, but they do have some limitations.  Say we want to use our list to store all of the pieces of an address.  We could use several variables to store the city, state, zip code, street address, but as we saw in the list lesson, being able to store all of the information in one variable can make it simpler to access the data and pass the data to functions.  We can use a list to store each of these pieces of information, but we would need to remember the location where we stored them so we could access the elements by their index.  
+In the lists lesson we used our first data structure. Lists are powerful and useful tools, but they do have some limitations. Say we want to use our list to store all of the pieces of an address. We could use several variables to store the city, state, zip code, street address, but as we saw in the list lesson, being able to store all of the information in one variable can make it simpler to access the data and pass the data to functions. We can use a list to store each of these pieces of information, but we would need to remember the location where we stored them so we could access the elements by their index.
 
 We could set up constants like:
 
@@ -80,7 +80,7 @@ Notice that we do not use a method to add a value to a dictionary in the example
 
 <br />
 
-We usually don't think about dictionaries having their keys in a particular order, so they do not provide a method for adding a key-value pair "at the end". Instead, by using regular square bracket syntax with the key, and assigning the value with the assignment operator, Python will add the key to the dictionary if needed, or update the value associated with the key if the key is already present. 
+We usually don't think about dictionaries having their keys in a particular order, so they do not provide a method for adding a key-value pair "at the end". Instead, by using regular square bracket syntax with the key, and assigning the value with the assignment operator, Python will add the key to the dictionary if needed, or update the value associated with the key if the key is already present.
 
 ### !end-callout
 
@@ -118,7 +118,7 @@ planet_dict = {
 }
 ```
 
-Notice that `planet_dict` is a *uniform* or *homogeneous* dictionary. All the values have the same data type, they are all *strings*. Given this, we may chose to drop the `"million miles"` from the values and instead use *integers* for the values. 
+Notice that `planet_dict` is a *uniform* or *homogeneous* dictionary. All the values have the same data type, they are all *strings*. Given this, we may chose to drop the `"million miles"` from the values and instead use *integers* for the values.
 
 ```Python
 planet_dict = {
@@ -145,7 +145,7 @@ Now that all the values are *integers*, it is easy to iterate over the `planet_d
 
 ##### !question
 
-Write a function `get_value_from_dictionary` that takes two arguments, a dictionary and a key that may or may not be in the dictionary.  The function has the following behavior:
+Write a function `get_value_from_dictionary` that takes two arguments, a dictionary and a key that may or may not be in the dictionary. The function has the following behavior:
 * If the dictionary contains the key, the function returns the **value** for that the key.
 * If the dictionary does not contain the key, the function returns `None`.
 
@@ -209,7 +209,7 @@ To check whether a key is in a dictionary, we can use the `in` operator.
 is_some_key_in_some_dict = some_key in some_dict
 ```
 
-We can use the `not` operator with the `in` operator too. 
+We can use the `not` operator with the `in` operator too.
 ```py
 # True or False depending on whether some_key does not exist as a key in the dictionary some_dict
 is_some_key_in_some_dict = some_key not in some_dict
@@ -239,7 +239,7 @@ def get_value_from_dictionary(dict, key):
     return None
 ```
 
-Both solutions work and are very similar! Pay close attention to the `if` statement and what is returned from each approach. We prefer the first solution because using the key to access a value from the dictionary and returning it is the main logic. This logic is **not** nested inside a conditional block and is less indented. 
+Both solutions work and are very similar! Pay close attention to the `if` statement and what is returned from each approach. We prefer the first solution because using the key to access a value from the dictionary and returning it is the main logic. This logic is **not** nested inside a conditional block and is less indented.
 
 <br/>
 
@@ -264,8 +264,8 @@ While the second example works, it nests the logic of getting a value inside a c
 
 ##### !question
 
-Write a function `dict_counter` that takes two arguments, a dictionary and a key that may or may  not be in the dictionary.  The function has the following behavior:
-1. If the key is in the dictionary, increment the integer value associated with that key by 1.  
+Write a function `dict_counter` that takes two arguments, a dictionary and a key that may or may  not be in the dictionary. The function has the following behavior:
+1. If the key is in the dictionary, increment the integer value associated with that key by 1.
 1. If the key is not in the dictionary, set the value for that key to 1.
 1. Return the updated dictionary.
 
@@ -394,7 +394,7 @@ Sometimes, we'll write our conditions so that the textual order of the instructi
 
 ##### !question
 
-Write a function `build_a_dictionary` that takes two arguments, a list of keys and a list of values.  The function has the following behavior:
+Write a function `build_a_dictionary` that takes two arguments, a list of keys and a list of values. The function has the following behavior:
 1. Verify that the inputs are valid (the inputs are valid if the two lists match in length)
 1. Create a new dictionary that contains all of the keys and values
 1. The keys and values must be matched in order, ie, the key at index 0 in the key list goes with the value at index 0 in the value list
@@ -480,7 +480,7 @@ def build_a_dictionary(keys, values):
 
 ## Snowman Project
 
-The last piece of our snowman game is displaying the word with the letters that the users have guessed correctly so far.  Open up your `snowman.py` and let's finish this game!
+The last piece of our snowman game is displaying the word with the letters that the users have guessed correctly so far. Open up your `snowman.py` and let's finish this game!
 
 ### Displaying User Progress
 
@@ -492,7 +492,7 @@ Our end goal is to display each letter of the word with an underscore `_` if the
 
 ### Building a Dictionary from a Word
 
-Let's start by taking a look at the data structure that we're using to hold the correctly guessed letters.  Right now, it's a list.  If we wanted to find out if our user had guessed a particular letter from the word, we would need to loop through the list to see if we find the letter.  If we find the letter, we know our user has guessed it, and if we don't find the letter, we know they haven't.  That's a lot of work to find out if the user has guessed a particular letter!  Here's the code to solve this problem:
+Let's start by taking a look at the data structure that we're using to hold the correctly guessed letters. Right now, it's a list. If we wanted to find out if our user had guessed a particular letter from the word, we would need to loop through the list to see if we find the letter. If we find the letter, we know our user has guessed it, and if we don't find the letter, we know they haven't. That's a lot of work to find out if the user has guessed a particular letter!  Here's the code to solve this problem:
 
 ```python
 
@@ -517,14 +517,14 @@ print(result)
 
 ```
 
-You might be saying to yourself, what about the `in` operator?  We can just use the line of code `if guessed_letter in letters_in_word` to do this same thing, but under the hood, that `in` operator is doing the same search that's written above here.  Either way, finding things in a list always includes searching through the list one element at a time.  Also, we've got to do some logic work to say if it's in the list, then our user has guessed it, and if it isn't in the list then our user hasn't guessed it.
+You might be saying to yourself, what about the `in` operator?  We can just use the line of code `if guessed_letter in letters_in_word` to do this same thing, but under the hood, that `in` operator is doing the same search that's written above here. Either way, finding things in a list always includes searching through the list one element at a time. Also, we've got to do some logic work to say if it's in the list, then our user has guessed it, and if it isn't in the list then our user hasn't guessed it.
 
 Luckily for us, we have dictionaries!  Dictionaries allow us to store a value with a key. Let's consider the following:
 1. We can put every letter from the secret word into the dictionary and set the initial values to `False`.
 2. When a user guesses a letter that's in the secret word, we can change the value to `True`.
 3. Then, if we want to know if a user has guessed a particular letter, we can check the value for that letter in the dictionary and get a `True` or `False` answer that will tell us if our user has guessed that letter or not.
 
-The first thing we need to do is store the letters from the secret word `snowman_word` in a dictionary, marking them all as "not guessed". Let's write a helper function `build_letter_status_dict` that takes a string and returns a dictionary, where each unique letter from the word is a key and all of the values are `False`.  
+The first thing we need to do is store the letters from the secret word `snowman_word` in a dictionary, marking them all as "not guessed". Let's write a helper function `build_letter_status_dict` that takes a string and returns a dictionary, where each unique letter from the word is a key and all of the values are `False`.
 
 <br>
 
@@ -542,7 +542,7 @@ def build_letter_status_dict(snowman_word):
 
 ```
 
-Notice that our function doesn't check to see if a letter is already in the dictionary.  If we wanted to, we could check and only add the letter if it's not already in the dictionary:
+Notice that our function doesn't check to see if a letter is already in the dictionary. If we wanted to, we could check and only add the letter if it's not already in the dictionary:
 
 ```python
 
@@ -561,14 +561,14 @@ The end result here will be the same, in the first example any time we encounter
 
 ### Using the Letter Status Dictionary
 
-Now that we have the `build_letter_status_dict` function, we need to call it in our `snowman()` function and replace the `correct_guesses_list` with the new dictionary that's generated by `build_letter_status_dict`. 
+Now that we have the `build_letter_status_dict` function, we need to call it in our `snowman()` function and replace the `correct_guesses_list` with the new dictionary that's generated by `build_letter_status_dict`.
 
 We will need to:
 1. Remove the `correct_guesses_list` since we won't be using it anymore
 2. Invoke `build_letter_status_dict` and pass in `snowman_word` as an argument. We should use a variable called `correct_letter_guess_statuses` to capture the return value from calling the function.
-3. Refactor the call to `get_letter_from_user` so that the first argument is `correct_letter_guess_statuses` instead of `correct_guesses_list`. 
+3. Refactor the call to `get_letter_from_user` so that the first argument is `correct_letter_guess_statuses` instead of `correct_guesses_list`.
   We'll still need `wrong_guesses_list` so we can leave the second argument as is.
-4. Now that we have the dict `correct_letter_guess_statuses`, we should use it to see if a user has correctly guessed a letter that is in the secret `snowman_word`. If the user's guess is correct, then we need to update `correct_letter_guess_statuses` dictionary. 
+4. Now that we have the dict `correct_letter_guess_statuses`, we should use it to see if a user has correctly guessed a letter that is in the secret `snowman_word`. If the user's guess is correct, then we need to update `correct_letter_guess_statuses` dictionary.
    - Before a correct guess, a key (represented by a letter) has a value set to `False`. After a correct guess, we need to update the key's value to `True`
 5. Since we're using `correct_letter_guess_statuses` instead of `correct_guesses_list`, we can now remove the line of code `correct_guesses_list.append(user_input)` 
 
@@ -577,7 +577,7 @@ We will need to:
 <details>
 <summary> When you are finished editing <code>snowman()</code>, compare your edits to ours.</summary>
 
-In this solution, we have commented out obsolete lines of code to show where changes were made. We should delete the lines of obsolete code in our own version to keep our solution uncluttered. Also note that we have changed the function call to `get_letter_from_user`, but we haven't changed the implementation of the function body yet so we should expect this function to be in a broken state. 
+In this solution, we have commented out obsolete lines of code to show where changes were made. We should delete the lines of obsolete code in our own version to keep our solution uncluttered. Also note that we have changed the function call to `get_letter_from_user`, but we haven't changed the implementation of the function body yet so we should expect this function to be in a broken state.
 
 ```python
 
@@ -602,7 +602,7 @@ def snowman():
         user_input = get_letter_from_user(correct_letter_guess_statuses, wrong_guesses_list)
         #if user_input in snowman_word:
         if user_input in correct_letter_guess_statuses: # instead of looking our letter up in the word
-                                       # we can use the `in` operator with correct_letter_guess_statuses.  
+                                       # we can use the `in` operator with correct_letter_guess_statuses.
                                        # Checking this way is faster than looking it up in
                                        # the word!
             print("You guessed a letter that's in the word!")
@@ -619,9 +619,9 @@ def snowman():
 
 </details>
 
-The next step is to update our helper function `get_letter_from_user` to use our new dictionary instead of the list of correct letters.  Right now, we're only telling a user whether they've guessed a letter before, but while we're updating this function, let's modify it to tell the user whether they've guessed a letter before, __and__ whether that letter is in the word or not.  
+The next step is to update our helper function `get_letter_from_user` to use our new dictionary instead of the list of correct letters. Right now, we're only telling a user whether they've guessed a letter before, but while we're updating this function, let's modify it to tell the user whether they've guessed a letter before, __and__ whether that letter is in the word or not.
 
-There is one important change of which to be aware. Right now we're just checking whether the letter the user guessed is in the list of correct letters.  If we do that with the dictionary, we'll end up with a logical error!  Consider these code snippets:
+There is one important change of which to be aware. Right now we're just checking whether the letter the user guessed is in the list of correct letters. If we do that with the dictionary, we'll end up with a logical error!  Consider these code snippets:
 
 ```python
 
@@ -712,9 +712,9 @@ def get_letter_from_user(correct_letter_guess_statuses, wrong_guesses_list):
 
 Now we're going to get back to our original goal, showing a user's progress by: 
 * displaying each letter of the game's secret word with an underscore `_` if the letter has not yet been guessed 
-* displaying the correct letter if it has been guessed.  
+* displaying the correct letter if it has been guessed.
  
-For example, if the word is `pepper` and our user has guessed the letters `p`, and `r`, we want to print out `p _ p p _ r`.  Each time they guess a correct letter, we want to print out an updated version of this string.  
+For example, if the word is `pepper` and our user has guessed the letters `p`, and `r`, we want to print out `p _ p p _ r`. Each time they guess a correct letter, we want to print out an updated version of this string.
 
 We will start by writing a helper function named `generate_word_progress_string` that creates and returns this string. This function will need to take in two parameters:
 1. a string representing a word
@@ -729,7 +729,7 @@ Inside the function, we will need to:
 4. Add 1 space between each letter/underscore
 5. After the loop, return the variable holding our final progress string
 
-In `snowman.py` write the helper function `generate_word_progress_string` that follows the requirements above. 
+In `snowman.py` write the helper function `generate_word_progress_string` that follows the requirements above.
 
 **Example inputs and outputs:**
 | Input | <div style="min-width:135px">Output</div> |
@@ -746,7 +746,7 @@ As you're writing your implementation, be sure to call the helper function often
 
 <br/>
 
-If you run into a bug, add debugging print statements or walk through the code line by line and make predictions about what should happen versus what actually happens to help you resolve the bug. 
+If you run into a bug, add debugging print statements or walk through the code line by line and make predictions about what should happen versus what actually happens to help you resolve the bug.
 
 <br/>
 
@@ -808,8 +808,8 @@ This function will need to:
 Write a helper function `is_word_guessed` that:
 * takes two parameters
   *  a string representing a word
-  *  a dictionary where each letter in the string parameter is a key and the values are either `True` or `False`.  
-* returns `True` if every value in the dictionary is `True`. 
+  *  a dictionary where each letter in the string parameter is a key and the values are either `True` or `False`.
+* returns `True` if every value in the dictionary is `True`.
 * returns `False` if any of the values in the dictionary are `False`.
 
 **Example inputs and outputs:**
@@ -854,4 +854,4 @@ Game Description:
 
 ## Summary
 
-Congratulations, you wrote two fully functional, interactive, playable command line games and you have completed the Ada Precourse curriculum!  We encourage you to continue to explore programming between now and when you start at Ada, in whatever form appeals to you.  If you're looking for some ideas, consider taking these projects and expanding them! Some ideas include building a dashboard for your user where they can choose the game they want to play, or expanding Snowman to a 'Wheel of Fortune' type game!
+Congratulations, you wrote two fully functional, interactive, playable command line games and you have completed the Ada Precourse curriculum!  We encourage you to continue to explore programming between now and when you start at Ada, in whatever form appeals to you. If you're looking for some ideas, consider taking these projects and expanding them! Some ideas include building a dashboard for your user where they can choose the game they want to play, or expanding Snowman to a 'Wheel of Fortune' type game!
