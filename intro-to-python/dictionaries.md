@@ -647,7 +647,7 @@ elif user_input_string in wrong_guesses_list or user_input_string in correct_let
 
 ```
 
-The logical error comes in because all of the letters from the secret word are already keys in the dictionary `correct_letter_guess_statuses` with `False` values! If we only check to see whether the letter is in `correct_letter_guess_statuses`, this logic will tell the user that they've already guessed a letter even if it's the first time they've guessed it! We need to add a condition to our `elif` that looks at the value for a key in `correct_letter_guess_statuses to see whether it's `True` or `False`:
+The logical error comes in because all of the letters from the secret word are already keys in the dictionary `correct_letter_guess_statuses` with `False` values! If we only check to see whether the letter is in `correct_letter_guess_statuses`, this logic will tell the user that they've already guessed a letter even if it's the first time they've guessed it! We need to add a condition to our `elif` that looks at the value for a key in `correct_letter_guess_statuses` to see whether it's `True` or `False`:
 
 ```python
 
