@@ -567,9 +567,9 @@ We will need to:
 1. Remove the `correct_guesses_list` since we won't be using it anymore
 2. Invoke `build_letter_status_dict` and pass in `snowman_word` as an argument. We should use a variable called `correct_letter_guess_statuses` to capture the return value from calling the function.
 3. Refactor the call to `get_letter_from_user` so that the first argument is `correct_letter_guess_statuses` instead of `correct_guesses_list`.
-  We'll still need `wrong_guesses_list` so we can leave the second argument as is.
+   * We'll still need `wrong_guesses_list` so we can leave the second argument as is.
 4. Now that we have the dict `correct_letter_guess_statuses`, we should use it to see if a user has correctly guessed a letter that is in the secret `snowman_word`. If the user's guess is correct, then we need to update `correct_letter_guess_statuses` dictionary.
-   - Before a correct guess, a key (represented by a letter) has a value set to `False`. After a correct guess, we need to update the key's value to `True`
+   * Before a correct guess, a key (represented by a letter) has a value set to `False`. After a correct guess, we need to update the key's value to `True`
 5. Since we're using `correct_letter_guess_statuses` instead of `correct_guesses_list`, we can now remove the line of code `correct_guesses_list.append(user_input)` 
 
 <br>
