@@ -610,11 +610,13 @@ get_letter_from_user()
 
 ### Tracking User Input
 
-Imagine we are playing a game of Snowman with several players.  We would probably keep track of the letters that they guessed, and given a correct letter we would add to the word and with an incorrect letter we would add to the snowman drawing.
+Imagine we are playing a game of Snowman with several players. We would probably keep track of the letters that they guessed, and given a correct letter we would add to the word and with an incorrect letter we would add to the snowman drawing.
 
- In this version we are going to keep track of the number of correct and incorrect guesses from the user. If the user guesses the same incorrect letter multiple times we'll count it as a new wrong guess every time. For the moment, we will be doing the same thing with correct guesses - we will end the loop if the user makes as many correct guesses as the length of the word even if they guess the same letter repeatedly. We will update this functionality in a future lesson. 
- 
- In `snowman.py` make changes to the `snowman` function according to the requirements below:
+In this version we are going to keep track of the number of correct and incorrect guesses from the user. If the user guesses the same incorrect letter multiple times we'll count it as a new wrong guess every time. 
+
+For the moment, we will be doing the same thing with correct guesses - we will end the loop when the number of correct guesses is equal to the length of the secret word, even if the user guesses the same letter repeatedly. This may not sound like exactly what we want for our completed game, and that's okay, we will continue to make updates to this functionality in a future lesson. 
+
+In `snowman.py` make changes to the `snowman` function according to the requirements below:
 1.  Add a loop to the main `snowman` function similar to the loop in `guess_the_number`.  
 2.  Add two counters `correct_guesses` and `wrong_guesses`.
 3.  Adjust the loop to allow the user to continue to guess until they reach 7 `SNOWMAN_MAX_WRONG_GUESSES`. If the number of `correct_guesses` is equal to the length of `SNOWMAN_WORD` then that means the word has been guessed and the user should no longer be able to submit guesses. 
@@ -694,7 +696,7 @@ Notice that the variable names for the element of the snowman drawing starts at 
 
 ### !end-callout
 
-Our end goal is to have a helper function called `print_snowman` that we can pass the current `wrong_guesses` value to and it will draw the appropriate amount of the snowman.  Let's start by writing `print_snowman` which will have a parameter called `wrong_guesses_count` which will draw a specific element of the snowman based on a passed value.  For example, if we pass the function 0, we want the function to draw SNOWMAN_0.  This will seem slightly contrived, but it is just a starting place.
+Our end goal is to have a helper function called `print_snowman` that we can pass the current `wrong_guesses` value to and it will draw the appropriate amount of the snowman.  Let's start by writing `print_snowman` which will have a parameter called `wrong_guesses_count` which will draw a specific element of the snowman based on a passed value.  For example, if we pass the function 0, we want the function to draw `SNOWMAN_0`.  This will seem slightly contrived, but it is just a starting place.
 
 <br> 
 

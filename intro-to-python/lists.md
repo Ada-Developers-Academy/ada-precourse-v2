@@ -490,7 +490,7 @@ After running `source venv/bin/activate` to activate our virtual environment, we
 
 ```console
 
-(venv) snowman_project 
+(venv) snowman_project $
 
 ```
 

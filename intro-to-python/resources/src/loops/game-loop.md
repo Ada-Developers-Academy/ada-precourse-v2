@@ -63,7 +63,7 @@ def snowman():
     correct_guesses = 0
     wrong_guesses = 0
 
-    while wrong_guesses < SNOWMAN_MAX_WRONG_GUESSES:
+    while wrong_guesses < SNOWMAN_MAX_WRONG_GUESSES and correct_guesses < len(SNOWMAN_WORD):
         user_input = get_letter_from_user()
         if user_input in SNOWMAN_WORD:
             print("You guessed a letter that's in the word!")

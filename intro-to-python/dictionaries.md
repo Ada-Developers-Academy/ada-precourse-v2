@@ -601,10 +601,11 @@ def snowman():
         # to use the word dictionary instead of the list we were using before.
         user_input = get_letter_from_user(correct_letter_guess_statuses, wrong_guesses_list)
         # if user_input in snowman_word:
-        if user_input in correct_letter_guess_statuses: # instead of looking our letter up in the word
-                                       # we can use the `in` operator with correct_letter_guess_statuses.
-                                       # Checking this way is faster than looking it up in
-                                       # the word!
+        
+        # Instead of looking our letter up in snowman_word
+        # we can use the `in` operator with correct_letter_guess_statuses.
+        # Checking this way is faster than looking it up in the word!
+        if user_input in correct_letter_guess_statuses:                        
             print("You guessed a letter that's in the word!")
             # correct_guesses_list.append(user_input)
             correct_letter_guess_statuses[user_input] = True

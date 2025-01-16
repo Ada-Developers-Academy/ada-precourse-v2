@@ -65,8 +65,8 @@ def get_number_from_user():
 
 # Snowman Section
 def snowman():
-    r = RandomWord()
-    snowman_word = r.word(
+    random_word_generator = RandomWord()
+    snowman_word = random_word_generator.word(
       word_min_length=SNOWMAN_MIN_WORD_LENGTH, 
       word_max_length=SNOWMAN_MAX_WORD_LENGTH)
 
