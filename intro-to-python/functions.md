@@ -564,14 +564,14 @@ get_letter_from_user()
 
 We are now going to work on the main `snowman` function (the function we will call when we want to play the game Snowman).  This function is  similar to `guess_the_number`.
 
-The only check we have to do on the letter is check whether it's in the word or not.  To do that, we're going to use the Python keyword `in`.  The syntax for `in` is `thing1 in thing2`.  This expression evaluates to `True` if `thing2` contains `thing1`, and `False` otherwise.  We can use it in a conditional expression as `if thing1 in thing2:`.
+Right now, we only need to check whether the letter is in the word or not. To do that, we're going to use the Python keyword `in`.  The syntax for `in` is `thing1 in thing2`.  This expression evaluates to `True` if `thing2` contains `thing1`, and `False` otherwise.  We can use it in a conditional expression as `if thing1 in thing2:`.
 
 Our requirements for the `snowman` function are:
 1.  Use `get_letter_from_user` to get a letter
-1.  Check if the letter is in `SNOWMAN_WORD` 
+2.  Check if the letter is in `SNOWMAN_WORD` 
     - print "You guessed a letter that's in the word!" if the letter is in `SNOWMAN_WORD`.
     - print "The letter [whatever letter is guessed] is not in the word" if it's not in `SNOWMAN_WORD`.
-1.  Return `True` if the letter is in `SNOWMAN_WORD`, otherwise return `False` if it's not in `SNOWMAN_WORD`.
+3.  Return `True` if the letter is in `SNOWMAN_WORD`, otherwise return `False` if it's not in `SNOWMAN_WORD`.
 
 Use the outlined requirements above to write the `snowman` function in `snowman.py`. We should call the `snowman` function and execute the file to check that our logic is working as we expect it to.
 
