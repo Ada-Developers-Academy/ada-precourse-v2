@@ -269,7 +269,7 @@ Write a function `dict_counter` that takes two arguments, a dictionary and a key
 1. If the key is not in the dictionary, set the value for that key to 1.
 1. Return the updated dictionary.
 
-Example inputs and outputs:
+**Example inputs and outputs:**
 | Input | Output |
 |--|--|
 | `dict = {"dog":1, "tree":1, "star":4}` <br/> `key = "tree"`|`{"dog":1, "tree":2, "star":4}`|
@@ -492,7 +492,7 @@ Our end goal is to display each letter of the word with an underscore `_` if the
 
 ### Building a Dictionary from a Word
 
-Let's start by taking a look at the data structure that we're using to hold the correctly guessed letters. Right now, it's a list. If we wanted to find out if our user had guessed a particular letter from the word, we would need to loop through the list to see if we find the letter. If we find the letter, we know our user has guessed it, and if we don't find the letter, we know they haven't. That's a lot of work to find out if the user has guessed a particular letter!  Here's the code to solve this problem:
+Let's start by taking a look at the data structure that we're using to hold the correctly guessed letters. Right now, it's a list. If we wanted to find out if our user had guessed a particular letter from the word, we would need to loop through the list to see if we find the letter. If we find the letter, we know our user has guessed it, and if we don't find the letter, we know they haven't. That's a lot of work to find out if the user has guessed a particular letter! Here's the code to solve this problem:
 
 ```python
 
@@ -505,7 +505,7 @@ guessed_letter = "a"
 # We haven't found `guessed_letter` in the list yet so we should set `result` to False.
 result = False
 
-# We want to compare each letter in `letters_in_word` against `guessed_letter` to see if it is the same as 
+# We want to compare each letter in `letters_in_word` against `guessed_letter` to see if it is the same 
 for letter in letters_in_word:
     # if the `letter` in `letters_in_word` is the same as `guessed_letter` we can updated `result` to be `True`
     if letter == guessed_letter:
@@ -550,7 +550,7 @@ def build_letter_status_dict(snowman_word):
     letter_status_dict = {}
 
     for letter in snowman_word:
-        if letter not in  letter_status_dict:
+        if letter not in letter_status_dict:
              letter_status_dict[letter] = False
     return  letter_status_dict
 
@@ -577,7 +577,7 @@ We will need to:
 <details>
 <summary> When you are finished editing <code>snowman()</code>, compare your edits to ours.</summary>
 
-In this solution, we have commented out obsolete lines of code to show where changes were made. We should delete the lines of obsolete code in our own version to keep our solution uncluttered. Also note that we have changed the function call to `get_letter_from_user`, but we haven't changed the implementation of the function body yet so we should expect this function to be in a broken state.
+In this solution, we have commented out obsolete lines of code to show where changes were made. We should delete the lines of obsolete code in our own version to keep our solution uncluttered. Also note that we have changed the function call to `get_letter_from_user`in step 3 above, but we haven't changed the implementation of the function body yet so we should expect this function to be in a broken state.
 
 ```python
 
@@ -600,7 +600,7 @@ def snowman():
         # This function call won't work yet, the next step is to update this function
         # to use the word dictionary instead of the list we were using before.
         user_input = get_letter_from_user(correct_letter_guess_statuses, wrong_guesses_list)
-        #if user_input in snowman_word:
+        # if user_input in snowman_word:
         if user_input in correct_letter_guess_statuses: # instead of looking our letter up in the word
                                        # we can use the `in` operator with correct_letter_guess_statuses.
                                        # Checking this way is faster than looking it up in
@@ -854,4 +854,4 @@ Game Description:
 
 ## Summary
 
-Congratulations, you wrote two fully functional, interactive, playable command line games and you have completed the Ada Precourse curriculum!  We encourage you to continue to explore programming between now and when you start at Ada, in whatever form appeals to you. If you're looking for some ideas, consider taking these projects and expanding them! Some ideas include building a dashboard for your user where they can choose the game they want to play, or expanding Snowman to a 'Wheel of Fortune' type game!
+Congratulations, you wrote two fully functional, interactive, playable command line games and you have completed the Ada Precourse curriculum! We encourage you to continue to explore programming between now and when you start at Ada, in whatever form appeals to you. If you're looking for some ideas, consider taking these projects and expanding them! Some ideas include building a dashboard for your user where they can choose the game they want to play, or expanding Snowman to a 'Wheel of Fortune' type game!

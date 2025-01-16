@@ -612,7 +612,7 @@ get_letter_from_user()
 
 Imagine we are playing a game of Snowman with several players.  We would probably keep track of the letters that they guessed, and given a correct letter we would add to the word and with an incorrect letter we would add to the snowman drawing.
 
- In this version we are going to keep track of the number of correct and incorrect guesses from the user. If the user guesses the same incorrect letter multiple times we'll count it as a new wrong guess every time. For the moment, we will be doing the same thing with correct guesses - we will end the loop if the user makes as many correct guesses as the length of the word even if they guess the same letter repeatedly. We will update this functionality this in a future lesson. 
+ In this version we are going to keep track of the number of correct and incorrect guesses from the user. If the user guesses the same incorrect letter multiple times we'll count it as a new wrong guess every time. For the moment, we will be doing the same thing with correct guesses - we will end the loop if the user makes as many correct guesses as the length of the word even if they guess the same letter repeatedly. We will update this functionality in a future lesson. 
  
  In `snowman.py` make changes to the `snowman` function according to the requirements below:
 1.  Add a loop to the main `snowman` function similar to the loop in `guess_the_number`.  
