@@ -82,7 +82,11 @@ Standards:
       -
         Type: Lesson
         UID: d61c1dff-618a-43eb-b5de-0c0e79d95528
-        Path: /intro-to-python/helper-functions.md        
+        Path: /intro-to-python/helper-functions.md    
+      -
+        Type: Lesson
+        UID: 0920082b-f9ad-4640-a71b-d48a42a05d45
+        Path: /intro-to-python/errors.md    
       -
         Type: Lesson
         UID: e6128aa7-9956-4588-8492-40a3d01772b0
@@ -95,11 +99,6 @@ Standards:
         Type: Lesson
         UID: b4385d80-5e21-4934-a031-1c66e8605c01
         Path: /intro-to-python/dictionaries.md
-      -
-
-        Type: Lesson
-        UID: 0920082b-f9ad-4640-a71b-d48a42a05d45
-        Path: /intro-to-python/errors.md
       -
         Type: Checkpoint
         UID: f732de97-d800-482f-8f2c-8fb88e9e34b6
