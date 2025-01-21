@@ -32,7 +32,7 @@ You will need to complete the `snowman(snowman_word)` function using the other f
 Instructions to set up and run the code are in the README.md file of the repo. When you run the program it will give you the opportunity to:
 - play the game by entering "p" to see how it works 
 - run the code against some automated tests by entering "t". 
-The tests check to see if, after several guesses your function prints out, `Congratulations, you win!` for success and `Sorry, you lose! The word was {snowman_word}` for failure.
+  - The tests check to see if, after several guesses your function prints out, `Congratulations, you win!` for success and `Sorry, you lose! The word was {snowman_word}` for failure.
 
 ## Please Note
 
@@ -49,22 +49,25 @@ When adding your code, **you only need to modify the `snowman(snowman_word)` fun
 
 Several functions that we worked on during the lessons have already been added to `game.py` for you to use. These functions are listed below, you do not need to create them again.
 
-- `print_snowman_graphic(wrong_guesses_count)` - This function prints out the appropriate snowman image depending on the number of wrong guesses the player has made.
-- `build_letter_status_dict(snowman_word)` - This function takes `snowman_word` as input and returns a dictionary with a key-value pair for each letter in `snowman_word`, where the key is the letter and the value is `False`.
-- `get_letter_from_user(correct_letter_guess_statuses, wrong_guesses_list)` - This function takes the `correct_letter_guess_statuses` and the list of characters that have been guessed incorrectly (`wrong_guesses_list`) as input. It repeatedly asks the user to enter a single character until a valid character is provided. Once a valid character is entered, it is returned.
-- `print_word_progress_string(snowman_word, correct_letter_guess_statuses)` - This function takes the `snowman_word` and `correct_letter_guess_statuses` as input. It calls `generate_word_progress_string` and prints the output. 
-- `generate_word_progress_string(snowman_word, correct_letter_guess_statuses)` - This function takes the `snowman_word` and `correct_letter_guess_statuses` as input. It creates and returns a string that shows the correct letter guess placements as well as the placements for the letters yet to be guessed. 
-- `is_word_guessed(snowman_word, correct_letter_guess_statuses)` - This function takes the `snowman_word` and `correct_letter_guess_statuses` as input. It returns `True` if all the letters of the word have been guessed, and `False` otherwise.
+- `print_snowman_graphic(wrong_guesses_count)` 
+  - This function prints out the appropriate snowman image depending on the number of wrong guesses the player has made.
+- `build_letter_status_dict(snowman_word)` 
+  - This function takes `snowman_word` as input and returns a dictionary with a key-value pair for each letter in `snowman_word`, where the key is the letter and the value is `False`.
+- `get_letter_from_user(correct_letter_guess_statuses, wrong_guesses_list)` 
+  - This function takes the `correct_letter_guess_statuses` dictionary and the list of characters that have been guessed incorrectly (`wrong_guesses_list`) as input. It repeatedly asks the user to enter a single character until a valid character is provided. Once a valid character is entered, it is returned.
+- `print_word_progress_string(snowman_word, correct_letter_guess_statuses)` 
+  - This function takes the `snowman_word` and `correct_letter_guess_statuses` dictionary as input. It calls `generate_word_progress_string` and prints the output. 
+- `generate_word_progress_string(snowman_word, correct_letter_guess_statuses)` 
+  - This function takes the `snowman_word` and `correct_letter_guess_statuses` dictionary as input. It creates and returns a string that shows the correct letter guess placements as well as the placements for the letters yet to be guessed. 
+- `is_word_guessed(snowman_word, correct_letter_guess_statuses)` 
+  - This function takes the `snowman_word` and `correct_letter_guess_statuses` as input. It returns `True` if all the letters of the word have been guessed, and `False` otherwise.
 
 ---
 
 When you finish, copy the URL of your repo and submit the link below for review.
 
-![Select the "Invite" button to generate a join link.](images/repl_invite.png)
-*Fig. Select the "Invite" button to generate a join link.* [*(Full size image)*](images/repl_invite.png)
-
-![Enable the "Private join link" toggle so a link is generated and copy the link.](images/repl_join_link.png)
-*Fig. Enable the "Private join link" toggle so a link is generated and copy the link.* [*(Full size image)*](images/repl_join_link.png)
+![Select and copy the full URL of your repo to submit.](images/repo_url.png)
+*Fig. Select and copy the full URL of your repo to submit.* [*(Full size image)*](images/repo_url.png)
 
 ##### !end-question
 
