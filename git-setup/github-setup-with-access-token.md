@@ -90,7 +90,7 @@ Make a change to one of the files and save the change. We want to open a file an
 
 Finally, `add`, `commit`, and `push` your changes.
 
-After the `git push` command, we will be prompted for a **Username** and **Password**.  We should **not** use a password, but rather the copied personal access token.  We can use `cmd-v` to paste the token into the terminal. 
+After the `git push` command, we will be prompted for a **Username** and **Password**. We should **not** use a password, but rather the copied personal access token. We can use `cmd-v` to paste the token into the terminal. 
 - When we paste in our PAT, it will look like nothing is entered because Terminal will not display what you type or paste in the "Password" field. This is expected, even if nothing shows up, the PAT has been entered and we can press "enter".
 
 ```
