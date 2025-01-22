@@ -85,15 +85,17 @@ Open the directory in VS Code
 code .
 ```
 
-Make a change to one of the files and save the change. For example, you could change the title of the readme to include your name.
+Make a change to one of the files and save the change. We want to open a file and make a change to the text contents that GitHub can pick up. 
+- For example, you could open the `README.md` file and edit the first line of content `# Python FizzBuzz` so that the first heading of the README includes your name. 
 
 Finally, `add`, `commit`, and `push` your changes.
 
-After the `git push` command, we will be prompted for a **Username** and **Password**.  We should **not** use a password, but rather the copied personal access token.  We can use `cmd-v` to paste the token into the terminal.
+After the `git push` command, we will be prompted for a **Username** and **Password**.  We should **not** use a password, but rather the copied personal access token.  We can use `cmd-v` to paste the token into the terminal. 
+- When we paste in our PAT, it will look like nothing is entered because Terminal will not display what you type or paste in the "Password" field. This is expected, even if nothing shows up, the PAT has been entered and we can press "enter".
 
 ```
 $ git add README.md
-$ git commit -m "added my name to the readme"
+$ git commit -m "added my name to the README"
 $ git push
 Username: your_username
 Password: your_token
