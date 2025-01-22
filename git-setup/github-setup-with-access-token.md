@@ -67,10 +67,10 @@ Then click on the **Code** button and select **https** and copy the link.
 
 ![Clone Repository](images/github-setup__clone-repo.png)
 
-Clone the repository with the following command: 
+Run the `git clone` command, pasting in the URL we just copied, to clone the repository. The full command should resemble the following, with your own GitHub username replacing `YOUR-GITHUB-USERNAME`:
 
 ```
-git clone https://github.com/beccaelenzil/python-fizzbuzz.git
+git clone https://github.com/YOUR-GITHUB-USERNAME/python-fizzbuzz.git
 ```
 
 Move your location into the local repository:
