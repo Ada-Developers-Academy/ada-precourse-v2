@@ -56,50 +56,50 @@ Then we can copy the token.  **We must copy the token before leaving this page, 
 
 We can then use the token in git by forking, cloning, and pushing changes to a repository using HTTPS.
 
-First go to the [Python Fizbuzz Repository](https://github.com/AdaGold/python-fizzbuzz).
+1. First go to the [Python Fizbuzz Repository](https://github.com/AdaGold/python-fizzbuzz).
 
-Fork the repository to your GitHub account.
+2. Fork the repository to your GitHub account.
 
-![Fork](images/github-setup__fork-repo1.png)
-![Fork Repository](images/github-setup__fork-repo2.png)
+   ![Fork](images/github-setup__fork-repo1.png)
+   ![Fork Repository](images/github-setup__fork-repo2.png)
 
-Then click on the **Code** button and select **https** and copy the link.
+3. Then click on the **Code** button and select **https** and copy the link.
 
-![Clone Repository](images/github-setup__clone-repo.png)
+   ![Clone Repository](images/github-setup__clone-repo.png)
 
-Run the `git clone` command, pasting in the URL we just copied, to clone the repository. The full command should resemble the following, with your own GitHub username replacing `YOUR-GITHUB-USERNAME`:
+4. Run the `git clone` command, pasting in the URL we just copied, to clone the repository. The full command should resemble the following, with your own GitHub username replacing `YOUR-GITHUB-USERNAME`:
 
-```
-git clone https://github.com/YOUR-GITHUB-USERNAME/python-fizzbuzz.git
-```
+   ```
+   git clone https://github.com/YOUR-GITHUB-USERNAME/python-fizzbuzz.git
+   ```
 
-Move your location into the local repository:
+5. Move your location into the local repository:
 
-```
-cd python-fizzbuzz
-```
+   ```
+   cd python-fizzbuzz
+   ```
 
-Open the directory in VS Code
+6. Open the directory in VS Code:
 
-```
-code .
-```
+   ```
+   code .
+   ```
 
-Make a change to one of the files and save the change. We want to open a file and make a change to the text contents that GitHub can pick up. 
-- For example, you could open the `README.md` file and edit the first line of content `# Python FizzBuzz` so that the first heading of the README includes your name. 
+7. Make a change to one of the files and save the change. We want to open a file and make a change to the text contents that GitHub can pick up. 
+   - For example, you could open the `README.md` file and edit the first line of content "`# Python FizzBuzz`" so that the first heading of the README includes your name. 
 
-Finally, `add`, `commit`, and `push` your changes.
+8. Finally, `add`, `commit`, and `push` your changes.
 
-After the `git push` command, we will be prompted for a **Username** and **Password**. We should **not** use a password, but rather the copied personal access token. We can use `cmd-v` to paste the token into the terminal. 
-- When we paste in our PAT, it will look like nothing is entered because Terminal will not display what you type or paste in the "Password" field. This is expected, even if nothing shows up, the PAT has been entered and we can press "enter".
+   After the `git push` command, we will be prompted for a **Username** and **Password**. We should **not** use a password, but rather the copied personal access token. We can use `cmd-v` to paste the token into the terminal. 
+   - When we paste in our PAT, it will look like nothing is entered because Terminal will not display what you type or paste in the "Password" field. This is expected, even if nothing shows up, the PAT has been entered and we can press "enter".
 
-```
-$ git add README.md
-$ git commit -m "added my name to the README"
-$ git push
-Username: your_username
-Password: your_token
-```
+   ```
+   $ git add README.md
+   $ git commit -m "added my name to the README"
+   $ git push
+   Username: your_username
+   Password: your_token
+   ```
 
 We can check the remote repository on GitHub to confirm that we have successfully authenticated and pushed our changes. We will not need to authenticate again until the PAT expires.
 
