@@ -6,7 +6,23 @@ In this, our first full lesson, we'll get some software installed that we'll nee
 
 It's important to ensure that everyone has all the right tools, with compatible versions, so we can successfully begin programming along with the Ada curriculum.
 
-Many students will have some set of these tools installed already, but be sure to read through all of these instructions to make sure they are compatible. If any of these instructions are unclear, try asking for help in Slack (after it's been installed).
+### !callout-info
+
+## A Mac laptop is required
+
+Students are required to use a Mac computer for this curriculum to ensure all tools will work as expected and instructors will be able to help troubleshoot. 
+
+Students are welcome to use their own Mac machines or borrow one from friends or family. If a machine is borrowed it must:
+- be a personally owned machine (not a computer provided by someone's place of work)
+- be available to use for the full duration of the program to avoid losing working time by transferring machines mid-cohort
+
+Ada Developers Academy maintains a small library of loaner laptops for students for whom purchasing a laptop would be a financial impediment to participating in the program. 
+- For a refresher on our machine requirements check out the FAQs for [the core program on the Ada Developers Academy website](https://adadevelopersacademy.org/ada-core/). 
+- For more information on the Loaner Laptop Program, please check out the "[EQUIPMENT: WIFI HOTSPOTS, LOANER LAPTOPS](https://sites.google.com/adadevelopersacademy.org/adacorehub/faqs/student-resources#h.jh91lprgmge1)" section of the Core Hub site's Student Resources page.
+
+### !end-callout
+
+Many students will have some set of the required tools installed already, but be sure to read through all of these instructions to make sure they are compatible. If any of these instructions are unclear, try asking for help in Slack (after it's been installed).
 
 Note that many of these tools are under regular development, and may have newer versions than are listed here. Generally, any version the same or newer than what is mentioned in the instructions will be fine, but be sure to ask in Slack if there is any uncertainty about the correct versions of the required software.
 
@@ -77,6 +93,7 @@ Apple releases MacOS updates relatively frequently. It is often necessary to upd
 The following script will install some tools we will use including:
 
 - Homebrew
+- pyenv
 - Python 3
 - Pip 3
 - Git
@@ -135,6 +152,16 @@ $ brew doctor
 
 We should see, after a bit of processing, `Your system is ready to brew.`
 
+### About pyenv
+
+[pyenv](https://github.com/pyenv/pyenv?tab=readme-ov-file#simple-python-version-management-pyenv) is a tool for managing Python versions. It allows us to choose a python version to set globally on the machine for development, while still allowing folks to easily switch between multiple versions of Python. 
+
+We are using pyenv to ensure the whole class is using the same Python version. This helps us avoid compatibility issues between our Python version and the versions of dependencies we will be using in projects throughout the curriculum.
+
+#### Verification
+
+We can verify that the pyenv installation worked by running the command `$ pyenv --version`. We should see output that is similar to `pyenv 2.5.5`. A newer (larger-numbered) version is also fine, and only means that time has elapsed since these instructions were last updated.
+
 ### About Python 3
 
 Macs come with an older version of Python 3, which is primarily intended for use by the Mac system software itself. To develop our own Python programs, we set up a newer version of Python that we can update and modify without affecting the system-installed version. The long command we entered previously used Homebrew to install it.
@@ -145,9 +172,9 @@ We also use a program called **pip** to install additional python packages which
 
 #### Verification
 
-We can verify that the Python installation worked by running the command `$ python --version` and see that it prints something like `Python 3.12.2`. A newer (larger-numbered) version is also fine, and only means that time has elapsed since these instructions were last updated.
+We can verify that the Python installation worked by running the command `$ python --version` and see that it prints `Python 3.13.1`. We should see exactly this Python version. 
 
-If you see an older (smaller-numbered, such as a version starting with `3.11` or lower) it is not using the correct version. Perhaps the step above about restarting the terminal was skipped. Try quitting the terminal and reopening it to see if that fixes it... If not, reach out to a classmate or instructor!
+If you see a newer version (larger-numbered) or an older (smaller-numbered, such as a version starting with `3.12` or lower) Python is not using the correct version. Perhaps the step above about restarting the terminal was skipped. Try quitting the terminal and reopening it to see if that fixes it... If not, reach out to a classmate or instructor!
 
 We should also verify that `pip` is working with `$ pip --version`. It should be in a python3 folder and display a message like `pip 24.0 from /usr/local/lib/python3.12/site-packages/pip (python 3.12)`. Again, a newer version is fine, but an older version (such as `23.0` or lower) is a sign that something went wrong.
 
