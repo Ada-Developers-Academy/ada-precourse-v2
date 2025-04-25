@@ -184,7 +184,7 @@ for word in word_list:
 
 ##### !question
 
-Write a function `print_ten` that takes one argument, a string.  The function has the following behavior:
+Write a function `repeat_ten` that takes one argument, a string.  The function has the following behavior:
 * The function returns a string that repeats a counter number (starting at 1) and then the string ten times
 * The function can use either a while loop or a for loop, but it must use a loop
 
@@ -201,7 +201,7 @@ Example inputs and outputs:
 ##### !placeholder
 
 ```python
-def print_ten(word):
+def repeat_ten(word):
     pass
 ```
 
@@ -211,17 +211,17 @@ def print_ten(word):
 
 ```python
 import unittest
-from main import print_ten
+from main import repeat_ten
 
 class TestPrintTen(unittest.TestCase):
     def test_word(self):
-        self.assertEqual(print_ten("snow"),"1 snow 2 snow 3 snow 4 snow 5 snow 6 snow 7 snow 8 snow 9 snow 10 snow ")
+        self.assertEqual(repeat_ten("snow"),"1 snow 2 snow 3 snow 4 snow 5 snow 6 snow 7 snow 8 snow 9 snow 10 snow ")
 
     def test_empty(self):
-        self.assertEqual(print_ten(""), "1  2  3  4  5  6  7  8  9  10  ")
+        self.assertEqual(repeat_ten(""), "1  2  3  4  5  6  7  8  9  10  ")
 
     def test_string(self):
-        self.assertEqual(print_ten("123"), "1 123 2 123 3 123 4 123 5 123 6 123 7 123 8 123 9 123 10 123 ")
+        self.assertEqual(repeat_ten("123"), "1 123 2 123 3 123 4 123 5 123 6 123 7 123 8 123 9 123 10 123 ")
 ```
 
 ##### !end-tests
@@ -233,7 +233,7 @@ class TestPrintTen(unittest.TestCase):
 Two examples of working implementations:
 
 ```python
-def print_ten(word):
+def repeat_ten(word):
     count = 1
     result = ""
     while count < 11:
@@ -245,7 +245,7 @@ def print_ten(word):
 
     return result
 
-def print_ten(word):
+def repeat_ten(word):
     result = ""
     for i in range(1, 11):
         result += str(i) + " "
@@ -272,7 +272,7 @@ def print_ten(word):
 
 ##### !question
 
-Write a function `print_multiple` that takes two argument, a string `word` and a number `amount`.  The function has the following behavior:
+Write a function `repeat_variable` that takes two argument, a string `word` and a number `amount`.  The function has the following behavior:
 * The function returns a string that repeats a counter number (starting at 1) and then the string `amount` number of times
 * The function can use either a while loop or a for loop, but it must use a loop
 
@@ -280,16 +280,16 @@ Example inputs and outputs:
 
 |input|output|
 |--|--|
-| `word = "snow"`<br/> `amount = 4`|`"1 snow 2 snow 3 snow 4 snow"`|
-| `word = ""` <br/> `amount = 7`|<code>"1&nbsp;&nbsp;2&nbsp;&nbsp;3&nbsp;&nbsp;4&nbsp;&nbsp;5&nbsp;&nbsp;6&nbsp;&nbsp;7 "</code>|
-| `word = "123"` <br/> `amount = 11`|`"1 123 2 123 3 123 4 123 5 123 6 123 7 123 8 123 9 123 10 123 11 123"`|
+| `word = "snow"`<br/> `amount = 4`|`"1 snow 2 snow 3 snow 4 snow "`|
+| `word = ""` <br/> `amount = 7`|<code>"1&nbsp;&nbsp;2&nbsp;&nbsp;3&nbsp;&nbsp;4&nbsp;&nbsp;5&nbsp;&nbsp;6&nbsp;&nbsp;7&nbsp;&nbsp;"</code>|
+| `word = "123"` <br/> `amount = 11`|`"1 123 2 123 3 123 4 123 5 123 6 123 7 123 8 123 9 123 10 123 11 123 "`|
 
 ##### !end-question
 
 ##### !placeholder
 
 ```python
-def print_multiple(word, amount):
+def repeat_variable(word, amount):
     pass
 ```
 
@@ -299,17 +299,17 @@ def print_multiple(word, amount):
 
 ```python
 import unittest
-from main import print_multiple
+from main import repeat_variable
 
 class TestPrintMultiple(unittest.TestCase):
     def test_word(self):
-        self.assertEqual(print_multiple("snow", 4),"1 snow 2 snow 3 snow 4 snow")
+        self.assertEqual(repeat_variable("snow", 4),"1 snow 2 snow 3 snow 4 snow ")
 
     def test_empty(self):
-        self.assertEqual(print_multiple("", 7), "1  2  3  4  5  6  7 ")
+        self.assertEqual(repeat_variable("", 7), "1  2  3  4  5  6  7  ")
 
     def test_string(self):
-        self.assertEqual(print_multiple("123", 11), "1 123 2 123 3 123 4 123 5 123 6 123 7 123 8 123 9 123 10 123 11 123")
+        self.assertEqual(repeat_variable("123", 11), "1 123 2 123 3 123 4 123 5 123 6 123 7 123 8 123 9 123 10 123 11 123 ")
 ```
 
 ##### !end-tests
@@ -321,33 +321,124 @@ class TestPrintMultiple(unittest.TestCase):
 Two examples of working implementations:
 
 ```python
-def print_multiple(word, amount):
+def repeat_variable(word, amount):
     count = 1
     result = ""
     while count < amount + 1:
-        if count > 1:
-            result += " "
         result += str(count)
         result += " "
         result += word
         count += 1
+        result += " "
 
     return result
 
-def print_multiple(word, amount):
+def repeat_variable(word, amount):
     result = ""
     for i in range(1, amount + 1):
-        if i > 1:
-            result += " "
         result += str(i) + " "
         result += word
+        result += " "
+        
     return result
 ```
 
 ##### !end-explanation
 
 ### !end-challenge
+<!--END CHALLENGE-->
 
+<!--BEGIN CHALLENGE-->
+### !challenge
+
+* type: code-snippet
+* language: python3.6
+* id: 1fc03963-81d1-4aee-a66e-6788c73964ed
+* title: Variable Loop Without Trailing Space
+* points: 1
+* topics: python, loops
+
+##### !question
+
+Write a function `repeat_word_with_count` that takes two arguments: a string `word` and an integer `amount`. The function has the following behavior:
+- The function returns a string that repeats a counter number (starting at 1) and then the string `amount` number of times
+- The final string does not have a trailing space following `word` at the end of the string. 
+- The function can use either a while loop or a for loop, but it must use a loop
+
+Example inputs and outputs:
+
+|input|output|
+|--|--|
+| `word = "snow"`<br/> `amount = 3` | `"1 snow 2 snow 3 snow"` |
+| `word = ""` <br/> `amount = 7` | `"1  2  3  4  5  6  7"` |
+| `word = "123"` <br/> `amount = 5` | `"1 123 2 123 3 123 4 123 5 123"` |
+
+##### !end-question
+##### !placeholder
+
+```python
+def repeat_word_with_count(word, amount):
+    pass
+```
+
+##### !end-placeholder
+##### !tests
+
+```python
+import unittest
+from main import repeat_word_with_count
+
+class TestRepeatWord(unittest.TestCase):
+    def test_basic(self):
+        self.assertEqual(repeat_word_with_count("snow", 3), "1 snow 2 snow 3 snow")
+
+    def test_empty(self):
+        self.assertEqual(repeat_word_with_count("", 7), "1  2  3  4  5  6  7 ")
+
+    def test_five(self):
+        self.assertEqual(repeat_word_with_count("123", 5), "1 123 2 123 3 123 4 123 5 123")
+```
+
+##### !end-tests
+##### !explanation
+
+Two examples of working implementations:
+
+```python
+def repeat_word_with_count(word, amount):
+    result = ""
+    count = 1
+    while count <= amount:
+        result += str(count) + " " + word
+
+        if count != amount:
+            result += " "
+
+        count += 1
+
+    return result
+```
+
+```py
+def repeat_word_with_count(word, amount):
+    result = ""
+    for i in range(1, amount + 1):
+        if i > 1:
+            result += " "
+
+        result += str(i) + " " + word
+
+    return result
+```
+
+In the while loop implementation, we add the new `count` and `word` combination to our `result` first, and then check if we need to add a trailing space for following entries.
+
+In the for loop implementaion, we first check if we need a leading space to separate the previous entry from the new one we are about to create. Then we add our counter and `word` combination to the `result` we are building.
+
+Both of these approaches are valid and would work for either a for loop or a while loop. We get to choose whether we check if we need a space before or after we create the new entry. Pick what makes most the most sense and is clearest to you!
+
+##### !end-explanation
+### !end-challenge
 <!--END CHALLENGE-->
 
 ## Guess the Number Project
