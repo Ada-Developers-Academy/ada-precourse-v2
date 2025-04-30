@@ -92,11 +92,6 @@ Literally just put `print("Hello World!")` inside the function below.
 
 ```py
 def hello_world():
-    '''
-    INPUT: 2 dimensional numpy array
-    OUTPUT: boolean
-    Return true
-    '''
     # Put your code here
 
 ```
@@ -146,17 +141,12 @@ Learn checks the correctness of code submissions using unit tests. Testing is in
 <br>
 
 <details>
-<summary>Expand the arrow to review the test results for an indentation error.</summary>
+<summary>Expand the arrow to review the test results for a missing quotes error.</summary>
 <br>Code:
 
 ```Python
 def hello_world():
-    '''
-    INPUT: 2 dimensional numpy array
-    OUTPUT: boolean
-    Return true
-    '''
-        print("Hello World!")
+    print(Hello World!)
 ```
 <br>Test Results:
 
@@ -174,14 +164,14 @@ Traceback (most recent call last):
     __import__(name)
   File "/usr/src/app/test_methods.py", line 7, in <module>
     import main as p
-  File "/usr/src/app/main.py", line 7
-    print("Hello World!")
-    ^
-IndentationError: unexpected indent
+  File "/usr/src/app/main.py", line 2
+    print(Hello, World!)
+                      ^
+SyntaxError: invalid syntax
 
 
 ----------------------------------------------------------------------
-Ran 1 test in 0.001s
+Ran 1 test in 0.000s
 
 FAILED (errors=1)
 
@@ -196,12 +186,6 @@ FAILED (errors=1)
 ```Python
 
 def hello_world():
-    '''
-    INPUT: 2 dimensional numpy array
-    OUTPUT: boolean
-    Return true
-    '''
-
     print("hello world!")
 
 ```
