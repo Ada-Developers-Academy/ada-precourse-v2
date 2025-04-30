@@ -109,7 +109,6 @@ def guess_the_number():
     # pick a random number
     random_number = random.randint(RANGE_LOW, RANGE_HIGH)
     user_input_string = input("Guess the number: ")
-    user_input = None
 
     if user_input_string.isnumeric():
         user_input = int(user_input_string)
@@ -152,7 +151,6 @@ def guess_the_number():
     # pick a random number
     random_number = random.randint(RANGE_LOW, RANGE_HIGH)
     user_input_string = input("Guess the number: ")
-    user_input = None
 
     if user_input_string.isnumeric():
         user_input = int(user_input_string)
