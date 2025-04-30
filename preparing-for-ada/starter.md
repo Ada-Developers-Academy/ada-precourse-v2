@@ -141,7 +141,7 @@ Learn checks the correctness of code submissions using unit tests. Testing is in
 <br>
 
 <details>
-<summary>Expand the arrow to review the test results for a missing quotes error.</summary>
+<summary>Expand the arrow to review the test results for a missing quotes syntax error.</summary>
 <br>Code:
 
 ```Python
