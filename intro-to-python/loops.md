@@ -489,7 +489,9 @@ We want to run the loop at most the same number of times as the number of maximu
             # ...
     ```
 
-2.  Next, add a constant variable to represent the maximum guesses underneath the other variable at the top of the file and set it to any integer value (in our example we will use 20.) Then add a comparison in the while loop to check to see if the current number of guesses is greater than or equal to the maximum number of guesses (on our first time through the loop the number of guesses starts at 0, so by the time we get to the maximum number of guesses we've already guessed that many times):
+2.  Next, we need our loop to consider how many guesses we've made.
+    1. Add a constant variable to represent the maximum guesses. Place the new variable underneath the other variable at the top of the file and set it to any integer value (in our example we will use 20.) 
+    2. Then add a comparison in the while loop to check if the current number of guesses is less than the maximum number of guesses. The number of guesses starts at 0, so by the time we get to the maximum number of guesses we've already guessed that many times and have ran out of tries.
 
     ```python
     # ...
@@ -499,7 +501,7 @@ We want to run the loop at most the same number of times as the number of maximu
         # ...
 
         num_guesses = 0
-        while (waiting_for_correct_guess and num_guesses <= MAX_GUESSES):
+        while (waiting_for_correct_guess and num_guesses < MAX_GUESSES):
             num_guesses += 1
             # ...
     ```
@@ -515,7 +517,7 @@ We want to run the loop at most the same number of times as the number of maximu
         waiting_for_correct_guess = True
         num_guesses = 0
 
-        while (waiting_for_correct_guess and num_guesses <= MAX_GUESSES):
+        while (waiting_for_correct_guess and num_guesses < MAX_GUESSES):
 
             num_guesses += 1
             user_input = get_number_from_user()

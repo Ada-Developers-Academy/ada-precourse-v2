@@ -30,7 +30,7 @@ def guess_the_number():
     waiting_for_correct_guess = True
     num_guesses = 0
 
-    while (waiting_for_correct_guess and num_guesses <= MAX_GUESSES):
+    while (waiting_for_correct_guess and num_guesses < MAX_GUESSES):
         num_guesses += 1
         user_input = get_number_from_user()
 
