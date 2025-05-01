@@ -518,7 +518,24 @@ $ (venv) pip freeze > requirements.txt
 | `pip freeze > requirements.txt` | Add any installed packages to requirements.txt |
 <!-- prettier-ignore-end -->
 
-Once that's done, add the line `from wonderwords import RandomWord` to the top of `snowman.py`. This will import the class `RandomWord` for us to use in our code.
+Before using `wonderwords`, we should check if VS Code is using the virtual environment we created. We can do this by looking at the Python version listed in the bottom right corner of VS Code. 
+- The Python version will not show if we have another file type open, so make sure that snowman.py is open in VS Code. 
+ 
+We should see `3.13.1 ('venv':venv)` as the listed Python version in VS Code if it is reading from a virtual environment.
+![VS Code with snowman.py open and the Python version "3.13.1 ('venv':venv)" circled in the bottom right corner](images/snowman-vscode-venv-active.png)
+*Fig. VS Code's selected Python version displayed in the lower right corner of the window* [*(Full size image)*](images/snowman-vscode-venv-active.png)
+
+If `('venv':venv)` is missing from the Python version or a different Python version number is listed, then VS Code isn't using the virtual environment where we installed `wonderwords`. 
+- If we try to use `wonderwords` when the wrong Python version is selected we will see errors such as `"wonderwords" could not be resolved"`!
+
+If we need to change the selected Python version in VS Code, we can click on the Python version in the lower right corner. 
+1. This will open up a menu named `Select Interpreter` that will list all the versions of Python that VS Code can access. The current version you are using will be highlighted when you open the list. 
+2. We want to find and click on the option that says `Python 3.13.1 ('venv':venv) ./venv/bin/python` (It may also say "Recommended" next to the option as in the screenshot below). This will choose the version and dismiss the selection window.
+
+![VS Code with the "Select Interpreter" menu open and the version "Python 3.13.1 ('venv':venv) ./venv/bin/python" circled in red](images/snowman-vscode-select-interpreter.png)
+*Fig. VS Code's "Select Interpreter" menu with the option `Python 3.13.1 ('venv':venv) ./venv/bin/python` highlighted* [*(Full size image)*](images/snowman-vscode-select-interpreter.png)
+
+Once we're sure we are using the right environment in VS Code, add the line `from wonderwords import RandomWord` to the top of `snowman.py`. This will import the class `RandomWord` for us to use in our code.
 
 ```python
 import random
