@@ -30,7 +30,7 @@ def guess_the_number():
     waiting_for_correct_guess = True
     num_guesses = 0
 
-    while (waiting_for_correct_guess and num_guesses <= MAX_GUESSES):
+    while (waiting_for_correct_guess and num_guesses < MAX_GUESSES):
         num_guesses += 1
         user_input = get_number_from_user()
 
@@ -49,15 +49,15 @@ def guess_the_number():
         print(f"You ran out of guesses! The correct answer was {random_number}.")
 
 def get_number_from_user():
-    valid_input = False
+    attempting_valid_input = True
     user_input = None
 
-    while not valid_input:
+    while attempting_valid_input:
         user_input_string = input("Guess the number: ")
 
         if user_input_string.isnumeric():
             user_input = int(user_input_string)
-            valid_input = True
+            attempting_valid_input = False
         else:
             print("You must input a number!")
 
