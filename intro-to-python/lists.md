@@ -519,7 +519,7 @@ $ (venv) pip freeze > requirements.txt
 <!-- prettier-ignore-end -->
 
 Before using `wonderwords`, we should check if VS Code is using the virtual environment we created. We can do this by looking at the Python version listed in the bottom right corner of VS Code. 
-- The Python version will not show if we have another file type open, so make sure that snowman.py is open in VS Code. 
+- The Python version will not show if we have another file type open, so make sure that `snowman.py` is open in VS Code. 
  
 We should see `3.13.1 ('venv':venv)` as the listed Python version in VS Code if it is reading from a virtual environment.
 ![VS Code with snowman.py open and the Python version "3.13.1 ('venv':venv)" circled in the bottom right corner](images/snowman-vscode-venv-active.png)
