@@ -26,28 +26,48 @@ However you choose to move through the materials, as you read through these reso
 
 ## Required Readings
 What are LLMs?
-* [Introduction to Large Language Models](https://developers.google.com/machine-learning/resources/intro-llms) - From Google's Machine Learning resources
+* [Introduction to Large Language Models](https://drive.google.com/file/d/1j_ZGWQCocF--4etSBVA027QJ_dg4sgyT/view?usp=sharing) - From Google's Machine Learning resources
 
 What are some areas of strength and weakness of LLMs?
-* [Pitfalls of LLMs](https://learnprompting.org/docs/basics/pitfalls) - From learnprompting.org
-* [5 Practical Business Use Cases for Large Language Models](https://opendatascience.com/5-practical-business-use-cases-for-large-language-models/) -  From opendatascience.com
+* [Limitations of LLMs](https://drive.google.com/file/d/1Q2rXmT0L_9nZ5-bRxKwijLD0vR2OurF2/view?usp=drive_link) - From learnprompting.org
+* [5 Practical Business Use Cases for Large Language Models](https://drive.google.com/file/d/11anLc4A4oY98du1ggImMfLptFD5LNf4K/view?usp=drive_link) -  From opendatascience.com
 
 How does bias impact LLMs?
 * *Content Warning: there are no graphic depictions, but there are examples of harmful racist content created by generative AIs.*
-  * [Covert Racism in AI: How Language Models Are Reinforcing Outdated Stereotypes](https://hai.stanford.edu/news/covert-racism-ai-how-language-models-are-reinforcing-outdated-stereotypes) - from Stanford University
-* [Depression in Black people goes unnoticed by AI models analyzing language in social media posts](https://www.pennmedicine.org/news/depression-in-black-people-unnoticed-by-ai-analyzing-social-media) - from Penn Medicine News
+  * [Covert Racism in AI: How Language Models Are Reinforcing Outdated Stereotypes](https://drive.google.com/file/d/1mgu2aK-t38cu1IM7MUKQxUCNakRUrQ71/view?usp=drive_link) - from Stanford University
+* [Depression in Black people goes unnoticed by AI models analyzing language in social media posts](https://drive.google.com/file/d/14vAg1tKIbQud6sg23I71zS6kDlhnOz3r/view?usp=drive_link) - from Penn Medicine News
 
 How does the physical infrastructure of LLMs impact people and the environment?
-* [Artificial intelligence technology behind ChatGPT was built in Iowa — with a lot of water](https://apnews.com/article/chatgpt-gpt4-iowa-ai-water-consumption-microsoft-f551fde98083d17a7e8d904f8be822c4) - from The Associated Press
-* [Behind the AI boom, an army of overseas workers in ‘digital sweatshops’](https://www.washingtonpost.com/world/2023/08/28/scale-ai-remotasks-philippines-artificial-intelligence/) - from The Washington Post
+* [Artificial intelligence technology behind ChatGPT was built in Iowa — with a lot of water](https://drive.google.com/file/d/1tNOB6SIwpJgrlfjF5apjkIP5JVlgUW-k/view?usp=drive_link) - from The Associated Press
+* [Behind the AI boom, an army of overseas workers in 'digital sweatshops'](https://drive.google.com/file/d/19ITuTrYZ06ZYzJ9A83i09cZZ0rV4zOX3/view?usp=drive_link) - from The Washington Post
 
 
 ## Further Readings
 The following resources are not required reading, but are provided for those who'd like to dive a little deeper into some of the topics above.
 
-* [A Decision Tree to Guide Student AI Use](https://www.edutopia.org/article/student-use-ai-helpful-framework) - From edutopia.org
-* [Recognizing the kinds of biases in Generative AIs](https://www.forbes.com/sites/forbestechcouncil/2023/09/06/navigating-the-biases-in-llm-generative-ai-a-guide-to-responsible-implementation) - From Forbes.com
-* [Chatbot Hallucinations Are Poisoning Web Search](https://www.wired.com/story/fast-forward-chatbot-hallucinations-are-poisoning-web-search/) - From Wired.com
-* [Exclusive: OpenAI Used Kenyan Workers on Less Than $2 Per Hour to Make ChatGPT Less Toxic](https://time.com/6247678/openai-chatgpt-kenya-workers/) - From Time USA
+* [A Decision Tree to Guide Student AI Use](https://drive.google.com/file/d/1AeGVFXr9Lvfur8B3ZGEsfX4QzAHJrXFM/view?usp=drive_link) - From edutopia.org
+* [Recognizing the kinds of biases in Generative AIs](https://drive.google.com/file/d/1BOjoD6Mkz6LOh8pLAINSX4sIfHB3xOqQ/view?usp=drive_link) - From Forbes.com
+* [Chatbot Hallucinations Are Poisoning Web Search](https://drive.google.com/file/d/1Hg1YPUgoImwMw3F-sJvSwoR8lM1wmvf3/view?usp=drive_link) - From Wired.com
+* [Exclusive: OpenAI Used Kenyan Workers on Less Than $2 Per Hour to Make ChatGPT Less Toxic](https://drive.google.com/file/d/1q6lub-iCKwC-mb3MI2Rpxe9-p9jmkRn-/view?usp=drive_link) - From Time USA
 * *Content Warning: there are no graphic depictions, but there are examples of harmful sexist and racist content created by generative AIs.*
-  * [Exploration of bias in ChatGPT and other AI models](https://web.archive.org/web/20250525015159/https://www.businessinsider.com/chatgpt-is-like-many-other-ai-models-rife-with-bias-2023-1) - Web archive of an article from Insider.com
+  * [Exploration of bias in ChatGPT and other AI models](https://drive.google.com/file/d/1s4_DDhPXrOn4ycEFEUx18v2ENEFe9i_0/view?usp=drive_link) - Web archive of an article from Insider.com
+
+</br>
+
+  <details>
+  <summary>Works cited can be found by expanding this section</summary>
+    <ul>
+    <li><a href="https://developers.google.com/machine-learning/resources/intro-llms/">Introduction to Large Language Models</li>
+    <li><a href="https://learnprompting.org/docs/basics/pitfalls">Limitations of LLMs</li>
+    <li><a href="https://opendatascience.com/5-practical-business-use-cases-for-large-language-models/">5 Practical Business Use Cases for Large Language Models</li>
+    <li><a href="https://hai.stanford.edu/news/covert-racism-ai-how-language-models-are-reinforcing-outdated-stereotypes/">Covert Racism in AI: How Language Models Are Reinforcing Outdated Stereotypes</li>
+    <li><a href="https://www.pennmedicine.org/news/depression-in-black-people-unnoticed-by-ai-analyzing-social-media">Depression in Black people goes unnoticed by AI models analyzing language in social media posts</li>
+    <li><a href="https://apnews.com/article/chatgpt-gpt4-iowa-ai-water-consumption-microsoft-f551fde98083d17a7e8d904f8be822c4">Artificial intelligence technology behind ChatGPT was built in Iowa — with a lot of water</li>
+    <li><a href="https://www.washingtonpost.com/world/2023/08/28/scale-ai-remotasks-philippines-artificial-intelligence/">Behind the AI boom, an army of overseas workers in 'digital sweatshops'</li>
+    <li><a href="https://www.edutopia.org/article/student-use-ai-helpful-framework">A Decision Tree to Guide Student AI Use</li>
+    <li><a href="https://www.forbes.com/sites/forbestechcouncil/2023/09/06/navigating-the-biases-in-llm-generative-ai-a-guide-to-responsible-implementation">Recognizing the kinds of biases in Generative AIs</li>
+    <li><a href="https://www.wired.com/story/fast-forward-chatbot-hallucinations-are-poisoning-web-search/">Chatbot Hallucinations Are Poisoning Web Search</li>
+    <li><a href="https://time.com/6247678/openai-chatgpt-kenya-workers/">Exclusive: OpenAI Used Kenyan Workers on Less Than $2 Per Hour to Make ChatGPT Less Toxic</li>
+    <li><a href="https://web.archive.org/web/20250525015159/https://www.businessinsider.com/chatgpt-is-like-many-other-ai-models-rife-with-bias-2023-1">Exploration of bias in ChatGPT and other AI models</li>
+    </ul>
+</details>
