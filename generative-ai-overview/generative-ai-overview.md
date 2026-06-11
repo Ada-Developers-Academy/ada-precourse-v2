@@ -34,8 +34,8 @@ What are some areas of strength and weakness of LLMs?
 
 How does bias impact LLMs?
 * *Content Warning: there are no graphic depictions, but there are examples of harmful racist content created by generative AIs.*
-  * [Covert Racism in AI: How Language Models Are Reinforcing Outdated Stereotypes](https://drive.google.com/file/d/1mgu2aK-t38cu1IM7MUKQxUCNakRUrQ71/view?usp=drive_link) - from Stanford University
-* [Depression in Black people goes unnoticed by AI models analyzing language in social media posts](https://drive.google.com/file/d/14vAg1tKIbQud6sg23I71zS6kDlhnOz3r/view?usp=drive_link) - from Penn Medicine News
+  * [Covert Racism in AI: How Language Models Are Reinforcing Outdated Stereotypes](https://drive.google.com/file/d/1h3SYHvdsBqGrnTgvqnR5uA2j8x2Gvq8f/view?usp=sharing) - from Stanford University
+* [Depression in Black people goes unnoticed by AI models analyzing language in social media posts](https://drive.google.com/file/d/1-q9hqCLcyjg30kbI9ipqHtkHVCPTzZkO/view?usp=sharing) - from Penn Medicine News
 
 How does the physical infrastructure of LLMs impact people and the environment?
 * [Artificial intelligence technology behind ChatGPT was built in Iowa — with a lot of water](https://drive.google.com/file/d/1tNOB6SIwpJgrlfjF5apjkIP5JVlgUW-k/view?usp=drive_link) - from The Associated Press
@@ -48,9 +48,9 @@ The following resources are not required reading, but are provided for those who
 * [A Decision Tree to Guide Student AI Use](https://drive.google.com/file/d/1AeGVFXr9Lvfur8B3ZGEsfX4QzAHJrXFM/view?usp=drive_link) - From edutopia.org
 * [Recognizing the kinds of biases in Generative AIs](https://drive.google.com/file/d/1BOjoD6Mkz6LOh8pLAINSX4sIfHB3xOqQ/view?usp=drive_link) - From Forbes.com
 * [Chatbot Hallucinations Are Poisoning Web Search](https://drive.google.com/file/d/1Hg1YPUgoImwMw3F-sJvSwoR8lM1wmvf3/view?usp=drive_link) - From Wired.com
-* [Exclusive: OpenAI Used Kenyan Workers on Less Than $2 Per Hour to Make ChatGPT Less Toxic](https://drive.google.com/file/d/1q6lub-iCKwC-mb3MI2Rpxe9-p9jmkRn-/view?usp=drive_link) - From Time USA
+* [Exclusive: OpenAI Used Kenyan Workers on Less Than $2 Per Hour to Make ChatGPT Less Toxic](https://drive.google.com/file/d/1o1L1VNasZW9SVHAH70eu2w4BhIfWozbW/view?usp=sharing) - From Time USA
 * *Content Warning: there are no graphic depictions, but there are examples of harmful sexist and racist content created by generative AIs.*
-  * [Exploration of bias in ChatGPT and other AI models](https://drive.google.com/file/d/1s4_DDhPXrOn4ycEFEUx18v2ENEFe9i_0/view?usp=drive_link) - Web archive of an article from Insider.com
+  * [Exploration of bias in ChatGPT and other AI models](https://drive.google.com/file/d/1Ew9yTFxhGv5oIjf83Tiu5FbjUx-efCAt/view?usp=sharing) - Web archive of an article from Insider.com
 
 </br>
 
