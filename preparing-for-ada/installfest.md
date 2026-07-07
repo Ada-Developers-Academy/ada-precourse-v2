@@ -88,7 +88,7 @@ Apple releases MacOS updates relatively frequently. It is often necessary to upd
 
 ### !end-callout
 
-## Install Homebrew, Python 3, Node & Optionals
+## Install Core Tools and Optionals
 
 The following script will install some tools we will use including:
 
@@ -99,6 +99,7 @@ The following script will install some tools we will use including:
 - Git
 - Node
 - VS Code
+- AWS CLI
 
 It will also give some options to automatically install:
 
@@ -110,7 +111,7 @@ It will also give some options to automatically install:
 
 ## Remove Previous Installations Before Running the Installfest Script
 
-Adies are curious and have often installed some of these tools already. If this describes you, please remove any previous installations of Homebrew, Python, Node, Git, or VS Code before running the Installfest script. This will help avoid conflicts and ensure that the correct versions are installed so that everyone is using the same tools.
+Adies are curious and have often installed some of these tools already. If this describes you, please remove any previous installations of Homebrew, Python, Node, Git, VS Code, or AWS CLI before running the Installfest script. This will help avoid conflicts and ensure that the correct versions are installed so that everyone is using the same tools.
 
 <br />
 
@@ -349,6 +350,7 @@ I have successfully installed:
 * Git
 * Node
 * VS Code
+* AWS CLI
 * Slack
 
 ##### !end-options
