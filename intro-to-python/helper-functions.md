@@ -2,7 +2,26 @@
 
 ## Learning Goals
 
-<iframe src="https://adaacademy.hosted.panopto.com/Panopto/Pages/Embed.aspx?pid=a39ba8bc-1711-4c3a-a804-ad65007c2576&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=true&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+<iframe
+  src="https://www.youtube.com/embed/videoseries?si=mbEFrkDE5K0fUrP6&list=PLTEz_n5SexaQ"
+  name="lms_video_player"
+  height="405"
+  width="720"
+  style="border: 1px solid #464646;"
+  allowfullscreen
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  referrerpolicy="strict-origin-when-cross-origin"></iframe>
+<details style="max-width: 720px; margin: auto;">
+  <summary>Lesson playlist (expand to review)</summary>
+  <ol>
+    <li><a target="lms_video_player" href="https://www.youtube.com/embed/Wnx0Ft_BDME?list=PLTEz_n5SexaQ&index=1">Intro to Helper Functions</a></li>
+    <li><a target="lms_video_player" href="https://www.youtube.com/embed/VkMthzYsR3U?list=PLTEz_n5SexaQ&index=2">Bill Helper Functions</a></li>
+    <li><a target="lms_video_player" href="https://www.youtube.com/embed/7pvfoU2C2wk?list=PLTEz_n5SexaQ&index=3">Display Bill Function</a></li>
+    <li><a target="lms_video_player" href="https://www.youtube.com/embed/EiS_gSsHjxg?list=PLTEz_n5SexaQ&index=4">Helper Functions in Guess the Number</a></li>
+  </ol>
+  <p><a href="https://www.youtube.com/watch?v=Wnx0Ft_BDME&list=PLTEz_n5SexaQ&index=1" target="_blank">View in external player</a></p>
+</details>
 
 At the end of this lesson we will be able to:
 
@@ -625,4 +644,3 @@ def am_i_speeding(speed, speed_limit):
 Now that we have broken the various sections into functions, we can easily swap the order of the games, play a game multiple times, or add new games in new functions and insert them in any order we want.  
 
 Functions add flexibility and structure to our code, and make code easier to maintain and read.  In the next lesson we will work on adding more functionality to our functions with loops. 
-
