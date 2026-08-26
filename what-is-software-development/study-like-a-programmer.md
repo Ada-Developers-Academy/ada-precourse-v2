@@ -1,6 +1,25 @@
 # How to Study like a Programmer
 
-<iframe src="https://adaacademy.hosted.panopto.com/Panopto/Pages/Embed.aspx?pid=c777056e-412b-40f6-999b-ac2501267610&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&start=0&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+<iframe
+  src="https://www.youtube.com/embed/videoseries?si=DbZPqOGOO6V0V5d_&amp;list=PLajgqlbV-A28"
+  name="lms_video_player"
+  height="405"
+  width="720"
+  style="border: 1px solid #464646;"
+  allowfullscreen
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  referrerpolicy="strict-origin-when-cross-origin"></iframe>
+<details style="max-width: 720px; margin: auto;">
+  <summary>Lesson playlist (expand to review)</summary>
+  <ol>
+    <li><a target="lms_video_player" href="https://www.youtube.com/embed/_GBaJYEFtek?list=PLajgqlbV-A28&index=1">Humans vs Computers U10202 1</a></li>
+    <li><a target="lms_video_player" href="https://www.youtube.com/embed/2OyhC1KELaw?list=PLajgqlbV-A28&index=2">Question Asking Skills U10202 2</a></li>
+    <li><a target="lms_video_player" href="https://www.youtube.com/embed/VmU5Gz5kVOg?list=PLajgqlbV-A28&index=3">Review and Self Care U10202 3</a></li>
+    <li><a target="lms_video_player" href="https://www.youtube.com/embed/yUICIFcPubk?list=PLajgqlbV-A28&index=4">Techniques and Activities U10202 4</a></li>
+  </ol>
+  <p><a href="https://www.youtube.com/watch?v=_GBaJYEFtek&list=PLajgqlbV-A28&index=1" target="_blank">View in external player</a></p>
+</details>
 
 ## Introduction: Humans vs. Computers
 
