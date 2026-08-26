@@ -48,7 +48,16 @@ By the end of this lesson we should be able to...
 
 ## Installfest Instructions
 
-<iframe src="https://adaacademy.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=74b0dc57-aec2-497a-a14b-ac9f0020d987&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&start=0&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+<iframe
+  src="https://www.youtube.com/embed/3nQx3yR13hE"
+  height="405"
+  width="720"
+  style="border: 1px solid #464646;"
+  allowfullscreen
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  referrerpolicy="strict-origin-when-cross-origin">
+</iframe>
 
 ## Xcode Command-line Developer tools
 
