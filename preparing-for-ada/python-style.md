@@ -1,6 +1,15 @@
 # Python Coding Style
 
-<iframe src="https://adaacademy.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=90f1f6c3-d359-4dc4-960a-acb5001eb0ef&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&start=0&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+<iframe
+  src="https://www.youtube.com/embed/uwaXlKrV06k"
+  height="360"
+  width="640"
+  style="border: 1px solid #464646;"
+  allowfullscreen
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  referrerpolicy="strict-origin-when-cross-origin">
+</iframe>
 
 The style in our code is just as important as the code itself. Programmers use code standards along with company style guides to ensure that all programmers are using the same style. Code with good style is easy to read, understand, and modify.
 
