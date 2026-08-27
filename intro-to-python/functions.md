@@ -2,7 +2,26 @@
 
 ## Learning Goals
 
-<iframe src="https://adaacademy.hosted.panopto.com/Panopto/Pages/Embed.aspx?pid=e6e5f787-22a4-4ab5-a8ee-ad65007aa519&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=true&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+<iframe
+  src="https://www.youtube.com/embed/videoseries?si=tl6wzCD_s2kiSlVo&list=PLCPER08dARSc"
+  name="lms_video_player"
+  height="405"
+  width="720"
+  style="border: 1px solid #464646;"
+  allowfullscreen
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  referrerpolicy="strict-origin-when-cross-origin"></iframe>
+<details style="max-width: 720px; margin: auto;">
+  <summary>Lesson playlist (expand to review)</summary>
+  <ol>
+    <li><a target="lms_video_player" href="https://www.youtube.com/embed/lmuYkuSR4io?list=PLCPER08dARSc&index=1">Intro to Functions</a></li>
+    <li><a target="lms_video_player" href="https://www.youtube.com/embed/I7vtDj0LVM0?list=PLCPER08dARSc&index=2">Guess the Number Functions</a></li>
+    <li><a target="lms_video_player" href="https://www.youtube.com/embed/nThaplmoH10?list=PLCPER08dARSc&index=3">Return Keyword</a></li>
+    <li><a target="lms_video_player" href="https://www.youtube.com/embed/iHfY147R-mc?list=PLCPER08dARSc&index=4">Convert Celsius to Fahrenheit</a></li>
+  </ol>
+  <p><a href="https://www.youtube.com/watch?v=lmuYkuSR4io&list=PLCPER08dARSc&index=1" target="_blank">View in external player</a></p>
+</details>
 
 At the end of this lesson we will be able to:
 
