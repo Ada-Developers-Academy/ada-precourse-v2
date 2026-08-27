@@ -16,7 +16,7 @@
   <summary>Lesson playlist (expand to review)</summary>
   <ol>
     <li><a target="lms_video_player" href="https://www.youtube.com/embed/lmuYkuSR4io?list=PLCPER08dARSc&index=1">Intro to Functions</a></li>
-        <li><a target="lms_video_player" href="https://www.youtube.com/embed/I7vtDj0LVM0?list=PLCPER08dARSc&index=2">Guess the Number Functions</a></li>
+    <li><a target="lms_video_player" href="https://www.youtube.com/embed/I7vtDj0LVM0?list=PLCPER08dARSc&index=2">Guess the Number Functions</a></li>
     <li><a target="lms_video_player" href="https://www.youtube.com/embed/nThaplmoH10?list=PLCPER08dARSc&index=3">Return Keyword</a></li>
     <li><a target="lms_video_player" href="https://www.youtube.com/embed/iHfY147R-mc?list=PLCPER08dARSc&index=4">Convert Celsius to Fahrenheit</a></li>
   </ol>
