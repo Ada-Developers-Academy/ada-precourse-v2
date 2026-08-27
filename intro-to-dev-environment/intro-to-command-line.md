@@ -1,6 +1,24 @@
 # Intro to Command Line
 
-<iframe src="https://adaacademy.hosted.panopto.com/Panopto/Pages/Embed.aspx?pid=5d739e22-8056-42d3-96f0-accc003af3dc&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&start=0&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+<iframe
+  src="https://www.youtube.com/embed/videoseries?si=V3JMCBv5qgI0Kfre&list=PLWO6iai0B0KY"
+  name="lms_video_player"
+  height="405"
+  width="720"
+  style="border: 1px solid #464646;"
+  allowfullscreen
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  referrerpolicy="strict-origin-when-cross-origin"></iframe>
+<details style="max-width: 720px; margin: auto;">
+  <summary>Lesson playlist (expand to review)</summary>
+  <ol>
+    <li><a target="lms_video_player" href="https://www.youtube.com/embed/VApC_O5spME?list=PLWO6iai0B0KY&index=1">Intro to Dev Environment</a></li>
+    <li><a target="lms_video_player" href="https://www.youtube.com/embed/yEpsuCE8CPs?list=PLWO6iai0B0KY&index=2">File System</a></li>
+    <li><a target="lms_video_player" href="https://www.youtube.com/embed/OzrL6Joh9iw?list=PLWO6iai0B0KY&index=3">Recommended File Structure</a></li>
+  </ol>
+  <p><a href="https://www.youtube.com/watch?v=VApC_O5spME&list=PLWO6iai0B0KY&index=1" target="_blank">View in external player</a></p>
+</details>
 
 ## Learning Goals
 
